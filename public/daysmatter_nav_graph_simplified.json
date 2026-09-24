@@ -1,0 +1,1560 @@
+{
+  "app": "daysmatter",
+  "appDir": "apps/Daysmatter",
+  "mode": "schema",
+  "routeCount": 22,
+  "edgeCount": 44,
+  "nodes": [
+    {
+      "id": "/",
+      "routePath": "/",
+      "component": "HomePage",
+      "entryPoint": true,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "description": "首页倒数日列表",
+      "stateCount": 3,
+      "states": [
+        "/?eid=:eid",
+        "/?drawer=open&eid=:eid",
+        "/?menu=row&eid=:eid"
+      ],
+      "actionCount": 8,
+      "actionIds": [
+        "home.camera.tap",
+        "drawer.airtrans.tap",
+        "drawer.filter.select.home",
+        "drawer.filter.select.all",
+        "drawer.filter.select.notebook",
+        "rowMenu.event.archive",
+        "rowMenu.event.pin",
+        "rowMenu.event.delete"
+      ],
+      "actions": [
+        {
+          "id": "home.camera.tap",
+          "label": "相机(暂未开放)",
+          "behavior": "other"
+        },
+        {
+          "id": "drawer.airtrans.tap",
+          "label": "AirTrans接收(暂未开放)",
+          "behavior": "other"
+        },
+        {
+          "id": "drawer.filter.select.home",
+          "label": "筛选-首页事件",
+          "behavior": "select"
+        },
+        {
+          "id": "drawer.filter.select.all",
+          "label": "筛选-全部",
+          "behavior": "select"
+        },
+        {
+          "id": "drawer.filter.select.notebook",
+          "label": "筛选-按本子",
+          "behavior": "select",
+          "scope": "item",
+          "paramsSchema": {
+            "notebookId": "string"
+          }
+        },
+        {
+          "id": "rowMenu.event.archive",
+          "label": "归档(行菜单)",
+          "behavior": "modify",
+          "scope": "item",
+          "paramsSchema": {
+            "eventId": "string"
+          }
+        },
+        {
+          "id": "rowMenu.event.pin",
+          "label": "置顶(行菜单)",
+          "behavior": "toggle"
+        },
+        {
+          "id": "rowMenu.event.delete",
+          "label": "删除(行菜单)",
+          "behavior": "modify",
+          "scope": "item",
+          "paramsSchema": {
+            "eventId": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/notebooks",
+      "routePath": "/notebooks",
+      "component": "NotebookHomePage",
+      "entryPoint": true,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "description": "倒数本主页",
+      "stateCount": 1,
+      "states": [
+        "/notebooks"
+      ],
+      "actionCount": 4,
+      "actionIds": [
+        "notebook.milestone.tap",
+        "notebook.calendar.tap",
+        "notebook.strongReminder.tap",
+        "notebook.library.tap"
+      ],
+      "actions": [
+        {
+          "id": "notebook.milestone.tap",
+          "label": "里程碑(暂未开放)",
+          "behavior": "other"
+        },
+        {
+          "id": "notebook.calendar.tap",
+          "label": "日历视图(暂未开放)",
+          "behavior": "other"
+        },
+        {
+          "id": "notebook.strongReminder.tap",
+          "label": "强提醒(暂未开放)",
+          "behavior": "other"
+        },
+        {
+          "id": "notebook.library.tap",
+          "label": "事件库(暂未开放)",
+          "behavior": "other"
+        }
+      ]
+    },
+    {
+      "id": "/discover",
+      "routePath": "/discover",
+      "component": "DiscoverPage",
+      "entryPoint": true,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "description": "历史上的今天",
+      "stateCount": 1,
+      "states": [
+        "/discover"
+      ],
+      "actionCount": 3,
+      "actionIds": [
+        "discover.share.tap",
+        "discover.idaily.tap",
+        "discover.day.shift"
+      ],
+      "actions": [
+        {
+          "id": "discover.share.tap",
+          "label": "分享(暂未开放)",
+          "behavior": "other"
+        },
+        {
+          "id": "discover.idaily.tap",
+          "label": "iDaily(暂未开放)",
+          "behavior": "other"
+        },
+        {
+          "id": "discover.day.shift",
+          "label": "切换日期",
+          "behavior": "modify"
+        }
+      ]
+    },
+    {
+      "id": "/account",
+      "routePath": "/account",
+      "component": "AccountPage",
+      "entryPoint": true,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "description": "我的/登录",
+      "stateCount": 1,
+      "states": [
+        "/account"
+      ],
+      "actionCount": 3,
+      "actionIds": [
+        "account.session.register",
+        "account.session.login",
+        "account.session.logout"
+      ],
+      "actions": [
+        {
+          "id": "account.session.register",
+          "label": "注册",
+          "behavior": "submit"
+        },
+        {
+          "id": "account.session.login",
+          "label": "登录",
+          "behavior": "submit"
+        },
+        {
+          "id": "account.session.logout",
+          "label": "退出登录",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/more",
+      "routePath": "/more",
+      "component": "MorePage",
+      "entryPoint": true,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "description": "更多",
+      "stateCount": 2,
+      "states": [
+        "/more",
+        "/more?popup=airtrans"
+      ],
+      "actionCount": 1,
+      "actionIds": [
+        "more.piggy.tap"
+      ],
+      "actions": [
+        {
+          "id": "more.piggy.tap",
+          "label": "隐藏内页广告",
+          "behavior": "other"
+        }
+      ]
+    },
+    {
+      "id": "/event/:id",
+      "routePath": "/event/:id",
+      "component": "EventDetailPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "事件详情",
+      "stateCount": 2,
+      "states": [
+        "/event/:id",
+        "/event/:id?sheet=share"
+      ],
+      "actionCount": 6,
+      "actionIds": [
+        "detail.display.cycle",
+        "detail.bigday.tap",
+        "share.saveImage.tap",
+        "share.event.archive",
+        "share.hide.tap",
+        "share.thirdparty.tap"
+      ],
+      "actions": [
+        {
+          "id": "detail.display.cycle",
+          "label": "切换天数显示格式",
+          "behavior": "modify"
+        },
+        {
+          "id": "detail.bigday.tap",
+          "label": "Big Day(暂未开放)",
+          "behavior": "other"
+        },
+        {
+          "id": "share.saveImage.tap",
+          "label": "分享-存图(暂未开放)",
+          "behavior": "other"
+        },
+        {
+          "id": "share.event.archive",
+          "label": "分享-归档",
+          "behavior": "modify"
+        },
+        {
+          "id": "share.hide.tap",
+          "label": "分享-隐藏(暂未开放)",
+          "behavior": "other"
+        },
+        {
+          "id": "share.thirdparty.tap",
+          "label": "分享-三方(暂未开放)",
+          "behavior": "other"
+        }
+      ]
+    },
+    {
+      "id": "/event/add",
+      "routePath": "/event/add",
+      "component": "EventAddPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "添加新日子",
+      "stateCount": 2,
+      "states": [
+        "/event/add?parent=:parent",
+        "/event/add?picker=date&parent=:parent"
+      ],
+      "actionCount": 11,
+      "actionIds": [
+        "add.name.input",
+        "add.calendar.toggle",
+        "add.pin.toggle",
+        "add.showHome.toggle",
+        "add.plusOne.toggle",
+        "add.endDate.toggle",
+        "add.color.tap",
+        "add.advanced.toggle",
+        "add.date.set",
+        "add.endDate.set",
+        "add.event.save"
+      ],
+      "actions": [
+        {
+          "id": "add.name.input",
+          "label": "输入事件名称",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "add.calendar.toggle",
+          "label": "公历/农历",
+          "behavior": "toggle"
+        },
+        {
+          "id": "add.pin.toggle",
+          "label": "置顶",
+          "behavior": "toggle"
+        },
+        {
+          "id": "add.showHome.toggle",
+          "label": "在首页显示",
+          "behavior": "toggle"
+        },
+        {
+          "id": "add.plusOne.toggle",
+          "label": "正数+1天",
+          "behavior": "toggle"
+        },
+        {
+          "id": "add.endDate.toggle",
+          "label": "结束时间",
+          "behavior": "toggle"
+        },
+        {
+          "id": "add.color.tap",
+          "label": "事件颜色(Pro)",
+          "behavior": "other"
+        },
+        {
+          "id": "add.advanced.toggle",
+          "label": "展开进阶设置",
+          "behavior": "toggle"
+        },
+        {
+          "id": "add.date.set",
+          "label": "选择目标日期",
+          "behavior": "modify"
+        },
+        {
+          "id": "add.endDate.set",
+          "label": "选择结束日期",
+          "behavior": "modify"
+        },
+        {
+          "id": "add.event.save",
+          "label": "保存事件",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/event/edit/:id",
+      "routePath": "/event/edit/:id",
+      "component": "EventEditPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "编辑事件",
+      "stateCount": 2,
+      "states": [
+        "/event/edit/:id",
+        "/event/edit/:id?picker=date"
+      ],
+      "actionCount": 14,
+      "actionIds": [
+        "edit.name.input",
+        "edit.calendar.toggle",
+        "edit.showHome.toggle",
+        "edit.pin.toggle",
+        "edit.advanced.toggle",
+        "edit.endDate.toggle",
+        "edit.plusOne.toggle",
+        "edit.color.tap",
+        "edit.date.set",
+        "edit.endDate.set",
+        "edit.event.save",
+        "edit.event.archive",
+        "edit.event.hide",
+        "edit.event.delete"
+      ],
+      "actions": [
+        {
+          "id": "edit.name.input",
+          "label": "输入事件名称",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "edit.calendar.toggle",
+          "label": "公历/农历",
+          "behavior": "toggle"
+        },
+        {
+          "id": "edit.showHome.toggle",
+          "label": "在首页显示",
+          "behavior": "toggle"
+        },
+        {
+          "id": "edit.pin.toggle",
+          "label": "置顶",
+          "behavior": "toggle"
+        },
+        {
+          "id": "edit.advanced.toggle",
+          "label": "展开进阶设置",
+          "behavior": "toggle"
+        },
+        {
+          "id": "edit.endDate.toggle",
+          "label": "结束时间",
+          "behavior": "toggle"
+        },
+        {
+          "id": "edit.plusOne.toggle",
+          "label": "正数+1天",
+          "behavior": "toggle"
+        },
+        {
+          "id": "edit.color.tap",
+          "label": "事件颜色(Pro)",
+          "behavior": "other"
+        },
+        {
+          "id": "edit.date.set",
+          "label": "选择目标日期",
+          "behavior": "modify"
+        },
+        {
+          "id": "edit.endDate.set",
+          "label": "选择结束日期",
+          "behavior": "modify"
+        },
+        {
+          "id": "edit.event.save",
+          "label": "保存",
+          "behavior": "submit"
+        },
+        {
+          "id": "edit.event.archive",
+          "label": "归档事件",
+          "behavior": "modify"
+        },
+        {
+          "id": "edit.event.hide",
+          "label": "隐藏事件(暂未开放)",
+          "behavior": "other"
+        },
+        {
+          "id": "edit.event.delete",
+          "label": "删除事件",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/event/notebook-select",
+      "routePath": "/event/notebook-select",
+      "component": "NotebookSelectPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "选择倒数本",
+      "stateCount": 1,
+      "states": [
+        "/event/notebook-select"
+      ],
+      "actionCount": 1,
+      "actionIds": [
+        "notebookSelect.item.pick"
+      ],
+      "actions": [
+        {
+          "id": "notebookSelect.item.pick",
+          "label": "选择本子",
+          "behavior": "modify",
+          "scope": "item",
+          "paramsSchema": {
+            "notebookId": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/event/repeat",
+      "routePath": "/event/repeat",
+      "component": "RepeatPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "重复设置",
+      "stateCount": 1,
+      "states": [
+        "/event/repeat"
+      ],
+      "actionCount": 1,
+      "actionIds": [
+        "repeat.option.pick"
+      ],
+      "actions": [
+        {
+          "id": "repeat.option.pick",
+          "label": "选择重复方式",
+          "behavior": "modify",
+          "paramsSchema": {
+            "value": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/event/reminder",
+      "routePath": "/event/reminder",
+      "component": "ReminderPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "定期提醒",
+      "stateCount": 1,
+      "states": [
+        "/event/reminder"
+      ],
+      "actionCount": 3,
+      "actionIds": [
+        "reminder.freq.pick",
+        "reminder.bigday.toggle",
+        "reminder.strong.tap"
+      ],
+      "actions": [
+        {
+          "id": "reminder.freq.pick",
+          "label": "选择提醒频率",
+          "behavior": "modify",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "reminder.bigday.toggle",
+          "label": "Big Day 提醒",
+          "behavior": "toggle"
+        },
+        {
+          "id": "reminder.strong.tap",
+          "label": "强提醒(Pro)",
+          "behavior": "other"
+        }
+      ]
+    },
+    {
+      "id": "/search",
+      "routePath": "/search",
+      "component": "SearchPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "搜索",
+      "stateCount": 1,
+      "states": [
+        "/search"
+      ],
+      "actionCount": 2,
+      "actionIds": [
+        "search.query.input",
+        "search.input.clear"
+      ],
+      "actions": [
+        {
+          "id": "search.query.input",
+          "label": "输入搜索词",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "search.input.clear",
+          "label": "清除搜索词",
+          "behavior": "other"
+        }
+      ]
+    },
+    {
+      "id": "/notebooks/manage",
+      "routePath": "/notebooks/manage",
+      "component": "NotebookManagePage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "管理本子",
+      "stateCount": 1,
+      "states": [
+        "/notebooks/manage"
+      ],
+      "actionCount": 2,
+      "actionIds": [
+        "manage.notebook.delete",
+        "manage.notebook.reorder"
+      ],
+      "actions": [
+        {
+          "id": "manage.notebook.delete",
+          "label": "删除本子",
+          "behavior": "modify",
+          "scope": "item",
+          "paramsSchema": {
+            "notebookId": "string"
+          }
+        },
+        {
+          "id": "manage.notebook.reorder",
+          "label": "拖拽排序",
+          "behavior": "modify",
+          "scope": "item",
+          "paramsSchema": {
+            "notebookId": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/notebooks/add",
+      "routePath": "/notebooks/add",
+      "component": "NotebookAddPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "添加/编辑倒数本",
+      "stateCount": 1,
+      "states": [
+        "/notebooks/add?nbid=:nbid"
+      ],
+      "actionCount": 6,
+      "actionIds": [
+        "notebookAdd.name.input",
+        "notebookAdd.icon.pick",
+        "notebookAdd.iconPro.tap",
+        "notebookAdd.cover.pick",
+        "notebookAdd.bg.tap",
+        "notebookAdd.form.save"
+      ],
+      "actions": [
+        {
+          "id": "notebookAdd.name.input",
+          "label": "输入本子名称",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "notebookAdd.icon.pick",
+          "label": "选图标",
+          "behavior": "modify",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "notebookAdd.iconPro.tap",
+          "label": "Pro图标(暂未开放)",
+          "behavior": "other"
+        },
+        {
+          "id": "notebookAdd.cover.pick",
+          "label": "选封面",
+          "behavior": "modify",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "notebookAdd.bg.tap",
+          "label": "背景图(暂未开放)",
+          "behavior": "other"
+        },
+        {
+          "id": "notebookAdd.form.save",
+          "label": "保存本子",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/settings",
+      "routePath": "/settings",
+      "component": "SettingsPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "设置",
+      "stateCount": 1,
+      "states": [
+        "/settings"
+      ],
+      "actionCount": 10,
+      "actionIds": [
+        "settings.bigFont.toggle",
+        "settings.cardAnim.toggle",
+        "settings.autoPin.toggle",
+        "settings.hideAffix.toggle",
+        "settings.sort.pick",
+        "settings.backup.tap",
+        "settings.appIcon.tap",
+        "settings.terms.tap",
+        "settings.item.tap",
+        "settings.switch.toggle"
+      ],
+      "actions": [
+        {
+          "id": "settings.bigFont.toggle",
+          "label": "更大字体",
+          "behavior": "toggle"
+        },
+        {
+          "id": "settings.cardAnim.toggle",
+          "label": "卡片动效",
+          "behavior": "toggle"
+        },
+        {
+          "id": "settings.autoPin.toggle",
+          "label": "自动置顶",
+          "behavior": "toggle"
+        },
+        {
+          "id": "settings.hideAffix.toggle",
+          "label": "隐藏前后缀",
+          "behavior": "toggle"
+        },
+        {
+          "id": "settings.sort.pick",
+          "label": "事件列表排序",
+          "behavior": "modify",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "settings.backup.tap",
+          "label": "备份相关(暂未开放)",
+          "behavior": "other"
+        },
+        {
+          "id": "settings.appIcon.tap",
+          "label": "更换主屏幕图标",
+          "behavior": "modify",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "settings.terms.tap",
+          "label": "条款(暂未开放)",
+          "behavior": "other"
+        },
+        {
+          "id": "settings.item.tap",
+          "label": "设置项(暂未开放)",
+          "behavior": "other",
+          "paramsSchema": {
+            "key": "string"
+          }
+        },
+        {
+          "id": "settings.switch.toggle",
+          "label": "设置开关",
+          "behavior": "toggle",
+          "paramsSchema": {
+            "key": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/settings/language",
+      "routePath": "/settings/language",
+      "component": "LanguagePage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "应用语言",
+      "stateCount": 1,
+      "states": [
+        "/settings/language"
+      ],
+      "actionCount": 1,
+      "actionIds": [
+        "settings.locale.pick"
+      ],
+      "actions": [
+        {
+          "id": "settings.locale.pick",
+          "label": "选择应用语言",
+          "behavior": "modify",
+          "paramsSchema": {
+            "value": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/date-calculator",
+      "routePath": "/date-calculator",
+      "component": "DateCalcPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "日期计算器",
+      "stateCount": 1,
+      "states": [
+        "/date-calculator"
+      ],
+      "actionCount": 5,
+      "actionIds": [
+        "datecalc.startDate.set",
+        "datecalc.days.input",
+        "datecalc.rangeStart.set",
+        "datecalc.rangeEnd.set",
+        "datecalc.includeStart.toggle"
+      ],
+      "actions": [
+        {
+          "id": "datecalc.startDate.set",
+          "label": "设置起始日",
+          "behavior": "modify"
+        },
+        {
+          "id": "datecalc.days.input",
+          "label": "输入天数",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "datecalc.rangeStart.set",
+          "label": "设置间隔起始",
+          "behavior": "modify"
+        },
+        {
+          "id": "datecalc.rangeEnd.set",
+          "label": "设置间隔结束",
+          "behavior": "modify"
+        },
+        {
+          "id": "datecalc.includeStart.toggle",
+          "label": "包含起始日",
+          "behavior": "toggle"
+        }
+      ]
+    },
+    {
+      "id": "/widgets",
+      "routePath": "/widgets",
+      "component": "WidgetManagePage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "小组件管理",
+      "stateCount": 4,
+      "states": [
+        "/widgets",
+        "/widgets?guide=main",
+        "/widgets?guide=multi",
+        "/widgets?guide=lock"
+      ],
+      "actionCount": 2,
+      "actionIds": [
+        "widget.preview.edit",
+        "widget.bind.pick"
+      ],
+      "actions": [
+        {
+          "id": "widget.preview.edit",
+          "label": "编辑小组件(选事件)",
+          "behavior": "modify",
+          "scope": "item",
+          "paramsSchema": {
+            "widgetId": "string"
+          }
+        },
+        {
+          "id": "widget.bind.pick",
+          "label": "绑定事件",
+          "behavior": "modify",
+          "scope": "item",
+          "paramsSchema": {
+            "eventId": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/album",
+      "routePath": "/album",
+      "component": "AlbumPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "倒数日相册",
+      "stateCount": 1,
+      "states": [
+        "/album"
+      ],
+      "actionCount": 2,
+      "actionIds": [
+        "album.tab.pick",
+        "album.addPhoto.tap"
+      ],
+      "actions": [
+        {
+          "id": "album.tab.pick",
+          "label": "切换相册Tab",
+          "behavior": "modify",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "album.addPhoto.tap",
+          "label": "添加照片(暂未开放)",
+          "behavior": "other"
+        }
+      ]
+    },
+    {
+      "id": "/pro",
+      "routePath": "/pro",
+      "component": "ProPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "高级版介绍",
+      "stateCount": 1,
+      "states": [
+        "/pro"
+      ],
+      "actionCount": 2,
+      "actionIds": [
+        "pro.carousel.shift",
+        "pro.upgrade.tap"
+      ],
+      "actions": [
+        {
+          "id": "pro.carousel.shift",
+          "label": "切换介绍",
+          "behavior": "modify"
+        },
+        {
+          "id": "pro.upgrade.tap",
+          "label": "即刻升级(暂未开放)",
+          "behavior": "other"
+        }
+      ]
+    },
+    {
+      "id": "/faq",
+      "routePath": "/faq",
+      "component": "FaqPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "使用帮助/反馈",
+      "stateCount": 1,
+      "states": [
+        "/faq"
+      ],
+      "actionCount": 3,
+      "actionIds": [
+        "faq.form.input",
+        "faq.type.pick",
+        "faq.form.submit"
+      ],
+      "actions": [
+        {
+          "id": "faq.form.input",
+          "label": "填写反馈",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "faq.type.pick",
+          "label": "反馈类型",
+          "behavior": "modify",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "faq.form.submit",
+          "label": "提交反馈",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/archive",
+      "routePath": "/archive",
+      "component": "ArchivePage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "归档·隐藏列表",
+      "stateCount": 1,
+      "states": [
+        "/archive"
+      ],
+      "actionCount": 1,
+      "actionIds": [
+        "archive.item.restore"
+      ],
+      "actions": [
+        {
+          "id": "archive.item.restore",
+          "label": "恢复事件",
+          "behavior": "modify",
+          "scope": "item",
+          "paramsSchema": {
+            "eventId": "string"
+          }
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "*",
+      "target": "/",
+      "transitions": [
+        "tabbar.home-open"
+      ],
+      "type": "navigation",
+      "label": "tabbar.home-open",
+      "id": "tabbar.home-open"
+    },
+    {
+      "source": "*",
+      "target": "/notebooks",
+      "transitions": [
+        "tabbar.notebook-open"
+      ],
+      "type": "navigation",
+      "label": "tabbar.notebook-open",
+      "id": "tabbar.notebook-open"
+    },
+    {
+      "source": "*",
+      "target": "/discover",
+      "transitions": [
+        "tabbar.discover-open"
+      ],
+      "type": "navigation",
+      "label": "tabbar.discover-open",
+      "id": "tabbar.discover-open"
+    },
+    {
+      "source": "*",
+      "target": "/account",
+      "transitions": [
+        "tabbar.account-open"
+      ],
+      "type": "navigation",
+      "label": "tabbar.account-open",
+      "id": "tabbar.account-open"
+    },
+    {
+      "source": "*",
+      "target": "/more",
+      "transitions": [
+        "tabbar.more-open"
+      ],
+      "type": "navigation",
+      "label": "tabbar.more-open",
+      "id": "tabbar.more-open"
+    },
+    {
+      "source": "/",
+      "target": "/event/add",
+      "transitions": [
+        "home.add-open"
+      ],
+      "type": "navigation",
+      "label": "home.add-open",
+      "id": "home.add-open"
+    },
+    {
+      "source": "/",
+      "target": "/search",
+      "transitions": [
+        "home.search-open"
+      ],
+      "type": "navigation",
+      "label": "home.search-open",
+      "id": "home.search-open"
+    },
+    {
+      "source": "/",
+      "target": "/event/:id",
+      "transitions": [
+        "home.item-open",
+        "rowMenu.share-open"
+      ],
+      "type": "navigation",
+      "label": "home.item-open, rowMenu.share-open",
+      "id": "home.item-open"
+    },
+    {
+      "source": "/event/:id",
+      "target": "/event/edit/:id",
+      "transitions": [
+        "detail.edit-open"
+      ],
+      "type": "navigation",
+      "label": "detail.edit-open",
+      "id": "detail.edit-open"
+    },
+    {
+      "source": "/event/:id",
+      "target": "/album",
+      "transitions": [
+        "detail.album-open",
+        "notebook.album-open"
+      ],
+      "type": "navigation",
+      "label": "detail.album-open, notebook.album-open",
+      "id": "detail.album-open"
+    },
+    {
+      "source": "/event/:id",
+      "target": "/event/add",
+      "transitions": [
+        "detail.subadd-open"
+      ],
+      "type": "navigation",
+      "label": "detail.subadd-open",
+      "id": "detail.subadd-open"
+    },
+    {
+      "source": "/event/add",
+      "target": "/event/notebook-select",
+      "transitions": [
+        "event.notebook-open"
+      ],
+      "type": "navigation",
+      "label": "event.notebook-open",
+      "id": "event.notebook-open"
+    },
+    {
+      "source": "/event/edit/:id",
+      "target": "/event/notebook-select",
+      "transitions": [
+        "event.notebook-open"
+      ],
+      "type": "navigation",
+      "label": "event.notebook-open",
+      "id": "event.notebook-open"
+    },
+    {
+      "source": "/event/add",
+      "target": "/event/repeat",
+      "transitions": [
+        "event.repeat-open"
+      ],
+      "type": "navigation",
+      "label": "event.repeat-open",
+      "id": "event.repeat-open"
+    },
+    {
+      "source": "/event/edit/:id",
+      "target": "/event/repeat",
+      "transitions": [
+        "event.repeat-open"
+      ],
+      "type": "navigation",
+      "label": "event.repeat-open",
+      "id": "event.repeat-open"
+    },
+    {
+      "source": "/event/add",
+      "target": "/event/reminder",
+      "transitions": [
+        "event.reminder-open"
+      ],
+      "type": "navigation",
+      "label": "event.reminder-open",
+      "id": "event.reminder-open"
+    },
+    {
+      "source": "/event/edit/:id",
+      "target": "/event/reminder",
+      "transitions": [
+        "event.reminder-open"
+      ],
+      "type": "navigation",
+      "label": "event.reminder-open",
+      "id": "event.reminder-open"
+    },
+    {
+      "source": "/event/notebook-select",
+      "target": "/notebooks/add",
+      "transitions": [
+        "notebookSelect.add-open"
+      ],
+      "type": "navigation",
+      "label": "notebookSelect.add-open",
+      "id": "notebookSelect.add-open"
+    },
+    {
+      "source": "/search",
+      "target": "/event/:id",
+      "transitions": [
+        "search.item-open"
+      ],
+      "type": "navigation",
+      "label": "search.item-open",
+      "id": "search.item-open"
+    },
+    {
+      "source": "/search",
+      "target": "/event/add",
+      "transitions": [
+        "search.add-open"
+      ],
+      "type": "navigation",
+      "label": "search.add-open",
+      "id": "search.add-open"
+    },
+    {
+      "source": "/notebooks",
+      "target": "/event/:id",
+      "transitions": [
+        "notebook.item-open"
+      ],
+      "type": "navigation",
+      "label": "notebook.item-open",
+      "id": "notebook.item-open"
+    },
+    {
+      "source": "/notebooks",
+      "target": "/",
+      "transitions": [
+        "notebook.allEvents-open",
+        "notebook.filter-open"
+      ],
+      "type": "navigation",
+      "label": "notebook.allEvents-open, notebook.filter-open",
+      "id": "notebook.allEvents-open"
+    },
+    {
+      "source": "/notebooks",
+      "target": "/notebooks/add",
+      "transitions": [
+        "notebook.add-open"
+      ],
+      "type": "navigation",
+      "label": "notebook.add-open",
+      "id": "notebook.add-open"
+    },
+    {
+      "source": "/notebooks",
+      "target": "/notebooks/manage",
+      "transitions": [
+        "notebook.manage-open"
+      ],
+      "type": "navigation",
+      "label": "notebook.manage-open",
+      "id": "notebook.manage-open"
+    },
+    {
+      "source": "/",
+      "target": "/notebooks/manage",
+      "transitions": [
+        "notebook.manage-open"
+      ],
+      "type": "navigation",
+      "label": "notebook.manage-open",
+      "id": "notebook.manage-open"
+    },
+    {
+      "source": "/notebooks",
+      "target": "/date-calculator",
+      "transitions": [
+        "notebook.datecalc-open"
+      ],
+      "type": "navigation",
+      "label": "notebook.datecalc-open",
+      "id": "notebook.datecalc-open"
+    },
+    {
+      "source": "/notebooks",
+      "target": "/album",
+      "transitions": [
+        "notebook.album-open"
+      ],
+      "type": "navigation",
+      "label": "notebook.album-open",
+      "id": "notebook.album-open"
+    },
+    {
+      "source": "/settings",
+      "target": "/album",
+      "transitions": [
+        "notebook.album-open"
+      ],
+      "type": "navigation",
+      "label": "notebook.album-open",
+      "id": "notebook.album-open"
+    },
+    {
+      "source": "/notebooks",
+      "target": "/faq",
+      "transitions": [
+        "notebook.faq-open"
+      ],
+      "type": "navigation",
+      "label": "notebook.faq-open",
+      "id": "notebook.faq-open"
+    },
+    {
+      "source": "/more",
+      "target": "/faq",
+      "transitions": [
+        "notebook.faq-open",
+        "more.feedback-open"
+      ],
+      "type": "navigation",
+      "label": "notebook.faq-open, more.feedback-open",
+      "id": "notebook.faq-open"
+    },
+    {
+      "source": "/settings",
+      "target": "/faq",
+      "transitions": [
+        "notebook.faq-open"
+      ],
+      "type": "navigation",
+      "label": "notebook.faq-open",
+      "id": "notebook.faq-open"
+    },
+    {
+      "source": "/notebooks",
+      "target": "/pro",
+      "transitions": [
+        "notebook.pro-open"
+      ],
+      "type": "navigation",
+      "label": "notebook.pro-open",
+      "id": "notebook.pro-open"
+    },
+    {
+      "source": "/more",
+      "target": "/pro",
+      "transitions": [
+        "notebook.pro-open"
+      ],
+      "type": "navigation",
+      "label": "notebook.pro-open",
+      "id": "notebook.pro-open"
+    },
+    {
+      "source": "/account",
+      "target": "/pro",
+      "transitions": [
+        "notebook.pro-open"
+      ],
+      "type": "navigation",
+      "label": "notebook.pro-open",
+      "id": "notebook.pro-open"
+    },
+    {
+      "source": "/settings",
+      "target": "/pro",
+      "transitions": [
+        "notebook.pro-open"
+      ],
+      "type": "navigation",
+      "label": "notebook.pro-open",
+      "id": "notebook.pro-open"
+    },
+    {
+      "source": "/notebooks",
+      "target": "/archive",
+      "transitions": [
+        "notebook.archive-open"
+      ],
+      "type": "navigation",
+      "label": "notebook.archive-open",
+      "id": "notebook.archive-open"
+    },
+    {
+      "source": "/settings",
+      "target": "/widgets",
+      "transitions": [
+        "notebook.widgets-open"
+      ],
+      "type": "navigation",
+      "label": "notebook.widgets-open",
+      "id": "notebook.widgets-open"
+    },
+    {
+      "source": "/notebooks/manage",
+      "target": "/notebooks/add",
+      "transitions": [
+        "manage.add-open",
+        "manage.notebook-edit"
+      ],
+      "type": "navigation",
+      "label": "manage.add-open, manage.notebook-edit",
+      "id": "manage.add-open"
+    },
+    {
+      "source": "/more",
+      "target": "/date-calculator",
+      "transitions": [
+        "more.datecalc-open"
+      ],
+      "type": "navigation",
+      "label": "more.datecalc-open",
+      "id": "more.datecalc-open"
+    },
+    {
+      "source": "/more",
+      "target": "/settings",
+      "transitions": [
+        "more.settings-open"
+      ],
+      "type": "navigation",
+      "label": "more.settings-open",
+      "id": "more.settings-open"
+    },
+    {
+      "source": "/settings",
+      "target": "/account",
+      "transitions": [
+        "settings.login-open"
+      ],
+      "type": "navigation",
+      "label": "settings.login-open",
+      "id": "settings.login-open"
+    },
+    {
+      "source": "/settings",
+      "target": "/settings/language",
+      "transitions": [
+        "settings.language-open"
+      ],
+      "type": "navigation",
+      "label": "settings.language-open",
+      "id": "settings.language-open"
+    },
+    {
+      "source": "/archive",
+      "target": "/event/:id",
+      "transitions": [
+        "archive.item-open"
+      ],
+      "type": "navigation",
+      "label": "archive.item-open",
+      "id": "archive.item-open"
+    },
+    {
+      "source": "/",
+      "target": "/event/edit/:id",
+      "transitions": [
+        "rowMenu.edit-open"
+      ],
+      "type": "navigation",
+      "label": "rowMenu.edit-open",
+      "id": "rowMenu.edit-open"
+    }
+  ]
+}

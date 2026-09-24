@@ -1,0 +1,946 @@
+{
+  "user": {
+    "name": "播客听友",
+    "phone": "已隐藏",
+    "avatarColor": "#8E4EC6"
+  },
+  "shows": {
+    "s_42": {
+      "id": "s_42",
+      "title": "42章经",
+      "author": "KaiQu",
+      "artworkColor": "#F01E28",
+      "artworkText": "42章经",
+      "desc": "42章经 —— 由 KaiQu 制作的播客节目。",
+      "rating": 4.5,
+      "ratingCount": 68,
+      "genreId": "tech",
+      "cadence": "两周一更",
+      "episodeIds": [
+        "e_42_albert",
+        "e_42_vanity",
+        "e_42_bubble",
+        "e_42_agent",
+        "e_42_openclaw"
+      ],
+      "channelId": null,
+      "premium": false,
+      "website": "小宇宙 App"
+    },
+    "s_latetalk": {
+      "id": "s_latetalk",
+      "title": "晚点聊 LateTalk",
+      "author": "晚点团队",
+      "artworkColor": "#B02418",
+      "artworkText": "晚点聊 LateTalk",
+      "desc": "晚点聊 LateTalk —— 由 晚点团队 制作的播客节目。",
+      "rating": 4.7,
+      "ratingCount": 152,
+      "genreId": "tech",
+      "cadence": "一周一更",
+      "episodeIds": [
+        "e_latetalk_minimax"
+      ],
+      "channelId": null,
+      "premium": false,
+      "website": null
+    },
+    "s_crossing": {
+      "id": "s_crossing",
+      "title": "十字路口 Crossing",
+      "author": "Koji",
+      "artworkColor": "#10261F",
+      "artworkText": "十字路口 Crossing",
+      "desc": "十字路口 Crossing —— 由 Koji 制作的播客节目。",
+      "rating": 4.6,
+      "ratingCount": 240,
+      "genreId": "tech",
+      "cadence": "一周一更",
+      "episodeIds": [
+        "e_crossing_minimax"
+      ],
+      "channelId": null,
+      "premium": false,
+      "website": null
+    },
+    "s_gv101": {
+      "id": "s_gv101",
+      "title": "硅谷101",
+      "author": "硅谷101",
+      "artworkColor": "#E1571F",
+      "artworkText": "硅谷101",
+      "desc": "硅谷101 —— 由 硅谷101 制作的播客节目。",
+      "rating": 4.8,
+      "ratingCount": 530,
+      "genreId": "tech",
+      "cadence": "两周一更",
+      "episodeIds": [
+        "e_gv101_world"
+      ],
+      "channelId": null,
+      "premium": false,
+      "website": null
+    },
+    "s_gv101cn": {
+      "id": "s_gv101cn",
+      "title": "硅谷101｜中国版",
+      "author": "硅谷101",
+      "artworkColor": "#D94A2A",
+      "artworkText": "硅谷101｜中国版",
+      "desc": "硅谷101｜中国版 —— 由 硅谷101 制作的播客节目。",
+      "rating": 4.5,
+      "ratingCount": 88,
+      "genreId": "tech",
+      "cadence": "一周一更",
+      "episodeIds": [],
+      "channelId": null,
+      "premium": false,
+      "website": null
+    },
+    "s_espresso": {
+      "id": "s_espresso",
+      "title": "声动早咖啡",
+      "author": "声动活泼",
+      "artworkColor": "#C99A2E",
+      "artworkText": "声动早咖啡",
+      "desc": "声动早咖啡 —— 由 声动活泼 制作的播客节目。",
+      "rating": 4.6,
+      "ratingCount": 410,
+      "genreId": "business",
+      "cadence": "每日更新",
+      "episodeIds": [
+        "e_espresso_today"
+      ],
+      "channelId": "ch_shengdong",
+      "premium": false,
+      "website": null
+    },
+    "s_aotu": {
+      "id": "s_aotu",
+      "title": "凹凸电波",
+      "author": "凹凸电波",
+      "artworkColor": "#E02A2A",
+      "artworkText": "凹凸电波",
+      "desc": "凹凸电波 —— 由 凹凸电波 制作的播客节目。",
+      "rating": 4.9,
+      "ratingCount": 1200,
+      "genreId": "leisure",
+      "cadence": "一周一更",
+      "episodeIds": [],
+      "channelId": null,
+      "premium": false,
+      "website": null
+    },
+    "s_rock": {
+      "id": "s_rock",
+      "title": "岩中花述",
+      "author": "GIADA",
+      "artworkColor": "#22382A",
+      "artworkText": "岩中花述",
+      "desc": "岩中花述 —— 由 GIADA 制作的播客节目。",
+      "rating": 4.7,
+      "ratingCount": 360,
+      "genreId": "society",
+      "cadence": "一周一更",
+      "episodeIds": [
+        "e_rock_latest"
+      ],
+      "channelId": null,
+      "premium": false,
+      "website": null
+    },
+    "s_selfevo": {
+      "id": "s_selfevo",
+      "title": "自我进化论",
+      "author": "颜晓静 Athena",
+      "artworkColor": "#E7DCC8",
+      "artworkText": "自我进化论",
+      "desc": "自我进化论 —— 由 颜晓静 Athena 制作的播客节目。",
+      "rating": 4.6,
+      "ratingCount": 290,
+      "genreId": "leisure",
+      "cadence": "一周一更",
+      "episodeIds": [
+        "e_selfevo_latest"
+      ],
+      "channelId": null,
+      "premium": false,
+      "website": null
+    },
+    "s_zhenbu": {
+      "id": "s_zhenbu",
+      "title": "天真不天真",
+      "author": "杨天真",
+      "artworkColor": "#B23A48",
+      "artworkText": "天真不天真",
+      "desc": "天真不天真 —— 由 杨天真 制作的播客节目。",
+      "rating": 4.4,
+      "ratingCount": 175,
+      "genreId": "business",
+      "cadence": "一周一更",
+      "episodeIds": [
+        "e_zhenbu_career"
+      ],
+      "channelId": null,
+      "premium": false,
+      "website": null
+    },
+    "s_yaoyao": {
+      "id": "s_yaoyao",
+      "title": "遥遥有期",
+      "author": "遥遥团队",
+      "artworkColor": "#E6C200",
+      "artworkText": "遥遥有期",
+      "desc": "遥遥有期 —— 由 遥遥团队 制作的播客节目。",
+      "rating": 4.5,
+      "ratingCount": 96,
+      "genreId": "society",
+      "cadence": "不定期更新",
+      "episodeIds": [
+        "e_yaoyao_y27"
+      ],
+      "channelId": null,
+      "premium": false,
+      "website": null
+    },
+    "s_dragon": {
+      "id": "s_dragon",
+      "title": "屠龙之术",
+      "author": "潜为人师",
+      "artworkColor": "#A8201A",
+      "artworkText": "屠龙之术",
+      "desc": "屠龙之术 —— 由 潜为人师 制作的播客节目。",
+      "rating": 4.3,
+      "ratingCount": 64,
+      "genreId": "society",
+      "cadence": "不定期更新",
+      "episodeIds": [
+        "e_dragon_ai"
+      ],
+      "channelId": null,
+      "premium": false,
+      "website": null
+    },
+    "s_whatsnext": {
+      "id": "s_whatsnext",
+      "title": "What's Next｜科技早知道",
+      "author": "声动活泼",
+      "artworkColor": "#D7E021",
+      "artworkText": "What's Next｜科技早知道",
+      "desc": "What's Next｜科技早知道 —— 由 声动活泼 制作的播客节目。",
+      "rating": 4.6,
+      "ratingCount": 320,
+      "genreId": "tech",
+      "cadence": "两周一更",
+      "episodeIds": [
+        "e_whatsnext_s10"
+      ],
+      "channelId": "ch_shengdong",
+      "premium": false,
+      "website": null
+    },
+    "s_minimax": {
+      "id": "s_minimax",
+      "title": "晚点对谈·AI",
+      "author": "晚点团队",
+      "artworkColor": "#2A3550",
+      "artworkText": "晚点对谈·AI",
+      "desc": "晚点对谈·AI —— 由 晚点团队 制作的播客节目。",
+      "rating": 4.5,
+      "ratingCount": 52,
+      "genreId": "tech",
+      "cadence": "不定期更新",
+      "episodeIds": [],
+      "channelId": null,
+      "premium": false,
+      "website": null
+    },
+    "s_songchi": {
+      "id": "s_songchi",
+      "title": "松弛感｜心理解码",
+      "author": "心理解码",
+      "artworkColor": "#E58FB0",
+      "artworkText": "松弛感｜心理解码",
+      "desc": "松弛感｜心理解码 —— 由 心理解码 制作的播客节目。",
+      "rating": 4.8,
+      "ratingCount": 410,
+      "genreId": "philosophy",
+      "cadence": "自我完善·系列",
+      "episodeIds": [
+        "e_songchi_01"
+      ],
+      "channelId": null,
+      "premium": true,
+      "website": null
+    },
+    "s_zhangxj": {
+      "id": "s_zhangxj",
+      "title": "张小珺商业访谈录",
+      "author": "张小珺",
+      "artworkColor": "#15110E",
+      "artworkText": "张小珺商业访谈录",
+      "desc": "张小珺商业访谈录 —— 由 张小珺 制作的播客节目。",
+      "rating": 4.7,
+      "ratingCount": 280,
+      "genreId": "business",
+      "cadence": "一周一更",
+      "episodeIds": [
+        "e_zhangxj_business"
+      ],
+      "channelId": null,
+      "premium": false,
+      "website": null
+    },
+    "s_org": {
+      "id": "s_org", "title": "组织进化论", "author": "管理实践社", "artworkColor": "#176B62", "artworkText": "组织进化论",
+      "desc": "和一线管理者讨论团队、决策与组织成长，不贩卖速成答案。", "rating": 4.6, "ratingCount": 186,
+      "genreId": "management", "cadence": "两周一更", "episodeIds": ["e_org_change"], "channelId": null, "premium": false, "website": null
+    },
+    "s_ceoletter": {
+      "id": "s_ceoletter", "title": "CEO 来信", "author": "商业人物", "artworkColor": "#2F806F", "artworkText": "CEO 来信",
+      "desc": "拆解公司经营中的真实抉择，以及领导者没有写进公开信的部分。", "rating": 4.4, "ratingCount": 92,
+      "genreId": "management", "cadence": "一周一更", "episodeIds": ["e_ceo_decision"], "channelId": null, "premium": false, "website": null
+    },
+    "s_worktalk": {
+      "id": "s_worktalk", "title": "打工谈", "author": "职场观察局", "artworkColor": "#3167B1", "artworkText": "打工谈",
+      "desc": "记录不同职业的真实一天，讨论工作、成长和边界感。", "rating": 4.7, "ratingCount": 315,
+      "genreId": "career", "cadence": "每周更新", "episodeIds": ["e_worktalk_product"], "channelId": null, "premium": false, "website": null
+    },
+    "s_freelance": {
+      "id": "s_freelance", "title": "自由职业之后", "author": "新工作研究所", "artworkColor": "#5C84C6", "artworkText": "自由职业之后",
+      "desc": "自由职业者和小团队的生存样本：收入、协作、焦虑与自由。", "rating": 4.5, "ratingCount": 141,
+      "genreId": "career", "cadence": "不定期更新", "episodeIds": ["e_freelance_year"], "channelId": null, "premium": false, "website": null
+    },
+    "s_bym": {
+      "id": "s_bym", "title": "Blow Your Mind", "author": "BYM", "artworkColor": "#6C55A3", "artworkText": "Blow Your Mind",
+      "desc": "从心理学、哲学和日常经验出发，重新理解自我与关系。", "rating": 4.8, "ratingCount": 782,
+      "genreId": "philosophy", "cadence": "不定期更新", "episodeIds": ["e_bym_choice"], "channelId": null, "premium": false, "website": null
+    },
+    "s_halflatte": {
+      "id": "s_halflatte", "title": "半拿铁｜商业沉浮录", "author": "潇磊与刘飞", "artworkColor": "#177A5E", "artworkText": "半拿铁",
+      "desc": "用故事讲清商业公司和行业的兴衰，也聊普通人能读懂的投资常识。", "rating": 4.9, "ratingCount": 1650,
+      "genreId": "invest", "cadence": "一周一更", "episodeIds": ["e_halflatte_brand"], "channelId": null, "premium": false, "website": null
+    },
+    "s_unknown": {
+      "id": "s_unknown", "title": "无人知晓", "author": "孟岩", "artworkColor": "#315D4A", "artworkText": "无人知晓",
+      "desc": "关于投资、商业与人生选择的长期主义谈话。", "rating": 4.8, "ratingCount": 640,
+      "genreId": "invest", "cadence": "月更", "episodeIds": ["e_unknown_cycle"], "channelId": null, "premium": false, "website": null
+    },
+    "s_blackcat": {
+      "id": "s_blackcat", "title": "黑猫侦探社", "author": "咪仔", "artworkColor": "#49382E", "artworkText": "黑猫侦探社",
+      "desc": "从案件档案与社会现场出发，讲述悬疑背后真实的人。", "rating": 4.6, "ratingCount": 528,
+      "genreId": "mystery", "cadence": "每周更新", "episodeIds": ["e_blackcat_room"], "channelId": null, "premium": false, "website": null
+    },
+    "s_sleep": {
+      "id": "s_sleep", "title": "一夜好眠", "author": "睡眠电台", "artworkColor": "#354363", "artworkText": "一夜好眠",
+      "desc": "舒缓叙事、自然声音和睡前冥想，陪你慢慢结束一天。", "rating": 4.7, "ratingCount": 903,
+      "genreId": "sleep", "cadence": "每日更新", "episodeIds": ["e_sleep_rain"], "channelId": null, "premium": true, "website": null
+    },
+    "s_leftright": {
+      "id": "s_leftright", "title": "忽左忽右", "author": "JustPod", "artworkColor": "#8A5530", "artworkText": "忽左忽右",
+      "desc": "从历史、文化与全球议题出发，在左右之间寻找更宽阔的理解。", "rating": 4.8, "ratingCount": 1340,
+      "genreId": "history", "cadence": "每周更新", "episodeIds": ["e_leftright_archive"], "channelId": null, "premium": false, "website": null
+    },
+    "s_wuliao": {
+      "id": "s_wuliao", "title": "无聊斋", "author": "教主与朋友们", "artworkColor": "#D69A18", "artworkText": "无聊斋",
+      "desc": "单口喜剧演员们的闲聊现场，严肃生活里的不严肃出口。", "rating": 4.7, "ratingCount": 2100,
+      "genreId": "comedy", "cadence": "一周一更", "episodeIds": ["e_wuliao_summer"], "channelId": null, "premium": false, "website": null
+    },
+    "s_feihua": {
+      "id": "s_feihua", "title": "肥话连篇", "author": "肥杰", "artworkColor": "#E1B23C", "artworkText": "肥话连篇",
+      "desc": "聊电影、美食、旅行和生活中那些值得笑一笑的小事。", "rating": 4.8, "ratingCount": 1180,
+      "genreId": "comedy", "cadence": "每周更新", "episodeIds": ["e_feihua_trip"], "channelId": null, "premium": false, "website": null
+    }
+  },
+  "episodes": {
+    "e_42_albert": {
+      "id": "e_42_albert",
+      "showId": "s_42",
+      "title": "当软件容易被创作,新时代的产品长什么样? | 对谈 Albert",
+      "date": 1778893200000,
+      "durationSec": 2460,
+      "progressSec": 41,
+      "desc": "我们又又又请来了 Albert(笑)。前不久他刚刚来过,总结了一下他 AI 时代做产品的思考……",
+      "played": false
+    },
+    "e_42_vanity": {
+      "id": "e_42_vanity",
+      "showId": "s_42",
+      "title": "一个 AI 创始人的虚荣心、装,和愚昧之巅 | 对谈 invoko.ai 创始人梦琪",
+      "date": 1779498000000,
+      "durationSec": 4080,
+      "progressSec": 600,
+      "desc": "更好的模型可以导向更好的应用,但更好的应用和更多用户并不会导向更好的模型。",
+      "played": false
+    },
+    "e_42_bubble": {
+      "id": "e_42_bubble",
+      "showId": "s_42",
+      "title": "泡沫的四个必要不充分条件 | 对谈经济学者朱宁教授",
+      "date": 1781312400000,
+      "durationSec": 4260,
+      "progressSec": 0,
+      "desc": "49 号珍藏:朱宁,上海交通大学上海高级金融学院教授,著有《刚性泡沫》《非线性思考》。",
+      "played": false,
+      "chapters": [
+        {
+          "timeSec": 87,
+          "title": "其实每次泡沫都可以追溯到人的三个弱点"
+        },
+        {
+          "timeSec": 254,
+          "title": "泡沫能预测吗?怎样事先规避风险?"
+        },
+        {
+          "timeSec": 462,
+          "title": "「AI 股票还能不能买」就是个错误的问题"
+        },
+        {
+          "timeSec": 626,
+          "title": "投资到底多大程度靠 β、多大程度靠 α?"
+        },
+        {
+          "timeSec": 864,
+          "title": "时运固然重要,但为什么波谷入场的人反而可能走得很远?"
+        },
+        {
+          "timeSec": 1204,
+          "title": "大家总会想「这次不一样」,但怎么判断?"
+        },
+        {
+          "timeSec": 1339,
+          "title": "道理都懂,但如果就是想多赚钱,能不能冒更大的风险?"
+        },
+        {
+          "timeSec": 1457,
+          "title": "两种赚钱模型:财务投资 vs 人力资本投资"
+        },
+        {
+          "timeSec": 1512,
+          "title": "到底有没有办法提前识别泡沫?分享一个指标"
+        },
+        {
+          "timeSec": 1738,
+          "title": "泡沫可能要见顶的信号"
+        }
+      ]
+    },
+    "e_42_agent": {
+      "id": "e_42_agent",
+      "showId": "s_42",
+      "title": "用 Agent 动力学,和 40 个 Agents 一起为「人 + AI」做产品 | 对谈 Slow 创始人",
+      "date": 1776906000000,
+      "durationSec": 3960,
+      "progressSec": 0,
+      "desc": "当一个人可以指挥四十个 agent,产品的形态会变成什么样?",
+      "played": false
+    },
+    "e_42_openclaw": {
+      "id": "e_42_openclaw",
+      "showId": "s_42",
+      "title": "OpenClaw 之后,我只想未来 3-6 个月的事情 | 对谈 Sheet0 创始人",
+      "date": 1773450000000,
+      "durationSec": 3420,
+      "progressSec": 0,
+      "desc": "在变化最快的时候,把视野收到三到六个月,反而看得更清楚。",
+      "played": false
+    },
+    "e_latetalk_minimax": {
+      "id": "e_latetalk_minimax",
+      "showId": "s_latetalk",
+      "title": "MiniMax 创始人闫俊杰:做大模型,千万别套用移动互联网的逻辑",
+      "date": 1737334800000,
+      "durationSec": 3600,
+      "progressSec": 0,
+      "desc": "更好的模型可以导向更好的应用,但更好的应用和更多用户并不会导向更好的模型。头图是 Dota 2019 国际邀请赛决赛(TI9)。",
+      "played": false
+    },
+    "e_crossing_minimax": {
+      "id": "e_crossing_minimax",
+      "showId": "s_crossing",
+      "title": "对话 MiniMax 闫俊杰:M3、10X 计划、10T 模型、和智能的终局",
+      "date": 1782090000000,
+      "durationSec": 2280,
+      "progressSec": 0,
+      "desc": "从 M3 到 10X 计划,聊聊一家大模型公司对智能终局的判断。",
+      "played": false
+    },
+    "e_gv101_world": {
+      "id": "e_gv101_world",
+      "showId": "s_gv101",
+      "title": "真正改变世界的技术,为什么一开始都不被看好? | S10E16",
+      "date": 1781658000000,
+      "durationSec": 3480,
+      "progressSec": 0,
+      "desc": "回看历史上那些被低估的技术拐点。",
+      "played": false
+    },
+    "e_dragon_ai": {
+      "id": "e_dragon_ai",
+      "showId": "s_dragon",
+      "title": "说好的艺术家呢? --- AI 时代,内容工业的三次死亡与创作者的……",
+      "date": 1782262800000,
+      "durationSec": 2520,
+      "progressSec": 0,
+      "desc": "AI 时代,内容工业经历三次死亡,创作者该往哪走?",
+      "played": false
+    },
+    "e_yaoyao_y27": {
+      "id": "e_yaoyao_y27",
+      "showId": "s_yaoyao",
+      "title": "Y27 失业 6 次靠小红书电商连续年入百万,我是怎么做到的?记一……",
+      "date": 1778461200000,
+      "durationSec": 3420,
+      "progressSec": 0,
+      "desc": "一个普通男孩的逆袭样本。",
+      "played": false
+    },
+    "e_espresso_today": {
+      "id": "e_espresso_today",
+      "showId": "s_espresso",
+      "title": "今天我们聊聊全球市场的早间要闻",
+      "date": 1782349200000,
+      "durationSec": 480,
+      "progressSec": 0,
+      "desc": "8 分钟,听完今天的早咖啡。",
+      "played": false
+    },
+    "e_whatsnext_s10": {
+      "id": "e_whatsnext_s10",
+      "showId": "s_whatsnext",
+      "title": "真正改变世界的技术,为什么一开始都不被看好? | S10E16",
+      "date": 1781658000000,
+      "durationSec": 3480,
+      "progressSec": 0,
+      "desc": "和硅谷101 联动的一期。",
+      "played": false
+    },
+    "e_zhenbu_career": {
+      "id": "e_zhenbu_career",
+      "showId": "s_zhenbu",
+      "title": "职场里的「松弛感」是真本事还是伪命题?",
+      "date": 1781744400000,
+      "durationSec": 3120,
+      "progressSec": 0,
+      "desc": "聊聊职场状态与自我接纳。",
+      "played": false
+    },
+    "e_songchi_01": {
+      "id": "e_songchi_01",
+      "showId": "s_songchi",
+      "title": "第1集《松弛感》01 前言:我们为什么这么累",
+      "date": 1780275600000,
+      "durationSec": 1080,
+      "progressSec": 0,
+      "desc": "自我完善系列的开篇。",
+      "played": false
+    },
+    "e_zhangxj_business": {
+      "id": "e_zhangxj_business",
+      "showId": "s_zhangxj",
+      "title": "当软件容易被创作,新时代的产品长什么样",
+      "date": 1778893200000,
+      "durationSec": 4500,
+      "progressSec": 0,
+      "desc": "一期关于产品与商业的长谈。",
+      "played": false
+    },
+    "e_rock_latest": {
+      "id": "e_rock_latest",
+      "showId": "s_rock",
+      "title": "在不确定里,如何安放自己",
+      "date": 1781830800000,
+      "durationSec": 3840,
+      "progressSec": 0,
+      "desc": "岩中花述的一期对谈。",
+      "played": false
+    },
+    "e_selfevo_latest": {
+      "id": "e_selfevo_latest",
+      "showId": "s_selfevo",
+      "title": "自我进化:从习惯到系统",
+      "date": 1781917200000,
+      "durationSec": 3300,
+      "progressSec": 0,
+      "desc": "如何把改变固化成系统。",
+      "played": false
+    },
+    "e_org_change": {
+      "id": "e_org_change", "showId": "s_org", "title": "组织变大之后，怎样让信息继续流动？", "date": 1784941200000,
+      "durationSec": 3180, "progressSec": 0, "desc": "三位管理者复盘团队从 20 人扩张到 200 人时踩过的坑。", "played": false
+    },
+    "e_ceo_decision": {
+      "id": "e_ceo_decision", "showId": "s_ceoletter", "title": "艰难决定不是选择题：如何停止一个明星项目", "date": 1784854800000,
+      "durationSec": 2760, "progressSec": 0, "desc": "从真实经营案例理解沉没成本与组织沟通。", "played": false
+    },
+    "e_worktalk_product": {
+      "id": "e_worktalk_product", "showId": "s_worktalk", "title": "产品经理的一天，真的都在开会吗？", "date": 1784768400000,
+      "durationSec": 3420, "progressSec": 0, "desc": "跟随一位产品经理经历需求评审、用户访谈和上线夜。", "played": false
+    },
+    "e_freelance_year": {
+      "id": "e_freelance_year", "showId": "s_freelance", "title": "自由职业第一年：收入曲线和情绪曲线", "date": 1784595600000,
+      "durationSec": 2940, "progressSec": 0, "desc": "四位自由职业者公开第一年的账本和工作节奏。", "played": false
+    },
+    "e_bym_choice": {
+      "id": "e_bym_choice", "showId": "s_bym", "title": "选择太多，为什么反而更难成为自己？", "date": 1784509200000,
+      "durationSec": 3960, "progressSec": 0, "desc": "从存在主义和选择心理学谈现代人的自由焦虑。", "played": false
+    },
+    "e_halflatte_brand": {
+      "id": "e_halflatte_brand", "showId": "s_halflatte", "title": "一家百年品牌如何穿越三次消费浪潮", "date": 1785027600000,
+      "durationSec": 4560, "progressSec": 0, "desc": "从一张旧广告开始，讲清品牌、渠道和消费者之间的变化。", "played": false
+    },
+    "e_unknown_cycle": {
+      "id": "e_unknown_cycle", "showId": "s_unknown", "title": "在周期里，普通投资者最容易做错什么？", "date": 1784246400000,
+      "durationSec": 3720, "progressSec": 0, "desc": "不预测点位，讨论面对波动时可执行的原则。", "played": false
+    },
+    "e_blackcat_room": {
+      "id": "e_blackcat_room", "showId": "s_blackcat", "title": "没有窗户的房间：一份被忽略的证词", "date": 1784937600000,
+      "durationSec": 3480, "progressSec": 0, "desc": "从卷宗细节还原案件，也讨论叙事如何影响判断。", "played": false
+    },
+    "e_sleep_rain": {
+      "id": "e_sleep_rain", "showId": "s_sleep", "title": "夏夜微雨：30 分钟身体扫描", "date": 1785024000000,
+      "durationSec": 1800, "progressSec": 0, "desc": "柔和雨声与循序渐进的身体放松练习。", "played": false
+    },
+    "e_leftright_archive": {
+      "id": "e_leftright_archive", "showId": "s_leftright", "title": "一册相簿里的民国旅行史", "date": 1784851200000,
+      "durationSec": 5160, "progressSec": 0, "desc": "从私人照片和旅行记录重新理解一段公共历史。", "played": false
+    },
+    "e_wuliao_summer": {
+      "id": "e_wuliao_summer", "showId": "s_wuliao", "title": "夏天最狼狈的十个瞬间", "date": 1784934000000,
+      "durationSec": 4260, "progressSec": 0, "desc": "从空调坏掉聊到旅行翻车，一期没有知识点的快乐节目。", "played": false
+    },
+    "e_feihua_trip": {
+      "id": "e_feihua_trip", "showId": "s_feihua", "title": "旅行为什么总在回家后才变得好笑", "date": 1784678400000,
+      "durationSec": 3840, "progressSec": 0, "desc": "那些当时想报警、后来能讲三遍的旅行故事。", "played": false
+    }
+  },
+  "channels": {
+    "ch_shengdong": {
+      "id": "ch_shengdong",
+      "name": "声动活泼",
+      "artworkColor": "#C99A2E",
+      "showIds": [
+        "s_espresso",
+        "s_whatsnext"
+      ]
+    },
+    "ch_ted": {
+      "id": "ch_ted",
+      "name": "TED Audio Collective",
+      "artworkColor": "#E62B1E",
+      "showIds": [
+        "s_crossing"
+      ]
+    }
+  },
+  "genres": {
+    "tech": {
+      "id": "tech",
+      "name": "科技",
+      "color": "#2F6BFF",
+      "icon": "IcGenreTech",
+      "showIds": [
+        "s_42",
+        "s_latetalk",
+        "s_crossing",
+        "s_gv101",
+        "s_gv101cn",
+        "s_whatsnext",
+        "s_minimax"
+      ]
+    },
+    "business": {
+      "id": "business",
+      "name": "商务",
+      "color": "#FF8A00",
+      "icon": "IcGenreBusiness",
+      "showIds": [
+        "s_espresso",
+        "s_zhenbu",
+        "s_zhangxj"
+      ]
+    },
+    "management": {
+      "id": "management",
+      "name": "管理",
+      "color": "#16A085",
+      "icon": "IcGenreManagement",
+      "showIds": ["s_org", "s_ceoletter"]
+    },
+    "career": {
+      "id": "career",
+      "name": "职业",
+      "color": "#3B7DD8",
+      "icon": "IcGenreCareer",
+      "showIds": ["s_worktalk", "s_freelance"]
+    },
+    "philosophy": {
+      "id": "philosophy",
+      "name": "哲学",
+      "color": "#8E6BB0",
+      "icon": "IcGenrePhilosophy",
+      "showIds": [
+        "s_songchi",
+        "s_bym"
+      ]
+    },
+    "invest": {
+      "id": "invest",
+      "name": "投资",
+      "color": "#1FA37A",
+      "icon": "IcGenreInvest",
+      "showIds": ["s_halflatte", "s_unknown"]
+    },
+    "mystery": {
+      "id": "mystery",
+      "name": "推理悬疑",
+      "color": "#5B4636",
+      "icon": "IcGenreMystery",
+      "showIds": ["s_blackcat"]
+    },
+    "sleep": {
+      "id": "sleep",
+      "name": "一夜好眠",
+      "color": "#3A4A6B",
+      "icon": "IcGenreSleep",
+      "showIds": ["s_sleep"]
+    },
+    "history": {
+      "id": "history",
+      "name": "历史",
+      "color": "#9B5B2E",
+      "icon": "IcGenreHistory",
+      "showIds": ["s_leftright"]
+    },
+    "society": {
+      "id": "society",
+      "name": "社会与文化",
+      "color": "#C0392B",
+      "icon": "IcGenreSociety",
+      "showIds": [
+        "s_rock",
+        "s_yaoyao",
+        "s_dragon"
+      ]
+    },
+    "comedy": {
+      "id": "comedy",
+      "name": "喜剧",
+      "color": "#E0A91B",
+      "icon": "IcGenreComedy",
+      "showIds": ["s_wuliao", "s_feihua"]
+    },
+    "leisure": {
+      "id": "leisure",
+      "name": "休闲",
+      "color": "#E37FA0",
+      "icon": "IcGenreLeisure",
+      "showIds": [
+        "s_aotu",
+        "s_selfevo"
+      ]
+    }
+  },
+  "reviews": [
+    {
+      "id": "r1",
+      "showId": "s_42",
+      "title": "最好的科技对谈",
+      "stars": 5,
+      "author": "Leo_pm",
+      "date": 1781053200000,
+      "body": "每期都有干货,主播提问犀利,嘉宾质量高。听完这个播客也就值了。"
+    },
+    {
+      "id": "r2",
+      "showId": "s_42",
+      "title": "通勤必听",
+      "stars": 5,
+      "author": "小满",
+      "date": 1780621200000,
+      "body": "节奏舒服,信息密度大,墙裂推荐。"
+    },
+    {
+      "id": "r3",
+      "showId": "s_42",
+      "title": "有点长但值得",
+      "stars": 4,
+      "author": "RanRan",
+      "date": 1779930000000,
+      "body": "内容很好,就是单集偏长,适合分段听。"
+    },
+    {
+      "id": "r4",
+      "showId": "s_42",
+      "title": "AI 从业者视角很受用",
+      "stars": 5,
+      "author": "deeptech",
+      "date": 1779238800000,
+      "body": "对一线创业的观察很真实。"
+    },
+    {
+      "id": "r_latetalk", "showId": "s_latetalk", "title": "问题问到了关键处", "stars": 5, "author": "Mori",
+      "date": 1784160000000, "body": "嘉宾不是来做宣传的，很多追问都能听到真实判断。"
+    },
+    {
+      "id": "r_crossing", "showId": "s_crossing", "title": "适合慢慢听", "stars": 5, "author": "北纬三十度",
+      "date": 1784073600000, "body": "长访谈但不拖沓，主持人会把复杂问题拆成普通人能理解的语言。"
+    },
+    {
+      "id": "r_gv101", "showId": "s_gv101", "title": "科技节目里的常青树", "stars": 5, "author": "芯片猫",
+      "date": 1783900800000, "body": "选题国际化，技术细节和商业背景之间的平衡做得很好。"
+    },
+    {
+      "id": "r_espresso", "showId": "s_espresso", "title": "早餐时刚好听完", "stars": 5, "author": "早起困难户",
+      "date": 1785020400000, "body": "十几分钟把当天值得关注的商业新闻讲清楚，信息密度稳定。"
+    },
+    {
+      "id": "r_aotu", "showId": "s_aotu", "title": "快乐补给站", "stars": 5, "author": "小番薯",
+      "date": 1783728000000, "body": "几位主播的默契太好了，通勤路上经常笑出声。"
+    },
+    {
+      "id": "r_rock", "showId": "s_rock", "title": "谈话有温度", "stars": 5, "author": "纸上旅行",
+      "date": 1783641600000, "body": "不是快速消费名人故事，而是愿意留时间给嘉宾完整表达。"
+    },
+    {
+      "id": "r_selfevo", "showId": "s_selfevo", "title": "不催促的成长", "stars": 4, "author": "Aster",
+      "date": 1783555200000, "body": "少见的不制造焦虑的自我成长节目，听完会更愿意理解自己。"
+    },
+    {
+      "id": "r_zhangxj", "showId": "s_zhangxj", "title": "商业访谈的深度样本", "stars": 5, "author": "产品老兵",
+      "date": 1783468800000, "body": "前期准备很扎实，每期都能把人物经历放回行业变化里看。"
+    },
+    {
+      "id": "r_org", "showId": "s_org", "title": "管理不是口号", "stars": 5, "author": "TeamLead",
+      "date": 1784937600000, "body": "案例具体到会议怎么开、信息怎么传，对正在带团队的人很实用。"
+    },
+    {
+      "id": "r_ceo", "showId": "s_ceoletter", "title": "失败复盘尤其难得", "stars": 4, "author": "局外人",
+      "date": 1784764800000, "body": "如果能再多邀请一些中小公司经营者就更好了。"
+    },
+    {
+      "id": "r_work", "showId": "s_worktalk", "title": "职业选择前先听一听", "stars": 5, "author": "应届生小林",
+      "date": 1784678400000, "body": "没有滤镜地展示真实工作内容，比岗位介绍有用得多。"
+    },
+    {
+      "id": "r_free", "showId": "s_freelance", "title": "账本部分很诚实", "stars": 5, "author": "自由人阿青",
+      "date": 1784505600000, "body": "既讲自由，也讲收入波动和获客压力，信息很完整。"
+    },
+    {
+      "id": "r_bym", "showId": "s_bym", "title": "每次都要暂停想一想", "stars": 5, "author": "海盐",
+      "date": 1784419200000, "body": "对熟悉概念的重新解释，总能带来一个不同角度。"
+    },
+    {
+      "id": "r_half", "showId": "s_halflatte", "title": "商业故事讲得真好", "stars": 5, "author": "拿铁少冰",
+      "date": 1785024000000, "body": "资料丰富又有叙事感，听完会对品牌和时代同时留下印象。"
+    },
+    {
+      "id": "r_unknown", "showId": "s_unknown", "title": "让人安静下来的投资节目", "stars": 5, "author": "长期账户",
+      "date": 1784246400000, "body": "没有追热点和喊口号，更多是在讨论怎样做长期正确的事。"
+    },
+    {
+      "id": "r_blackcat", "showId": "s_blackcat", "title": "克制的案件叙述", "stars": 4, "author": "夜行者",
+      "date": 1784934000000, "body": "氛围感足，但没有消费受害者，案件背景交代得很细。"
+    },
+    {
+      "id": "r_sleep", "showId": "s_sleep", "title": "真的听不到结尾", "stars": 5, "author": "晚安十一点",
+      "date": 1785020400000, "body": "声音和环境音都很舒服，十分钟左右就能慢慢放松下来。"
+    },
+    {
+      "id": "r_left", "showId": "s_leftright", "title": "从细节进入历史", "stars": 5, "author": "旧报纸",
+      "date": 1784847600000, "body": "不只讲结论，史料和人物处境都展开得很充分。"
+    },
+    {
+      "id": "r_wuliao", "showId": "s_wuliao", "title": "更新日就是节日", "stars": 5, "author": "笑点很低",
+      "date": 1784930400000, "body": "听起来像朋友在客厅聊天，包袱密度又比朋友高多了。"
+    },
+    {
+      "id": "r_feihua", "showId": "s_feihua", "title": "轻松但不敷衍", "stars": 5, "author": "周末驾驶员",
+      "date": 1784674800000, "body": "很适合长途开车，生活小事被讲得特别有画面。"
+    }
+  ],
+  "followedShowIds": [
+    "s_42",
+    "s_gv101",
+    "s_crossing",
+    "s_espresso",
+    "s_whatsnext",
+    "s_dragon",
+    "s_yaoyao",
+    "s_zhangxj",
+    "s_latetalk",
+    "s_gv101cn"
+  ],
+  "favoriteShowIds": [
+    "s_zhangxj",
+    "s_42",
+    "s_crossing"
+  ],
+  "favoriteGenreIds": [
+    "tech"
+  ],
+  "savedEpisodeIds": [
+    "e_crossing_minimax",
+    "e_zhangxj_business",
+    "e_42_bubble",
+    "e_42_vanity",
+    "e_latetalk_minimax"
+  ],
+  "downloadedEpisodeIds": [
+    "e_crossing_minimax"
+  ],
+  "upNextIds": [
+    "e_42_albert",
+    "e_yaoyao_y27",
+    "e_dragon_ai",
+    "e_whatsnext_s10",
+    "e_crossing_minimax"
+  ],
+  "queueIds": [
+    "e_42_bubble"
+  ],
+  "notifications": {
+    "s_42": true,
+    "s_gv101": true,
+    "s_crossing": true,
+    "s_espresso": true,
+    "s_whatsnext": true,
+    "s_dragon": true,
+    "s_yaoyao": true,
+    "s_zhangxj": true,
+    "s_latetalk": true,
+    "s_gv101cn": true
+  },
+  "myRatings": {},
+  "player": {
+    "currentEpisodeId": "e_42_vanity",
+    "isPlaying": false,
+    "speed": 1,
+    "sleepMinutes": 0
+  },
+  "newShowIds": [
+    "s_org",
+    "s_worktalk",
+    "s_blackcat",
+    "s_sleep",
+    "s_songchi",
+    "s_rock",
+    "s_selfevo",
+    "s_zhenbu",
+    "s_halflatte",
+    "s_bym"
+  ],
+  "topShowIds": [
+    "s_rock",
+    "s_espresso",
+    "s_selfevo",
+    "s_aotu",
+    "s_zhenbu",
+    "s_latetalk",
+    "s_halflatte",
+    "s_leftright",
+    "s_wuliao",
+    "s_blackcat"
+  ],
+  "featuredShowId": "s_songchi"
+}

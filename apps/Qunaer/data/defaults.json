@@ -1,0 +1,317 @@
+{
+  "session": {
+    "loggedIn": true,
+    "name": "去哪儿用户",
+    "level": "V4 铂金会员",
+    "phone": "139****0000",
+    "avatar": "/@app-assets/Qunaer/images/avatar_1_v2.png"
+  },
+  "search": {
+    "fromCity": "广州",
+    "toCity": "长沙",
+    "hotelCity": "烟台",
+    "trainFrom": "南京",
+    "trainTo": "鞍山",
+    "departDate": "8月26日 周三",
+    "returnDate": "8月28日 周五",
+    "hotelCheckIn": "7月28日",
+    "hotelCheckOut": "7月30日",
+    "hotelKeyword": "烟台港",
+    "tripType": "单程",
+    "trainTripType": "单程",
+    "trainHighSpeed": false,
+    "vacationCity": "南京"
+  },
+  "selectedPassengerIds": ["p1"],
+  "passengers": [
+    {
+      "id": "p1",
+      "name": "骆小驼",
+      "type": "成人票",
+      "idNo": "110101********0011",
+      "phone": "139****0000"
+    },
+    {
+      "id": "p2",
+      "name": "骆小雨",
+      "type": "学生票",
+      "idNo": "110101********0022",
+      "phone": "139****0001"
+    }
+  ],
+  "hotels": [
+    {
+      "id": "h1",
+      "name": "汉庭酒店(烟台火车站烟台港客运站店)",
+      "score": 4.9,
+      "reviews": 1243,
+      "distance": "距中心12.7公里",
+      "price": 368,
+      "image": "/@app-assets/Qunaer/images/hotel_1.png"
+    },
+    {
+      "id": "h2",
+      "name": "美豪酒店(烟台大学迎春大街店)",
+      "score": 4.5,
+      "reviews": 734,
+      "distance": "距市中心8.2公里",
+      "price": 305,
+      "image": "/@app-assets/Qunaer/images/hotel_2.png"
+    },
+    {
+      "id": "h3",
+      "name": "烟台迎宾丽呈酒店",
+      "score": 4.8,
+      "reviews": 8851,
+      "distance": "距市中心6.1公里",
+      "price": 229,
+      "image": "/@app-assets/Qunaer/images/hotel_3.png"
+    },
+    {
+      "id": "h4",
+      "name": "南京金陵饭店",
+      "score": 4.9,
+      "reviews": 9602,
+      "distance": "新街口地铁站旁",
+      "price": 588,
+      "image": "/@app-assets/Qunaer/images/hotel_4.png"
+    },
+    {
+      "id": "h5",
+      "name": "南京维景国际大酒店",
+      "score": 4.8,
+      "reviews": 7231,
+      "distance": "近明故宫地铁站",
+      "price": 498,
+      "image": "/@app-assets/Qunaer/images/hotel_5.png"
+    },
+    {
+      "id": "h6",
+      "name": "烟台青年旅舍",
+      "score": 4.6,
+      "reviews": 891,
+      "distance": "火车站步行8分钟",
+      "price": 99,
+      "image": "/@app-assets/Qunaer/images/hotel_6.png"
+    }
+  ],
+  "scenics": [
+    {
+      "id": "s1",
+      "name": "南京欢乐谷",
+      "score": 4.6,
+      "distance": "116条点评",
+      "price": 153.7,
+      "image": "/@app-assets/Qunaer/images/scenic_1.png"
+    },
+    {
+      "id": "s2",
+      "name": "阳山碑材",
+      "score": 4.6,
+      "distance": "4.9km·汤山温泉",
+      "price": 29.6,
+      "image": "/@app-assets/Qunaer/images/scenic_2.png"
+    },
+    {
+      "id": "s3",
+      "name": "江苏园博园",
+      "score": 4.4,
+      "distance": "5.1km·园博园度假区",
+      "price": 37.4,
+      "image": "/@app-assets/Qunaer/images/scenic_3.png"
+    },
+    {
+      "id": "s4",
+      "name": "明孝陵景区",
+      "score": 4.8,
+      "distance": "钟山风景区",
+      "price": 60,
+      "image": "/@app-assets/Qunaer/images/scenic_4.png"
+    },
+    {
+      "id": "s5",
+      "name": "南京海底世界",
+      "score": 4.7,
+      "distance": "中山陵附近",
+      "price": 158,
+      "image": "/@app-assets/Qunaer/images/scenic_5.png"
+    },
+    {
+      "id": "s6",
+      "name": "秦淮河画舫",
+      "score": 4.6,
+      "distance": "夫子庙景区",
+      "price": 78,
+      "image": "/@app-assets/Qunaer/images/scenic_6.png"
+    }
+  ],
+  "world": [
+    {
+      "id": "w1",
+      "title": "南京总统府 + 1912街区citywalk",
+      "author": "小驼去旅行",
+      "likes": 328,
+      "image": "/@app-assets/Qunaer/images/world_1.png",
+      "city": "南京"
+    },
+    {
+      "id": "w2",
+      "title": "夫子庙秦淮河夜游全攻略",
+      "author": "度假研究所",
+      "likes": 1290,
+      "image": "/@app-assets/Qunaer/images/world_2.png",
+      "city": "南京"
+    },
+    {
+      "id": "w3",
+      "title": "西湖十景两天一夜慢游路线",
+      "author": "出发吧阿北",
+      "likes": 886,
+      "image": "/@app-assets/Qunaer/images/world_3.png",
+      "city": "杭州"
+    },
+    {
+      "id": "w4",
+      "title": "南京夜市必吃清单",
+      "author": "咕噜旅行家",
+      "likes": 732,
+      "image": "/@app-assets/Qunaer/images/world_4.png",
+      "city": "南京"
+    },
+    {
+      "id": "w5",
+      "title": "成都熊猫基地 + 宽窄巷子遛娃",
+      "author": "亲子旅行局",
+      "likes": 421,
+      "image": "/@app-assets/Qunaer/images/world_5.png",
+      "city": "成都"
+    },
+    {
+      "id": "w6",
+      "title": "三亚海岛浮潜攻略",
+      "author": "看世界编辑部",
+      "likes": 2359,
+      "image": "/@app-assets/Qunaer/images/world_6.png",
+      "city": "三亚"
+    },
+    {
+      "id": "w7",
+      "title": "杭州亲子乐园一日游超全攻略",
+      "author": "遛娃研究所",
+      "likes": 1567,
+      "image": "/@app-assets/Qunaer/images/world_7.png",
+      "city": "杭州"
+    },
+    {
+      "id": "w8",
+      "title": "成都锦里古街夜市，吃到扶墙走",
+      "author": "深夜觅食记",
+      "likes": 984,
+      "image": "/@app-assets/Qunaer/images/world_8.png",
+      "city": "成都"
+    }
+  ],
+  "orders": [
+    {
+      "id": "o_ticket",
+      "kind": "门票",
+      "title": "灵谷景区门票成人票",
+      "status": "待支付",
+      "amount": 65.2,
+      "date": "2026-08-12"
+    },
+    {
+      "id": "o_hotel",
+      "kind": "酒店",
+      "title": "汉庭酒店(烟台火车站店)",
+      "status": "待出行",
+      "amount": 368,
+      "date": "2026-08-26"
+    },
+    {
+      "id": "o_flight",
+      "kind": "机票",
+      "title": "广州 → 长沙 CZ3308",
+      "status": "待支付",
+      "amount": 318,
+      "date": "2026-08-26"
+    },
+    {
+      "id": "o_train",
+      "kind": "火车票",
+      "title": "南京 → 鞍山 G1234",
+      "status": "待出行",
+      "amount": 244,
+      "date": "2026-08-12"
+    },
+    {
+      "id": "o_tour",
+      "kind": "跟团游",
+      "title": "云南昆明大理6日5晚",
+      "status": "已完成",
+      "amount": 3280,
+      "date": "2026-06-18"
+    }
+  ],
+  "favorites": [],
+  "actionLog": [],
+  "selected": {},
+  "lastFeedback": "",
+  "lastOrderId": "o_ticket",
+  "currentOrderId": "o_ticket",
+  "pendingOrderId": "",
+  "pendingBooking": null,
+  "selectedRoom": null,
+  "selectedFare": null,
+  "bookingDraft": null,
+  "roundTrip": null,
+  "stay": {
+    "city": "三亚·海棠湾",
+    "overseas": false,
+    "checkIn": "7月28日",
+    "checkOut": "7月30日",
+    "nights": 2,
+    "rooms": 1,
+    "guests": 2
+  },
+  "car": {
+    "city": "南京禄口国际机场",
+    "dropCity": "南京禄口国际机场",
+    "pickup": "7月28日 10:00",
+    "ret": "7月30日 10:00",
+    "days": 2
+  },
+  "transfer": {
+    "mode": "pickup",
+    "airport": "南京禄口国际机场 T2",
+    "flight": "HO1234",
+    "time": "14:30",
+    "drop": "",
+    "distanceKm": 0
+  },
+  "collectedWorld": [],
+  "cityTarget": "hotel",
+  "dateTarget": "depart",
+  "editingPassengerId": null,
+  "currentWorldId": null,
+  "chat": {
+    "ai": [
+      {
+        "id": "ai_greet",
+        "role": "bot",
+        "text": "您好，我是去哪儿旅行客服小驼，请问有什么可以帮您？"
+      }
+    ],
+    "merchant": [
+      {
+        "id": "mc_greet",
+        "role": "bot",
+        "text": "您好，这里是商家客服，很高兴为您服务，请问有什么可以帮您？"
+      }
+    ]
+  },
+  "settings": {
+    "language": "system",
+    "tripSync": true
+  }
+}

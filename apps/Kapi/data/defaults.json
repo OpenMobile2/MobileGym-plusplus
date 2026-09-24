@@ -1,0 +1,683 @@
+{
+  "user": {
+    "id": "u_self",
+    "nick": "卡皮用户",
+    "avatar": "/@app-assets/Kapi/avatars/me.svg",
+    "gender": "保密",
+    "phone": "188****0000",
+    "appVersion": "1.0.0",
+    "recordDays": 189,
+    "totalRecords": 1143,
+    "streakDays": 145
+  },
+  "ledgers": [
+    {
+      "id": "l_main",
+      "name": "总账本",
+      "type": "personal",
+      "cover": "📒",
+      "includeInTotal": true
+    },
+    {
+      "id": "l_travel",
+      "name": "旅行账本",
+      "type": "personal",
+      "cover": "✈️",
+      "includeInTotal": true
+    }
+  ],
+  "currentLedgerId": "l_main",
+  "accounts": [],
+  "categories": {
+    "expense": [
+      {
+        "id": "c_food",
+        "name": "餐饮",
+        "icon": "IcCatFood",
+        "color": "#FFB23E",
+        "subs": [
+          {
+            "id": "cs_break",
+            "name": "早餐"
+          },
+          {
+            "id": "cs_lunch",
+            "name": "午餐"
+          },
+          {
+            "id": "cs_dinner",
+            "name": "晚餐"
+          },
+          {
+            "id": "cs_fruit",
+            "name": "水果"
+          },
+          {
+            "id": "cs_indulge",
+            "name": "放纵餐"
+          }
+        ]
+      },
+      {
+        "id": "c_shopping",
+        "name": "购物",
+        "icon": "IcCatShopping",
+        "color": "#5B8CFF"
+      },
+      {
+        "id": "c_transport",
+        "name": "交通",
+        "icon": "IcCatTransport",
+        "color": "#FF8A3D"
+      },
+      {
+        "id": "c_housing",
+        "name": "住房",
+        "icon": "IcCatHousing",
+        "color": "#FF7A59"
+      },
+      {
+        "id": "c_fastfood",
+        "name": "快餐",
+        "icon": "IcCatFastFood",
+        "color": "#FFC24B"
+      },
+      {
+        "id": "c_bbq",
+        "name": "烧烤",
+        "icon": "IcCatBBQ",
+        "color": "#FF6B4A"
+      },
+      {
+        "id": "c_hotpot",
+        "name": "火锅",
+        "icon": "IcCatHotpot",
+        "color": "#FF5C5C"
+      },
+      {
+        "id": "c_milktea",
+        "name": "奶茶",
+        "icon": "IcCatMilkTea",
+        "color": "#C58BFF"
+      },
+      {
+        "id": "c_coffee",
+        "name": "咖啡",
+        "icon": "IcCatCoffee",
+        "color": "#B07A4F"
+      },
+      {
+        "id": "c_drink",
+        "name": "饮品",
+        "icon": "IcCatDrink",
+        "color": "#46C7E8"
+      },
+      {
+        "id": "c_dessert",
+        "name": "甜品",
+        "icon": "IcCatDessert",
+        "color": "#FF9BC4"
+      },
+      {
+        "id": "c_fruit",
+        "name": "水果",
+        "icon": "IcCatFruit",
+        "color": "#6FCF6B"
+      },
+      {
+        "id": "c_snack",
+        "name": "零食",
+        "icon": "IcCatSnack",
+        "color": "#FFB661"
+      },
+      {
+        "id": "c_grocery",
+        "name": "做饭食材",
+        "icon": "IcCatGrocery",
+        "color": "#7BC86C"
+      },
+      {
+        "id": "c_leisure",
+        "name": "休闲娱乐",
+        "icon": "IcCatLeisure",
+        "color": "#7C8BFF"
+      },
+      {
+        "id": "c_medical",
+        "name": "医疗健康",
+        "icon": "IcCatMedical",
+        "color": "#5AD0C0"
+      },
+      {
+        "id": "c_study",
+        "name": "学习办公",
+        "icon": "IcCatStudy",
+        "color": "#5B9BFF"
+      },
+      {
+        "id": "c_pet",
+        "name": "宠物",
+        "icon": "IcCatPet",
+        "color": "#FFA552"
+      },
+      {
+        "id": "c_baby",
+        "name": "母婴",
+        "icon": "IcCatBaby",
+        "color": "#FF96B0"
+      },
+      {
+        "id": "c_transfer",
+        "name": "资金往来",
+        "icon": "IcCatTransfer",
+        "color": "#9AA4B2"
+      },
+      {
+        "id": "c_insurance",
+        "name": "保险理财",
+        "icon": "IcCatInsurance",
+        "color": "#4FB7F0"
+      },
+      {
+        "id": "c_other",
+        "name": "其他支出",
+        "icon": "IcCatOther",
+        "color": "#AAB2C0"
+      }
+    ],
+    "income": [
+      {
+        "id": "i_salary",
+        "name": "职业收入",
+        "icon": "IcCatSalary",
+        "color": "#FF8A3D"
+      },
+      {
+        "id": "i_business",
+        "name": "经营收入",
+        "icon": "IcCatBusiness",
+        "color": "#FFB23E"
+      },
+      {
+        "id": "i_invest",
+        "name": "投资收益",
+        "icon": "IcCatInvest",
+        "color": "#6FCF6B"
+      },
+      {
+        "id": "i_parttime",
+        "name": "兼职收入",
+        "icon": "IcCatPartTime",
+        "color": "#5B8CFF"
+      },
+      {
+        "id": "i_gift",
+        "name": "人情收入",
+        "icon": "IcCatGift",
+        "color": "#FF9BC4"
+      },
+      {
+        "id": "i_prize",
+        "name": "中奖收入",
+        "icon": "IcCatPrize",
+        "color": "#FFC24B"
+      },
+      {
+        "id": "i_windfall",
+        "name": "意外收入",
+        "icon": "IcCatWindfall",
+        "color": "#C58BFF"
+      },
+      {
+        "id": "i_other",
+        "name": "其他收入",
+        "icon": "IcCatOtherIncome",
+        "color": "#AAB2C0"
+      }
+    ]
+  },
+  "bills": [
+    {
+      "id": "b001",
+      "type": "expense",
+      "categoryId": "c_food",
+      "categoryName": "餐饮",
+      "icon": "IcCatFood",
+      "color": "#FFB23E",
+      "amount": 70.0,
+      "note": "午餐 黄焖鸡米饭",
+      "date": 1781239620000,
+      "ledgerId": "l_main",
+      "accountId": null,
+      "payee": "老乡鸡",
+      "tags": [],
+      "discount": null,
+      "refund": null,
+      "reimburse": false,
+      "excludeFlow": false,
+      "excludeBudget": false
+    },
+    {
+      "id": "b002",
+      "type": "expense",
+      "categoryId": "c_food",
+      "categoryName": "餐饮",
+      "icon": "IcCatFood",
+      "color": "#FFB23E",
+      "amount": 31.2,
+      "note": "晚餐 麻辣烫",
+      "date": 1781175900000,
+      "ledgerId": "l_main",
+      "accountId": null,
+      "payee": "杨国福",
+      "tags": [],
+      "discount": null,
+      "refund": null,
+      "reimburse": false,
+      "excludeFlow": false,
+      "excludeBudget": false
+    },
+    {
+      "id": "b003",
+      "type": "expense",
+      "categoryId": "c_milktea",
+      "categoryName": "奶茶",
+      "icon": "IcCatMilkTea",
+      "color": "#C58BFF",
+      "amount": 18.0,
+      "note": "奶茶 葡萄冰沙",
+      "date": 1781163000000,
+      "ledgerId": "l_main",
+      "accountId": null,
+      "payee": "喜茶",
+      "tags": [],
+      "discount": null,
+      "refund": null,
+      "reimburse": false,
+      "excludeFlow": false,
+      "excludeBudget": false
+    },
+    {
+      "id": "b004",
+      "type": "expense",
+      "categoryId": "c_transport",
+      "categoryName": "交通",
+      "icon": "IcCatTransport",
+      "color": "#FF8A3D",
+      "amount": 12.5,
+      "note": "地铁通勤",
+      "date": 1781052000000,
+      "ledgerId": "l_main",
+      "accountId": null,
+      "payee": "",
+      "tags": [],
+      "discount": null,
+      "refund": null,
+      "reimburse": false,
+      "excludeFlow": false,
+      "excludeBudget": false
+    },
+    {
+      "id": "b005",
+      "type": "expense",
+      "categoryId": "c_shopping",
+      "categoryName": "购物",
+      "icon": "IcCatShopping",
+      "color": "#5B8CFF",
+      "amount": 268.0,
+      "note": "夏季T恤两件",
+      "date": 1781010720000,
+      "ledgerId": "l_main",
+      "accountId": null,
+      "payee": "优衣库",
+      "tags": [],
+      "discount": null,
+      "refund": null,
+      "reimburse": false,
+      "excludeFlow": false,
+      "excludeBudget": false
+    },
+    {
+      "id": "b006",
+      "type": "expense",
+      "categoryId": "c_food",
+      "categoryName": "餐饮",
+      "icon": "IcCatFood",
+      "color": "#FFB23E",
+      "amount": 25.2,
+      "note": "早餐 包子豆浆",
+      "date": 1780963800000,
+      "ledgerId": "l_main",
+      "accountId": null,
+      "payee": "",
+      "tags": [],
+      "discount": null,
+      "refund": null,
+      "reimburse": false,
+      "excludeFlow": false,
+      "excludeBudget": false
+    },
+    {
+      "id": "b007",
+      "type": "expense",
+      "categoryId": "c_grocery",
+      "categoryName": "做饭食材",
+      "icon": "IcCatGrocery",
+      "color": "#7BC86C",
+      "amount": 88.6,
+      "note": "周末买菜",
+      "date": 1780885800000,
+      "ledgerId": "l_main",
+      "accountId": null,
+      "payee": "盒马",
+      "tags": [],
+      "discount": null,
+      "refund": null,
+      "reimburse": false,
+      "excludeFlow": false,
+      "excludeBudget": false
+    },
+    {
+      "id": "b008",
+      "type": "expense",
+      "categoryId": "c_coffee",
+      "categoryName": "咖啡",
+      "icon": "IcCatCoffee",
+      "color": "#B07A4F",
+      "amount": 32.0,
+      "note": "拿铁 大杯",
+      "date": 1780898400000,
+      "ledgerId": "l_main",
+      "accountId": null,
+      "payee": "瑞幸",
+      "tags": [],
+      "discount": null,
+      "refund": null,
+      "reimburse": false,
+      "excludeFlow": false,
+      "excludeBudget": false
+    },
+    {
+      "id": "b009",
+      "type": "expense",
+      "categoryId": "c_leisure",
+      "categoryName": "休闲娱乐",
+      "icon": "IcCatLeisure",
+      "color": "#7C8BFF",
+      "amount": 45.0,
+      "note": "电影票",
+      "date": 1780833600000,
+      "ledgerId": "l_main",
+      "accountId": null,
+      "payee": "万达影城",
+      "tags": [],
+      "discount": null,
+      "refund": null,
+      "reimburse": false,
+      "excludeFlow": false,
+      "excludeBudget": false
+    },
+    {
+      "id": "b010",
+      "type": "expense",
+      "categoryId": "c_housing",
+      "categoryName": "住房",
+      "icon": "IcCatHousing",
+      "color": "#FF7A59",
+      "amount": 1500.0,
+      "note": "六月房租分摊",
+      "date": 1780621200000,
+      "ledgerId": "l_main",
+      "accountId": null,
+      "payee": "",
+      "tags": [],
+      "discount": null,
+      "refund": null,
+      "reimburse": false,
+      "excludeFlow": false,
+      "excludeBudget": false
+    },
+    {
+      "id": "b011",
+      "type": "expense",
+      "categoryId": "c_medical",
+      "categoryName": "医疗健康",
+      "icon": "IcCatMedical",
+      "color": "#5AD0C0",
+      "amount": 56.0,
+      "note": "感冒药",
+      "date": 1780654800000,
+      "ledgerId": "l_main",
+      "accountId": null,
+      "payee": "老百姓大药房",
+      "tags": [],
+      "discount": null,
+      "refund": null,
+      "reimburse": false,
+      "excludeFlow": false,
+      "excludeBudget": false
+    },
+    {
+      "id": "b012",
+      "type": "expense",
+      "categoryId": "c_fruit",
+      "categoryName": "水果",
+      "icon": "IcCatFruit",
+      "color": "#6FCF6B",
+      "amount": 23.8,
+      "note": "车厘子半斤",
+      "date": 1780572600000,
+      "ledgerId": "l_main",
+      "accountId": null,
+      "payee": "百果园",
+      "tags": [],
+      "discount": null,
+      "refund": null,
+      "reimburse": false,
+      "excludeFlow": false,
+      "excludeBudget": false
+    },
+    {
+      "id": "b013",
+      "type": "expense",
+      "categoryId": "c_snack",
+      "categoryName": "零食",
+      "icon": "IcCatSnack",
+      "color": "#FFB661",
+      "amount": 39.9,
+      "note": "零食大礼包",
+      "date": 1780476300000,
+      "ledgerId": "l_main",
+      "accountId": null,
+      "payee": "良品铺子",
+      "tags": [],
+      "discount": null,
+      "refund": null,
+      "reimburse": false,
+      "excludeFlow": false,
+      "excludeBudget": false
+    },
+    {
+      "id": "b014",
+      "type": "expense",
+      "categoryId": "c_transport",
+      "categoryName": "交通",
+      "icon": "IcCatTransport",
+      "color": "#FF8A3D",
+      "amount": 28.0,
+      "note": "打车回家",
+      "date": 1780499400000,
+      "ledgerId": "l_main",
+      "accountId": null,
+      "payee": "滴滴出行",
+      "tags": [],
+      "discount": null,
+      "refund": null,
+      "reimburse": false,
+      "excludeFlow": false,
+      "excludeBudget": false
+    },
+    {
+      "id": "b015",
+      "type": "expense",
+      "categoryId": "c_study",
+      "categoryName": "学习办公",
+      "icon": "IcCatStudy",
+      "color": "#5B9BFF",
+      "amount": 99.0,
+      "note": "在线课程",
+      "date": 1780376400000,
+      "ledgerId": "l_main",
+      "accountId": null,
+      "payee": "",
+      "tags": [],
+      "discount": null,
+      "refund": null,
+      "reimburse": false,
+      "excludeFlow": false,
+      "excludeBudget": false
+    },
+    {
+      "id": "b016",
+      "type": "expense",
+      "categoryId": "c_food",
+      "categoryName": "餐饮",
+      "icon": "IcCatFood",
+      "color": "#FFB23E",
+      "amount": 42.0,
+      "note": "火锅 AA",
+      "date": 1780313400000,
+      "ledgerId": "l_main",
+      "accountId": null,
+      "payee": "海底捞",
+      "tags": [],
+      "discount": null,
+      "refund": null,
+      "reimburse": false,
+      "excludeFlow": false,
+      "excludeBudget": false
+    },
+    {
+      "id": "b017",
+      "type": "income",
+      "categoryId": "i_salary",
+      "categoryName": "职业收入",
+      "icon": "IcCatSalary",
+      "color": "#FF8A3D",
+      "amount": 12000.0,
+      "note": "五月工资",
+      "date": 1781056800000,
+      "ledgerId": "l_main",
+      "accountId": null,
+      "payee": "",
+      "tags": [],
+      "discount": null,
+      "refund": null,
+      "reimburse": false,
+      "excludeFlow": false,
+      "excludeBudget": false
+    },
+    {
+      "id": "b018",
+      "type": "income",
+      "categoryId": "i_parttime",
+      "categoryName": "兼职收入",
+      "icon": "IcCatPartTime",
+      "color": "#5B8CFF",
+      "amount": 600.0,
+      "note": "周末兼职",
+      "date": 1780740000000,
+      "ledgerId": "l_main",
+      "accountId": null,
+      "payee": "",
+      "tags": [],
+      "discount": null,
+      "refund": null,
+      "reimburse": false,
+      "excludeFlow": false,
+      "excludeBudget": false
+    }
+  ],
+  "budget": {
+    "monthly": 9000,
+    "daily": {},
+    "categories": [
+      {
+        "categoryId": "c_food",
+        "amount": 1500
+      },
+      {
+        "categoryId": "c_transport",
+        "amount": 400
+      }
+    ]
+  },
+  "rules": [
+    {
+      "id": "r1",
+      "kind": "payee",
+      "keyword": "肯德基",
+      "categoryId": "c_food",
+      "categoryName": "餐饮"
+    },
+    {
+      "id": "r2",
+      "kind": "payee",
+      "keyword": "滴滴",
+      "categoryId": "c_transport",
+      "categoryName": "交通"
+    },
+    {
+      "id": "r3",
+      "kind": "content",
+      "keyword": "电影",
+      "categoryId": "c_leisure",
+      "categoryName": "休闲娱乐"
+    }
+  ],
+  "aiMessages": [
+    {
+      "id": "m1",
+      "role": "ai",
+      "text": "你好呀!我是胖咪~ 可以帮你记账、复盘消费、做趣味测试。试试点下面的灯泡或魔棒,或者直接问我。",
+      "ts": 1781226000000
+    },
+    {
+      "id": "m2",
+      "role": "user",
+      "text": "查看我的今日分析总结",
+      "ts": 1781239620000
+    },
+    {
+      "id": "m3",
+      "role": "ai",
+      "text": "由于今日剩余235.74元,预计明日预算可用344.72元(其中13.1元来自今日剩余分摊)。",
+      "ts": 1781239680000,
+      "calendarCard": true
+    }
+  ],
+  "searchHistory": [
+    "餐饮",
+    "奶茶",
+    "房租"
+  ],
+  "settings": {
+    "monthStartDay": 1,
+    "currency": "人民币 ¥",
+    "catReplyStyle": "默认",
+    "flags": {
+      "autoScreenshot": false,
+      "location": true,
+      "coupon": true,
+      "push": true
+    },
+    "pushItems": {
+      "budgetAlert": true,
+      "billRemind": true,
+      "weeklyReport": false
+    }
+  },
+  "amountVisible": true,
+  "topCardView": "budget",
+  "_activeBillId": null
+}

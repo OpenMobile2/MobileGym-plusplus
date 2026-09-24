@@ -1,0 +1,173 @@
+{
+  "user": {
+    "name": "测试用户",
+    "phone": "138****8888",
+    "avatar": "",
+    "address": "北京市朝阳区望京SOHO T1",
+    "balance": 128.50,
+    "coupons": 3
+  },
+  "restaurants": [
+    {
+      "id": "r001",
+      "name": "麦当劳（望京店）",
+      "category": "汉堡",
+      "logo": "",
+      "rating": 4.8,
+      "ratingCount": 10234,
+      "deliveryTime": 25,
+      "deliveryFee": 3,
+      "minOrder": 20,
+      "tags": ["品牌", "24小时"],
+      "distance": "0.8km",
+      "monthSales": "3000+",
+      "notice": "欢迎光临麦当劳！本店支持无接触配送。",
+      "dishes": [
+        { "id": "d001", "name": "巨无霸套餐", "price": 39.9, "originalPrice": 45.0, "desc": "经典巨无霸+薯条(大)+可乐(大)", "category": "套餐", "sales": 999 },
+        { "id": "d002", "name": "麦辣鸡腿堡套餐", "price": 36.9, "originalPrice": 42.0, "desc": "麦辣鸡腿堡+薯条(中)+可乐(中)", "category": "套餐", "sales": 856 },
+        { "id": "d003", "name": "双层吉士汉堡", "price": 14.9, "originalPrice": 0, "desc": "两层牛肉饼，浓郁芝士", "category": "汉堡", "sales": 2341 },
+        { "id": "d004", "name": "麦乐鸡（20块）", "price": 29.9, "originalPrice": 35.0, "desc": "香酥嫩滑麦乐鸡，配两款酱", "category": "炸鸡", "sales": 1502 },
+        { "id": "d005", "name": "薯条（大）", "price": 12.9, "originalPrice": 0, "desc": "金黄酥脆，现炸现卖", "category": "小食", "sales": 3200 },
+        { "id": "d006", "name": "麦咖啡拿铁（热）", "price": 16.9, "originalPrice": 0, "desc": "香浓咖啡，醇厚奶味", "category": "饮品", "sales": 889 },
+        { "id": "d007", "name": "草莓奶昔", "price": 13.9, "originalPrice": 0, "desc": "新鲜草莓味，浓滑细腻", "category": "饮品", "sales": 672 }
+      ]
+    },
+    {
+      "id": "r002",
+      "name": "海底捞火锅外卖",
+      "category": "火锅",
+      "logo": "",
+      "rating": 4.9,
+      "ratingCount": 8721,
+      "deliveryTime": 45,
+      "deliveryFee": 0,
+      "minOrder": 80,
+      "tags": ["满减", "新客立减"],
+      "distance": "1.2km",
+      "monthSales": "1000+",
+      "notice": "外卖食材新鲜，锅底需单独购买。",
+      "dishes": [
+        { "id": "d101", "name": "经典牛油锅底", "price": 48.0, "originalPrice": 0, "desc": "浓香麻辣，层次丰富", "category": "锅底", "sales": 1234 },
+        { "id": "d102", "name": "番茄锅底", "price": 38.0, "originalPrice": 0, "desc": "酸甜可口，老少皆宜", "category": "锅底", "sales": 987 },
+        { "id": "d103", "name": "肥牛卷（200g）", "price": 52.0, "originalPrice": 0, "desc": "新鲜现切，纹理分明", "category": "牛肉", "sales": 2341 },
+        { "id": "d104", "name": "毛肚（200g）", "price": 45.0, "originalPrice": 0, "desc": "新鲜毛肚，口感脆嫩", "category": "内脏", "sales": 1890 },
+        { "id": "d105", "name": "虾滑（200g）", "price": 48.0, "originalPrice": 0, "desc": "鲜虾制作，弹嫩爽口", "category": "海鲜", "sales": 1560 }
+      ]
+    },
+    {
+      "id": "r003",
+      "name": "喜茶GO（望京店）",
+      "category": "奶茶",
+      "logo": "",
+      "rating": 4.7,
+      "ratingCount": 5432,
+      "deliveryTime": 20,
+      "deliveryFee": 5,
+      "minOrder": 30,
+      "tags": ["人气", "新品上市"],
+      "distance": "0.5km",
+      "monthSales": "5000+",
+      "notice": "部分商品需要15-20分钟制作时间。",
+      "dishes": [
+        { "id": "d201", "name": "多肉葡萄（大杯）", "price": 32.0, "originalPrice": 0, "desc": "新鲜葡萄+芝士奶盖，人气No.1", "category": "芝士茶", "sales": 9999 },
+        { "id": "d202", "name": "满杯红柚（大杯）", "price": 29.0, "originalPrice": 0, "desc": "爆汁红柚，清爽解腻", "category": "水果茶", "sales": 8765 },
+        { "id": "d203", "name": "芝芝莓莓（大杯）", "price": 35.0, "originalPrice": 0, "desc": "草莓+覆盆子+芝士，酸甜层次", "category": "芝士茶", "sales": 7654 },
+        { "id": "d204", "name": "波波冰（大杯）", "price": 22.0, "originalPrice": 0, "desc": "珍珠+奶茶+碎冰，经典搭配", "category": "奶茶", "sales": 5432 }
+      ]
+    },
+    {
+      "id": "r004",
+      "name": "黄焖鸡米饭",
+      "category": "快餐",
+      "logo": "",
+      "rating": 4.6,
+      "ratingCount": 3201,
+      "deliveryTime": 30,
+      "deliveryFee": 2,
+      "minOrder": 15,
+      "tags": ["实惠", "口碑"],
+      "distance": "0.3km",
+      "monthSales": "2000+",
+      "notice": "本店使用正宗黄焖鸡配方，欢迎品尝。",
+      "dishes": [
+        { "id": "d301", "name": "黄焖鸡米饭（大）", "price": 16.0, "originalPrice": 0, "desc": "嫩滑鸡肉，浓郁酱汁，配米饭", "category": "主食", "sales": 5678 },
+        { "id": "d302", "name": "黄焖鸡米饭（小）", "price": 13.0, "originalPrice": 0, "desc": "分量适中，一人食刚好", "category": "主食", "sales": 3456 },
+        { "id": "d303", "name": "加辣黄焖鸡（大）", "price": 17.0, "originalPrice": 0, "desc": "微辣版本，更加开胃", "category": "主食", "sales": 2341 },
+        { "id": "d304", "name": "老汤豆腐", "price": 5.0, "originalPrice": 0, "desc": "嫩豆腐炖入老汤", "category": "小菜", "sales": 1200 },
+        { "id": "d305", "name": "紫菜蛋花汤", "price": 3.0, "originalPrice": 0, "desc": "鲜美清淡，暖胃", "category": "汤", "sales": 890 }
+      ]
+    },
+    {
+      "id": "r005",
+      "name": "必胜客（望京汇）",
+      "category": "披萨",
+      "logo": "",
+      "rating": 4.5,
+      "ratingCount": 4567,
+      "deliveryTime": 35,
+      "deliveryFee": 6,
+      "minOrder": 50,
+      "tags": ["品牌", "新品"],
+      "distance": "1.5km",
+      "monthSales": "800+",
+      "notice": "现烤披萨，需要稍长等待时间，感谢耐心。",
+      "dishes": [
+        { "id": "d401", "name": "至尊比萨（9寸）", "price": 79.0, "originalPrice": 99.0, "desc": "培根+虾仁+黑椒牛肉，满满料", "category": "披萨", "sales": 1234 },
+        { "id": "d402", "name": "夏威夷披萨（9寸）", "price": 59.0, "originalPrice": 79.0, "desc": "菠萝+火腿，经典甜咸搭配", "category": "披萨", "sales": 987 },
+        { "id": "d403", "name": "意式肉酱面", "price": 39.0, "originalPrice": 0, "desc": "浓郁番茄肉酱，配al dente意面", "category": "意面", "sales": 765 },
+        { "id": "d404", "name": "田园沙拉", "price": 29.0, "originalPrice": 0, "desc": "新鲜时蔬+千岛酱", "category": "沙拉", "sales": 432 }
+      ]
+    },
+    {
+      "id": "r006",
+      "name": "瑞幸咖啡",
+      "category": "咖啡",
+      "logo": "",
+      "rating": 4.6,
+      "ratingCount": 12341,
+      "deliveryTime": 18,
+      "deliveryFee": 4,
+      "minOrder": 15,
+      "tags": ["自提优先", "新客5折"],
+      "distance": "0.2km",
+      "monthSales": "8000+",
+      "notice": "建议选择自提，可节省15分钟。",
+      "dishes": [
+        { "id": "d501", "name": "生椰拿铁（大杯）", "price": 24.0, "originalPrice": 32.0, "desc": "厚椰乳+浓缩咖啡，网红爆款", "category": "咖啡", "sales": 19999 },
+        { "id": "d502", "name": "厚乳拿铁（大杯）", "price": 22.0, "originalPrice": 29.0, "desc": "浓醇厚乳，香甜顺滑", "category": "咖啡", "sales": 15678 },
+        { "id": "d503", "name": "美式（大杯）", "price": 15.0, "originalPrice": 20.0, "desc": "经典美式，清爽提神", "category": "咖啡", "sales": 8900 },
+        { "id": "d504", "name": "冰拿铁（大杯）", "price": 20.0, "originalPrice": 27.0, "desc": "冰爽拿铁，夏季首选", "category": "咖啡", "sales": 9876 }
+      ]
+    }
+  ],
+  "categories": [
+    { "id": "c1", "name": "精选", "icon": "⭐" },
+    { "id": "c2", "name": "汉堡", "icon": "🍔" },
+    { "id": "c3", "name": "火锅", "icon": "🍲" },
+    { "id": "c4", "name": "奶茶", "icon": "🧋" },
+    { "id": "c5", "name": "快餐", "icon": "🍱" },
+    { "id": "c6", "name": "披萨", "icon": "🍕" },
+    { "id": "c7", "name": "咖啡", "icon": "☕" },
+    { "id": "c8", "name": "寿司", "icon": "🍣" }
+  ],
+  "orders": [
+    {
+      "id": "o001",
+      "restaurantName": "麦当劳（望京店）",
+      "items": [{ "name": "巨无霸套餐", "count": 1, "price": 39.9 }],
+      "total": 42.9,
+      "status": "delivered",
+      "time": "2024-06-01 12:30",
+      "deliveryFee": 3
+    },
+    {
+      "id": "o002",
+      "restaurantName": "瑞幸咖啡",
+      "items": [{ "name": "生椰拿铁（大杯）", "count": 2, "price": 48.0 }],
+      "total": 52.0,
+      "status": "delivered",
+      "time": "2024-05-30 09:15",
+      "deliveryFee": 4
+    }
+  ]
+}

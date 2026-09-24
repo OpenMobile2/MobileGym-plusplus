@@ -1,0 +1,139 @@
+/* 滴答清单主题：CSS 变量由 useDidaTheme 注入；下面把历史硬编码深色 class 映射到变量 */
+
+.dida-shell {
+  background: var(--dida-bg, #000);
+  color: var(--dida-text, #fff);
+}
+
+.dida-shell .dida-page {
+  background: var(--dida-bg, #000) !important;
+  color: var(--dida-text, #fff) !important;
+}
+
+.dida-shell .dida-card {
+  background: var(--dida-card, #1c1c1e) !important;
+}
+
+.dida-shell .dida-sheet {
+  background: var(--dida-sheet, #1a1a1c) !important;
+}
+
+.dida-shell .dida-drawer {
+  background: var(--dida-drawer, #0e0e0f) !important;
+}
+
+.dida-shell .dida-elevated {
+  background: var(--dida-elevated, #2a2a2c) !important;
+}
+
+.dida-shell .dida-muted {
+  color: var(--dida-muted, #8e8e93) !important;
+}
+
+.dida-shell .dida-accent {
+  color: var(--dida-accent, #f79a28) !important;
+}
+
+.dida-shell .dida-accent-bg {
+  background: var(--dida-accent, #f79a28) !important;
+}
+
+.dida-shell .dida-border {
+  border-color: var(--dida-border, #3a3a3c) !important;
+}
+
+.dida-shell .dida-divider-b {
+  border-bottom-color: var(--dida-divider, #2c2c2e) !important;
+}
+
+/* —— 历史硬编码 Tailwind arbitrary → 主题变量 —— */
+.dida-shell .bg-\[\#1C1C1E\],
+.dida-shell .bg-\[\#1c1c1e\] {
+  background-color: var(--dida-card) !important;
+}
+
+.dida-shell .bg-\[\#0E0E0F\],
+.dida-shell .bg-\[\#0e0e0f\] {
+  background-color: var(--dida-drawer) !important;
+}
+
+.dida-shell .bg-\[\#2A2A2C\],
+.dida-shell .bg-\[\#2a2a2c\] {
+  background-color: var(--dida-elevated) !important;
+}
+
+.dida-shell .bg-\[\#3A3A3C\],
+.dida-shell .bg-\[\#3a3a3c\] {
+  background-color: var(--dida-chip-off) !important;
+}
+
+.dida-shell .bg-\[\#1A1A1C\],
+.dida-shell .bg-\[\#1a1a1c\],
+.dida-shell .bg-\[\#1A2540\],
+.dida-shell .bg-\[\#1a2540\] {
+  background-color: var(--dida-sheet) !important;
+}
+
+.dida-shell .border-\[\#2C2C2E\],
+.dida-shell .border-\[\#2c2c2e\],
+.dida-shell .border-\[\#3A3A3C\],
+.dida-shell .border-\[\#3a3a3c\] {
+  border-color: var(--dida-divider) !important;
+}
+
+/* 正文/图标：原 text-white 在浅色下改为主题字色 */
+.dida-shell .text-white {
+  color: var(--dida-text) !important;
+}
+
+/* 彩色底上的字/图标保持白色 */
+.dida-shell .dida-on-color,
+.dida-shell .dida-on-color.text-white,
+.dida-shell .bg-\[\#2FBE8F\],
+.dida-shell .bg-\[\#5A6270\],
+/* React 常把 hex 序列化成 rgb；强调色用 var 写在 style 里可稳定匹配 */
+.dida-shell [style*='background: var(--dida-accent)'],
+.dida-shell [style*='background:var(--dida-accent)'],
+.dida-shell [style*='background: #FF4D4F'],
+.dida-shell [style*='background:#FF4D4F'],
+.dida-shell [style*='background: rgb(255, 77, 79)'],
+.dida-shell [style*='background:rgb(255, 77, 79)'],
+.dida-shell [style*='background: #F79A28'],
+.dida-shell [style*='background:#F79A28'],
+.dida-shell [style*='background: rgb(247, 154, 40)'],
+.dida-shell [style*='background:rgb(247, 154, 40)'],
+/* 优先级 / 象限色块 */
+.dida-shell [style*='background: #E8594C'],
+.dida-shell [style*='background:#E8594C'],
+.dida-shell [style*='background: rgb(232, 89, 76)'],
+.dida-shell [style*='background: #F5B429'],
+.dida-shell [style*='background:#F5B429'],
+.dida-shell [style*='background: rgb(245, 180, 41)'],
+.dida-shell [style*='background: #4E7EF3'],
+.dida-shell [style*='background:#4E7EF3'],
+.dida-shell [style*='background: rgb(78, 126, 243)'],
+.dida-shell [style*='background: #F0526D'],
+.dida-shell [style*='background:#F0526D'],
+.dida-shell [style*='background: rgb(240, 82, 109)'],
+.dida-shell [style*='background: #F5A623'],
+.dida-shell [style*='background:#F5A623'],
+.dida-shell [style*='background: rgb(245, 166, 35)'],
+.dida-shell [style*='background: #4772F5'],
+.dida-shell [style*='background:#4772F5'],
+.dida-shell [style*='background: rgb(71, 114, 245)'],
+.dida-shell [style*='background: #34C77B'],
+.dida-shell [style*='background:#34C77B'],
+.dida-shell [style*='background: rgb(52, 199, 123)'] {
+  color: #fff !important;
+}
+
+/* 选中态行底（侧栏等） */
+.dida-shell .dida-row-selected {
+  background: var(--dida-row-selected) !important;
+}
+
+/* 弹窗 / 底部菜单：强调色描边，浅色深色都易辨认 */
+.dida-shell .dida-popover {
+  border: 1.5px solid var(--dida-accent) !important;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28) !important;
+}

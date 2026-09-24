@@ -1,0 +1,6633 @@
+{
+  "user": {
+    "nickname": "苏小宁_79",
+    "phoneMasked": "198******00",
+    "avatar": "lion",
+    "yunzuan": 1,
+    "registeredAt": "2026-07-03"
+  },
+  "products": [
+    {
+      "id": "ac-gree-yunjinpro",
+      "title": "格力(GREE)云锦Pro 1.5匹 新一级能效 变频冷暖 壁挂式空调挂机",
+      "category": "ac",
+      "brand": "格力",
+      "shopId": "shop-gree",
+      "price": 2209.15,
+      "priceOriginal": 2599,
+      "promoTag": "gov",
+      "salesText": "月销1200",
+      "reviewCount": 5632,
+      "goodRate": 98,
+      "rankFields": {
+        "sales": 1200,
+        "rebuy": 12,
+        "discount": 85,
+        "trend": 606,
+        "newness": 60
+      },
+      "attrs": {
+        "hp": "1.5匹",
+        "energy": "新一级能效",
+        "service": [
+          "省心购",
+          "24小时发货",
+          "以旧换新"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/ac-gree-yunjinpro.png",
+      "gallery": [
+        "/@app-assets/Suning/products/ac-gree-yunjinpro.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 2781710105",
+        "groups": [
+          {
+            "name": "型号",
+            "options": [
+              {
+                "id": "ac-gree-yunjinpro-m0",
+                "label": "格力(GREE)云锦Pro 1.5匹",
+                "price": 2209.15,
+                "priceOriginal": 2599,
+                "hot": true
+              },
+              {
+                "id": "ac-gree-yunjinpro-m1",
+                "label": "格力(GREE)云锦Pro 1.5匹 升级款",
+                "price": 2540.52
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 5
+      }
+    },
+    {
+      "id": "ac-leader-shengdian",
+      "title": "统帅(Leader)海尔出品 超省电1.5匹 新一级能效 变频冷暖 空调挂机",
+      "category": "ac",
+      "brand": "统帅",
+      "shopId": "shop-suning-self",
+      "price": 1529.15,
+      "priceOriginal": 1799,
+      "promoTag": "gov",
+      "salesText": "月销2300",
+      "reviewCount": 8214,
+      "goodRate": 97,
+      "rankFields": {
+        "sales": 2300,
+        "rebuy": 18,
+        "discount": 85,
+        "trend": 980,
+        "newness": 90
+      },
+      "attrs": {
+        "hp": "1.5匹",
+        "energy": "新一级能效",
+        "service": [
+          "省心购",
+          "24小时发货",
+          "以旧换新"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/ac-leader-shengdian.png",
+      "gallery": [
+        "/@app-assets/Suning/products/ac-leader-shengdian.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 1865845218",
+        "groups": [
+          {
+            "name": "型号",
+            "options": [
+              {
+                "id": "ac-leader-shengdian-m0",
+                "label": "统帅(Leader)海尔出品 超省电",
+                "price": 1529.15,
+                "priceOriginal": 1799,
+                "hot": true
+              },
+              {
+                "id": "ac-leader-shengdian-m1",
+                "label": "统帅(Leader)海尔出品 超省电 升级款",
+                "price": 1758.52
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 5
+      }
+    },
+    {
+      "id": "ac-leader-zhixiang",
+      "title": "统帅(Leader)海尔出品 智享风1.5匹 新一级能效 智能变频 空调挂机",
+      "category": "ac",
+      "brand": "统帅",
+      "shopId": "shop-suning-self",
+      "price": 1529.15,
+      "priceOriginal": 1899,
+      "promoTag": "gov",
+      "salesText": "月销1100",
+      "reviewCount": 3105,
+      "goodRate": 97,
+      "rankFields": {
+        "sales": 1100,
+        "rebuy": 33,
+        "discount": 81,
+        "trend": 551,
+        "newness": 120
+      },
+      "attrs": {
+        "hp": "1.5匹",
+        "energy": "新一级能效",
+        "service": [
+          "省心购",
+          "24小时发货"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/ac-leader-zhixiang.png",
+      "gallery": [
+        "/@app-assets/Suning/products/ac-leader-zhixiang.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 1159246279",
+        "groups": [
+          {
+            "name": "型号",
+            "options": [
+              {
+                "id": "ac-leader-zhixiang-m0",
+                "label": "统帅(Leader)海尔出品 智享风",
+                "price": 1529.15,
+                "priceOriginal": 1899,
+                "hot": true
+              },
+              {
+                "id": "ac-leader-zhixiang-m1",
+                "label": "统帅(Leader)海尔出品 智享风 升级款",
+                "price": 1758.52
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 5
+      }
+    },
+    {
+      "id": "ac-midea-kusheng2",
+      "title": "美的(Midea)酷省电二代 1.5匹 新一级能效 变频冷暖 空调挂机",
+      "category": "ac",
+      "brand": "美的",
+      "shopId": "shop-suning-self",
+      "price": 1784.15,
+      "priceOriginal": 2099,
+      "promoTag": "gov",
+      "salesText": "月销1900",
+      "reviewCount": 12403,
+      "goodRate": 98,
+      "rankFields": {
+        "sales": 1900,
+        "rebuy": 35,
+        "discount": 85,
+        "trend": 1200,
+        "newness": 75
+      },
+      "attrs": {
+        "hp": "1.5匹",
+        "energy": "新一级能效",
+        "service": [
+          "省心购",
+          "24小时发货",
+          "以旧换新"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/ac-midea-kusheng2.png",
+      "gallery": [
+        "/@app-assets/Suning/products/ac-midea-kusheng2.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 2484513447",
+        "groups": [
+          {
+            "name": "型号",
+            "options": [
+              {
+                "id": "ac-midea-kusheng2-m0",
+                "label": "美的(Midea)酷省电二代 1.5",
+                "price": 1784.15,
+                "priceOriginal": 2099,
+                "hot": true
+              },
+              {
+                "id": "ac-midea-kusheng2-m1",
+                "label": "美的(Midea)酷省电二代 1.5 升级款",
+                "price": 2051.77
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 5
+      }
+    },
+    {
+      "id": "ac-haier-xiaohonghua",
+      "title": "海尔(Haier)小红花 1.5匹 新一级能效 除菌自清洁 变频空调挂机",
+      "category": "ac",
+      "brand": "海尔",
+      "shopId": "shop-suning-self",
+      "price": 1949.15,
+      "priceOriginal": 2299,
+      "promoTag": "gov",
+      "salesText": "月销860",
+      "reviewCount": 4520,
+      "goodRate": 98,
+      "rankFields": {
+        "sales": 860,
+        "rebuy": 20,
+        "discount": 85,
+        "trend": 488,
+        "newness": 45
+      },
+      "attrs": {
+        "hp": "1.5匹",
+        "energy": "新一级能效",
+        "service": [
+          "省心购",
+          "24小时发货"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/ac-haier-xiaohonghua.png",
+      "gallery": [
+        "/@app-assets/Suning/products/ac-haier-xiaohonghua.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 1390616250",
+        "groups": [
+          {
+            "name": "型号",
+            "options": [
+              {
+                "id": "ac-haier-xiaohonghua-m0",
+                "label": "海尔(Haier)小红花 1.5匹 ",
+                "price": 1949.15,
+                "priceOriginal": 2299,
+                "hot": true
+              },
+              {
+                "id": "ac-haier-xiaohonghua-m1",
+                "label": "海尔(Haier)小红花 1.5匹  升级款",
+                "price": 2241.52
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 5
+      }
+    },
+    {
+      "id": "ac-gree-yunjia",
+      "title": "格力(GREE)云佳 1.5匹 新一级能效 变频冷暖 空调挂机",
+      "category": "ac",
+      "brand": "格力",
+      "shopId": "shop-gree",
+      "price": 2379.15,
+      "priceOriginal": 2799,
+      "promoTag": "gov",
+      "salesText": "月销740",
+      "reviewCount": 9861,
+      "goodRate": 98,
+      "rankFields": {
+        "sales": 740,
+        "rebuy": 13,
+        "discount": 85,
+        "trend": 434,
+        "newness": 200
+      },
+      "attrs": {
+        "hp": "1.5匹",
+        "energy": "新一级能效",
+        "service": [
+          "省心购",
+          "24小时发货"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/ac-gree-yunjia.png",
+      "gallery": [
+        "/@app-assets/Suning/products/ac-gree-yunjia.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 3031414535",
+        "groups": [
+          {
+            "name": "型号",
+            "options": [
+              {
+                "id": "ac-gree-yunjia-m0",
+                "label": "格力(GREE)云佳 1.5匹 新一",
+                "price": 2379.15,
+                "priceOriginal": 2799,
+                "hot": true
+              },
+              {
+                "id": "ac-gree-yunjia-m1",
+                "label": "格力(GREE)云佳 1.5匹 新一 升级款",
+                "price": 2736.02
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 5
+      }
+    },
+    {
+      "id": "fridge-haier-539",
+      "title": "海尔(Haier)539升 十字对开门冰箱 一级能效 双变频风冷无霜 大容量",
+      "category": "fridge",
+      "brand": "海尔",
+      "shopId": "shop-suning-self",
+      "price": 2543.65,
+      "priceOriginal": 2993,
+      "promoTag": "gov",
+      "salesText": "月销620",
+      "reviewCount": 7325,
+      "goodRate": 98,
+      "rankFields": {
+        "sales": 620,
+        "rebuy": 25,
+        "discount": 85,
+        "trend": 360,
+        "newness": 110
+      },
+      "attrs": {
+        "volume": "539升",
+        "energy": "一级能效",
+        "service": [
+          "省心购",
+          "24小时发货",
+          "以旧换新"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/fridge-haier-539.png",
+      "gallery": [
+        "/@app-assets/Suning/products/fridge-haier-539.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 3010742019",
+        "groups": [
+          {
+            "name": "型号",
+            "options": [
+              {
+                "id": "fridge-haier-539-m0",
+                "label": "海尔(Haier)539升 十字对开",
+                "price": 2543.65,
+                "priceOriginal": 2993,
+                "hot": true
+              },
+              {
+                "id": "fridge-haier-539-m1",
+                "label": "海尔(Haier)539升 十字对开 升级款",
+                "price": 2925.2
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 5
+      }
+    },
+    {
+      "id": "fridge-leader-501",
+      "title": "统帅(Leader)海尔出品 501升 对开门冰箱 一级能效 风冷无霜",
+      "category": "fridge",
+      "brand": "统帅",
+      "shopId": "shop-suning-self",
+      "price": 2099.15,
+      "priceOriginal": 2469,
+      "promoTag": "gov",
+      "salesText": "月销350",
+      "reviewCount": 2861,
+      "goodRate": 97,
+      "rankFields": {
+        "sales": 350,
+        "rebuy": 13,
+        "discount": 85,
+        "trend": 223,
+        "newness": 150
+      },
+      "attrs": {
+        "volume": "501升",
+        "energy": "一级能效",
+        "service": [
+          "省心购",
+          "24小时发货"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/fridge-leader-501.png",
+      "gallery": [
+        "/@app-assets/Suning/products/fridge-leader-501.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 1523746042",
+        "groups": [
+          {
+            "name": "型号",
+            "options": [
+              {
+                "id": "fridge-leader-501-m0",
+                "label": "统帅(Leader)海尔出品 501",
+                "price": 2099.15,
+                "priceOriginal": 2469,
+                "hot": true
+              },
+              {
+                "id": "fridge-leader-501-m1",
+                "label": "统帅(Leader)海尔出品 501 升级款",
+                "price": 2414.02
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 5
+      }
+    },
+    {
+      "id": "washer-lswan-bolun",
+      "title": "小天鹅(LittleSwan)10公斤 波轮洗衣机 全自动 免清洗直驱变频",
+      "category": "washer",
+      "brand": "小天鹅",
+      "shopId": "shop-suning-self",
+      "price": 658.75,
+      "priceOriginal": 775,
+      "promoTag": "gov",
+      "salesText": "月销1500",
+      "reviewCount": 15320,
+      "goodRate": 98,
+      "rankFields": {
+        "sales": 1500,
+        "rebuy": 12,
+        "discount": 85,
+        "trend": 841,
+        "newness": 130
+      },
+      "attrs": {
+        "capacity": "10公斤",
+        "type": "波轮",
+        "service": [
+          "省心购",
+          "24小时发货"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/washer-lswan-bolun.png",
+      "gallery": [
+        "/@app-assets/Suning/products/washer-lswan-bolun.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 2440090631",
+        "groups": [
+          {
+            "name": "型号",
+            "options": [
+              {
+                "id": "washer-lswan-bolun-m0",
+                "label": "小天鹅(LittleSwan)10公",
+                "price": 658.75,
+                "priceOriginal": 775,
+                "hot": true
+              },
+              {
+                "id": "washer-lswan-bolun-m1",
+                "label": "小天鹅(LittleSwan)10公 升级款",
+                "price": 757.56
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 5
+      }
+    },
+    {
+      "id": "washer-lswan-tg10",
+      "title": "小天鹅(LittleSwan)滚筒洗衣机 TG10V28T 10公斤 一级能效 除菌净螨",
+      "category": "washer",
+      "brand": "小天鹅",
+      "shopId": "shop-suning-self",
+      "price": 3499,
+      "priceOriginal": 3899,
+      "promoTag": "gov",
+      "salesText": "月销980",
+      "reviewCount": 20135,
+      "goodRate": 99,
+      "rankFields": {
+        "sales": 980,
+        "rebuy": 11,
+        "discount": 90,
+        "trend": 546,
+        "newness": 85
+      },
+      "attrs": {
+        "capacity": "10公斤",
+        "type": "滚筒",
+        "service": [
+          "省心购",
+          "24小时发货",
+          "以旧换新"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/washer-lswan-tg10.png",
+      "gallery": [
+        "/@app-assets/Suning/products/washer-lswan-tg10.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 3031228797",
+        "groups": [
+          {
+            "name": "型号",
+            "options": [
+              {
+                "id": "washer-lswan-tg10-m0",
+                "label": "小天鹅(LittleSwan)滚筒洗",
+                "price": 3499,
+                "priceOriginal": 3899,
+                "hot": true
+              },
+              {
+                "id": "washer-lswan-tg10-m1",
+                "label": "小天鹅(LittleSwan)滚筒洗 升级款",
+                "price": 4023.85
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 5
+      }
+    },
+    {
+      "id": "tv-redmi-a55",
+      "title": "REDMI 电视A55 2025款 55英寸 4K超高清 远场语音 金属全面屏",
+      "category": "tv",
+      "brand": "REDMI",
+      "shopId": "shop-suning-self",
+      "price": 1799,
+      "priceOriginal": 2099,
+      "promoTag": "gov",
+      "salesText": "月销2100",
+      "reviewCount": 18240,
+      "goodRate": 97,
+      "rankFields": {
+        "sales": 2100,
+        "rebuy": 20,
+        "discount": 86,
+        "trend": 1500,
+        "newness": 40
+      },
+      "attrs": {
+        "size": "55英寸",
+        "resolution": "4K",
+        "service": [
+          "省心购",
+          "24小时发货"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/tv-redmi-a55.png",
+      "gallery": [
+        "/@app-assets/Suning/products/tv-redmi-a55.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 3062501206",
+        "groups": [
+          {
+            "name": "型号",
+            "options": [
+              {
+                "id": "tv-redmi-a55-m0",
+                "label": "REDMI 电视A55 2025款 ",
+                "price": 1799,
+                "priceOriginal": 2099,
+                "hot": true
+              },
+              {
+                "id": "tv-redmi-a55-m1",
+                "label": "REDMI 电视A55 2025款  升级款",
+                "price": 2068.85
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 5
+      }
+    },
+    {
+      "id": "tv-changhong-65d6",
+      "title": "长虹(CHANGHONG)65英寸 4K超高清 语音声控 全面屏平板电视",
+      "category": "tv",
+      "brand": "长虹",
+      "shopId": "shop-suning-self",
+      "price": 2299,
+      "priceOriginal": 2699,
+      "promoTag": "gov",
+      "salesText": "月销540",
+      "reviewCount": 6108,
+      "goodRate": 96,
+      "rankFields": {
+        "sales": 540,
+        "rebuy": 12,
+        "discount": 85,
+        "trend": 364,
+        "newness": 160
+      },
+      "attrs": {
+        "size": "65英寸",
+        "resolution": "4K",
+        "service": [
+          "省心购",
+          "24小时发货"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/tv-changhong-65d6.png",
+      "gallery": [
+        "/@app-assets/Suning/products/tv-changhong-65d6.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 2905970932",
+        "groups": [
+          {
+            "name": "型号",
+            "options": [
+              {
+                "id": "tv-changhong-65d6-m0",
+                "label": "长虹(CHANGHONG)65英寸 ",
+                "price": 2299,
+                "priceOriginal": 2699,
+                "hot": true
+              },
+              {
+                "id": "tv-changhong-65d6-m1",
+                "label": "长虹(CHANGHONG)65英寸  升级款",
+                "price": 2643.85
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 5
+      }
+    },
+    {
+      "id": "fan-fd30l501",
+      "title": "荣事达(Royalstar)电风扇落地扇 FD-30L501 一米八加高 遥控定时 五叶大风量",
+      "category": "fan",
+      "brand": "荣事达",
+      "shopId": "shop-rsd",
+      "price": 95,
+      "priceOriginal": 100,
+      "promoTag": "gov",
+      "salesText": "月销497",
+      "reviewCount": 42,
+      "goodRate": 79,
+      "rankFields": {
+        "sales": 497,
+        "rebuy": 22,
+        "discount": 95,
+        "trend": 860,
+        "newness": 70
+      },
+      "attrs": {
+        "type": "落地扇",
+        "control": "遥控式",
+        "gears": "5档",
+        "windMode": "正常风/睡眠风",
+        "blades": "5片",
+        "display": "指示灯",
+        "features": "定时/摇头",
+        "service": [
+          "省心购",
+          "24小时发货"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/fan-fd30l501.png",
+      "gallery": [
+        "/@app-assets/Suning/products/fan-fd30l501.png",
+        "/@app-assets/Suning/products/fan-fd30l501_g2.png",
+        "/@app-assets/Suning/products/fan-fd30l501_g3.png"
+      ],
+      "detailTemplate": "fan",
+      "sku": {
+        "codeText": "商品编码 12587496301",
+        "groups": [
+          {
+            "name": "型号",
+            "options": [
+              {
+                "id": "fd30l501",
+                "label": "FD-30L501 一米八加高遥控款",
+                "price": 95,
+                "priceOriginal": 100,
+                "hot": true
+              },
+              {
+                "id": "fd30l502",
+                "label": "FD-30L502 轻音遥控款",
+                "price": 109,
+                "priceOriginal": 119
+              },
+              {
+                "id": "fd30l401",
+                "label": "FD-30L401 机械基础款",
+                "price": 79,
+                "priceOriginal": 89
+              },
+              {
+                "id": "fd30t509",
+                "label": "FD-30T509 塔扇遥控款",
+                "price": 139,
+                "priceOriginal": 159
+              },
+              {
+                "id": "fd30l505",
+                "label": "FD-30L505 循环风遥控款",
+                "price": 129,
+                "priceOriginal": 139
+              },
+              {
+                "id": "fd40l603",
+                "label": "FD-40L603 大风量遥控款",
+                "price": 149,
+                "priceOriginal": 169
+              },
+              {
+                "id": "fd30l500",
+                "label": "FD-30L500 基础款",
+                "price": 89,
+                "priceOriginal": 99,
+                "disabled": true
+              },
+              {
+                "id": "fd35l601",
+                "label": "FD-35L601 加高机械款",
+                "price": 99,
+                "priceOriginal": 109,
+                "disabled": true
+              }
+            ]
+          }
+        ],
+        "warranty": [
+          {
+            "id": "w-swap1",
+            "label": "只换不修1年",
+            "price": 7.9,
+            "tag": "9折"
+          },
+          {
+            "id": "w-swap2",
+            "label": "只换不修2年",
+            "price": 12.9,
+            "tag": "9折"
+          },
+          {
+            "id": "w-swap3",
+            "label": "只换不修3年",
+            "price": 16.9,
+            "tag": "9折"
+          },
+          {
+            "id": "w-full2",
+            "label": "整机保修2年",
+            "price": 8.9,
+            "tag": "限时赠1年"
+          },
+          {
+            "id": "w-full3",
+            "label": "整机保修3年",
+            "price": 13.9
+          },
+          {
+            "id": "w-full4",
+            "label": "整机保修4年",
+            "price": 18.9
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 5,
+        "installments": [
+          "花呗分期 ¥31.67×3期 免息",
+          "花呗分期 ¥15.83×6期",
+          "花呗分期 ¥7.92×12期"
+        ]
+      }
+    },
+    {
+      "id": "fan-rsd-ta901",
+      "title": "荣事达(Royalstar)塔扇 TA901R 遥控无叶风扇 低噪节能 家用摇头",
+      "category": "fan",
+      "brand": "荣事达",
+      "shopId": "shop-rsd",
+      "price": 129,
+      "priceOriginal": 159,
+      "promoTag": null,
+      "salesText": "月销312",
+      "reviewCount": 1860,
+      "goodRate": 96,
+      "rankFields": {
+        "sales": 312,
+        "rebuy": 20,
+        "discount": 81,
+        "trend": 173,
+        "newness": 140
+      },
+      "attrs": {
+        "type": "塔扇",
+        "control": "遥控式",
+        "gears": "3档",
+        "windMode": "自然风/睡眠风",
+        "display": "指示灯",
+        "service": [
+          "省心购",
+          "24小时发货"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/fan-rsd-ta901.png",
+      "gallery": [
+        "/@app-assets/Suning/products/fan-rsd-ta901.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 2952752599",
+        "groups": [
+          {
+            "name": "型号",
+            "options": [
+              {
+                "id": "fan-rsd-ta901-m0",
+                "label": "荣事达(Royalstar)塔扇 T",
+                "price": 129,
+                "priceOriginal": 159,
+                "hot": true
+              },
+              {
+                "id": "fan-rsd-ta901-m1",
+                "label": "荣事达(Royalstar)塔扇 T 升级款",
+                "price": 148.35
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 5
+      }
+    },
+    {
+      "id": "fan-rsd-fs45",
+      "title": "荣事达(Royalstar)工业电风扇 FS-45 五叶大风力 机械款 落地两用",
+      "category": "fan",
+      "brand": "荣事达",
+      "shopId": "shop-rsd",
+      "price": 119,
+      "priceOriginal": 139,
+      "promoTag": null,
+      "salesText": "月销208",
+      "reviewCount": 942,
+      "goodRate": 95,
+      "rankFields": {
+        "sales": 208,
+        "rebuy": 26,
+        "discount": 86,
+        "trend": 173,
+        "newness": 210
+      },
+      "attrs": {
+        "type": "落地扇",
+        "control": "机械式",
+        "gears": "3档",
+        "windMode": "正常风",
+        "blades": "5片",
+        "display": "无显示",
+        "service": [
+          "24小时发货"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/fan-rsd-fs45.png",
+      "gallery": [
+        "/@app-assets/Suning/products/fan-rsd-fs45.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 1906439378",
+        "groups": [
+          {
+            "name": "型号",
+            "options": [
+              {
+                "id": "fan-rsd-fs45-m0",
+                "label": "荣事达(Royalstar)工业电风",
+                "price": 119,
+                "priceOriginal": 139,
+                "hot": true
+              },
+              {
+                "id": "fan-rsd-fs45-m1",
+                "label": "荣事达(Royalstar)工业电风 升级款",
+                "price": 136.85
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 5
+      }
+    },
+    {
+      "id": "fan-midea-sab40a",
+      "title": "美的(Midea)落地扇 SAB40A 七叶轻音 遥控定时 家用节能电风扇",
+      "category": "fan",
+      "brand": "美的",
+      "shopId": "shop-midea",
+      "price": 159,
+      "priceOriginal": 189,
+      "promoTag": "gov",
+      "salesText": "月销1800",
+      "reviewCount": 25630,
+      "goodRate": 98,
+      "rankFields": {
+        "sales": 1800,
+        "rebuy": 18,
+        "discount": 84,
+        "trend": 1100,
+        "newness": 55
+      },
+      "attrs": {
+        "type": "落地扇",
+        "control": "遥控式",
+        "gears": "8档",
+        "windMode": "自然风/睡眠风",
+        "blades": "7片",
+        "display": "LED数显",
+        "features": "定时/摇头",
+        "service": [
+          "省心购",
+          "24小时发货"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/fan-midea-sab40a.png",
+      "gallery": [
+        "/@app-assets/Suning/products/fan-midea-sab40a.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 2656545644",
+        "groups": [
+          {
+            "name": "型号",
+            "options": [
+              {
+                "id": "fan-midea-sab40a-m0",
+                "label": "美的(Midea)落地扇 SAB40",
+                "price": 159,
+                "priceOriginal": 189,
+                "hot": true
+              },
+              {
+                "id": "fan-midea-sab40a-m1",
+                "label": "美的(Midea)落地扇 SAB40 升级款",
+                "price": 182.85
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 5
+      }
+    },
+    {
+      "id": "fan-midea-gaf24",
+      "title": "美的(Midea)空气循环扇 GAF24AR 3D自动摇头 直流变频 轻音节能",
+      "category": "fan",
+      "brand": "美的",
+      "shopId": "shop-midea",
+      "price": 199,
+      "priceOriginal": 249,
+      "promoTag": "gov",
+      "salesText": "月销960",
+      "reviewCount": 11208,
+      "goodRate": 98,
+      "rankFields": {
+        "sales": 960,
+        "rebuy": 16,
+        "discount": 80,
+        "trend": 533,
+        "newness": 35
+      },
+      "attrs": {
+        "type": "空气循环扇",
+        "control": "遥控式",
+        "gears": "12档及以上",
+        "windMode": "循环风",
+        "blades": "5片",
+        "display": "LED数显",
+        "features": "定时/摇头/WiFi智控",
+        "service": [
+          "省心购",
+          "24小时发货"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/fan-midea-gaf24.png",
+      "gallery": [
+        "/@app-assets/Suning/products/fan-midea-gaf24.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 1351126571",
+        "groups": [
+          {
+            "name": "型号",
+            "options": [
+              {
+                "id": "fan-midea-gaf24-m0",
+                "label": "美的(Midea)空气循环扇 GAF",
+                "price": 199,
+                "priceOriginal": 249,
+                "hot": true
+              },
+              {
+                "id": "fan-midea-gaf24-m1",
+                "label": "美的(Midea)空气循环扇 GAF 升级款",
+                "price": 228.85
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 5
+      }
+    },
+    {
+      "id": "fan-midea-sde35",
+      "title": "美的(Midea)电风扇 SDE35CR 直流变频轻音落地扇 12档风力 WiFi智控",
+      "category": "fan",
+      "brand": "美的",
+      "shopId": "shop-midea",
+      "price": 249,
+      "priceOriginal": 299,
+      "promoTag": "gov",
+      "salesText": "月销730",
+      "reviewCount": 8964,
+      "goodRate": 98,
+      "rankFields": {
+        "sales": 730,
+        "rebuy": 12,
+        "discount": 83,
+        "trend": 405,
+        "newness": 50
+      },
+      "attrs": {
+        "type": "落地扇",
+        "control": "遥控式",
+        "gears": "12档及以上",
+        "windMode": "自然风/睡眠风",
+        "blades": "7片",
+        "display": "LED数显",
+        "features": "定时/摇头/WiFi智控",
+        "service": [
+          "省心购",
+          "24小时发货"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/fan-midea-sde35.png",
+      "gallery": [
+        "/@app-assets/Suning/products/fan-midea-sde35.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 1362297267",
+        "groups": [
+          {
+            "name": "型号",
+            "options": [
+              {
+                "id": "fan-midea-sde35-m0",
+                "label": "美的(Midea)电风扇 SDE35",
+                "price": 249,
+                "priceOriginal": 299,
+                "hot": true
+              },
+              {
+                "id": "fan-midea-sde35-m1",
+                "label": "美的(Midea)电风扇 SDE35 升级款",
+                "price": 286.35
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 5
+      }
+    },
+    {
+      "id": "fan-gree-fdz35",
+      "title": "格力(GREE)塔扇 FDZ-35X69Bg5 无叶落地扇 遥控轻音 广角送风",
+      "category": "fan",
+      "brand": "格力",
+      "shopId": "shop-gree",
+      "price": 399,
+      "priceOriginal": 459,
+      "promoTag": "gov",
+      "salesText": "月销420",
+      "reviewCount": 3250,
+      "goodRate": 97,
+      "rankFields": {
+        "sales": 420,
+        "rebuy": 10,
+        "discount": 87,
+        "trend": 259,
+        "newness": 95
+      },
+      "attrs": {
+        "type": "塔扇",
+        "control": "遥控式",
+        "gears": "8档",
+        "windMode": "自然风/睡眠风",
+        "display": "LED数显",
+        "features": "定时/摇头",
+        "service": [
+          "省心购",
+          "24小时发货"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/fan-gree-fdz35.png",
+      "gallery": [
+        "/@app-assets/Suning/products/fan-gree-fdz35.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 2440023638",
+        "groups": [
+          {
+            "name": "型号",
+            "options": [
+              {
+                "id": "fan-gree-fdz35-m0",
+                "label": "格力(GREE)塔扇 FDZ-35X",
+                "price": 399,
+                "priceOriginal": 459,
+                "hot": true
+              },
+              {
+                "id": "fan-gree-fdz35-m1",
+                "label": "格力(GREE)塔扇 FDZ-35X 升级款",
+                "price": 458.85
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 5
+      }
+    },
+    {
+      "id": "fan-gree-fsz40",
+      "title": "格力(GREE)落地扇 FSZ-40X65Bg7 七叶柔风 遥控定时 家用电风扇",
+      "category": "fan",
+      "brand": "格力",
+      "shopId": "shop-gree",
+      "price": 219,
+      "priceOriginal": 259,
+      "promoTag": "gov",
+      "salesText": "月销380",
+      "reviewCount": 5106,
+      "goodRate": 98,
+      "rankFields": {
+        "sales": 380,
+        "rebuy": 18,
+        "discount": 85,
+        "trend": 252,
+        "newness": 125
+      },
+      "attrs": {
+        "type": "落地扇",
+        "control": "遥控式",
+        "gears": "8档",
+        "windMode": "自然风/睡眠风",
+        "blades": "7片",
+        "display": "LED数显",
+        "features": "定时/摇头",
+        "service": [
+          "省心购",
+          "24小时发货"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/fan-gree-fsz40.png",
+      "gallery": [
+        "/@app-assets/Suning/products/fan-gree-fsz40.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 2440470529",
+        "groups": [
+          {
+            "name": "型号",
+            "options": [
+              {
+                "id": "fan-gree-fsz40-m0",
+                "label": "格力(GREE)落地扇 FSZ-40",
+                "price": 219,
+                "priceOriginal": 259,
+                "hot": true
+              },
+              {
+                "id": "fan-gree-fsz40-m1",
+                "label": "格力(GREE)落地扇 FSZ-40 升级款",
+                "price": 251.85
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 5
+      }
+    },
+    {
+      "id": "fan-dyson-am07",
+      "title": "戴森(Dyson)AM07 无叶塔式凉风扇 整屋循环 轻音节能",
+      "category": "fan",
+      "brand": "戴森",
+      "shopId": "shop-suning-self",
+      "price": 2990,
+      "priceOriginal": 3190,
+      "promoTag": null,
+      "salesText": "月销65",
+      "reviewCount": 1305,
+      "goodRate": 99,
+      "rankFields": {
+        "sales": 65,
+        "rebuy": 25,
+        "discount": 94,
+        "trend": 76,
+        "newness": 300
+      },
+      "attrs": {
+        "type": "塔扇",
+        "control": "遥控式",
+        "gears": "12档及以上",
+        "windMode": "自然风/循环风",
+        "display": "指示灯",
+        "service": [
+          "省心购",
+          "价保"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/fan-dyson-am07.png",
+      "gallery": [
+        "/@app-assets/Suning/products/fan-dyson-am07.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 2309887203",
+        "groups": [
+          {
+            "name": "型号",
+            "options": [
+              {
+                "id": "fan-dyson-am07-m0",
+                "label": "戴森(Dyson)AM07 无叶塔式",
+                "price": 2990,
+                "priceOriginal": 3190,
+                "hot": true
+              },
+              {
+                "id": "fan-dyson-am07-m1",
+                "label": "戴森(Dyson)AM07 无叶塔式 升级款",
+                "price": 3438.5
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 5
+      }
+    },
+    {
+      "id": "fan-aux-f40",
+      "title": "奥克斯(AUX)落地扇 FS1602R 遥控款 五叶轻音 家用电风扇",
+      "category": "fan",
+      "brand": "奥克斯",
+      "shopId": "shop-suning-self",
+      "price": 169,
+      "priceOriginal": 199,
+      "promoTag": null,
+      "salesText": "月销2600",
+      "reviewCount": 31420,
+      "goodRate": 97,
+      "rankFields": {
+        "sales": 2600,
+        "rebuy": 12,
+        "discount": 85,
+        "trend": 1300,
+        "newness": 100
+      },
+      "attrs": {
+        "type": "落地扇",
+        "control": "遥控式",
+        "gears": "5档",
+        "windMode": "正常风/自然风",
+        "blades": "5片",
+        "display": "指示灯",
+        "features": "定时/摇头",
+        "service": [
+          "省心购",
+          "24小时发货"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/fan-aux-f40.png",
+      "gallery": [
+        "/@app-assets/Suning/products/fan-aux-f40.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 2266409953",
+        "groups": [
+          {
+            "name": "型号",
+            "options": [
+              {
+                "id": "fan-aux-f40-m0",
+                "label": "奥克斯(AUX)落地扇 FS1602",
+                "price": 169,
+                "priceOriginal": 199,
+                "hot": true
+              },
+              {
+                "id": "fan-aux-f40-m1",
+                "label": "奥克斯(AUX)落地扇 FS1602 升级款",
+                "price": 194.35
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 5
+      }
+    },
+    {
+      "id": "fan-aux-xh01",
+      "title": "AUX奥克斯 空气循环扇 XH-01R 台式桌面涡轮对流 三档轻音",
+      "category": "fan",
+      "brand": "奥克斯",
+      "shopId": "shop-suning-self",
+      "price": 119,
+      "priceOriginal": 149,
+      "promoTag": null,
+      "salesText": "月销890",
+      "reviewCount": 7203,
+      "goodRate": 96,
+      "rankFields": {
+        "sales": 890,
+        "rebuy": 15,
+        "discount": 80,
+        "trend": 470,
+        "newness": 65
+      },
+      "attrs": {
+        "type": "空气循环扇",
+        "control": "机械式",
+        "gears": "3档",
+        "windMode": "循环风",
+        "blades": "3片",
+        "display": "无显示",
+        "service": [
+          "24小时发货"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/fan-aux-xh01.png",
+      "gallery": [
+        "/@app-assets/Suning/products/fan-aux-xh01.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 1603416620",
+        "groups": [
+          {
+            "name": "型号",
+            "options": [
+              {
+                "id": "fan-aux-xh01-m0",
+                "label": "AUX奥克斯 空气循环扇 XH-01",
+                "price": 119,
+                "priceOriginal": 149,
+                "hot": true
+              },
+              {
+                "id": "fan-aux-xh01-m1",
+                "label": "AUX奥克斯 空气循环扇 XH-01 升级款",
+                "price": 136.85
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 5
+      }
+    },
+    {
+      "id": "fan-meiling-kts",
+      "title": "美菱(MeiLing)空调扇 KTS-C1 冷风机 家用移动小空调 加水制冷",
+      "category": "fan",
+      "brand": "美菱",
+      "shopId": "shop-suning-self",
+      "price": 299,
+      "priceOriginal": 359,
+      "promoTag": "juhui",
+      "salesText": "月销150",
+      "reviewCount": 1820,
+      "goodRate": 95,
+      "rankFields": {
+        "sales": 150,
+        "rebuy": 8,
+        "discount": 83,
+        "trend": 149,
+        "newness": 115
+      },
+      "attrs": {
+        "type": "空调扇",
+        "control": "遥控式",
+        "gears": "3档",
+        "windMode": "冷风/自然风",
+        "display": "LED数显",
+        "features": "定时/加湿",
+        "service": [
+          "省心购",
+          "24小时发货"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/fan-meiling-kts.png",
+      "gallery": [
+        "/@app-assets/Suning/products/fan-meiling-kts.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 1374060778",
+        "groups": [
+          {
+            "name": "型号",
+            "options": [
+              {
+                "id": "fan-meiling-kts-m0",
+                "label": "美菱(MeiLing)空调扇 KTS",
+                "price": 299,
+                "priceOriginal": 359,
+                "hot": true
+              },
+              {
+                "id": "fan-meiling-kts-m1",
+                "label": "美菱(MeiLing)空调扇 KTS 升级款",
+                "price": 343.85
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 5
+      }
+    },
+    {
+      "id": "kitchen-midea-kettle",
+      "title": "美的(Midea)电热水壶 SH15X101 1.5L 双层防烫 316L不锈钢 自动断电",
+      "category": "kitchen",
+      "brand": "美的",
+      "shopId": "shop-midea",
+      "price": 99,
+      "priceOriginal": 129,
+      "promoTag": null,
+      "salesText": "月销3200",
+      "reviewCount": 45108,
+      "goodRate": 99,
+      "rankFields": {
+        "sales": 3200,
+        "rebuy": 8,
+        "discount": 77,
+        "trend": 1600,
+        "newness": 80
+      },
+      "attrs": {
+        "capacity": "1.5L",
+        "material": "316L不锈钢",
+        "service": [
+          "省心购",
+          "24小时发货"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/kitchen-midea-kettle.png",
+      "gallery": [
+        "/@app-assets/Suning/products/kitchen-midea-kettle.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 1700531941",
+        "groups": [
+          {
+            "name": "型号",
+            "options": [
+              {
+                "id": "kitchen-midea-kettle-m0",
+                "label": "美的(Midea)电热水壶 SH15",
+                "price": 99,
+                "priceOriginal": 129,
+                "hot": true
+              },
+              {
+                "id": "kitchen-midea-kettle-m1",
+                "label": "美的(Midea)电热水壶 SH15 升级款",
+                "price": 113.85
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 5
+      }
+    },
+    {
+      "id": "kitchen-midea-hotpot",
+      "title": "美的(Midea)电火锅 DHG26A 多功能一体锅 4L大容量 不粘内胆",
+      "category": "kitchen",
+      "brand": "美的",
+      "shopId": "shop-midea",
+      "price": 169,
+      "priceOriginal": 199,
+      "promoTag": "juhui",
+      "salesText": "月销640",
+      "reviewCount": 9820,
+      "goodRate": 98,
+      "rankFields": {
+        "sales": 640,
+        "rebuy": 28,
+        "discount": 85,
+        "trend": 343,
+        "newness": 105
+      },
+      "attrs": {
+        "capacity": "4L",
+        "material": "不粘内胆",
+        "service": [
+          "省心购",
+          "24小时发货"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/kitchen-midea-hotpot.png",
+      "gallery": [
+        "/@app-assets/Suning/products/kitchen-midea-hotpot.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 1623875962",
+        "groups": [
+          {
+            "name": "型号",
+            "options": [
+              {
+                "id": "kitchen-midea-hotpot-m0",
+                "label": "美的(Midea)电火锅 DHG26",
+                "price": 169,
+                "priceOriginal": 199,
+                "hot": true
+              },
+              {
+                "id": "kitchen-midea-hotpot-m1",
+                "label": "美的(Midea)电火锅 DHG26 升级款",
+                "price": 194.35
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 5
+      }
+    },
+    {
+      "id": "kitchen-supor-bakepan",
+      "title": "苏泊尔(SUPOR)电烤盘 JD30A824 家用多功能烤肉盘 双温控",
+      "category": "kitchen",
+      "brand": "苏泊尔",
+      "shopId": "shop-suning-self",
+      "price": 139,
+      "priceOriginal": 179,
+      "promoTag": null,
+      "salesText": "月销420",
+      "reviewCount": 6013,
+      "goodRate": 98,
+      "rankFields": {
+        "sales": 420,
+        "rebuy": 29,
+        "discount": 78,
+        "trend": 306,
+        "newness": 170
+      },
+      "attrs": {
+        "material": "不粘涂层",
+        "service": [
+          "省心购",
+          "24小时发货"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/kitchen-supor-bakepan.png",
+      "gallery": [
+        "/@app-assets/Suning/products/kitchen-supor-bakepan.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 3088656031",
+        "groups": [
+          {
+            "name": "型号",
+            "options": [
+              {
+                "id": "kitchen-supor-bakepan-m0",
+                "label": "苏泊尔(SUPOR)电烤盘 JD30",
+                "price": 139,
+                "priceOriginal": 179,
+                "hot": true
+              },
+              {
+                "id": "kitchen-supor-bakepan-m1",
+                "label": "苏泊尔(SUPOR)电烤盘 JD30 升级款",
+                "price": 159.85
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 5
+      }
+    },
+    {
+      "id": "kitchen-rsd-kettle",
+      "title": "荣事达(Royalstar)电热水壶 RSD-D18 1.8L 大容量烧水壶 快速沸腾",
+      "category": "kitchen",
+      "brand": "荣事达",
+      "shopId": "shop-rsd",
+      "price": 79,
+      "priceOriginal": 99,
+      "promoTag": null,
+      "salesText": "月销510",
+      "reviewCount": 3208,
+      "goodRate": 97,
+      "rankFields": {
+        "sales": 510,
+        "rebuy": 24,
+        "discount": 80,
+        "trend": 262,
+        "newness": 190
+      },
+      "attrs": {
+        "capacity": "1.8L",
+        "material": "304不锈钢",
+        "service": [
+          "24小时发货"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/kitchen-rsd-kettle.png",
+      "gallery": [
+        "/@app-assets/Suning/products/kitchen-rsd-kettle.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 2960271642",
+        "groups": [
+          {
+            "name": "型号",
+            "options": [
+              {
+                "id": "kitchen-rsd-kettle-m0",
+                "label": "荣事达(Royalstar)电热水壶",
+                "price": 79,
+                "priceOriginal": 99,
+                "hot": true
+              },
+              {
+                "id": "kitchen-rsd-kettle-m1",
+                "label": "荣事达(Royalstar)电热水壶 升级款",
+                "price": 90.85
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 5
+      }
+    },
+    {
+      "id": "matepad-115s",
+      "title": "华为(HUAWEI)MatePad 11.5S TGR-W10 8GB+128GB WiFi 2.8K高刷护眼 平板电脑",
+      "category": "tablet",
+      "brand": "华为",
+      "shopId": "shop-huawei",
+      "price": 2294.15,
+      "priceOriginal": 2699,
+      "promoTag": "gov",
+      "salesText": "月销1500",
+      "reviewCount": 1176,
+      "goodRate": 98,
+      "rankFields": {
+        "sales": 1500,
+        "rebuy": 8,
+        "discount": 85,
+        "trend": 1400,
+        "newness": 20
+      },
+      "attrs": {
+        "storage": "8GB+128GB",
+        "screen": "11.5英寸",
+        "ram": "8GB",
+        "os": "HarmonyOS 4.2",
+        "resolution": "2.8K",
+        "cpuCores": "8核",
+        "weight": "515g",
+        "service": [
+          "省心购",
+          "价保",
+          "以旧换新"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/matepad-115s.png",
+      "gallery": [
+        "/@app-assets/Suning/products/matepad-115s.png",
+        "/@app-assets/Suning/products/matepad-115s_g2.png",
+        "/@app-assets/Suning/products/matepad-115s_g3.png"
+      ],
+      "detailTemplate": "tablet",
+      "tradeInPrice": 794.15,
+      "sku": {
+        "codeText": "商品编码 12694830257",
+        "groups": [
+          {
+            "name": "颜色",
+            "options": [
+              {
+                "id": "grey",
+                "label": "深空灰",
+                "hot": true
+              },
+              {
+                "id": "silver",
+                "label": "冰霜银"
+              },
+              {
+                "id": "violet",
+                "label": "紫罗兰"
+              }
+            ]
+          },
+          {
+            "name": "配置",
+            "options": [
+              {
+                "id": "c128",
+                "label": "8GB+128GB WiFi",
+                "price": 2294.15,
+                "priceOriginal": 2699,
+                "hot": true
+              },
+              {
+                "id": "c256",
+                "label": "8GB+256GB WiFi",
+                "price": 2494.15,
+                "priceOriginal": 2899
+              },
+              {
+                "id": "c12256",
+                "label": "12GB+256GB WiFi",
+                "price": 2694.15,
+                "priceOriginal": 3099
+              },
+              {
+                "id": "c12512",
+                "label": "12GB+512GB WiFi",
+                "price": 2994.15,
+                "priceOriginal": 3399
+              },
+              {
+                "id": "cr256",
+                "label": "12GB+256GB 柔光版",
+                "price": 2894.15,
+                "priceOriginal": 3299
+              },
+              {
+                "id": "cr512",
+                "label": "12GB+512GB 柔光版",
+                "price": 3194.15,
+                "priceOriginal": 3599,
+                "disabled": true
+              }
+            ]
+          }
+        ],
+        "warranty": [
+          {
+            "id": "w-full2",
+            "label": "整机保修2年",
+            "price": 129
+          },
+          {
+            "id": "w-full3",
+            "label": "整机保修3年",
+            "price": 176
+          },
+          {
+            "id": "w-allin1",
+            "label": "性能意外全保1年",
+            "price": 299
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 2,
+        "installments": [
+          "花呗分期 ¥764.72×3期 免息",
+          "任性付 ¥382.36×6期 免息",
+          "花呗分期 ¥191.18×12期"
+        ]
+      }
+    },
+    {
+      "id": "tablet-matepad-lingdong",
+      "title": "华为(HUAWEI)MatePad 11.5S 灵动款 12GB+256GB WiFi 柔光屏 平板电脑",
+      "category": "tablet",
+      "brand": "华为",
+      "shopId": "shop-huawei",
+      "price": 2799,
+      "priceOriginal": 2999,
+      "promoTag": "gov",
+      "salesText": "月销860",
+      "reviewCount": 3420,
+      "goodRate": 98,
+      "rankFields": {
+        "sales": 860,
+        "rebuy": 12,
+        "discount": 93,
+        "trend": 455,
+        "newness": 25
+      },
+      "attrs": {
+        "storage": "12GB+256GB",
+        "screen": "11.5英寸",
+        "ram": "12GB",
+        "os": "HarmonyOS 4.2",
+        "resolution": "2.8K",
+        "cpuCores": "8核",
+        "weight": "520g",
+        "service": [
+          "省心购",
+          "价保",
+          "以旧换新"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/tablet-matepad-lingdong.png",
+      "gallery": [
+        "/@app-assets/Suning/products/tablet-matepad-lingdong.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 2683163008",
+        "groups": [
+          {
+            "name": "颜色",
+            "options": [
+              {
+                "id": "tablet-matepad-lingdong-c0",
+                "label": "深空灰",
+                "hot": true
+              },
+              {
+                "id": "tablet-matepad-lingdong-c1",
+                "label": "银色",
+                "hot": false
+              },
+              {
+                "id": "tablet-matepad-lingdong-c2",
+                "label": "黑色",
+                "hot": false
+              }
+            ]
+          },
+          {
+            "name": "配置",
+            "options": [
+              {
+                "id": "tablet-matepad-lingdong-cfg0",
+                "label": "12GB+128GB",
+                "price": 2799,
+                "priceOriginal": 2999,
+                "hot": true
+              },
+              {
+                "id": "tablet-matepad-lingdong-cfg1",
+                "label": "8GB+128GB",
+                "price": 2999,
+                "priceOriginal": 3199,
+                "hot": false
+              },
+              {
+                "id": "tablet-matepad-lingdong-cfg2",
+                "label": "8GB+256GB",
+                "price": 3199,
+                "priceOriginal": 3399,
+                "hot": false
+              },
+              {
+                "id": "tablet-matepad-lingdong-cfg3",
+                "label": "12GB+256GB",
+                "price": 3399,
+                "priceOriginal": 3599,
+                "hot": false
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 5
+      }
+    },
+    {
+      "id": "tablet-lenovo-tb522",
+      "title": "联想(Lenovo)平板 TB522FU 天骄Pad 11.5英寸 8GB+256GB 护眼学习平板",
+      "category": "tablet",
+      "brand": "联想",
+      "shopId": "shop-lenovo-huida",
+      "price": 3349,
+      "priceOriginal": 3599,
+      "promoTag": null,
+      "salesText": "月销14",
+      "reviewCount": 42,
+      "goodRate": 100,
+      "rankFields": {
+        "sales": 14,
+        "rebuy": 22,
+        "discount": 93,
+        "trend": 49,
+        "newness": 30
+      },
+      "attrs": {
+        "storage": "8GB+256GB",
+        "screen": "11.5英寸",
+        "ram": "8GB",
+        "os": "Android",
+        "resolution": "2K",
+        "cpuCores": "8核",
+        "weight": "540g",
+        "service": [
+          "价保"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/tablet-lenovo-tb522.png",
+      "gallery": [
+        "/@app-assets/Suning/products/tablet-lenovo-tb522.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 1746359052",
+        "groups": [
+          {
+            "name": "颜色",
+            "options": [
+              {
+                "id": "tablet-lenovo-tb522-c0",
+                "label": "深空灰",
+                "hot": true
+              },
+              {
+                "id": "tablet-lenovo-tb522-c1",
+                "label": "银色",
+                "hot": false
+              },
+              {
+                "id": "tablet-lenovo-tb522-c2",
+                "label": "黑色",
+                "hot": false
+              }
+            ]
+          },
+          {
+            "name": "配置",
+            "options": [
+              {
+                "id": "tablet-lenovo-tb522-cfg0",
+                "label": "8GB+128GB",
+                "price": 3349,
+                "priceOriginal": 3599,
+                "hot": true
+              },
+              {
+                "id": "tablet-lenovo-tb522-cfg1",
+                "label": "8GB+256GB",
+                "price": 3549,
+                "priceOriginal": 3799,
+                "hot": false
+              },
+              {
+                "id": "tablet-lenovo-tb522-cfg2",
+                "label": "12GB+256GB",
+                "price": 3749,
+                "priceOriginal": 3999,
+                "hot": false
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 5
+      }
+    },
+    {
+      "id": "tablet-legion-y900",
+      "title": "联想(Lenovo)拯救者Y900 电竞平板 12.7英寸 16GB+512GB 165Hz电竞屏",
+      "category": "tablet",
+      "brand": "联想",
+      "shopId": "shop-lenovo-huida",
+      "price": 4199,
+      "priceOriginal": 4599,
+      "promoTag": null,
+      "salesText": "月销23",
+      "reviewCount": 186,
+      "goodRate": 98,
+      "rankFields": {
+        "sales": 23,
+        "rebuy": 26,
+        "discount": 91,
+        "trend": 100,
+        "newness": 15
+      },
+      "attrs": {
+        "storage": "16GB+512GB",
+        "screen": "12.7英寸",
+        "ram": "16GB",
+        "os": "Android",
+        "resolution": "3.2K",
+        "cpuCores": "8核",
+        "weight": "640g",
+        "service": [
+          "价保"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/tablet-legion-y900.png",
+      "gallery": [
+        "/@app-assets/Suning/products/tablet-legion-y900.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 2853045076",
+        "groups": [
+          {
+            "name": "颜色",
+            "options": [
+              {
+                "id": "tablet-legion-y900-c0",
+                "label": "深空灰",
+                "hot": true
+              },
+              {
+                "id": "tablet-legion-y900-c1",
+                "label": "银色",
+                "hot": false
+              },
+              {
+                "id": "tablet-legion-y900-c2",
+                "label": "黑色",
+                "hot": false
+              }
+            ]
+          },
+          {
+            "name": "配置",
+            "options": [
+              {
+                "id": "tablet-legion-y900-cfg0",
+                "label": "16GB+128GB",
+                "price": 4199,
+                "priceOriginal": 4599,
+                "hot": true
+              },
+              {
+                "id": "tablet-legion-y900-cfg1",
+                "label": "8GB+128GB",
+                "price": 4399,
+                "priceOriginal": 4799,
+                "hot": false
+              },
+              {
+                "id": "tablet-legion-y900-cfg2",
+                "label": "8GB+256GB",
+                "price": 4599,
+                "priceOriginal": 4999,
+                "hot": false
+              },
+              {
+                "id": "tablet-legion-y900-cfg3",
+                "label": "12GB+256GB",
+                "price": 4799,
+                "priceOriginal": 5199,
+                "hot": false
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 5
+      }
+    },
+    {
+      "id": "tablet-honor-20",
+      "title": "荣耀(HONOR)平板20 12英寸 8GB+256GB 2.5K护眼全面屏 平板电脑",
+      "category": "tablet",
+      "brand": "荣耀",
+      "shopId": "shop-suning-self",
+      "price": 2899,
+      "priceOriginal": 3199,
+      "promoTag": "gov",
+      "salesText": "月销96",
+      "reviewCount": 1024,
+      "goodRate": 97,
+      "rankFields": {
+        "sales": 96,
+        "rebuy": 24,
+        "discount": 91,
+        "trend": 102,
+        "newness": 28
+      },
+      "attrs": {
+        "storage": "8GB+256GB",
+        "screen": "12英寸",
+        "ram": "8GB",
+        "os": "Android",
+        "resolution": "2.5K",
+        "cpuCores": "8核",
+        "weight": "555g",
+        "service": [
+          "省心购",
+          "24小时发货",
+          "价保"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/tablet-honor-20.png",
+      "gallery": [
+        "/@app-assets/Suning/products/tablet-honor-20.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 2047317000",
+        "groups": [
+          {
+            "name": "颜色",
+            "options": [
+              {
+                "id": "tablet-honor-20-c0",
+                "label": "深空灰",
+                "hot": true
+              },
+              {
+                "id": "tablet-honor-20-c1",
+                "label": "银色",
+                "hot": false
+              },
+              {
+                "id": "tablet-honor-20-c2",
+                "label": "黑色",
+                "hot": false
+              }
+            ]
+          },
+          {
+            "name": "配置",
+            "options": [
+              {
+                "id": "tablet-honor-20-cfg0",
+                "label": "8GB+128GB",
+                "price": 2899,
+                "priceOriginal": 3199,
+                "hot": true
+              },
+              {
+                "id": "tablet-honor-20-cfg1",
+                "label": "8GB+256GB",
+                "price": 3099,
+                "priceOriginal": 3399,
+                "hot": false
+              },
+              {
+                "id": "tablet-honor-20-cfg2",
+                "label": "12GB+256GB",
+                "price": 3299,
+                "priceOriginal": 3599,
+                "hot": false
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 5
+      }
+    },
+    {
+      "id": "phone-iphone17-promax",
+      "title": "Apple iPhone 17 Pro Max 256GB 深空黑 5G双卡双待 手机",
+      "category": "phone",
+      "brand": "Apple",
+      "shopId": "shop-suning-self",
+      "price": 8463.08,
+      "priceOriginal": 9999,
+      "promoTag": "baibu",
+      "salesText": "月销3100",
+      "reviewCount": 28460,
+      "goodRate": 99,
+      "rankFields": {
+        "sales": 3100,
+        "rebuy": 20,
+        "discount": 85,
+        "trend": 2600,
+        "newness": 10
+      },
+      "attrs": {
+        "storage": "256GB",
+        "screen": "6.9英寸",
+        "color": "深空黑",
+        "service": [
+          "省心购",
+          "价保",
+          "以旧换新"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/phone-iphone17-promax.png",
+      "gallery": [
+        "/@app-assets/Suning/products/phone-iphone17-promax.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 2057695302",
+        "groups": [
+          {
+            "name": "颜色",
+            "options": [
+              {
+                "id": "phone-iphone17-promax-c0",
+                "label": "深空灰",
+                "hot": true
+              },
+              {
+                "id": "phone-iphone17-promax-c1",
+                "label": "银色",
+                "hot": false
+              },
+              {
+                "id": "phone-iphone17-promax-c2",
+                "label": "黑色",
+                "hot": false
+              }
+            ]
+          },
+          {
+            "name": "配置",
+            "options": [
+              {
+                "id": "phone-iphone17-promax-cfg0",
+                "label": "128GB",
+                "price": 8463.08,
+                "priceOriginal": 9999,
+                "hot": true
+              },
+              {
+                "id": "phone-iphone17-promax-cfg1",
+                "label": "256GB",
+                "price": 8663.08,
+                "priceOriginal": 10199,
+                "hot": false
+              },
+              {
+                "id": "phone-iphone17-promax-cfg2",
+                "label": "512GB",
+                "price": 8863.08,
+                "priceOriginal": 10399,
+                "hot": false
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 5
+      }
+    },
+    {
+      "id": "phone-iphone17-256",
+      "title": "Apple iPhone 17 256GB 白色 A19芯片 5G手机",
+      "category": "phone",
+      "brand": "Apple",
+      "shopId": "shop-suning-self",
+      "price": 5189,
+      "priceOriginal": 5999,
+      "promoTag": "baibu",
+      "salesText": "月销5200",
+      "reviewCount": 41230,
+      "goodRate": 99,
+      "rankFields": {
+        "sales": 5200,
+        "rebuy": 22,
+        "discount": 86,
+        "trend": 3000,
+        "newness": 10
+      },
+      "attrs": {
+        "storage": "256GB",
+        "screen": "6.3英寸",
+        "color": "白色",
+        "service": [
+          "省心购",
+          "价保",
+          "以旧换新"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/phone-iphone17-256.png",
+      "gallery": [
+        "/@app-assets/Suning/products/phone-iphone17-256.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 1459134192",
+        "groups": [
+          {
+            "name": "颜色",
+            "options": [
+              {
+                "id": "phone-iphone17-256-c0",
+                "label": "深空灰",
+                "hot": true
+              },
+              {
+                "id": "phone-iphone17-256-c1",
+                "label": "银色",
+                "hot": false
+              },
+              {
+                "id": "phone-iphone17-256-c2",
+                "label": "黑色",
+                "hot": false
+              }
+            ]
+          },
+          {
+            "name": "配置",
+            "options": [
+              {
+                "id": "phone-iphone17-256-cfg0",
+                "label": "128GB",
+                "price": 5189,
+                "priceOriginal": 5999,
+                "hot": true
+              },
+              {
+                "id": "phone-iphone17-256-cfg1",
+                "label": "256GB",
+                "price": 5389,
+                "priceOriginal": 6199,
+                "hot": false
+              },
+              {
+                "id": "phone-iphone17-256-cfg2",
+                "label": "512GB",
+                "price": 5589,
+                "priceOriginal": 6399,
+                "hot": false
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 5
+      }
+    },
+    {
+      "id": "phone-iphone17-pro",
+      "title": "Apple iPhone 17 Pro 256GB 星宇橙 5G双卡双待 手机",
+      "category": "phone",
+      "brand": "Apple",
+      "shopId": "shop-suning-self",
+      "price": 7543.08,
+      "priceOriginal": 8999,
+      "promoTag": "baibu",
+      "salesText": "月销2700",
+      "reviewCount": 19806,
+      "goodRate": 99,
+      "rankFields": {
+        "sales": 2700,
+        "rebuy": 18,
+        "discount": 84,
+        "trend": 2400,
+        "newness": 10
+      },
+      "attrs": {
+        "storage": "256GB",
+        "screen": "6.3英寸",
+        "color": "星宇橙",
+        "service": [
+          "省心购",
+          "价保",
+          "以旧换新"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/phone-iphone17-pro.png",
+      "gallery": [
+        "/@app-assets/Suning/products/phone-iphone17-pro.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 1459072662",
+        "groups": [
+          {
+            "name": "颜色",
+            "options": [
+              {
+                "id": "phone-iphone17-pro-c0",
+                "label": "深空灰",
+                "hot": true
+              },
+              {
+                "id": "phone-iphone17-pro-c1",
+                "label": "银色",
+                "hot": false
+              },
+              {
+                "id": "phone-iphone17-pro-c2",
+                "label": "黑色",
+                "hot": false
+              }
+            ]
+          },
+          {
+            "name": "配置",
+            "options": [
+              {
+                "id": "phone-iphone17-pro-cfg0",
+                "label": "128GB",
+                "price": 7543.08,
+                "priceOriginal": 8999,
+                "hot": true
+              },
+              {
+                "id": "phone-iphone17-pro-cfg1",
+                "label": "256GB",
+                "price": 7743.08,
+                "priceOriginal": 9199,
+                "hot": false
+              },
+              {
+                "id": "phone-iphone17-pro-cfg2",
+                "label": "512GB",
+                "price": 7943.08,
+                "priceOriginal": 9399,
+                "hot": false
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 5
+      }
+    },
+    {
+      "id": "phone-nova16",
+      "title": "华为(HUAWEI)nova 16 12GB+256GB 曜金黑 前置6000万人像 5G手机",
+      "category": "phone",
+      "brand": "华为",
+      "shopId": "shop-huawei",
+      "price": 3157.08,
+      "priceOriginal": 3699,
+      "promoTag": "gov",
+      "salesText": "月销1900",
+      "reviewCount": 15230,
+      "goodRate": 98,
+      "rankFields": {
+        "sales": 1900,
+        "rebuy": 34,
+        "discount": 85,
+        "trend": 1900,
+        "newness": 12
+      },
+      "attrs": {
+        "storage": "12GB+256GB",
+        "screen": "6.7英寸",
+        "color": "曜金黑",
+        "service": [
+          "省心购",
+          "24小时发货",
+          "价保",
+          "以旧换新"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/phone-nova16.png",
+      "gallery": [
+        "/@app-assets/Suning/products/phone-nova16.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 3043137904",
+        "groups": [
+          {
+            "name": "颜色",
+            "options": [
+              {
+                "id": "phone-nova16-c0",
+                "label": "深空灰",
+                "hot": true
+              },
+              {
+                "id": "phone-nova16-c1",
+                "label": "银色",
+                "hot": false
+              },
+              {
+                "id": "phone-nova16-c2",
+                "label": "黑色",
+                "hot": false
+              }
+            ]
+          },
+          {
+            "name": "配置",
+            "options": [
+              {
+                "id": "phone-nova16-cfg0",
+                "label": "128GB",
+                "price": 3157.08,
+                "priceOriginal": 3699,
+                "hot": true
+              },
+              {
+                "id": "phone-nova16-cfg1",
+                "label": "256GB",
+                "price": 3357.08,
+                "priceOriginal": 3899,
+                "hot": false
+              },
+              {
+                "id": "phone-nova16-cfg2",
+                "label": "512GB",
+                "price": 3557.08,
+                "priceOriginal": 4099,
+                "hot": false
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 5
+      }
+    },
+    {
+      "id": "phone-nova16-pro",
+      "title": "华为(HUAWEI)nova 16 Pro 12GB+512GB 云杉绿 昆仑玻璃 5G手机",
+      "category": "phone",
+      "brand": "华为",
+      "shopId": "shop-huawei",
+      "price": 3999,
+      "priceOriginal": 4399,
+      "promoTag": "gov",
+      "salesText": "月销1400",
+      "reviewCount": 11208,
+      "goodRate": 98,
+      "rankFields": {
+        "sales": 1400,
+        "rebuy": 16,
+        "discount": 91,
+        "trend": 753,
+        "newness": 12
+      },
+      "attrs": {
+        "storage": "12GB+512GB",
+        "screen": "6.8英寸",
+        "color": "云杉绿",
+        "service": [
+          "省心购",
+          "24小时发货",
+          "价保",
+          "以旧换新"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/phone-nova16-pro.png",
+      "gallery": [
+        "/@app-assets/Suning/products/phone-nova16-pro.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 2453559792",
+        "groups": [
+          {
+            "name": "颜色",
+            "options": [
+              {
+                "id": "phone-nova16-pro-c0",
+                "label": "深空灰",
+                "hot": true
+              },
+              {
+                "id": "phone-nova16-pro-c1",
+                "label": "银色",
+                "hot": false
+              },
+              {
+                "id": "phone-nova16-pro-c2",
+                "label": "黑色",
+                "hot": false
+              }
+            ]
+          },
+          {
+            "name": "配置",
+            "options": [
+              {
+                "id": "phone-nova16-pro-cfg0",
+                "label": "128GB",
+                "price": 3999,
+                "priceOriginal": 4399,
+                "hot": true
+              },
+              {
+                "id": "phone-nova16-pro-cfg1",
+                "label": "256GB",
+                "price": 4199,
+                "priceOriginal": 4599,
+                "hot": false
+              },
+              {
+                "id": "phone-nova16-pro-cfg2",
+                "label": "512GB",
+                "price": 4399,
+                "priceOriginal": 4799,
+                "hot": false
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 5
+      }
+    },
+    {
+      "id": "phone-nova16-huoli",
+      "title": "华为(HUAWEI)nova 16 活力版 8GB+256GB 樱语粉 轻薄直屏 5G手机",
+      "category": "phone",
+      "brand": "华为",
+      "shopId": "shop-huawei",
+      "price": 2199,
+      "priceOriginal": 2499,
+      "promoTag": "gov",
+      "salesText": "月销2300",
+      "reviewCount": 9540,
+      "goodRate": 97,
+      "rankFields": {
+        "sales": 2300,
+        "rebuy": 28,
+        "discount": 88,
+        "trend": 1184,
+        "newness": 14
+      },
+      "attrs": {
+        "storage": "8GB+256GB",
+        "screen": "6.7英寸",
+        "color": "樱语粉",
+        "service": [
+          "省心购",
+          "24小时发货",
+          "价保"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/phone-nova16-huoli.png",
+      "gallery": [
+        "/@app-assets/Suning/products/phone-nova16-huoli.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 1999293570",
+        "groups": [
+          {
+            "name": "颜色",
+            "options": [
+              {
+                "id": "phone-nova16-huoli-c0",
+                "label": "深空灰",
+                "hot": true
+              },
+              {
+                "id": "phone-nova16-huoli-c1",
+                "label": "银色",
+                "hot": false
+              },
+              {
+                "id": "phone-nova16-huoli-c2",
+                "label": "黑色",
+                "hot": false
+              }
+            ]
+          },
+          {
+            "name": "配置",
+            "options": [
+              {
+                "id": "phone-nova16-huoli-cfg0",
+                "label": "128GB",
+                "price": 2199,
+                "priceOriginal": 2499,
+                "hot": true
+              },
+              {
+                "id": "phone-nova16-huoli-cfg1",
+                "label": "256GB",
+                "price": 2399,
+                "priceOriginal": 2699,
+                "hot": false
+              },
+              {
+                "id": "phone-nova16-huoli-cfg2",
+                "label": "512GB",
+                "price": 2599,
+                "priceOriginal": 2899,
+                "hot": false
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 5
+      }
+    },
+    {
+      "id": "laptop-xiaoxin-air14",
+      "title": "联想(Lenovo)小新Air14 酷睿Ultra5 32G 1T OLED 高端轻薄笔记本电脑",
+      "category": "laptop",
+      "brand": "联想",
+      "shopId": "shop-suning-self",
+      "price": 7749,
+      "priceOriginal": 8249,
+      "promoTag": "gov",
+      "salesText": "月销310",
+      "reviewCount": 27,
+      "goodRate": 98,
+      "rankFields": {
+        "sales": 310,
+        "rebuy": 35,
+        "discount": 94,
+        "trend": 182,
+        "newness": 22
+      },
+      "attrs": {
+        "model": "小新Air14",
+        "positioning": "高端轻薄本",
+        "os": "Windows 11",
+        "cpuPlatform": "Intel",
+        "cpu": "酷睿Ultra5-228V",
+        "freq": "4.5GHz",
+        "ram": "32GB",
+        "rom": "1TB",
+        "screenSize": "14.0英寸",
+        "panel": "OLED",
+        "resolution": "2880×1800",
+        "thickness": "11.9mm",
+        "weight": "1.06千克",
+        "service": [
+          "省心购",
+          "价保"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/laptop-xiaoxin-air14.png",
+      "gallery": [
+        "/@app-assets/Suning/products/laptop-xiaoxin-air14.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 3035423243",
+        "groups": [
+          {
+            "name": "颜色",
+            "options": [
+              {
+                "id": "laptop-xiaoxin-air14-c0",
+                "label": "深空灰",
+                "hot": true
+              },
+              {
+                "id": "laptop-xiaoxin-air14-c1",
+                "label": "银色",
+                "hot": false
+              },
+              {
+                "id": "laptop-xiaoxin-air14-c2",
+                "label": "黑色",
+                "hot": false
+              }
+            ]
+          },
+          {
+            "name": "配置",
+            "options": [
+              {
+                "id": "laptop-xiaoxin-air14-cfg0",
+                "label": "32GB+1TB",
+                "price": 7749,
+                "priceOriginal": 8249,
+                "hot": true
+              },
+              {
+                "id": "laptop-xiaoxin-air14-cfg1",
+                "label": "16GB+512GB",
+                "price": 7949,
+                "priceOriginal": 8449,
+                "hot": false
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 5
+      }
+    },
+    {
+      "id": "laptop-xiaoxin-16cse",
+      "title": "联想(Lenovo)小新16C/SE 锐龙R7 16G 512G 大屏轻薄笔记本电脑",
+      "category": "laptop",
+      "brand": "联想",
+      "shopId": "shop-lenovo-huida",
+      "price": 5299,
+      "priceOriginal": 5699,
+      "promoTag": null,
+      "salesText": "月销150",
+      "reviewCount": 43,
+      "goodRate": 98,
+      "rankFields": {
+        "sales": 150,
+        "rebuy": 23,
+        "discount": 93,
+        "trend": 118,
+        "newness": 26
+      },
+      "attrs": {
+        "model": "小新16C/SE",
+        "positioning": "全能轻薄本",
+        "os": "Windows 11",
+        "cpuPlatform": "AMD",
+        "cpu": "锐龙R7-8745HS",
+        "freq": "3.8GHz",
+        "ram": "16GB",
+        "rom": "512GB",
+        "screenSize": "16.0英寸",
+        "panel": "LED",
+        "resolution": "1920×1200",
+        "thickness": "16.9mm",
+        "weight": "1.68千克",
+        "service": [
+          "价保"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/laptop-xiaoxin-16cse.png",
+      "gallery": [
+        "/@app-assets/Suning/products/laptop-xiaoxin-16cse.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 2989562574",
+        "groups": [
+          {
+            "name": "颜色",
+            "options": [
+              {
+                "id": "laptop-xiaoxin-16cse-c0",
+                "label": "深空灰",
+                "hot": true
+              },
+              {
+                "id": "laptop-xiaoxin-16cse-c1",
+                "label": "银色",
+                "hot": false
+              },
+              {
+                "id": "laptop-xiaoxin-16cse-c2",
+                "label": "黑色",
+                "hot": false
+              }
+            ]
+          },
+          {
+            "name": "配置",
+            "options": [
+              {
+                "id": "laptop-xiaoxin-16cse-cfg0",
+                "label": "16GB+512GB",
+                "price": 5299,
+                "priceOriginal": 5699,
+                "hot": true
+              },
+              {
+                "id": "laptop-xiaoxin-16cse-cfg1",
+                "label": "32GB+1TB",
+                "price": 5499,
+                "priceOriginal": 5899,
+                "hot": false
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 5
+      }
+    },
+    {
+      "id": "laptop-lecoo-ku310",
+      "title": "来酷(Lecoo)酷310 商务台式机电脑主机 i5 16G 512G 23.8英寸一体机",
+      "category": "laptop",
+      "brand": "来酷",
+      "shopId": "shop-lenovo-huida",
+      "price": 4599,
+      "priceOriginal": 4999,
+      "promoTag": null,
+      "salesText": "月销88",
+      "reviewCount": 693,
+      "goodRate": 97,
+      "rankFields": {
+        "sales": 88,
+        "rebuy": 29,
+        "discount": 92,
+        "trend": 58,
+        "newness": 180
+      },
+      "attrs": {
+        "model": "酷310",
+        "positioning": "商务一体机",
+        "os": "Windows 11",
+        "ram": "16GB",
+        "rom": "512GB",
+        "screenSize": "23.8英寸",
+        "service": [
+          "价保"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/laptop-lecoo-ku310.png",
+      "gallery": [
+        "/@app-assets/Suning/products/laptop-lecoo-ku310.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 2562577490",
+        "groups": [
+          {
+            "name": "颜色",
+            "options": [
+              {
+                "id": "laptop-lecoo-ku310-c0",
+                "label": "深空灰",
+                "hot": true
+              },
+              {
+                "id": "laptop-lecoo-ku310-c1",
+                "label": "银色",
+                "hot": false
+              },
+              {
+                "id": "laptop-lecoo-ku310-c2",
+                "label": "黑色",
+                "hot": false
+              }
+            ]
+          },
+          {
+            "name": "配置",
+            "options": [
+              {
+                "id": "laptop-lecoo-ku310-cfg0",
+                "label": "16GB+512GB",
+                "price": 4599,
+                "priceOriginal": 4999,
+                "hot": true
+              },
+              {
+                "id": "laptop-lecoo-ku310-cfg1",
+                "label": "32GB+1TB",
+                "price": 4799,
+                "priceOriginal": 5199,
+                "hot": false
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 5
+      }
+    },
+    {
+      "id": "monitor-lenovo-l27",
+      "title": "联想(Lenovo)L27e-40 27英寸 100Hz IPS 低蓝光办公显示器",
+      "category": "laptop",
+      "brand": "联想",
+      "shopId": "shop-lenovo-huida",
+      "price": 899,
+      "priceOriginal": 1099,
+      "promoTag": null,
+      "salesText": "月销260",
+      "reviewCount": 3105,
+      "goodRate": 98,
+      "rankFields": {
+        "sales": 260,
+        "rebuy": 33,
+        "discount": 82,
+        "trend": 131,
+        "newness": 155
+      },
+      "attrs": {
+        "model": "L27e-40",
+        "screenSize": "27英寸",
+        "panel": "IPS",
+        "resolution": "1920×1080",
+        "service": [
+          "价保"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/monitor-lenovo-l27.png",
+      "gallery": [
+        "/@app-assets/Suning/products/monitor-lenovo-l27.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 2070773654",
+        "groups": [
+          {
+            "name": "颜色",
+            "options": [
+              {
+                "id": "monitor-lenovo-l27-c0",
+                "label": "深空灰",
+                "hot": true
+              },
+              {
+                "id": "monitor-lenovo-l27-c1",
+                "label": "银色",
+                "hot": false
+              },
+              {
+                "id": "monitor-lenovo-l27-c2",
+                "label": "黑色",
+                "hot": false
+              }
+            ]
+          },
+          {
+            "name": "配置",
+            "options": [
+              {
+                "id": "monitor-lenovo-l27-cfg0",
+                "label": "16GB+512GB",
+                "price": 899,
+                "priceOriginal": 1099,
+                "hot": true
+              },
+              {
+                "id": "monitor-lenovo-l27-cfg1",
+                "label": "32GB+1TB",
+                "price": 1099,
+                "priceOriginal": 1299,
+                "hot": false
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 5
+      }
+    },
+    {
+      "id": "tissue-jierou-kitchen",
+      "title": "洁柔(C&S)厨房专用纸巾 抽取式吸油吸水厨房纸 3层75抽×4包",
+      "category": "tissue",
+      "brand": "洁柔",
+      "shopId": "shop-yuanmingyang",
+      "price": 5.01,
+      "priceOriginal": 9.9,
+      "promoTag": "juhui",
+      "salesText": "月销1.2万",
+      "reviewCount": 35208,
+      "goodRate": 98,
+      "rankFields": {
+        "sales": 12000,
+        "rebuy": 20,
+        "discount": 51,
+        "trend": 6094,
+        "newness": 220
+      },
+      "attrs": {
+        "layers": "3层",
+        "spec": "75抽×4包",
+        "service": [
+          "24小时发货"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/tissue-jierou-kitchen.png",
+      "gallery": [
+        "/@app-assets/Suning/products/tissue-jierou-kitchen.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 3018453551",
+        "groups": [
+          {
+            "name": "规格",
+            "options": [
+              {
+                "id": "tissue-jierou-kitchen-s0",
+                "label": "75抽×4包",
+                "price": 5.01,
+                "hot": true
+              },
+              {
+                "id": "tissue-jierou-kitchen-s1",
+                "label": "尝鲜装",
+                "price": 9.02,
+                "hot": false
+              },
+              {
+                "id": "tissue-jierou-kitchen-s2",
+                "label": "家庭装",
+                "price": 13.03,
+                "hot": false
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 20
+      }
+    },
+    {
+      "id": "tissue-jierou-youhua",
+      "title": "洁柔(C&S)油画系列抽纸 3层100抽×3包 母婴可用面巾纸",
+      "category": "tissue",
+      "brand": "洁柔",
+      "shopId": "shop-suning-self",
+      "price": 3.9,
+      "priceOriginal": 7.9,
+      "promoTag": "juhui",
+      "salesText": "月销2.6万",
+      "reviewCount": 60312,
+      "goodRate": 98,
+      "rankFields": {
+        "sales": 26000,
+        "rebuy": 8,
+        "discount": 49,
+        "trend": 2100,
+        "newness": 95
+      },
+      "attrs": {
+        "layers": "3层",
+        "spec": "100抽×3包",
+        "service": [
+          "24小时发货"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/tissue-jierou-youhua.png",
+      "gallery": [
+        "/@app-assets/Suning/products/tissue-jierou-youhua.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 2865293480",
+        "groups": [
+          {
+            "name": "规格",
+            "options": [
+              {
+                "id": "tissue-jierou-youhua-s0",
+                "label": "100抽×3包",
+                "price": 3.9,
+                "hot": true
+              },
+              {
+                "id": "tissue-jierou-youhua-s1",
+                "label": "尝鲜装",
+                "price": 7.02,
+                "hot": false
+              },
+              {
+                "id": "tissue-jierou-youhua-s2",
+                "label": "家庭装",
+                "price": 10.14,
+                "hot": false
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 20
+      }
+    },
+    {
+      "id": "tissue-jierou-lotion",
+      "title": "洁柔(C&S)Lotion柔润保湿抽纸 3层40抽×8包 鼻敏感适用",
+      "category": "tissue",
+      "brand": "洁柔",
+      "shopId": "shop-yuanmingyang",
+      "price": 24.9,
+      "priceOriginal": 29.9,
+      "promoTag": null,
+      "salesText": "月销5600",
+      "reviewCount": 18205,
+      "goodRate": 99,
+      "rankFields": {
+        "sales": 5600,
+        "rebuy": 13,
+        "discount": 83,
+        "trend": 2866,
+        "newness": 240
+      },
+      "attrs": {
+        "layers": "3层",
+        "spec": "40抽×8包",
+        "service": [
+          "24小时发货"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/tissue-jierou-lotion.png",
+      "gallery": [
+        "/@app-assets/Suning/products/tissue-jierou-lotion.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 2493085514",
+        "groups": [
+          {
+            "name": "规格",
+            "options": [
+              {
+                "id": "tissue-jierou-lotion-s0",
+                "label": "40抽×8包",
+                "price": 24.9,
+                "hot": true
+              },
+              {
+                "id": "tissue-jierou-lotion-s1",
+                "label": "尝鲜装",
+                "price": 44.82,
+                "hot": false
+              },
+              {
+                "id": "tissue-jierou-lotion-s2",
+                "label": "家庭装",
+                "price": 64.74,
+                "hot": false
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 20
+      }
+    },
+    {
+      "id": "tissue-vinda-xiren",
+      "title": "维达(Vinda)细韧抽纸 3层S码100抽×8包 湿水不易破",
+      "category": "tissue",
+      "brand": "维达",
+      "shopId": "shop-suning-self",
+      "price": 9.9,
+      "priceOriginal": 13.9,
+      "promoTag": "baibu",
+      "salesText": "月销4.1万",
+      "reviewCount": 96320,
+      "goodRate": 99,
+      "rankFields": {
+        "sales": 41000,
+        "rebuy": 8,
+        "discount": 71,
+        "trend": 2500,
+        "newness": 230
+      },
+      "attrs": {
+        "layers": "3层",
+        "spec": "S码100抽×8包",
+        "service": [
+          "24小时发货"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/tissue-vinda-xiren.png",
+      "gallery": [
+        "/@app-assets/Suning/products/tissue-vinda-xiren.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 1065058541",
+        "groups": [
+          {
+            "name": "规格",
+            "options": [
+              {
+                "id": "tissue-vinda-xiren-s0",
+                "label": "S码100抽×8包",
+                "price": 9.9,
+                "hot": true
+              },
+              {
+                "id": "tissue-vinda-xiren-s1",
+                "label": "尝鲜装",
+                "price": 17.82,
+                "hot": false
+              },
+              {
+                "id": "tissue-vinda-xiren-s2",
+                "label": "家庭装",
+                "price": 25.74,
+                "hot": false
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 20
+      }
+    },
+    {
+      "id": "tissue-vinda-chaoren",
+      "title": "维达(Vinda)超韧抽纸 3层130抽×6包 母婴适用面巾纸",
+      "category": "tissue",
+      "brand": "维达",
+      "shopId": "shop-yuanmingyang",
+      "price": 13.9,
+      "priceOriginal": 16.9,
+      "promoTag": null,
+      "salesText": "月销1.8万",
+      "reviewCount": 45108,
+      "goodRate": 99,
+      "rankFields": {
+        "sales": 18000,
+        "rebuy": 8,
+        "discount": 82,
+        "trend": 9003,
+        "newness": 260
+      },
+      "attrs": {
+        "layers": "3层",
+        "spec": "130抽×6包",
+        "service": [
+          "24小时发货"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/tissue-vinda-chaoren.png",
+      "gallery": [
+        "/@app-assets/Suning/products/tissue-vinda-chaoren.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 1889983627",
+        "groups": [
+          {
+            "name": "规格",
+            "options": [
+              {
+                "id": "tissue-vinda-chaoren-s0",
+                "label": "130抽×6包",
+                "price": 13.9,
+                "hot": true
+              },
+              {
+                "id": "tissue-vinda-chaoren-s1",
+                "label": "尝鲜装",
+                "price": 25.02,
+                "hot": false
+              },
+              {
+                "id": "tissue-vinda-chaoren-s2",
+                "label": "家庭装",
+                "price": 36.14,
+                "hot": false
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 20
+      }
+    },
+    {
+      "id": "tissue-tempo-classic",
+      "title": "得宝(Tempo)经典无香抽纸 4层90抽×8包 加厚亲肤",
+      "category": "tissue",
+      "brand": "得宝",
+      "shopId": "shop-suning-self",
+      "price": 64.9,
+      "priceOriginal": 72.9,
+      "promoTag": null,
+      "salesText": "月销9300",
+      "reviewCount": 52104,
+      "goodRate": 99,
+      "rankFields": {
+        "sales": 9300,
+        "rebuy": 32,
+        "discount": 89,
+        "trend": 4665,
+        "newness": 250
+      },
+      "attrs": {
+        "layers": "4层",
+        "spec": "90抽×8包",
+        "service": [
+          "24小时发货"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/tissue-tempo-classic.png",
+      "gallery": [
+        "/@app-assets/Suning/products/tissue-tempo-classic.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 1979326200",
+        "groups": [
+          {
+            "name": "规格",
+            "options": [
+              {
+                "id": "tissue-tempo-classic-s0",
+                "label": "90抽×8包",
+                "price": 64.9,
+                "hot": true
+              },
+              {
+                "id": "tissue-tempo-classic-s1",
+                "label": "尝鲜装",
+                "price": 116.82,
+                "hot": false
+              },
+              {
+                "id": "tissue-tempo-classic-s2",
+                "label": "家庭装",
+                "price": 168.74,
+                "hot": false
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 20
+      }
+    },
+    {
+      "id": "tissue-tempo-mini",
+      "title": "得宝(Tempo)Mini系列小雏菊印花抽纸 4层80抽×12包 便携装",
+      "category": "tissue",
+      "brand": "得宝",
+      "shopId": "shop-suning-self",
+      "price": 39.9,
+      "priceOriginal": 46.9,
+      "promoTag": null,
+      "salesText": "月销7800",
+      "reviewCount": 38672,
+      "goodRate": 99,
+      "rankFields": {
+        "sales": 7800,
+        "rebuy": 12,
+        "discount": 85,
+        "trend": 3966,
+        "newness": 90
+      },
+      "attrs": {
+        "layers": "4层",
+        "spec": "80抽×12包",
+        "service": [
+          "24小时发货"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/tissue-tempo-mini.png",
+      "gallery": [
+        "/@app-assets/Suning/products/tissue-tempo-mini.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 2830998449",
+        "groups": [
+          {
+            "name": "规格",
+            "options": [
+              {
+                "id": "tissue-tempo-mini-s0",
+                "label": "80抽×12包",
+                "price": 39.9,
+                "hot": true
+              },
+              {
+                "id": "tissue-tempo-mini-s1",
+                "label": "尝鲜装",
+                "price": 71.82,
+                "hot": false
+              },
+              {
+                "id": "tissue-tempo-mini-s2",
+                "label": "家庭装",
+                "price": 103.74,
+                "hot": false
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 20
+      }
+    },
+    {
+      "id": "tissue-breeze-yuanmu",
+      "title": "清风(Breeze)原木纯品抽纸 3层120抽×10包 家庭实惠装",
+      "category": "tissue",
+      "brand": "清风",
+      "shopId": "shop-yuanmingyang",
+      "price": 19.9,
+      "priceOriginal": 24.9,
+      "promoTag": null,
+      "salesText": "月销2.9万",
+      "reviewCount": 71205,
+      "goodRate": 98,
+      "rankFields": {
+        "sales": 29000,
+        "rebuy": 9,
+        "discount": 80,
+        "trend": 14507,
+        "newness": 270
+      },
+      "attrs": {
+        "layers": "3层",
+        "spec": "120抽×10包",
+        "service": [
+          "24小时发货"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/tissue-breeze-yuanmu.png",
+      "gallery": [
+        "/@app-assets/Suning/products/tissue-breeze-yuanmu.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 2178370373",
+        "groups": [
+          {
+            "name": "规格",
+            "options": [
+              {
+                "id": "tissue-breeze-yuanmu-s0",
+                "label": "120抽×10包",
+                "price": 19.9,
+                "hot": true
+              },
+              {
+                "id": "tissue-breeze-yuanmu-s1",
+                "label": "尝鲜装",
+                "price": 35.82,
+                "hot": false
+              },
+              {
+                "id": "tissue-breeze-yuanmu-s2",
+                "label": "家庭装",
+                "price": 51.74,
+                "hot": false
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 20
+      }
+    },
+    {
+      "id": "pepsi-mix300",
+      "title": "百事可乐(Pepsi)碳酸饮料混合装 可乐+柠檬味汽水 300ml×12罐 整箱",
+      "category": "drink",
+      "brand": "百事",
+      "shopId": "shop-suning-self",
+      "price": 12.6,
+      "priceOriginal": 14.8,
+      "promoTag": "baibu",
+      "salesText": "月销3.5万",
+      "reviewCount": 8600,
+      "goodRate": 99,
+      "rankFields": {
+        "sales": 35000,
+        "rebuy": 12,
+        "discount": 85,
+        "trend": 2800,
+        "newness": 85
+      },
+      "attrs": {
+        "spec": "300ml×12罐",
+        "flavor": "可乐+柠檬味",
+        "service": [
+          "24小时发货"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/pepsi-mix300.png",
+      "gallery": [
+        "/@app-assets/Suning/products/pepsi-mix300.png",
+        "/@app-assets/Suning/products/pepsi-mix300_g2.png",
+        "/@app-assets/Suning/products/pepsi-mix300_g3.png"
+      ],
+      "detailTemplate": "cola",
+      "sku": {
+        "codeText": "商品编码 12608447193",
+        "groups": [
+          {
+            "name": "规格",
+            "options": [
+              {
+                "id": "mix12",
+                "label": "可乐+七喜混合装 300ml×12罐",
+                "price": 12.6,
+                "priceOriginal": 14.8,
+                "hot": true
+              },
+              {
+                "id": "cola12",
+                "label": "可乐原味 300ml×12罐",
+                "price": 13.9,
+                "priceOriginal": 15.9
+              },
+              {
+                "id": "mix24",
+                "label": "可乐+七喜混合装 300ml×24罐",
+                "price": 24.9,
+                "priceOriginal": 28.8
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 20,
+        "installments": [
+          "任性付 3期免息"
+        ]
+      }
+    },
+    {
+      "id": "food-panpan-bread",
+      "title": "盼盼(PANPAN)法式软面包 300g/袋 早餐口袋面包点心",
+      "category": "food",
+      "brand": "盼盼",
+      "shopId": "shop-delicheng",
+      "price": 9.6,
+      "priceOriginal": 12.9,
+      "promoTag": "juhui",
+      "salesText": "月销1.6万",
+      "reviewCount": 21406,
+      "goodRate": 98,
+      "rankFields": {
+        "sales": 16000,
+        "rebuy": 22,
+        "discount": 74,
+        "trend": 1700,
+        "newness": 135
+      },
+      "attrs": {
+        "spec": "300g/袋",
+        "service": [
+          "24小时发货"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/food-panpan-bread.png",
+      "gallery": [
+        "/@app-assets/Suning/products/food-panpan-bread.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 1389989594",
+        "groups": [
+          {
+            "name": "规格",
+            "options": [
+              {
+                "id": "food-panpan-bread-s0",
+                "label": "300g/袋",
+                "price": 9.6,
+                "hot": true
+              },
+              {
+                "id": "food-panpan-bread-s1",
+                "label": "尝鲜装",
+                "price": 17.28,
+                "hot": false
+              },
+              {
+                "id": "food-panpan-bread-s2",
+                "label": "家庭装",
+                "price": 24.96,
+                "hot": false
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 20
+      }
+    },
+    {
+      "id": "food-panpan-shousi",
+      "title": "盼盼(PANPAN)手撕面包 1kg整箱装 营养早餐糕点",
+      "category": "food",
+      "brand": "盼盼",
+      "shopId": "shop-delicheng",
+      "price": 19.9,
+      "priceOriginal": 24.9,
+      "promoTag": null,
+      "salesText": "月销8600",
+      "reviewCount": 15230,
+      "goodRate": 98,
+      "rankFields": {
+        "sales": 8600,
+        "rebuy": 34,
+        "discount": 80,
+        "trend": 4301,
+        "newness": 145
+      },
+      "attrs": {
+        "spec": "1kg/箱",
+        "service": [
+          "24小时发货"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/food-panpan-shousi.png",
+      "gallery": [
+        "/@app-assets/Suning/products/food-panpan-shousi.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 1317446417",
+        "groups": [
+          {
+            "name": "规格",
+            "options": [
+              {
+                "id": "food-panpan-shousi-s0",
+                "label": "1kg/箱",
+                "price": 19.9,
+                "hot": true
+              },
+              {
+                "id": "food-panpan-shousi-s1",
+                "label": "尝鲜装",
+                "price": 35.82,
+                "hot": false
+              },
+              {
+                "id": "food-panpan-shousi-s2",
+                "label": "家庭装",
+                "price": 51.74,
+                "hot": false
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 20
+      }
+    },
+    {
+      "id": "food-panpan-meiniye",
+      "title": "盼盼(PANPAN)梅尼耶干蛋糕 160g 烤面包干早餐饼干",
+      "category": "food",
+      "brand": "盼盼",
+      "shopId": "shop-delicheng",
+      "price": 16.9,
+      "priceOriginal": 19.9,
+      "promoTag": null,
+      "salesText": "月销4200",
+      "reviewCount": 9805,
+      "goodRate": 98,
+      "rankFields": {
+        "sales": 4200,
+        "rebuy": 13,
+        "discount": 85,
+        "trend": 2108,
+        "newness": 175
+      },
+      "attrs": {
+        "spec": "160g/盒",
+        "service": [
+          "24小时发货"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/food-panpan-meiniye.png",
+      "gallery": [
+        "/@app-assets/Suning/products/food-panpan-meiniye.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 2922362042",
+        "groups": [
+          {
+            "name": "规格",
+            "options": [
+              {
+                "id": "food-panpan-meiniye-s0",
+                "label": "160g/盒",
+                "price": 16.9,
+                "hot": true
+              },
+              {
+                "id": "food-panpan-meiniye-s1",
+                "label": "尝鲜装",
+                "price": 30.42,
+                "hot": false
+              },
+              {
+                "id": "food-panpan-meiniye-s2",
+                "label": "家庭装",
+                "price": 43.94,
+                "hot": false
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 20
+      }
+    },
+    {
+      "id": "food-panpan-xiaomianbao",
+      "title": "盼盼(PANPAN)小小面包 400g 奶香味迷你小口袋面包",
+      "category": "food",
+      "brand": "盼盼",
+      "shopId": "shop-delicheng",
+      "price": 13.9,
+      "priceOriginal": 16.9,
+      "promoTag": "juhui",
+      "salesText": "月销5100",
+      "reviewCount": 11302,
+      "goodRate": 97,
+      "rankFields": {
+        "sales": 5100,
+        "rebuy": 26,
+        "discount": 82,
+        "trend": 2600,
+        "newness": 165
+      },
+      "attrs": {
+        "spec": "400g/袋",
+        "service": [
+          "24小时发货"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/food-panpan-xiaomianbao.png",
+      "gallery": [
+        "/@app-assets/Suning/products/food-panpan-xiaomianbao.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 2454725302",
+        "groups": [
+          {
+            "name": "规格",
+            "options": [
+              {
+                "id": "food-panpan-xiaomianbao-s0",
+                "label": "400g/袋",
+                "price": 13.9,
+                "hot": true
+              },
+              {
+                "id": "food-panpan-xiaomianbao-s1",
+                "label": "尝鲜装",
+                "price": 25.02,
+                "hot": false
+              },
+              {
+                "id": "food-panpan-xiaomianbao-s2",
+                "label": "家庭装",
+                "price": 36.14,
+                "hot": false
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 20
+      }
+    },
+    {
+      "id": "durian-jinzhen",
+      "title": "苏鲜生 泰国金枕头榴莲 新鲜水果整只 3-4斤装",
+      "category": "food",
+      "brand": "苏鲜生",
+      "shopId": "shop-suning-self",
+      "price": 93.8,
+      "priceOriginal": 113.8,
+      "promoTag": "baibu",
+      "salesText": "月销6200",
+      "reviewCount": 2381,
+      "goodRate": 95,
+      "rankFields": {
+        "sales": 6200,
+        "rebuy": 9,
+        "discount": 82,
+        "trend": 2200,
+        "newness": 60
+      },
+      "attrs": {
+        "spec": "3-4斤/只",
+        "origin": "泰国",
+        "service": [
+          "48小时内发货"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/durian-jinzhen.png",
+      "gallery": [
+        "/@app-assets/Suning/products/durian-jinzhen.png",
+        "/@app-assets/Suning/products/durian-jinzhen_g2.png",
+        "/@app-assets/Suning/products/durian-jinzhen_g3.png"
+      ],
+      "detailTemplate": "fresh",
+      "sku": {
+        "codeText": "商品编码 12735518064",
+        "groups": [
+          {
+            "name": "规格",
+            "options": [
+              {
+                "id": "d34",
+                "label": "3-4斤装",
+                "price": 93.8,
+                "priceOriginal": 113.8,
+                "hot": true
+              },
+              {
+                "id": "d45",
+                "label": "4-5斤装",
+                "price": 123.8,
+                "priceOriginal": 143.8
+              },
+              {
+                "id": "d56",
+                "label": "5-6斤装",
+                "price": 153.8,
+                "priceOriginal": 173.8
+              },
+              {
+                "id": "d67",
+                "label": "6-7斤装",
+                "price": 183.8,
+                "priceOriginal": 203.8
+              },
+              {
+                "id": "d23",
+                "label": "2-3斤装",
+                "price": 73.8,
+                "priceOriginal": 89.8
+              },
+              {
+                "id": "drou",
+                "label": "榴莲肉500g盒装",
+                "price": 69.9,
+                "priceOriginal": 79.9
+              },
+              {
+                "id": "d2x",
+                "label": "双只装5-7斤",
+                "price": 168.8,
+                "priceOriginal": 198.8
+              },
+              {
+                "id": "d3x",
+                "label": "三只装9-12斤",
+                "price": 248.8,
+                "priceOriginal": 288.8,
+                "disabled": true
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 10,
+        "installments": [
+          "任性付 3期免息"
+        ]
+      }
+    },
+    {
+      "id": "clean-liby-dishwash",
+      "title": "立白(Liby)洗洁精 高效去油1.5kg×2瓶 食品用可洗果蔬",
+      "category": "clean",
+      "brand": "立白",
+      "shopId": "shop-suning-self",
+      "price": 12,
+      "priceOriginal": 15.9,
+      "promoTag": "juhui",
+      "salesText": "月销2.2万",
+      "reviewCount": 48260,
+      "goodRate": 99,
+      "rankFields": {
+        "sales": 22000,
+        "rebuy": 24,
+        "discount": 75,
+        "trend": 1800,
+        "newness": 205
+      },
+      "attrs": {
+        "spec": "1.5kg×2瓶",
+        "service": [
+          "24小时发货"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/clean-liby-dishwash.png",
+      "gallery": [
+        "/@app-assets/Suning/products/clean-liby-dishwash.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 2878864334",
+        "groups": [
+          {
+            "name": "规格",
+            "options": [
+              {
+                "id": "clean-liby-dishwash-s0",
+                "label": "1.5kg×2瓶",
+                "price": 12,
+                "hot": true
+              },
+              {
+                "id": "clean-liby-dishwash-s1",
+                "label": "尝鲜装",
+                "price": 21.6,
+                "hot": false
+              },
+              {
+                "id": "clean-liby-dishwash-s2",
+                "label": "家庭装",
+                "price": 31.2,
+                "hot": false
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 5
+      }
+    },
+    {
+      "id": "clean-omo-powder",
+      "title": "奥妙(OMO)除菌除螨洗衣粉 3kg 长效留香 深层洁净",
+      "category": "clean",
+      "brand": "奥妙",
+      "shopId": "shop-suning-self",
+      "price": 29.9,
+      "priceOriginal": 35.9,
+      "promoTag": null,
+      "salesText": "月销9600",
+      "reviewCount": 22315,
+      "goodRate": 98,
+      "rankFields": {
+        "sales": 9600,
+        "rebuy": 35,
+        "discount": 83,
+        "trend": 4805,
+        "newness": 215
+      },
+      "attrs": {
+        "spec": "3kg/袋",
+        "service": [
+          "24小时发货"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/clean-omo-powder.png",
+      "gallery": [
+        "/@app-assets/Suning/products/clean-omo-powder.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 2144053689",
+        "groups": [
+          {
+            "name": "规格",
+            "options": [
+              {
+                "id": "clean-omo-powder-s0",
+                "label": "3kg/袋",
+                "price": 29.9,
+                "hot": true
+              },
+              {
+                "id": "clean-omo-powder-s1",
+                "label": "尝鲜装",
+                "price": 53.82,
+                "hot": false
+              },
+              {
+                "id": "clean-omo-powder-s2",
+                "label": "家庭装",
+                "price": 77.74,
+                "hot": false
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 5
+      }
+    },
+    {
+      "id": "clean-whitecat-dish",
+      "title": "白猫 柠檬红茶洗洁精 1kg×2瓶 快速去油不伤手",
+      "category": "clean",
+      "brand": "白猫",
+      "shopId": "shop-suning-self",
+      "price": 9.9,
+      "priceOriginal": 12.9,
+      "promoTag": null,
+      "salesText": "月销1.1万",
+      "reviewCount": 17208,
+      "goodRate": 98,
+      "rankFields": {
+        "sales": 11000,
+        "rebuy": 24,
+        "discount": 77,
+        "trend": 5539,
+        "newness": 225
+      },
+      "attrs": {
+        "spec": "1kg×2瓶",
+        "service": [
+          "24小时发货"
+        ]
+      },
+      "image": "/@app-assets/Suning/products/clean-whitecat-dish.png",
+      "gallery": [
+        "/@app-assets/Suning/products/clean-whitecat-dish.png"
+      ],
+      "detailTemplate": "list",
+      "sku": {
+        "codeText": "商品编码 2393601494",
+        "groups": [
+          {
+            "name": "规格",
+            "options": [
+              {
+                "id": "clean-whitecat-dish-s0",
+                "label": "1kg×2瓶",
+                "price": 9.9,
+                "hot": true
+              },
+              {
+                "id": "clean-whitecat-dish-s1",
+                "label": "尝鲜装",
+                "price": 17.82,
+                "hot": false
+              },
+              {
+                "id": "clean-whitecat-dish-s2",
+                "label": "家庭装",
+                "price": 25.74,
+                "hot": false
+              }
+            ]
+          }
+        ],
+        "minQty": 1,
+        "limitQty": 5
+      }
+    }
+  ],
+  "shops": [
+    {
+      "id": "shop-suning-self",
+      "name": "苏宁自营",
+      "type": "self",
+      "followers": 9862000,
+      "followed": false,
+      "logo": "/@app-assets/Suning/shops/shop-suning-self.png"
+    },
+    {
+      "id": "shop-rsd",
+      "name": "荣事达官方旗舰店",
+      "type": "self",
+      "followers": 77000,
+      "followed": false,
+      "logo": "/@app-assets/Suning/shops/shop-rsd.png"
+    },
+    {
+      "id": "shop-huawei",
+      "name": "华为官方旗舰店",
+      "type": "self",
+      "followers": 4929000,
+      "followed": true,
+      "logo": "/@app-assets/Suning/shops/shop-huawei.png"
+    },
+    {
+      "id": "shop-midea",
+      "name": "美的小家电官方旗舰店",
+      "type": "self",
+      "followers": 704000,
+      "followed": true,
+      "logo": "/@app-assets/Suning/shops/shop-midea.png"
+    },
+    {
+      "id": "shop-gree",
+      "name": "格力官方旗舰店",
+      "type": "store",
+      "followers": 66000,
+      "followed": true,
+      "logo": "/@app-assets/Suning/shops/shop-gree.png"
+    },
+    {
+      "id": "shop-lenovo-huida",
+      "name": "联想慧达专卖店",
+      "type": "store",
+      "followers": 514,
+      "followed": false,
+      "logo": "/@app-assets/Suning/shops/shop-lenovo-huida.png"
+    },
+    {
+      "id": "shop-delicheng",
+      "name": "德立诚食品专营店",
+      "type": "store",
+      "followers": 1268,
+      "followed": false,
+      "logo": "/@app-assets/Suning/shops/shop-delicheng.png"
+    },
+    {
+      "id": "shop-yuanmingyang",
+      "name": "远明杨专营店",
+      "type": "store",
+      "followers": 896,
+      "followed": false,
+      "logo": "/@app-assets/Suning/shops/shop-yuanmingyang.png"
+    }
+  ],
+  "orders": [
+    {
+      "id": "order-fan-pending",
+      "orderNo": "G3001618890",
+      "status": "pendingPay",
+      "shopId": "shop-rsd",
+      "items": [
+        {
+          "productId": "fan-fd30l501",
+          "skuText": "FD-30L501 一米八加高遥控款",
+          "qty": 1,
+          "price": 100
+        }
+      ],
+      "amount": 100,
+      "payMethod": null,
+      "remainSec": 86387,
+      "timestamps": {
+        "placed": {
+          "dayOffset": 0,
+          "hm": "20:15:33"
+        }
+      },
+      "logistics": [],
+      "invoice": null
+    },
+    {
+      "id": "order-jierou-await",
+      "orderNo": "G3001613351",
+      "status": "awaitShip",
+      "shopId": "shop-yuanmingyang",
+      "items": [
+        {
+          "productId": "tissue-jierou-kitchen",
+          "skuText": "3层75抽×4包",
+          "qty": 1,
+          "price": 5.01
+        }
+      ],
+      "amount": 5.01,
+      "payMethod": "支付宝",
+      "timestamps": {
+        "placed": {
+          "dayOffset": 0,
+          "hm": "18:59:32"
+        },
+        "paid": {
+          "dayOffset": 0,
+          "hm": "18:59:56"
+        }
+      },
+      "etaDayOffset": 4,
+      "etaRange": "09:00-21:00",
+      "logistics": [
+        {
+          "at": {
+            "dayOffset": 0,
+            "hm": "19:10"
+          },
+          "title": "备货中",
+          "desc": "远明杨苏宁专营店已接单,正在仓库拣货打包"
+        },
+        {
+          "at": {
+            "dayOffset": 0,
+            "hm": "18:59"
+          },
+          "title": "已支付",
+          "desc": "您的订单已支付完成,远明杨苏宁专营店将尽快为您发货,预计4天内送达"
+        },
+        {
+          "at": {
+            "dayOffset": 0,
+            "hm": "18:59"
+          },
+          "title": "已提交订单",
+          "desc": "您提交了订单,请等待系统确认"
+        }
+      ],
+      "invoice": {
+        "type": "不开发票",
+        "status": "未开票"
+      }
+    },
+    {
+      "id": "order-jierou-supplier",
+      "orderNo": "G3001617207",
+      "status": "supplierShip",
+      "shopId": "shop-suning-self",
+      "items": [
+        {
+          "productId": "tissue-jierou-youhua",
+          "skuText": "3层100抽×3包",
+          "qty": 1,
+          "price": 3.9
+        }
+      ],
+      "amount": 3.9,
+      "payMethod": "支付宝",
+      "timestamps": {
+        "placed": {
+          "dayOffset": -1,
+          "hm": "23:35:12"
+        },
+        "paid": {
+          "dayOffset": -1,
+          "hm": "23:36:02"
+        }
+      },
+      "etaDayOffset": 3,
+      "logistics": [
+        {
+          "at": {
+            "dayOffset": -1,
+            "hm": "23:36"
+          },
+          "title": "订单已确认",
+          "desc": "订单已确认,等待供应商发货"
+        },
+        {
+          "at": {
+            "dayOffset": -1,
+            "hm": "23:36"
+          },
+          "title": "已提交订单",
+          "desc": "您提交了订单,请等待系统确认"
+        }
+      ],
+      "refund": {
+        "serviceNo": "G3001617207",
+        "status": "等待审核",
+        "reason": "不想要了",
+        "amount": 3.9,
+        "qty": 1,
+        "appliedAt": {
+          "dayOffset": 0,
+          "hm": "09:12"
+        },
+        "steps": [
+          "发起申请",
+          "供应商审核",
+          "退款处理",
+          "退款完成"
+        ],
+        "currentStep": 0
+      },
+      "invoice": {
+        "type": "不开发票",
+        "status": "未开票"
+      }
+    },
+    {
+      "id": "order-kettle-shipping",
+      "orderNo": "G3001612456",
+      "status": "shipping",
+      "shopId": "shop-midea",
+      "items": [
+        {
+          "productId": "kitchen-midea-kettle",
+          "skuText": "1.5L 双层防烫",
+          "qty": 1,
+          "price": 99
+        }
+      ],
+      "amount": 99,
+      "payMethod": "支付宝",
+      "timestamps": {
+        "placed": {
+          "dayOffset": -3,
+          "hm": "10:02:41"
+        },
+        "paid": {
+          "dayOffset": -3,
+          "hm": "10:03:05"
+        },
+        "shipped": {
+          "dayOffset": -2,
+          "hm": "09:40"
+        }
+      },
+      "etaDayOffset": 1,
+      "logistics": [
+        {
+          "at": {
+            "dayOffset": 0,
+            "hm": "02:16"
+          },
+          "title": "运输中",
+          "desc": "您的快件离开【重庆转运中心】,已发往【南京转运中心】"
+        },
+        {
+          "at": {
+            "dayOffset": 0,
+            "hm": "01:37"
+          },
+          "title": "运输中",
+          "desc": "快件已到达【重庆转运中心】,联系电话:95554"
+        },
+        {
+          "at": {
+            "dayOffset": 0,
+            "hm": "01:36"
+          },
+          "title": "已揽件",
+          "desc": "【重庆南川区】唐诗杰(18184089678)已取件,圆通速递 YT7634645552121"
+        },
+        {
+          "at": {
+            "dayOffset": -1,
+            "hm": "10:12"
+          },
+          "title": "已发货",
+          "desc": "商家已发货,由圆通速递为您配送,敬请期待~"
+        },
+        {
+          "at": {
+            "dayOffset": -2,
+            "hm": "10:03"
+          },
+          "title": "已支付",
+          "desc": "您的订单已支付完成,美的官方旗舰店正在为您备货"
+        }
+      ],
+      "invoice": {
+        "type": "不开发票",
+        "status": "未开票"
+      }
+    },
+    {
+      "id": "order-pepsi-shipping",
+      "orderNo": "G3001615520",
+      "status": "shipping",
+      "shopId": "shop-suning-self",
+      "items": [
+        {
+          "productId": "pepsi-mix300",
+          "skuText": "可乐+柠檬味汽水混合装 300ml×12罐",
+          "qty": 1,
+          "price": 12.6
+        }
+      ],
+      "amount": 12.6,
+      "payMethod": "支付宝",
+      "timestamps": {
+        "placed": {
+          "dayOffset": -2,
+          "hm": "21:18:09"
+        },
+        "paid": {
+          "dayOffset": -2,
+          "hm": "21:18:30"
+        },
+        "shipped": {
+          "dayOffset": -1,
+          "hm": "08:22"
+        }
+      },
+      "etaDayOffset": 2,
+      "logistics": [
+        {
+          "at": {
+            "dayOffset": 0,
+            "hm": "09:42"
+          },
+          "title": "待自提",
+          "desc": "快件已到达翠屏华庭快递驿站,请凭取件码自提,驿站电话可在物流详情查看"
+        },
+        {
+          "at": {
+            "dayOffset": 0,
+            "hm": "08:17"
+          },
+          "title": "配送中",
+          "desc": "快递员正在派送途中"
+        },
+        {
+          "at": {
+            "dayOffset": 0,
+            "hm": "02:09"
+          },
+          "title": "运输中",
+          "desc": "快件已离开【城东转运中心】,发往翠屏华庭网点"
+        },
+        {
+          "at": {
+            "dayOffset": -1,
+            "hm": "08:22"
+          },
+          "title": "已揽收",
+          "desc": "苏宁物流已收取快件"
+        },
+        {
+          "at": {
+            "dayOffset": -2,
+            "hm": "21:18"
+          },
+          "title": "已支付",
+          "desc": "您的订单已支付完成,苏宁自营正在为您备货"
+        }
+      ],
+      "invoice": {
+        "type": "不开发票",
+        "status": "未开票"
+      }
+    },
+    {
+      "id": "order-auxfan-completed",
+      "orderNo": "G3001609981",
+      "status": "completed",
+      "shopId": "shop-suning-self",
+      "items": [
+        {
+          "productId": "fan-aux-f40",
+          "skuText": "FS1602R 遥控款",
+          "qty": 1,
+          "price": 169
+        }
+      ],
+      "amount": 169,
+      "payMethod": "支付宝",
+      "reviewed": false,
+      "timestamps": {
+        "placed": {
+          "dayOffset": -8,
+          "hm": "19:26:14"
+        },
+        "paid": {
+          "dayOffset": -8,
+          "hm": "19:26:40"
+        },
+        "shipped": {
+          "dayOffset": -7,
+          "hm": "11:03"
+        },
+        "delivered": {
+          "dayOffset": -6,
+          "hm": "14:32"
+        }
+      },
+      "logistics": [
+        {
+          "at": {
+            "dayOffset": -6,
+            "hm": "14:32"
+          },
+          "title": "已签收",
+          "desc": "您的快件已由本人签收,感谢使用苏宁物流"
+        },
+        {
+          "at": {
+            "dayOffset": -7,
+            "hm": "18:47"
+          },
+          "title": "运输中",
+          "desc": "快件已到达【南京转运中心】"
+        },
+        {
+          "at": {
+            "dayOffset": -7,
+            "hm": "11:03"
+          },
+          "title": "已揽收",
+          "desc": "苏宁物流已收取快件"
+        }
+      ],
+      "invoice": {
+        "type": "电子普通发票",
+        "title": "苏宁用户",
+        "status": "已开票"
+      }
+    },
+    {
+      "id": "order-vinda-completed",
+      "orderNo": "G3001605432",
+      "status": "completed",
+      "shopId": "shop-suning-self",
+      "items": [
+        {
+          "productId": "tissue-vinda-xiren",
+          "skuText": "3层S码100抽×8包",
+          "qty": 1,
+          "price": 9.9
+        }
+      ],
+      "amount": 9.9,
+      "payMethod": "支付宝",
+      "reviewed": true,
+      "timestamps": {
+        "placed": {
+          "dayOffset": -14,
+          "hm": "12:41:07"
+        },
+        "paid": {
+          "dayOffset": -14,
+          "hm": "12:41:29"
+        },
+        "shipped": {
+          "dayOffset": -13,
+          "hm": "09:15"
+        },
+        "delivered": {
+          "dayOffset": -12,
+          "hm": "11:05"
+        }
+      },
+      "logistics": [
+        {
+          "at": {
+            "dayOffset": -12,
+            "hm": "11:05"
+          },
+          "title": "已签收",
+          "desc": "您的快件已由本人签收,感谢使用苏宁物流"
+        },
+        {
+          "at": {
+            "dayOffset": -13,
+            "hm": "16:20"
+          },
+          "title": "运输中",
+          "desc": "快件已到达【南京转运中心】"
+        },
+        {
+          "at": {
+            "dayOffset": -13,
+            "hm": "09:15"
+          },
+          "title": "已揽收",
+          "desc": "苏宁物流已收取快件"
+        }
+      ],
+      "invoice": {
+        "type": "电子普通发票",
+        "title": "苏宁用户",
+        "status": "已开票"
+      }
+    },
+    {
+      "id": "order-matepad-cancelled",
+      "orderNo": "G3001611882",
+      "status": "cancelled",
+      "shopId": "shop-huawei",
+      "items": [
+        {
+          "productId": "matepad-115s",
+          "skuText": "深空灰 8GB+128GB WiFi",
+          "qty": 1,
+          "price": 2699
+        }
+      ],
+      "amount": 2699,
+      "payMethod": null,
+      "cancelReason": "不想买了",
+      "timestamps": {
+        "placed": {
+          "dayOffset": -1,
+          "hm": "21:04:18"
+        },
+        "cancelled": {
+          "dayOffset": -1,
+          "hm": "21:12:47"
+        }
+      },
+      "logistics": [],
+      "invoice": {
+        "type": "电子普通发票",
+        "title": "苏宁用户",
+        "status": "未开票"
+      }
+    }
+  ],
+  "addresses": [
+    {
+      "id": "addr-1",
+      "name": "苏宁用户",
+      "phone": "198****0000",
+      "tags": [
+        "默认",
+        "学校"
+      ],
+      "province": "江苏省",
+      "city": "南京市",
+      "district": "栖霞区",
+      "street": "翠屏街道",
+      "detail": "翠屏华庭快递驿站",
+      "isDefault": true
+    },
+    {
+      "id": "addr-2",
+      "name": "苏宁用户",
+      "phone": "198****0000",
+      "tags": [
+        "公司"
+      ],
+      "province": "江苏省",
+      "city": "南京市",
+      "district": "玄武区",
+      "street": "新街口街道",
+      "detail": "中山路18号写字楼A座",
+      "isDefault": false
+    }
+  ],
+  "coupons": {
+    "yigou": [
+      {
+        "id": "coupon-01",
+        "title": "新人专享礼包券",
+        "tag": "礼包券",
+        "amountYuan": 45,
+        "thresholdYuan": 3000,
+        "scopeText": "仅限自营空调品类商品使用",
+        "validText": "2026.03.18-2026.10.31",
+        "useKeyword": "空调"
+      },
+      {
+        "id": "coupon-02",
+        "title": "新人专享礼包券",
+        "tag": "礼包券",
+        "amountYuan": 35,
+        "thresholdYuan": 2500,
+        "scopeText": "仅限自营平板电脑品类商品使用",
+        "validText": "2026.03.18-2026.10.31",
+        "useKeyword": "平板"
+      },
+      {
+        "id": "coupon-03",
+        "title": "新人专享礼包券",
+        "tag": "礼包券",
+        "amountYuan": 30,
+        "thresholdYuan": 1500,
+        "scopeText": "仅限自营洗衣机品类商品使用",
+        "validText": "2026.03.18-2026.10.31",
+        "useKeyword": "洗衣机"
+      },
+      {
+        "id": "coupon-04",
+        "title": "新人专享礼包券",
+        "tag": "礼包券",
+        "amountYuan": 25,
+        "thresholdYuan": 700,
+        "scopeText": "仅限自营电风扇品类商品使用",
+        "validText": "2026.03.18-2026.10.31",
+        "useKeyword": "风扇"
+      },
+      {
+        "id": "coupon-05",
+        "title": "家电焕新礼包券",
+        "tag": "礼包券",
+        "amountYuan": 45,
+        "thresholdYuan": 3000,
+        "scopeText": "仅限自营冰箱品类商品使用",
+        "validText": "2026.03.18-2026.10.31",
+        "useKeyword": "冰箱"
+      },
+      {
+        "id": "coupon-06",
+        "title": "家电焕新礼包券",
+        "tag": "礼包券",
+        "amountYuan": 35,
+        "thresholdYuan": 2500,
+        "scopeText": "仅限自营笔记本电脑品类商品使用",
+        "validText": "2026.03.18-2026.10.31",
+        "useKeyword": "笔记本"
+      },
+      {
+        "id": "coupon-07",
+        "title": "家电焕新礼包券",
+        "tag": "礼包券",
+        "amountYuan": 30,
+        "thresholdYuan": 1500,
+        "scopeText": "仅限自营电视品类商品使用",
+        "validText": "2026.03.18-2026.10.31",
+        "useKeyword": "电视"
+      },
+      {
+        "id": "coupon-08",
+        "title": "家电焕新礼包券",
+        "tag": "礼包券",
+        "amountYuan": 25,
+        "thresholdYuan": 700,
+        "scopeText": "仅限自营电热水壶品类商品使用",
+        "validText": "2026.03.18-2026.10.31",
+        "useKeyword": "电热水壶"
+      },
+      {
+        "id": "coupon-09",
+        "title": "超市日百礼包券",
+        "tag": "礼包券",
+        "amountYuan": 20,
+        "thresholdYuan": 500,
+        "scopeText": "仅限自营纸品品类商品使用",
+        "validText": "2026.03.18-2026.10.31",
+        "useKeyword": "抽纸"
+      }
+    ],
+    "redpacket": [],
+    "lijin": 0
+  },
+  "reviews": {
+    "ac-leader-zhixiang": {
+      "summary": {
+        "total": 126,
+        "withImages": 18,
+        "quality": 112,
+        "mid": 5,
+        "bad": 1,
+        "goodRate": 98
+      },
+      "items": [
+        {
+          "id": "rv-ac-zhixiang-1",
+          "nick": "南***风",
+          "avatar": "lion",
+          "level": "V3会员",
+          "ip": "江苏",
+          "stars": 5,
+          "sku": "1.5匹 智享风 新一级能效",
+          "text": "制冷很快，安装师傅也很专业，开一会儿房间就凉快了。",
+          "likes": 21,
+          "at": {"dayOffset": -4, "hm": "16:20"},
+          "images": ["/@app-assets/Suning/products/ac-leader-zhixiang.png"]
+        },
+        {
+          "id": "rv-ac-zhixiang-2",
+          "nick": "林***夏",
+          "avatar": "lion",
+          "level": "V2会员",
+          "ip": "浙江",
+          "stars": 5,
+          "sku": "1.5匹 智享风 新一级能效",
+          "text": "声音不大，能效也满意，国补后的价格很划算。",
+          "likes": 9,
+          "at": {"dayOffset": -8, "hm": "11:35"}
+        }
+      ]
+    },
+    "fan-fd30l501": {
+      "summary": {
+        "total": 42,
+        "withImages": 8,
+        "quality": 33,
+        "mid": 3,
+        "bad": 0,
+        "goodRate": 79
+      },
+      "items": [
+        {
+          "id": "rv-fan-1",
+          "nick": "p***a",
+          "avatar": "lion",
+          "level": "V3会员",
+          "ip": "江苏",
+          "stars": 5,
+          "sku": "FD-30L501 一米八加高遥控款",
+          "text": "风力很大,一米八的高度床上吹刚刚好,晚上开睡眠风很安静,性价比超高。",
+          "likes": 12,
+          "at": {
+            "dayOffset": -3,
+            "hm": "20:11"
+          },
+          "images": [
+            "/@app-assets/Suning/products/fan-fd30l501_g2.png"
+          ]
+        },
+        {
+          "id": "rv-fan-2",
+          "nick": "谔***y",
+          "avatar": "lion",
+          "level": "V2会员",
+          "ip": "浙江",
+          "stars": 5,
+          "sku": "FD-30L501 一米八加高遥控款",
+          "text": "安装简单,五分钟装好,遥控很灵敏,定时功能晚上用特别实用。",
+          "likes": 8,
+          "at": {
+            "dayOffset": -5,
+            "hm": "14:36"
+          }
+        },
+        {
+          "id": "rv-fan-3",
+          "nick": "嘎***笑",
+          "avatar": "lion",
+          "level": "V1会员",
+          "ip": "安徽",
+          "stars": 3,
+          "sku": "FD-30L401 机械基础款",
+          "text": "好",
+          "likes": 2,
+          "at": {
+            "dayOffset": -9,
+            "hm": "09:02"
+          }
+        },
+        {
+          "id": "rv-fan-4",
+          "nick": "蓝***辑",
+          "avatar": "lion",
+          "level": "V4会员",
+          "ip": "山东",
+          "stars": 4,
+          "sku": "FD-30L501 一米八加高遥控款",
+          "text": "风量可以,摇头顺滑,就是最高档声音稍微有一点,总体够用。",
+          "likes": 5,
+          "at": {
+            "dayOffset": -12,
+            "hm": "18:45"
+          }
+        },
+        {
+          "id": "rv-fan-5",
+          "nick": "1***7",
+          "avatar": "lion",
+          "level": "V3会员",
+          "ip": "江苏",
+          "stars": 5,
+          "sku": "FD-30L502 轻音遥控款",
+          "text": "第二次回购了,给老人房间买的,轻音不吵,老人家很满意。",
+          "likes": 20,
+          "at": {
+            "dayOffset": -16,
+            "hm": "11:28"
+          },
+          "images": [
+            "/@app-assets/Suning/products/fan-fd30l501_g3.png"
+          ]
+        }
+      ]
+    },
+    "matepad-115s": {
+      "summary": {
+        "total": 1176,
+        "withImages": 320,
+        "quality": 1020,
+        "mid": 12,
+        "bad": 3,
+        "goodRate": 98
+      },
+      "items": [
+        {
+          "id": "rv-pad-1",
+          "nick": "花***7",
+          "avatar": "lion",
+          "level": "V5会员",
+          "ip": "江苏",
+          "stars": 5,
+          "sku": "深空灰 8GB+128GB WiFi",
+          "text": "2.8K屏幕细腻,刷网课做笔记非常顺手,续航一天完全够用。",
+          "likes": 46,
+          "at": {
+            "dayOffset": -2,
+            "hm": "21:40"
+          },
+          "images": [
+            "/@app-assets/Suning/products/matepad-115s_g2.png"
+          ]
+        },
+        {
+          "id": "rv-pad-2",
+          "nick": "云***舟",
+          "avatar": "lion",
+          "level": "V3会员",
+          "ip": "广东",
+          "stars": 5,
+          "sku": "冰霜银 8GB+256GB WiFi",
+          "text": "轻薄好携带,配上键盘就是小电脑,办公学习两不误。",
+          "likes": 31,
+          "at": {
+            "dayOffset": -4,
+            "hm": "10:15"
+          }
+        },
+        {
+          "id": "rv-pad-3",
+          "nick": "t***9",
+          "avatar": "lion",
+          "level": "V2会员",
+          "ip": "上海",
+          "stars": 5,
+          "sku": "深空灰 12GB+256GB WiFi",
+          "text": "国补下来价格很香,音质和屏幕都超出预期,推荐入手。",
+          "likes": 27,
+          "at": {
+            "dayOffset": -6,
+            "hm": "16:52"
+          },
+          "images": [
+            "/@app-assets/Suning/products/matepad-115s_g3.png"
+          ]
+        },
+        {
+          "id": "rv-pad-4",
+          "nick": "山***风",
+          "avatar": "lion",
+          "level": "V4会员",
+          "ip": "北京",
+          "stars": 4,
+          "sku": "紫罗兰 8GB+128GB WiFi",
+          "text": "整体不错,就是128G存储对我来说有点紧张,建议上256G。",
+          "likes": 15,
+          "at": {
+            "dayOffset": -8,
+            "hm": "13:07"
+          }
+        },
+        {
+          "id": "rv-pad-5",
+          "nick": "卷***心",
+          "avatar": "lion",
+          "level": "V1会员",
+          "ip": "四川",
+          "stars": 5,
+          "sku": "深空灰 8GB+128GB WiFi",
+          "text": "给孩子上网课买的,护眼模式很贴心,家长管控也方便。",
+          "likes": 22,
+          "at": {
+            "dayOffset": -11,
+            "hm": "19:33"
+          }
+        },
+        {
+          "id": "rv-pad-6",
+          "nick": "2***a",
+          "avatar": "lion",
+          "level": "V3会员",
+          "ip": "湖北",
+          "stars": 3,
+          "sku": "冰霜银 8GB+128GB WiFi",
+          "text": "机器本身没问题,物流有点慢,等了四天才到。",
+          "likes": 6,
+          "at": {
+            "dayOffset": -15,
+            "hm": "08:26"
+          }
+        }
+      ]
+    },
+    "durian-jinzhen": {
+      "summary": {
+        "total": 2381,
+        "withImages": 412,
+        "quality": 2105,
+        "mid": 60,
+        "bad": 21,
+        "goodRate": 95
+      },
+      "items": [
+        {
+          "id": "rv-dur-1",
+          "nick": "甜***桃",
+          "avatar": "lion",
+          "level": "V4会员",
+          "ip": "江苏",
+          "stars": 5,
+          "sku": "3-4斤装",
+          "text": "开出来五房肉,金黄软糯,核还小,这个价格太值了。",
+          "likes": 58,
+          "at": {
+            "dayOffset": -1,
+            "hm": "12:20"
+          },
+          "images": [
+            "/@app-assets/Suning/products/durian-jinzhen_g2.png"
+          ]
+        },
+        {
+          "id": "rv-dur-2",
+          "nick": "q***3",
+          "avatar": "lion",
+          "level": "V2会员",
+          "ip": "浙江",
+          "stars": 5,
+          "sku": "4-5斤装",
+          "text": "冷链发货很快,到手还是冰的,熟度刚好,开壳即食。",
+          "likes": 33,
+          "at": {
+            "dayOffset": -3,
+            "hm": "17:44"
+          }
+        },
+        {
+          "id": "rv-dur-3",
+          "nick": "榴***控",
+          "avatar": "lion",
+          "level": "V5会员",
+          "ip": "广东",
+          "stars": 5,
+          "sku": "双只装5-7斤",
+          "text": "回购好多次了,品控稳定,基本没踩过雷,家人都爱吃。",
+          "likes": 41,
+          "at": {
+            "dayOffset": -6,
+            "hm": "20:08"
+          },
+          "images": [
+            "/@app-assets/Suning/products/durian-jinzhen_g3.png"
+          ]
+        },
+        {
+          "id": "rv-dur-4",
+          "nick": "m***k",
+          "avatar": "lion",
+          "level": "V1会员",
+          "ip": "福建",
+          "stars": 4,
+          "sku": "3-4斤装",
+          "text": "肉量还行,有一房没熟透,客服处理很快,补了优惠券。",
+          "likes": 12,
+          "at": {
+            "dayOffset": -9,
+            "hm": "15:31"
+          }
+        },
+        {
+          "id": "rv-dur-5",
+          "nick": "夏***果",
+          "avatar": "lion",
+          "level": "V3会员",
+          "ip": "江苏",
+          "stars": 3,
+          "sku": "2-3斤装",
+          "text": "个头偏小,出肉率一般,味道倒是正宗的金枕味。",
+          "likes": 7,
+          "at": {
+            "dayOffset": -13,
+            "hm": "10:56"
+          }
+        }
+      ]
+    },
+    "pepsi-mix300": {
+      "summary": {
+        "total": 8600,
+        "withImages": 230,
+        "quality": 8210,
+        "mid": 40,
+        "bad": 10,
+        "goodRate": 99
+      },
+      "items": [
+        {
+          "id": "rv-pep-1",
+          "nick": "气***水",
+          "avatar": "lion",
+          "level": "V3会员",
+          "ip": "江苏",
+          "stars": 5,
+          "sku": "可乐+柠檬味汽水混合装 300ml×12罐",
+          "text": "混合装很划算,两种口味换着喝,小罐装一次一罐刚刚好。",
+          "likes": 25,
+          "at": {
+            "dayOffset": -2,
+            "hm": "13:18"
+          },
+          "images": [
+            "/@app-assets/Suning/products/pepsi-mix300_g2.png"
+          ]
+        },
+        {
+          "id": "rv-pep-2",
+          "nick": "8***6",
+          "avatar": "lion",
+          "level": "V2会员",
+          "ip": "安徽",
+          "stars": 5,
+          "sku": "可乐+柠檬味汽水混合装 300ml×12罐",
+          "text": "百亿补贴价比超市便宜不少,气很足,日期新鲜。",
+          "likes": 18,
+          "at": {
+            "dayOffset": -5,
+            "hm": "19:02"
+          }
+        },
+        {
+          "id": "rv-pep-3",
+          "nick": "快***侠",
+          "avatar": "lion",
+          "level": "V4会员",
+          "ip": "山东",
+          "stars": 5,
+          "sku": "可乐原味 300ml×12罐",
+          "text": "囤货必备,搬上楼一点没磕碰,包装很扎实。",
+          "likes": 14,
+          "at": {
+            "dayOffset": -8,
+            "hm": "11:47"
+          }
+        },
+        {
+          "id": "rv-pep-4",
+          "nick": "l***o",
+          "avatar": "lion",
+          "level": "V1会员",
+          "ip": "河南",
+          "stars": 5,
+          "sku": "可乐+柠檬味汽水混合装 300ml×24罐",
+          "text": "24罐装更划算,家里聚会一次就喝完了,冰镇后更好喝。",
+          "likes": 9,
+          "at": {
+            "dayOffset": -12,
+            "hm": "16:25"
+          }
+        },
+        {
+          "id": "rv-pep-5",
+          "nick": "柠***夏",
+          "avatar": "lion",
+          "level": "V2会员",
+          "ip": "江苏",
+          "stars": 4,
+          "sku": "可乐+柠檬味汽水混合装 300ml×12罐",
+          "text": "柠檬味的偏甜一点,可乐味经典,整体满意。",
+          "likes": 6,
+          "at": {
+            "dayOffset": -18,
+            "hm": "09:40"
+          }
+        }
+      ]
+    }
+  },
+  "ranks": [
+    {
+      "id": "acHot",
+      "title": "性价比空调热销榜",
+      "soldText": "卖爆1273件",
+      "boardTypes": [
+        "sales",
+        "discount"
+      ],
+      "items": [
+        {
+          "productId": "ac-leader-shengdian",
+          "badges": [
+            "近30天销量过千",
+            "87天价格最低"
+          ],
+          "quote": {
+            "nick": "1***1",
+            "text": "制冷快,静音效果好,性价比很高。"
+          }
+        },
+        {
+          "productId": "ac-leader-zhixiang",
+          "badges": [
+            "86天价格最低"
+          ],
+          "quote": {
+            "nick": "w***6",
+            "text": "安装师傅很专业,空调很省电。"
+          }
+        },
+        {
+          "productId": "ac-midea-kusheng2",
+          "badges": [
+            "近7天搜索过万"
+          ],
+          "quote": {
+            "nick": "夏***凉",
+            "text": "一晚一度电名不虚传,晚上睡觉很安静。"
+          }
+        },
+        {
+          "productId": "ac-haier-xiaohonghua",
+          "badges": [
+            "近4天连续入榜"
+          ],
+          "quote": {
+            "nick": "8***3",
+            "text": "自清洁功能很实用,出风柔和不直吹。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "phonePop",
+      "title": "人气手机榜",
+      "soldText": "卖爆892件",
+      "boardTypes": [
+        "sales",
+        "trend",
+        "new"
+      ],
+      "items": [
+        {
+          "productId": "phone-iphone17-promax",
+          "badges": [
+            "181天价格最低"
+          ],
+          "quote": {
+            "nick": "f***2",
+            "text": "影像提升明显,续航比上代强不少。"
+          }
+        },
+        {
+          "productId": "phone-iphone17-256",
+          "badges": [
+            "181天价格最低"
+          ],
+          "quote": {
+            "nick": "3***9",
+            "text": "白色很耐看,补贴完价格真香。"
+          }
+        },
+        {
+          "productId": "phone-iphone17-pro",
+          "badges": [
+            "181天价格最低"
+          ],
+          "quote": {
+            "nick": "k***m",
+            "text": "星宇橙配色绝了,手感一流。"
+          }
+        },
+        {
+          "productId": "phone-nova16",
+          "badges": [
+            "近4天连续入榜"
+          ],
+          "quote": {
+            "nick": "拍***控",
+            "text": "前置人像太能打了,自拍党冲。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tissue",
+      "title": "方便抽纸巾榜",
+      "soldText": "卖爆2054件",
+      "boardTypes": [
+        "sales",
+        "discount"
+      ],
+      "items": [
+        {
+          "productId": "tissue-tempo-classic",
+          "badges": [
+            "近4天连续入榜"
+          ],
+          "quote": {
+            "nick": "软***云",
+            "text": "四层加厚,擦鼻子不掉屑,值得回购。"
+          }
+        },
+        {
+          "productId": "tissue-tempo-mini",
+          "badges": [
+            "84天价格最低"
+          ],
+          "quote": {
+            "nick": "d***5",
+            "text": "小雏菊包装好看,放包里正合适。"
+          }
+        },
+        {
+          "productId": "tissue-vinda-xiren",
+          "badges": [
+            "近30天销量过千"
+          ],
+          "quote": {
+            "nick": "9***2",
+            "text": "湿水真的不破,性价比之王。"
+          }
+        },
+        {
+          "productId": "tissue-vinda-chaoren",
+          "badges": [
+            "回购率超90%"
+          ],
+          "quote": {
+            "nick": "棉***糖",
+            "text": "大规格全家用,一提能用一个月。"
+          }
+        }
+      ]
+    }
+  ],
+  "follows": {
+    "products": [
+      {
+        "productId": "tablet-matepad-lingdong",
+        "subscribePrice": null
+      },
+      {
+        "productId": "kitchen-midea-kettle",
+        "subscribePrice": 85
+      },
+      {
+        "productId": "fan-midea-sab40a",
+        "subscribePrice": null
+      }
+    ],
+    "shops": [
+      "shop-gree",
+      "shop-midea",
+      "shop-huawei"
+    ],
+    "creators": [
+      "creator-nizi",
+      "creator-kedaibiao",
+      "creator-yanjiuyuan",
+      "creator-zhenxuanguan",
+      "creator-xixi"
+    ]
+  },
+  "history": [
+    {
+      "productId": "pepsi-mix300",
+      "dayOffset": 0
+    },
+    {
+      "productId": "fan-fd30l501",
+      "dayOffset": 0
+    },
+    {
+      "productId": "fan-gree-fdz35",
+      "dayOffset": 0
+    },
+    {
+      "productId": "food-panpan-bread",
+      "dayOffset": 0
+    },
+    {
+      "productId": "kitchen-midea-hotpot",
+      "dayOffset": 0
+    },
+    {
+      "productId": "matepad-115s",
+      "dayOffset": -2
+    },
+    {
+      "productId": "tablet-lenovo-tb522",
+      "dayOffset": -2
+    },
+    {
+      "productId": "fridge-haier-539",
+      "dayOffset": -20
+    },
+    {
+      "productId": "tv-redmi-a55",
+      "dayOffset": -20
+    }
+  ],
+  "creators": [
+    {
+      "id": "creator-nizi",
+      "name": "妮子",
+      "avatar": "/@app-assets/Suning/creators/creator-nizi.png",
+      "followingCount": 215,
+      "fansText": "3.1万",
+      "likeCount": 0,
+      "ip": "未知",
+      "bio": "自家的购物清单,只分享值得买的!",
+      "tabCounts": {
+        "posts": 10,
+        "videos": 0,
+        "lives": 0
+      },
+      "posts": [
+        {
+          "id": "np-kitchen",
+          "title": "好用不贵的厨具清单,人手一套",
+          "views": 97554,
+          "cover": "/@app-assets/Suning/creators/np-kitchen.png"
+        },
+        {
+          "id": "np-sunscreen",
+          "title": "夏日防晒好物合集,通勤党必备",
+          "views": 76174,
+          "cover": "/@app-assets/Suning/creators/np-sunscreen.png"
+        },
+        {
+          "id": "np-wok",
+          "title": "这口炒锅用了半年,不粘不糊",
+          "views": 127378,
+          "cover": "/@app-assets/Suning/creators/np-wok.png"
+        },
+        {
+          "id": "np-bpm",
+          "title": "给爸妈买的血压仪,操作简单读数大",
+          "views": 172244,
+          "cover": "/@app-assets/Suning/creators/np-bpm.png"
+        }
+      ]
+    },
+    {
+      "id": "creator-kedaibiao",
+      "name": "苏宁家电课代表",
+      "avatar": "/@app-assets/Suning/creators/creator-kedaibiao.png",
+      "followingCount": 32,
+      "fansText": "12.6万",
+      "likeCount": 8420,
+      "ip": "江苏",
+      "bio": "家电避坑指南,买前先来听课~",
+      "tabCounts": {
+        "posts": 46,
+        "videos": 12,
+        "lives": 0
+      },
+      "posts": [],
+      "feed": {
+        "text": "买空调别只看匹数,能效等级、变频方式、内机噪音这三个参数才真正决定你一年多交多少电费。",
+        "cover": "/@app-assets/Suning/content/feed-ac-class.png"
+      }
+    },
+    {
+      "id": "creator-yanjiuyuan",
+      "name": "家电研究院",
+      "avatar": "/@app-assets/Suning/creators/creator-yanjiuyuan.png",
+      "followingCount": 18,
+      "fansText": "28.4万",
+      "likeCount": 21063,
+      "ip": "广东",
+      "bio": "专业家电评测,数据说话。",
+      "tabCounts": {
+        "posts": 88,
+        "videos": 35,
+        "lives": 2
+      },
+      "posts": [],
+      "feed": {
+        "text": "新一期冰箱横评出炉,四款风冷无霜整机实测数据都整理好了,保鲜和噪音差距比想象中大。",
+        "cover": "/@app-assets/Suning/content/feed-fridge-review.png"
+      }
+    },
+    {
+      "id": "creator-zhenxuanguan",
+      "name": "数码家电甄选官",
+      "avatar": "/@app-assets/Suning/creators/creator-zhenxuanguan.png",
+      "followingCount": 56,
+      "fansText": "9.8万",
+      "likeCount": 6231,
+      "ip": "上海",
+      "bio": "数码家电好物,帮你甄选到位。",
+      "tabCounts": {
+        "posts": 61,
+        "videos": 20,
+        "lives": 1
+      },
+      "posts": []
+    },
+    {
+      "id": "creator-xixi",
+      "name": "西西好物推荐官",
+      "avatar": "/@app-assets/Suning/creators/creator-xixi.png",
+      "followingCount": 120,
+      "fansText": "5.2万",
+      "likeCount": 3980,
+      "ip": "浙江",
+      "bio": "生活好物种草机,好用才推荐。",
+      "tabCounts": {
+        "posts": 39,
+        "videos": 16,
+        "lives": 0
+      },
+      "posts": []
+    },
+    {
+      "id": "creator-xiakelai",
+      "name": "下课来我直播间",
+      "avatar": "/@app-assets/Suning/creators/creator-xiakelai.png",
+      "followingCount": 8,
+      "fansText": "41.7万",
+      "likeCount": 35208,
+      "ip": "江苏",
+      "bio": "每天两场家电清仓,只讲怎么买最便宜。",
+      "tabCounts": {
+        "posts": 12,
+        "videos": 6,
+        "lives": 128
+      },
+      "posts": [],
+      "feed": {
+        "text": "今晚8点开播,家电清仓专场,空调冰箱都有渠道价,来蹲个好价~",
+        "cover": "/@app-assets/Suning/content/feed-live-appliance.png",
+        "live": true,
+        "cert": "江苏××文化传媒有限公司"
+      }
+    },
+    {
+      "id": "creator-mobao",
+      "name": "沫宝",
+      "avatar": "/@app-assets/Suning/creators/creator-mobao.png",
+      "followingCount": 264,
+      "fansText": "2.6万",
+      "likeCount": 1874,
+      "ip": "浙江",
+      "bio": "宿舍党的省钱好物,小件为主。",
+      "tabCounts": {
+        "posts": 27,
+        "videos": 3,
+        "lives": 0
+      },
+      "posts": [],
+      "feed": {
+        "text": "入夏必备的桌面小循环扇,巴掌大一个,风力比想象中大不少,宿舍和工位都能塞下。"
+      }
+    },
+    {
+      "id": "creator-shanshan",
+      "name": "星推官姗姗",
+      "avatar": "/@app-assets/Suning/creators/creator-shanshan.png",
+      "followingCount": 91,
+      "fansText": "16.3万",
+      "likeCount": 10426,
+      "ip": "上海",
+      "bio": "国补怎么用、券怎么叠,一次讲清楚。",
+      "tabCounts": {
+        "posts": 53,
+        "videos": 22,
+        "lives": 9
+      },
+      "posts": [],
+      "feed": {
+        "text": "直播间在讲今年国补怎么和店铺券叠着用,大件家电能再省一截,进来听两句。"
+      }
+    }
+  ],
+  "contentCards": [
+    {
+      "id": "cc-changhong-tv",
+      "type": "video",
+      "title": "65英寸大屏电视怎么选?实测新款画质天花板",
+      "creatorId": "creator-yanjiuyuan",
+      "cover": "/@app-assets/Suning/content/cc-changhong-tv.png",
+      "viewsText": "2.3万次播放",
+      "channel": "trend",
+      "badge": "03:12",
+      "productId": "tv-changhong-65d6"
+    },
+    {
+      "id": "cc-gold-live",
+      "type": "live",
+      "title": "黄金饰品直播专场 足金好价开抢",
+      "creatorId": "creator-zhenxuanguan",
+      "cover": "/@app-assets/Suning/content/cc-gold-live.png",
+      "viewsText": "1.8万人观看",
+      "channel": "trend",
+      "badge": "直播中"
+    },
+    {
+      "id": "cc-cable",
+      "type": "post",
+      "title": "加长数据线实测:2米快充不减速",
+      "creatorId": "creator-zhenxuanguan",
+      "cover": "/@app-assets/Suning/content/cc-cable.png",
+      "viewsText": "8642阅读",
+      "channel": "daily",
+      "badge": "9图"
+    },
+    {
+      "id": "cc-mini-fan",
+      "type": "post",
+      "title": "巴掌大的循环扇,桌面吹风神器",
+      "creatorId": "creator-xixi",
+      "cover": "/@app-assets/Suning/content/cc-mini-fan.png",
+      "viewsText": "1.2万阅读",
+      "channel": "daily",
+      "badge": "6图",
+      "productId": "fan-aux-xh01"
+    },
+    {
+      "id": "cc-freezer",
+      "type": "video",
+      "title": "305升冰柜开箱:一家五口囤货刚好",
+      "creatorId": "creator-yanjiuyuan",
+      "cover": "/@app-assets/Suning/content/cc-freezer.png",
+      "viewsText": "9531次播放",
+      "channel": "daily",
+      "badge": "04:05",
+      "productId": "fridge-leader-501"
+    },
+    {
+      "id": "cc-uvn",
+      "type": "video",
+      "title": "UVN光催化除味实测,冰箱异味拜拜",
+      "creatorId": "creator-yanjiuyuan",
+      "cover": "/@app-assets/Suning/content/cc-uvn.png",
+      "viewsText": "6820次播放",
+      "channel": "daily",
+      "badge": "02:48"
+    },
+    {
+      "id": "cc-wrap1",
+      "type": "video",
+      "title": "保鲜膜怎么选?三款实测对比",
+      "creatorId": "creator-xixi",
+      "cover": "/@app-assets/Suning/content/cc-wrap1.png",
+      "viewsText": "5104次播放",
+      "channel": "food",
+      "badge": "03:30"
+    },
+    {
+      "id": "cc-wrap2",
+      "type": "video",
+      "title": "一卷保鲜膜的10种收纳妙用",
+      "creatorId": "creator-xixi",
+      "cover": "/@app-assets/Suning/content/cc-wrap2.png",
+      "viewsText": "4386次播放",
+      "channel": "food",
+      "badge": "02:10"
+    }
+  ],
+  "cart": {
+    "items": [
+      {
+        "id": "cart-1",
+        "shopId": "shop-delicheng",
+        "productId": "food-panpan-bread",
+        "skuText": "300g/袋",
+        "qty": 1,
+        "price": 9.6,
+        "selected": false
+      },
+      {
+        "id": "cart-2",
+        "shopId": "shop-lenovo-huida",
+        "productId": "laptop-xiaoxin-16cse",
+        "skuText": "锐龙R7 16G 512G",
+        "qty": 1,
+        "price": 5299,
+        "selected": false,
+        "serviceText": "服务:整机保修3年"
+      },
+      {
+        "id": "cart-3",
+        "shopId": "shop-suning-self",
+        "productId": "laptop-xiaoxin-air14",
+        "skuText": "酷睿Ultra5 32G 1T OLED",
+        "qty": 1,
+        "price": 7749,
+        "priceOriginal": 8249,
+        "selected": false,
+        "tags": [
+          "领券"
+        ],
+        "subsidyHint": "国补领后约¥6586.65",
+        "freeShipping": true
+      },
+      {
+        "id": "cart-4",
+        "shopId": "shop-huawei",
+        "productId": "phone-nova16",
+        "skuText": "曜金黑 12GB+256GB",
+        "qty": 1,
+        "price": 3157.08,
+        "priceOriginal": 3699,
+        "selected": false,
+        "tags": [
+          "领券"
+        ],
+        "subsidyHint": "国补领后约¥2683.52"
+      },
+      {
+        "id": "cart-5",
+        "shopId": "shop-suning-self",
+        "productId": "ac-leader-shengdian",
+        "skuText": "统帅(Leader)海尔出品 超省电",
+        "qty": 1,
+        "price": 1529.15,
+        "priceOriginal": 1799,
+        "selected": false,
+        "freeShipping": true,
+        "subsidyHint": "国补领后约¥1299.78"
+      },
+      {
+        "id": "cart-6",
+        "shopId": "shop-huawei",
+        "productId": "phone-nova16-huoli",
+        "skuText": "樱语粉 8GB+256GB",
+        "qty": 1,
+        "price": 2199,
+        "priceOriginal": 2499,
+        "selected": false,
+        "tags": [
+          "领券"
+        ],
+        "subsidyHint": "国补领后约¥1869.15"
+      },
+      {
+        "id": "cart-7",
+        "shopId": "shop-suning-self",
+        "productId": "ac-leader-zhixiang",
+        "skuText": "1.5匹 智享风",
+        "qty": 1,
+        "price": 1529.15,
+        "priceOriginal": 1899,
+        "selected": false,
+        "freeShipping": true,
+        "subsidyHint": "国补领后约¥1299.78"
+      },
+      {
+        "id": "cart-8",
+        "shopId": "shop-lenovo-huida",
+        "productId": "monitor-lenovo-l27",
+        "skuText": "27英寸 100Hz",
+        "qty": 1,
+        "price": 899,
+        "priceOriginal": 1099,
+        "selected": false
+      },
+      {
+        "id": "cart-9",
+        "shopId": "shop-huawei",
+        "productId": "phone-nova16-pro",
+        "skuText": "云杉绿 12GB+512GB",
+        "qty": 1,
+        "price": 3999,
+        "priceOriginal": 4399,
+        "selected": false,
+        "tags": [
+          "领券"
+        ],
+        "subsidyHint": "国补领后约¥3399.15"
+      }
+    ],
+    "compareGroup": {
+      "name": "电脑品类",
+      "category": "laptop",
+      "productIds": [
+        "laptop-xiaoxin-air14",
+        "laptop-xiaoxin-16cse",
+        "laptop-lecoo-ku310",
+        "monitor-lenovo-l27"
+      ],
+      "paramKeys": [
+        {
+          "key": "brand",
+          "label": "品牌"
+        },
+        {
+          "key": "model",
+          "label": "型号"
+        },
+        {
+          "key": "positioning",
+          "label": "产品定位"
+        },
+        {
+          "key": "os",
+          "label": "操作系统"
+        },
+        {
+          "key": "cpuPlatform",
+          "label": "CPU平台"
+        },
+        {
+          "key": "cpu",
+          "label": "CPU型号"
+        },
+        {
+          "key": "freq",
+          "label": "主频"
+        },
+        {
+          "key": "ram",
+          "label": "内存"
+        },
+        {
+          "key": "rom",
+          "label": "硬盘"
+        },
+        {
+          "key": "screenSize",
+          "label": "屏幕尺寸"
+        },
+        {
+          "key": "panel",
+          "label": "屏幕材质"
+        },
+        {
+          "key": "resolution",
+          "label": "分辨率"
+        },
+        {
+          "key": "thickness",
+          "label": "厚度"
+        },
+        {
+          "key": "weight",
+          "label": "净重"
+        }
+      ],
+      "reputation": [
+        {
+          "productId": "laptop-xiaoxin-air14",
+          "reviewText": "评价27·98%好评",
+          "rankText": "已入选「高端轻薄本榜」第2名"
+        },
+        {
+          "productId": "laptop-xiaoxin-16cse",
+          "reviewText": "评价43·98%好评"
+        },
+        {
+          "productId": "laptop-lecoo-ku310",
+          "reviewText": "评价693·97%好评"
+        },
+        {
+          "productId": "monitor-lenovo-l27",
+          "reviewText": "评价3105·98%好评",
+          "rankText": "已入选「办公显示器榜」第5名"
+        }
+      ],
+      "service": {
+        "delivery": [
+          "苏宁发货",
+          "店铺发货",
+          "店铺发货",
+          "店铺发货"
+        ],
+        "deliveryEtaDayOffsets": [
+          2,
+          4,
+          3,
+          3
+        ],
+        "install": "均无需安装",
+        "warranty": "支持延长保"
+      }
+    }
+  },
+  "searchConfig": {
+    "placeholders": [
+      "拯救者y7000p",
+      "落地扇",
+      "悬挂式抽纸",
+      "华为matepad 11.5S",
+      "百事可乐 整箱"
+    ],
+    "recentDefault": [
+      "美的",
+      "平板",
+      "风扇",
+      "拯救者"
+    ],
+    "guessWords": [
+      "空调 一级能效",
+      "华为matepad",
+      "洁柔抽纸",
+      "落地扇 轻音",
+      "小新笔记本",
+      "百事可乐 整箱",
+      "维达纸巾",
+      "格力空调 1.5匹"
+    ],
+    "hotCategories": [
+      {
+        "name": "手机",
+        "heatText": "11.6万热度",
+        "topBrands": [
+          "华为",
+          "荣耀",
+          "小米"
+        ]
+      },
+      {
+        "name": "冰箱",
+        "heatText": "8.2万热度",
+        "topBrands": [
+          "海尔",
+          "容声",
+          "美的"
+        ]
+      }
+    ],
+    "suggest": [
+      {
+        "prefix": "华为",
+        "shopHint": "搜索\"华为\"相关店铺",
+        "words": [
+          "华为nova16",
+          "华为Pura 90 Pro",
+          "华为mate80",
+          "华为matepad 11.5S",
+          "华为nova16 活力版"
+        ]
+      }
+    ],
+    "fullResultKeywords": [
+      "风扇",
+      "华为平板"
+    ]
+  },
+  "filterDims": {
+    "fan": {
+      "dims": [
+        {
+          "key": "service",
+          "label": "服务",
+          "multi": true,
+          "options": [
+            "省心购",
+            "24小时发货",
+            "政府补贴",
+            "以旧换新",
+            "价保"
+          ]
+        },
+        {
+          "key": "priceRange",
+          "label": "价格区间",
+          "multi": false,
+          "presets": [
+            "0-99",
+            "100-199",
+            "200-499",
+            "500以上"
+          ],
+          "inputEnabled": true
+        },
+        {
+          "key": "brand",
+          "label": "品牌",
+          "multi": true,
+          "options": [
+            "荣事达",
+            "美的",
+            "格力",
+            "戴森",
+            "奥克斯",
+            "美菱"
+          ]
+        },
+        {
+          "key": "type",
+          "label": "类型",
+          "multi": true,
+          "options": [
+            "落地扇",
+            "塔扇",
+            "空气循环扇",
+            "空调扇",
+            "台扇"
+          ]
+        },
+        {
+          "key": "control",
+          "label": "控制方式",
+          "multi": true,
+          "options": [
+            "遥控式",
+            "机械式",
+            "智能语音"
+          ]
+        },
+        {
+          "key": "gears",
+          "label": "风力档位",
+          "multi": true,
+          "options": [
+            "3档",
+            "5档",
+            "8档",
+            "12档及以上"
+          ]
+        },
+        {
+          "key": "windMode",
+          "label": "风类模式",
+          "multi": true,
+          "options": [
+            "正常风",
+            "自然风",
+            "睡眠风",
+            "循环风"
+          ]
+        },
+        {
+          "key": "blades",
+          "label": "扇叶片数",
+          "multi": true,
+          "options": [
+            "3片",
+            "5片",
+            "7片",
+            "9片及以上"
+          ]
+        },
+        {
+          "key": "features",
+          "label": "特色功能",
+          "multi": true,
+          "options": [
+            "定时",
+            "摇头",
+            "加湿",
+            "负离子净化",
+            "WiFi智控"
+          ]
+        },
+        {
+          "key": "display",
+          "label": "显示方式",
+          "multi": true,
+          "options": [
+            "LED数显",
+            "指示灯",
+            "无显示"
+          ]
+        }
+      ]
+    },
+    "tablet": {
+      "dims": [
+        {
+          "key": "service",
+          "label": "服务",
+          "multi": true,
+          "options": [
+            "省心购",
+            "24小时发货",
+            "政府补贴",
+            "以旧换新",
+            "价保"
+          ]
+        },
+        {
+          "key": "priceRange",
+          "label": "价格区间",
+          "multi": false,
+          "presets": [
+            "0-1999",
+            "2000-2999",
+            "3000-4999",
+            "5000以上"
+          ],
+          "inputEnabled": true
+        },
+        {
+          "key": "brand",
+          "label": "品牌",
+          "multi": true,
+          "options": [
+            "华为",
+            "联想",
+            "荣耀",
+            "苹果",
+            "小米"
+          ]
+        },
+        {
+          "key": "storage",
+          "label": "存储容量",
+          "multi": true,
+          "options": [
+            "128GB",
+            "256GB",
+            "512GB",
+            "1TB"
+          ]
+        },
+        {
+          "key": "screen",
+          "label": "屏幕尺寸",
+          "multi": true,
+          "options": [
+            "8英寸以下",
+            "8-11英寸",
+            "11-12英寸",
+            "12英寸以上"
+          ]
+        },
+        {
+          "key": "ram",
+          "label": "运行内存",
+          "multi": true,
+          "options": [
+            "6GB",
+            "8GB",
+            "12GB",
+            "16GB"
+          ]
+        },
+        {
+          "key": "resolution",
+          "label": "屏幕分辨率",
+          "multi": true,
+          "options": [
+            "1920×1200",
+            "2K",
+            "2.5K",
+            "2.8K",
+            "3.2K"
+          ]
+        },
+        {
+          "key": "os",
+          "label": "操作系统",
+          "multi": true,
+          "options": [
+            "HarmonyOS",
+            "Android",
+            "Windows",
+            "iPadOS"
+          ]
+        },
+        {
+          "key": "cpuCores",
+          "label": "CPU核数",
+          "multi": true,
+          "options": [
+            "6核",
+            "8核",
+            "10核"
+          ]
+        },
+        {
+          "key": "features",
+          "label": "附加功能",
+          "multi": true,
+          "options": [
+            "通话平板",
+            "手写笔套装",
+            "键盘套装",
+            "学生模式"
+          ]
+        },
+        {
+          "key": "weight",
+          "label": "重量",
+          "multi": true,
+          "options": [
+            "400g以下",
+            "400-500g",
+            "500-700g",
+            "700g以上"
+          ]
+        },
+        {
+          "key": "helpChoose",
+          "label": "帮你选",
+          "multi": false,
+          "options": [
+            "办公学习",
+            "影音娱乐",
+            "绘画创作",
+            "儿童教育"
+          ]
+        }
+      ]
+    },
+    "generic": {
+      "dims": [
+        {
+          "key": "service",
+          "label": "服务",
+          "multi": true,
+          "options": [
+            "省心购",
+            "24小时发货",
+            "政府补贴",
+            "价保"
+          ]
+        },
+        {
+          "key": "priceRange",
+          "label": "价格区间",
+          "multi": false,
+          "presets": [
+            "0-99",
+            "100-499",
+            "500-1999",
+            "2000以上"
+          ],
+          "inputEnabled": true
+        },
+        {
+          "key": "brand",
+          "label": "品牌",
+          "multi": true,
+          "options": [
+            "海尔",
+            "美的",
+            "小天鹅",
+            "REDMI",
+            "长虹",
+            "洁柔",
+            "维达",
+            "得宝",
+            "清风",
+            "立白"
+          ]
+        }
+      ]
+    }
+  },
+  "chatConfig": {
+    "common": {
+      "systemNotice": "当前咨询业务量较大,人工客服接入可能需要等待,请您耐心等待,或先向机器人助手提问~",
+      "robotName": "Sunny",
+      "robotAvatar": "lion",
+      "robotWelcome": "我是您的好朋友Sunny,有问题可以向我提问哦~",
+      "hotQuestions": [
+        "政府补贴无法领取",
+        "会员蜜蜂卡活动",
+        "哪些商品参与M值",
+        "👉以旧换新怎么参加",
+        "政府补贴资格怎么领",
+        "商品什么时候发货"
+      ],
+      "quickGrid": [
+        "会员中心",
+        "会员到店活动",
+        "云钻兑好礼",
+        "厨卫电器"
+      ],
+      "bottomChips": [
+        "政府补贴活动",
+        "购买清洗保养服务",
+        "评价"
+      ],
+      "rules": [
+        {
+          "keywords": [
+            "补贴",
+            "国补",
+            "政府"
+          ],
+          "reply": "政府补贴活动说明:符合条件的家电/3C商品可领取政府补贴资格,领取后下单立减15%。您可以在商品详情页点击「政府补贴 立即领取」获取资格哦~"
+        },
+        {
+          "keywords": [
+            "保修",
+            "质保",
+            "保障"
+          ],
+          "reply": "本店商品均支持全国联保,整机保修等保障服务可在下单时一并加购;已购商品的保障服务可在「我的-退换售后」中查看。"
+        },
+        {
+          "keywords": [
+            "发货",
+            "物流",
+            "快递",
+            "到货"
+          ],
+          "reply": "现货商品一般在支付成功后24小时内发货,大家电及供应商商品预计1-3天内发货,您可以在订单详情中查看物流进度哦~"
+        },
+        {
+          "keywords": [
+            "退货",
+            "退款",
+            "售后"
+          ],
+          "reply": "支持7天无理由退货(生鲜等特殊商品除外)。您可以在「我的订单」中选择对应订单发起退款申请,审核通过后退款将原路退回。"
+        },
+        {
+          "keywords": [
+            "以旧换新",
+            "换新",
+            "旧机"
+          ],
+          "reply": "以旧换新参与方式:在商品详情页点击「立即换新」评估旧机,下单新机后旧机回收金额将抵扣货款,至高可享额外换新补贴~"
+        },
+        {
+          "keywords": [
+            "蜜蜂卡",
+            "会员"
+          ],
+          "reply": "会员蜜蜂卡活动进行中:开通后全场95折起,每月还可领取专属神券,详情可在会员中心查看~"
+        },
+        {
+          "keywords": [
+            "M值"
+          ],
+          "reply": "自营商品消费可获得M值,M值可在云钻商城兑换好礼;具体商品是否参与以商品详情页标识为准~"
+        },
+        {
+          "keywords": [
+            "清洗",
+            "保养"
+          ],
+          "reply": "苏宁帮客提供空调/洗衣机/油烟机等家电的上门清洗保养服务,您可以搜索「帮客清洗」了解详情~"
+        },
+        {
+          "keywords": [
+            "评价"
+          ],
+          "reply": "收货后您可以在「我的订单-待评价」中对商品进行评价,优质评价还有机会获得云钻奖励哦~"
+        }
+      ],
+      "fallback": "抱歉,Sunny 暂时没有理解您的问题,您可以换个说法,或点击下方热门问题快速咨询哦~"
+    },
+    "byShop": [
+      {
+        "shopId": "shop-rsd",
+        "title": "家电管家"
+      },
+      {
+        "shopId": "shop-midea",
+        "title": "家电管家"
+      },
+      {
+        "shopId": "shop-gree",
+        "title": "家电管家"
+      },
+      {
+        "shopId": "shop-huawei",
+        "title": "华为官方旗舰店"
+      },
+      {
+        "shopId": "shop-suning-self",
+        "title": "苏宁超市客服"
+      },
+      {
+        "shopId": "shop-lenovo-huida",
+        "title": "联想慧达专卖店"
+      },
+      {
+        "shopId": "shop-delicheng",
+        "title": "德立诚食品专营店"
+      },
+      {
+        "shopId": "shop-yuanmingyang",
+        "title": "远明杨专营店"
+      }
+    ]
+  },
+  "msgSettings": {
+    "chatRemind": true,
+    "banner": true,
+    "ring": true,
+    "vibrate": true
+  },
+  "messages": [
+    {
+      "id": "msg-ship-kettle",
+      "channel": "trade",
+      "title": "您有一笔订单商家已发货",
+      "desc": "您的美的电热水壶1.5L双层防烫已发货,由圆通速递为您配送,敬请期待~",
+      "at": {
+        "dayOffset": 0,
+        "hm": "10:00"
+      },
+      "orderId": "order-kettle-shipping",
+      "image": "/@app-assets/Suning/products/kitchen-midea-kettle.png"
+    },
+    {
+      "id": "msg-transit-kettle",
+      "channel": "trade",
+      "title": "物流中转进度提醒",
+      "desc": "订单G3001612456(美的电热水壶1.5L)物流已中转至重庆转运中心,点击可查看详细物流进度。",
+      "at": {
+        "dayOffset": 0,
+        "hm": "09:55"
+      },
+      "orderId": "order-kettle-shipping",
+      "image": "/@app-assets/Suning/products/kitchen-midea-kettle.png"
+    },
+    {
+      "id": "msg-ship-pepsi",
+      "channel": "trade",
+      "title": "您有一笔订单商家已发货",
+      "desc": "您的百事可乐混合装300ml×12罐已发货,由圆通速递为您配送,敬请期待~",
+      "at": {
+        "dayOffset": -1,
+        "hm": "08:22"
+      },
+      "orderId": "order-pepsi-shipping",
+      "image": "/@app-assets/Suning/products/pepsi-mix300.png"
+    },
+    {
+      "id": "msg-await-jierou",
+      "channel": "trade",
+      "title": "订单已支付",
+      "desc": "您的订单已支付成功,远明杨专营店将尽快为您发货 >>",
+      "at": {
+        "dayOffset": 0,
+        "hm": "18:59"
+      },
+      "orderId": "order-jierou-await",
+      "image": "/@app-assets/Suning/products/tissue-jierou-kitchen.png"
+    },
+    {
+      "id": "msg-refund-done",
+      "channel": "notice",
+      "title": "退款完成通知",
+      "desc": "订单G3001617207 洁柔油画抽纸80抽*1包…退款3.90元将原路退回支付宝账户,预计1-5个工作日到账",
+      "at": {
+        "dayOffset": 0,
+        "hm": "09:31"
+      },
+      "orderId": "order-jierou-supplier",
+      "image": "/@app-assets/Suning/products/tissue-jierou-youhua.png"
+    },
+    {
+      "id": "msg-refund-prog",
+      "channel": "notice",
+      "title": "退款进度通知",
+      "desc": "您申请的洁柔油画抽纸退款已审核通过,退款预计1-5个工作日到账",
+      "at": {
+        "dayOffset": 0,
+        "hm": "09:29"
+      },
+      "orderId": "order-jierou-supplier",
+      "image": "/@app-assets/Suning/products/tissue-jierou-youhua.png"
+    }
+  ],
+  "baibuChannel": [
+    {
+      "productId": "durian-jinzhen",
+      "category": "featured",
+      "dailyPrice": 113.8,
+      "subsidyPrice": 93.8,
+      "savedYuan": 20,
+      "progress": 12,
+      "salesText": "月销2.1万"
+    },
+    {
+      "productId": "ac-leader-shengdian",
+      "category": "ac",
+      "dailyPrice": 2999,
+      "subsidyPrice": 1699.15,
+      "savedYuan": 1299,
+      "progress": 68,
+      "salesText": "月销3847"
+    },
+    {
+      "productId": "phone-iphone17-256",
+      "category": "3c",
+      "dailyPrice": 5999,
+      "subsidyPrice": 5189,
+      "savedYuan": 810,
+      "progress": 45,
+      "salesText": "月销1.2万"
+    },
+    {
+      "productId": "phone-iphone17-pro",
+      "category": "3c",
+      "dailyPrice": 8499,
+      "subsidyPrice": 7543.08,
+      "savedYuan": 955,
+      "progress": 38,
+      "salesText": "月销8654"
+    },
+    {
+      "productId": "tissue-vinda-xiren",
+      "category": "featured",
+      "dailyPrice": 19.9,
+      "subsidyPrice": 9.9,
+      "savedYuan": 10,
+      "progress": 91,
+      "salesText": "月销5.6万"
+    },
+    {
+      "productId": "pepsi-mix300",
+      "category": "featured",
+      "dailyPrice": 24.9,
+      "subsidyPrice": 12.6,
+      "savedYuan": 12.3,
+      "progress": 77,
+      "salesText": "月销3.3万"
+    }
+  ]
+}

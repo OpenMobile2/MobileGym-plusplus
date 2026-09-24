@@ -1,0 +1,3056 @@
+{
+  "user": {
+    "name": "jd_demo_user",
+    "avatar": "/@app-assets/Jingdong/items/i_cup.png",
+    "memberLevel": "银牌会员",
+    "jingdou": 3000,
+    "couponCount": 78,
+    "redpacket": 0.48,
+    "baitiao": 3000,
+    "footprintCount": 29,
+    "favoriteCount": 6,
+    "followCount": 1
+  },
+  "shops": [
+    {
+      "id": "shop_self",
+      "name": "京东自营",
+      "logo": "/@app-assets/Jingdong/items/i_kettle.png",
+      "type": "self",
+      "fans": "超5000万关注"
+    },
+    {
+      "id": "shop_think",
+      "name": "ThinkBook专卖店",
+      "logo": "/@app-assets/Jingdong/items/i_thinkbook.png",
+      "type": "flagship",
+      "fans": "502.8万人关注"
+    },
+    {
+      "id": "shop_vivo",
+      "name": "vivo京东自营旗舰店",
+      "logo": "/@app-assets/Jingdong/items/i_phone_v.png",
+      "type": "self",
+      "fans": "800万人关注"
+    },
+    {
+      "id": "shop_wang",
+      "name": "旺旺京东自营旗舰店",
+      "logo": "/@app-assets/Jingdong/items/i_wangzai.png",
+      "type": "self",
+      "fans": "300万人关注"
+    },
+    {
+      "id": "shop_hema",
+      "name": "盒马鲜生(示范广场店)",
+      "logo": "/@app-assets/Jingdong/items/i_dumpling.png",
+      "type": "thirdparty",
+      "fans": "已售100万+"
+    }
+  ],
+  "items": [
+    {
+      "id": "i_thinkbook",
+      "shopId": "shop_think",
+      "title": "联想ThinkBook 14+ 2026 Ultra5 16G 1T 轻薄办公笔记本电脑",
+      "image": "/@app-assets/Jingdong/items/i_thinkbook.png",
+      "gallery": [
+        "/@app-assets/Jingdong/items/i_thinkbook.png",
+        "/@app-assets/Jingdong/items/i_thinkbook_d.png"
+      ],
+      "detailImages": [
+        "/@app-assets/Jingdong/items/i_thinkbook_d.png",
+        "/@app-assets/Jingdong/items/i_thinkbook.png"
+      ],
+      "price": 6629.15,
+      "originPrice": 7799,
+      "guobu": true,
+      "guobuOff": 1169.85,
+      "self": true,
+      "jdLogistics": true,
+      "baitiaoPeriods": [
+        3,
+        6
+      ],
+      "sold": "已售1万+",
+      "goodRate": "98%",
+      "tags": [
+        "自营",
+        "京东物流",
+        "国家补贴"
+      ],
+      "specs": [
+        {
+          "name": "颜色",
+          "options": [
+            "深空灰",
+            "星曜银"
+          ]
+        },
+        {
+          "name": "版本",
+          "options": [
+            "Ultra5 16G 1T",
+            "Ultra9 32G 1T"
+          ]
+        }
+      ],
+      "reviewCount": 12800,
+      "reviewTags": [
+        "有图",
+        "质量好",
+        "外观漂亮",
+        "性价比高",
+        "发货快"
+      ],
+      "category": "电脑办公"
+    },
+    {
+      "id": "i_phone_v",
+      "shopId": "shop_vivo",
+      "title": "vivo X300 12GB+256GB 蔡司影像旗舰5G手机",
+      "image": "/@app-assets/Jingdong/items/i_phone_v.png",
+      "gallery": [
+        "/@app-assets/Jingdong/items/i_phone_v.png",
+        "/@app-assets/Jingdong/items/i_phone_v_d.png"
+      ],
+      "detailImages": [
+        "/@app-assets/Jingdong/items/i_phone_v_d.png",
+        "/@app-assets/Jingdong/items/i_phone_v.png"
+      ],
+      "price": 4099,
+      "originPrice": 4999,
+      "guobu": true,
+      "guobuOff": 900,
+      "self": true,
+      "jdLogistics": true,
+      "baitiaoPeriods": [
+        6,
+        12
+      ],
+      "sold": "已售5万+",
+      "goodRate": "99%",
+      "tags": [
+        "自营",
+        "京东物流",
+        "国家补贴"
+      ],
+      "specs": [
+        {
+          "name": "颜色",
+          "options": [
+            "幻夜黑",
+            "青云蓝"
+          ]
+        },
+        {
+          "name": "内存",
+          "options": [
+            "12+256",
+            "16+512"
+          ]
+        }
+      ],
+      "reviewCount": 9600,
+      "reviewTags": [
+        "质量好",
+        "外观漂亮",
+        "性价比高",
+        "发货快"
+      ],
+      "category": "手机"
+    },
+    {
+      "id": "i_phone_honor",
+      "shopId": "shop_self",
+      "title": "荣耀Magic 白色 后置四摄 全面屏5G手机",
+      "image": "/@app-assets/Jingdong/items/i_phone_honor.png",
+      "gallery": [
+        "/@app-assets/Jingdong/items/i_phone_honor.png",
+        "/@app-assets/Jingdong/items/i_phone_honor_d.png"
+      ],
+      "detailImages": [
+        "/@app-assets/Jingdong/items/i_phone_honor_d.png",
+        "/@app-assets/Jingdong/items/i_phone_honor.png"
+      ],
+      "price": 3138.88,
+      "originPrice": 3999,
+      "guobu": true,
+      "guobuOff": 860,
+      "self": true,
+      "jdLogistics": true,
+      "baitiaoPeriods": [
+        3,
+        6
+      ],
+      "sold": "已售2万+",
+      "goodRate": "98%",
+      "tags": [
+        "自营",
+        "京东物流",
+        "国家补贴"
+      ],
+      "specs": [
+        {
+          "name": "颜色",
+          "options": [
+            "釉白",
+            "墨玉黑"
+          ]
+        }
+      ],
+      "reviewCount": 3200,
+      "reviewTags": [
+        "有图",
+        "质量好",
+        "外观漂亮",
+        "性价比高",
+        "发货快"
+      ],
+      "category": "手机"
+    },
+    {
+      "id": "i_earbuds",
+      "shopId": "shop_self",
+      "title": "漫步者 真无线蓝牙耳机 降噪入耳式",
+      "image": "/@app-assets/Jingdong/items/i_earbuds.png",
+      "gallery": [
+        "/@app-assets/Jingdong/items/i_earbuds.png",
+        "/@app-assets/Jingdong/items/i_earbuds_d.png"
+      ],
+      "detailImages": [
+        "/@app-assets/Jingdong/items/i_earbuds_d.png",
+        "/@app-assets/Jingdong/items/i_earbuds.png"
+      ],
+      "price": 199,
+      "originPrice": 299,
+      "guobu": false,
+      "guobuOff": 0,
+      "self": false,
+      "jdLogistics": true,
+      "baitiaoPeriods": [],
+      "sold": "已售3万+",
+      "goodRate": "97%",
+      "tags": [
+        "京东物流"
+      ],
+      "specs": [
+        {
+          "name": "颜色",
+          "options": [
+            "白色",
+            "黑色"
+          ]
+        }
+      ],
+      "reviewCount": 3200,
+      "reviewTags": [
+        "质量好",
+        "外观漂亮",
+        "性价比高",
+        "发货快"
+      ],
+      "category": "手机"
+    },
+    {
+      "id": "i_keyboard",
+      "shopId": "shop_self",
+      "title": "黑爵 机械键盘 RGB背光 电竞游戏有线键盘",
+      "image": "/@app-assets/Jingdong/items/i_keyboard.png",
+      "gallery": [
+        "/@app-assets/Jingdong/items/i_keyboard.png",
+        "/@app-assets/Jingdong/items/i_keyboard_d.png"
+      ],
+      "detailImages": [
+        "/@app-assets/Jingdong/items/i_keyboard_d.png",
+        "/@app-assets/Jingdong/items/i_keyboard.png"
+      ],
+      "price": 159,
+      "originPrice": 229,
+      "guobu": false,
+      "guobuOff": 0,
+      "self": false,
+      "jdLogistics": true,
+      "baitiaoPeriods": [],
+      "sold": "已售8000+",
+      "goodRate": "96%",
+      "tags": [
+        "自营",
+        "京东物流"
+      ],
+      "specs": [
+        {
+          "name": "轴体",
+          "options": [
+            "红轴",
+            "茶轴",
+            "青轴"
+          ]
+        }
+      ],
+      "reviewCount": 3200,
+      "reviewTags": [
+        "质量好",
+        "外观漂亮",
+        "性价比高",
+        "发货快"
+      ],
+      "category": "电脑办公"
+    },
+    {
+      "id": "i_mouse",
+      "shopId": "shop_self",
+      "title": "罗技 轻量化无线游戏鼠标 电竞外设",
+      "image": "/@app-assets/Jingdong/items/i_mouse.png",
+      "gallery": [
+        "/@app-assets/Jingdong/items/i_mouse.png",
+        "/@app-assets/Jingdong/items/i_mouse_d.png"
+      ],
+      "detailImages": [
+        "/@app-assets/Jingdong/items/i_mouse_d.png",
+        "/@app-assets/Jingdong/items/i_mouse.png"
+      ],
+      "price": 249,
+      "originPrice": 329,
+      "guobu": false,
+      "guobuOff": 0,
+      "self": false,
+      "jdLogistics": true,
+      "baitiaoPeriods": [],
+      "sold": "已售1万+",
+      "goodRate": "98%",
+      "tags": [
+        "自营",
+        "京东物流"
+      ],
+      "specs": [
+        {
+          "name": "颜色",
+          "options": [
+            "玫红",
+            "黑色"
+          ]
+        }
+      ],
+      "reviewCount": 3200,
+      "reviewTags": [
+        "质量好",
+        "外观漂亮",
+        "性价比高",
+        "发货快"
+      ],
+      "category": "电脑办公"
+    },
+    {
+      "id": "i_monitor",
+      "shopId": "shop_self",
+      "title": "AOC 27英寸 2K高清显示器 窄边框电脑屏",
+      "image": "/@app-assets/Jingdong/items/i_monitor.png",
+      "gallery": [
+        "/@app-assets/Jingdong/items/i_monitor.png",
+        "/@app-assets/Jingdong/items/i_monitor_d.png"
+      ],
+      "detailImages": [
+        "/@app-assets/Jingdong/items/i_monitor_d.png",
+        "/@app-assets/Jingdong/items/i_monitor.png"
+      ],
+      "price": 899,
+      "originPrice": 1299,
+      "guobu": true,
+      "guobuOff": 200,
+      "self": true,
+      "jdLogistics": true,
+      "baitiaoPeriods": [
+        3,
+        6
+      ],
+      "sold": "已售6000+",
+      "goodRate": "97%",
+      "tags": [
+        "自营",
+        "京东物流",
+        "国家补贴"
+      ],
+      "specs": [
+        {
+          "name": "尺寸",
+          "options": [
+            "27寸",
+            "24寸"
+          ]
+        }
+      ],
+      "reviewCount": 3200,
+      "reviewTags": [
+        "质量好",
+        "外观漂亮",
+        "性价比高",
+        "发货快"
+      ],
+      "category": "电脑办公"
+    },
+    {
+      "id": "i_powerbank",
+      "shopId": "shop_self",
+      "title": "罗马仕 大容量充电宝 20000mAh 数显移动电源",
+      "image": "/@app-assets/Jingdong/items/i_powerbank.png",
+      "gallery": [
+        "/@app-assets/Jingdong/items/i_powerbank.png",
+        "/@app-assets/Jingdong/items/i_powerbank_d.png"
+      ],
+      "detailImages": [
+        "/@app-assets/Jingdong/items/i_powerbank_d.png",
+        "/@app-assets/Jingdong/items/i_powerbank.png"
+      ],
+      "price": 89,
+      "originPrice": 129,
+      "guobu": false,
+      "guobuOff": 0,
+      "self": false,
+      "jdLogistics": true,
+      "baitiaoPeriods": [],
+      "sold": "已售10万+",
+      "goodRate": "96%",
+      "tags": [
+        "自营",
+        "京东物流"
+      ],
+      "specs": [
+        {
+          "name": "容量",
+          "options": [
+            "20000mAh",
+            "10000mAh"
+          ]
+        }
+      ],
+      "reviewCount": 3200,
+      "reviewTags": [
+        "质量好",
+        "外观漂亮",
+        "性价比高",
+        "发货快"
+      ],
+      "category": "手机"
+    },
+    {
+      "id": "i_watch",
+      "shopId": "shop_self",
+      "title": "小天才 智能手表 方形大屏 运动健康",
+      "image": "/@app-assets/Jingdong/items/i_watch.png",
+      "gallery": [
+        "/@app-assets/Jingdong/items/i_watch.png",
+        "/@app-assets/Jingdong/items/i_watch_d.png"
+      ],
+      "detailImages": [
+        "/@app-assets/Jingdong/items/i_watch_d.png",
+        "/@app-assets/Jingdong/items/i_watch.png"
+      ],
+      "price": 248,
+      "originPrice": 338,
+      "guobu": false,
+      "guobuOff": 0,
+      "self": false,
+      "jdLogistics": true,
+      "baitiaoPeriods": [],
+      "sold": "已售2万+",
+      "goodRate": "95%",
+      "tags": [
+        "京东物流"
+      ],
+      "specs": [
+        {
+          "name": "颜色",
+          "options": [
+            "黑色",
+            "蓝色"
+          ]
+        }
+      ],
+      "reviewCount": 3200,
+      "reviewTags": [
+        "质量好",
+        "外观漂亮",
+        "性价比高",
+        "发货快"
+      ],
+      "category": "手机"
+    },
+    {
+      "id": "i_hairdryer",
+      "shopId": "shop_self",
+      "title": "小米 高速电吹风 负离子护发 家用",
+      "image": "/@app-assets/Jingdong/items/i_hairdryer.png",
+      "gallery": [
+        "/@app-assets/Jingdong/items/i_hairdryer.png",
+        "/@app-assets/Jingdong/items/i_hairdryer_d.png"
+      ],
+      "detailImages": [
+        "/@app-assets/Jingdong/items/i_hairdryer_d.png",
+        "/@app-assets/Jingdong/items/i_hairdryer.png"
+      ],
+      "price": 329,
+      "originPrice": 459,
+      "guobu": true,
+      "guobuOff": 80,
+      "self": true,
+      "jdLogistics": true,
+      "baitiaoPeriods": [
+        3
+      ],
+      "sold": "已售5万+",
+      "goodRate": "98%",
+      "tags": [
+        "自营",
+        "京东物流",
+        "国家补贴"
+      ],
+      "specs": [
+        {
+          "name": "颜色",
+          "options": [
+            "粉色",
+            "白色"
+          ]
+        }
+      ],
+      "reviewCount": 3200,
+      "reviewTags": [
+        "质量好",
+        "外观漂亮",
+        "性价比高",
+        "发货快"
+      ],
+      "category": "家电"
+    },
+    {
+      "id": "i_kettle",
+      "shopId": "shop_self",
+      "title": "美的 电热水壶 1.7L 不锈钢家用烧水壶",
+      "image": "/@app-assets/Jingdong/items/i_kettle.png",
+      "gallery": [
+        "/@app-assets/Jingdong/items/i_kettle.png",
+        "/@app-assets/Jingdong/items/i_kettle_d.png"
+      ],
+      "detailImages": [
+        "/@app-assets/Jingdong/items/i_kettle_d.png",
+        "/@app-assets/Jingdong/items/i_kettle.png"
+      ],
+      "price": 79,
+      "originPrice": 119,
+      "guobu": false,
+      "guobuOff": 0,
+      "self": true,
+      "jdLogistics": true,
+      "baitiaoPeriods": [],
+      "sold": "已售20万+",
+      "goodRate": "97%",
+      "tags": [
+        "自营",
+        "京东物流"
+      ],
+      "specs": [],
+      "reviewCount": 3200,
+      "reviewTags": [
+        "质量好",
+        "外观漂亮",
+        "性价比高",
+        "发货快"
+      ],
+      "category": "家电"
+    },
+    {
+      "id": "i_fridge",
+      "shopId": "shop_self",
+      "title": "海尔 对开门大冰箱 家用节能 国补8.5折",
+      "image": "/@app-assets/Jingdong/items/i_fridge.png",
+      "gallery": [
+        "/@app-assets/Jingdong/items/i_fridge.png",
+        "/@app-assets/Jingdong/items/i_fridge_d.png"
+      ],
+      "detailImages": [
+        "/@app-assets/Jingdong/items/i_fridge_d.png",
+        "/@app-assets/Jingdong/items/i_fridge.png"
+      ],
+      "price": 2879,
+      "originPrice": 3599,
+      "guobu": true,
+      "guobuOff": 720,
+      "self": true,
+      "jdLogistics": true,
+      "baitiaoPeriods": [
+        6,
+        12
+      ],
+      "sold": "已售3000+",
+      "goodRate": "98%",
+      "tags": [
+        "自营",
+        "京东物流",
+        "国家补贴"
+      ],
+      "specs": [
+        {
+          "name": "容量",
+          "options": [
+            "501L",
+            "401L"
+          ]
+        }
+      ],
+      "reviewCount": 3200,
+      "reviewTags": [
+        "质量好",
+        "外观漂亮",
+        "性价比高",
+        "发货快"
+      ],
+      "category": "家电"
+    },
+    {
+      "id": "i_wangzai",
+      "shopId": "shop_wang",
+      "title": "旺旺 旺仔牛奶 145ml*16罐 儿童早餐奶",
+      "image": "/@app-assets/Jingdong/items/i_wangzai.png",
+      "gallery": [
+        "/@app-assets/Jingdong/items/i_wangzai.png",
+        "/@app-assets/Jingdong/items/i_wangzai_d.png"
+      ],
+      "detailImages": [
+        "/@app-assets/Jingdong/items/i_wangzai_d.png",
+        "/@app-assets/Jingdong/items/i_wangzai.png"
+      ],
+      "price": 46.24,
+      "originPrice": 59,
+      "guobu": false,
+      "guobuOff": 0,
+      "self": true,
+      "jdLogistics": true,
+      "baitiaoPeriods": [],
+      "sold": "已售100万+",
+      "goodRate": "99%",
+      "tags": [
+        "京东超市",
+        "儿童",
+        "自营",
+        "食品",
+        "早餐"
+      ],
+      "specs": [],
+      "reviewCount": 3200,
+      "reviewTags": [
+        "质量好",
+        "外观漂亮",
+        "性价比高",
+        "发货快"
+      ],
+      "category": "食品酒饮"
+    },
+    {
+      "id": "i_watermelon",
+      "shopId": "shop_self",
+      "title": "【爆品】麒麟西瓜 8424大西瓜 新鲜水果 单个装",
+      "image": "/@app-assets/Jingdong/items/i_watermelon.png",
+      "gallery": [
+        "/@app-assets/Jingdong/items/i_watermelon.png",
+        "/@app-assets/Jingdong/items/i_watermelon_d.png"
+      ],
+      "detailImages": [
+        "/@app-assets/Jingdong/items/i_watermelon_d.png",
+        "/@app-assets/Jingdong/items/i_watermelon.png"
+      ],
+      "price": 29.9,
+      "originPrice": 45,
+      "guobu": false,
+      "guobuOff": 0,
+      "self": false,
+      "jdLogistics": true,
+      "baitiaoPeriods": [],
+      "sold": "已售50万+",
+      "goodRate": "96%",
+      "tags": [
+        "京东物流",
+        "京东超市",
+        "清凉",
+        "生鲜",
+        "水果"
+      ],
+      "specs": [],
+      "reviewCount": 3200,
+      "reviewTags": [
+        "质量好",
+        "外观漂亮",
+        "性价比高",
+        "发货快"
+      ],
+      "category": "生鲜"
+    },
+    {
+      "id": "i_dumpling",
+      "shopId": "shop_self",
+      "title": "湾仔码头 白菜猪肉水饺 720g 速冻饺子",
+      "image": "/@app-assets/Jingdong/items/i_dumpling.png",
+      "gallery": [
+        "/@app-assets/Jingdong/items/i_dumpling.png",
+        "/@app-assets/Jingdong/items/i_dumpling_d.png"
+      ],
+      "detailImages": [
+        "/@app-assets/Jingdong/items/i_dumpling_d.png",
+        "/@app-assets/Jingdong/items/i_dumpling.png"
+      ],
+      "price": 29.8,
+      "originPrice": 42,
+      "guobu": false,
+      "guobuOff": 0,
+      "self": true,
+      "jdLogistics": true,
+      "baitiaoPeriods": [],
+      "sold": "已售80万+",
+      "goodRate": "98%",
+      "tags": [
+        "自营",
+        "京东超市"
+      ],
+      "specs": [
+        {
+          "name": "口味",
+          "options": [
+            "白菜猪肉",
+            "韭菜鸡蛋",
+            "三鲜"
+          ]
+        }
+      ],
+      "reviewCount": 3200,
+      "reviewTags": [
+        "质量好",
+        "外观漂亮",
+        "性价比高",
+        "发货快"
+      ],
+      "category": "生鲜"
+    },
+    {
+      "id": "i_coffee",
+      "shopId": "shop_self",
+      "title": "瑞幸 冰美式咖啡 挂耳现磨 提神醒脑",
+      "image": "/@app-assets/Jingdong/items/i_coffee.png",
+      "gallery": [
+        "/@app-assets/Jingdong/items/i_coffee.png",
+        "/@app-assets/Jingdong/items/i_coffee_d.png"
+      ],
+      "detailImages": [
+        "/@app-assets/Jingdong/items/i_coffee_d.png",
+        "/@app-assets/Jingdong/items/i_coffee.png"
+      ],
+      "price": 39.9,
+      "originPrice": 59,
+      "guobu": false,
+      "guobuOff": 0,
+      "self": false,
+      "jdLogistics": true,
+      "baitiaoPeriods": [],
+      "sold": "已售30万+",
+      "goodRate": "97%",
+      "tags": [
+        "咖啡",
+        "饮品",
+        "提神",
+        "京东物流"
+      ],
+      "specs": [],
+      "reviewCount": 3200,
+      "reviewTags": [
+        "质量好",
+        "外观漂亮",
+        "性价比高",
+        "发货快"
+      ],
+      "category": "食品酒饮"
+    },
+    {
+      "id": "i_zhacai",
+      "shopId": "shop_self",
+      "title": "乌江 榨菜 脆口榨菜丝组合装 佐餐开胃",
+      "image": "/@app-assets/Jingdong/items/i_zhacai.png",
+      "gallery": [
+        "/@app-assets/Jingdong/items/i_zhacai.png",
+        "/@app-assets/Jingdong/items/i_zhacai_d.png"
+      ],
+      "detailImages": [
+        "/@app-assets/Jingdong/items/i_zhacai_d.png",
+        "/@app-assets/Jingdong/items/i_zhacai.png"
+      ],
+      "price": 9.9,
+      "originPrice": 19.9,
+      "guobu": false,
+      "guobuOff": 0,
+      "self": false,
+      "jdLogistics": true,
+      "baitiaoPeriods": [],
+      "sold": "已售100万+",
+      "goodRate": "98%",
+      "tags": [
+        "自营",
+        "京东超市"
+      ],
+      "specs": [],
+      "reviewCount": 3200,
+      "reviewTags": [
+        "质量好",
+        "外观漂亮",
+        "性价比高",
+        "发货快"
+      ],
+      "category": "食品酒饮"
+    },
+    {
+      "id": "i_water",
+      "shopId": "shop_self",
+      "title": "怡宝 纯净水 350ml*12瓶 会议用水整箱",
+      "image": "/@app-assets/Jingdong/items/i_water.png",
+      "gallery": [
+        "/@app-assets/Jingdong/items/i_water.png",
+        "/@app-assets/Jingdong/items/i_water_d.png"
+      ],
+      "detailImages": [
+        "/@app-assets/Jingdong/items/i_water_d.png",
+        "/@app-assets/Jingdong/items/i_water.png"
+      ],
+      "price": 23.9,
+      "originPrice": 35,
+      "guobu": false,
+      "guobuOff": 0,
+      "self": false,
+      "jdLogistics": true,
+      "baitiaoPeriods": [],
+      "sold": "已售200万+",
+      "goodRate": "99%",
+      "tags": [
+        "自营",
+        "京东超市"
+      ],
+      "specs": [],
+      "reviewCount": 3200,
+      "reviewTags": [
+        "质量好",
+        "外观漂亮",
+        "性价比高",
+        "发货快"
+      ],
+      "category": "食品酒饮"
+    },
+    {
+      "id": "i_tissue",
+      "shopId": "shop_self",
+      "title": "维达 抽纸 家用软抽面巾纸 24包整箱",
+      "image": "/@app-assets/Jingdong/items/i_tissue.png",
+      "gallery": [
+        "/@app-assets/Jingdong/items/i_tissue.png",
+        "/@app-assets/Jingdong/items/i_tissue_d.png"
+      ],
+      "detailImages": [
+        "/@app-assets/Jingdong/items/i_tissue_d.png",
+        "/@app-assets/Jingdong/items/i_tissue.png"
+      ],
+      "price": 39.9,
+      "originPrice": 69,
+      "guobu": false,
+      "guobuOff": 0,
+      "self": false,
+      "jdLogistics": true,
+      "baitiaoPeriods": [],
+      "sold": "已售50万+",
+      "goodRate": "98%",
+      "tags": [
+        "自营",
+        "京东超市"
+      ],
+      "specs": [],
+      "reviewCount": 3200,
+      "reviewTags": [
+        "质量好",
+        "外观漂亮",
+        "性价比高",
+        "发货快"
+      ],
+      "category": "居家日用"
+    },
+    {
+      "id": "i_slippers",
+      "shopId": "shop_self",
+      "title": "回力 踩屎感居家拖鞋 EVA软底 男女款",
+      "image": "/@app-assets/Jingdong/items/i_slippers.png",
+      "gallery": [
+        "/@app-assets/Jingdong/items/i_slippers.png",
+        "/@app-assets/Jingdong/items/i_slippers_d.png"
+      ],
+      "detailImages": [
+        "/@app-assets/Jingdong/items/i_slippers_d.png",
+        "/@app-assets/Jingdong/items/i_slippers.png"
+      ],
+      "price": 39,
+      "originPrice": 89,
+      "guobu": false,
+      "guobuOff": 0,
+      "self": false,
+      "jdLogistics": false,
+      "baitiaoPeriods": [],
+      "sold": "已售10万+",
+      "goodRate": "96%",
+      "tags": [
+        "京东物流"
+      ],
+      "specs": [
+        {
+          "name": "尺码",
+          "options": [
+            "38-39",
+            "40-41",
+            "42-43"
+          ]
+        },
+        {
+          "name": "颜色",
+          "options": [
+            "灰色",
+            "黑色"
+          ]
+        }
+      ],
+      "reviewCount": 3200,
+      "reviewTags": [
+        "质量好",
+        "外观漂亮",
+        "性价比高",
+        "发货快"
+      ],
+      "category": "服饰鞋包"
+    },
+    {
+      "id": "i_backpack",
+      "shopId": "shop_self",
+      "title": "回力 大容量双肩旅行背包 学生书包 多隔层",
+      "image": "/@app-assets/Jingdong/items/i_backpack.png",
+      "gallery": [
+        "/@app-assets/Jingdong/items/i_backpack.png",
+        "/@app-assets/Jingdong/items/i_backpack_d.png"
+      ],
+      "detailImages": [
+        "/@app-assets/Jingdong/items/i_backpack_d.png",
+        "/@app-assets/Jingdong/items/i_backpack.png"
+      ],
+      "price": 69.1,
+      "originPrice": 109,
+      "guobu": false,
+      "guobuOff": 0,
+      "self": false,
+      "jdLogistics": false,
+      "baitiaoPeriods": [],
+      "sold": "已售20万+",
+      "goodRate": "95%",
+      "tags": [
+        "京东物流"
+      ],
+      "specs": [
+        {
+          "name": "颜色",
+          "options": [
+            "灰色",
+            "黑色"
+          ]
+        }
+      ],
+      "reviewCount": 3200,
+      "reviewTags": [
+        "质量好",
+        "外观漂亮",
+        "性价比高",
+        "发货快"
+      ],
+      "category": "服饰鞋包"
+    },
+    {
+      "id": "i_cup",
+      "shopId": "shop_self",
+      "title": "山头林村 保温咖啡杯 316不锈钢 随行杯",
+      "image": "/@app-assets/Jingdong/items/i_cup.png",
+      "gallery": [
+        "/@app-assets/Jingdong/items/i_cup.png",
+        "/@app-assets/Jingdong/items/i_cup_d.png"
+      ],
+      "detailImages": [
+        "/@app-assets/Jingdong/items/i_cup_d.png",
+        "/@app-assets/Jingdong/items/i_cup.png"
+      ],
+      "price": 14.78,
+      "originPrice": 29,
+      "guobu": false,
+      "guobuOff": 0,
+      "self": false,
+      "jdLogistics": true,
+      "baitiaoPeriods": [],
+      "sold": "已售30万+",
+      "goodRate": "97%",
+      "tags": [
+        "京东物流"
+      ],
+      "specs": [
+        {
+          "name": "颜色",
+          "options": [
+            "白色",
+            "绿色"
+          ]
+        }
+      ],
+      "reviewCount": 3200,
+      "reviewTags": [
+        "质量好",
+        "外观漂亮",
+        "性价比高",
+        "发货快"
+      ],
+      "category": "居家日用"
+    },
+    {
+      "id": "i_hairoil",
+      "shopId": "shop_self",
+      "title": "护发精油 免洗顺滑柔顺 改善毛躁",
+      "image": "/@app-assets/Jingdong/items/i_hairoil.png",
+      "gallery": [
+        "/@app-assets/Jingdong/items/i_hairoil.png",
+        "/@app-assets/Jingdong/items/i_hairoil_d.png"
+      ],
+      "detailImages": [
+        "/@app-assets/Jingdong/items/i_hairoil_d.png",
+        "/@app-assets/Jingdong/items/i_hairoil.png"
+      ],
+      "price": 29.9,
+      "originPrice": 59,
+      "guobu": false,
+      "guobuOff": 0,
+      "self": false,
+      "jdLogistics": true,
+      "baitiaoPeriods": [],
+      "sold": "已售8万+",
+      "goodRate": "96%",
+      "tags": [
+        "自营",
+        "京东物流"
+      ],
+      "specs": [],
+      "reviewCount": 3200,
+      "reviewTags": [
+        "质量好",
+        "外观漂亮",
+        "性价比高",
+        "发货快"
+      ],
+      "category": "美妆个护"
+    },
+    {
+      "id": "i_toothpaste",
+      "shopId": "shop_self",
+      "title": "抗敏感牙膏 清新口气 口腔护理 家庭装",
+      "image": "/@app-assets/Jingdong/items/i_toothpaste.png",
+      "gallery": [
+        "/@app-assets/Jingdong/items/i_toothpaste.png",
+        "/@app-assets/Jingdong/items/i_toothpaste_d.png"
+      ],
+      "detailImages": [
+        "/@app-assets/Jingdong/items/i_toothpaste_d.png",
+        "/@app-assets/Jingdong/items/i_toothpaste.png"
+      ],
+      "price": 19.9,
+      "originPrice": 39,
+      "guobu": false,
+      "guobuOff": 0,
+      "self": false,
+      "jdLogistics": true,
+      "baitiaoPeriods": [],
+      "sold": "已售40万+",
+      "goodRate": "98%",
+      "tags": [
+        "自营",
+        "京东超市"
+      ],
+      "specs": [],
+      "reviewCount": 3200,
+      "reviewTags": [
+        "质量好",
+        "外观漂亮",
+        "性价比高",
+        "发货快"
+      ],
+      "category": "美妆个护"
+    },
+    {
+      "id": "i_huangtao",
+      "shopId": "shop_wang",
+      "title": "黄桃罐头 对开糖水黄桃 425g*6罐 休闲食品",
+      "image": "/@app-assets/Jingdong/items/i_wangzai.png",
+      "gallery": [
+        "/@app-assets/Jingdong/items/i_wangzai.png",
+        "/@app-assets/Jingdong/items/i_wangzai.png"
+      ],
+      "detailImages": [
+        "/@app-assets/Jingdong/items/i_wangzai.png"
+      ],
+      "price": 39.9,
+      "originPrice": 69,
+      "guobu": false,
+      "guobuOff": 0,
+      "self": false,
+      "jdLogistics": true,
+      "baitiaoPeriods": [],
+      "sold": "已售20万+",
+      "goodRate": "98%",
+      "tags": [
+        "食品",
+        "罐头",
+        "先用后付"
+      ],
+      "specs": [
+        {
+          "name": "规格",
+          "options": [
+            "默认"
+          ]
+        }
+      ],
+      "reviewCount": 8600,
+      "reviewTags": [
+        "味道好",
+        "新鲜",
+        "性价比高",
+        "发货快"
+      ],
+      "category": "食品酒饮"
+    },
+    {
+      "id": "i_shuiguo",
+      "shopId": "shop_hema",
+      "title": "混合水果罐头 黄桃橘子梨组合装 即食甜品",
+      "image": "/@app-assets/Jingdong/items/i_watermelon.png",
+      "gallery": [
+        "/@app-assets/Jingdong/items/i_watermelon.png",
+        "/@app-assets/Jingdong/items/i_watermelon_d.png"
+      ],
+      "detailImages": [
+        "/@app-assets/Jingdong/items/i_watermelon.png"
+      ],
+      "price": 45.8,
+      "originPrice": 79,
+      "guobu": false,
+      "guobuOff": 0,
+      "self": false,
+      "jdLogistics": true,
+      "baitiaoPeriods": [],
+      "sold": "已售20万+",
+      "goodRate": "98%",
+      "tags": [
+        "食品",
+        "罐头",
+        "水果"
+      ],
+      "specs": [
+        {
+          "name": "规格",
+          "options": [
+            "默认"
+          ]
+        }
+      ],
+      "reviewCount": 8600,
+      "reviewTags": [
+        "味道好",
+        "新鲜",
+        "性价比高",
+        "发货快"
+      ],
+      "category": "食品酒饮"
+    },
+    {
+      "id": "i_snack",
+      "shopId": "shop_wang",
+      "title": "先用后付零食大礼包 薯片坚果肉干组合装",
+      "image": "/@app-assets/Jingdong/items/i_zhacai.png",
+      "gallery": [
+        "/@app-assets/Jingdong/items/i_zhacai.png",
+        "/@app-assets/Jingdong/items/i_zhacai_d.png"
+      ],
+      "detailImages": [
+        "/@app-assets/Jingdong/items/i_zhacai.png"
+      ],
+      "price": 59.9,
+      "originPrice": 99,
+      "guobu": false,
+      "guobuOff": 0,
+      "self": false,
+      "jdLogistics": true,
+      "baitiaoPeriods": [],
+      "sold": "已售20万+",
+      "goodRate": "98%",
+      "tags": [
+        "零食",
+        "先用后付",
+        "食品"
+      ],
+      "specs": [
+        {
+          "name": "规格",
+          "options": [
+            "默认"
+          ]
+        }
+      ],
+      "reviewCount": 8600,
+      "reviewTags": [
+        "味道好",
+        "新鲜",
+        "性价比高",
+        "发货快"
+      ],
+      "category": "食品酒饮"
+    },
+    {
+      "id": "i_apple_set",
+      "shopId": "shop_hema",
+      "title": "苹果全家桶套装 新鲜水果礼盒 富士红富士组合",
+      "image": "/@app-assets/Jingdong/items/i_watermelon.png",
+      "gallery": [
+        "/@app-assets/Jingdong/items/i_watermelon.png",
+        "/@app-assets/Jingdong/items/i_watermelon_d.png"
+      ],
+      "detailImages": [
+        "/@app-assets/Jingdong/items/i_watermelon.png"
+      ],
+      "price": 89.9,
+      "originPrice": 129,
+      "guobu": false,
+      "guobuOff": 0,
+      "self": false,
+      "jdLogistics": true,
+      "baitiaoPeriods": [],
+      "sold": "已售20万+",
+      "goodRate": "98%",
+      "tags": [
+        "水果",
+        "生鲜",
+        "礼盒"
+      ],
+      "specs": [
+        {
+          "name": "规格",
+          "options": [
+            "默认"
+          ]
+        }
+      ],
+      "reviewCount": 8600,
+      "reviewTags": [
+        "味道好",
+        "新鲜",
+        "性价比高",
+        "发货快"
+      ],
+      "category": "生鲜"
+    },
+    {
+      "id": "i_xiuxian",
+      "shopId": "shop_wang",
+      "title": "先享后付入口食品 速食方便面泡面组合",
+      "image": "/@app-assets/Jingdong/items/i_dumpling.png",
+      "gallery": [
+        "/@app-assets/Jingdong/items/i_dumpling.png",
+        "/@app-assets/Jingdong/items/i_dumpling_d.png"
+      ],
+      "detailImages": [
+        "/@app-assets/Jingdong/items/i_dumpling.png"
+      ],
+      "price": 24.9,
+      "originPrice": 39.9,
+      "guobu": false,
+      "guobuOff": 0,
+      "self": false,
+      "jdLogistics": true,
+      "baitiaoPeriods": [],
+      "sold": "已售20万+",
+      "goodRate": "98%",
+      "tags": [
+        "速食",
+        "食品",
+        "先享后付"
+      ],
+      "specs": [
+        {
+          "name": "规格",
+          "options": [
+            "默认"
+          ]
+        }
+      ],
+      "reviewCount": 8600,
+      "reviewTags": [
+        "味道好",
+        "新鲜",
+        "性价比高",
+        "发货快"
+      ],
+      "category": "食品酒饮"
+    },
+    {
+      "id": "i_tb_handcream",
+      "shopId": "shop_self",
+      "title": "清风山 山雾香氛护手霜 75mL 保湿滋润",
+      "image": "/@app-assets/Jingdong/items/i_hairoil.png",
+      "gallery": [
+        "/@app-assets/Jingdong/items/i_hairoil.png",
+        "/@app-assets/Jingdong/items/i_hairoil_d.png"
+      ],
+      "detailImages": [
+        "/@app-assets/Jingdong/items/i_hairoil_d.png",
+        "/@app-assets/Jingdong/items/i_hairoil.png"
+      ],
+      "price": 129,
+      "originPrice": 169,
+      "guobu": false,
+      "guobuOff": 0,
+      "self": true,
+      "jdLogistics": true,
+      "baitiaoPeriods": [
+        3
+      ],
+      "sold": "已售2万+",
+      "goodRate": "98%",
+      "tags": [
+        "自营",
+        "京东物流",
+        "新品"
+      ],
+      "specs": [
+        {
+          "name": "香型",
+          "options": [
+            "山雾",
+            "白茶",
+            "雪松"
+          ]
+        },
+        {
+          "name": "规格",
+          "options": [
+            "75mL 单支",
+            "75mL 双支礼盒"
+          ]
+        }
+      ],
+      "reviewCount": 4200,
+      "reviewTags": [
+        "味道好闻",
+        "滋润不油",
+        "包装精美",
+        "送礼合适"
+      ],
+      "category": "美妆个护"
+    },
+    {
+      "id": "i_tb_bodywash",
+      "shopId": "shop_self",
+      "title": "清风山 葵花沐浴露 500mL 温和清洁",
+      "image": "/@app-assets/Jingdong/items/i_hairoil.png",
+      "gallery": [
+        "/@app-assets/Jingdong/items/i_hairoil.png",
+        "/@app-assets/Jingdong/items/i_hairoil_d.png"
+      ],
+      "detailImages": [
+        "/@app-assets/Jingdong/items/i_hairoil_d.png",
+        "/@app-assets/Jingdong/items/i_hairoil.png"
+      ],
+      "price": 219,
+      "originPrice": 269,
+      "guobu": false,
+      "guobuOff": 0,
+      "self": true,
+      "jdLogistics": true,
+      "baitiaoPeriods": [],
+      "sold": "已售8千+",
+      "goodRate": "97%",
+      "tags": [
+        "自营",
+        "京东物流",
+        "官方立减"
+      ],
+      "specs": [
+        {
+          "name": "规格",
+          "options": [
+            "500mL",
+            "500mL x2"
+          ]
+        }
+      ],
+      "reviewCount": 1860,
+      "reviewTags": [
+        "泡沫细腻",
+        "清爽不拔干",
+        "香味高级"
+      ],
+      "category": "美妆个护"
+    },
+    {
+      "id": "i_pdd_tissue",
+      "shopId": "shop_yonghui",
+      "title": "原生木浆本色卷纸 家用加厚实惠装",
+      "image": "/@app-assets/Jingdong/items/i_tissue.png",
+      "gallery": [
+        "/@app-assets/Jingdong/items/i_tissue.png",
+        "/@app-assets/Jingdong/items/i_tissue_d.png"
+      ],
+      "detailImages": [
+        "/@app-assets/Jingdong/items/i_tissue_d.png",
+        "/@app-assets/Jingdong/items/i_tissue.png"
+      ],
+      "price": 19.9,
+      "originPrice": 35.9,
+      "guobu": false,
+      "guobuOff": 0,
+      "self": false,
+      "jdLogistics": true,
+      "baitiaoPeriods": [],
+      "sold": "已售18万+",
+      "goodRate": "97%",
+      "tags": [
+        "百亿补贴",
+        "退货包运费",
+        "次日达"
+      ],
+      "specs": [
+        {
+          "name": "规格",
+          "options": [
+            "18卷装",
+            "36卷装",
+            "72卷家庭囤货装"
+          ]
+        }
+      ],
+      "reviewCount": 25100,
+      "reviewTags": [
+        "纸张厚实",
+        "耐用不掉屑",
+        "性价比高"
+      ],
+      "category": "百货"
+    },
+    {
+      "id": "i_pdd_scream",
+      "shopId": "shop_hema",
+      "title": "农夫山泉尖叫运动饮料 550mL x15瓶",
+      "image": "/@app-assets/Jingdong/items/i_water.png",
+      "gallery": [
+        "/@app-assets/Jingdong/items/i_water.png",
+        "/@app-assets/Jingdong/items/i_water_d.png"
+      ],
+      "detailImages": [
+        "/@app-assets/Jingdong/items/i_water_d.png",
+        "/@app-assets/Jingdong/items/i_water.png"
+      ],
+      "price": 31.9,
+      "originPrice": 45.9,
+      "guobu": false,
+      "guobuOff": 0,
+      "self": false,
+      "jdLogistics": true,
+      "baitiaoPeriods": [],
+      "sold": "已售41万+",
+      "goodRate": "99%",
+      "tags": [
+        "品牌旗舰",
+        "整箱",
+        "京东到家"
+      ],
+      "specs": [
+        {
+          "name": "口味",
+          "options": [
+            "西柚",
+            "青柠",
+            "混合装"
+          ]
+        }
+      ],
+      "reviewCount": 31200,
+      "reviewTags": [
+        "日期新鲜",
+        "运动补水",
+        "包装完好"
+      ],
+      "category": "食品酒饮"
+    },
+    {
+      "id": "i_pdd_earbuds",
+      "shopId": "shop_self",
+      "title": "华为 FreeBuds SE 真无线蓝牙耳机 主动降噪",
+      "image": "/@app-assets/Jingdong/items/i_earbuds.png",
+      "gallery": [
+        "/@app-assets/Jingdong/items/i_earbuds.png",
+        "/@app-assets/Jingdong/items/i_earbuds_d.png"
+      ],
+      "detailImages": [
+        "/@app-assets/Jingdong/items/i_earbuds_d.png",
+        "/@app-assets/Jingdong/items/i_earbuds.png"
+      ],
+      "price": 209,
+      "originPrice": 399,
+      "guobu": false,
+      "guobuOff": 0,
+      "self": true,
+      "jdLogistics": true,
+      "baitiaoPeriods": [
+        3,
+        6
+      ],
+      "sold": "已售3万+",
+      "goodRate": "98%",
+      "tags": [
+        "自营",
+        "京东物流",
+        "降噪"
+      ],
+      "specs": [
+        {
+          "name": "颜色",
+          "options": [
+            "陶瓷白",
+            "曜石黑"
+          ]
+        }
+      ],
+      "reviewCount": 12800,
+      "reviewTags": [
+        "音质好",
+        "连接稳定",
+        "佩戴舒适"
+      ],
+      "category": "手机数码"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "r1",
+      "itemId": "i_thinkbook",
+      "user": "9***c",
+      "avatar": "",
+      "rating": 5,
+      "content": "全能本表现不错,兼顾办公和轻度创作,屏幕色准好,机身做工扎实,接口齐全。",
+      "images": [
+        "/@app-assets/Jingdong/items/i_thinkbook.png",
+        "/@app-assets/Jingdong/items/i_keyboard.png"
+      ],
+      "tags": [
+        "机身超薄轻巧"
+      ],
+      "plus": true
+    },
+    {
+      "id": "r2",
+      "itemId": "i_thinkbook",
+      "user": "用户***阳",
+      "avatar": "",
+      "rating": 5,
+      "content": "对比多款后选了联想瑞天,用下来很满意。机身轻薄便携,金属质感高级。",
+      "images": [
+        "/@app-assets/Jingdong/items/i_thinkbook.png"
+      ],
+      "tags": [
+        "系统操作流畅"
+      ],
+      "plus": false
+    },
+    {
+      "id": "r3",
+      "itemId": "i_thinkbook",
+      "user": "Z***州",
+      "avatar": "",
+      "rating": 5,
+      "content": "电脑收到,整体非常满意!外观简约大气,金属机身质感很好,日常通勤携带无压力。",
+      "images": [
+        "/@app-assets/Jingdong/items/i_thinkbook_d.png"
+      ],
+      "tags": [
+        "开机飞快"
+      ],
+      "plus": true
+    },
+    {
+      "id": "r4",
+      "itemId": "i_wangzai",
+      "user": "甜***心",
+      "avatar": "",
+      "rating": 5,
+      "content": "小时候的味道,孩子很爱喝,整箱囤货很划算,物流也快。",
+      "images": [
+        "/@app-assets/Jingdong/items/i_wangzai.png"
+      ],
+      "tags": [
+        "味道正宗"
+      ],
+      "plus": false
+    },
+    {
+      "id": "r5",
+      "itemId": "i_phone_v",
+      "user": "数***控",
+      "avatar": "",
+      "rating": 5,
+      "content": "影像旗舰名不虚传,拍照很惊艳,国补到手价格香,京东物流次日达。",
+      "images": [
+        "/@app-assets/Jingdong/items/i_phone_v.png"
+      ],
+      "tags": [
+        "拍照清晰"
+      ],
+      "plus": true
+    },
+    {
+      "id": "r_fridge",
+      "itemId": "i_fridge",
+      "user": "家***用",
+      "avatar": "",
+      "rating": 5,
+      "content": "冰箱容量大、制冷快,国补到手很香,京东安装师傅也很专业。",
+      "images": [
+        "/@app-assets/Jingdong/items/i_fridge.png"
+      ],
+      "tags": [
+        "制冷快",
+        "容量大"
+      ],
+      "plus": true
+    },
+    {
+      "id": "r_huangtao",
+      "itemId": "i_huangtao",
+      "user": "用***户",
+      "avatar": "",
+      "rating": 5,
+      "content": "黄桃很甜,罐头口感扎实,适合当下午茶。",
+      "images": [],
+      "tags": [
+        "味道好"
+      ],
+      "plus": false
+    },
+    {
+      "id": "r_snack",
+      "itemId": "i_snack",
+      "user": "用***户",
+      "avatar": "",
+      "rating": 5,
+      "content": "零食种类多,孩子很喜欢,先用后付很方便。",
+      "images": [],
+      "tags": [
+        "味道好"
+      ],
+      "plus": false
+    }
+  ],
+  "cart": [
+    {
+      "key": "i_wangzai__145ml*16罐",
+      "itemId": "i_wangzai",
+      "title": "旺旺 旺仔牛奶 145ml*16罐 儿童早餐奶",
+      "image": "/@app-assets/Jingdong/items/i_wangzai.png",
+      "price": 46.24,
+      "qty": 1,
+      "skuDesc": "145ml*16罐",
+      "checked": true,
+      "shopId": "shop_wang",
+      "shopName": "京东超市官方自营",
+      "channel": "shopping",
+      "self": true
+    },
+    {
+      "key": "i_thinkbook__深空灰",
+      "itemId": "i_thinkbook",
+      "title": "联想ThinkBook 14+ 2026 Ultra5 16G 1T 轻薄办公笔记本电脑",
+      "image": "/@app-assets/Jingdong/items/i_thinkbook.png",
+      "price": 6629.15,
+      "qty": 1,
+      "skuDesc": "深空灰 Ultra5 16G 1T",
+      "checked": false,
+      "shopId": "shop_think",
+      "shopName": "ThinkBook京东自营旗舰店",
+      "channel": "shopping",
+      "self": true
+    },
+    {
+      "key": "i_dumpling__韭菜鸡蛋",
+      "itemId": "i_dumpling",
+      "title": "湾仔码头 白菜猪肉水饺 720g 速冻饺子",
+      "image": "/@app-assets/Jingdong/items/i_dumpling.png",
+      "price": 29.8,
+      "qty": 2,
+      "skuDesc": "韭菜鸡蛋",
+      "checked": true,
+      "shopId": "shop_hema",
+      "shopName": "盒马鲜生(示范广场店)",
+      "channel": "miaosong",
+      "self": false
+    },
+    {
+      "key": "i_toothpaste__",
+      "itemId": "i_toothpaste",
+      "title": "抗敏感牙膏 清新口气 口腔护理 家庭装",
+      "image": "/@app-assets/Jingdong/items/i_toothpaste.png",
+      "price": 19.9,
+      "qty": 1,
+      "skuDesc": "",
+      "checked": true,
+      "shopId": "shop_self",
+      "shopName": "京东自营",
+      "channel": "shopping",
+      "self": true
+    }
+  ],
+  "orders": [
+    {
+      "id": "o_1",
+      "orderNo": "355142001050744",
+      "channel": "shopping",
+      "shopId": "shop_wang",
+      "shopName": "旺旺京东自营旗舰店",
+      "self": true,
+      "lines": [
+        {
+          "itemId": "i_wangzai",
+          "title": "旺旺 旺仔牛奶 145ml*16罐 儿童早餐奶",
+          "image": "/@app-assets/Jingdong/items/i_wangzai.png",
+          "skuDesc": "145ml*16罐",
+          "price": 46.24,
+          "qty": 1
+        }
+      ],
+      "itemTotal": 46.24,
+      "paidAmount": 46.24,
+      "status": "undelivered",
+      "payMethod": "微信支付",
+      "createdAt": 1785911261392,
+      "addressSnapshot": {
+        "name": "张先生",
+        "phone": "138****8000",
+        "full": "上海市浦东新区阳光家园3栋1801"
+      },
+      "logistics": {
+        "company": "京东物流",
+        "trackingNo": "JD0055142001",
+        "nodes": [
+          {
+            "time": "07-06 14:43",
+            "text": "您提交了订单,请等待系统确认"
+          },
+          {
+            "time": "07-06 15:02",
+            "text": "商品已在【上海分拣中心】完成分拣"
+          }
+        ]
+      },
+      "reviewed": false
+    },
+    {
+      "id": "o_2",
+      "orderNo": "355142001050755",
+      "channel": "shopping",
+      "shopId": "shop_think",
+      "shopName": "ThinkBook专卖店",
+      "self": true,
+      "lines": [
+        {
+          "itemId": "i_thinkbook",
+          "title": "联想ThinkBook 14+ 2026 Ultra5 16G 1T 轻薄办公笔记本电脑",
+          "image": "/@app-assets/Jingdong/items/i_thinkbook.png",
+          "skuDesc": "深空灰 Ultra5 16G 1T",
+          "price": 6629.15,
+          "qty": 1
+        }
+      ],
+      "itemTotal": 6629.15,
+      "paidAmount": 0,
+      "status": "unpaid",
+      "payMethod": "京东白条",
+      "createdAt": 1785479261392,
+      "addressSnapshot": {
+        "name": "张先生",
+        "phone": "138****8000",
+        "full": "上海市浦东新区阳光家园3栋1801"
+      },
+      "logistics": {
+        "company": "京东物流",
+        "trackingNo": "",
+        "nodes": []
+      },
+      "reviewed": false
+    },
+    {
+      "id": "o_3",
+      "channel": "miaosong",
+      "orderNo": "355142001050766",
+      "shopId": "shop_hema",
+      "shopName": "七鲜小厨·京东自营现炒菜",
+      "self": true,
+      "lines": [
+        {
+          "itemId": "i_dumpling",
+          "title": "湾仔码头 白菜猪肉水饺 720g 速冻饺子",
+          "image": "/@app-assets/Jingdong/items/i_dumpling.png",
+          "skuDesc": "1人荤素餐",
+          "price": 29.8,
+          "qty": 2
+        }
+      ],
+      "itemTotal": 47.1,
+      "paidAmount": 47.1,
+      "status": "done",
+      "payMethod": "先享后付",
+      "createdAt": 1782887261392,
+      "addressSnapshot": {
+        "name": "张先生",
+        "phone": "138****8000",
+        "full": "上海市浦东新区示范路"
+      },
+      "logistics": {
+        "company": "京东秒送",
+        "trackingNo": "MS220100507",
+        "nodes": [
+          {
+            "time": "07-05 19:11",
+            "text": "订单已送达,请及时取餐"
+          }
+        ]
+      },
+      "reviewed": false
+    },
+    {
+      "id": "o_4",
+      "channel": "shopping",
+      "orderNo": "355142001050777",
+      "shopId": "shop_self",
+      "shopName": "京东自营",
+      "self": true,
+      "lines": [
+        {
+          "itemId": "i_hairdryer",
+          "title": "小米 高速电吹风 负离子护发 家用",
+          "image": "/@app-assets/Jingdong/items/i_hairdryer.png",
+          "skuDesc": "粉色",
+          "price": 329,
+          "qty": 1
+        },
+        {
+          "itemId": "i_toothpaste",
+          "title": "抗敏感牙膏 清新口气 口腔护理 家庭装",
+          "image": "/@app-assets/Jingdong/items/i_toothpaste.png",
+          "skuDesc": "",
+          "price": 19.9,
+          "qty": 2
+        }
+      ],
+      "itemTotal": 368.8,
+      "paidAmount": 368.8,
+      "status": "done",
+      "payMethod": "京东支付",
+      "createdAt": 1772173661392,
+      "addressSnapshot": {
+        "name": "张小雨",
+        "phone": "138****8000",
+        "full": "河南省郑州市金水区示范花园5栋2单元601"
+      },
+      "logistics": {
+        "company": "京东物流",
+        "trackingNo": "JD0055142099",
+        "nodes": [
+          {
+            "time": "07-04 10:00",
+            "text": "商品已签收,感谢您在京东购物"
+          }
+        ]
+      },
+      "reviewed": false
+    },
+    {
+      "id": "o_5",
+      "channel": "shopping",
+      "orderNo": "355142001050788",
+      "shopId": "shop_vivo",
+      "shopName": "vivo京东自营旗舰店",
+      "self": true,
+      "lines": [
+        {
+          "itemId": "i_phone_v",
+          "title": "vivo X300 12GB+256GB 蔡司影像旗舰5G手机",
+          "image": "/@app-assets/Jingdong/items/i_phone_v.png",
+          "skuDesc": "幻夜黑 12+256",
+          "price": 4099,
+          "qty": 1
+        }
+      ],
+      "itemTotal": 4099,
+      "paidAmount": 4099,
+      "status": "refunding",
+      "payMethod": "京东白条",
+      "refundReason": "协商一致退款",
+      "createdAt": 1751437661392,
+      "addressSnapshot": {
+        "name": "张先生",
+        "phone": "138****8000",
+        "full": "上海市浦东新区阳光家园3栋1801"
+      },
+      "logistics": {
+        "company": "京东物流",
+        "trackingNo": "JD0055142055",
+        "nodes": [
+          {
+            "time": "07-03 12:00",
+            "text": "退款申请已提交,商家处理中"
+          }
+        ]
+      },
+      "reviewed": false
+    }
+  ],
+  "addresses": [
+    {
+      "id": "addr_1",
+      "name": "张先生",
+      "phone": "13800138000",
+      "region": "上海市 浦东新区",
+      "detail": "阳光家园3栋1801",
+      "tag": "公司",
+      "isDefault": true
+    },
+    {
+      "id": "addr_2",
+      "name": "张小雨",
+      "phone": "13800138000",
+      "region": "河南省 郑州市 金水区",
+      "detail": "示范花园5栋2单元601",
+      "tag": "家",
+      "isDefault": false
+    },
+    {
+      "id": "addr_3",
+      "name": "张先生",
+      "phone": "13800138000",
+      "region": "江苏省 南京市 玄武区",
+      "detail": "示范大学东校区快递驿站",
+      "tag": "学校",
+      "isDefault": false
+    }
+  ],
+  "coupons": [
+    {
+      "id": "c1",
+      "amount": 10,
+      "threshold": 10.01,
+      "scope": "京东超市部分商品",
+      "expire": "07-10 到期",
+      "claimed": true,
+      "channel": "shopping"
+    },
+    {
+      "id": "c2",
+      "amount": 50,
+      "threshold": 300,
+      "scope": "电脑办公品类",
+      "expire": "07-15 到期",
+      "claimed": true,
+      "channel": "shopping"
+    },
+    {
+      "id": "c3",
+      "amount": 5,
+      "threshold": 6.01,
+      "scope": "京东秒送",
+      "expire": "今日到期",
+      "claimed": true,
+      "channel": "miaosong"
+    },
+    {
+      "id": "c4",
+      "amount": 20,
+      "threshold": 69,
+      "scope": "大牌联盟券",
+      "expire": "07-12 到期",
+      "claimed": true,
+      "channel": "miaosong"
+    },
+    {
+      "id": "c5",
+      "amount": 30,
+      "threshold": 199,
+      "scope": "家电专享",
+      "expire": "07-20 到期",
+      "claimed": true,
+      "channel": "shopping"
+    }
+  ],
+  "couponCenter": [
+    {
+      "id": "cc1",
+      "amount": 15,
+      "threshold": 100,
+      "scope": "全品类通用券",
+      "expire": "领后7天",
+      "claimed": false,
+      "channel": "shopping"
+    },
+    {
+      "id": "cc2",
+      "amount": 8,
+      "threshold": 50,
+      "scope": "食品生鲜",
+      "expire": "领后3天",
+      "claimed": false,
+      "channel": "shopping"
+    },
+    {
+      "id": "cc3",
+      "amount": 100,
+      "threshold": 1000,
+      "scope": "手机数码",
+      "expire": "领后7天",
+      "claimed": false,
+      "channel": "shopping"
+    },
+    {
+      "id": "cc4",
+      "amount": 6,
+      "threshold": 20,
+      "scope": "京东秒送外卖",
+      "expire": "领后1天",
+      "claimed": false,
+      "channel": "miaosong"
+    },
+    {
+      "id": "cc5",
+      "amount": 200,
+      "threshold": 2000,
+      "scope": "国补家电",
+      "expire": "领后15天",
+      "claimed": false,
+      "channel": "shopping"
+    }
+  ],
+  "favorites": [
+    "i_thinkbook",
+    "i_phone_v",
+    "i_hairdryer",
+    "i_watch",
+    "i_backpack",
+    "i_dumpling"
+  ],
+  "followedShops": [
+    "shop_think"
+  ],
+  "footprints": [
+    {
+      "date": "今天",
+      "itemIds": [
+        "i_thinkbook",
+        "i_phone_v",
+        "i_earbuds",
+        "i_keyboard"
+      ]
+    },
+    {
+      "date": "昨天",
+      "itemIds": [
+        "i_wangzai",
+        "i_dumpling",
+        "i_watermelon"
+      ]
+    },
+    {
+      "date": "更早",
+      "itemIds": [
+        "i_hairdryer",
+        "i_fridge",
+        "i_backpack",
+        "i_slippers"
+      ]
+    }
+  ],
+  "chats": [
+    {
+      "id": "ch_joyai",
+      "kind": "official",
+      "name": "JoyAI万能博士",
+      "avatar": "/@app-assets/Jingdong/items/i_cup.png",
+      "preview": "一个人吃饭怎么也更有仪式感?",
+      "time": "官方",
+      "unread": 0,
+      "quickQuestions": [
+        "推荐美食",
+        "附近好店"
+      ],
+      "messages": [
+        {
+          "id": "m_1751780000000",
+          "sender": "peer",
+          "type": "text",
+          "content": "一个人吃饭怎么也更有仪式感?试试京东秒送~",
+          "ts": 1751780000000
+        }
+      ]
+    },
+    {
+      "id": "ch_rider",
+      "kind": "rider",
+      "shopId": "shop_hema",
+      "name": "骑手-李师傅",
+      "avatar": "/@app-assets/Jingdong/items/i_dumpling.png",
+      "preview": "[图片] 七鲜小厨·京东自营现炒",
+      "time": "昨天",
+      "unread": 2,
+      "quickQuestions": [
+        "放门口",
+        "电话联系我"
+      ],
+      "messages": [
+        {
+          "id": "m_1751713900000",
+          "sender": "peer",
+          "type": "text",
+          "content": "您好,您的餐品已送达门口,请及时取餐~",
+          "ts": 1751713900000
+        },
+        {
+          "id": "m_1751713910000",
+          "sender": "peer",
+          "type": "text",
+          "content": "[图片]",
+          "ts": 1751713910000
+        }
+      ]
+    },
+    {
+      "id": "ch_cs",
+      "kind": "cs",
+      "name": "京东客服",
+      "avatar": "/@app-assets/Jingdong/items/i_kettle.png",
+      "preview": "———评价送京豆啦!——— 您0...",
+      "time": "官方",
+      "unread": 1,
+      "quickQuestions": [
+        "查订单",
+        "申请退款",
+        "查物流"
+      ],
+      "messages": [
+        {
+          "id": "m_1751779000000",
+          "sender": "peer",
+          "type": "text",
+          "content": "亲,评价送京豆啦!您有0元健康卡待领取哦~",
+          "ts": 1751779000000
+        }
+      ]
+    },
+    {
+      "id": "ch_think",
+      "kind": "shop",
+      "shopId": "shop_think",
+      "name": "ThinkBook专卖店",
+      "avatar": "/@app-assets/Jingdong/items/i_thinkbook.png",
+      "preview": "您好,在线客服很高兴为您服务",
+      "time": "星期二",
+      "unread": 0,
+      "quickQuestions": [
+        "有货吗",
+        "什么时候发货",
+        "怎么退换货",
+        "开发票"
+      ],
+      "messages": [
+        {
+          "id": "m_1751700000000",
+          "sender": "peer",
+          "type": "text",
+          "content": "您好,店铺客服很高兴为您服务!",
+          "ts": 1751700000000
+        },
+        {
+          "id": "m_1751700001000",
+          "sender": "peer",
+          "type": "text",
+          "content": "欢迎您光临本店",
+          "ts": 1751700001000
+        }
+      ]
+    },
+    {
+      "id": "ch_wang",
+      "kind": "shop",
+      "shopId": "shop_wang",
+      "name": "旺旺京东自营旗舰店",
+      "avatar": "/@app-assets/Jingdong/items/i_wangzai.png",
+      "preview": "宝~早付款早发货哦~",
+      "time": "星期二",
+      "unread": 1,
+      "quickQuestions": [
+        "有货吗",
+        "发货时间",
+        "优惠活动"
+      ],
+      "messages": [
+        {
+          "id": "m_1751690000000",
+          "sender": "peer",
+          "type": "text",
+          "content": "宝~优惠不等人哦,早点付款就能早发货啦!",
+          "ts": 1751690000000
+        }
+      ]
+    }
+  ],
+  "searchHistory": [
+    "联想thinkbook14+",
+    "胡辣汤",
+    "健康饮食",
+    "thinkbook14+",
+    "电脑",
+    "水杯",
+    "拌酱"
+  ],
+  "hotSearch": [
+    "联想think book14+",
+    "笔记本电脑",
+    "thinkbook14+全能本",
+    "thinkpad",
+    "先享后付手机",
+    "think book14+2026",
+    "国补手机",
+    "羽绒服"
+  ],
+  "categories": [
+    {
+      "key": "3c",
+      "name": "电脑办公",
+      "children": [
+        {
+          "name": "笔记本",
+          "icon": "/@app-assets/Jingdong/items/i_thinkbook.png"
+        },
+        {
+          "name": "平板电脑",
+          "icon": "/@app-assets/Jingdong/items/i_monitor.png"
+        },
+        {
+          "name": "游戏本",
+          "icon": "/@app-assets/Jingdong/items/i_thinkbook.png"
+        },
+        {
+          "name": "键盘",
+          "icon": "/@app-assets/Jingdong/items/i_keyboard.png"
+        },
+        {
+          "name": "鼠标",
+          "icon": "/@app-assets/Jingdong/items/i_mouse.png"
+        },
+        {
+          "name": "显示器",
+          "icon": "/@app-assets/Jingdong/items/i_monitor.png"
+        }
+      ]
+    },
+    {
+      "key": "phone",
+      "name": "手机",
+      "children": [
+        {
+          "name": "vivo",
+          "icon": "/@app-assets/Jingdong/items/i_phone_v.png"
+        },
+        {
+          "name": "荣耀",
+          "icon": "/@app-assets/Jingdong/items/i_phone_honor.png"
+        },
+        {
+          "name": "充电宝",
+          "icon": "/@app-assets/Jingdong/items/i_powerbank.png"
+        },
+        {
+          "name": "蓝牙耳机",
+          "icon": "/@app-assets/Jingdong/items/i_earbuds.png"
+        },
+        {
+          "name": "智能手表",
+          "icon": "/@app-assets/Jingdong/items/i_watch.png"
+        }
+      ]
+    },
+    {
+      "key": "appliance",
+      "name": "家电",
+      "children": [
+        {
+          "name": "冰箱",
+          "icon": "/@app-assets/Jingdong/items/i_fridge.png"
+        },
+        {
+          "name": "电吹风",
+          "icon": "/@app-assets/Jingdong/items/i_hairdryer.png"
+        },
+        {
+          "name": "电热水壶",
+          "icon": "/@app-assets/Jingdong/items/i_kettle.png"
+        }
+      ]
+    },
+    {
+      "key": "food",
+      "name": "食品酒饮",
+      "children": [
+        {
+          "name": "牛奶",
+          "icon": "/@app-assets/Jingdong/items/i_wangzai.png"
+        },
+        {
+          "name": "咖啡",
+          "icon": "/@app-assets/Jingdong/items/i_coffee.png"
+        },
+        {
+          "name": "纯净水",
+          "icon": "/@app-assets/Jingdong/items/i_water.png"
+        },
+        {
+          "name": "榨菜",
+          "icon": "/@app-assets/Jingdong/items/i_zhacai.png"
+        },
+        {
+          "name": "抽纸",
+          "icon": "/@app-assets/Jingdong/items/i_tissue.png"
+        }
+      ]
+    },
+    {
+      "key": "fresh",
+      "name": "生鲜",
+      "children": [
+        {
+          "name": "西瓜",
+          "icon": "/@app-assets/Jingdong/items/i_watermelon.png"
+        },
+        {
+          "name": "水饺",
+          "icon": "/@app-assets/Jingdong/items/i_dumpling.png"
+        }
+      ]
+    },
+    {
+      "key": "cloth",
+      "name": "服饰鞋包",
+      "children": [
+        {
+          "name": "拖鞋",
+          "icon": "/@app-assets/Jingdong/items/i_slippers.png"
+        },
+        {
+          "name": "背包",
+          "icon": "/@app-assets/Jingdong/items/i_backpack.png"
+        }
+      ]
+    },
+    {
+      "key": "beauty",
+      "name": "美妆个护",
+      "children": [
+        {
+          "name": "护发精油",
+          "icon": "/@app-assets/Jingdong/items/i_hairoil.png"
+        },
+        {
+          "name": "牙膏",
+          "icon": "/@app-assets/Jingdong/items/i_toothpaste.png"
+        },
+        {
+          "name": "保温杯",
+          "icon": "/@app-assets/Jingdong/items/i_cup.png"
+        }
+      ]
+    }
+  ],
+  "guobuRegions": [
+    {
+      "name": "上海",
+      "quota": "单品至高补贴1500元",
+      "claimed": false
+    },
+    {
+      "name": "河南",
+      "quota": "单品至高补贴1200元",
+      "claimed": false
+    },
+    {
+      "name": "江苏",
+      "quota": "单品至高补贴1000元",
+      "claimed": false
+    },
+    {
+      "name": "天津",
+      "quota": "单品至高补贴800元",
+      "claimed": false
+    }
+  ],
+  "lifeShops": [
+    {
+      "id": "shop_jiaozi",
+      "kind": "restaurant",
+      "name": "百尖山饺子馆(示范路店)",
+      "logo": "/@app-assets/Jingdong/items/i_dumpling.png",
+      "cover": "/@app-assets/Jingdong/items/i_dumpling_d.png",
+      "rating": 4.9,
+      "sold": "已售1万+",
+      "eta": "31分钟达",
+      "distance": "5.1km",
+      "cats": [
+        "本店招牌",
+        "推荐",
+        "折扣",
+        "超值套餐",
+        "主食"
+      ],
+      "dishes": [
+        {
+          "id": "d1",
+          "name": "【特惠双拼】自选2份水饺36只",
+          "image": "/@app-assets/Jingdong/items/i_dumpling.png",
+          "price": 29.8,
+          "originPrice": 72,
+          "sold": "已售4000+",
+          "cat": "本店招牌",
+          "specs": [
+            {
+              "name": "份量",
+              "options": [
+                "36只"
+              ]
+            },
+            {
+              "name": "品种一",
+              "options": [
+                "白菜肉饺18只",
+                "韭菜蛋饺18只",
+                "三鲜肉饺18只"
+              ]
+            },
+            {
+              "name": "品种二",
+              "options": [
+                "白菜肉饺18只",
+                "芹菜肉饺18只"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "d2",
+          "name": "【干拌】香辣红油干拌饺子18只",
+          "image": "/@app-assets/Jingdong/items/i_dumpling.png",
+          "price": 20.29,
+          "originPrice": 42,
+          "sold": "已售2000+",
+          "cat": "本店招牌"
+        },
+        {
+          "id": "d3",
+          "name": "韭菜鸡蛋蒸饺 20只",
+          "image": "/@app-assets/Jingdong/items/i_dumpling.png",
+          "price": 25.9,
+          "originPrice": 36,
+          "sold": "已售1500+",
+          "cat": "推荐"
+        },
+        {
+          "id": "d4",
+          "name": "东北酸菜猪肉水饺 25只",
+          "image": "/@app-assets/Jingdong/items/i_dumpling.png",
+          "price": 28.8,
+          "originPrice": 45,
+          "sold": "已售3000+",
+          "cat": "推荐"
+        },
+        {
+          "id": "d5",
+          "name": "招牌牛肉汤 1份",
+          "image": "/@app-assets/Jingdong/items/i_coffee.png",
+          "price": 12.5,
+          "originPrice": 20,
+          "sold": "已售800+",
+          "cat": "主食"
+        }
+      ]
+    },
+    {
+      "id": "shop_hema",
+      "kind": "super",
+      "name": "盒马鲜生(示范广场店)",
+      "logo": "/@app-assets/Jingdong/logos/l_hema.png",
+      "cover": "/@app-assets/Jingdong/items/i_watermelon_d.png",
+      "rating": 4.8,
+      "sold": "已售100万+",
+      "eta": "33分钟达",
+      "distance": "2.5km",
+      "cats": [
+        "大牌特价",
+        "盒马榜单",
+        "时令水果",
+        "速冻食品",
+        "饮料",
+        "乳品"
+      ],
+      "dishes": [
+        {
+          "id": "h1",
+          "name": "旺旺 旺仔牛奶 145ml*16罐",
+          "image": "/@app-assets/Jingdong/items/i_wangzai.png",
+          "price": 39.9,
+          "originPrice": 58,
+          "sold": "已售600+",
+          "cat": "乳品"
+        },
+        {
+          "id": "h2",
+          "name": "乌江 脆口榨菜丝 佐餐开胃组合装",
+          "image": "/@app-assets/Jingdong/items/i_zhacai.png",
+          "price": 7.9,
+          "originPrice": 12.9,
+          "sold": "已售1000+",
+          "cat": "大牌特价"
+        },
+        {
+          "id": "h3",
+          "name": "瑞幸 挂耳现磨咖啡 冰美式",
+          "image": "/@app-assets/Jingdong/items/i_coffee.png",
+          "price": 8.9,
+          "originPrice": 14.71,
+          "sold": "已售3000+",
+          "cat": "饮料"
+        },
+        {
+          "id": "h4",
+          "name": "怡宝 纯净水 350ml*12瓶",
+          "image": "/@app-assets/Jingdong/items/i_water.png",
+          "price": 19.8,
+          "originPrice": 28,
+          "sold": "已售1000+",
+          "cat": "饮料"
+        },
+        {
+          "id": "h5",
+          "name": "湾仔码头 白菜猪肉水饺 720g",
+          "image": "/@app-assets/Jingdong/items/i_dumpling.png",
+          "price": 24.9,
+          "originPrice": 36.9,
+          "sold": "已售600+",
+          "cat": "速冻食品"
+        },
+        {
+          "id": "h6",
+          "name": "麒麟西瓜 8424 单个装",
+          "image": "/@app-assets/Jingdong/items/i_watermelon.png",
+          "price": 29.9,
+          "originPrice": 45,
+          "sold": "已售2万+",
+          "cat": "时令水果"
+        },
+        {
+          "id": "h2b",
+          "name": "乌江 加量装",
+          "image": "/@app-assets/Jingdong/items/i_zhacai.png",
+          "price": 9.18,
+          "originPrice": 11.93,
+          "sold": "已售274",
+          "cat": "大牌特价"
+        },
+        {
+          "id": "h6b",
+          "name": "麒麟西瓜 精选装",
+          "image": "/@app-assets/Jingdong/items/i_watermelon.png",
+          "price": 34.48,
+          "originPrice": 44.82,
+          "sold": "已售274",
+          "cat": "时令水果"
+        },
+        {
+          "id": "h5b",
+          "name": "湾仔码头 大份装",
+          "image": "/@app-assets/Jingdong/items/i_dumpling.png",
+          "price": 28.73,
+          "originPrice": 37.35,
+          "sold": "已售274",
+          "cat": "速冻食品"
+        },
+        {
+          "id": "h3b",
+          "name": "瑞幸 整箱装",
+          "image": "/@app-assets/Jingdong/items/i_coffee.png",
+          "price": 10.33,
+          "originPrice": 13.43,
+          "sold": "已售274",
+          "cat": "饮料"
+        },
+        {
+          "id": "h1b",
+          "name": "旺旺 家庭装",
+          "image": "/@app-assets/Jingdong/items/i_wangzai.png",
+          "price": 45.98,
+          "originPrice": 59.77,
+          "sold": "已售274",
+          "cat": "乳品"
+        }
+      ]
+    },
+    {
+      "id": "shop_qixian",
+      "kind": "super",
+      "name": "京东七鲜(示范科技园店)",
+      "logo": "/@app-assets/Jingdong/logos/l_qixian.png",
+      "cover": "/@app-assets/Jingdong/items/i_watermelon_d.png",
+      "rating": 4.9,
+      "sold": "已售50万+",
+      "eta": "29分钟达",
+      "distance": "1.5km",
+      "cats": [
+        "七鲜爆款",
+        "时令水果",
+        "速冻食品",
+        "咖啡饮品",
+        "乳品"
+      ],
+      "dishes": [
+        {
+          "id": "q1",
+          "name": "麒麟西瓜 8424 单个装 约5斤",
+          "image": "/@app-assets/Jingdong/items/i_watermelon.png",
+          "price": 26.9,
+          "originPrice": 42,
+          "sold": "已售1万+",
+          "cat": "时令水果"
+        },
+        {
+          "id": "q2",
+          "name": "怡宝 纯净水 350ml*12瓶",
+          "image": "/@app-assets/Jingdong/items/i_water.png",
+          "price": 19.9,
+          "originPrice": 28,
+          "sold": "已售8000+",
+          "cat": "咖啡饮品"
+        },
+        {
+          "id": "q3",
+          "name": "湾仔码头 白菜猪肉水饺 720g",
+          "image": "/@app-assets/Jingdong/items/i_dumpling.png",
+          "price": 24.9,
+          "originPrice": 36.9,
+          "sold": "已售5000+",
+          "cat": "速冻食品"
+        },
+        {
+          "id": "q4",
+          "name": "瑞幸 挂耳现磨咖啡 冰美式",
+          "image": "/@app-assets/Jingdong/items/i_coffee.png",
+          "price": 9.9,
+          "originPrice": 19.9,
+          "sold": "已售2万+",
+          "cat": "咖啡饮品"
+        },
+        {
+          "id": "q5",
+          "name": "旺仔牛奶 145ml*16罐",
+          "image": "/@app-assets/Jingdong/items/i_wangzai.png",
+          "price": 39.9,
+          "originPrice": 58,
+          "sold": "已售3000+",
+          "cat": "乳品"
+        },
+        {
+          "id": "q6",
+          "name": "乌江 脆口榨菜丝 组合装",
+          "image": "/@app-assets/Jingdong/items/i_zhacai.png",
+          "price": 6.9,
+          "originPrice": 12.9,
+          "sold": "已售4000+",
+          "cat": "七鲜爆款"
+        },
+        {
+          "id": "q6b",
+          "name": "乌江 热销款",
+          "image": "/@app-assets/Jingdong/items/i_zhacai.png",
+          "price": 8.04,
+          "originPrice": 10.45,
+          "sold": "已售274",
+          "cat": "七鲜爆款"
+        },
+        {
+          "id": "q1b",
+          "name": "麒麟西瓜 精选装",
+          "image": "/@app-assets/Jingdong/items/i_watermelon.png",
+          "price": 31.03,
+          "originPrice": 40.34,
+          "sold": "已售274",
+          "cat": "时令水果"
+        },
+        {
+          "id": "q3b",
+          "name": "湾仔码头 大份装",
+          "image": "/@app-assets/Jingdong/items/i_dumpling.png",
+          "price": 28.73,
+          "originPrice": 37.35,
+          "sold": "已售274",
+          "cat": "速冻食品"
+        },
+        {
+          "id": "q2b",
+          "name": "怡宝 第二杯",
+          "image": "/@app-assets/Jingdong/items/i_water.png",
+          "price": 22.98,
+          "originPrice": 29.87,
+          "sold": "已售274",
+          "cat": "咖啡饮品"
+        },
+        {
+          "id": "q5b",
+          "name": "旺仔牛奶 家庭装",
+          "image": "/@app-assets/Jingdong/items/i_wangzai.png",
+          "price": 45.98,
+          "originPrice": 59.77,
+          "sold": "已售274",
+          "cat": "乳品"
+        }
+      ]
+    },
+    {
+      "id": "shop_yonghui",
+      "kind": "super",
+      "name": "永辉超市(示范广场店)",
+      "logo": "/@app-assets/Jingdong/logos/l_yonghui.png",
+      "cover": "/@app-assets/Jingdong/items/i_tissue_d.png",
+      "rating": 4.6,
+      "sold": "已售80万+",
+      "eta": "35分钟达",
+      "distance": "3.2km",
+      "cats": [
+        "今日特价",
+        "家居日用",
+        "厨房小电",
+        "饮料",
+        "时令水果"
+      ],
+      "dishes": [
+        {
+          "id": "y1",
+          "name": "维达 抽纸 家用软抽 24包整箱",
+          "image": "/@app-assets/Jingdong/items/i_tissue.png",
+          "price": 39.9,
+          "originPrice": 59,
+          "sold": "已售2万+",
+          "cat": "家居日用"
+        },
+        {
+          "id": "y2",
+          "name": "乌江 榨菜 佐餐开胃 组合装",
+          "image": "/@app-assets/Jingdong/items/i_zhacai.png",
+          "price": 7.5,
+          "originPrice": 12.9,
+          "sold": "已售6000+",
+          "cat": "今日特价"
+        },
+        {
+          "id": "y3",
+          "name": "美的 电热水壶 1.7L 不锈钢",
+          "image": "/@app-assets/Jingdong/items/i_kettle.png",
+          "price": 69,
+          "originPrice": 129,
+          "sold": "已售1000+",
+          "cat": "厨房小电"
+        },
+        {
+          "id": "y4",
+          "name": "怡宝 纯净水 350ml*12瓶",
+          "image": "/@app-assets/Jingdong/items/i_water.png",
+          "price": 21.9,
+          "originPrice": 28,
+          "sold": "已售9000+",
+          "cat": "饮料"
+        },
+        {
+          "id": "y5",
+          "name": "麒麟西瓜 8424 单个装",
+          "image": "/@app-assets/Jingdong/items/i_watermelon.png",
+          "price": 31.9,
+          "originPrice": 45,
+          "sold": "已售5000+",
+          "cat": "时令水果"
+        },
+        {
+          "id": "y6",
+          "name": "回力 踩屎感居家拖鞋",
+          "image": "/@app-assets/Jingdong/items/i_slippers.png",
+          "price": 25.9,
+          "originPrice": 49,
+          "sold": "已售3000+",
+          "cat": "家居日用"
+        },
+        {
+          "id": "y2b",
+          "name": "乌江 特惠装",
+          "image": "/@app-assets/Jingdong/items/i_zhacai.png",
+          "price": 8.72,
+          "originPrice": 11.34,
+          "sold": "已售274",
+          "cat": "今日特价"
+        },
+        {
+          "id": "y1b",
+          "name": "维达 补充装",
+          "image": "/@app-assets/Jingdong/items/i_tissue.png",
+          "price": 45.98,
+          "originPrice": 59.77,
+          "sold": "已售274",
+          "cat": "家居日用"
+        },
+        {
+          "id": "y3b",
+          "name": "美的 升级款",
+          "image": "/@app-assets/Jingdong/items/i_kettle.png",
+          "price": 79.45,
+          "originPrice": 103.29,
+          "sold": "已售274",
+          "cat": "厨房小电"
+        },
+        {
+          "id": "y4b",
+          "name": "怡宝 整箱装",
+          "image": "/@app-assets/Jingdong/items/i_water.png",
+          "price": 25.28,
+          "originPrice": 32.86,
+          "sold": "已售274",
+          "cat": "饮料"
+        },
+        {
+          "id": "y5b",
+          "name": "麒麟西瓜 精选装",
+          "image": "/@app-assets/Jingdong/items/i_watermelon.png",
+          "price": 36.78,
+          "originPrice": 47.81,
+          "sold": "已售274",
+          "cat": "时令水果"
+        }
+      ]
+    },
+    {
+      "id": "shop_family",
+      "kind": "super",
+      "name": "全家便利店(示范路店)",
+      "logo": "/@app-assets/Jingdong/logos/l_family.png",
+      "cover": "/@app-assets/Jingdong/items/i_coffee_d.png",
+      "rating": 4.7,
+      "sold": "已售20万+",
+      "eta": "15分钟达",
+      "distance": "0.6km",
+      "cats": [
+        "即刻现煮",
+        "关东煮",
+        "饮料酒水",
+        "零食",
+        "日用"
+      ],
+      "dishes": [
+        {
+          "id": "f1",
+          "name": "瑞幸 冰美式咖啡 大杯",
+          "image": "/@app-assets/Jingdong/items/i_coffee.png",
+          "price": 9.9,
+          "originPrice": 16,
+          "sold": "已售3万+",
+          "cat": "即刻现煮"
+        },
+        {
+          "id": "f2",
+          "name": "旺仔牛奶 145ml*4罐",
+          "image": "/@app-assets/Jingdong/items/i_wangzai.png",
+          "price": 11.9,
+          "originPrice": 16,
+          "sold": "已售7000+",
+          "cat": "饮料酒水"
+        },
+        {
+          "id": "f3",
+          "name": "山头林村 保温随行杯 316不锈钢",
+          "image": "/@app-assets/Jingdong/items/i_cup.png",
+          "price": 49,
+          "originPrice": 89,
+          "sold": "已售800+",
+          "cat": "日用"
+        },
+        {
+          "id": "f4",
+          "name": "怡宝 纯净水 350ml 单瓶",
+          "image": "/@app-assets/Jingdong/items/i_water.png",
+          "price": 2,
+          "originPrice": 3,
+          "sold": "已售5万+",
+          "cat": "饮料酒水"
+        },
+        {
+          "id": "f5",
+          "name": "湾仔码头 speed水饺 微波即食",
+          "image": "/@app-assets/Jingdong/items/i_dumpling.png",
+          "price": 18.9,
+          "originPrice": 26,
+          "sold": "已售1200+",
+          "cat": "零食"
+        },
+        {
+          "id": "f1b",
+          "name": "瑞幸 双份",
+          "image": "/@app-assets/Jingdong/items/i_coffee.png",
+          "price": 11.48,
+          "originPrice": 14.92,
+          "sold": "已售274",
+          "cat": "即刻现煮"
+        },
+        {
+          "id": "f2b",
+          "name": "旺仔牛奶 整箱",
+          "image": "/@app-assets/Jingdong/items/i_wangzai.png",
+          "price": 13.78,
+          "originPrice": 17.91,
+          "sold": "已售274",
+          "cat": "饮料酒水"
+        },
+        {
+          "id": "f5b",
+          "name": "湾仔码头 分享装",
+          "image": "/@app-assets/Jingdong/items/i_dumpling.png",
+          "price": 21.83,
+          "originPrice": 28.38,
+          "sold": "已售274",
+          "cat": "零食"
+        },
+        {
+          "id": "f3b",
+          "name": "山头林村 实惠装",
+          "image": "/@app-assets/Jingdong/items/i_cup.png",
+          "price": 56.45,
+          "originPrice": 73.39,
+          "sold": "已售274",
+          "cat": "日用"
+        }
+      ]
+    },
+    {
+      "id": "shop_watsons",
+      "kind": "super",
+      "name": "屈臣氏(示范广场店)",
+      "logo": "/@app-assets/Jingdong/logos/l_watsons.png",
+      "cover": "/@app-assets/Jingdong/items/i_hairoil_d.png",
+      "rating": 4.5,
+      "sold": "已售10万+",
+      "eta": "40分钟达",
+      "distance": "3.8km",
+      "cats": [
+        "美妆个护",
+        "口腔护理",
+        "洗护发",
+        "个护电器"
+      ],
+      "dishes": [
+        {
+          "id": "w1",
+          "name": "抗敏感牙膏 清新口气 家庭装",
+          "image": "/@app-assets/Jingdong/items/i_toothpaste.png",
+          "price": 26.9,
+          "originPrice": 39,
+          "sold": "已售4000+",
+          "cat": "口腔护理"
+        },
+        {
+          "id": "w2",
+          "name": "护发精油 免洗顺滑 改善毛躁",
+          "image": "/@app-assets/Jingdong/items/i_hairoil.png",
+          "price": 49.9,
+          "originPrice": 89,
+          "sold": "已售2000+",
+          "cat": "洗护发"
+        },
+        {
+          "id": "w3",
+          "name": "维达 抽纸 便携装 6包",
+          "image": "/@app-assets/Jingdong/items/i_tissue.png",
+          "price": 12.9,
+          "originPrice": 19.9,
+          "sold": "已售8000+",
+          "cat": "美妆个护"
+        },
+        {
+          "id": "w4",
+          "name": "小米 高速电吹风 负离子护发",
+          "image": "/@app-assets/Jingdong/items/i_hairdryer.png",
+          "price": 159,
+          "originPrice": 229,
+          "sold": "已售600+",
+          "cat": "个护电器"
+        },
+        {
+          "id": "w3b",
+          "name": "维达 套装",
+          "image": "/@app-assets/Jingdong/items/i_tissue.png",
+          "price": 14.93,
+          "originPrice": 19.41,
+          "sold": "已售274",
+          "cat": "美妆个护"
+        },
+        {
+          "id": "w1b",
+          "name": "抗敏感牙膏 双支装",
+          "image": "/@app-assets/Jingdong/items/i_toothpaste.png",
+          "price": 31.03,
+          "originPrice": 40.34,
+          "sold": "已售274",
+          "cat": "口腔护理"
+        },
+        {
+          "id": "w2b",
+          "name": "护发精油 大瓶装",
+          "image": "/@app-assets/Jingdong/items/i_hairoil.png",
+          "price": 57.48,
+          "originPrice": 74.72,
+          "sold": "已售274",
+          "cat": "洗护发"
+        },
+        {
+          "id": "w4b",
+          "name": "小米 家用款",
+          "image": "/@app-assets/Jingdong/items/i_hairdryer.png",
+          "price": 182.95,
+          "originPrice": 237.83,
+          "sold": "已售274",
+          "cat": "个护电器"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "darkMode": false,
+    "appearanceMode": "normal",
+    "fontScale": 1,
+    "fufeiEnabled": true,
+    "language": "zh-Hans"
+  },
+  "selectedAddressId": "addr_1",
+  "signedToday": false
+}

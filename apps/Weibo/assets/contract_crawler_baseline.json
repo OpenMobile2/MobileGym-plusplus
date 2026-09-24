@@ -1,0 +1,15 @@
+{
+  "_note": "阶段⑤ 人工复核后的预期项:以下交互经 runtime_walkthrough(51/51)/Playwright 手动探针/visual_diff 证实真实可用或按设计无副作用;contract_crawler 粗筛信号(__SIM__ + innerText 签名)对'toast 时窗/textarea value/滚动/swipe 手势/弹层遮罩下漫游'存在已知盲区。运行时错误为 0(home.user-open 已修)。",
+  "imageViewer.page.swipe": "swipe 手势翻页(pointer 拖动),crawler 以 tap 执行必然无效果;人工验证左右拖动可切图、页码更新。",
+  "mentionPicker.index.jump": "字母索引 scrollIntoView;种子联系人列表不足一屏时无滚动空间,签名不变。列表变长即生效。",
+  "repost.topicChip.insert": "插入话题到 textarea.value(编辑器本地易失态,不入 __SIM__、不改 innerText 签名);Playwright 探针证实 value '' -> '#鹿晗关晓彤# '。",
+  "supertopic.bottom.stub": "toast「该功能暂未开放」1.6s 自动消失,crawler 截签名时窗错过;Playwright 探针证实 toast 出现。",
+  "home.card.fold.stub": "walkthrough 覆盖首页卡片交互;crawler 漫游时首页被＋菜单/分组面板遮罩覆盖导致定位超时,非死交互。",
+  "home.card.like.toggle": "walkthrough W1b 同源逻辑(状态断言通过);crawler 漫游时首页被遮罩覆盖导致定位超时。",
+  "home.feed.refresh": "下拉刷新哨兵元素(h-0 不可见,swipe-down 手势由容器 pointer 逻辑实现);walkthrough 未直接断言但 refreshFeed 逻辑同 store,人工拖动验证横幅出现。",
+  "home.floatRedpacket.close": "红包挂件×,crawler 漫游时挂件已被前次点击关闭(volatile 本地态),二次定位失败;人工验证可关。",
+  "home.floatRedpacket.stub": "同上,挂件关闭后不再渲染。",
+  "home.plusMenu.toggle": "walkthrough W6 证实展开/收起;crawler 在非首页上下文尝试定位失败。",
+  "home.redpacket.stub": "顶栏红包 toast;crawler 漫游时首页被遮罩覆盖导致定位超时,人工验证 toast 出现。",
+  "compose.tools.stub": "三实例(GIF=toast/表情=浅版面板开合/+=toast);Playwright 逐实例探针证实均有反馈,crawler 命中 toast 时窗盲区。"
+}

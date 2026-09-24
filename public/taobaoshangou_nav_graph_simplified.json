@@ -1,0 +1,3516 @@
+{
+  "app": "tbsg",
+  "appDir": "apps/TaobaoShangou",
+  "mode": "schema",
+  "routeCount": 42,
+  "edgeCount": 104,
+  "nodes": [
+    {
+      "id": "/",
+      "routePath": "/",
+      "component": "HomePage",
+      "entryPoint": true,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "description": "首页(地址/搜索/金刚区/超抢手/商家列表)",
+      "stateCount": 1,
+      "states": [
+        "/"
+      ],
+      "actionCount": 7,
+      "actionIds": [
+        "home.scan.stub",
+        "home.kingkong.stub",
+        "home.kingkong.page",
+        "home.categoryTab.select",
+        "home.quickFilter.toggle",
+        "home.shopcard.dismiss",
+        "home.banner.stub"
+      ],
+      "actions": [
+        {
+          "id": "home.scan.stub",
+          "label": "扫一扫(暂未开放)",
+          "behavior": "other"
+        },
+        {
+          "id": "home.kingkong.stub",
+          "label": "金刚区未实现入口提示",
+          "behavior": "other"
+        },
+        {
+          "id": "home.kingkong.page",
+          "label": "金刚区左滑翻页",
+          "behavior": "other"
+        },
+        {
+          "id": "home.categoryTab.select",
+          "label": "分类tab过滤商家",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "tab": "string"
+          }
+        },
+        {
+          "id": "home.quickFilter.toggle",
+          "label": "快捷筛选",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "filter": "string"
+          }
+        },
+        {
+          "id": "home.shopcard.dismiss",
+          "label": "商家卡×移除",
+          "behavior": "modify",
+          "scope": "item",
+          "paramsSchema": {
+            "shopId": "string"
+          }
+        },
+        {
+          "id": "home.banner.stub",
+          "label": "运营banner(暂未开放)",
+          "behavior": "other"
+        }
+      ]
+    },
+    {
+      "id": "/hotdeals",
+      "routePath": "/hotdeals",
+      "component": "HotdealsPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "超抢手推荐页(qa:R1)",
+      "stateCount": 1,
+      "states": [
+        "/hotdeals"
+      ],
+      "actionCount": 0,
+      "actionIds": [],
+      "actions": []
+    },
+    {
+      "id": "/daily-redpacket",
+      "routePath": "/daily-redpacket",
+      "component": "DailyRedpacketPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "天天红包tab",
+      "stateCount": 1,
+      "states": [
+        "/daily-redpacket"
+      ],
+      "actionCount": 6,
+      "actionIds": [
+        "redpacket.daily.burst",
+        "redpacket.timeslot.select",
+        "redpacket.rush.claim",
+        "redpacket.foodcard.stub",
+        "redpacket.shopsearch.input",
+        "redpacket.filter.select"
+      ],
+      "actions": [
+        {
+          "id": "redpacket.daily.burst",
+          "label": "免费爆1次",
+          "behavior": "submit"
+        },
+        {
+          "id": "redpacket.timeslot.select",
+          "label": "限时抢时段切换",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "slot": "string"
+          }
+        },
+        {
+          "id": "redpacket.rush.claim",
+          "label": "限时抢红包",
+          "behavior": "submit"
+        },
+        {
+          "id": "redpacket.foodcard.stub",
+          "label": "超值购卡(暂未开放)",
+          "behavior": "other"
+        },
+        {
+          "id": "redpacket.shopsearch.input",
+          "label": "搜索红包可用商家",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "redpacket.filter.select",
+          "label": "品类/筛选过滤",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "filter": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/messages",
+      "routePath": "/messages",
+      "component": "MessageCenterPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "消息中心",
+      "stateCount": 1,
+      "states": [
+        "/messages"
+      ],
+      "actionCount": 3,
+      "actionIds": [
+        "message.clean.all",
+        "message.banner.close",
+        "message.viewall.stub"
+      ],
+      "actions": [
+        {
+          "id": "message.clean.all",
+          "label": "清扫全部已读",
+          "behavior": "modify"
+        },
+        {
+          "id": "message.banner.close",
+          "label": "关闭推广横幅",
+          "behavior": "close"
+        },
+        {
+          "id": "message.viewall.stub",
+          "label": "查看全部(暂未开放)",
+          "behavior": "other"
+        }
+      ]
+    },
+    {
+      "id": "/cart",
+      "routePath": "/cart",
+      "component": "CartPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "购物车(普通模式)",
+      "stateCount": 2,
+      "states": [
+        "/cart?manage=:manage",
+        "/cart?confirm=del&manage=:manage"
+      ],
+      "actionCount": 8,
+      "actionIds": [
+        "cart.manage.toggle",
+        "cart.item.check",
+        "cart.checkall.toggle",
+        "cart.item.qty",
+        "cart.shop.delete",
+        "cart.delete.confirm.open",
+        "cart.delete.confirm",
+        "cart.delete.cancel"
+      ],
+      "actions": [
+        {
+          "id": "cart.manage.toggle",
+          "label": "管理/退出管理",
+          "behavior": "toggle"
+        },
+        {
+          "id": "cart.item.check",
+          "label": "勾选商品",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "lineId": "string"
+          }
+        },
+        {
+          "id": "cart.checkall.toggle",
+          "label": "全选",
+          "behavior": "toggle"
+        },
+        {
+          "id": "cart.item.qty",
+          "label": "数量步进",
+          "behavior": "modify",
+          "scope": "item",
+          "paramsSchema": {
+            "lineId": "string"
+          }
+        },
+        {
+          "id": "cart.shop.delete",
+          "label": "删除店铺分组",
+          "behavior": "modify",
+          "scope": "item",
+          "paramsSchema": {
+            "shopId": "string"
+          }
+        },
+        {
+          "id": "cart.delete.confirm.open",
+          "label": "删除(弹确认)",
+          "behavior": "open"
+        },
+        {
+          "id": "cart.delete.confirm",
+          "label": "确认删除",
+          "behavior": "submit"
+        },
+        {
+          "id": "cart.delete.cancel",
+          "label": "取消删除",
+          "behavior": "close"
+        }
+      ]
+    },
+    {
+      "id": "/mine",
+      "routePath": "/mine",
+      "component": "MinePage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "我的(个人中心)",
+      "stateCount": 1,
+      "states": [
+        "/mine"
+      ],
+      "actionCount": 6,
+      "actionIds": [
+        "mine.beans.view",
+        "mine.foodcard.stub",
+        "mine.wallet.stub",
+        "mine.activity.stub",
+        "mine.morefunc.stub",
+        "mine.svip.stub"
+      ],
+      "actions": [
+        {
+          "id": "mine.beans.view",
+          "label": "吃货豆余额浮层",
+          "behavior": "open"
+        },
+        {
+          "id": "mine.foodcard.stub",
+          "label": "超级吃货卡(暂未开放)",
+          "behavior": "other"
+        },
+        {
+          "id": "mine.wallet.stub",
+          "label": "钱包项(暂未开放)",
+          "behavior": "other"
+        },
+        {
+          "id": "mine.activity.stub",
+          "label": "活动宫格(暂未开放)",
+          "behavior": "other"
+        },
+        {
+          "id": "mine.morefunc.stub",
+          "label": "开发票/下单返(暂未开放)",
+          "behavior": "other"
+        },
+        {
+          "id": "mine.svip.stub",
+          "label": "SVIP(暂未开放)",
+          "behavior": "other"
+        }
+      ]
+    },
+    {
+      "id": "/channel/food",
+      "routePath": "/channel/food",
+      "component": "ChannelFoodPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "美食夜宵频道",
+      "stateCount": 3,
+      "states": [
+        "/channel/food",
+        "/channel/food?panel=sort",
+        "/channel/food?panel=filter"
+      ],
+      "actionCount": 13,
+      "actionIds": [
+        "channel.redpacket.claimAll",
+        "channel.redpacket.claimOne",
+        "channel.category.select",
+        "channel.sortPanel.open",
+        "channel.filterPanel.open",
+        "channel.quickFilter.toggle",
+        "channel.list.scroll",
+        "channel.sort.select",
+        "channel.sortPanel.close",
+        "channel.filter.toggle",
+        "channel.filter.priceRange",
+        "channel.filter.apply",
+        "channel.filter.clear"
+      ],
+      "actions": [
+        {
+          "id": "channel.redpacket.claimAll",
+          "label": "夜市红包一键领取",
+          "behavior": "submit"
+        },
+        {
+          "id": "channel.redpacket.claimOne",
+          "label": "夜市红包单张领取",
+          "behavior": "submit",
+          "scope": "item",
+          "paramsSchema": {
+            "couponId": "string"
+          }
+        },
+        {
+          "id": "channel.category.select",
+          "label": "品类icon条切换",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "cat": "string"
+          }
+        },
+        {
+          "id": "channel.sortPanel.open",
+          "label": "打开排序面板",
+          "behavior": "open"
+        },
+        {
+          "id": "channel.filterPanel.open",
+          "label": "打开筛选面板",
+          "behavior": "open"
+        },
+        {
+          "id": "channel.quickFilter.toggle",
+          "label": "快捷筛选",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "filter": "string"
+          }
+        },
+        {
+          "id": "channel.list.scroll",
+          "label": "列表滚动加载",
+          "behavior": "other"
+        },
+        {
+          "id": "channel.sort.select",
+          "label": "选择排序规则",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "sort": "string"
+          }
+        },
+        {
+          "id": "channel.sortPanel.close",
+          "label": "收起排序面板",
+          "behavior": "close"
+        },
+        {
+          "id": "channel.filter.toggle",
+          "label": "筛选胶囊多选",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "opt": "string"
+          }
+        },
+        {
+          "id": "channel.filter.priceRange",
+          "label": "人均价滑杆",
+          "behavior": "modify"
+        },
+        {
+          "id": "channel.filter.apply",
+          "label": "查看(应用筛选)",
+          "behavior": "submit"
+        },
+        {
+          "id": "channel.filter.clear",
+          "label": "清空筛选",
+          "behavior": "modify"
+        }
+      ]
+    },
+    {
+      "id": "/channel/market",
+      "routePath": "/channel/market",
+      "component": "ChannelMarketPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "超市便利频道",
+      "stateCount": 2,
+      "states": [
+        "/channel/market",
+        "/channel/market?popup=coupon"
+      ],
+      "actionCount": 4,
+      "actionIds": [
+        "channel.market.category.select",
+        "channel.market.shoptab.select",
+        "channel.market.popup.claim",
+        "channel.market.popup.close"
+      ],
+      "actions": [
+        {
+          "id": "channel.market.category.select",
+          "label": "金刚区分类过滤",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "cat": "string"
+          }
+        },
+        {
+          "id": "channel.market.shoptab.select",
+          "label": "附近好店分类胶囊",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "tab": "string"
+          }
+        },
+        {
+          "id": "channel.market.popup.claim",
+          "label": "红包弹窗-去使用",
+          "behavior": "submit"
+        },
+        {
+          "id": "channel.market.popup.close",
+          "label": "红包弹窗-关闭",
+          "behavior": "close"
+        }
+      ]
+    },
+    {
+      "id": "/channel/fruit",
+      "routePath": "/channel/fruit",
+      "component": "ChannelFruitPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "水果买菜频道",
+      "stateCount": 1,
+      "states": [
+        "/channel/fruit"
+      ],
+      "actionCount": 2,
+      "actionIds": [
+        "channel.fruit.category.select",
+        "channel.fruit.filter.toggle"
+      ],
+      "actions": [
+        {
+          "id": "channel.fruit.category.select",
+          "label": "分类金刚区过滤",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "cat": "string"
+          }
+        },
+        {
+          "id": "channel.fruit.filter.toggle",
+          "label": "筛选条",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "filter": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/channel/medicine",
+      "routePath": "/channel/medicine",
+      "component": "ChannelMedicinePage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "看病买药频道(分类金刚区+附近药店)",
+      "stateCount": 1,
+      "states": [
+        "/channel/medicine"
+      ],
+      "actionCount": 2,
+      "actionIds": [
+        "channel.medicine.tab.stub",
+        "channel.medicine.misc.stub"
+      ],
+      "actions": [
+        {
+          "id": "channel.medicine.tab.stub",
+          "label": "子tab(问医生/医疗器械等,暂未开放)",
+          "behavior": "other"
+        },
+        {
+          "id": "channel.medicine.misc.stub",
+          "label": "健康卡/问医生等(暂未开放)",
+          "behavior": "other"
+        }
+      ]
+    },
+    {
+      "id": "/channel/medicine/cat",
+      "routePath": "/channel/medicine/cat",
+      "component": "MedicineCategoryPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "药品分类页(跨店在售药品)",
+      "stateCount": 1,
+      "states": [
+        "/channel/medicine/cat?cat=:cat"
+      ],
+      "actionCount": 1,
+      "actionIds": [
+        "medcat.subcat.select"
+      ],
+      "actions": [
+        {
+          "id": "medcat.subcat.select",
+          "label": "二级类目过滤",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "sub": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/channel/medicine/search",
+      "routePath": "/channel/medicine/search",
+      "component": "MedicineSearchPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "买药独立搜索页",
+      "stateCount": 1,
+      "states": [
+        "/channel/medicine/search"
+      ],
+      "actionCount": 2,
+      "actionIds": [
+        "medsearch.query.input",
+        "medsearch.discover.pick"
+      ],
+      "actions": [
+        {
+          "id": "medsearch.query.input",
+          "label": "药品搜索输入",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "medsearch.discover.pick",
+          "label": "搜索发现词",
+          "behavior": "modify",
+          "scope": "item",
+          "paramsSchema": {
+            "q": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/drug/:drugId",
+      "routePath": "/drug/:drugId",
+      "component": "DrugDetailPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "药品详情(在售商家跨店列表)",
+      "stateCount": 1,
+      "states": [
+        "/drug/:drugId"
+      ],
+      "actionCount": 1,
+      "actionIds": [
+        "drug.combo.stub"
+      ],
+      "actions": [
+        {
+          "id": "drug.combo.stub",
+          "label": "组合用药tab(暂未开放)",
+          "behavior": "other"
+        }
+      ]
+    },
+    {
+      "id": "/search",
+      "routePath": "/search",
+      "component": "SearchEntryPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "搜索中间页",
+      "stateCount": 1,
+      "states": [
+        "/search"
+      ],
+      "actionCount": 2,
+      "actionIds": [
+        "search.entry.input",
+        "search.history.clear"
+      ],
+      "actions": [
+        {
+          "id": "search.entry.input",
+          "label": "搜索词输入",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "search.history.clear",
+          "label": "清空历史搜索",
+          "behavior": "modify"
+        }
+      ]
+    },
+    {
+      "id": "/search/result",
+      "routePath": "/search/result",
+      "component": "SearchResultPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "搜索结果页(商家+匹配商品)",
+      "stateCount": 1,
+      "states": [
+        "/search/result?q=:q"
+      ],
+      "actionCount": 3,
+      "actionIds": [
+        "searchresult.brand.filter",
+        "searchresult.sort.select",
+        "searchresult.filter.toggle"
+      ],
+      "actions": [
+        {
+          "id": "searchresult.brand.filter",
+          "label": "热卖品牌chips",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "brand": "string"
+          }
+        },
+        {
+          "id": "searchresult.sort.select",
+          "label": "排序(综合/销量/速度)",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "sort": "string"
+          }
+        },
+        {
+          "id": "searchresult.filter.toggle",
+          "label": "筛选chips",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "filter": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/shop/:shopId",
+      "routePath": "/shop/:shopId",
+      "component": "ShopPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "点餐tab",
+      "stateCount": 10,
+      "states": [
+        "/shop/:shopId",
+        "/shop/:shopId?tab=reviews",
+        "/shop/:shopId?tab=merchant",
+        "/shop/:shopId?panel=sku",
+        "/shop/:shopId?panel=coupons",
+        "/shop/:shopId?panel=foodcard",
+        "/shop/:shopId?panel=addon",
+        "/shop/:shopId?panel=search",
+        "/shop/:shopId?panel=cartbar",
+        "/shop/:shopId?panel=more"
+      ],
+      "actionCount": 36,
+      "actionIds": [
+        "shop.favorite.toggle",
+        "shop.moremenu.open",
+        "shop.search.open",
+        "shop.couponSheet.open",
+        "shop.pickup.toggle",
+        "shop.tab.select",
+        "shop.category.select",
+        "shop.item.add",
+        "shop.item.minus",
+        "shop.skuSheet.open",
+        "shop.reorder.add",
+        "shop.cartbar.expand",
+        "shop.mustpick.hint",
+        "shop.addonSheet.open",
+        "shop.reviews.filter",
+        "shop.reviews.contentOnly.toggle",
+        "shop.reviews.reply.expand",
+        "shop.reviews.photo.view",
+        "shop.merchant.call.stub",
+        "shop.merchant.map.stub",
+        "shop.merchant.license.stub",
+        "shop.sku.option.select",
+        "shop.sku.confirm",
+        "shop.sku.close",
+        "shop.coupon.followClaim",
+        "shop.coupon.expand",
+        "shop.foodcardSheet.open",
+        "shop.couponSheet.close",
+        "shop.foodcard.buy",
+        "shop.foodcard.agreement.stub",
+        "shop.foodcardSheet.close",
+        "shop.addon.add",
+        "shop.addon.sku.open",
+        "shop.addon.filter",
+        "shop.addonSheet.close",
+        "shop.search.input"
+      ],
+      "actions": [
+        {
+          "id": "shop.favorite.toggle",
+          "label": "收藏店铺",
+          "behavior": "toggle"
+        },
+        {
+          "id": "shop.moremenu.open",
+          "label": "打开...面板",
+          "behavior": "open"
+        },
+        {
+          "id": "shop.search.open",
+          "label": "打开店内搜索弹层",
+          "behavior": "open"
+        },
+        {
+          "id": "shop.couponSheet.open",
+          "label": "打开红包优惠弹层",
+          "behavior": "open"
+        },
+        {
+          "id": "shop.pickup.toggle",
+          "label": "外送/自取切换(qa:Q8)",
+          "behavior": "toggle"
+        },
+        {
+          "id": "shop.tab.select",
+          "label": "点餐/评价/商家tab",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "tab": "string"
+          }
+        },
+        {
+          "id": "shop.category.select",
+          "label": "左侧分类跳转",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "cat": "string"
+          }
+        },
+        {
+          "id": "shop.item.add",
+          "label": "单规格商品加购",
+          "behavior": "modify",
+          "scope": "item",
+          "paramsSchema": {
+            "itemId": "string"
+          }
+        },
+        {
+          "id": "shop.item.minus",
+          "label": "步进器减购",
+          "behavior": "modify",
+          "scope": "item",
+          "paramsSchema": {
+            "itemId": "string"
+          }
+        },
+        {
+          "id": "shop.skuSheet.open",
+          "label": "打开SKU弹层",
+          "behavior": "open",
+          "scope": "item",
+          "paramsSchema": {
+            "itemId": "string"
+          }
+        },
+        {
+          "id": "shop.reorder.add",
+          "label": "再来一单(qa:Q6)",
+          "behavior": "submit"
+        },
+        {
+          "id": "shop.cartbar.expand",
+          "label": "展开购物车明细",
+          "behavior": "open"
+        },
+        {
+          "id": "shop.mustpick.hint",
+          "label": "未选必选品提示",
+          "behavior": "other"
+        },
+        {
+          "id": "shop.addonSheet.open",
+          "label": "打开凑单弹层",
+          "behavior": "open"
+        },
+        {
+          "id": "shop.reviews.filter",
+          "label": "评价标签过滤",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "tag": "string"
+          }
+        },
+        {
+          "id": "shop.reviews.contentOnly.toggle",
+          "label": "只看有内容",
+          "behavior": "toggle"
+        },
+        {
+          "id": "shop.reviews.reply.expand",
+          "label": "展开商家回复",
+          "behavior": "open"
+        },
+        {
+          "id": "shop.reviews.photo.view",
+          "label": "查看评价大图",
+          "behavior": "open"
+        },
+        {
+          "id": "shop.merchant.call.stub",
+          "label": "电话(暂未开放)",
+          "behavior": "other"
+        },
+        {
+          "id": "shop.merchant.map.stub",
+          "label": "地址地图(暂未开放)",
+          "behavior": "other"
+        },
+        {
+          "id": "shop.merchant.license.stub",
+          "label": "亮证经营(暂未开放)",
+          "behavior": "other"
+        },
+        {
+          "id": "shop.sku.option.select",
+          "label": "SKU选项胶囊",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "group": "string",
+            "option": "string"
+          }
+        },
+        {
+          "id": "shop.sku.confirm",
+          "label": "选好了(加购)",
+          "behavior": "submit"
+        },
+        {
+          "id": "shop.sku.close",
+          "label": "关闭SKU弹层",
+          "behavior": "close"
+        },
+        {
+          "id": "shop.coupon.followClaim",
+          "label": "关注领券",
+          "behavior": "submit"
+        },
+        {
+          "id": "shop.coupon.expand",
+          "label": "展开其他红包",
+          "behavior": "open"
+        },
+        {
+          "id": "shop.foodcardSheet.open",
+          "label": "打开吃货卡弹层",
+          "behavior": "open"
+        },
+        {
+          "id": "shop.couponSheet.close",
+          "label": "关闭红包弹层",
+          "behavior": "close"
+        },
+        {
+          "id": "shop.foodcard.buy",
+          "label": "购买吃货卡(模拟)",
+          "behavior": "submit"
+        },
+        {
+          "id": "shop.foodcard.agreement.stub",
+          "label": "协议(暂未开放)",
+          "behavior": "other"
+        },
+        {
+          "id": "shop.foodcardSheet.close",
+          "label": "关闭吃货卡弹层",
+          "behavior": "close"
+        },
+        {
+          "id": "shop.addon.add",
+          "label": "凑单商品加购",
+          "behavior": "modify",
+          "scope": "item",
+          "paramsSchema": {
+            "itemId": "string"
+          }
+        },
+        {
+          "id": "shop.addon.sku.open",
+          "label": "凑单商品选规格",
+          "behavior": "open",
+          "scope": "item",
+          "paramsSchema": {
+            "itemId": "string"
+          }
+        },
+        {
+          "id": "shop.addon.filter",
+          "label": "凑单筛选",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "filter": "string"
+          }
+        },
+        {
+          "id": "shop.addonSheet.close",
+          "label": "关闭凑单弹层",
+          "behavior": "close"
+        },
+        {
+          "id": "shop.search.input",
+          "label": "店内搜索输入",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/retail/:shopId",
+      "routePath": "/retail/:shopId",
+      "component": "RetailShopPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "零售店首页tab",
+      "stateCount": 6,
+      "states": [
+        "/retail/:shopId",
+        "/retail/:shopId?tab=goods",
+        "/retail/:shopId?tab=reviews",
+        "/retail/:shopId?panel=sku",
+        "/retail/:shopId?panel=cartbar",
+        "/retail/:shopId?panel=search"
+      ],
+      "actionCount": 8,
+      "actionIds": [
+        "retail.tab.select",
+        "retail.coupon.claim",
+        "retail.category.select",
+        "retail.item.add",
+        "retail.search.open",
+        "retail.share.stub",
+        "retail.favorite.toggle",
+        "retail.search.input"
+      ],
+      "actions": [
+        {
+          "id": "retail.tab.select",
+          "label": "首页/商品/评价tab",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "tab": "string"
+          }
+        },
+        {
+          "id": "retail.coupon.claim",
+          "label": "优惠胶囊领券",
+          "behavior": "submit",
+          "scope": "item",
+          "paramsSchema": {
+            "couponId": "string"
+          }
+        },
+        {
+          "id": "retail.category.select",
+          "label": "分类宫格",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "cat": "string"
+          }
+        },
+        {
+          "id": "retail.item.add",
+          "label": "商品加购",
+          "behavior": "modify",
+          "scope": "item",
+          "paramsSchema": {
+            "itemId": "string"
+          }
+        },
+        {
+          "id": "retail.search.open",
+          "label": "打开店内搜索弹层",
+          "behavior": "open"
+        },
+        {
+          "id": "retail.share.stub",
+          "label": "分享(暂未开放)",
+          "behavior": "other"
+        },
+        {
+          "id": "retail.favorite.toggle",
+          "label": "收藏",
+          "behavior": "toggle"
+        },
+        {
+          "id": "retail.search.input",
+          "label": "店内搜索输入",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/shop/:shopId/group",
+      "routePath": "/shop/:shopId/group",
+      "component": "GroupOrderPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "好友拼单详情",
+      "stateCount": 1,
+      "states": [
+        "/shop/:shopId/group"
+      ],
+      "actionCount": 2,
+      "actionIds": [
+        "group.invite.stub",
+        "group.helporder.stub"
+      ],
+      "actions": [
+        {
+          "id": "group.invite.stub",
+          "label": "邀请好友(暂未开放)",
+          "behavior": "other"
+        },
+        {
+          "id": "group.helporder.stub",
+          "label": "帮好友点(暂未开放)",
+          "behavior": "other"
+        }
+      ]
+    },
+    {
+      "id": "/chat/shop/:shopId",
+      "routePath": "/chat/shop/:shopId",
+      "component": "ShopChatPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "商家聊天",
+      "stateCount": 2,
+      "states": [
+        "/chat/shop/:shopId",
+        "/chat/shop/:shopId?panel=emoji"
+      ],
+      "actionCount": 6,
+      "actionIds": [
+        "shopchat.message.send",
+        "shopchat.emoji.toggle",
+        "shopchat.quickq.send",
+        "shopchat.misc.stub",
+        "shopchat.emoji.pick",
+        "shopchat.emoji.send"
+      ],
+      "actions": [
+        {
+          "id": "shopchat.message.send",
+          "label": "发送消息(自动回复qa:Q9)",
+          "behavior": "submit"
+        },
+        {
+          "id": "shopchat.emoji.toggle",
+          "label": "表情面板开关",
+          "behavior": "toggle"
+        },
+        {
+          "id": "shopchat.quickq.send",
+          "label": "快捷问题发送",
+          "behavior": "submit",
+          "scope": "item",
+          "paramsSchema": {
+            "q": "string"
+          }
+        },
+        {
+          "id": "shopchat.misc.stub",
+          "label": "语音/清单/+(暂未开放)",
+          "behavior": "other"
+        },
+        {
+          "id": "shopchat.emoji.pick",
+          "label": "选择表情",
+          "behavior": "modify",
+          "scope": "item",
+          "paramsSchema": {
+            "emoji": "string"
+          }
+        },
+        {
+          "id": "shopchat.emoji.send",
+          "label": "表情面板发送",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/chat/rider/:orderId",
+      "routePath": "/chat/rider/:orderId",
+      "component": "RiderChatPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "骑手聊天",
+      "stateCount": 1,
+      "states": [
+        "/chat/rider/:orderId"
+      ],
+      "actionCount": 2,
+      "actionIds": [
+        "riderchat.message.send",
+        "riderchat.photo.view"
+      ],
+      "actions": [
+        {
+          "id": "riderchat.message.send",
+          "label": "发送消息(自动回复qa:Q9)",
+          "behavior": "submit"
+        },
+        {
+          "id": "riderchat.photo.view",
+          "label": "查看凭证大图",
+          "behavior": "open"
+        }
+      ]
+    },
+    {
+      "id": "/checkout",
+      "routePath": "/checkout",
+      "component": "CheckoutPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "确认订单页(多店分组qa:Q7)",
+      "stateCount": 3,
+      "states": [
+        "/checkout",
+        "/checkout?panel=tableware",
+        "/checkout?panel=pay"
+      ],
+      "actionCount": 11,
+      "actionIds": [
+        "checkout.mode.toggle",
+        "checkout.delivery.select",
+        "checkout.vas.toggle",
+        "checkout.exchange.add",
+        "checkout.tableware.open",
+        "checkout.payment.select",
+        "checkout.payment.expand",
+        "checkout.invoice.stub",
+        "checkout.pay.open",
+        "checkout.tableware.select",
+        "checkout.tableware.remember"
+      ],
+      "actions": [
+        {
+          "id": "checkout.mode.toggle",
+          "label": "外卖到家/到店自取",
+          "behavior": "toggle"
+        },
+        {
+          "id": "checkout.delivery.select",
+          "label": "立即送出/预约配送",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "slot": "string"
+          }
+        },
+        {
+          "id": "checkout.vas.toggle",
+          "label": "增值服务勾选",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "vas": "string"
+          }
+        },
+        {
+          "id": "checkout.exchange.add",
+          "label": "换购加购",
+          "behavior": "modify",
+          "scope": "item",
+          "paramsSchema": {
+            "itemId": "string"
+          }
+        },
+        {
+          "id": "checkout.tableware.open",
+          "label": "打开餐具弹层",
+          "behavior": "open"
+        },
+        {
+          "id": "checkout.payment.select",
+          "label": "支付方式选择",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "method": "string"
+          }
+        },
+        {
+          "id": "checkout.payment.expand",
+          "label": "更多支付方式(暂未开放)",
+          "behavior": "other"
+        },
+        {
+          "id": "checkout.invoice.stub",
+          "label": "发票(暂未开放)",
+          "behavior": "other"
+        },
+        {
+          "id": "checkout.pay.open",
+          "label": "立即支付(开收银台)",
+          "behavior": "open"
+        },
+        {
+          "id": "checkout.tableware.select",
+          "label": "选择餐具份数",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "opt": "string"
+          }
+        },
+        {
+          "id": "checkout.tableware.remember",
+          "label": "以后都需要餐具",
+          "behavior": "toggle"
+        }
+      ]
+    },
+    {
+      "id": "/checkout/coupons",
+      "routePath": "/checkout/coupons",
+      "component": "CheckoutCouponPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "选择红包/店铺券",
+      "stateCount": 1,
+      "states": [
+        "/checkout/coupons?shopId=:shopId&type=:type"
+      ],
+      "actionCount": 3,
+      "actionIds": [
+        "checkout.coupon.select",
+        "checkout.coupon.memberClaim",
+        "checkout.coupon.unusable.expand"
+      ],
+      "actions": [
+        {
+          "id": "checkout.coupon.select",
+          "label": "勾选券",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "couponId": "string"
+          }
+        },
+        {
+          "id": "checkout.coupon.memberClaim",
+          "label": "入会领券",
+          "behavior": "submit"
+        },
+        {
+          "id": "checkout.coupon.unusable.expand",
+          "label": "展开不可用券",
+          "behavior": "open"
+        }
+      ]
+    },
+    {
+      "id": "/checkout/remark",
+      "routePath": "/checkout/remark",
+      "component": "RemarkPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "备注编辑页",
+      "stateCount": 1,
+      "states": [
+        "/checkout/remark"
+      ],
+      "actionCount": 3,
+      "actionIds": [
+        "checkout.remark.input",
+        "checkout.remark.quick",
+        "checkout.remark.setDefault"
+      ],
+      "actions": [
+        {
+          "id": "checkout.remark.input",
+          "label": "备注输入",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "checkout.remark.quick",
+          "label": "快捷输入胶囊",
+          "behavior": "modify",
+          "scope": "item",
+          "paramsSchema": {
+            "text": "string"
+          }
+        },
+        {
+          "id": "checkout.remark.setDefault",
+          "label": "设为默认备注",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/order/:orderId/success",
+      "routePath": "/order/:orderId/success",
+      "component": "PaySuccessPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "支付成功页",
+      "stateCount": 1,
+      "states": [
+        "/order/:orderId/success"
+      ],
+      "actionCount": 1,
+      "actionIds": [
+        "paysuccess.beans.claim"
+      ],
+      "actions": [
+        {
+          "id": "paysuccess.beans.claim",
+          "label": "领取下单奖励吃货豆",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/orders",
+      "routePath": "/orders",
+      "component": "OrdersPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "订单列表",
+      "stateCount": 3,
+      "states": [
+        "/orders?tab=:tab",
+        "/orders?panel=ordermore&tab=:tab",
+        "/orders?panel=more&tab=:tab"
+      ],
+      "actionCount": 7,
+      "actionIds": [
+        "order.list.tab.select",
+        "order.list.invoice.stub",
+        "order.list.beans.claim",
+        "order.list.search",
+        "order.list.more",
+        "moremenu.feedback.stub",
+        "moremenu.panel.close"
+      ],
+      "actions": [
+        {
+          "id": "order.list.tab.select",
+          "label": "订单状态tab",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "tab": "string"
+          }
+        },
+        {
+          "id": "order.list.invoice.stub",
+          "label": "开发票(暂未开放)",
+          "behavior": "other"
+        },
+        {
+          "id": "order.list.beans.claim",
+          "label": "领吃货豆",
+          "behavior": "submit",
+          "scope": "item",
+          "paramsSchema": {
+            "orderId": "string"
+          }
+        },
+        {
+          "id": "order.list.search",
+          "label": "搜订单",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "order.list.more",
+          "label": "更多(开发票/订单评价等)",
+          "behavior": "open",
+          "scope": "item",
+          "paramsSchema": {
+            "orderId": "string"
+          }
+        },
+        {
+          "id": "moremenu.feedback.stub",
+          "label": "意见反馈(暂未开放)",
+          "behavior": "other"
+        },
+        {
+          "id": "moremenu.panel.close",
+          "label": "取消(关闭面板)",
+          "behavior": "close"
+        }
+      ]
+    },
+    {
+      "id": "/order/:orderId",
+      "routePath": "/order/:orderId",
+      "component": "OrderDetailPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "订单详情(状态机:待支付/备餐/配送/送达/取消/退款)",
+      "stateCount": 3,
+      "states": [
+        "/order/:orderId",
+        "/order/:orderId?panel=refund-reason",
+        "/order/:orderId?panel=pay"
+      ],
+      "actionCount": 12,
+      "actionIds": [
+        "order.refundReason.open",
+        "order.detail.price.expand",
+        "order.detail.copyid",
+        "order.detail.invoice.stub",
+        "order.modify.stub",
+        "order.status.expand",
+        "order.survey.stub",
+        "order.repay.open",
+        "refund.reason.select",
+        "refund.subreason.select",
+        "refund.contact.call.stub",
+        "refund.reason.close"
+      ],
+      "actions": [
+        {
+          "id": "order.refundReason.open",
+          "label": "申请售后(开原因弹层)",
+          "behavior": "open"
+        },
+        {
+          "id": "order.detail.price.expand",
+          "label": "价格明细展开",
+          "behavior": "toggle"
+        },
+        {
+          "id": "order.detail.copyid",
+          "label": "复制订单号",
+          "behavior": "other"
+        },
+        {
+          "id": "order.detail.invoice.stub",
+          "label": "发票(暂未开放)",
+          "behavior": "other"
+        },
+        {
+          "id": "order.modify.stub",
+          "label": "改订单信息(暂未开放)",
+          "behavior": "other"
+        },
+        {
+          "id": "order.status.expand",
+          "label": "状态时间轴展开",
+          "behavior": "toggle"
+        },
+        {
+          "id": "order.survey.stub",
+          "label": "问卷调查(暂未开放)",
+          "behavior": "other"
+        },
+        {
+          "id": "order.repay.open",
+          "label": "去支付(重开收银台)",
+          "behavior": "open"
+        },
+        {
+          "id": "refund.reason.select",
+          "label": "选择售后原因",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "reason": "string"
+          }
+        },
+        {
+          "id": "refund.subreason.select",
+          "label": "子原因chips",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "sub": "string"
+          }
+        },
+        {
+          "id": "refund.contact.call.stub",
+          "label": "电话(暂未开放)",
+          "behavior": "other"
+        },
+        {
+          "id": "refund.reason.close",
+          "label": "关闭原因弹层",
+          "behavior": "close"
+        }
+      ]
+    },
+    {
+      "id": "/order/:orderId/cancel-survey",
+      "routePath": "/order/:orderId/cancel-survey",
+      "component": "CancelSurveyPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "取消成功+原因调研",
+      "stateCount": 1,
+      "states": [
+        "/order/:orderId/cancel-survey"
+      ],
+      "actionCount": 1,
+      "actionIds": [
+        "cancel.survey.select"
+      ],
+      "actions": [
+        {
+          "id": "cancel.survey.select",
+          "label": "选择取消原因",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "reason": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/order/:orderId/refund/apply",
+      "routePath": "/order/:orderId/refund/apply",
+      "component": "RefundFormPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "退款申请表单",
+      "stateCount": 2,
+      "states": [
+        "/order/:orderId/refund/apply",
+        "/order/:orderId/refund/apply?panel=reason"
+      ],
+      "actionCount": 5,
+      "actionIds": [
+        "refund.form.reason.reopen",
+        "refund.form.item.toggle",
+        "refund.form.desc",
+        "refund.form.photo.stub",
+        "refund.form.call.stub"
+      ],
+      "actions": [
+        {
+          "id": "refund.form.reason.reopen",
+          "label": "重选售后原因",
+          "behavior": "open"
+        },
+        {
+          "id": "refund.form.item.toggle",
+          "label": "勾选售后商品(金额联动)",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "lineIdx": "number"
+          }
+        },
+        {
+          "id": "refund.form.desc",
+          "label": "补充说明",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "refund.form.photo.stub",
+          "label": "上传凭证(暂未开放)",
+          "behavior": "other"
+        },
+        {
+          "id": "refund.form.call.stub",
+          "label": "致电骑士(暂未开放)",
+          "behavior": "other"
+        }
+      ]
+    },
+    {
+      "id": "/order/:orderId/refund",
+      "routePath": "/order/:orderId/refund",
+      "component": "RefundProgressPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "退款进度页",
+      "stateCount": 1,
+      "states": [
+        "/order/:orderId/refund"
+      ],
+      "actionCount": 3,
+      "actionIds": [
+        "refund.progress.withdraw",
+        "refund.progress.call.stub",
+        "refund.progress.timeline.expand"
+      ],
+      "actions": [
+        {
+          "id": "refund.progress.withdraw",
+          "label": "撤销申请",
+          "behavior": "submit"
+        },
+        {
+          "id": "refund.progress.call.stub",
+          "label": "致电商家(暂未开放)",
+          "behavior": "other"
+        },
+        {
+          "id": "refund.progress.timeline.expand",
+          "label": "查看详细流程",
+          "behavior": "toggle"
+        }
+      ]
+    },
+    {
+      "id": "/order/:orderId/review",
+      "routePath": "/order/:orderId/review",
+      "component": "ReviewWritePage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "写评价页",
+      "stateCount": 1,
+      "states": [
+        "/order/:orderId/review"
+      ],
+      "actionCount": 5,
+      "actionIds": [
+        "review.stars.set",
+        "review.rider.set",
+        "review.text.input",
+        "review.photo.add",
+        "review.anonymous.toggle"
+      ],
+      "actions": [
+        {
+          "id": "review.stars.set",
+          "label": "满意度星级(qa:Q10)",
+          "behavior": "modify",
+          "scope": "item",
+          "paramsSchema": {
+            "stars": "number"
+          }
+        },
+        {
+          "id": "review.rider.set",
+          "label": "骑手满意/不满意",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "good": "string"
+          }
+        },
+        {
+          "id": "review.text.input",
+          "label": "评价文字",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "review.photo.add",
+          "label": "添加示例图(模拟传图)",
+          "behavior": "modify"
+        },
+        {
+          "id": "review.anonymous.toggle",
+          "label": "匿名评价",
+          "behavior": "toggle"
+        }
+      ]
+    },
+    {
+      "id": "/review-center",
+      "routePath": "/review-center",
+      "component": "ReviewCenterPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "评价中心",
+      "stateCount": 1,
+      "states": [
+        "/review-center?tab=:tab"
+      ],
+      "actionCount": 2,
+      "actionIds": [
+        "reviewcenter.tab.select",
+        "reviewcenter.rules.stub"
+      ],
+      "actions": [
+        {
+          "id": "reviewcenter.tab.select",
+          "label": "待评价/已评价tab",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "tab": "string"
+          }
+        },
+        {
+          "id": "reviewcenter.rules.stub",
+          "label": "规则(暂未开放)",
+          "behavior": "other"
+        }
+      ]
+    },
+    {
+      "id": "/service",
+      "routePath": "/service",
+      "component": "ServiceAgentPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "智能客服/专属管家",
+      "stateCount": 2,
+      "states": [
+        "/service?orderId=:orderId",
+        "/service?panel=refund-reason&orderId=:orderId"
+      ],
+      "actionCount": 5,
+      "actionIds": [
+        "service.refund.open",
+        "service.quickq.send",
+        "service.message.send",
+        "service.human.stub",
+        "service.call.stub"
+      ],
+      "actions": [
+        {
+          "id": "service.refund.open",
+          "label": "申请售后(开原因弹层)",
+          "behavior": "open"
+        },
+        {
+          "id": "service.quickq.send",
+          "label": "快捷问题发送",
+          "behavior": "submit",
+          "scope": "item",
+          "paramsSchema": {
+            "q": "string"
+          }
+        },
+        {
+          "id": "service.message.send",
+          "label": "发送消息(AI回复)",
+          "behavior": "submit"
+        },
+        {
+          "id": "service.human.stub",
+          "label": "召唤人工(暂未开放)",
+          "behavior": "other"
+        },
+        {
+          "id": "service.call.stub",
+          "label": "电话(暂未开放)",
+          "behavior": "other"
+        }
+      ]
+    },
+    {
+      "id": "/coupons",
+      "routePath": "/coupons",
+      "component": "CouponWalletPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "红包卡券页",
+      "stateCount": 1,
+      "states": [
+        "/coupons?tab=:tab"
+      ],
+      "actionCount": 4,
+      "actionIds": [
+        "coupon.tab.select",
+        "coupon.filter.select",
+        "coupon.condition.expand",
+        "coupon.tools.stub"
+      ],
+      "actions": [
+        {
+          "id": "coupon.tab.select",
+          "label": "红包/已购券/卡tab",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "tab": "string"
+          }
+        },
+        {
+          "id": "coupon.filter.select",
+          "label": "红包类型筛选",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "filter": "string"
+          }
+        },
+        {
+          "id": "coupon.condition.expand",
+          "label": "使用条件展开",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "couponId": "string"
+          }
+        },
+        {
+          "id": "coupon.tools.stub",
+          "label": "底部工具栏(暂未开放)",
+          "behavior": "other"
+        }
+      ]
+    },
+    {
+      "id": "/address/select",
+      "routePath": "/address/select",
+      "component": "AddressSelectPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "选择收货地址",
+      "stateCount": 1,
+      "states": [
+        "/address/select?from=:from"
+      ],
+      "actionCount": 7,
+      "actionIds": [
+        "address.select.pin",
+        "address.search.input",
+        "address.search.pick",
+        "address.city.select",
+        "address.relocate.stub",
+        "address.batchclear.stub",
+        "address.tip.close"
+      ],
+      "actions": [
+        {
+          "id": "address.select.pin",
+          "label": "置顶地址",
+          "behavior": "modify",
+          "scope": "item",
+          "paramsSchema": {
+            "addressId": "string"
+          }
+        },
+        {
+          "id": "address.search.input",
+          "label": "搜索地址输入",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "address.search.pick",
+          "label": "选择联想地址",
+          "behavior": "submit",
+          "scope": "item",
+          "paramsSchema": {
+            "poi": "string"
+          }
+        },
+        {
+          "id": "address.city.select",
+          "label": "切换城市",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "city": "string"
+          }
+        },
+        {
+          "id": "address.relocate.stub",
+          "label": "重新定位(暂未开放)",
+          "behavior": "other"
+        },
+        {
+          "id": "address.batchclear.stub",
+          "label": "批量清除(暂未开放)",
+          "behavior": "other"
+        },
+        {
+          "id": "address.tip.close",
+          "label": "关闭清理提示条",
+          "behavior": "close"
+        }
+      ]
+    },
+    {
+      "id": "/settings/address",
+      "routePath": "/settings/address",
+      "component": "AddressListPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "收货地址管理",
+      "stateCount": 1,
+      "states": [
+        "/settings/address"
+      ],
+      "actionCount": 0,
+      "actionIds": [],
+      "actions": []
+    },
+    {
+      "id": "/address/edit",
+      "routePath": "/address/edit",
+      "component": "AddressEditPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "新增/修改地址表单",
+      "stateCount": 3,
+      "states": [
+        "/address/edit?id=:id",
+        "/address/edit?panel=poi&id=:id",
+        "/address/edit?panel=delconfirm&id=:id"
+      ],
+      "actionCount": 6,
+      "actionIds": [
+        "address.edit.poi.open",
+        "address.edit.input",
+        "address.edit.gender",
+        "address.edit.tag",
+        "address.edit.delete",
+        "address.edit.smartpaste.stub"
+      ],
+      "actions": [
+        {
+          "id": "address.edit.poi.open",
+          "label": "选择收货地址(POI列表)",
+          "behavior": "open"
+        },
+        {
+          "id": "address.edit.input",
+          "label": "表单输入",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "address.edit.gender",
+          "label": "先生/女士",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "gender": "string"
+          }
+        },
+        {
+          "id": "address.edit.tag",
+          "label": "地址标签",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "tag": "string"
+          }
+        },
+        {
+          "id": "address.edit.delete",
+          "label": "删除地址(确认弹窗)",
+          "behavior": "submit"
+        },
+        {
+          "id": "address.edit.smartpaste.stub",
+          "label": "粘贴识别(暂未开放)",
+          "behavior": "other"
+        }
+      ]
+    },
+    {
+      "id": "/settings",
+      "routePath": "/settings",
+      "component": "SettingsPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "设置页",
+      "stateCount": 1,
+      "states": [
+        "/settings"
+      ],
+      "actionCount": 2,
+      "actionIds": [
+        "settings.misc.stub",
+        "settings.elder.stub"
+      ],
+      "actions": [
+        {
+          "id": "settings.misc.stub",
+          "label": "其余设置项(暂未开放)",
+          "behavior": "other"
+        },
+        {
+          "id": "settings.elder.stub",
+          "label": "长辈模式(暂未开放)",
+          "behavior": "other"
+        }
+      ]
+    },
+    {
+      "id": "/settings/profile",
+      "routePath": "/settings/profile",
+      "component": "ProfilePage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "个人资料编辑(推断页)",
+      "stateCount": 1,
+      "states": [
+        "/settings/profile"
+      ],
+      "actionCount": 2,
+      "actionIds": [
+        "profile.edit.input",
+        "profile.avatar.pick"
+      ],
+      "actions": [
+        {
+          "id": "profile.edit.input",
+          "label": "昵称/签名编辑",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "profile.avatar.pick",
+          "label": "更换头像",
+          "behavior": "modify",
+          "scope": "item",
+          "paramsSchema": {
+            "avatar": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/settings/general",
+      "routePath": "/settings/general",
+      "component": "GeneralSettingsPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "通用设置(推断页)",
+      "stateCount": 1,
+      "states": [
+        "/settings/general"
+      ],
+      "actionCount": 2,
+      "actionIds": [
+        "general.cache.clear",
+        "general.imgquality.select"
+      ],
+      "actions": [
+        {
+          "id": "general.cache.clear",
+          "label": "清理缓存",
+          "behavior": "submit"
+        },
+        {
+          "id": "general.imgquality.select",
+          "label": "图片质量",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "quality": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/settings/security",
+      "routePath": "/settings/security",
+      "component": "SecurityPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "账号与安全",
+      "stateCount": 1,
+      "states": [
+        "/settings/security"
+      ],
+      "actionCount": 2,
+      "actionIds": [
+        "security.switch.toggle",
+        "security.misc.stub"
+      ],
+      "actions": [
+        {
+          "id": "security.switch.toggle",
+          "label": "安全开关(面容/登录密码/支付密码)",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "which": "string"
+          }
+        },
+        {
+          "id": "security.misc.stub",
+          "label": "注销账号等(暂未开放)",
+          "behavior": "other"
+        }
+      ]
+    },
+    {
+      "id": "/settings/payment",
+      "routePath": "/settings/payment",
+      "component": "PaymentSettingsPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "支付设置",
+      "stateCount": 1,
+      "states": [
+        "/settings/payment"
+      ],
+      "actionCount": 2,
+      "actionIds": [
+        "paymentset.nopwd.toggle",
+        "paymentset.misc.stub"
+      ],
+      "actions": [
+        {
+          "id": "paymentset.nopwd.toggle",
+          "label": "免密支付开关",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "which": "string"
+          }
+        },
+        {
+          "id": "paymentset.misc.stub",
+          "label": "去设置/查看(暂未开放)",
+          "behavior": "other"
+        }
+      ]
+    },
+    {
+      "id": "/settings/notifications",
+      "routePath": "/settings/notifications",
+      "component": "NotificationSettingsPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "消息通知设置",
+      "stateCount": 1,
+      "states": [
+        "/settings/notifications"
+      ],
+      "actionCount": 4,
+      "actionIds": [
+        "notif.banner.toggle",
+        "notif.channel.toggle",
+        "notif.clearall.confirm",
+        "notif.misc.stub"
+      ],
+      "actions": [
+        {
+          "id": "notif.banner.toggle",
+          "label": "横幅通知开关",
+          "behavior": "toggle"
+        },
+        {
+          "id": "notif.channel.toggle",
+          "label": "各通知渠道开关",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "channel": "string"
+          }
+        },
+        {
+          "id": "notif.clearall.confirm",
+          "label": "清空消息列表",
+          "behavior": "submit"
+        },
+        {
+          "id": "notif.misc.stub",
+          "label": "其余通知项(暂未开放)",
+          "behavior": "other"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "*",
+      "target": "/",
+      "transitions": [
+        "tabbar.home-open",
+        "moremenu.home-open"
+      ],
+      "type": "navigation",
+      "label": "tabbar.home-open, moremenu.home-open",
+      "id": "tabbar.home-open"
+    },
+    {
+      "source": "*",
+      "target": "/daily-redpacket",
+      "transitions": [
+        "tabbar.redpacket-open"
+      ],
+      "type": "navigation",
+      "label": "tabbar.redpacket-open",
+      "id": "tabbar.redpacket-open"
+    },
+    {
+      "source": "*",
+      "target": "/messages",
+      "transitions": [
+        "tabbar.message-open",
+        "moremenu.message-open"
+      ],
+      "type": "navigation",
+      "label": "tabbar.message-open, moremenu.message-open",
+      "id": "tabbar.message-open"
+    },
+    {
+      "source": "*",
+      "target": "/cart",
+      "transitions": [
+        "tabbar.cart-open",
+        "moremenu.cart-open"
+      ],
+      "type": "navigation",
+      "label": "tabbar.cart-open, moremenu.cart-open",
+      "id": "tabbar.cart-open"
+    },
+    {
+      "source": "*",
+      "target": "/mine",
+      "transitions": [
+        "tabbar.mine-open",
+        "moremenu.mine-open"
+      ],
+      "type": "navigation",
+      "label": "tabbar.mine-open, moremenu.mine-open",
+      "id": "tabbar.mine-open"
+    },
+    {
+      "source": "*",
+      "target": "/service",
+      "transitions": [
+        "moremenu.service-open"
+      ],
+      "type": "navigation",
+      "label": "moremenu.service-open",
+      "id": "moremenu.service-open"
+    },
+    {
+      "source": "*",
+      "target": "/shop/:shopId",
+      "transitions": [
+        "moremenu.recentshop-open"
+      ],
+      "type": "navigation",
+      "label": "moremenu.recentshop-open",
+      "id": "moremenu.recentshop-open"
+    },
+    {
+      "source": "/",
+      "target": "/address/select",
+      "transitions": [
+        "home.address-open"
+      ],
+      "type": "navigation",
+      "label": "home.address-open",
+      "id": "home.address-open"
+    },
+    {
+      "source": "/",
+      "target": "/search",
+      "transitions": [
+        "home.search-open"
+      ],
+      "type": "navigation",
+      "label": "home.search-open",
+      "id": "home.search-open"
+    },
+    {
+      "source": "/",
+      "target": "/channel/food",
+      "transitions": [
+        "home.channel.food-open"
+      ],
+      "type": "navigation",
+      "label": "home.channel.food-open",
+      "id": "home.channel.food-open"
+    },
+    {
+      "source": "/",
+      "target": "/channel/market",
+      "transitions": [
+        "home.channel.market-open"
+      ],
+      "type": "navigation",
+      "label": "home.channel.market-open",
+      "id": "home.channel.market-open"
+    },
+    {
+      "source": "/",
+      "target": "/channel/medicine",
+      "transitions": [
+        "home.channel.medicine-open"
+      ],
+      "type": "navigation",
+      "label": "home.channel.medicine-open",
+      "id": "home.channel.medicine-open"
+    },
+    {
+      "source": "/",
+      "target": "/channel/fruit",
+      "transitions": [
+        "home.channel.fruit-open"
+      ],
+      "type": "navigation",
+      "label": "home.channel.fruit-open",
+      "id": "home.channel.fruit-open"
+    },
+    {
+      "source": "/",
+      "target": "/hotdeals",
+      "transitions": [
+        "home.kingkong.hotdeals-open",
+        "home.hotdeals-open"
+      ],
+      "type": "navigation",
+      "label": "home.kingkong.hotdeals-open, home.hotdeals-open",
+      "id": "home.kingkong.hotdeals-open"
+    },
+    {
+      "source": "/",
+      "target": "/shop/:shopId",
+      "transitions": [
+        "home.shop-open"
+      ],
+      "type": "navigation",
+      "label": "home.shop-open",
+      "id": "home.shop-open"
+    },
+    {
+      "source": "/hotdeals",
+      "target": "/shop/:shopId",
+      "transitions": [
+        "hotdeals.shop-open",
+        "hotdeals.item-open"
+      ],
+      "type": "navigation",
+      "label": "hotdeals.shop-open, hotdeals.item-open",
+      "id": "hotdeals.shop-open"
+    },
+    {
+      "source": "/channel/food",
+      "target": "/search",
+      "transitions": [
+        "channel.search-open"
+      ],
+      "type": "navigation",
+      "label": "channel.search-open",
+      "id": "channel.search-open"
+    },
+    {
+      "source": "/channel/market",
+      "target": "/search",
+      "transitions": [
+        "channel.search-open"
+      ],
+      "type": "navigation",
+      "label": "channel.search-open",
+      "id": "channel.search-open"
+    },
+    {
+      "source": "/channel/fruit",
+      "target": "/search",
+      "transitions": [
+        "channel.search-open"
+      ],
+      "type": "navigation",
+      "label": "channel.search-open",
+      "id": "channel.search-open"
+    },
+    {
+      "source": "/channel/food",
+      "target": "/shop/:shopId",
+      "transitions": [
+        "channel.shop-open",
+        "channel.shopitem-open",
+        "channel.shopmore-open"
+      ],
+      "type": "navigation",
+      "label": "channel.shop-open, channel.shopitem-open, channel.shopmore-open",
+      "id": "channel.shop-open"
+    },
+    {
+      "source": "/channel/market",
+      "target": "/retail/:shopId",
+      "transitions": [
+        "channel.market.deal-open",
+        "channel.market.shop-open"
+      ],
+      "type": "navigation",
+      "label": "channel.market.deal-open, channel.market.shop-open",
+      "id": "channel.market.deal-open"
+    },
+    {
+      "source": "/channel/fruit",
+      "target": "/retail/:shopId",
+      "transitions": [
+        "channel.fruit.shop-open",
+        "channel.fruit.item-open"
+      ],
+      "type": "navigation",
+      "label": "channel.fruit.shop-open, channel.fruit.item-open",
+      "id": "channel.fruit.shop-open"
+    },
+    {
+      "source": "/channel/medicine",
+      "target": "/channel/medicine/cat",
+      "transitions": [
+        "medicine.category-open"
+      ],
+      "type": "navigation",
+      "label": "medicine.category-open",
+      "id": "medicine.category-open"
+    },
+    {
+      "source": "/channel/medicine",
+      "target": "/retail/:shopId",
+      "transitions": [
+        "medicine.pharmacy-open"
+      ],
+      "type": "navigation",
+      "label": "medicine.pharmacy-open",
+      "id": "medicine.pharmacy-open"
+    },
+    {
+      "source": "/channel/medicine",
+      "target": "/channel/medicine/search",
+      "transitions": [
+        "medicine.search-open"
+      ],
+      "type": "navigation",
+      "label": "medicine.search-open",
+      "id": "medicine.search-open"
+    },
+    {
+      "source": "/channel/medicine/cat",
+      "target": "/channel/medicine/search",
+      "transitions": [
+        "medcat.search-open"
+      ],
+      "type": "navigation",
+      "label": "medcat.search-open",
+      "id": "medcat.search-open"
+    },
+    {
+      "source": "/channel/medicine/cat",
+      "target": "/drug/:drugId",
+      "transitions": [
+        "medcat.drug-open"
+      ],
+      "type": "navigation",
+      "label": "medcat.drug-open",
+      "id": "medcat.drug-open"
+    },
+    {
+      "source": "/channel/medicine/search",
+      "target": "/drug/:drugId",
+      "transitions": [
+        "medsearch.drug-open"
+      ],
+      "type": "navigation",
+      "label": "medsearch.drug-open",
+      "id": "medsearch.drug-open"
+    },
+    {
+      "source": "/drug/:drugId",
+      "target": "/retail/:shopId",
+      "transitions": [
+        "drug.pharmacy-open"
+      ],
+      "type": "navigation",
+      "label": "drug.pharmacy-open",
+      "id": "drug.pharmacy-open"
+    },
+    {
+      "source": "/daily-redpacket",
+      "target": "/coupons",
+      "transitions": [
+        "redpacket.wallet-open"
+      ],
+      "type": "navigation",
+      "label": "redpacket.wallet-open",
+      "id": "redpacket.wallet-open"
+    },
+    {
+      "source": "/daily-redpacket",
+      "target": "/shop/:shopId",
+      "transitions": [
+        "redpacket.shop-open",
+        "redpacket.item-open"
+      ],
+      "type": "navigation",
+      "label": "redpacket.shop-open, redpacket.item-open",
+      "id": "redpacket.shop-open"
+    },
+    {
+      "source": "/search",
+      "target": "/search/result",
+      "transitions": [
+        "search.submit",
+        "search.history-open",
+        "search.discover-open"
+      ],
+      "type": "navigation",
+      "label": "search.submit, search.history-open, search.discover-open",
+      "id": "search.submit"
+    },
+    {
+      "source": "/search",
+      "target": "/shop/:shopId",
+      "transitions": [
+        "search.rankshop-open"
+      ],
+      "type": "navigation",
+      "label": "search.rankshop-open",
+      "id": "search.rankshop-open"
+    },
+    {
+      "source": "/search/result",
+      "target": "/retail/:shopId",
+      "transitions": [
+        "searchresult.shop-open",
+        "searchresult.item-open",
+        "searchresult.coupon-open"
+      ],
+      "type": "navigation",
+      "label": "searchresult.shop-open, searchresult.item-open, searchresult.coupon-open",
+      "id": "searchresult.shop-open"
+    },
+    {
+      "source": "/search/result",
+      "target": "/shop/:shopId",
+      "transitions": [
+        "searchresult.restshop-open",
+        "searchresult.restitem-open"
+      ],
+      "type": "navigation",
+      "label": "searchresult.restshop-open, searchresult.restitem-open",
+      "id": "searchresult.restshop-open"
+    },
+    {
+      "source": "/search/result",
+      "target": "/search",
+      "transitions": [
+        "searchresult.research"
+      ],
+      "type": "navigation",
+      "label": "searchresult.research",
+      "id": "searchresult.research"
+    },
+    {
+      "source": "/shop/:shopId",
+      "target": "/chat/shop/:shopId",
+      "transitions": [
+        "shop.chat-open"
+      ],
+      "type": "navigation",
+      "label": "shop.chat-open",
+      "id": "shop.chat-open"
+    },
+    {
+      "source": "/shop/:shopId",
+      "target": "/shop/:shopId/group",
+      "transitions": [
+        "shop.group-open"
+      ],
+      "type": "navigation",
+      "label": "shop.group-open",
+      "id": "shop.group-open"
+    },
+    {
+      "source": "/shop/:shopId",
+      "target": "/checkout",
+      "transitions": [
+        "shop.checkout-open"
+      ],
+      "type": "navigation",
+      "label": "shop.checkout-open",
+      "id": "shop.checkout-open"
+    },
+    {
+      "source": "/retail/:shopId",
+      "target": "/checkout",
+      "transitions": [
+        "retail.checkout-open"
+      ],
+      "type": "navigation",
+      "label": "retail.checkout-open",
+      "id": "retail.checkout-open"
+    },
+    {
+      "source": "/shop/:shopId/group",
+      "target": "/shop/:shopId",
+      "transitions": [
+        "group.order-open",
+        "group.cancel"
+      ],
+      "type": "navigation",
+      "label": "group.order-open, group.cancel",
+      "id": "group.order-open"
+    },
+    {
+      "source": "/chat/shop/:shopId",
+      "target": "/shop/:shopId",
+      "transitions": [
+        "shopchat.shop-open"
+      ],
+      "type": "navigation",
+      "label": "shopchat.shop-open",
+      "id": "shopchat.shop-open"
+    },
+    {
+      "source": "/checkout",
+      "target": "/address/select",
+      "transitions": [
+        "checkout.address-open"
+      ],
+      "type": "navigation",
+      "label": "checkout.address-open",
+      "id": "checkout.address-open"
+    },
+    {
+      "source": "/checkout",
+      "target": "/checkout/coupons",
+      "transitions": [
+        "checkout.platformcoupon-open",
+        "checkout.shopcoupon-open"
+      ],
+      "type": "navigation",
+      "label": "checkout.platformcoupon-open, checkout.shopcoupon-open",
+      "id": "checkout.platformcoupon-open"
+    },
+    {
+      "source": "/checkout",
+      "target": "/checkout/remark",
+      "transitions": [
+        "checkout.remark-open"
+      ],
+      "type": "navigation",
+      "label": "checkout.remark-open",
+      "id": "checkout.remark-open"
+    },
+    {
+      "source": "/checkout/coupons",
+      "target": "/checkout",
+      "transitions": [
+        "checkout.coupon.confirm"
+      ],
+      "type": "navigation",
+      "label": "checkout.coupon.confirm",
+      "id": "checkout.coupon.confirm"
+    },
+    {
+      "source": "/checkout/remark",
+      "target": "/checkout",
+      "transitions": [
+        "checkout.remark.done"
+      ],
+      "type": "navigation",
+      "label": "checkout.remark.done",
+      "id": "checkout.remark.done"
+    },
+    {
+      "source": "/checkout",
+      "target": "/order/:orderId/success",
+      "transitions": [
+        "checkout.pay.success"
+      ],
+      "type": "navigation",
+      "label": "checkout.pay.success",
+      "id": "checkout.pay.success"
+    },
+    {
+      "source": "/order/:orderId",
+      "target": "/order/:orderId/success",
+      "transitions": [
+        "checkout.pay.success"
+      ],
+      "type": "navigation",
+      "label": "checkout.pay.success",
+      "id": "checkout.pay.success"
+    },
+    {
+      "source": "/checkout",
+      "target": "/order/:orderId",
+      "transitions": [
+        "checkout.pay.abandon"
+      ],
+      "type": "navigation",
+      "label": "checkout.pay.abandon",
+      "id": "checkout.pay.abandon"
+    },
+    {
+      "source": "/checkout",
+      "target": "/",
+      "transitions": [
+        "checkout.exit-home"
+      ],
+      "type": "navigation",
+      "label": "checkout.exit-home",
+      "id": "checkout.exit-home"
+    },
+    {
+      "source": "/checkout",
+      "target": "/mine",
+      "transitions": [
+        "checkout.exit-mine"
+      ],
+      "type": "navigation",
+      "label": "checkout.exit-mine",
+      "id": "checkout.exit-mine"
+    },
+    {
+      "source": "/address/select",
+      "target": "/checkout",
+      "transitions": [
+        "address.select.pick"
+      ],
+      "type": "navigation",
+      "label": "address.select.pick",
+      "id": "address.select.pick"
+    },
+    {
+      "source": "/address/select",
+      "target": "/address/edit",
+      "transitions": [
+        "address.select.edit-open",
+        "address.select.add-open"
+      ],
+      "type": "navigation",
+      "label": "address.select.edit-open, address.select.add-open",
+      "id": "address.select.edit-open"
+    },
+    {
+      "source": "/settings/address",
+      "target": "/address/edit",
+      "transitions": [
+        "address.list.add-open",
+        "address.list.edit-open"
+      ],
+      "type": "navigation",
+      "label": "address.list.add-open, address.list.edit-open",
+      "id": "address.list.add-open"
+    },
+    {
+      "source": "/address/edit",
+      "target": "/settings/address",
+      "transitions": [
+        "address.edit.save"
+      ],
+      "type": "navigation",
+      "label": "address.edit.save",
+      "id": "address.edit.save"
+    },
+    {
+      "source": "/orders",
+      "target": "/order/:orderId",
+      "transitions": [
+        "order.list.detail-open"
+      ],
+      "type": "navigation",
+      "label": "order.list.detail-open",
+      "id": "order.list.detail-open"
+    },
+    {
+      "source": "/orders",
+      "target": "/shop/:shopId",
+      "transitions": [
+        "order.list.shop-open",
+        "order.list.reorder"
+      ],
+      "type": "navigation",
+      "label": "order.list.shop-open, order.list.reorder",
+      "id": "order.list.shop-open"
+    },
+    {
+      "source": "/orders",
+      "target": "/order/:orderId/review",
+      "transitions": [
+        "order.list.review-open"
+      ],
+      "type": "navigation",
+      "label": "order.list.review-open",
+      "id": "order.list.review-open"
+    },
+    {
+      "source": "/orders",
+      "target": "/order/:orderId/refund",
+      "transitions": [
+        "order.list.refund-open"
+      ],
+      "type": "navigation",
+      "label": "order.list.refund-open",
+      "id": "order.list.refund-open"
+    },
+    {
+      "source": "/order/:orderId",
+      "target": "/shop/:shopId",
+      "transitions": [
+        "order.detail.reorder",
+        "order.detail.shop-open"
+      ],
+      "type": "navigation",
+      "label": "order.detail.reorder, order.detail.shop-open",
+      "id": "order.detail.reorder"
+    },
+    {
+      "source": "/order/:orderId",
+      "target": "/order/:orderId/review",
+      "transitions": [
+        "order.detail.review-open"
+      ],
+      "type": "navigation",
+      "label": "order.detail.review-open",
+      "id": "order.detail.review-open"
+    },
+    {
+      "source": "/order/:orderId",
+      "target": "/chat/shop/:shopId",
+      "transitions": [
+        "order.detail.shopchat-open",
+        "refund.contact.chat"
+      ],
+      "type": "navigation",
+      "label": "order.detail.shopchat-open, refund.contact.chat",
+      "id": "order.detail.shopchat-open"
+    },
+    {
+      "source": "/order/:orderId",
+      "target": "/chat/rider/:orderId",
+      "transitions": [
+        "order.detail.riderchat-open"
+      ],
+      "type": "navigation",
+      "label": "order.detail.riderchat-open",
+      "id": "order.detail.riderchat-open"
+    },
+    {
+      "source": "/order/:orderId",
+      "target": "/service",
+      "transitions": [
+        "order.detail.service-open",
+        "order.detail.agent-open"
+      ],
+      "type": "navigation",
+      "label": "order.detail.service-open, order.detail.agent-open",
+      "id": "order.detail.service-open"
+    },
+    {
+      "source": "/order/:orderId",
+      "target": "/retail/:shopId",
+      "transitions": [
+        "order.detail.rec-open"
+      ],
+      "type": "navigation",
+      "label": "order.detail.rec-open",
+      "id": "order.detail.rec-open"
+    },
+    {
+      "source": "/order/:orderId",
+      "target": "/order/:orderId/cancel-survey",
+      "transitions": [
+        "order.cancel.confirm",
+        "order.unpaid.cancel"
+      ],
+      "type": "navigation",
+      "label": "order.cancel.confirm, order.unpaid.cancel",
+      "id": "order.cancel.confirm"
+    },
+    {
+      "source": "/order/:orderId",
+      "target": "/order/:orderId/refund",
+      "transitions": [
+        "order.detail.refund-open"
+      ],
+      "type": "navigation",
+      "label": "order.detail.refund-open",
+      "id": "order.detail.refund-open"
+    },
+    {
+      "source": "/order/:orderId",
+      "target": "/channel/food",
+      "transitions": [
+        "order.similar-open"
+      ],
+      "type": "navigation",
+      "label": "order.similar-open",
+      "id": "order.similar-open"
+    },
+    {
+      "source": "/order/:orderId/cancel-survey",
+      "target": "/order/:orderId",
+      "transitions": [
+        "cancel.survey.submit"
+      ],
+      "type": "navigation",
+      "label": "cancel.survey.submit",
+      "id": "cancel.survey.submit"
+    },
+    {
+      "source": "/order/:orderId",
+      "target": "/order/:orderId/refund/apply",
+      "transitions": [
+        "refund.reason.next"
+      ],
+      "type": "navigation",
+      "label": "refund.reason.next",
+      "id": "refund.reason.next"
+    },
+    {
+      "source": "/service",
+      "target": "/order/:orderId/refund/apply",
+      "transitions": [
+        "refund.reason.next"
+      ],
+      "type": "navigation",
+      "label": "refund.reason.next",
+      "id": "refund.reason.next"
+    },
+    {
+      "source": "/order/:orderId/refund/apply",
+      "target": "/chat/shop/:shopId",
+      "transitions": [
+        "refund.contact.chat"
+      ],
+      "type": "navigation",
+      "label": "refund.contact.chat",
+      "id": "refund.contact.chat"
+    },
+    {
+      "source": "/service",
+      "target": "/chat/shop/:shopId",
+      "transitions": [
+        "refund.contact.chat"
+      ],
+      "type": "navigation",
+      "label": "refund.contact.chat",
+      "id": "refund.contact.chat"
+    },
+    {
+      "source": "/order/:orderId/refund/apply",
+      "target": "/order/:orderId/refund",
+      "transitions": [
+        "refund.form.submit"
+      ],
+      "type": "navigation",
+      "label": "refund.form.submit",
+      "id": "refund.form.submit"
+    },
+    {
+      "source": "/order/:orderId/refund",
+      "target": "/coupons",
+      "transitions": [
+        "refund.progress.wallet-open"
+      ],
+      "type": "navigation",
+      "label": "refund.progress.wallet-open",
+      "id": "refund.progress.wallet-open"
+    },
+    {
+      "source": "/order/:orderId/success",
+      "target": "/order/:orderId",
+      "transitions": [
+        "paysuccess.order-open"
+      ],
+      "type": "navigation",
+      "label": "paysuccess.order-open",
+      "id": "paysuccess.order-open"
+    },
+    {
+      "source": "/order/:orderId/success",
+      "target": "/",
+      "transitions": [
+        "paysuccess.home-open"
+      ],
+      "type": "navigation",
+      "label": "paysuccess.home-open",
+      "id": "paysuccess.home-open"
+    },
+    {
+      "source": "/order/:orderId/success",
+      "target": "/retail/:shopId",
+      "transitions": [
+        "paysuccess.rec-open"
+      ],
+      "type": "navigation",
+      "label": "paysuccess.rec-open",
+      "id": "paysuccess.rec-open"
+    },
+    {
+      "source": "/order/:orderId/review",
+      "target": "/review-center",
+      "transitions": [
+        "review.submit"
+      ],
+      "type": "navigation",
+      "label": "review.submit",
+      "id": "review.submit"
+    },
+    {
+      "source": "/review-center",
+      "target": "/order/:orderId/review",
+      "transitions": [
+        "reviewcenter.review-open",
+        "reviewcenter.task-open"
+      ],
+      "type": "navigation",
+      "label": "reviewcenter.review-open, reviewcenter.task-open",
+      "id": "reviewcenter.review-open"
+    },
+    {
+      "source": "/service",
+      "target": "/order/:orderId",
+      "transitions": [
+        "service.order-open"
+      ],
+      "type": "navigation",
+      "label": "service.order-open",
+      "id": "service.order-open"
+    },
+    {
+      "source": "/service",
+      "target": "/orders",
+      "transitions": [
+        "service.orderpick-open"
+      ],
+      "type": "navigation",
+      "label": "service.orderpick-open",
+      "id": "service.orderpick-open"
+    },
+    {
+      "source": "/messages",
+      "target": "/chat/rider/:orderId",
+      "transitions": [
+        "message.rider-open"
+      ],
+      "type": "navigation",
+      "label": "message.rider-open",
+      "id": "message.rider-open"
+    },
+    {
+      "source": "/messages",
+      "target": "/chat/shop/:shopId",
+      "transitions": [
+        "message.shop-open"
+      ],
+      "type": "navigation",
+      "label": "message.shop-open",
+      "id": "message.shop-open"
+    },
+    {
+      "source": "/messages",
+      "target": "/order/:orderId",
+      "transitions": [
+        "message.order-open"
+      ],
+      "type": "navigation",
+      "label": "message.order-open",
+      "id": "message.order-open"
+    },
+    {
+      "source": "/messages",
+      "target": "/settings/notifications",
+      "transitions": [
+        "message.settings-open"
+      ],
+      "type": "navigation",
+      "label": "message.settings-open",
+      "id": "message.settings-open"
+    },
+    {
+      "source": "/chat/rider/:orderId",
+      "target": "/order/:orderId",
+      "transitions": [
+        "riderchat.order-open"
+      ],
+      "type": "navigation",
+      "label": "riderchat.order-open",
+      "id": "riderchat.order-open"
+    },
+    {
+      "source": "/mine",
+      "target": "/settings",
+      "transitions": [
+        "mine.settings-open"
+      ],
+      "type": "navigation",
+      "label": "mine.settings-open",
+      "id": "mine.settings-open"
+    },
+    {
+      "source": "/mine",
+      "target": "/coupons",
+      "transitions": [
+        "mine.coupons-open"
+      ],
+      "type": "navigation",
+      "label": "mine.coupons-open",
+      "id": "mine.coupons-open"
+    },
+    {
+      "source": "/mine",
+      "target": "/orders",
+      "transitions": [
+        "mine.orders-open"
+      ],
+      "type": "navigation",
+      "label": "mine.orders-open",
+      "id": "mine.orders-open"
+    },
+    {
+      "source": "/mine",
+      "target": "/settings/address",
+      "transitions": [
+        "mine.address-open"
+      ],
+      "type": "navigation",
+      "label": "mine.address-open",
+      "id": "mine.address-open"
+    },
+    {
+      "source": "/mine",
+      "target": "/service",
+      "transitions": [
+        "mine.service-open"
+      ],
+      "type": "navigation",
+      "label": "mine.service-open",
+      "id": "mine.service-open"
+    },
+    {
+      "source": "/mine",
+      "target": "/shop/:shopId",
+      "transitions": [
+        "mine.favshop-open",
+        "mine.rec-open"
+      ],
+      "type": "navigation",
+      "label": "mine.favshop-open, mine.rec-open",
+      "id": "mine.favshop-open"
+    },
+    {
+      "source": "/settings",
+      "target": "/settings/profile",
+      "transitions": [
+        "settings.profile-open"
+      ],
+      "type": "navigation",
+      "label": "settings.profile-open",
+      "id": "settings.profile-open"
+    },
+    {
+      "source": "/settings",
+      "target": "/settings/address",
+      "transitions": [
+        "settings.address-open"
+      ],
+      "type": "navigation",
+      "label": "settings.address-open",
+      "id": "settings.address-open"
+    },
+    {
+      "source": "/settings",
+      "target": "/settings/security",
+      "transitions": [
+        "settings.security-open"
+      ],
+      "type": "navigation",
+      "label": "settings.security-open",
+      "id": "settings.security-open"
+    },
+    {
+      "source": "/settings",
+      "target": "/settings/payment",
+      "transitions": [
+        "settings.payment-open"
+      ],
+      "type": "navigation",
+      "label": "settings.payment-open",
+      "id": "settings.payment-open"
+    },
+    {
+      "source": "/settings",
+      "target": "/settings/notifications",
+      "transitions": [
+        "settings.notif-open"
+      ],
+      "type": "navigation",
+      "label": "settings.notif-open",
+      "id": "settings.notif-open"
+    },
+    {
+      "source": "/settings",
+      "target": "/settings/general",
+      "transitions": [
+        "settings.general-open"
+      ],
+      "type": "navigation",
+      "label": "settings.general-open",
+      "id": "settings.general-open"
+    },
+    {
+      "source": "/coupons",
+      "target": "/channel/food",
+      "transitions": [
+        "coupon.use-open"
+      ],
+      "type": "navigation",
+      "label": "coupon.use-open",
+      "id": "coupon.use-open"
+    },
+    {
+      "source": "/cart",
+      "target": "/shop/:shopId",
+      "transitions": [
+        "cart.shop-open"
+      ],
+      "type": "navigation",
+      "label": "cart.shop-open",
+      "id": "cart.shop-open"
+    },
+    {
+      "source": "/cart",
+      "target": "/checkout",
+      "transitions": [
+        "cart.checkout-open"
+      ],
+      "type": "navigation",
+      "label": "cart.checkout-open",
+      "id": "cart.checkout-open"
+    },
+    {
+      "source": "/cart",
+      "target": "/address/select",
+      "transitions": [
+        "cart.address-open"
+      ],
+      "type": "navigation",
+      "label": "cart.address-open",
+      "id": "cart.address-open"
+    }
+  ]
+}

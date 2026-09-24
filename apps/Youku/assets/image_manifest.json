@@ -1,0 +1,761 @@
+{
+  "note": "优酷复刻图片素材清单(缺失时 UI 回落 components/Img.tsx 的深色 SVG 占位)。prompt 末尾统一追加『无任何文字无水印』;海报不得含真实明星肖像/真实片名(design-tokens.md 批量生图需求清单)。",
+  "categories": {
+    "poster_2x3": "影视海报·竖版 2:3",
+    "still_16x9": "横版剧照 16:9",
+    "shorts_cover_16x9": "短视频/短剧封面",
+    "avatar_round": "圆形头像"
+  },
+  "images": [
+    {
+      "file": "apps/Youku/assets/posters/m_xunyao1.png",
+      "category": "poster_2x3",
+      "prompt": "奇幻喜剧电影海报,古装青年与毛茸茸小妖同框,竹林客栈背景,电影质感"
+    },
+    {
+      "file": "apps/Youku/assets/stills/m_xunyao1.png",
+      "category": "still_16x9",
+      "prompt": "奇幻喜剧电影海报,古装青年与毛茸茸小妖同框,竹林客栈背景,电影质感"
+    },
+    {
+      "file": "apps/Youku/assets/posters/m_xunyao2.png",
+      "category": "poster_2x3",
+      "prompt": "奇幻喜剧电影海报续集,小妖在灯笼夜市中奔跑,暖色调"
+    },
+    {
+      "file": "apps/Youku/assets/stills/m_xunyao2.png",
+      "category": "still_16x9",
+      "prompt": "奇幻喜剧电影海报续集,小妖在灯笼夜市中奔跑,暖色调"
+    },
+    {
+      "file": "apps/Youku/assets/posters/m_xunyao3.png",
+      "category": "poster_2x3",
+      "prompt": "奇幻电影海报,发光的巨大石门与群妖剪影,史诗感"
+    },
+    {
+      "file": "apps/Youku/assets/stills/m_xunyao3.png",
+      "category": "still_16x9",
+      "prompt": "奇幻电影海报,发光的巨大石门与群妖剪影,史诗感"
+    },
+    {
+      "file": "apps/Youku/assets/posters/m_xueshan3.png",
+      "category": "poster_2x3",
+      "prompt": "3D动画电影海报,胖棕熊摆武术招式,雪山背景,明亮色彩"
+    },
+    {
+      "file": "apps/Youku/assets/stills/m_xueshan3.png",
+      "category": "still_16x9",
+      "prompt": "3D动画电影海报,胖棕熊摆武术招式,雪山背景,明亮色彩"
+    },
+    {
+      "file": "apps/Youku/assets/posters/m_yueguang.png",
+      "category": "poster_2x3",
+      "prompt": "复古奇幻电影海报,月光下古装侠客侧影与宫殿,蓝紫色调"
+    },
+    {
+      "file": "apps/Youku/assets/stills/m_yueguang.png",
+      "category": "still_16x9",
+      "prompt": "复古奇幻电影海报,月光下古装侠客侧影与宫殿,蓝紫色调"
+    },
+    {
+      "file": "apps/Youku/assets/posters/m_weicheng.png",
+      "category": "poster_2x3",
+      "prompt": "犯罪悬疑电影海报,雨夜霓虹街道上的侦探背影,冷色调"
+    },
+    {
+      "file": "apps/Youku/assets/stills/m_weicheng.png",
+      "category": "still_16x9",
+      "prompt": "犯罪悬疑电影海报,雨夜霓虹街道上的侦探背影,冷色调"
+    },
+    {
+      "file": "apps/Youku/assets/posters/m_langchao.png",
+      "category": "poster_2x3",
+      "prompt": "灾难电影海报,巨浪吞没钻井平台,压迫感构图"
+    },
+    {
+      "file": "apps/Youku/assets/stills/m_langchao.png",
+      "category": "still_16x9",
+      "prompt": "灾难电影海报,巨浪吞没钻井平台,压迫感构图"
+    },
+    {
+      "file": "apps/Youku/assets/posters/m_gansidui.png",
+      "category": "poster_2x3",
+      "prompt": "动作电影海报,十人小队持械列队剪影,火光背景"
+    },
+    {
+      "file": "apps/Youku/assets/stills/m_gansidui.png",
+      "category": "still_16x9",
+      "prompt": "动作电影海报,十人小队持械列队剪影,火光背景"
+    },
+    {
+      "file": "apps/Youku/assets/posters/m_kuangben.png",
+      "category": "poster_2x3",
+      "prompt": "公路喜剧电影海报,破旧轿车扬尘飞驰,黄昏色调"
+    },
+    {
+      "file": "apps/Youku/assets/stills/m_kuangben.png",
+      "category": "still_16x9",
+      "prompt": "公路喜剧电影海报,破旧轿车扬尘飞驰,黄昏色调"
+    },
+    {
+      "file": "apps/Youku/assets/posters/m_menfeng.png",
+      "category": "poster_2x3",
+      "prompt": "心理悬疑电影海报,门缝透出一线光,极简高对比"
+    },
+    {
+      "file": "apps/Youku/assets/stills/m_menfeng.png",
+      "category": "still_16x9",
+      "prompt": "心理悬疑电影海报,门缝透出一线光,极简高对比"
+    },
+    {
+      "file": "apps/Youku/assets/posters/m_xunbao.png",
+      "category": "poster_2x3",
+      "prompt": "冒险电影海报,沙漠古城与探险者,金色调"
+    },
+    {
+      "file": "apps/Youku/assets/stills/m_xunbao.png",
+      "category": "still_16x9",
+      "prompt": "冒险电影海报,沙漠古城与探险者,金色调"
+    },
+    {
+      "file": "apps/Youku/assets/posters/m_tonghua.png",
+      "category": "poster_2x3",
+      "prompt": "儿童动画电影海报,发光的立体童话书与小兄妹,糖果色"
+    },
+    {
+      "file": "apps/Youku/assets/stills/m_tonghua.png",
+      "category": "still_16x9",
+      "prompt": "儿童动画电影海报,发光的立体童话书与小兄妹,糖果色"
+    },
+    {
+      "file": "apps/Youku/assets/posters/s_xiaoao.png",
+      "category": "poster_2x3",
+      "prompt": "武侠剧海报,持剑侠客立于山巅,水墨风"
+    },
+    {
+      "file": "apps/Youku/assets/stills/s_xiaoao.png",
+      "category": "still_16x9",
+      "prompt": "武侠剧海报,持剑侠客立于山巅,水墨风"
+    },
+    {
+      "file": "apps/Youku/assets/posters/s_anxiang.png",
+      "category": "poster_2x3",
+      "prompt": "古装偶像剧海报,红衣女子执香炉,烟雾缭绕"
+    },
+    {
+      "file": "apps/Youku/assets/stills/s_anxiang.png",
+      "category": "still_16x9",
+      "prompt": "古装偶像剧海报,红衣女子执香炉,烟雾缭绕"
+    },
+    {
+      "file": "apps/Youku/assets/posters/s_xuanan.png",
+      "category": "poster_2x3",
+      "prompt": "刑侦剧海报,案卷与放大镜特写,冷峻蓝灰"
+    },
+    {
+      "file": "apps/Youku/assets/stills/s_xuanan.png",
+      "category": "still_16x9",
+      "prompt": "刑侦剧海报,案卷与放大镜特写,冷峻蓝灰"
+    },
+    {
+      "file": "apps/Youku/assets/posters/s_boyi.png",
+      "category": "poster_2x3",
+      "prompt": "都市剧海报,西装男女背靠背,明快撞色"
+    },
+    {
+      "file": "apps/Youku/assets/stills/s_boyi.png",
+      "category": "still_16x9",
+      "prompt": "都市剧海报,西装男女背靠背,明快撞色"
+    },
+    {
+      "file": "apps/Youku/assets/posters/s_shengong.png",
+      "category": "poster_2x3",
+      "prompt": "宫斗剧海报,凤冠女子回眸,暗金色调"
+    },
+    {
+      "file": "apps/Youku/assets/stills/s_shengong.png",
+      "category": "still_16x9",
+      "prompt": "宫斗剧海报,凤冠女子回眸,暗金色调"
+    },
+    {
+      "file": "apps/Youku/assets/posters/s_chunnuan.png",
+      "category": "poster_2x3",
+      "prompt": "乡村喜剧海报,油菜花田里的欢乐村民群像,明亮暖色"
+    },
+    {
+      "file": "apps/Youku/assets/stills/s_chunnuan.png",
+      "category": "still_16x9",
+      "prompt": "乡村喜剧海报,油菜花田里的欢乐村民群像,明亮暖色"
+    },
+    {
+      "file": "apps/Youku/assets/posters/s_qiaochu.png",
+      "category": "poster_2x3",
+      "prompt": "民国商战剧海报,旗袍女子立于码头,复古色调"
+    },
+    {
+      "file": "apps/Youku/assets/stills/s_qiaochu.png",
+      "category": "still_16x9",
+      "prompt": "民国商战剧海报,旗袍女子立于码头,复古色调"
+    },
+    {
+      "file": "apps/Youku/assets/posters/s_ruqingyun.png",
+      "category": "poster_2x3",
+      "prompt": "仙侠剧海报,白衣仙人与少女御剑,云海仙山"
+    },
+    {
+      "file": "apps/Youku/assets/stills/s_ruqingyun.png",
+      "category": "still_16x9",
+      "prompt": "仙侠剧海报,白衣仙人与少女御剑,云海仙山"
+    },
+    {
+      "file": "apps/Youku/assets/posters/s_zhulou.png",
+      "category": "poster_2x3",
+      "prompt": "古典名著剧海报,雕梁画栋中的古装少年少女,工笔画风"
+    },
+    {
+      "file": "apps/Youku/assets/stills/s_zhulou.png",
+      "category": "still_16x9",
+      "prompt": "古典名著剧海报,雕梁画栋中的古装少年少女,工笔画风"
+    },
+    {
+      "file": "apps/Youku/assets/posters/v_benpao.png",
+      "category": "poster_2x3",
+      "prompt": "户外真人秀海报,多人奔跑欢乐场景,高饱和撞色"
+    },
+    {
+      "file": "apps/Youku/assets/stills/v_benpao.png",
+      "category": "still_16x9",
+      "prompt": "户外真人秀海报,多人奔跑欢乐场景,高饱和撞色"
+    },
+    {
+      "file": "apps/Youku/assets/posters/v_baichu.png",
+      "category": "poster_2x3",
+      "prompt": "美食竞技综艺海报,炉火与颠勺瞬间,热烈红金"
+    },
+    {
+      "file": "apps/Youku/assets/stills/v_baichu.png",
+      "category": "still_16x9",
+      "prompt": "美食竞技综艺海报,炉火与颠勺瞬间,热烈红金"
+    },
+    {
+      "file": "apps/Youku/assets/posters/v_xiyou.png",
+      "category": "poster_2x3",
+      "prompt": "文化旅行综艺海报,大漠驼队与嘉宾合影,落日金色"
+    },
+    {
+      "file": "apps/Youku/assets/stills/v_xiyou.png",
+      "category": "still_16x9",
+      "prompt": "文化旅行综艺海报,大漠驼队与嘉宾合影,落日金色"
+    },
+    {
+      "file": "apps/Youku/assets/posters/v_shengxia.png",
+      "category": "poster_2x3",
+      "prompt": "青春成长综艺海报,海岛沙滩上的少年群像,清新蓝绿"
+    },
+    {
+      "file": "apps/Youku/assets/stills/v_shengxia.png",
+      "category": "still_16x9",
+      "prompt": "青春成长综艺海报,海岛沙滩上的少年群像,清新蓝绿"
+    },
+    {
+      "file": "apps/Youku/assets/posters/a_canglan.png",
+      "category": "poster_2x3",
+      "prompt": "修仙国漫海报,持图少年御空,蓝金粒子特效"
+    },
+    {
+      "file": "apps/Youku/assets/stills/a_canglan.png",
+      "category": "still_16x9",
+      "prompt": "修仙国漫海报,持图少年御空,蓝金粒子特效"
+    },
+    {
+      "file": "apps/Youku/assets/posters/a_shenzhong.png",
+      "category": "poster_2x3",
+      "prompt": "玄幻国漫海报,古冢中睁眼的少年,紫金光效"
+    },
+    {
+      "file": "apps/Youku/assets/stills/a_shenzhong.png",
+      "category": "still_16x9",
+      "prompt": "玄幻国漫海报,古冢中睁眼的少年,紫金光效"
+    },
+    {
+      "file": "apps/Youku/assets/posters/a_shixiong.png",
+      "category": "poster_2x3",
+      "prompt": "搞笑修仙国漫海报,摇扇淡定的白衣师兄,轻快色调"
+    },
+    {
+      "file": "apps/Youku/assets/stills/a_shixiong.png",
+      "category": "still_16x9",
+      "prompt": "搞笑修仙国漫海报,摇扇淡定的白衣师兄,轻快色调"
+    },
+    {
+      "file": "apps/Youku/assets/posters/a_gaowu.png",
+      "category": "poster_2x3",
+      "prompt": "热血校园国漫海报,武装少年跃起挥拳,红蓝对撞"
+    },
+    {
+      "file": "apps/Youku/assets/stills/a_gaowu.png",
+      "category": "still_16x9",
+      "prompt": "热血校园国漫海报,武装少年跃起挥拳,红蓝对撞"
+    },
+    {
+      "file": "apps/Youku/assets/posters/a_tuili.png",
+      "category": "poster_2x3",
+      "prompt": "推理日漫风海报,放大镜下的少年侦探,悬疑紫"
+    },
+    {
+      "file": "apps/Youku/assets/stills/a_tuili.png",
+      "category": "still_16x9",
+      "prompt": "推理日漫风海报,放大镜下的少年侦探,悬疑紫"
+    },
+    {
+      "file": "apps/Youku/assets/posters/k_lele.png",
+      "category": "poster_2x3",
+      "prompt": "幼儿启蒙动画海报,大头萌娃与彩色积木,糖果色3D"
+    },
+    {
+      "file": "apps/Youku/assets/stills/k_lele.png",
+      "category": "still_16x9",
+      "prompt": "幼儿启蒙动画海报,大头萌娃与彩色积木,糖果色3D"
+    },
+    {
+      "file": "apps/Youku/assets/posters/k_pike.png",
+      "category": "poster_2x3",
+      "prompt": "低幼动画海报,粉色小猪一家野餐,明亮扁平风"
+    },
+    {
+      "file": "apps/Youku/assets/stills/k_pike.png",
+      "category": "still_16x9",
+      "prompt": "低幼动画海报,粉色小猪一家野餐,明亮扁平风"
+    },
+    {
+      "file": "apps/Youku/assets/posters/k_feigou.png",
+      "category": "poster_2x3",
+      "prompt": "儿童冒险动画海报,戴飞行镜的小狗翱翔云端,天蓝色"
+    },
+    {
+      "file": "apps/Youku/assets/stills/k_feigou.png",
+      "category": "still_16x9",
+      "prompt": "儿童冒险动画海报,戴飞行镜的小狗翱翔云端,天蓝色"
+    },
+    {
+      "file": "apps/Youku/assets/posters/k_caoyuan.png",
+      "category": "poster_2x3",
+      "prompt": "少儿动画海报,可爱羊群在草原冒险,明亮糖果色3D"
+    },
+    {
+      "file": "apps/Youku/assets/stills/k_caoyuan.png",
+      "category": "still_16x9",
+      "prompt": "少儿动画海报,可爱羊群在草原冒险,明亮糖果色3D"
+    },
+    {
+      "file": "apps/Youku/assets/posters/d_diqiu.png",
+      "category": "poster_2x3",
+      "prompt": "自然纪录片海报,破土新芽与远山云海,帧享质感"
+    },
+    {
+      "file": "apps/Youku/assets/stills/d_diqiu.png",
+      "category": "still_16x9",
+      "prompt": "自然纪录片海报,破土新芽与远山云海,帧享质感"
+    },
+    {
+      "file": "apps/Youku/assets/posters/d_xiongmao.png",
+      "category": "poster_2x3",
+      "prompt": "动物纪录片海报,竹林里打滚的熊猫幼崽,自然绿"
+    },
+    {
+      "file": "apps/Youku/assets/stills/d_xiongmao.png",
+      "category": "still_16x9",
+      "prompt": "动物纪录片海报,竹林里打滚的熊猫幼崽,自然绿"
+    },
+    {
+      "file": "apps/Youku/assets/posters/d_shuixia.png",
+      "category": "poster_2x3",
+      "prompt": "海洋纪录片海报,深蓝海底光柱与鱼群,神秘蓝"
+    },
+    {
+      "file": "apps/Youku/assets/stills/d_shuixia.png",
+      "category": "still_16x9",
+      "prompt": "海洋纪录片海报,深蓝海底光柱与鱼群,神秘蓝"
+    },
+    {
+      "file": "apps/Youku/assets/posters/h_yizuoqiao.png",
+      "category": "poster_2x3",
+      "prompt": "人文纪录片海报,晨雾中的石拱桥与行人,水墨灰"
+    },
+    {
+      "file": "apps/Youku/assets/stills/h_yizuoqiao.png",
+      "category": "still_16x9",
+      "prompt": "人文纪录片海报,晨雾中的石拱桥与行人,水墨灰"
+    },
+    {
+      "file": "apps/Youku/assets/posters/h_yuanzhuo.png",
+      "category": "poster_2x3",
+      "prompt": "谈话节目海报,深夜圆桌与暖黄台灯,复古质感"
+    },
+    {
+      "file": "apps/Youku/assets/stills/h_yuanzhuo.png",
+      "category": "still_16x9",
+      "prompt": "谈话节目海报,深夜圆桌与暖黄台灯,复古质感"
+    },
+    {
+      "file": "apps/Youku/assets/posters/g_dianjing.png",
+      "category": "poster_2x3",
+      "prompt": "电竞纪实海报,选手背影面向璀璨主舞台,霓虹紫蓝"
+    },
+    {
+      "file": "apps/Youku/assets/stills/g_dianjing.png",
+      "category": "still_16x9",
+      "prompt": "电竞纪实海报,选手背影面向璀璨主舞台,霓虹紫蓝"
+    },
+    {
+      "file": "apps/Youku/assets/avatars/c_xianyuzai.png",
+      "category": "avatar_round",
+      "prompt": "卡通咸鱼形象头像,蓝色背景"
+    },
+    {
+      "file": "apps/Youku/assets/avatars/c_taotao.png",
+      "category": "avatar_round",
+      "prompt": "话筒卡通形象头像,橙色背景"
+    },
+    {
+      "file": "apps/Youku/assets/avatars/c_pala.png",
+      "category": "avatar_round",
+      "prompt": "卡通少女侧脸头像,粉色背景"
+    },
+    {
+      "file": "apps/Youku/assets/avatars/c_yueshiji.png",
+      "category": "avatar_round",
+      "prompt": "月亮与餐盘组合卡通头像,深蓝背景"
+    },
+    {
+      "file": "apps/Youku/assets/avatars/c_lizisran.png",
+      "category": "avatar_round",
+      "prompt": "田园少女卡通头像,浅绿背景"
+    },
+    {
+      "file": "apps/Youku/assets/avatars/c_chenxiang7.png",
+      "category": "avatar_round",
+      "prompt": "闹钟卡通形象头像,黄色背景"
+    },
+    {
+      "file": "apps/Youku/assets/avatars/c_saixiya.png",
+      "category": "avatar_round",
+      "prompt": "赛博风少女头像,紫色背景"
+    },
+    {
+      "file": "apps/Youku/assets/shorts/sv01.png",
+      "category": "shorts_cover_16x9",
+      "prompt": "短视频封面,古装奇幻电影解说画面拼图"
+    },
+    {
+      "file": "apps/Youku/assets/shorts/sv02.png",
+      "category": "shorts_cover_16x9",
+      "prompt": "短视频封面,毛茸小妖特写与字幕条"
+    },
+    {
+      "file": "apps/Youku/assets/shorts/sv03.png",
+      "category": "shorts_cover_16x9",
+      "prompt": "短视频封面,武侠剑气对决高光帧"
+    },
+    {
+      "file": "apps/Youku/assets/shorts/sv04.png",
+      "category": "shorts_cover_16x9",
+      "prompt": "短视频封面,悬疑门缝光线画面"
+    },
+    {
+      "file": "apps/Youku/assets/shorts/sv05.png",
+      "category": "shorts_cover_16x9",
+      "prompt": "短视频封面,深夜厨房炒锅火焰"
+    },
+    {
+      "file": "apps/Youku/assets/shorts/sv06.png",
+      "category": "shorts_cover_16x9",
+      "prompt": "短视频封面,田园少女采野菜"
+    },
+    {
+      "file": "apps/Youku/assets/shorts/sv07.png",
+      "category": "shorts_cover_16x9",
+      "prompt": "短视频封面,古偶剧甜蜜对视混剪"
+    },
+    {
+      "file": "apps/Youku/assets/shorts/sv08.png",
+      "category": "shorts_cover_16x9",
+      "prompt": "短视频封面,弹幕吐槽风拼图"
+    },
+    {
+      "file": "apps/Youku/assets/shorts/sv09.png",
+      "category": "shorts_cover_16x9",
+      "prompt": "短视频封面,3D国漫高光打斗帧"
+    },
+    {
+      "file": "apps/Youku/assets/shorts/sv10.png",
+      "category": "shorts_cover_16x9",
+      "prompt": "短视频封面,海外大片预告画面"
+    },
+    {
+      "file": "apps/Youku/assets/shorts/sv11.png",
+      "category": "shorts_cover_16x9",
+      "prompt": "短视频封面,搞笑短剧办公室场景"
+    },
+    {
+      "file": "apps/Youku/assets/shorts/sv12.png",
+      "category": "shorts_cover_16x9",
+      "prompt": "短视频封面,动画配音棚趣味画面"
+    },
+    {
+      "file": "apps/Youku/assets/shorts/sv13.png",
+      "category": "shorts_cover_16x9",
+      "prompt": "短视频封面,刑侦剧案卷解说画面"
+    },
+    {
+      "file": "apps/Youku/assets/shorts/sv14.png",
+      "category": "shorts_cover_16x9",
+      "prompt": "短视频封面,乡村坝坝宴烹饪"
+    },
+    {
+      "file": "apps/Youku/assets/shorts/sv15.png",
+      "category": "shorts_cover_16x9",
+      "prompt": "短视频封面,自媒体日常内容"
+    },
+    {
+      "file": "apps/Youku/assets/shorts/sv16.png",
+      "category": "shorts_cover_16x9",
+      "prompt": "短视频封面,自媒体日常内容"
+    },
+    {
+      "file": "apps/Youku/assets/shorts/sv17.png",
+      "category": "shorts_cover_16x9",
+      "prompt": "短视频封面,自媒体日常内容"
+    },
+    {
+      "file": "apps/Youku/assets/shorts/sv18.png",
+      "category": "shorts_cover_16x9",
+      "prompt": "短视频封面,自媒体日常内容"
+    },
+    {
+      "file": "apps/Youku/assets/shorts/sv19.png",
+      "category": "shorts_cover_16x9",
+      "prompt": "短视频封面,自媒体日常内容"
+    },
+    {
+      "file": "apps/Youku/assets/shorts/sv20.png",
+      "category": "shorts_cover_16x9",
+      "prompt": "短视频封面,自媒体日常内容"
+    },
+    {
+      "file": "apps/Youku/assets/shorts/sv21.png",
+      "category": "shorts_cover_16x9",
+      "prompt": "短视频封面,自媒体日常内容"
+    },
+    {
+      "file": "apps/Youku/assets/shorts/sv22.png",
+      "category": "shorts_cover_16x9",
+      "prompt": "短视频封面,自媒体日常内容"
+    },
+    {
+      "file": "apps/Youku/assets/shorts/sv23.png",
+      "category": "shorts_cover_16x9",
+      "prompt": "短视频封面,自媒体日常内容"
+    },
+    {
+      "file": "apps/Youku/assets/shorts/sv24.png",
+      "category": "shorts_cover_16x9",
+      "prompt": "短视频封面,自媒体日常内容"
+    },
+    {
+      "file": "apps/Youku/assets/shorts/sv25.png",
+      "category": "shorts_cover_16x9",
+      "prompt": "短视频封面,自媒体日常内容"
+    },
+    {
+      "file": "apps/Youku/assets/shorts/sv26.png",
+      "category": "shorts_cover_16x9",
+      "prompt": "短视频封面,自媒体日常内容"
+    },
+    {
+      "file": "apps/Youku/assets/shorts/sv27.png",
+      "category": "shorts_cover_16x9",
+      "prompt": "短视频封面,自媒体日常内容"
+    },
+    {
+      "file": "apps/Youku/assets/shorts/sv28.png",
+      "category": "shorts_cover_16x9",
+      "prompt": "短视频封面,自媒体日常内容"
+    },
+    {
+      "file": "apps/Youku/assets/shorts/sv29.png",
+      "category": "shorts_cover_16x9",
+      "prompt": "短视频封面,自媒体日常内容"
+    },
+    {
+      "file": "apps/Youku/assets/shorts/sv30.png",
+      "category": "shorts_cover_16x9",
+      "prompt": "短视频封面,自媒体日常内容"
+    },
+    {
+      "file": "apps/Youku/assets/shorts/sd_nixi.png",
+      "category": "shorts_cover_16x9",
+      "prompt": "竖屏短剧封面,厨房里的元气少女"
+    },
+    {
+      "file": "apps/Youku/assets/shorts/sd_guanjia.png",
+      "category": "shorts_cover_16x9",
+      "prompt": "竖屏短剧封面,西装管家与豪宅"
+    },
+    {
+      "file": "apps/Youku/assets/shorts/sd_chuanshu.png",
+      "category": "shorts_cover_16x9",
+      "prompt": "竖屏短剧封面,少女被卷入发光书本"
+    },
+    {
+      "file": "apps/Youku/assets/shorts/sd_yinlong.png",
+      "category": "shorts_cover_16x9",
+      "prompt": "竖屏短剧封面,雨夜都市中的神秘男子"
+    },
+    {
+      "file": "apps/Youku/assets/posters/u_jiumen.png",
+      "category": "poster_2x3",
+      "prompt": "民国探墓题材剧集海报,九扇古门"
+    },
+    {
+      "file": "apps/Youku/assets/posters/u_zhuisu.png",
+      "category": "poster_2x3",
+      "prompt": "检察题材剧海报,法徽与卷宗"
+    },
+    {
+      "file": "apps/Youku/assets/posters/u_gongzhu.png",
+      "category": "poster_2x3",
+      "prompt": "古装公主题材剧海报,宫廷红墙"
+    },
+    {
+      "file": "apps/Youku/assets/posters/u_shanhai.png",
+      "category": "poster_2x3",
+      "prompt": "科幻电影海报,巨型飞船降临群山"
+    },
+    {
+      "file": "apps/Youku/assets/posters/u_yehai.png",
+      "category": "poster_2x3",
+      "prompt": "潜艇军事电影海报,深海探照灯"
+    },
+    {
+      "file": "apps/Youku/assets/posters/u_xingchen.png",
+      "category": "poster_2x3",
+      "prompt": "唯美科幻动画电影海报,星空下少年少女"
+    },
+    {
+      "file": "apps/Youku/assets/avatars/user_chenn.png",
+      "category": "avatar_round",
+      "prompt": "黄色连帽卡通小人默认头像(优酷吉祥物风)"
+    },
+    {
+      "file": "apps/Youku/assets/avatars/f_qingtian.png",
+      "category": "avatar_round",
+      "prompt": "柚子卡通头像,黄绿背景"
+    },
+    {
+      "file": "apps/Youku/assets/avatars/f_muzi.png",
+      "category": "avatar_round",
+      "prompt": "树苗卡通头像,绿色背景"
+    },
+    {
+      "file": "apps/Youku/assets/avatars/f_dundun.png",
+      "category": "avatar_round",
+      "prompt": "猫咪卡通头像,橘色背景"
+    },
+    {
+      "file": "apps/Youku/assets/shorts/sd_play_a.png",
+      "category": "shorts_cover_16x9",
+      "prompt": "竖屏短剧关键帧,古装厨娘在灶台翻炒,暖黄灯光,电影感"
+    },
+    {
+      "file": "apps/Youku/assets/shorts/sd_play_b.png",
+      "category": "shorts_cover_16x9",
+      "prompt": "竖屏短剧关键帧,都市夜景天台对峙,霓虹冷色调,电影感"
+    },
+    {
+      "file": "apps/Youku/assets/promo/sports_banner.png",
+      "category": "still_16x9",
+      "prompt": "网球比赛球场俯拍夜场灯光,观众席虚化,运动赛事宣传横图"
+    },
+    {
+      "file": "apps/Youku/assets/promo/sports_live_1.png",
+      "category": "still_16x9",
+      "prompt": "女子网球选手挥拍瞬间,红土球场,动态抓拍"
+    },
+    {
+      "file": "apps/Youku/assets/promo/sports_live_2.png",
+      "category": "still_16x9",
+      "prompt": "男子网球选手发球,深蓝球场,紧张氛围"
+    },
+    {
+      "file": "apps/Youku/assets/promo/sports_schedule_1.png",
+      "category": "still_16x9",
+      "prompt": "网球场空镜,绿色草地与白色球网,晴天"
+    },
+    {
+      "file": "apps/Youku/assets/promo/sports_schedule_2.png",
+      "category": "still_16x9",
+      "prompt": "硬地网球场俯视构图,橙色与蓝色配色"
+    },
+    {
+      "file": "apps/Youku/assets/promo/sports_schedule_3.png",
+      "category": "still_16x9",
+      "prompt": "羽毛球馆比赛瞬间,运动员跃起扣杀,室内灯光"
+    },
+    {
+      "file": "apps/Youku/assets/promo/game_ticket_1.png",
+      "category": "poster_2x3",
+      "prompt": "游戏周边票根插画,深蓝金边,抽象卡牌轮廓,无文字"
+    },
+    {
+      "file": "apps/Youku/assets/promo/game_ticket_2.png",
+      "category": "poster_2x3",
+      "prompt": "游戏周边票根插画,紫粉渐变,抽象角色剪影,无文字"
+    },
+    {
+      "file": "apps/Youku/assets/promo/game_ticket_3.png",
+      "category": "poster_2x3",
+      "prompt": "游戏周边票根插画,青绿配色,抽象装备图标,无文字"
+    },
+    {
+      "file": "apps/Youku/assets/avatars/comment_01.png",
+      "category": "avatar_round",
+      "prompt": "参考粉丝头像的可爱吉祥物风格,笑脸小橘子精灵,黄绿色背景,大眼睛,简洁圆润造型"
+    },
+    {
+      "file": "apps/Youku/assets/avatars/comment_02.png",
+      "category": "avatar_round",
+      "prompt": "参考粉丝头像的可爱吉祥物风格,戴蓝色围巾的白色小兔,天蓝色背景,大眼睛,简洁圆润造型"
+    },
+    {
+      "file": "apps/Youku/assets/avatars/comment_03.png",
+      "category": "avatar_round",
+      "prompt": "参考粉丝头像的可爱吉祥物风格,抱爆米花桶的棕色小熊,奶油黄色背景,大眼睛,简洁圆润造型"
+    },
+    {
+      "file": "apps/Youku/assets/avatars/comment_04.png",
+      "category": "avatar_round",
+      "prompt": "参考粉丝头像的可爱吉祥物风格,戴耳机的圆滚滚小企鹅,淡紫色背景,大眼睛,简洁圆润造型"
+    },
+    {
+      "file": "apps/Youku/assets/avatars/comment_05.png",
+      "category": "avatar_round",
+      "prompt": "参考粉丝头像的可爱吉祥物风格,绿色恐龙宝宝,薄荷绿色背景,大眼睛,简洁圆润造型"
+    },
+    {
+      "file": "apps/Youku/assets/avatars/comment_06.png",
+      "category": "avatar_round",
+      "prompt": "参考粉丝头像的可爱吉祥物风格,戴星星帽的小狐狸,橙粉色背景,大眼睛,简洁圆润造型"
+    },
+    {
+      "file": "apps/Youku/assets/avatars/comment_07.png",
+      "category": "avatar_round",
+      "prompt": "参考粉丝头像的可爱吉祥物风格,草莓牛奶盒精灵,浅粉色背景,大眼睛,简洁圆润造型,包装上无文字"
+    },
+    {
+      "file": "apps/Youku/assets/avatars/comment_08.png",
+      "category": "avatar_round",
+      "prompt": "参考粉丝头像的可爱吉祥物风格,云朵造型的小绵羊,浅蓝色背景,大眼睛,简洁圆润造型"
+    }
+  ]
+}

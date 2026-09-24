@@ -1,0 +1,160 @@
+{
+  "user": {
+    "loggedIn": false,
+    "name": "倒数日用户"
+  },
+  "notebooks": [
+    {
+      "id": "nb_life",
+      "name": "生活",
+      "icon": "📔",
+      "cover": "cover_life",
+      "isSystem": true,
+      "order": 0
+    },
+    {
+      "id": "nb_work",
+      "name": "工作",
+      "icon": "💼",
+      "cover": "cover_work",
+      "isSystem": true,
+      "order": 1
+    },
+    {
+      "id": "nb_anniv",
+      "name": "纪念日",
+      "icon": "🎂",
+      "cover": "cover_anniv",
+      "isSystem": true,
+      "order": 2
+    },
+    {
+      "id": "nb_study",
+      "name": "学习",
+      "icon": "🎯",
+      "cover": "cover_green",
+      "isSystem": false,
+      "order": 3
+    }
+  ],
+  "events": [
+    {
+      "id": "e_launch",
+      "title": "项目上线",
+      "targetDate": 1789430400000,
+      "notebookId": "nb_work",
+      "calendar": "solar",
+      "pinned": true,
+      "showOnHome": true,
+      "repeat": "none",
+      "reminder": "weekly",
+      "plusOne": false,
+      "hasEndDate": false,
+      "archived": false,
+      "createdAt": 1767225600000
+    },
+    {
+      "id": "e_trip",
+      "title": "旅行出发",
+      "targetDate": 1785542400000,
+      "notebookId": "nb_life",
+      "calendar": "solar",
+      "pinned": false,
+      "showOnHome": true,
+      "repeat": "none",
+      "reminder": "none",
+      "plusOne": false,
+      "hasEndDate": false,
+      "archived": false,
+      "createdAt": 1767225600000
+    },
+    {
+      "id": "e_report",
+      "title": "提交季度报告",
+      "targetDate": 1783641600000,
+      "notebookId": "nb_work",
+      "calendar": "solar",
+      "pinned": false,
+      "showOnHome": true,
+      "repeat": "none",
+      "reminder": "daily",
+      "plusOne": false,
+      "hasEndDate": false,
+      "archived": false,
+      "createdAt": 1767225600000
+    },
+    {
+      "id": "e_record",
+      "title": "开始记录",
+      "targetDate": 1767225600000,
+      "notebookId": "nb_life",
+      "calendar": "solar",
+      "pinned": false,
+      "showOnHome": true,
+      "repeat": "none",
+      "reminder": "none",
+      "plusOne": true,
+      "hasEndDate": false,
+      "archived": false,
+      "createdAt": 1767225600000
+    },
+    {
+      "id": "e_anniv",
+      "title": "重要纪念日",
+      "targetDate": 1794355200000,
+      "notebookId": "nb_anniv",
+      "calendar": "solar",
+      "pinned": false,
+      "showOnHome": true,
+      "repeat": "year",
+      "reminder": "yearly",
+      "plusOne": false,
+      "hasEndDate": false,
+      "archived": false,
+      "createdAt": 1767225600000
+    },
+    {
+      "id": "e_exam",
+      "title": "结课考试",
+      "targetDate": 1797724800000,
+      "notebookId": "nb_study",
+      "calendar": "solar",
+      "pinned": false,
+      "showOnHome": true,
+      "repeat": "none",
+      "reminder": "none",
+      "plusOne": false,
+      "hasEndDate": false,
+      "archived": false,
+      "createdAt": 1767225600000
+    },
+    {
+      "id": "e_old",
+      "title": "旧活动(已归档)",
+      "targetDate": 1759276800000,
+      "notebookId": "nb_life",
+      "calendar": "solar",
+      "pinned": false,
+      "showOnHome": false,
+      "repeat": "none",
+      "reminder": "none",
+      "plusOne": false,
+      "hasEndDate": false,
+      "archived": true,
+      "createdAt": 1767225600000
+    }
+  ],
+  "settings": {
+    "bigFont": false,
+    "cardAnim": true,
+    "autoPin": false,
+    "hideAffix": false,
+    "sortBy": "eventTime",
+    "adsHidden": false,
+    "locale": "zh"
+  },
+  "filter": {
+    "kind": "home"
+  },
+  "widgetEventId": "e_launch"
+}

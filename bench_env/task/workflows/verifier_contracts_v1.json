@@ -1,0 +1,2284 @@
+{
+  "schema_version": "1.0",
+  "contracts": {
+    "explore_baicizhan_bcz_001": {
+      "review_status": "passed",
+      "review_notes": "Final sort preference is persistent and shared by the wordbook UI.",
+      "expected_changes": ["apps.baicizhan.settings.wordSort"],
+      "assertions": [
+        {
+          "field": "收藏单词本排序方式",
+          "source": "apps",
+          "path": "baicizhan.settings.wordSort",
+          "op": "eq",
+          "expected": "alphaAsc",
+          "initial_must_differ": true
+        }
+      ]
+    },
+    "explore_baicizhan_bcz_004": {
+      "review_status": "passed",
+      "review_notes": "Daily group target is a persistent plan field; seed value is 10.",
+      "expected_changes": ["apps.baicizhan.dailyGroups"],
+      "assertions": [
+        {
+          "field": "每日学习组数",
+          "source": "apps",
+          "path": "baicizhan.dailyGroups",
+          "op": "eq",
+          "expected": 12,
+          "initial_must_differ": true
+        }
+      ]
+    },
+    "explore_baicizhan_bcz_006": {
+      "review_status": "passed",
+      "review_notes": "Elaborate has stable id w034; both learn state and collected wordbook must agree.",
+      "expected_changes": [
+        "apps.baicizhan.learn.w034.collected",
+        "apps.baicizhan.wordbooks[id=wb_collect].wordIds"
+      ],
+      "assertions": [
+        {
+          "field": "elaborate收藏状态",
+          "source": "apps",
+          "path": "baicizhan.learn.w034.collected",
+          "op": "eq",
+          "expected": true,
+          "initial_must_differ": true
+        },
+        {
+          "field": "收藏单词本包含elaborate",
+          "source": "apps",
+          "path": "baicizhan.wordbooks[id=wb_collect].wordIds",
+          "op": "contains",
+          "expected": "w034"
+        }
+      ]
+    },
+    "explore_baicizhan_bcz_007": {
+      "review_status": "passed",
+      "review_notes": "Login reward is 50 coins; seed coins=5 and claimedTasks is empty.",
+      "expected_changes": [
+        "apps.baicizhan.claimedTasks",
+        "apps.baicizhan.coins",
+        "apps.baicizhan.stars"
+      ],
+      "assertions": [
+        {
+          "field": "登录奖励已领取",
+          "source": "apps",
+          "path": "baicizhan.claimedTasks",
+          "op": "contains",
+          "expected": "login"
+        },
+        {
+          "field": "领取后铜板总数",
+          "source": "apps",
+          "path": "baicizhan.coins",
+          "op": "eq",
+          "expected": 55,
+          "initial_must_differ": true
+        }
+      ]
+    },
+    "explore_baicizhan_bcz_008": {
+      "review_status": "passed",
+      "review_notes": "Read-only detail interactions are recorded in persistent app state so the verifier can require the exact target word and ordered knowledge tabs, successful pronunciation, and continue action.",
+      "expected_changes": ["apps.baicizhan.studyDetailAudit.w001"],
+      "assertions": [
+        {
+          "field": "prudent词详情交互完成",
+          "source": "apps",
+          "path": "baicizhan.studyDetailAudit.w001",
+          "expected": {
+            "viewedTabs": ["exam", "synonym"],
+            "pronounced": true,
+            "continued": true
+          }
+        }
+      ]
+    },
+    "explore_dianping_dp_task_01": {
+      "review_status": "passed",
+      "review_notes": "The target shop and dish have stable ids and both are initially unfavorited.",
+      "expected_changes": ["apps.dianping.favoriteDishIds", "apps.dianping.favoriteShopIds"],
+      "assertions": [
+        {"field": "收藏大生蚝", "source": "apps", "path": "dianping.favoriteDishIds", "op": "contains", "expected": "wangheli:oyster"},
+        {"field": "收藏王和李店铺", "source": "apps", "path": "dianping.favoriteShopIds", "op": "contains", "expected": "wangheli"}
+      ]
+    },
+    "explore_dianping_dp_task_02": {
+      "review_status": "passed",
+      "review_notes": "The final mutation is the stable PangPang deal key; read-only tool and review navigation do not replace this state requirement.",
+      "expected_changes": ["apps.dianping.favoriteDealIds"],
+      "assertions": [
+        {"field": "收藏6英寸动物奶油蛋糕券", "source": "apps", "path": "dianping.favoriteDealIds", "op": "contains", "expected": "pangpang:pp1"}
+      ]
+    },
+    "explore_dianping_dp_task_03": {
+      "review_status": "passed",
+      "review_notes": "A newly created paid order must match the prepared voucher, quantity, amount, and selected WeChat method.",
+      "expected_changes": ["apps.dianping.orders", "apps.dianping.lastPaidOrderId"],
+      "assertions": [
+        {
+          "field": "新增两张生椰拿铁微信已支付订单",
+          "source": "apps",
+          "path": "dianping.orders",
+          "op": "new_contains",
+          "expected": {"shopId": "luckin", "dealId": "lk1", "qty": 2, "payAmount": 19.8, "status": "usable", "paymentMethod": "wechat"}
+        },
+        {"field": "记录最近支付订单", "source": "apps", "path": "dianping.lastPaidOrderId", "op": "changed"}
+      ]
+    },
+    "explore_dianping_dp_task_05": {
+      "review_status": "passed",
+      "review_notes": "All three seeded collections must be empty; clearing only one section cannot pass.",
+      "expected_changes": ["apps.dianping.searchHistory", "apps.dianping.browseHistory", "apps.dianping.reviewDrafts"],
+      "assertions": [
+        {"field": "搜索历史已清空", "source": "apps", "path": "dianping.searchHistory", "expected": [], "initial_must_differ": true},
+        {"field": "浏览记录已清空", "source": "apps", "path": "dianping.browseHistory", "expected": [], "initial_must_differ": true},
+        {"field": "评价草稿已清空", "source": "apps", "path": "dianping.reviewDrafts", "expected": [], "initial_must_differ": true}
+      ]
+    },
+    "explore_dianping_dp_task_07": {
+      "review_status": "passed",
+      "review_notes": "Check in once, then open 我的打卡. If the happy check-in is already there, do not check in again. Freeze path: exactly one new yeren/happy check-in.",
+      "expected_changes": ["apps.dianping.checkins", "apps.dianping.checkinsViewed"],
+      "assertions": [
+        {"field": "野人先生开心打卡只一次", "source": "apps", "path": "dianping.checkins", "op": "new_contains_exactly_once", "expected": {"shopId": "yeren", "mood": "happy"}},
+        {"field": "打开我的打卡", "source": "apps", "path": "dianping.checkinsViewed", "expected": true, "initial_must_differ": true}
+      ]
+    },
+    "explore_dianping_dp_task_08": {
+      "review_status": "passed",
+      "review_notes": "The seeded usable voucher order has stable id ord_seed_1; submitting a refund must persist both state and reason.",
+      "expected_changes": ["apps.dianping.orders[id=ord_seed_1].status", "apps.dianping.orders[id=ord_seed_1].refundReason"],
+      "assertions": [
+        {"field": "王和李代金券已提交退款", "source": "apps", "path": "dianping.orders[id=ord_seed_1].status", "op": "contains", "expected": "refund", "initial_must_differ": true},
+        {"field": "退款原因", "source": "apps", "path": "dianping.orders[id=ord_seed_1].refundReason", "expected": "计划有变，不想去了", "initial_must_differ": true}
+      ]
+    },
+    "explore_dida_dida_001": {
+      "review_status": "passed",
+      "review_notes": "The suite-wide clock is frozen on Sunday 2026-07-12. One newly created task must contain every requested field and subtask.",
+      "expected_changes": ["apps.dida.tasks"],
+      "assertions": [
+        {
+          "field": "新增周末整理书架任务",
+          "source": "apps",
+          "path": "dida.tasks",
+          "op": "new_contains",
+          "expected": {
+            "title": "周末整理书架",
+            "listId": "life",
+            "priority": "medium",
+            "dueTs": 1783785600000,
+            "reminder": "reminder.1day",
+            "subtasks": [{"title": "按类别分区", "done": false}]
+          }
+        }
+      ]
+    },
+    "explore_dida_dida_002": {
+      "review_status": "passed",
+      "review_notes": "Task t1 is stable; all three requested persistent fields are required.",
+      "expected_changes": [
+        "apps.dida.tasks[id=t1].priority",
+        "apps.dida.tasks[id=t1].repeat",
+        "apps.dida.tasks[id=t1].completed",
+        "apps.dida.tasks[id=t1].completedAt"
+      ],
+      "assertions": [
+        {"field": "写周报优先级", "source": "apps", "path": "dida.tasks[id=t1].priority", "expected": "medium", "initial_must_differ": true},
+        {"field": "写周报重复规则", "source": "apps", "path": "dida.tasks[id=t1].repeat", "expected": "repeat.weekly", "initial_must_differ": true},
+        {"field": "写周报完成状态", "source": "apps", "path": "dida.tasks[id=t1].completed", "expected": true, "initial_must_differ": true},
+        {"field": "写周报完成时间已写入", "source": "apps", "path": "dida.tasks[id=t1].completedAt", "op": "changed"}
+      ]
+    },
+    "explore_dida_dida_003": {
+      "review_status": "passed",
+      "review_notes": "The frozen Sunday clock makes next Monday 2026-07-13. The new task must remain in quadrant 2 and contain the requested child.",
+      "expected_changes": ["apps.dida.tasks"],
+      "assertions": [
+        {
+          "field": "新增学习SwiftUI四象限任务",
+          "source": "apps",
+          "path": "dida.tasks",
+          "op": "new_contains",
+          "expected": {
+            "title": "学习 SwiftUI",
+            "quadrant": 2,
+            "priority": "medium",
+            "dueTs": 1783872000000,
+            "subtasks": [{"title": "完成官方教程第一章", "done": false}]
+          }
+        }
+      ]
+    },
+    "explore_dida_dida_004": {
+      "review_status": "passed",
+      "review_notes": "The frozen Sunday clock makes next Wednesday 2026-07-15. The calendar-created task must persist its later detail edits.",
+      "expected_changes": ["apps.dida.tasks"],
+      "assertions": [
+        {
+          "field": "新增和朋友吃饭日历任务",
+          "source": "apps",
+          "path": "dida.tasks",
+          "op": "new_contains",
+          "expected": {
+            "title": "和朋友吃饭",
+            "dueTs": 1784044800000,
+            "reminder": "reminder.30min",
+            "priority": "low"
+          }
+        }
+      ]
+    },
+    "explore_dida_dida_005": {
+      "review_status": "passed",
+      "review_notes": "Requires persistent timer setting, a newly created pomo record, and totalPomo increment.",
+      "expected_changes": [
+        "apps.dida.settings.pomoMinutes",
+        "apps.dida.records",
+        "apps.dida.stats.totalPomo"
+      ],
+      "assertions": [
+        {"field": "番茄钟时长", "source": "apps", "path": "dida.settings.pomoMinutes", "expected": 45, "initial_must_differ": true},
+        {"field": "新增番茄专注记录", "source": "apps", "path": "dida.records", "op": "new_contains", "expected": {"type": "pomo"}},
+        {"field": "番茄专注次数", "source": "apps", "path": "dida.stats.totalPomo", "expected": 43, "initial_must_differ": true}
+      ]
+    },
+    "explore_dida_dida_007": {
+      "review_status": "passed",
+      "review_notes": "Profile and preference fields are persistent and independent.",
+      "expected_changes": [
+        "apps.dida.user.name",
+        "apps.dida.user.signature",
+        "apps.dida.settings.theme",
+        "apps.dida.settings.startOfWeek"
+      ],
+      "assertions": [
+        {"field": "昵称", "source": "apps", "path": "dida.user.name", "expected": "专注达人", "initial_must_differ": true},
+        {"field": "个性签名", "source": "apps", "path": "dida.user.signature", "expected": "每天进步一点点", "initial_must_differ": true},
+        {"field": "浅色模式", "source": "apps", "path": "dida.settings.theme", "expected": "light", "initial_must_differ": true},
+        {"field": "一周起始日", "source": "apps", "path": "dida.settings.startOfWeek", "expected": 1, "initial_must_differ": true}
+      ]
+    },
+    "explore_dida_dida_008": {
+      "review_status": "passed",
+      "review_notes": "The intended action is copy from the system share sheet (clipboard source=share). Dida in-app copy or sending to a WeChat friend does not count. Official Gemini traces shared to WeChat with empty clipboard, so Hybrid 过→挂.",
+      "expected_changes": [
+        "apps.dida.tasks",
+        "os.services.shareAudit.events",
+        "os.clipboard",
+        "apps.dida.tasks[id=t4].completed",
+        "apps.dida.tasks[id=t4].completedAt"
+      ],
+      "assertions": [
+        {
+          "field": "新增准备季度汇报任务",
+          "source": "apps",
+          "path": "dida.tasks",
+          "op": "new_contains",
+          "expected": {"title": "准备季度汇报", "listId": "inbox", "priority": "high", "dueTs": 1784044800000}
+        },
+        {
+          "field": "系统分享已打开",
+          "source": "os",
+          "path": "services.shareAudit.events",
+          "op": "new_contains",
+          "expected": {"text": "准备季度汇报", "mimeType": "text/plain", "resultCode": "OK"}
+        },
+        {"field": "系统分享已复制", "source": "os", "path": "clipboard.content", "op": "contains", "expected": "准备季度汇报"},
+        {"field": "剪贴板来自系统分享", "source": "os", "path": "clipboard.source", "expected": "share"},
+        {"field": "买菜已完成", "source": "apps", "path": "dida.tasks[id=t4].completed", "expected": true, "initial_must_differ": true},
+        {"field": "买菜完成时间已写入", "source": "apps", "path": "dida.tasks[id=t4].completedAt", "op": "changed"}
+      ]
+    },
+    "explore_daysmatter_dm_001": {
+      "review_status": "passed",
+      "review_notes": "The revised task fixes the target date. The verifier requires one newly created event with every requested persistent field.",
+      "expected_changes": ["apps.daysmatter.events"],
+      "assertions": [
+        {
+          "field": "新增年度复盘会议倒数事件",
+          "source": "apps",
+          "path": "daysmatter.events",
+          "op": "new_contains",
+          "expected": {
+            "title": "年度复盘会议",
+            "targetDate": 1798675200000,
+            "notebookId": "nb_work",
+            "repeat": "year",
+            "reminder": "weekly",
+            "pinned": true,
+            "showOnHome": true
+          }
+        }
+      ]
+    },
+    "explore_daysmatter_dm_002": {
+      "review_status": "passed",
+      "review_notes": "The stable seeded event e_report must remain recoverable but be archived and hidden from home.",
+      "expected_changes": [
+        "apps.daysmatter.events[id=e_report].archived",
+        "apps.daysmatter.events[id=e_report].showOnHome"
+      ],
+      "assertions": [
+        {
+          "field": "提交季度报告已归档",
+          "source": "apps",
+          "path": "daysmatter.events[id=e_report].archived",
+          "expected": true,
+          "initial_must_differ": true
+        },
+        {
+          "field": "提交季度报告不再显示在首页",
+          "source": "apps",
+          "path": "daysmatter.events[id=e_report].showOnHome",
+          "expected": false,
+          "initial_must_differ": true
+        }
+      ]
+    },
+    "explore_daysmatter_dm_003": {
+      "review_status": "passed",
+      "review_notes": "The task now names icon and cover. A new event must reference the newly created matching notebook, not an unrelated notebook.",
+      "expected_changes": ["apps.daysmatter.notebooks", "apps.daysmatter.events"],
+      "assertions": [
+        {
+          "field": "健身事件属于新建健身打卡本子",
+          "source": "apps",
+          "path": "daysmatter.events",
+          "op": "new_linked",
+          "expected": {
+            "match": {
+              "title": "开始健身计划",
+              "targetDate": 1783814400000,
+              "plusOne": true,
+              "showOnHome": true
+            },
+            "reference_path": "daysmatter.notebooks",
+            "reference_field": "notebookId",
+            "reference_match": {
+              "name": "健身打卡",
+              "icon": "❤️",
+              "cover": "cover_green"
+            }
+          }
+        }
+      ]
+    },
+    "explore_daysmatter_dm_004": {
+      "review_status": "passed",
+      "review_notes": "The calculator result and the event detail display mode are persisted so both parts of the read-only interaction remain observable.",
+      "expected_changes": [
+        "apps.daysmatter.lastDateCalculation",
+        "apps.daysmatter.detailDisplayModes.e_trip"
+      ],
+      "assertions": [
+        {"field": "日期区间起点", "source": "apps", "path": "daysmatter.lastDateCalculation.rangeStart", "expected": 1757894400000},
+        {"field": "日期区间终点", "source": "apps", "path": "daysmatter.lastDateCalculation.rangeEnd", "expected": 1789430400000},
+        {"field": "包含起始日", "source": "apps", "path": "daysmatter.lastDateCalculation.includeStart", "expected": true},
+        {"field": "包含起始日相差366天", "source": "apps", "path": "daysmatter.lastDateCalculation.resultDays", "expected": 366},
+        {"field": "旅行出发详情已切换日期显示", "source": "apps", "path": "daysmatter.detailDisplayModes.e_trip", "expected": "date", "initial_must_differ": true}
+      ]
+    },
+    "explore_daysmatter_dm_005": {
+      "review_status": "passed",
+      "review_notes": "The revised wording names the unique sort target; all three preferences persist in the app store.",
+      "expected_changes": [
+        "apps.daysmatter.settings.sortBy",
+        "apps.daysmatter.settings.autoPin",
+        "apps.daysmatter.settings.locale"
+      ],
+      "assertions": [
+        {
+          "field": "按添加时间排序",
+          "source": "apps",
+          "path": "daysmatter.settings.sortBy",
+          "expected": "createTime",
+          "initial_must_differ": true
+        },
+        {
+          "field": "自动置顶近期事件",
+          "source": "apps",
+          "path": "daysmatter.settings.autoPin",
+          "expected": true,
+          "initial_must_differ": true
+        },
+        {
+          "field": "应用语言为英文",
+          "source": "apps",
+          "path": "daysmatter.settings.locale",
+          "expected": "en",
+          "initial_must_differ": true
+        }
+      ]
+    },
+    "explore_daysmatter_dm_006": {
+      "review_status": "passed",
+      "review_notes": "The seeded event has stable id e_anniv. Calendar, end-date toggle/value, and notebook move must all persist.",
+      "expected_changes": [
+        "apps.daysmatter.events[id=e_anniv].calendar",
+        "apps.daysmatter.events[id=e_anniv].hasEndDate",
+        "apps.daysmatter.events[id=e_anniv].endDate",
+        "apps.daysmatter.events[id=e_anniv].notebookId"
+      ],
+      "assertions": [
+        {"field": "重要纪念日改为农历", "source": "apps", "path": "daysmatter.events[id=e_anniv].calendar", "expected": "lunar", "initial_must_differ": true},
+        {"field": "重要纪念日启用结束日期", "source": "apps", "path": "daysmatter.events[id=e_anniv].hasEndDate", "expected": true, "initial_must_differ": true},
+        {"field": "结束日期比事件日期晚一年", "source": "apps", "path": "daysmatter.events[id=e_anniv].endDate", "expected": 1825862400000, "initial_must_differ": true},
+        {"field": "重要纪念日移动到生活本子", "source": "apps", "path": "daysmatter.events[id=e_anniv].notebookId", "expected": "nb_life", "initial_must_differ": true}
+      ]
+    },
+    "explore_daysmatter_dm_007": {
+      "review_status": "passed",
+      "review_notes": "The revised task names the expired seeded event. Deletion and notebook ordering must both persist.",
+      "expected_changes": [
+        "apps.daysmatter.events[id=e_report]",
+        "apps.daysmatter.notebooks[id=nb_work].order"
+      ],
+      "assertions": [
+        {
+          "field": "提交季度报告已删除",
+          "source": "apps",
+          "path": "daysmatter.events[id=e_report]",
+          "op": "absent"
+        },
+        {
+          "field": "工作本子排在第一位",
+          "source": "apps",
+          "path": "daysmatter.notebooks[id=nb_work].order",
+          "expected": 0,
+          "initial_must_differ": true
+        }
+      ]
+    },
+    "explore_cainiao_cainiao_001": {
+      "review_status": "passed",
+      "review_notes": "The seeded parcel has a stable id; confirmation must persist both final status and a signed timeline node.",
+      "expected_changes": ["apps.cainiao.packages[id=pkg_meat].status", "apps.cainiao.packages[id=pkg_meat].timeline"],
+      "assertions": [
+        {"field": "鸡胸肉卷已取走", "source": "apps", "path": "cainiao.packages[id=pkg_meat].status", "expected": "已签收", "initial_must_differ": true},
+        {"field": "物流时间线新增签收节点", "source": "apps", "path": "cainiao.packages[id=pkg_meat].timeline", "op": "new_contains", "expected": {"title": "已签收"}}
+      ]
+    },
+    "explore_cainiao_cainiao_002": {
+      "review_status": "passed",
+      "review_notes": "Every selected shipping option is now copied from the draft into the persisted order.",
+      "expected_changes": ["apps.cainiao.shipOrders"],
+      "assertions": [
+        {"field": "新增赵磊服务点寄件单", "source": "apps", "path": "cainiao.shipOrders", "op": "new_contains", "expected": {"toName": "赵磊", "method": "station", "stationId": "st_north", "itemName": "保温杯", "itemLabel": "日用品, 1kg", "weightKg": 1, "recycleBox": true, "insurance": "p500"}}
+      ]
+    },
+    "explore_cainiao_cainiao_003": {
+      "review_status": "passed",
+      "review_notes": "The target address is no longer pre-seeded; creation and OS clipboard output are independently required.",
+      "expected_changes": ["apps.cainiao.addresses", "os.clipboard"],
+      "assertions": [
+        {"field": "新增孙悦客户地址", "source": "apps", "path": "cainiao.addresses", "op": "new_contains", "expected": {"name": "孙悦", "phone": "18800004567", "province": "广东省", "city": "东莞市", "district": "南城街道", "detail": "创业大道100号科技园A座1203", "tagRelation": "客户"}},
+        {"field": "复制孙悦完整地址", "source": "os", "path": "clipboard.content", "op": "contains", "expected": "孙悦 18800004567 广东省东莞市南城街道创业大道100号科技园A座1203"},
+        {"field": "剪贴板来源为菜鸟", "source": "os", "path": "clipboard.source", "expected": "cainiao"}
+      ]
+    },
+    "explore_cainiao_cainiao_004": {
+      "review_status": "passed",
+      "review_notes": "Cancel plus a durable notes record of the ship order number; clipboard alone is not the goal.",
+      "expected_changes": ["apps.cainiao.shipOrders[id=so_pending].status", "apps.cainiao.shipOrders[id=so_pending].cancelReason", "apps.notes.notes"],
+      "assertions": [
+        {"field": "待取件订单已取消", "source": "apps", "path": "cainiao.shipOrders[id=so_pending].status", "expected": "已取消", "initial_must_differ": true},
+        {"field": "取消原因", "source": "apps", "path": "cainiao.shipOrders[id=so_pending].cancelReason", "expected": "计划有变,暂时不需要寄了"},
+        {"field": "笔记记下寄件单号", "source": "apps", "path": "notes.notes", "op": "new_contains", "expected": {"title": "取消寄件", "content": "20260716880144730"}}
+      ]
+    },
+    "explore_cainiao_cainiao_005": {
+      "review_status": "passed",
+      "review_notes": "Large-item dimensions, weight, speed, appointment, and handover preferences are persisted on the created order.",
+      "expected_changes": ["apps.cainiao.shipOrders"],
+      "assertions": [
+        {"field": "新增周敏大件上门寄件单", "source": "apps", "path": "cainiao.shipOrders", "op": "new_contains", "expected": {"toName": "周敏", "method": "pickup", "itemLabel": "行李箱, 5kg", "speedTier": "large", "weightKg": 5, "dims": {"l": "60", "w": "40", "h": "30"}, "slotDay": "明天", "handover": {"place": "当面交件", "note": "需要打电话"}}}
+      ]
+    },
+    "explore_cainiao_cainiao_006": {
+      "review_status": "passed",
+      "review_notes": "Query the battery, then take the cannot-standard-ship branch: locker instead of 标准寄. Do not name the verdict in the instruction.",
+      "expected_changes": ["apps.cainiao._temp.prohibitedResult", "apps.cainiao.draft.method", "apps.cainiao.draft.lockerId", "apps.cainiao.draft.lockerCell"],
+      "assertions": [
+        {"field": "锂电池查询结果", "source": "apps", "path": "cainiao._temp.prohibitedResult", "op": "contains", "expected": {"name": "锂电池", "verdict": "禁止寄递"}},
+        {"field": "到柜寄方式", "source": "apps", "path": "cainiao.draft.method", "expected": "locker", "initial_must_differ": true},
+        {"field": "选择最近丰巢柜", "source": "apps", "path": "cainiao.draft.lockerId", "expected": "lk1"},
+        {"field": "选择中格口", "source": "apps", "path": "cainiao.draft.lockerCell", "expected": "中格口", "initial_must_differ": true}
+      ]
+    },
+    "explore_cainiao_cainiao_007": {
+      "review_status": "passed",
+      "review_notes": "The coupon claim must update both market and wallet state, and all message unread counters must be zero.",
+      "expected_changes": ["apps.cainiao.marketCoupons[id=mc2].claimed", "apps.cainiao.coupons", "apps.cainiao.unread"],
+      "assertions": [
+        {"field": "香辣下饭酱已领取", "source": "apps", "path": "cainiao.marketCoupons[id=mc2].claimed", "expected": true, "initial_must_differ": true},
+        {"field": "钱包新增红包券", "source": "apps", "path": "cainiao.coupons", "op": "new_contains", "expected": {"title": "菜鸟淘礼金红包", "kind": "redpacket"}},
+        {"field": "问问消息已读", "source": "apps", "path": "cainiao.unread.wenwen", "expected": 0, "initial_must_differ": true},
+        {"field": "包裹消息已读", "source": "apps", "path": "cainiao.unread.package", "expected": 0, "initial_must_differ": true}
+      ]
+    },
+    "explore_daysmatter_dm_008": {
+      "review_status": "passed",
+      "review_notes": "Widget binding, launcher icon choice, and submitted feedback are now all persisted in the shared app state.",
+      "expected_changes": [
+        "apps.daysmatter.widgetEventId",
+        "apps.daysmatter.selectedIconId",
+        "apps.daysmatter.feedbackSubmissions"
+      ],
+      "assertions": [
+        {
+          "field": "小组件绑定项目上线",
+          "source": "apps",
+          "path": "daysmatter.widgetEventId",
+          "expected": "e_launch",
+          "initial_must_differ": true
+        },
+        {
+          "field": "主屏幕图标已更换",
+          "source": "apps",
+          "path": "daysmatter.selectedIconId",
+          "op": "changed"
+        },
+        {
+          "field": "新增小组件进度条反馈",
+          "source": "apps",
+          "path": "daysmatter.feedbackSubmissions",
+          "op": "new_contains",
+          "expected": {
+            "text": "我希望小组件能显示倒计时进度条"
+          }
+        }
+      ]
+    },
+    "explore_mail_mail_task_01": {
+      "review_status": "passed",
+      "review_notes": "The source message must be read and marked replied, while a newly sent school-account reply must contain the exact requested text.",
+      "expected_changes": ["apps.mail.mails[id=m-nimbus-1].isRead", "apps.mail.mails[id=m-nimbus-1].isReplied", "apps.mail.mails"],
+      "assertions": [
+        {"field": "Nimbus通知已读", "source": "apps", "path": "mail.mails[id=m-nimbus-1].isRead", "expected": true, "initial_must_differ": true},
+        {"field": "Nimbus通知已回复", "source": "apps", "path": "mail.mails[id=m-nimbus-1].isReplied", "expected": true, "initial_must_differ": true},
+        {"field": "学校邮箱已发送指定回复", "source": "apps", "path": "mail.mails", "op": "new_contains", "expected": {"accountId": "school", "folder": "sent", "to": [{"address": "billing@nimbus.dev"}], "body": [{"kind": "p", "text": "已知悉付款失败问题，我会尽快处理。"}]}}
+      ]
+    },
+    "explore_mail_mail_task_03": {
+      "review_status": "passed",
+      "review_notes": "The revised wording makes recipient, account, Cc, subject, and body deterministic and independently verifiable.",
+      "expected_changes": ["apps.mail.mails"],
+      "assertions": [
+        {"field": "学校邮箱已发送论文进展邮件", "source": "apps", "path": "mail.mails", "op": "new_contains", "expected": {"accountId": "school", "folder": "sent", "to": [{"address": "lin@cs.example.edu"}], "cc": [{"address": "chenyu.dev@gmail.com"}], "subject": "论文修改进展汇报", "body": [{"kind": "p", "text": "老师您好，我已完成论文第二轮修改。摘要：本研究探索移动智能体中 GUI 与工具协同的任务执行。请您审阅。"}]}}
+      ]
+    },
+    "explore_mail_mail_task_04": {
+      "review_status": "passed",
+      "review_notes": "A newly created folder must have the exact name and Gmail parent account.",
+      "expected_changes": ["apps.mail.customFolders"],
+      "assertions": [
+        {"field": "Gmail下新增会议投稿文件夹", "source": "apps", "path": "mail.customFolders", "op": "new_contains", "expected": {"name": "会议投稿", "accountId": "gmail"}}
+      ]
+    },
+    "explore_mail_mail_task_06": {
+      "review_status": "passed",
+      "review_notes": "Deleting the stable target message must move that exact message from the school inbox to trash.",
+      "expected_changes": ["apps.mail.mails[id=m-nimbus-1].folder"],
+      "assertions": [
+        {"field": "Nimbus付款失败邮件已移入废纸篓", "source": "apps", "path": "mail.mails[id=m-nimbus-1].folder", "expected": "trash", "initial_must_differ": true}
+      ]
+    },
+    "explore_keep_keep_task_01": {
+      "review_status": "passed",
+      "review_notes": "Join the fat-burn plan (member if needed), then open today's schedule. If that plan is already on the calendar, do not switch to another plan.",
+      "expected_changes": ["apps.keep.member.active", "apps.keep.schedule.activePlanId", "apps.keep.interactionAudit.scheduleHomeViewed"],
+      "assertions": [
+        {"field": "已开通Keep会员", "source": "apps", "path": "keep.member.active", "expected": true, "initial_must_differ": true},
+        {"field": "大体重全身燃脂计划已加入日程", "source": "apps", "path": "keep.schedule.activePlanId", "expected": "p_bigweight", "initial_must_differ": true},
+        {"field": "打开日程看今天推荐", "source": "apps", "path": "keep.interactionAudit.scheduleHomeViewed", "expected": true, "initial_must_differ": true}
+      ]
+    },
+    "explore_keep_keep_task_03": {
+      "review_status": "passed",
+      "review_notes": "The wording now names an initially unfollowed stable coach; both follow state and opening that coach's dynamic tab are observable.",
+      "expected_changes": ["apps.keep.followedCoaches", "apps.keep.interactionAudit.coachDynamicViewedIds"],
+      "assertions": [
+        {"field": "已关注猫叔慢跑", "source": "apps", "path": "keep.followedCoaches", "op": "contains", "expected": "coach_maoshu"},
+        {"field": "已浏览猫叔慢跑动态", "source": "apps", "path": "keep.interactionAudit.coachDynamicViewedIds", "op": "contains", "expected": "coach_maoshu"}
+      ]
+    },
+    "explore_keep_keep_task_04": {
+      "review_status": "passed",
+      "review_notes": "Run configuration and live session state are checked together with explicit panel, pause, and resume audit evidence.",
+      "expected_changes": ["apps.keep.runState", "apps.keep.runSession", "apps.keep.interactionAudit"],
+      "assertions": [
+        {"field": "户外目标跑5公里", "source": "apps", "path": "keep.runState", "op": "contains", "expected": {"sportType": "户外跑步", "mode": "目标跑", "goalKm": 5}},
+        {"field": "5公里跑步会话正在继续", "source": "apps", "path": "keep.runSession", "op": "contains", "expected": {"status": "running", "goalKm": 5}},
+        {"field": "查看第二页数据", "source": "apps", "path": "keep.interactionAudit.runPanelViewed", "op": "contains", "expected": 1},
+        {"field": "暂停一次", "source": "apps", "path": "keep.interactionAudit.runPauseCount", "expected": 1, "initial_must_differ": true},
+        {"field": "继续一次", "source": "apps", "path": "keep.interactionAudit.runResumeCount", "expected": 1, "initial_must_differ": true}
+      ]
+    },
+    "explore_keep_keep_task_05": {
+      "review_status": "passed",
+      "review_notes": "The stable Apple Health record must be uploaded and automatic upload must be enabled.",
+      "expected_changes": ["apps.keep.runRecords[id=rr_demo_pending].uploaded", "apps.keep.settings.autoUpload"],
+      "assertions": [
+        {"field": "Apple健康跑步记录已上传", "source": "apps", "path": "keep.runRecords[id=rr_demo_pending].uploaded", "expected": true, "initial_must_differ": true},
+        {"field": "自动上传已开启", "source": "apps", "path": "keep.settings.autoUpload", "expected": true, "initial_must_differ": true}
+      ]
+    },
+    "explore_keep_keep_task_08": {
+      "review_status": "passed",
+      "review_notes": "Read-only records navigation is persisted as audit evidence for both current and previous month views of the UI's aggregate running metric (总跑步).",
+      "expected_changes": ["apps.keep.interactionAudit.recordViews"],
+      "assertions": [
+        {"field": "查看本月总跑步", "source": "apps", "path": "keep.interactionAudit.recordViews", "op": "new_contains", "expected": {"metric": "总跑步", "segment": "月", "offset": 0}},
+        {"field": "翻到上月总跑步", "source": "apps", "path": "keep.interactionAudit.recordViews", "op": "new_contains", "expected": {"metric": "总跑步", "segment": "月", "offset": -1}}
+      ]
+    },
+    "explore_flomo_flomo_01": {
+      "review_status": "passed",
+      "review_notes": "The revised task fixes the rich-text content. The new tag and newly pinned memo must both exist.",
+      "expected_changes": ["apps.flomo.tags", "apps.flomo.memos"],
+      "assertions": [
+        {"field": "新增灵感产品标签", "source": "apps", "path": "flomo.tags", "op": "new_contains", "expected": {"name": "灵感/产品"}},
+        {"field": "新增并置顶产品灵感笔记", "source": "apps", "path": "flomo.memos", "op": "new_contains", "expected": {"content": "**记录产品灵感** #灵感/产品", "pinned": true, "deleted": false}}
+      ]
+    },
+    "explore_flomo_flomo_02": {
+      "review_status": "passed",
+      "review_notes": "Two stable initially non-reading memos are named, preventing arbitrary or already-tagged selections from passing.",
+      "expected_changes": ["apps.flomo.memos[id=m_04].tags", "apps.flomo.memos[id=m_07].tags"],
+      "assertions": [
+        {"field": "天气笔记添加读书标签", "source": "apps", "path": "flomo.memos[id=m_04].tags", "op": "contains", "expected": "t_read"},
+        {"field": "坚持记录笔记添加读书标签", "source": "apps", "path": "flomo.memos[id=m_07].tags", "op": "contains", "expected": "t_read"}
+      ]
+    },
+    "explore_flomo_flomo_04": {
+      "review_status": "passed",
+      "review_notes": "Review settings now affect the actual list; two next-page actions are recorded for this otherwise read-only task.",
+      "expected_changes": ["apps.flomo.settings.dailyReviewCount", "apps.flomo.settings.dailyReviewRange", "apps.flomo.interactionAudit.dailyReviewNextCount"],
+      "assertions": [
+        {"field": "每日回顾5条", "source": "apps", "path": "flomo.settings.dailyReviewCount", "expected": 5, "initial_must_differ": true},
+        {"field": "每日回顾最近一年", "source": "apps", "path": "flomo.settings.dailyReviewRange", "expected": "year", "initial_must_differ": true},
+        {"field": "向左翻阅两次", "source": "apps", "path": "flomo.interactionAudit.dailyReviewNextCount", "expected": 2, "initial_must_differ": true}
+      ]
+    },
+    "explore_flomo_flomo_06": {
+      "review_status": "passed",
+      "review_notes": "Stable tag ids allow both rename and order to be checked directly.",
+      "expected_changes": ["apps.flomo.tags[id=t_welcome_list].name", "apps.flomo.tags"],
+      "assertions": [
+        {"field": "欢迎列表重命名为欢迎清单", "source": "apps", "path": "flomo.tags[id=t_welcome_list].name", "expected": "欢迎/清单", "initial_must_differ": true},
+        {"field": "读书标签排第一", "source": "apps", "path": "flomo.tags.0.id", "expected": "t_read", "initial_must_differ": true}
+      ]
+    },
+    "explore_flomo_flomo_07": {
+      "review_status": "passed",
+      "review_notes": "Theme, font size, and exact ordered-list content must all persist.",
+      "expected_changes": ["apps.flomo.settings.theme", "apps.flomo.settings.fontSize", "apps.flomo.memos"],
+      "assertions": [
+        {"field": "深色模式", "source": "apps", "path": "flomo.settings.theme", "expected": "dark", "initial_must_differ": true},
+        {"field": "字号18", "source": "apps", "path": "flomo.settings.fontSize", "expected": 18, "initial_must_differ": true},
+        {"field": "新增三项有序计划", "source": "apps", "path": "flomo.memos", "op": "new_contains", "expected": {"content": "1. 完成实验记录\n2. 整理会议材料\n3. 复查任务数据", "deleted": false}}
+      ]
+    },
+    "explore_flomo_flomo_08": {
+      "review_status": "passed",
+      "review_notes": "The only seeded trash memo must end deleted again, while a newly created live duplicate with identical content remains.",
+      "expected_changes": ["apps.flomo.memos"],
+      "assertions": [
+        {"field": "原回收站笔记再次删除", "source": "apps", "path": "flomo.memos[id=m_13].deleted", "expected": true},
+        {"field": "保留一条已恢复笔记副本", "source": "apps", "path": "flomo.memos", "op": "new_contains", "expected": {"content": "一条已删除的笔记,放在回收站里。", "deleted": false}}
+      ]
+    },
+    "explore_tencentvideo_tv001": {
+      "review_status": "passed",
+      "review_notes": "The target is no longer initially chased. Expanded intro, new chasing row, and exact user comment are all required.",
+      "expected_changes": ["apps.tencentvideo.ui.detail.series.introExpanded", "apps.tencentvideo.chasing", "apps.tencentvideo.comments.tv_qianfangjie#ep1.items"],
+      "assertions": [
+        {"field": "千芳劫简介已展开", "source": "apps", "path": "tencentvideo.ui", "op": "contains", "expected": {"detail.series.introExpanded": true}},
+        {"field": "千芳劫已加追", "source": "apps", "path": "tencentvideo.chasing", "op": "new_contains", "expected": {"contentId": "tv_qianfangjie"}},
+        {"field": "发布百花宴期待评论", "source": "apps", "path": "tencentvideo.comments.tv_qianfangjie#ep1.items", "op": "new_contains", "expected": {"content": "期待百花宴后续剧情！"}}
+      ]
+    },
+    "explore_tencentvideo_tv002": {
+      "review_status": "passed",
+      "review_notes": "The short-drama player now has a real danmaku input. Exact content, title, and final episode are checked.",
+      "expected_changes": ["apps.tencentvideo.playback"],
+      "assertions": [
+        {"field": "微光之上第3集继续播放", "source": "apps", "path": "tencentvideo.playback", "op": "contains", "expected": {"contentId": "sd_weiguangzhishang", "episodeIndex": 3, "playing": true}},
+        {"field": "发送微光弹幕", "source": "apps", "path": "tencentvideo.playback.sentDanmaku", "op": "new_contains", "expected": {"text": "微光加油！"}}
+      ]
+    },
+    "explore_tencentvideo_tv003": {
+      "review_status": "passed",
+      "review_notes": "The revised deterministic queue sequence is verified by operation counters and the exact wanted title.",
+      "expected_changes": ["apps.tencentvideo.ui", "apps.tencentvideo.wantIds", "apps.tencentvideo.findfilm.index"],
+      "assertions": [
+        {"field": "完成3次找片操作", "source": "apps", "path": "tencentvideo.ui", "op": "contains", "expected": {"findfilm.operations": 3, "findfilm.dislikes": 2, "findfilm.wants": 1}},
+        {"field": "千芳劫加入想看", "source": "apps", "path": "tencentvideo.wantIds", "op": "contains", "expected": "tv_qianfangjie"}
+      ]
+    },
+    "explore_tencentvideo_tv005": {
+      "review_status": "passed",
+      "review_notes": "Episode, exact danmaku, selected mode, and picture-in-picture state must agree.",
+      "expected_changes": ["apps.tencentvideo.playback", "apps.tencentvideo.player.danmaku.mode"],
+      "assertions": [
+        {"field": "这一刻心动第12集", "source": "apps", "path": "tencentvideo.playback", "op": "contains", "expected": {"contentId": "tv_zheyikexindong", "episodeIndex": 12, "pipOn": true}},
+        {"field": "发送第12集弹幕", "source": "apps", "path": "tencentvideo.playback.sentDanmaku", "op": "new_contains", "expected": {"text": "第12集太甜了！"}},
+        {"field": "弹幕精选模式", "source": "apps", "path": "tencentvideo.player.danmaku.mode", "expected": "selected", "initial_must_differ": true}
+      ]
+    },
+    "explore_tencentvideo_tv007": {
+      "review_status": "passed",
+      "review_notes": "After clearing and submitting the one new query, history must contain only that query; the named stable discussion must be liked.",
+      "expected_changes": ["apps.tencentvideo.searchHub.history", "apps.tencentvideo.search.submitted", "apps.tencentvideo.likedDiscussionIds"],
+      "assertions": [
+        {"field": "搜索历史仅保留千芳劫", "source": "apps", "path": "tencentvideo.searchHub.history", "expected": ["千芳劫"], "initial_must_differ": true},
+        {"field": "已提交千芳劫搜索", "source": "apps", "path": "tencentvideo.search.submitted", "expected": "千芳劫"},
+        {"field": "点赞服饰考讨论", "source": "apps", "path": "tencentvideo.likedDiscussionIds", "op": "contains", "expected": "d_3"}
+      ]
+    },
+    "explore_youku_yk_task_01": {
+      "review_status": "passed",
+      "review_notes": "The first movie has a stable id and starts unliked, unfollowed, with danmaku disabled. Language, exact danmaku, like, and follow must all agree.",
+      "expected_changes": ["apps.youku.playback", "apps.youku.userDanmakuByKey.m_xunyao1", "apps.youku.likes", "apps.youku.libFollowing"],
+      "assertions": [
+        {"field": "寻妖记切换粤语", "source": "apps", "path": "youku.playback.languages.m_xunyao1", "expected": "粤语", "initial_must_differ": true},
+        {"field": "弹幕已开启", "source": "apps", "path": "youku.playback.danmakuOn", "expected": true, "initial_must_differ": true},
+        {"field": "发送团团弹幕", "source": "apps", "path": "youku.userDanmakuByKey.m_xunyao1", "op": "contains", "expected": "团团太可爱了"},
+        {"field": "点赞寻妖记", "source": "apps", "path": "youku.likes", "op": "new_contains", "expected": {"id": "m_xunyao1", "ctype": "movie"}},
+        {"field": "加追寻妖记", "source": "apps", "path": "youku.libFollowing", "op": "new_contains", "expected": {"id": "m_xunyao1", "ctype": "movie"}}
+      ]
+    },
+    "explore_youku_yk_task_03": {
+      "review_status": "passed",
+      "review_notes": "The revised filters deterministically rank m_xunyao1 first; the new download must target that exact movie.",
+      "expected_changes": ["apps.youku.downloads"],
+      "assertions": [
+        {"field": "缓存筛选结果寻妖记", "source": "apps", "path": "youku.downloads", "op": "new_contains", "expected": {"id": "m_xunyao1", "ctype": "movie"}}
+      ]
+    },
+    "explore_youku_yk_task_04": {
+      "review_status": "passed",
+      "review_notes": "The wording now matches the real time-tagged comment interaction. Persistent panel audit, episode history, and an exact new episode-3 interaction are required.",
+      "expected_changes": ["apps.youku.episodePanelAudit.s_xiaoao", "apps.youku.history", "apps.youku.commentsByKey.s_xiaoao:3", "apps.youku.interactions"],
+      "assertions": [
+        {"field": "浏览剧情并开启分集标题选择第3集", "source": "apps", "path": "youku.episodePanelAudit.s_xiaoao", "expected": {"viewedTabs": ["synopsis", "episodes"], "titlesEnabled": true, "selectedEpisode": 3}},
+        {"field": "第3集产生观看历史", "source": "apps", "path": "youku.history", "op": "new_contains", "expected": {"id": "s_xiaoao", "ctype": "series", "episode": 3}},
+        {"field": "第3集发布本人评论", "source": "apps", "path": "youku.commentsByKey.s_xiaoao:3", "op": "contains", "expected": {"byMe": true}},
+        {"field": "评论包含指定文字", "source": "apps", "path": "youku.interactions.0.text", "op": "contains", "expected": "这里打戏太顶了"},
+        {"field": "评论属于第3集", "source": "apps", "path": "youku.interactions.0.episode", "expected": 3}
+      ]
+    },
+    "explore_youku_yk_task_06": {
+      "review_status": "passed",
+      "review_notes": "The revised task names the first stable feed item, creator, and first comment. All four independent state mutations are required.",
+      "expected_changes": ["apps.youku.votes.sv10", "apps.youku.commentsByKey.sv10", "apps.youku.followingCreators", "apps.youku.favorites"],
+      "assertions": [
+        {"field": "零日风暴解说投喜欢爱看", "source": "apps", "path": "youku.votes.sv10", "expected": "xihuan", "initial_must_differ": true},
+        {"field": "点赞该解说评论", "source": "apps", "path": "youku.commentsByKey.sv10", "op": "contains", "expected": {"likedByMe": true}},
+        {"field": "关注赛西娅", "source": "apps", "path": "youku.followingCreators", "op": "new_contains", "expected": "c_saixiya"},
+        {"field": "收藏零日风暴解说", "source": "apps", "path": "youku.favorites", "op": "new_contains", "expected": {"id": "sv10", "ctype": "short"}}
+      ]
+    },
+    "explore_youku_yk_task_08": {
+      "review_status": "passed",
+      "review_notes": "Both named fans start not followed back, the recommended creator starts unfollowed, and search history starts non-empty.",
+      "expected_changes": ["apps.youku.fans", "apps.youku.followingCreators", "apps.youku.searchHistory"],
+      "assertions": [
+        {"field": "回关晴天小柚", "source": "apps", "path": "youku.fans[userId=f_qingtian].followedBack", "expected": true, "initial_must_differ": true},
+        {"field": "回关木子有点忙", "source": "apps", "path": "youku.fans[userId=f_muzi].followedBack", "expected": true, "initial_must_differ": true},
+        {"field": "关注赛西娅", "source": "apps", "path": "youku.followingCreators", "op": "new_contains", "expected": "c_saixiya"},
+        {"field": "搜索历史清空", "source": "apps", "path": "youku.searchHistory", "expected": [], "initial_must_differ": true}
+      ]
+    },
+    "explore_ctrip_ctrip_001": {
+      "review_status": "passed",
+      "review_notes": "Hotel search, facilities/reviews, the breakfast room draft, and an Alipay-paid Qinghe hotel order are independently observable. Password 123456 is the Alipay cashier PIN.",
+      "expected_changes": ["apps.ctrip.taskAudit.hotelFilters", "apps.ctrip.taskAudit.hotelFacilities:h_quanji", "apps.ctrip.taskAudit.hotelReviewsViewed:h_quanji", "apps.ctrip.taskAudit.hotelBookingDraft", "apps.ctrip.orders", "apps.alipay.transferRecords"],
+      "assertions": [
+        {"field": "杭州400元以下含早筛选", "source": "apps", "path": "ctrip.taskAudit.hotelFilters", "op": "contains", "expected": {"city": "杭州", "priceId": "lt400", "chips": ["含早"]}},
+        {"field": "查看青禾设施", "source": "apps", "path": "ctrip.taskAudit.hotelFacilities:h_quanji", "expected": true},
+        {"field": "查看青禾点评", "source": "apps", "path": "ctrip.taskAudit.hotelReviewsViewed:h_quanji", "expected": true},
+        {"field": "进入青禾含早餐房型填单", "source": "apps", "path": "ctrip.taskAudit.hotelBookingDraft", "op": "contains", "expected": {"hotelId": "h_quanji", "roomId": "r_32106985", "breakfast": "1份早餐", "rooms": 1}},
+        {"field": "支付宝付青禾酒店", "source": "apps", "path": "ctrip.orders", "op": "new_contains", "expected": {"category": "hotel", "title": "青禾酒店(杭州西湖湖滨解放路店)", "payMethod": "alipay", "status": "upcoming"}},
+        {"field": "支付宝出现携程付款", "source": "apps", "path": "alipay.transferRecords", "op": "new_contains", "expected": {"counterpartyName": "携程旅行"}}
+      ]
+    },
+    "explore_ctrip_ctrip_002": {
+      "review_status": "passed",
+      "review_notes": "Stable train and traveler ids make the viewed stops, two selected passengers, and seat preference directly verifiable.",
+      "expected_changes": ["apps.ctrip.taskAudit.trainStopsViewed:t_g986", "apps.ctrip.taskAudit.trainBookingDraft"],
+      "assertions": [
+        {"field": "查看G986经停", "source": "apps", "path": "ctrip.taskAudit.trainStopsViewed:t_g986", "expected": true},
+        {"field": "G986两位乘客靠窗填单", "source": "apps", "path": "ctrip.taskAudit.trainBookingDraft", "op": "contains", "expected": {"trainId": "t_g986", "travelerIds": ["p1", "p2"], "seatPick": "靠窗"}}
+      ]
+    },
+    "explore_ctrip_ctrip_003": {
+      "review_status": "passed",
+      "review_notes": "Longchun-Wuxi now has realistic direct and connecting inventory. Direct-only selection and the submitted alert persist outside the page.",
+      "expected_changes": ["apps.ctrip.taskAudit.flightDirectOnly", "apps.ctrip.flightPriceAlerts"],
+      "assertions": [
+        {"field": "长春无锡仅看直飞", "source": "apps", "path": "ctrip.taskAudit.flightDirectOnly", "expected": {"from": "长春", "to": "无锡", "enabled": true}},
+        {"field": "新增500元智能低价提醒", "source": "apps", "path": "ctrip.flightPriceAlerts", "op": "new_contains", "expected": {"from": "长春", "to": "无锡", "threshold": 500, "smart": true, "trip": "oneway"}}
+      ]
+    },
+    "explore_ctrip_ctrip_004": {
+      "review_status": "passed",
+      "review_notes": "The completed order now references a real Longchun hotel. Exact review content, order reviewed state, and invoice job for the same order are required.",
+      "expected_changes": ["apps.ctrip.orders[id=o3].reviewed", "apps.ctrip.hotelReviews.h_cc_atour_jlu", "apps.ctrip.invoiceJobs"],
+      "assertions": [
+        {"field": "长春酒店订单已点评", "source": "apps", "path": "ctrip.orders[id=o3].reviewed", "expected": true, "initial_must_differ": true},
+        {"field": "提交指定5分点评", "source": "apps", "path": "ctrip.hotelReviews.h_cc_atour_jlu", "op": "new_contains", "expected": {"score": 5, "content": "位置方便，房间干净，早餐也很丰富。"}},
+        {"field": "同笔订单个人报销凭证", "source": "apps", "path": "ctrip.invoiceJobs", "op": "new_contains", "expected": {"orderIds": ["o3"], "titleType": "个人", "status": "doing"}}
+      ]
+    },
+    "explore_ctrip_ctrip_005": {
+      "review_status": "passed",
+      "review_notes": "Hotel chips now compose instead of replacing each other. The exact map pin and resulting favorite must agree.",
+      "expected_changes": ["apps.ctrip.taskAudit.hotelFilters", "apps.ctrip.taskAudit.hotelMapPin", "apps.ctrip.favoriteHotels"],
+      "assertions": [
+        {"field": "上海地铁周边和含早组合筛选", "source": "apps", "path": "ctrip.taskAudit.hotelFilters", "op": "contains", "expected": {"city": "上海", "chips": ["地铁周边", "含早"]}},
+        {"field": "点击上海青禾地图气泡", "source": "apps", "path": "ctrip.taskAudit.hotelMapPin", "expected": {"city": "上海", "hotelId": "h_sh_ji"}},
+        {"field": "收藏上海青禾酒店", "source": "apps", "path": "ctrip.favoriteHotels", "op": "new_contains", "expected": "h_sh_ji"}
+      ]
+    },
+    "explore_ctrip_ctrip_006": {
+      "review_status": "passed",
+      "review_notes": "The task now supplies deterministic traveler data. The ticket draft must reference that newly created traveler rather than a preseeded person.",
+      "expected_changes": ["apps.ctrip.travelers", "apps.ctrip.taskAudit.ticketBookingDraft"],
+      "assertions": [
+        {"field": "新增周小满出行人", "source": "apps", "path": "ctrip.travelers", "op": "new_contains", "expected": {"name": "周小满", "idCard": "110101**********34", "phone": "13612345678"}},
+        {"field": "上海迪士尼成人票填单", "source": "apps", "path": "ctrip.taskAudit.ticketBookingDraft", "op": "contains", "expected": {"attractionId": "a_disney", "ticketId": "tk_adult", "qty": 1}},
+        {"field": "填单游客引用新建周小满", "source": "apps", "path": "ctrip.taskAudit.ticketBookingDraft", "op": "references_new", "expected": {"reference_path": "ctrip.travelers", "reference_field": "visitorId", "reference_match": {"name": "周小满", "phone": "13612345678"}}}
+      ]
+    },
+    "explore_ctrip_ctrip_007": {
+      "review_status": "passed",
+      "review_notes": "The former wontfix button now exposes actual Longchun-Wuxi alternatives. Both rebook inventory and the member upgrade card must be observed.",
+      "expected_changes": ["apps.ctrip.taskAudit.rebookOptionsViewed", "apps.ctrip.taskAudit.memberCenterViewed"],
+      "assertions": [
+        {"field": "查看o2可改签航班", "source": "apps", "path": "ctrip.taskAudit.rebookOptionsViewed", "op": "contains", "expected": {"orderId": "o2", "optionIds": ["f_a67148", "f_ho1876", "f_cz6452"]}},
+        {"field": "查看铂金会员升级积分", "source": "apps", "path": "ctrip.taskAudit.memberCenterViewed", "expected": {"memberLevel": "铂金贵宾", "points": 6287, "pointsToNext": 713}}
+      ]
+    },
+    "explore_luckin_luckin_001": {
+      "review_status": "passed",
+      "review_notes": "The exact customized two-cup cart result and the threshold-qualified coupon are snapshotted onto a newly submitted order.",
+      "expected_changes": ["apps.luckin.orders"],
+      "assertions": [
+        {"field": "新订单含2杯指定口味生椰拿铁并用满20减8券", "source": "apps", "path": "luckin.orders", "op": "new_contains", "expected": {"status": "unpaid", "couponId": "c02", "items": [{"productId": "coconut-latte", "quantity": 2, "spec": "extra/hot/less"}]}}
+      ]
+    },
+    "explore_luckin_luckin_002": {
+      "review_status": "passed",
+      "review_notes": "Coupon claiming must be a real initial-to-final change, and the new order must contain exactly two orange coffees plus the exact note.",
+      "expected_changes": ["apps.luckin.coupons[id=c01].claimed", "apps.luckin.orders"],
+      "assertions": [
+        {"field": "领取9.9元券", "source": "apps", "path": "luckin.coupons[id=c01].claimed", "expected": true, "initial_must_differ": true},
+        {"field": "2杯橙C与指定备注的新订单", "source": "apps", "path": "luckin.orders", "op": "new_contains", "expected": {"status": "unpaid", "note": "少冰，不要吸管", "items": [{"productId": "orange-c", "quantity": 2}]}}
+      ]
+    },
+    "explore_luckin_luckin_003": {
+      "review_status": "passed",
+      "review_notes": "The verifier requires a newly created full address and a newly submitted delivery order linked to that exact address id.",
+      "expected_changes": ["apps.luckin.addresses", "apps.luckin.orders"],
+      "assertions": [
+        {"field": "新增唯一默认李梅家庭地址", "source": "apps", "path": "luckin.addresses", "op": "new_contains", "expected": {"name": "李梅", "gender": "female", "phone": "13800001234", "region": "海蓝市 新城区", "detail": "幸福路66号2栋801", "tag": "家", "isDefault": true}},
+        {"field": "外送订单引用新建李梅地址", "source": "apps", "path": "luckin.orders", "op": "new_linked", "expected": {"match": {"status": "unpaid", "fulfillmentMode": "delivery"}, "reference_path": "luckin.addresses", "reference_field": "addressId", "reference_match": {"name": "李梅", "phone": "13800001234"}}}
+      ]
+    },
+    "explore_luckin_luckin_004": {
+      "review_status": "passed",
+      "review_notes": "Inflation must persist on c05 and the newly created order must qualify for and snapshot that same coupon.",
+      "expected_changes": ["apps.luckin.coupons[id=c05]", "apps.luckin.orders"],
+      "assertions": [
+        {"field": "周一能量券膨胀至9元并领取", "source": "apps", "path": "luckin.coupons[id=c05]", "op": "contains", "expected": {"amount": 9, "claimed": true}},
+        {"field": "2杯橙C订单应用膨胀券", "source": "apps", "path": "luckin.orders", "op": "new_contains", "expected": {"status": "unpaid", "couponId": "c05", "items": [{"productId": "orange-c", "quantity": 2}]}}
+      ]
+    },
+    "explore_luckin_luckin_008": {
+      "review_status": "passed",
+      "review_notes": "The submitted order must snapshot the exact store and contain one exchanged lemon tea; merely opening the panels cannot pass.",
+      "expected_changes": ["apps.luckin.orders"],
+      "assertions": [
+        {"field": "星河门店订单含1件青柠冰茶换购", "source": "apps", "path": "luckin.orders", "op": "new_contains", "expected": {"status": "unpaid", "fulfillmentMode": "pickup", "storeId": "s01", "items": [{"productId": "lemon-tea", "quantity": 1}]}}
+      ]
+    },
+    "explore_xianyu_xianyu_001": {
+      "review_status": "passed",
+      "review_notes": "Seed conflicts were removed. Favorite, exact outbound message, and seller follow must all be new task effects.",
+      "expected_changes": ["apps.xianyu.favorites", "apps.xianyu.chats[id=ch_s1].messages", "apps.xianyu.followedSellers"],
+      "assertions": [
+        {"field": "收藏索尼A7M4", "source": "apps", "path": "xianyu.favorites", "op": "new_contains", "expected": "i1"},
+        {"field": "向对应卖家发送指定询问", "source": "apps", "path": "xianyu.chats[id=ch_s1].messages", "op": "new_contains", "expected": {"sender": "me", "type": "text", "content": "快门数能再确认一下吗"}},
+        {"field": "关注A7M4卖家", "source": "apps", "path": "xianyu.followedSellers", "op": "new_contains", "expected": "s1"}
+      ]
+    },
+    "explore_xianyu_xianyu_002": {
+      "review_status": "passed",
+      "review_notes": "A newly saved draft must carry the AI-generated description and every requested structured field.",
+      "expected_changes": ["apps.xianyu.drafts"],
+      "assertions": [
+        {"field": "保存完整AI文案草稿", "source": "apps", "path": "xianyu.drafts", "op": "new_contains", "expected": {"desc": "自用闲置,九成新无磕碰,功能一切正常,配件齐全。因换新出闲置,诚心可小刀,支持验货,放心拍~", "price": 320, "condition": "9成新", "category": "数码", "inspected": true}}
+      ]
+    },
+    "explore_xianyu_xianyu_003": {
+      "review_status": "passed",
+      "review_notes": "The target circle must be newly joined and its market tab explicitly observed; route arrival alone is insufficient.",
+      "expected_changes": ["apps.xianyu.joinedCircles", "apps.xianyu.taskAudit.circleTabViewed"],
+      "assertions": [
+        {"field": "加入球鞋收藏交流", "source": "apps", "path": "xianyu.joinedCircles", "op": "new_contains", "expected": "c4"},
+        {"field": "浏览球鞋圈行情标签", "source": "apps", "path": "xianyu.taskAudit.circleTabViewed", "expected": {"circleId": "c4", "tab": "market"}}
+      ]
+    },
+    "explore_xianyu_xianyu_004": {
+      "review_status": "passed",
+      "review_notes": "The review must be newly persisted with exact order, score, text, anonymity and at least one selected image.",
+      "expected_changes": ["apps.xianyu.reviews", "apps.xianyu.orders[id=o4]"],
+      "assertions": [
+        {"field": "提交o4指定匿名五星评价", "source": "apps", "path": "xianyu.reviews", "op": "new_contains", "expected": {"orderId": "o4", "rating": 5, "content": "做工扎实，卖家发货快，键盘手感超出预期", "anonymous": true}},
+        {"field": "评价包含晒图", "source": "apps", "path": "xianyu.reviews[orderId=o4].images", "op": "nonempty"},
+        {"field": "o4完成评价闭环", "source": "apps", "path": "xianyu.orders[id=o4]", "op": "contains", "expected": {"reviewed": true, "status": "completed"}}
+      ]
+    },
+    "explore_xianyu_xianyu_005": {
+      "review_status": "passed",
+      "review_notes": "Both receive-address default uniqueness and a newly linked default return address are checked independently.",
+      "expected_changes": ["apps.xianyu.addresses", "apps.xianyu.returnAddresses"],
+      "assertions": [
+        {"field": "张小妹杭州地址为默认", "source": "apps", "path": "xianyu.addresses[id=a3].isDefault", "expected": true, "initial_must_differ": true},
+        {"field": "原收货默认地址取消", "source": "apps", "path": "xianyu.addresses[id=a1].isDefault", "expected": false, "initial_must_differ": true},
+        {"field": "新增默认退货地址", "source": "apps", "path": "xianyu.returnAddresses", "op": "new_contains", "expected": {"name": "张三", "phone": "13800000000", "region": "上海市 上海市 浦东新区", "detail": "世纪大道100号", "isDefault": true}},
+        {"field": "原退货默认地址取消", "source": "apps", "path": "xianyu.returnAddresses[id=ra1].isDefault", "expected": false, "initial_must_differ": true}
+      ]
+    },
+    "explore_xianyu_xianyu_006": {
+      "review_status": "passed",
+      "review_notes": "Subscribe to Shanghai iPhone 14 Pro. Dropped the unrelated coupon browse; it was a stiff look-then-stop.",
+      "expected_changes": ["apps.xianyu.subscribedSearches", "apps.xianyu.taskAudit.searchRegion"],
+      "assertions": [
+        {"field": "订阅iPhone 14 Pro", "source": "apps", "path": "xianyu.subscribedSearches", "op": "new_contains", "expected": "iPhone 14 Pro"},
+        {"field": "上海地区搜索筛选", "source": "apps", "path": "xianyu.taskAudit.searchRegion", "expected": {"keyword": "iPhone 14 Pro", "region": "上海"}}
+      ]
+    },
+    "explore_xianyu_xianyu_007": {
+      "review_status": "passed",
+      "review_notes": "The deterministic task now names exact condition and capacity; both are recorded with the exact model.",
+      "expected_changes": ["apps.xianyu.taskAudit.recycleEstimate"],
+      "assertions": [
+        {"field": "iPhone14Pro指定规格估价", "source": "apps", "path": "xianyu.taskAudit.recycleEstimate", "expected": {"model": "iPhone 14 Pro", "condition": "9成新", "capacity": "256G"}}
+      ]
+    },
+    "explore_xianyu_xianyu_008": {
+      "review_status": "passed",
+      "review_notes": "Initial sticky state and coupon message were repaired. All four message-list/chat mutations are required.",
+      "expected_changes": ["apps.xianyu.chats", "apps.xianyu.coupons[id=cp2].claimed"],
+      "assertions": [
+        {"field": "置顶手办退坑仓", "source": "apps", "path": "xianyu.chats[id=ch_s2].isSticky", "expected": true, "initial_must_differ": true},
+        {"field": "删除球鞋阿哲会话", "source": "apps", "path": "xianyu.chats[id=ch_s3]", "op": "absent"},
+        {"field": "领取数码店购物券", "source": "apps", "path": "xianyu.coupons[id=cp2].claimed", "expected": true, "initial_must_differ": true},
+        {"field": "发送考虑消息", "source": "apps", "path": "xianyu.chats[id=ch_s1].messages", "op": "new_contains", "expected": {"sender": "me", "content": "好的，我考虑一下"}}
+      ]
+    },
+    "explore_xianyu_xianyu_009": {
+      "review_status": "passed",
+      "review_notes": "Cancel the unpaid buy order, then open sold completed. A cancelled buy will not appear in sold history, so do not message. Instruction uses the branch, not the outcome.",
+      "expected_changes": ["apps.xianyu.orders[id=o1]", "apps.xianyu.taskAudit.soldOrdersTabViewed"],
+      "assertions": [
+        {"field": "o1按指定原因取消", "source": "apps", "path": "xianyu.orders[id=o1]", "op": "contains", "expected": {"status": "closed", "cancelReason": "不想买了"}},
+        {"field": "查看卖出订单已完成标签", "source": "apps", "path": "xianyu.taskAudit.soldOrdersTabViewed", "expected": "completed"},
+        {"field": "没有把取消发到聊天", "source": "apps", "path": "xianyu.chats", "op": "not_contains", "expected": {"messages": [{"sender": "me", "content": "这单不要了"}]}}
+      ]
+    },
+    "explore_xianyu_xianyu_010": {
+      "review_status": "passed",
+      "review_notes": "The rewritten task uses an existing source tab. Market source/category and the later home channel are independently recorded.",
+      "expected_changes": ["apps.xianyu.taskAudit.marketBrowse", "apps.xianyu.taskAudit.homeChannelViewed"],
+      "assertions": [
+        {"field": "集市准新特价手机筛选", "source": "apps", "path": "xianyu.taskAudit.marketBrowse", "expected": {"source": "nearNew", "category": "手机"}},
+        {"field": "首页数码频道", "source": "apps", "path": "xianyu.taskAudit.homeChannelViewed", "expected": "digital"}
+      ]
+    },
+    "explore_xianyu_xianyu_011": {
+      "review_status": "passed",
+      "review_notes": "Both privacy collections must be empty and both settings must have changed from their seeded values.",
+      "expected_changes": ["apps.xianyu.footprints", "apps.xianyu.searchHistory", "apps.xianyu.settings"],
+      "assertions": [
+        {"field": "清空浏览足迹", "source": "apps", "path": "xianyu.footprints", "expected": [], "initial_must_differ": true},
+        {"field": "清空搜索历史", "source": "apps", "path": "xianyu.searchHistory", "expected": [], "initial_must_differ": true},
+        {"field": "开启深色并切英文", "source": "apps", "path": "xianyu.settings", "expected": {"darkMode": true, "language": "en"}, "initial_must_differ": true}
+      ]
+    },
+    "explore_xianyu_xianyu_013": {
+      "review_status": "passed",
+      "review_notes": "Comment interactions and the paid order are checked against exact item, address snapshot, delivery and balance payment.",
+      "expected_changes": ["apps.xianyu.comments.i4", "apps.xianyu.orders"],
+      "assertions": [
+        {"field": "点赞第一条评论", "source": "apps", "path": "xianyu.comments.i4[id=cm1].liked", "expected": true, "initial_must_differ": true},
+        {"field": "发送指定商品评论", "source": "apps", "path": "xianyu.comments.i4", "op": "new_contains", "expected": {"content": "请问支持当面验机吗", "liked": false}},
+        {"field": "i4使用杭州地址余额支付完成", "source": "apps", "path": "xianyu.orders", "op": "new_contains", "expected": {"itemId": "i4", "status": "pendingShip", "payMethod": "余额", "delivery": "express", "addressSnapshot": {"name": "张小妹", "full": "浙江省杭州市西湖区文一西路969号海创园5号楼"}}}
+      ]
+    },
+    "explore_jingdong_jd_001": {
+      "review_status": "passed",
+      "review_notes": "Region qualification and a new exact-SKU six-period Baitiao order are required; cashier completion to undelivered is not required.",
+      "expected_changes": ["apps.jingdong.guobuRegions", "apps.jingdong.orders"],
+      "assertions": [
+        {"field": "河南国补资格已领取", "source": "apps", "path": "jingdong.guobuRegions[name=河南].claimed", "expected": true, "initial_must_differ": true},
+        {"field": "vivo X300白条6期订单", "source": "apps", "path": "jingdong.orders", "op": "new_contains", "expected": {"payMethod": "京东白条", "baitiaoPeriod": 6, "lines": [{"itemId": "i_phone_v", "skuDesc": "幻夜黑 12+256", "qty": 1}]}}
+      ]
+    },
+    "explore_jingdong_jd_002": {
+      "review_status": "passed",
+      "review_notes": "Seed data now exposes the requested image-review tag. The cheaper Honor target must be filtered, newly favorited and newly added with its default specification.",
+      "expected_changes": ["apps.jingdong.favorites", "apps.jingdong.cart", "apps.jingdong.taskAudit.reviewFilter"],
+      "assertions": [
+        {"field": "荣耀Magic筛选有图评价", "source": "apps", "path": "jingdong.taskAudit.reviewFilter", "expected": {"itemId": "i_phone_honor", "tag": "有图"}},
+        {"field": "收藏价格更低的荣耀Magic", "source": "apps", "path": "jingdong.favorites", "op": "new_contains", "expected": "i_phone_honor"},
+        {"field": "默认釉白荣耀加入购物车", "source": "apps", "path": "jingdong.cart", "op": "new_contains", "expected": {"itemId": "i_phone_honor", "skuDesc": "釉白", "qty": 1}}
+      ]
+    },
+    "explore_jingdong_jd_003": {
+      "review_status": "passed",
+      "review_notes": "Cancellation, newly claimed category coupon, both search filters and a newly paid coupon-linked ThinkBook order are checked.",
+      "expected_changes": ["apps.jingdong.orders", "apps.jingdong.coupons", "apps.jingdong.taskAudit.searchResult"],
+      "assertions": [
+        {"field": "原ThinkBook订单取消", "source": "apps", "path": "jingdong.orders[id=o_2].status", "expected": "cancelled", "initial_must_differ": true},
+        {"field": "领取手机数码100元券", "source": "apps", "path": "jingdong.coupons", "op": "new_contains", "expected": {"id": "cc3", "amount": 100, "threshold": 1000, "claimed": true}},
+        {"field": "ThinkBook国补京东物流筛选", "source": "apps", "path": "jingdong.taskAudit.searchResult", "op": "contains", "expected": {"query": "ThinkBook 14+", "filters": ["国家补贴", "京东物流"]}},
+        {"field": "ThinkBook使用cc3京东支付", "source": "apps", "path": "jingdong.orders", "op": "new_contains", "expected": {"payMethod": "京东支付·招商银行储蓄卡(0612)", "couponId": "cc3", "lines": [{"itemId": "i_thinkbook", "qty": 1}]}}
+      ]
+    },
+    "explore_jingdong_jd_004": {
+      "review_status": "passed",
+      "review_notes": "The task now requires only the milk line selected. Sign-in, coupon claim and exact three-unit WeChat order must all be new effects.",
+      "expected_changes": ["apps.jingdong.signedToday", "apps.jingdong.user.jingdou", "apps.jingdong.coupons", "apps.jingdong.orders"],
+      "assertions": [
+        {"field": "今日签到", "source": "apps", "path": "jingdong.signedToday", "expected": true, "initial_must_differ": true},
+        {"field": "签到增加10京豆", "source": "apps", "path": "jingdong.user.jingdou", "expected": 3010, "initial_must_differ": true},
+        {"field": "领取全品类券", "source": "apps", "path": "jingdong.coupons", "op": "new_contains", "expected": {"id": "cc1", "claimed": true}},
+        {"field": "三件旺旺牛奶微信订单", "source": "apps", "path": "jingdong.orders", "op": "new_contains", "expected": {"payMethod": "微信支付", "couponId": "cc1", "lines": [{"itemId": "i_wangzai", "qty": 3}]}}
+      ]
+    },
+    "explore_jingdong_jd_005": {
+      "review_status": "passed",
+      "review_notes": "Logistics arrival and reminder are now semantic order fields; review rating is persisted instead of dropping the selected stars.",
+      "expected_changes": ["apps.jingdong.orders[id=o_1]", "apps.jingdong.orders[id=o_4]"],
+      "assertions": [
+        {"field": "查看旺旺订单物流并催单", "source": "apps", "path": "jingdong.orders[id=o_1]", "op": "contains", "expected": {"logisticsViewed": true, "reminded": true}},
+        {"field": "自营订单五星评价", "source": "apps", "path": "jingdong.orders[id=o_4]", "op": "contains", "expected": {"reviewed": true, "reviewRating": 5}, "initial_must_differ": true}
+      ]
+    },
+    "explore_jingdong_jd_006": {
+      "review_status": "passed",
+      "review_notes": "题面要求设为默认地址；列表「设为购物默认」现在写 isDefault 和 selectedAddressId。",
+      "expected_changes": ["apps.jingdong.selectedAddressId", "apps.jingdong.addresses[id=addr_2].isDefault", "apps.jingdong.cart", "apps.jingdong.taskAudit.searchResult"],
+      "assertions": [
+        {"field": "张小雨设为默认地址", "source": "apps", "path": "jingdong.addresses[id=addr_2].isDefault", "expected": true, "initial_must_differ": true},
+        {"field": "结果页选择张小雨地址", "source": "apps", "path": "jingdong.selectedAddressId", "expected": "addr_2", "initial_must_differ": true},
+        {"field": "机械键盘按销量排序", "source": "apps", "path": "jingdong.taskAudit.searchResult", "op": "contains", "expected": {"query": "机械键盘", "sort": "sales", "addressId": "addr_2"}},
+        {"field": "黑爵茶轴加入购物车", "source": "apps", "path": "jingdong.cart", "op": "new_contains", "expected": {"itemId": "i_keyboard", "skuDesc": "茶轴", "qty": 1}},
+        {"field": "删除湾仔码头水饺", "source": "apps", "path": "jingdong.cart[key=i_dumpling__韭菜鸡蛋]", "op": "absent"}
+      ]
+    },
+    "explore_jingdong_jd_007": {
+      "review_status": "passed",
+      "review_notes": "The Mine count is now derived from favorites rather than stale seeded metadata. Follow, tab, unread clearing, exact chat and final Mine observation are required.",
+      "expected_changes": ["apps.jingdong.followedShops", "apps.jingdong.chats", "apps.jingdong.taskAudit"],
+      "assertions": [
+        {"field": "关注vivo自营店", "source": "apps", "path": "jingdong.followedShops", "op": "new_contains", "expected": "shop_vivo"},
+        {"field": "查看物流消息tab", "source": "apps", "path": "jingdong.taskAudit.messageSubtabsViewed", "op": "contains", "expected": "logistics"},
+        {"field": "骑手消息未读清零", "source": "apps", "path": "jingdong.chats[id=ch_rider].unread", "expected": 0, "initial_must_differ": true},
+        {"field": "客服消息未读清零", "source": "apps", "path": "jingdong.chats[id=ch_cs].unread", "expected": 0, "initial_must_differ": true},
+        {"field": "旺旺消息未读清零", "source": "apps", "path": "jingdong.chats[id=ch_wang].unread", "expected": 0, "initial_must_differ": true},
+        {"field": "询问ThinkBook深空灰现货", "source": "apps", "path": "jingdong.chats[id=ch_think].messages", "op": "new_contains", "expected": {"sender": "me", "content": "深空灰现货情况"}},
+        {"field": "我的页显示实时收藏数", "source": "apps", "path": "jingdong.taskAudit.mineFavoriteCount", "expected": 6}
+      ]
+    },
+    "explore_jingdong_jd_008": {
+      "review_status": "passed",
+      "review_notes": "System-follow appearance is now persisted distinctly from normal mode, and footprint deletion writes the store rather than hiding a local card.",
+      "expected_changes": ["apps.jingdong.settings", "apps.jingdong.searchHistory", "apps.jingdong.footprints"],
+      "assertions": [
+        {"field": "外观跟随系统且字体大一档", "source": "apps", "path": "jingdong.settings", "op": "contains", "expected": {"appearanceMode": "system", "fontScale": 1.15}, "initial_must_differ": true},
+        {"field": "删除胡辣汤搜索历史", "source": "apps", "path": "jingdong.searchHistory", "op": "not_contains", "expected": "胡辣汤"},
+        {"field": "删除更早小米吹风机足迹", "source": "apps", "path": "jingdong.footprints[date=更早].itemIds", "op": "not_contains", "expected": "i_hairdryer"}
+      ]
+    },
+    "explore_suning_task_01": {
+      "review_status": "passed",
+      "review_notes": "The search evidence, exact subsidy entitlement and quantity increase of the seeded target cart line are all required.",
+      "expected_changes": ["apps.suning.taskAudit.searchResult", "apps.suning.subsidyClaimedIds", "apps.suning.cartItems[id=cart-5]"],
+      "assertions": [
+        {"field": "空调搜索及国补筛选", "source": "apps", "path": "suning.taskAudit.searchResult", "op": "contains", "expected": {"keyword": "空调", "filter": {"dims": {"service": ["政府补贴"]}}}},
+        {"field": "领取统帅超省电国补", "source": "apps", "path": "suning.subsidyClaimedIds", "op": "new_contains", "expected": "ac-leader-shengdian"},
+        {"field": "目标空调加入购物车", "source": "apps", "path": "suning.cartItems[id=cart-5].qty", "expected": 2, "initial_must_differ": true}
+      ]
+    },
+    "explore_suning_task_02": {
+      "review_status": "passed",
+      "review_notes": "The exact two air conditioners and only-differences mode are audited before the specified item moves from cart to follows.",
+      "expected_changes": ["apps.suning.taskAudit", "apps.suning.cartItems", "apps.suning.followedProducts"],
+      "assertions": [
+        {"field": "对比两款空调且只看不同", "source": "apps", "path": "suning.taskAudit", "op": "contains", "expected": {"compareOnlyDiff": true, "compareProductIds": ["ac-leader-shengdian", "ac-leader-zhixiang"]}},
+        {"field": "智享风移出购物车", "source": "apps", "path": "suning.cartItems[id=cart-7]", "op": "absent"},
+        {"field": "智享风移入关注", "source": "apps", "path": "suning.followedProducts", "op": "new_contains", "expected": {"productId": "ac-leader-zhixiang"}}
+      ]
+    },
+    "explore_suning_task_03": {
+      "review_status": "passed",
+      "review_notes": "The discount board deterministically ranks Zhixiang first; the newly seeded image review makes the requested filter-and-like chain executable.",
+      "expected_changes": ["apps.suning.taskAudit.rankBoard", "apps.suning.taskAudit.reviewFilter", "apps.suning.likedReviewIds"],
+      "assertions": [
+        {"field": "切换空调折扣榜", "source": "apps", "path": "suning.taskAudit.rankBoard", "expected": {"rankId": "acHot", "board": "discount"}},
+        {"field": "筛选智享风有图评价", "source": "apps", "path": "suning.taskAudit.reviewFilter", "expected": {"productId": "ac-leader-zhixiang", "filter": "hasImage"}},
+        {"field": "点赞榜首有图评价", "source": "apps", "path": "suning.likedReviewIds", "op": "new_contains", "expected": "rv-ac-zhixiang-1"}
+      ]
+    },
+    "explore_suning_task_04": {
+      "review_status": "passed",
+      "review_notes": "The fixed fan order must be cancelled for the exact reason, then searched by its full order number.",
+      "expected_changes": ["apps.suning.orders[id=order-fan-pending]", "apps.suning.taskAudit.orderSearch"],
+      "assertions": [
+        {"field": "取消荣事达订单", "source": "apps", "path": "suning.orders[id=order-fan-pending]", "op": "contains", "expected": {"status": "cancelled", "cancelReason": "我不想买了"}, "initial_must_differ": true},
+        {"field": "按订单号复查", "source": "apps", "path": "suning.taskAudit.orderSearch", "expected": "G3001618890"}
+      ]
+    },
+    "explore_suning_task_05": {
+      "review_status": "passed",
+      "review_notes": "Order-address modification is an order snapshot write and must contain all four region levels plus the exact detail.",
+      "expected_changes": ["apps.suning.orders[id=order-kettle-shipping].address"],
+      "assertions": [
+        {"field": "配送中水壶改公司地址", "source": "apps", "path": "suning.orders[id=order-kettle-shipping].address", "op": "contains", "expected": {"province": "江苏省", "city": "南京市", "district": "玄武区", "street": "新街口街道", "detail": "中山路18号写字楼A座"}}
+      ]
+    },
+    "explore_suning_task_06": {
+      "review_status": "passed",
+      "review_notes": "The checkout draft is the shared source rendered by SKU, payment and delivery sheets; every requested choice is required together.",
+      "expected_changes": ["apps.suning.checkoutDraft"],
+      "assertions": [
+        {"field": "MatePad结算配置", "source": "apps", "path": "suning.checkoutDraft", "op": "contains", "expected": {"source": "buyNow", "payMethod": "wechat", "deliveryDayOffset": 1, "deliverySlot": "09:00-12:00", "warrantyId": "w-full2", "items": [{"productId": "matepad-115s", "skuText": "深空灰 8GB+128GB WiFi", "qty": 2}]}}
+      ]
+    },
+    "explore_suning_task_07": {
+      "review_status": "passed",
+      "review_notes": "Cancel the tissue refund, search the invoice, then write the invoice type and status into Notes. Do not name 未开票 in the instruction.",
+      "expected_changes": ["apps.suning.orders[id=order-jierou-supplier].refund", "apps.suning.taskAudit.invoiceSearch", "apps.notes.notes"],
+      "assertions": [
+        {"field": "撤销洁柔退款", "source": "apps", "path": "suning.orders[id=order-jierou-supplier].refund", "op": "absent"},
+        {"field": "发票页搜索订单号", "source": "apps", "path": "suning.taskAudit.invoiceSearch", "expected": "G3001617207"},
+        {"field": "笔记记下发票类型和状态", "source": "apps", "path": "notes.notes", "op": "new_contains_regex", "expected": {"match": {"title": "洁柔发票"}, "field": "content", "pattern": "(?s)(?=.*G3001617207)(?=.*不开发票)(?=.*未开票).*"}}
+      ]
+    },
+    "explore_suning_task_08": {
+      "review_status": "passed",
+      "review_notes": "A newly created address must contain the now-explicit street, exact contact fields and unique default state.",
+      "expected_changes": ["apps.suning.addresses"],
+      "assertions": [
+        {"field": "新增默认家庭地址", "source": "apps", "path": "suning.addresses", "op": "new_contains", "expected": {"name": "张三", "phone": "13800138000", "province": "江苏省", "city": "南京市", "district": "鼓楼区", "street": "湖南路街道", "detail": "中央路100号", "tags": ["家", "默认"], "isDefault": true}}
+      ]
+    },
+    "explore_pinduoduo_pdd_001": {
+      "review_status": "passed",
+      "review_notes": "The exact review filter and a newly paid group-price order for the black FreeBuds SKU are both required.",
+      "expected_changes": ["apps.pinduoduo.taskAudit.reviewFilter", "apps.pinduoduo.orders"],
+      "assertions": [
+        {"field": "筛选FreeBuds音质好评价", "source": "apps", "path": "pinduoduo.taskAudit.reviewFilter", "expected": {"itemId": "i_earbuds", "tag": "音质好"}},
+        {"field": "拼单购买曜石黑耳机", "source": "apps", "path": "pinduoduo.orders", "op": "new_contains", "expected": {"status": "grouping", "fufei": true, "lines": [{"itemId": "i_earbuds", "skuDesc": "曜石黑", "qty": 1}]}}
+      ]
+    },
+    "explore_pinduoduo_pdd_002": {
+      "review_status": "passed",
+      "review_notes": "The category visit and both sides of the favorite replacement are checked.",
+      "expected_changes": ["apps.pinduoduo.favorites", "apps.pinduoduo.taskAudit.category"],
+      "assertions": [
+        {"field": "浏览玩乐分类", "source": "apps", "path": "pinduoduo.taskAudit.category", "expected": "玩乐"},
+        {"field": "收藏汇乐工具卡车", "source": "apps", "path": "pinduoduo.favorites", "op": "new_contains", "expected": "i_toycar"},
+        {"field": "删除月薪猫收藏", "source": "apps", "path": "pinduoduo.favorites", "op": "not_contains", "expected": "i_catplush"}
+      ]
+    },
+    "explore_pinduoduo_pdd_003": {
+      "review_status": "passed",
+      "review_notes": "The company address must become both default and selected before the fixed pending order is paid.",
+      "expected_changes": ["apps.pinduoduo.addresses", "apps.pinduoduo.selectedAddressId", "apps.pinduoduo.orders[id=o_pend]"],
+      "assertions": [
+        {"field": "公司地址设为默认", "source": "apps", "path": "pinduoduo.addresses[id=addr_company].isDefault", "expected": true, "initial_must_differ": true},
+        {"field": "公司地址成为当前地址", "source": "apps", "path": "pinduoduo.selectedAddressId", "expected": "addr_company", "initial_must_differ": true},
+        {"field": "短袖订单已付款", "source": "apps", "path": "pinduoduo.orders[id=o_pend].status", "expected": "packing", "initial_must_differ": true}
+      ]
+    },
+    "explore_pinduoduo_pdd_004": {
+      "review_status": "passed",
+      "review_notes": "Viewing logistics is recorded, and receipt plus a five-star review with at least one selected album image must close on the same order.",
+      "expected_changes": ["apps.pinduoduo.orders[id=o_ship]", "apps.pinduoduo.taskAudit.reviewSubmission"],
+      "assertions": [
+        {"field": "查看迪卡侬物流", "source": "apps", "path": "pinduoduo.orders[id=o_ship].logisticsViewed", "expected": true},
+        {"field": "迪卡侬订单确认收货并评价", "source": "apps", "path": "pinduoduo.orders[id=o_ship]", "op": "contains", "expected": {"status": "completed", "reviewed": true}},
+        {"field": "五星带图评价", "source": "apps", "path": "pinduoduo.taskAudit.reviewSubmission", "op": "contains", "expected": {"orderId": "o_ship", "rating": 5, "imageCount": 1}}
+      ]
+    },
+    "explore_pinduoduo_pdd_005": {
+      "review_status": "passed",
+      "review_notes": "The three persistent settings and actual authentication state must all change; the old toast-only logout cannot pass.",
+      "expected_changes": ["apps.pinduoduo.settings", "apps.pinduoduo.loggedIn"],
+      "assertions": [
+        {"field": "关闭先用后付并启用深色大字", "source": "apps", "path": "pinduoduo.settings", "op": "contains", "expected": {"fufeiEnabled": false, "darkMode": true, "fontScale": 1.1}, "initial_must_differ": true},
+        {"field": "实际退出登录", "source": "apps", "path": "pinduoduo.loggedIn", "expected": false, "initial_must_differ": true}
+      ]
+    },
+    "explore_pinduoduo_pdd_006": {
+      "review_status": "passed",
+      "review_notes": "Both exact center coupons must be newly claimed and the expiring category must be visited.",
+      "expected_changes": ["apps.pinduoduo.coupons", "apps.pinduoduo.couponCenter", "apps.pinduoduo.taskAudit.couponTab"],
+      "assertions": [
+        {"field": "领取2元无门槛券", "source": "apps", "path": "pinduoduo.coupons", "op": "new_contains", "expected": {"id": "cc5", "claimed": true}},
+        {"field": "领取满800减100券", "source": "apps", "path": "pinduoduo.coupons", "op": "new_contains", "expected": {"id": "cc4", "claimed": true}},
+        {"field": "查看即将过期分类", "source": "apps", "path": "pinduoduo.taskAudit.couponTab", "expected": "expiring"}
+      ]
+    },
+    "explore_pinduoduo_pdd_007": {
+      "review_status": "passed",
+      "review_notes": "The fixed grouping order must become packing with no missing members, and the exact shop chat must contain the new user message.",
+      "expected_changes": ["apps.pinduoduo.orders[id=o_group]", "apps.pinduoduo.chats[id=ch_s_huile].messages"],
+      "assertions": [
+        {"field": "相框订单免拼完成", "source": "apps", "path": "pinduoduo.orders[id=o_group]", "op": "contains", "expected": {"status": "packing", "groupNeed": 0}, "initial_must_differ": true},
+        {"field": "询问玩具车库存", "source": "apps", "path": "pinduoduo.chats[id=ch_s_huile].messages", "op": "new_contains", "expected": {"sender": "me", "content": "玩具车还有货吗"}}
+      ]
+    },
+    "explore_pinduoduo_pdd_008": {
+      "review_status": "passed",
+      "review_notes": "The repaired instruction searches the target shop's actual product. Search/sort, follow and full history clearing are jointly required.",
+      "expected_changes": ["apps.pinduoduo.taskAudit.searchResult", "apps.pinduoduo.followedShops", "apps.pinduoduo.searchHistory"],
+      "assertions": [
+        {"field": "搜索工具卡车并按销量", "source": "apps", "path": "pinduoduo.taskAudit.searchResult", "expected": {"query": "汇乐工具卡车2代", "sort": "sales"}},
+        {"field": "关注汇乐玩具旗舰店", "source": "apps", "path": "pinduoduo.followedShops", "op": "new_contains", "expected": "s_huile"},
+        {"field": "清空搜索历史", "source": "apps", "path": "pinduoduo.searchHistory", "expected": [], "initial_must_differ": true}
+      ]
+    },
+    "explore_meiyou_task_01": {
+      "review_status": "passed",
+      "review_notes": "The app records that tomorrow's probability was actually rendered before the shared cycle setting was hidden; the final switch alone is insufficient.",
+      "expected_changes": ["apps.meiyou.cycle.showPregProb", "apps.meiyou.taskAudit"],
+      "assertions": [
+        {"field": "查看明天怀孕几率", "source": "apps", "path": "meiyou.taskAudit.pregnancyProbabilityViewedOnTomorrow", "expected": true},
+        {"field": "最终停留明天密报", "source": "apps", "path": "meiyou.taskAudit.dailyReportDay", "expected": "tomorrow"},
+        {"field": "隐藏怀孕几率", "source": "apps", "path": "meiyou.cycle.showPregProb", "expected": false, "initial_must_differ": true}
+      ]
+    },
+    "explore_meiyou_task_02": {
+      "review_status": "passed",
+      "review_notes": "The suite clock is frozen on 2026-07-12, so all four values must be written to that exact day record.",
+      "expected_changes": ["apps.meiyou.dayRecords.2026-07-12"],
+      "assertions": [
+        {"field": "今天经期记录完整", "source": "apps", "path": "meiyou.dayRecords.2026-07-12", "op": "contains", "expected": {"flow": "少量", "color": "鲜红色", "pain": "轻微痛", "mood": "开心"}, "initial_must_differ": true}
+      ]
+    },
+    "explore_meiyou_task_03": {
+      "review_status": "passed",
+      "review_notes": "Both the community search and the user-authored AI question must persist; merely opening either page does not pass.",
+      "expected_changes": ["apps.meiyou.searchHistory", "apps.meiyou.aiSessions"],
+      "assertions": [
+        {"field": "搜索社区相关内容", "source": "apps", "path": "meiyou.searchHistory", "op": "new_contains", "expected": "经期可以运动吗"},
+        {"field": "向AI询问目标问题", "source": "apps", "path": "meiyou.aiSessions[id=sess1].messages", "op": "new_contains", "expected": {"role": "user", "text": "经期可以做瑜伽或慢跑吗?"}}
+      ]
+    },
+    "explore_meiyou_task_04": {
+      "review_status": "passed",
+      "review_notes": "All prep parameters and the completed mode transition are shared persistent state.",
+      "expected_changes": ["apps.meiyou.cycle", "apps.meiyou.mode", "apps.meiyou.prepEnabled"],
+      "assertions": [
+        {"field": "备孕周期参数", "source": "apps", "path": "meiyou.cycle", "op": "contains", "expected": {"periodLen": 5, "cycleLen": 30, "smartPredict": true}},
+        {"field": "切换备孕模式", "source": "apps", "path": "meiyou.mode", "expected": "prep", "initial_must_differ": true},
+        {"field": "完成首次备孕设置", "source": "apps", "path": "meiyou.prepEnabled", "expected": true, "initial_must_differ": true}
+      ]
+    },
+    "explore_meiyou_task_05": {
+      "review_status": "passed",
+      "review_notes": "The instruction now specifies deterministic body text; the verifier requires a newly created post linked to the gynecology circle and exact topic.",
+      "expected_changes": ["apps.meiyou.posts", "apps.meiyou.myPostIds"],
+      "assertions": [
+        {"field": "发布妇科健康新帖", "source": "apps", "path": "meiyou.posts", "op": "new_contains", "expected": {"circleId": "gynec", "text": "经期痛经时我会热敷、适度散步并早点休息，希望这些方法也能帮到大家。", "topics": ["#妇科健康"]}}
+      ]
+    },
+    "explore_meiyou_task_06": {
+      "review_status": "passed",
+      "review_notes": "The home and settings pages read the same cycle object, so the changed length and hidden probability jointly close the state loop.",
+      "expected_changes": ["apps.meiyou.cycle"],
+      "assertions": [
+        {"field": "周期30天且隐藏怀孕几率", "source": "apps", "path": "meiyou.cycle", "op": "contains", "expected": {"cycleLen": 30, "showPregProb": false}, "initial_must_differ": true}
+      ]
+    },
+    "explore_meiyou_task_07": {
+      "review_status": "passed",
+      "review_notes": "Opening the exact like notice, liking the uniquely highest-liked comment and favoriting its post are all persistent and independently checked.",
+      "expected_changes": ["apps.meiyou.taskAudit.openedNoticeId", "apps.meiyou.likedCommentIds", "apps.meiyou.favPostIds", "apps.meiyou.unread.interact"],
+      "assertions": [
+        {"field": "打开乐乐点赞帖子通知", "source": "apps", "path": "meiyou.taskAudit.openedNoticeId", "expected": "n1"},
+        {"field": "点赞最高赞评论", "source": "apps", "path": "meiyou.likedCommentIds", "op": "new_contains", "expected": "c3"},
+        {"field": "收藏对应帖子", "source": "apps", "path": "meiyou.favPostIds", "op": "new_contains", "expected": "p10"},
+        {"field": "互动消息已读", "source": "apps", "path": "meiyou.unread.interact", "expected": 0, "initial_must_differ": true}
+      ]
+    },
+    "explore_meiyou_task_08": {
+      "review_status": "passed",
+      "review_notes": "All three notification toggles plus the requested final return to the message tab are required.",
+      "expected_changes": ["apps.meiyou.notifSettings", "route.path"],
+      "assertions": [
+        {"field": "安静通知设置", "source": "apps", "path": "meiyou.notifSettings", "op": "contains", "expected": {"night": true, "sound": false, "vibrate": true}, "initial_must_differ": true},
+        {"field": "最终返回消息页", "source": "route", "path": "path", "expected": "/message"}
+      ]
+    },
+    "explore_googledrive_gd_001": {
+      "review_status": "passed",
+      "review_notes": "The verifier supports id-keyed entity maps and requires both fixed files to reference the same newly created root folder.",
+      "expected_changes": ["apps.googledrive.items"],
+      "assertions": [
+        {"field": "新建根目录ACL2026文件夹", "source": "apps", "path": "googledrive.items", "op": "new_contains", "expected": {"name": "ACL2026", "kind": "folder", "parentId": null}},
+        {"field": "MUR PDF引用新文件夹", "source": "apps", "path": "googledrive.items.i_aclmur", "op": "references_new", "expected": {"reference_path": "googledrive.items", "reference_field": "parentId", "reference_match": {"name": "ACL2026", "kind": "folder", "parentId": null}}},
+        {"field": "ACL logo引用同名新文件夹", "source": "apps", "path": "googledrive.items.i_acllogo", "op": "references_new", "expected": {"reference_path": "googledrive.items", "reference_field": "parentId", "reference_match": {"name": "ACL2026", "kind": "folder", "parentId": null}}}
+      ]
+    },
+    "explore_googledrive_gd_002": {
+      "review_status": "passed",
+      "review_notes": "Access state and the OS clipboard must both contain the file-specific public viewer link.",
+      "expected_changes": ["apps.googledrive.items.i_cv", "os.clipboard"],
+      "assertions": [
+        {"field": "CV链接任何人可查看", "source": "apps", "path": "googledrive.items.i_cv", "op": "contains", "expected": {"linkAccess": "anyone", "linkRole": "viewer", "shareLink": "https://drive.google.com/file/d/i_cv/view?usp=sharing"}},
+        {"field": "复制CV分享链接", "source": "os", "path": "clipboard.content", "expected": "https://drive.google.com/file/d/i_cv/view?usp=sharing"},
+        {"field": "剪贴板来源Google Drive", "source": "os", "path": "clipboard.source", "expected": "googledrive"}
+      ]
+    },
+    "explore_googledrive_gd_003": {
+      "review_status": "passed",
+      "review_notes": "The persisted list sort preference must change from the seeded name ascending order.",
+      "expected_changes": ["apps.googledrive.sort"],
+      "assertions": [
+        {"field": "星标按修改时间降序", "source": "apps", "path": "googledrive.sort", "expected": {"field": "modified", "order": "desc"}, "initial_must_differ": true}
+      ]
+    },
+    "explore_googledrive_gd_004": {
+      "review_status": "passed",
+      "review_notes": "Query, PDF-only filter and modified-descending search sort are all persisted; the seeded result set contains matching PDFs.",
+      "expected_changes": ["apps.googledrive.searchQuery", "apps.googledrive.searchFilters", "apps.googledrive.searchSort"],
+      "assertions": [
+        {"field": "搜索bert", "source": "apps", "path": "googledrive.searchQuery", "expected": "bert", "initial_must_differ": true},
+        {"field": "只保留PDF", "source": "apps", "path": "googledrive.searchFilters.type", "expected": "pdfs"},
+        {"field": "搜索按修改时间降序", "source": "apps", "path": "googledrive.searchSort", "expected": {"field": "modified", "order": "desc"}, "initial_must_differ": true}
+      ]
+    },
+    "explore_googledrive_gd_005": {
+      "review_status": "passed",
+      "review_notes": "The fixed paper must end under the existing 2026 child folder, not merely somewhere under Papers.",
+      "expected_changes": ["apps.googledrive.items.i_paper1.parentId"],
+      "assertions": [
+        {"field": "Attention论文移入2026", "source": "apps", "path": "googledrive.items.i_paper1.parentId", "expected": "f_sub2026", "initial_must_differ": true}
+      ]
+    },
+    "explore_googledrive_gd_006": {
+      "review_status": "passed",
+      "review_notes": "The seed now gives Joaquin an editor collaborator role, so changing it to viewer is a real observable mutation.",
+      "expected_changes": ["apps.googledrive.items.i_neurips.collaborators"],
+      "assertions": [
+        {"field": "Joaquin改为查看者", "source": "apps", "path": "googledrive.items.i_neurips.collaborators[contactId=c1]", "expected": {"contactId": "c1", "role": "viewer"}, "initial_must_differ": true}
+      ]
+    },
+    "explore_googledrive_gd_007": {
+      "review_status": "passed",
+      "review_notes": "Permanent deletion removes the object; restoration retains the object while removing only its trash membership.",
+      "expected_changes": ["apps.googledrive.items.i_oldcv", "apps.googledrive.trashedIds"],
+      "assertions": [
+        {"field": "CV草稿永久删除", "source": "apps", "path": "googledrive.items.i_oldcv", "op": "absent"},
+        {"field": "CV草稿不在回收站", "source": "apps", "path": "googledrive.trashedIds", "op": "not_contains", "expected": "i_oldcv"},
+        {"field": "Untitled仍存在", "source": "apps", "path": "googledrive.items.i_untitled1.id", "expected": "i_untitled1"},
+        {"field": "Untitled移出回收站", "source": "apps", "path": "googledrive.trashedIds", "op": "not_contains", "expected": "i_untitled1"}
+      ]
+    },
+    "explore_googledrive_gd_008": {
+      "review_status": "passed",
+      "review_notes": "The view preference and one newly created root folder with the exact deep-blue color must coexist.",
+      "expected_changes": ["apps.googledrive.view", "apps.googledrive.items"],
+      "assertions": [
+        {"field": "切换网格视图", "source": "apps", "path": "googledrive.view", "expected": "grid", "initial_must_differ": true},
+        {"field": "新建深蓝会议材料文件夹", "source": "apps", "path": "googledrive.items", "op": "new_contains", "expected": {"name": "会议材料", "kind": "folder", "parentId": null, "color": "#2C77E8"}}
+      ]
+    },
+    "explore_fanqiexiaoshuo_t01": {
+      "review_status": "passed",
+      "review_notes": "The task leaves review wording and topic open: verify the target book, five stars, at least 20 characters, a non-empty topic, and the separate likes-sort observation.",
+      "expected_changes": ["apps.fanqiexiaoshuo.reviews", "apps.fanqiexiaoshuo.taskAudit.reviewsFilter"],
+      "assertions": [
+        {"field": "心动过缓最多赞筛选", "source": "apps", "path": "fanqiexiaoshuo.taskAudit.reviewsFilter", "expected": {"bookId": "b_xindong", "filter": "likes"}},
+        {"field": "提交五星长评并选择话题", "source": "apps", "path": "fanqiexiaoshuo.reviews", "op": "new_contains_regex", "expected": {"match": {"bookId": "b_xindong", "stars": 5, "mine": true}, "field": "text", "pattern": ".{20,}", "nonempty_fields": ["topic"]}}
+      ]
+    },
+    "explore_fanqiexiaoshuo_t02": {
+      "review_status": "passed",
+      "review_notes": "The task now names one deterministic book and one exact eye-care theme; shelf, reader progress and all settings must persist.",
+      "expected_changes": ["apps.fanqiexiaoshuo.shelf", "apps.fanqiexiaoshuo.readerSettings", "apps.fanqiexiaoshuo.taskAudit.readerView"],
+      "assertions": [
+        {"field": "折鹤令加入书架", "source": "apps", "path": "fanqiexiaoshuo.shelf", "op": "new_contains", "expected": {"bookId": "b_zhehe"}},
+        {"field": "阅读器绿色大字号上下翻页", "source": "apps", "path": "fanqiexiaoshuo.readerSettings", "expected": {"fontSize": 24, "themeIdx": 2, "pageMode": "scroll"}, "initial_must_differ": true},
+        {"field": "折鹤令阅读器保持打开", "source": "apps", "path": "fanqiexiaoshuo.taskAudit.readerView", "expected": {"bookId": "b_zhehe", "chapterIdx": 0}}
+      ]
+    },
+    "explore_fanqiexiaoshuo_t03": {
+      "review_status": "passed",
+      "review_notes": "Forward page turns now deterministically credit simulated reading minutes, avoiding a wall-clock wait. The final welfare revisit snapshots both values.",
+      "expected_changes": ["apps.fanqiexiaoshuo.signinDone", "apps.fanqiexiaoshuo.coins", "apps.fanqiexiaoshuo.todayReadMinutes", "apps.fanqiexiaoshuo.taskAudit.welfareView"],
+      "assertions": [
+        {"field": "今日签到完成", "source": "apps", "path": "fanqiexiaoshuo.signinDone", "expected": true, "initial_must_differ": true},
+        {"field": "签到金币到账", "source": "apps", "path": "fanqiexiaoshuo.coins", "expected": 3828, "initial_must_differ": true},
+        {"field": "翻两页增加两分钟", "source": "apps", "path": "fanqiexiaoshuo.todayReadMinutes", "expected": 11, "initial_must_differ": true},
+        {"field": "返回福利中心查看更新值", "source": "apps", "path": "fanqiexiaoshuo.taskAudit.welfareView", "expected": {"coins": 3828, "todayReadMinutes": 11}}
+      ]
+    },
+    "explore_fanqiexiaoshuo_t04": {
+      "review_status": "passed",
+      "review_notes": "Follow, shelf addition and first-chapter reader arrival are all required on the exact author/work pair.",
+      "expected_changes": ["apps.fanqiexiaoshuo.followedAuthors", "apps.fanqiexiaoshuo.shelf", "apps.fanqiexiaoshuo.taskAudit.readerView"],
+      "assertions": [
+        {"field": "关注沈晚照", "source": "apps", "path": "fanqiexiaoshuo.followedAuthors", "op": "new_contains", "expected": "au_shenwan"},
+        {"field": "折鹤令加入书架", "source": "apps", "path": "fanqiexiaoshuo.shelf", "op": "new_contains", "expected": {"bookId": "b_zhehe"}},
+        {"field": "阅读折鹤令第一章", "source": "apps", "path": "fanqiexiaoshuo.taskAudit.readerView", "expected": {"bookId": "b_zhehe", "chapterIdx": 0}}
+      ]
+    },
+    "explore_fanqiexiaoshuo_t05": {
+      "review_status": "passed",
+      "review_notes": "Search clearing, exact result, fifth chapter (zero-based 4), and the transient four-star selection are independently verified.",
+      "expected_changes": ["apps.fanqiexiaoshuo.searchHistory", "apps.fanqiexiaoshuo.progress.b_jiaofang", "apps.fanqiexiaoshuo.taskAudit"],
+      "assertions": [
+        {"field": "搜索历史仅保留先婚后爱", "source": "apps", "path": "fanqiexiaoshuo.searchHistory", "expected": ["先婚后爱"], "initial_must_differ": true},
+        {"field": "椒房无宠跳至第5章", "source": "apps", "path": "fanqiexiaoshuo.progress.b_jiaofang", "expected": 4},
+        {"field": "阅读器到达椒房无宠第5章", "source": "apps", "path": "fanqiexiaoshuo.taskAudit.readerView", "expected": {"bookId": "b_jiaofang", "chapterIdx": 4}},
+        {"field": "评分面板选择4星", "source": "apps", "path": "fanqiexiaoshuo.taskAudit.readerRating", "expected": {"bookId": "b_jiaofang", "stars": 4}}
+      ]
+    },
+    "explore_fanqiexiaoshuo_t06": {
+      "review_status": "passed",
+      "review_notes": "The exit keep-reading prompt is now always reachable for non-shelf books; deletion, filter observation and new shelf save are all checked.",
+      "expected_changes": ["apps.fanqiexiaoshuo.shelf", "apps.fanqiexiaoshuo.taskAudit"],
+      "assertions": [
+        {"field": "长河渡口移出书架", "source": "apps", "path": "fanqiexiaoshuo.shelf[bookId=b_changhe]", "op": "absent"},
+        {"field": "切换阅读筛选", "source": "apps", "path": "fanqiexiaoshuo.taskAudit.shelfFilter", "expected": "reading"},
+        {"field": "心动过缓加入书架", "source": "apps", "path": "fanqiexiaoshuo.shelf", "op": "new_contains", "expected": {"bookId": "b_xindong"}},
+        {"field": "从历史继续心动过缓", "source": "apps", "path": "fanqiexiaoshuo.taskAudit.readerView", "expected": {"bookId": "b_xindong", "chapterIdx": 2}}
+      ]
+    },
+    "explore_fanqiexiaoshuo_t07": {
+      "review_status": "passed",
+      "review_notes": "The visible task fixes the book and seeded review, while the user's own wording, topic and 3–5 star choice remain open.",
+      "expected_changes": ["apps.fanqiexiaoshuo.likedReviews", "apps.fanqiexiaoshuo.reviews", "apps.fanqiexiaoshuo.taskAudit"],
+      "assertions": [
+        {"field": "查看小说完本榜", "source": "apps", "path": "fanqiexiaoshuo.taskAudit.rankView", "expected": {"category": "novel", "sub": "完本榜"}},
+        {"field": "点赞熬夜看完书评", "source": "apps", "path": "fanqiexiaoshuo.likedReviews", "op": "new_contains", "expected": "rv_b_jinchai_0"},
+        {"field": "提交金钗照雪带话题书评", "source": "apps", "path": "fanqiexiaoshuo.reviews", "op": "new_contains_regex", "expected": {"match": {"bookId": "b_jinchai", "mine": true}, "field": "text", "pattern": ".+", "nonempty_fields": ["topic"]}},
+        {"field": "书评分数至少三星", "source": "apps", "path": "fanqiexiaoshuo.reviews", "op": "new_contains_any", "expected": [{"bookId": "b_jinchai", "mine": true, "stars": 3}, {"bookId": "b_jinchai", "mine": true, "stars": 4}, {"bookId": "b_jinchai", "mine": true, "stars": 5}]},
+        {"field": "返回金钗照雪书评列表", "source": "apps", "path": "fanqiexiaoshuo.taskAudit.reviewsFilter", "op": "contains", "expected": {"bookId": "b_jinchai"}}
+      ]
+    },
+    "explore_fanqiexiaoshuo_t08": {
+      "review_status": "passed",
+      "review_notes": "The deterministic first new-book result now opens detail before reader, making author follow reachable; sort, follow, reader and descending catalog are checked.",
+      "expected_changes": ["apps.fanqiexiaoshuo.followedAuthors", "apps.fanqiexiaoshuo.taskAudit"],
+      "assertions": [
+        {"field": "重生标签按新书排序", "source": "apps", "path": "fanqiexiaoshuo.taskAudit.tagResult", "expected": {"tag": "重生", "sort": "新书"}},
+        {"field": "关注糖不梨", "source": "apps", "path": "fanqiexiaoshuo.followedAuthors", "op": "new_contains", "expected": "au_tangbuli"},
+        {"field": "进入太后嘴替阅读器", "source": "apps", "path": "fanqiexiaoshuo.taskAudit.readerView", "expected": {"bookId": "b_taihou", "chapterIdx": 0}},
+        {"field": "目录切换倒序", "source": "apps", "path": "fanqiexiaoshuo.taskAudit.catalogOrder", "expected": {"bookId": "b_taihou", "order": "desc"}}
+      ]
+    },
+    "explore_fanqietodo_t01": {
+      "review_status": "passed",
+      "review_notes": "A newly created goal todo must persist every structured field under the fixed system clock.",
+      "expected_changes": ["apps.fanqietodo.todos"],
+      "assertions": [
+        {"field": "新增完整备考英语目标", "source": "apps", "path": "fanqietodo.todos", "op": "new_contains", "expected": {"name": "备考英语", "type": "goal", "timing": "countdown", "durationMin": 25, "goalDate": 1798646400000, "goalHours": 100}}
+      ]
+    },
+    "explore_fanqietodo_t02": {
+      "review_status": "passed",
+      "review_notes": "Habit fields and advanced settings must survive the route round trip and be committed on one new todo.",
+      "expected_changes": ["apps.fanqietodo.todos"],
+      "assertions": [
+        {"field": "新增完整每日冥想习惯", "source": "apps", "path": "fanqietodo.todos", "op": "new_contains", "expected": {"name": "每日冥想", "type": "habit", "timing": "countup", "frequency": "daily", "habitTargetMin": 30, "note": "睡前10分钟", "hideNextDay": true}}
+      ]
+    },
+    "explore_fanqietodo_t03": {
+      "review_status": "passed",
+      "review_notes": "The requested todo must be first after saving and the deleted todo must be absent.",
+      "expected_changes": ["apps.fanqietodo.todos"],
+      "assertions": [
+        {"field": "mobile agent调研位于首位", "source": "apps", "path": "fanqietodo.todos[id=t_agent]", "op": "contains", "expected": {"id": "t_agent", "order": 0}, "initial_must_differ": true},
+        {"field": "取快递已删除", "source": "apps", "path": "fanqietodo.todos[id=t_express]", "op": "absent"}
+      ]
+    },
+    "explore_fanqietodo_t04": {
+      "review_status": "passed",
+      "review_notes": "All timing and advanced-loop fields must persist on the existing paper todo.",
+      "expected_changes": ["apps.fanqietodo.todos[id=t_paper]"],
+      "assertions": [
+        {"field": "论文阅读完整计时设置", "source": "apps", "path": "fanqietodo.todos[id=t_paper]", "op": "contains", "expected": {"timing": "countdown", "durationMin": 35, "loops": 4, "restTimeMin": 8}, "initial_must_differ": true}
+      ]
+    },
+    "explore_fanqietodo_t05": {
+      "review_status": "passed",
+      "review_notes": "A new manual record must reference the code todo and encode today 09:00 for exactly 90 minutes.",
+      "expected_changes": ["apps.fanqietodo.records"],
+      "assertions": [
+        {"field": "今天9点代码补录", "source": "apps", "path": "fanqietodo.records", "op": "new_contains", "expected": {"todoId": "t_code", "todoName": "代码", "startTs": 1783818000000, "endTs": 1783823400000, "durationMin": 90, "status": "done"}}
+      ]
+    },
+    "explore_fanqietodo_t06": {
+      "review_status": "passed",
+      "review_notes": "The task now identifies a unique seeded record. Its reflection must change and the containing current-week summary must be observed.",
+      "expected_changes": ["apps.fanqietodo.records[id=r4].reflection", "apps.fanqietodo.taskAudit.weekSummary"],
+      "assertions": [
+        {"field": "178分钟代码记录心得", "source": "apps", "path": "fanqietodo.records[id=r4].reflection", "expected": "今天状态不错，一口气写完了核心模块", "initial_must_differ": true},
+        {"field": "查看记录所在本周总结", "source": "apps", "path": "fanqietodo.taskAudit.weekSummary", "op": "contains", "expected": {"offset": 0}}
+      ]
+    },
+    "explore_fanqietodo_t07": {
+      "review_status": "passed",
+      "review_notes": "All three focus settings must persist together and differ from their seed values.",
+      "expected_changes": ["apps.fanqietodo.settings"],
+      "assertions": [
+        {"field": "完整专注计时设置", "source": "apps", "path": "fanqietodo.settings", "op": "contains", "expected": {"restDurationMin": 5, "fixedOrder": true, "motto": "专注当下，成就未来"}, "initial_must_differ": true}
+      ]
+    },
+    "explore_fanqietodo_t08": {
+      "review_status": "passed",
+      "review_notes": "The countdown must be newly created with the exact fixed-date timestamp; returning to the list is evidenced by persistence and list rendering from the same collection.",
+      "expected_changes": ["apps.fanqietodo.futures"],
+      "assertions": [
+        {"field": "新增雅思考试倒计时", "source": "apps", "path": "fanqietodo.futures", "op": "new_contains", "expected": {"name": "雅思考试", "remark": "目标7分", "targetDate": 1803830400000}}
+      ]
+    },
+    "explore_boss_boss_task_01": {
+      "review_status": "passed",
+      "review_notes": "The invalid status and missing salary option were repaired. Expectation, status, job type and both filters must agree.",
+      "expected_changes": ["apps.boss.expects[id=e1]", "apps.boss.user.jobStatus", "apps.boss.jobType", "apps.boss.filter"],
+      "assertions": [
+        {"field": "更新算法工程师求职期望", "source": "apps", "path": "boss.expects[id=e1]", "op": "contains", "expected": {"position": "算法工程师", "city": "上海", "salary": "20-25K", "industry": "人工智能"}},
+        {"field": "离校随时到岗", "source": "apps", "path": "boss.user.jobStatus", "expected": "离校-随时到岗", "initial_must_differ": true},
+        {"field": "职位类型实习", "source": "apps", "path": "boss.jobType", "expected": "intern", "initial_must_differ": true},
+        {"field": "硕士筛选", "source": "apps", "path": "boss.filter.edu", "op": "contains", "expected": "硕士"},
+        {"field": "今日活跃筛选", "source": "apps", "path": "boss.filter.active", "expected": ["今日活跃"]},
+        {"field": "向筛选后的岗位发起沟通", "source": "apps", "path": "boss.sessions", "op": "new_contains", "expected": {"initiatedByMe": true}}
+      ]
+    },
+    "explore_boss_boss_task_02": {
+      "review_status": "passed",
+      "review_notes": "Job and company favorites plus opening the 收藏 page. Switching to 公司收藏 writes favoritesTab=companies.",
+      "expected_changes": ["apps.boss.favoriteJobIds", "apps.boss.favoriteCompanyIds", "apps.boss.taskAudit"],
+      "assertions": [
+        {"field": "收藏珩视算法工程师j6", "source": "apps", "path": "boss.favoriteJobIds", "op": "new_contains", "expected": "j6"},
+        {"field": "收藏珩视智能", "source": "apps", "path": "boss.favoriteCompanyIds", "op": "new_contains", "expected": "c_huitu"},
+        {"field": "打开收藏页", "source": "apps", "path": "boss.taskAudit.favoritesViewed", "op": "contains", "expected": {"jobs": true}},
+        {"field": "查看公司收藏tab", "source": "apps", "path": "boss.taskAudit.favoritesTab", "expected": "companies"}
+      ]
+    },
+    "explore_boss_boss_task_03": {
+      "review_status": "passed",
+      "review_notes": "All required communication and contact metadata must persist on the exact seeded session.",
+      "expected_changes": ["apps.boss.sessions[id=s1]"],
+      "assertions": [
+        {"field": "发送指定常用语", "source": "apps", "path": "boss.sessions[id=s1].messages", "op": "new_contains", "expected": {"from": "me", "kind": "text", "source": "quickreply", "text": "我可以把我的简历发给您看看吗?"}},
+        {"field": "发送简历卡片", "source": "apps", "path": "boss.sessions[id=s1]", "op": "contains", "expected": {"resumeSent": true, "remark": "曜衡-算法-已投简历", "pinned": true}},
+        {"field": "简历消息落库", "source": "apps", "path": "boss.sessions[id=s1].messages", "op": "new_contains", "expected": {"from": "me", "kind": "resume", "text": "我的在线简历"}}
+      ]
+    },
+    "explore_boss_boss_task_05": {
+      "review_status": "passed",
+      "review_notes": "Dislike stays on greeting session s2. Block is person-level. After 仅沟通, the negative branch is: if the greeting is still visible, do not message her. Freeze did not send.",
+      "expected_changes": ["apps.boss.sessions", "apps.boss.taskAudit.messagesTab"],
+      "assertions": [
+        {"field": "招呼会话已不感兴趣", "source": "apps", "path": "boss.sessions[id=s2]", "op": "contains", "expected": {"disliked": true}},
+        {"field": "蔺晓禾任意会话已拉黑", "source": "apps", "path": "boss.sessions", "op": "contains", "expected": {"bossId": "b2", "blocked": true}},
+        {"field": "切换仅沟通确认", "source": "apps", "path": "boss.taskAudit.messagesTab", "expected": "chatOnly"},
+        {"field": "没有再给蔺晓禾发消息", "source": "apps", "path": "boss.sessions[id=s2].messages", "op": "not_contains", "expected": {"from": "me"}}
+      ]
+    },
+    "explore_boss_boss_task_06": {
+      "review_status": "passed",
+      "review_notes": "Both resume sections must be nonempty and the education report must be selected and submitted.",
+      "expected_changes": ["apps.boss.resume.sections", "apps.boss.verifySubmitted", "apps.boss.verificationReportImage"],
+      "assertions": [
+        {"field": "工作实习经历已填写", "source": "apps", "path": "boss.resume.sections.work", "op": "nonempty"},
+        {"field": "项目经历已填写", "source": "apps", "path": "boss.resume.sections.project", "op": "nonempty"},
+        {"field": "学历认证已提交", "source": "apps", "path": "boss.verifySubmitted", "expected": true, "initial_must_differ": true},
+        {"field": "认证报告图片已保存", "source": "apps", "path": "boss.verificationReportImage", "op": "nonempty"}
+      ]
+    },
+    "explore_boss_boss_task_07": {
+      "review_status": "passed",
+      "review_notes": "Saturday is 2026-07-18. New interview is on the schedule tab. History is still empty, so the cancel message must not be sent. Instruction uses the branch, not the outcome.",
+      "expected_changes": ["apps.boss.interviews", "apps.boss.taskAudit.interviewTab"],
+      "assertions": [
+        {"field": "新增阚云舟线下面试", "source": "apps", "path": "boss.interviews", "op": "new_contains", "expected": {"bossId": "b1", "jobId": "j1", "type": "offline", "date": "7月18日", "time": "10:00"}},
+        {"field": "切到历史面试", "source": "apps", "path": "boss.taskAudit.interviewTab", "expected": "history"},
+        {"field": "历史面试仍为空", "source": "apps", "path": "boss.interviewHistory", "expected": []},
+        {"field": "没有发取消消息", "source": "apps", "path": "boss.sessions[id=s1].messages", "op": "not_contains", "expected": {"from": "me", "text": "不好意思可以取消吗"}}
+      ]
+    },
+    "explore_boss_boss_task_08": {
+      "review_status": "passed",
+      "review_notes": "The target comment is now deterministic. Post reactions, latest sort, comment like and exact new comment all persist.",
+      "expected_changes": ["apps.boss.likedPostIds", "apps.boss.favoritePostIds", "apps.boss.likedCommentIds", "apps.boss.myComments", "apps.boss.taskAudit.commentsSort"],
+      "assertions": [
+        {"field": "点赞面试暗语帖", "source": "apps", "path": "boss.likedPostIds", "op": "new_contains", "expected": "p1"},
+        {"field": "收藏面试暗语帖", "source": "apps", "path": "boss.favoritePostIds", "op": "new_contains", "expected": "p1"},
+        {"field": "评论切最新排序", "source": "apps", "path": "boss.taskAudit.commentsSort", "expected": {"postId": "p1", "sort": "new"}},
+        {"field": "点赞何晓静评论", "source": "apps", "path": "boss.likedCommentIds", "op": "new_contains", "expected": "c3"},
+        {"field": "发布指定评论", "source": "apps", "path": "boss.myComments", "op": "new_contains", "expected": {"postId": "p1", "text": "第4条真的，聊薪资那一刻整个人都精神了"}}
+      ]
+    },
+    "explore_boss_boss_task_11": {
+      "review_status": "passed",
+      "review_notes": "Profile fields and a completed system share event with the resulting profile text are all required.",
+      "expected_changes": ["apps.boss.user", "os.services.shareAudit.events"],
+      "assertions": [
+        {"field": "个人主页资料", "source": "apps", "path": "boss.user", "op": "contains", "expected": {"communityNick": "竹笋求职中", "intro": "计算机硕士·AI Agent 方向·2027届·上海求职", "workCity": "上海"}},
+        {"field": "个人主页系统分享完成", "source": "os", "path": "services.shareAudit.events", "op": "new_contains", "expected": {"text": "【BOSS直聘】竹笋求职中的个人主页\n计算机科学与技术 · 27年应届生", "mimeType": "text/plain", "resultCode": "OK"}}
+      ]
+    },
+    "explore_boss_boss_task_12": {
+      "review_status": "passed",
+      "review_notes": "Search/company-tab state, expanded intro, environment album and exact company favorite are independently observable.",
+      "expected_changes": ["apps.boss.searchHistory", "apps.boss.taskAudit", "apps.boss.favoriteCompanyIds"],
+      "assertions": [
+        {"field": "搜索算法工程师", "source": "apps", "path": "boss.searchHistory", "op": "new_contains", "expected": "算法工程师"},
+        {"field": "搜索结果公司综合排序", "source": "apps", "path": "boss.taskAudit.searchResultTab", "expected": {"keyword": "算法工程师", "tab": "company", "sort": "recommend"}},
+        {"field": "展开岫云公司介绍", "source": "apps", "path": "boss.taskAudit.companyIntroExpanded", "expected": "c_yunshan"},
+        {"field": "查看岫云工作环境", "source": "apps", "path": "boss.taskAudit.companyAlbum", "expected": {"companyId": "c_yunshan", "album": "environment"}},
+        {"field": "收藏岫云信息", "source": "apps", "path": "boss.favoriteCompanyIds", "op": "new_contains", "expected": "c_yunshan"}
+      ]
+    },
+    "explore_boss_boss_task_13": {
+      "review_status": "passed",
+      "review_notes": "The ordered tab coverage and explicit restat action are persisted; the seeded interview record set is empty.",
+      "expected_changes": ["apps.boss.taskAudit.recordsTabs", "apps.boss.taskAudit.recordsRestat"],
+      "assertions": [
+        {"field": "查看看过沟通面试三类记录", "source": "apps", "path": "boss.taskAudit.recordsTabs", "expected": ["viewed", "chatted", "interviewed"]},
+        {"field": "重新统计", "source": "apps", "path": "boss.taskAudit.recordsRestat", "expected": true},
+        {"field": "当前面试记录为空", "source": "apps", "path": "boss.records.interviewed", "expected": []}
+      ]
+    },
+    "explore_boss_boss_task_14": {
+      "review_status": "passed",
+      "review_notes": "Two dismiss actions and latest sort are required; dismiss reason chips are not persisted separately from dismissed job ids.",
+      "expected_changes": ["apps.boss.dismissedJobIds", "apps.boss.sortMode"],
+      "assertions": [
+        {"field": "屏蔽j22", "source": "apps", "path": "boss.dismissedJobIds", "op": "contains", "expected": "j22"},
+        {"field": "屏蔽j28", "source": "apps", "path": "boss.dismissedJobIds", "op": "contains", "expected": "j28"},
+        {"field": "切换最新排序", "source": "apps", "path": "boss.sortMode", "expected": "latest", "initial_must_differ": true}
+      ]
+    },
+    "explore_boss_boss_task_15": {
+      "review_status": "passed",
+      "review_notes": "The contradictory upload claim and unchanged status were repaired. Both attachment modes and the final changed status are required.",
+      "expected_changes": ["apps.boss.taskAudit.attachmentModes", "apps.boss.user.jobStatus"],
+      "assertions": [
+        {"field": "查看上传与视频简历方式", "source": "apps", "path": "boss.taskAudit.attachmentModes", "expected": ["upload", "video"]},
+        {"field": "求职状态改为在校考虑机会", "source": "apps", "path": "boss.user.jobStatus", "expected": "在校-考虑机会"}
+      ]
+    },
+    "explore_tbsg_tbsg_t01": {
+      "review_status": "passed",
+      "review_notes": "Exact shop, item options, followed-shop coupon, payment selection and submitted order are all observable.",
+      "expected_changes": ["apps.tbsg.orders", "apps.tbsg.shops[id=s_qimei].shopCoupon", "apps.tbsg.taskAudit.paymentMethod"],
+      "assertions": [
+        {"field": "七梅关注券已领取", "source": "apps", "path": "tbsg.shops[id=s_qimei].shopCoupon.claimed", "expected": true, "initial_must_differ": true},
+        {"field": "余额宝支付方式", "source": "apps", "path": "tbsg.taskAudit.paymentMethod", "expected": "yuebao"},
+        {"field": "提交指定香辣蟹订单", "source": "apps", "path": "tbsg.orders", "op": "new_contains", "expected": {"shopId": "s_qimei", "lines": [{"itemId": "s_qimei__sf_crab_combo", "qty": 1, "skuDesc": "1份米饭/选百事可乐1听/稀垄红薯1份(150g)"}]}}
+      ]
+    },
+    "explore_tbsg_tbsg_t02": {
+      "review_status": "passed",
+      "review_notes": "All night coupons, exact sales/price filter and deterministic Xiangweiji order must persist.",
+      "expected_changes": ["apps.tbsg.coupons", "apps.tbsg.taskAudit.foodChannel", "apps.tbsg.orders"],
+      "assertions": [
+        {"field": "销量及0至50人均筛选", "source": "apps", "path": "tbsg.taskAudit.foodChannel", "expected": {"sort": "sales", "perCapitaRange": [0, 50]}},
+        {"field": "夜市券night1已领取", "source": "apps", "path": "tbsg.coupons[id=night1].status", "expected": "claimed", "initial_must_differ": true},
+        {"field": "夜市券night2已领取", "source": "apps", "path": "tbsg.coupons[id=night2].status", "expected": "claimed", "initial_must_differ": true},
+        {"field": "夜市券night3已领取", "source": "apps", "path": "tbsg.coupons[id=night3].status", "expected": "claimed", "initial_must_differ": true},
+        {"field": "乡味鸡招牌套餐订单", "source": "apps", "path": "tbsg.orders", "op": "new_contains", "expected": {"shopId": "s_xiangweiji", "status": "preparing", "lines": [{"itemId": "s_xiangweiji__cn_chicken_soup", "qty": 1, "skuDesc": "标准份/不辣"}]}}
+      ]
+    },
+    "explore_tbsg_tbsg_t03": {
+      "review_status": "passed",
+      "review_notes": "Daily burst, real rush-coupon acquisition, selected slot and a coupon-backed exact order are required.",
+      "expected_changes": ["apps.tbsg.burstUsedToday", "apps.tbsg.coupons", "apps.tbsg.taskAudit.redpacketSlot", "apps.tbsg.orders"],
+      "assertions": [
+        {"field": "免费爆红包", "source": "apps", "path": "tbsg.burstUsedToday", "expected": true, "initial_must_differ": true},
+        {"field": "11点限时券真实入券包", "source": "apps", "path": "tbsg.coupons", "op": "new_contains", "expected": {"name": "11:00限时抢红包", "status": "claimed"}},
+        {"field": "选择11点时段", "source": "apps", "path": "tbsg.taskAudit.redpacketSlot", "expected": "11:00"},
+        {"field": "使用红包提交乡味鸡订单", "source": "apps", "path": "tbsg.orders", "op": "new_contains", "expected": {"shopId": "s_xiangweiji", "status": "preparing", "lines": [{"itemId": "s_xiangweiji__cn_chicken_soup"}], "couponIds": ["rush_1100_22"]}}
+      ]
+    },
+    "explore_tbsg_tbsg_t04": {
+      "review_status": "passed",
+      "review_notes": "The deleted dessert shop, exact quantity, default remark and new remaining-shop order are checked.",
+      "expected_changes": ["apps.tbsg.cart", "apps.tbsg.settings.defaultRemark", "apps.tbsg.orders"],
+      "assertions": [
+        {"field": "鲜芋仙购物车已删除", "source": "apps", "path": "tbsg.cart", "op": "not_contains", "expected": {"shopId": "s_xianyuxian"}},
+        {"field": "少放辣椒设为默认备注", "source": "apps", "path": "tbsg.settings.defaultRemark", "op": "contains", "expected": "少放辣", "initial_must_differ": true},
+        {"field": "七梅两份套餐已下单", "source": "apps", "path": "tbsg.orders", "op": "new_contains", "expected": {"shopId": "s_qimei", "lines": [{"itemId": "s_qimei__sf_crab_combo", "qty": 2}]}},
+        {"field": "订单备注含少放辣", "source": "apps", "path": "tbsg.orders", "op": "new_contains_regex", "expected": {"match": {"shopId": "s_qimei"}, "field": "remark", "pattern": ".*少放辣.*"}}
+      ]
+    },
+    "explore_tbsg_tbsg_t05": {
+      "review_status": "passed",
+      "review_notes": "A second same-shop delivered seed removes the former impossible refund-then-review chain.",
+      "expected_changes": ["apps.tbsg.orders[id=o1001]", "apps.tbsg.orders[id=o1009]", "apps.tbsg.myReviews", "apps.tbsg.user.beans"],
+      "assertions": [
+        {"field": "牛肉炒饭锅贴订单退款", "source": "apps", "path": "tbsg.orders[id=o1001]", "op": "contains", "expected": {"status": "refunding", "refundReason": "餐品口味不佳"}},
+        {"field": "生煎订单已评价", "source": "apps", "path": "tbsg.orders[id=o1009].reviewed", "expected": true, "initial_must_differ": true},
+        {"field": "评价有文字且落库", "source": "apps", "path": "tbsg.myReviews", "op": "new_contains_regex", "expected": {"match": {"orderId": "o1009"}, "field": "text", "pattern": ".+", "nonempty_fields": ["text"]}},
+        {"field": "吃货豆增加", "source": "apps", "path": "tbsg.user.beans", "op": "changed"}
+      ]
+    },
+    "explore_tbsg_tbsg_t06": {
+      "review_status": "passed",
+      "review_notes": "The nearest seeded pharmacy, exact ibuprofen item, pickup mode and zero tableware are checked on the submitted order.",
+      "expected_changes": ["apps.tbsg.orders"],
+      "assertions": [
+        {"field": "叮当快药布洛芬自取订单", "source": "apps", "path": "tbsg.orders", "op": "new_contains", "expected": {"shopId": "p_dingdang", "mode": "pickup", "lines": [{"itemId": "p_dingdang__buluofen", "qty": 1}]}},
+        {"field": "餐具为无需餐具或0份", "source": "apps", "path": "tbsg.orders", "op": "new_contains_any", "expected": [{"shopId": "p_dingdang", "tableware": "无需餐具"}, {"shopId": "p_dingdang", "tableware": "0份"}]}
+      ]
+    },
+    "explore_tbsg_tbsg_t07": {
+      "review_status": "passed",
+      "review_notes": "Favorite, content-only/reply evidence, exact search/add and exact merchant message must all persist.",
+      "expected_changes": ["apps.tbsg.favorites", "apps.tbsg.taskAudit", "apps.tbsg.cart", "apps.tbsg.chats.shop:s_xiemanman"],
+      "assertions": [
+        {"field": "收藏蟹满满", "source": "apps", "path": "tbsg.favorites", "op": "new_contains", "expected": "s_xiemanman"},
+        {"field": "只看内容并展开指定回复", "source": "apps", "path": "tbsg.taskAudit.shopReview", "expected": {"shopId": "s_xiemanman", "contentOnly": true, "expandedReplyId": "rv_s_xiemanman_2"}},
+        {"field": "店内搜索铁板鱿鱼", "source": "apps", "path": "tbsg.taskAudit.shopSearch", "expected": {"shopId": "s_xiemanman", "query": "铁板鱿鱼"}},
+        {"field": "加购铁板鱿鱼", "source": "apps", "path": "tbsg.cart", "op": "new_contains", "expected": {"shopId": "s_xiemanman", "itemId": "s_xiemanman__sf_squid", "qty": 1}},
+        {"field": "发送辣度询问", "source": "apps", "path": "tbsg.chats.shop:s_xiemanman", "op": "contains", "expected": {"from": "me", "text": "铁板鱿鱼可以做微辣吗？"}}
+      ]
+    },
+    "explore_tbsg_tbsg_t08": {
+      "review_status": "passed",
+      "review_notes": "Profile, image quality, cache, dismissed banner and zero unread messages are all final-state observable.",
+      "expected_changes": ["apps.tbsg.user", "apps.tbsg.settings", "apps.tbsg.messages"],
+      "assertions": [
+        {"field": "个人资料已保存", "source": "apps", "path": "tbsg.user", "op": "contains", "expected": {"nickname": "闪购达人", "signature": "爱吃爱生活"}},
+        {"field": "省流量且缓存清零", "source": "apps", "path": "tbsg.settings", "op": "contains", "expected": {"imgQuality": "low", "cacheMB": 0}},
+        {"field": "推广横幅已关闭", "source": "apps", "path": "tbsg.messages", "op": "not_contains", "expected": {"id": "m_banner"}},
+        {"field": "未读消息清零", "source": "apps", "path": "tbsg.messages", "op": "not_contains", "expected": {"unread": 1}}
+      ]
+    },
+    "explore_broadcast_broadcast_task_01": {
+      "review_status": "passed",
+      "review_notes": "Exact queued episode plus persisted playback speed and sleep timer form the final state.",
+      "expected_changes": ["apps.broadcast.queueIds", "apps.broadcast.player"],
+      "assertions": [
+        {"field": "半拿铁单集加入队列", "source": "apps", "path": "broadcast.queueIds", "op": "new_contains", "expected": "e_halflatte_brand"},
+        {"field": "播放速度与睡眠定时", "source": "apps", "path": "broadcast.player", "op": "contains", "expected": {"speed": 1.5, "sleepMinutes": 30}}
+      ]
+    },
+    "explore_broadcast_broadcast_task_02": {
+      "review_status": "passed",
+      "review_notes": "The target is initially unfollowed; following and exact five-star review must both persist.",
+      "expected_changes": ["apps.broadcast.followedShowIds", "apps.broadcast.reviews", "apps.broadcast.myRatings.s_leftright"],
+      "assertions": [
+        {"field": "关注忽左忽右", "source": "apps", "path": "broadcast.followedShowIds", "op": "new_contains", "expected": "s_leftright"},
+        {"field": "忽左忽右五星", "source": "apps", "path": "broadcast.myRatings.s_leftright", "expected": 5},
+        {"field": "指定评论提交", "source": "apps", "path": "broadcast.reviews", "op": "new_contains_regex", "expected": {"match": {"showId": "s_leftright", "title": "历史叙事的宽度", "stars": 5}, "field": "body", "pattern": "^.+[。！？!?].+[。！？!?]$"}}
+      ]
+    },
+    "explore_broadcast_broadcast_task_03": {
+      "review_status": "passed",
+      "review_notes": "The exact latest espresso episode must be both newly downloaded and newly saved.",
+      "expected_changes": ["apps.broadcast.downloadedEpisodeIds", "apps.broadcast.savedEpisodeIds"],
+      "assertions": [
+        {"field": "声动早咖啡单集下载", "source": "apps", "path": "broadcast.downloadedEpisodeIds", "op": "new_contains", "expected": "e_espresso_today"},
+        {"field": "声动早咖啡单集保存", "source": "apps", "path": "broadcast.savedEpisodeIds", "op": "new_contains", "expected": "e_espresso_today"}
+      ]
+    },
+    "explore_broadcast_broadcast_task_04": {
+      "review_status": "passed",
+      "review_notes": "Inserting play-next writes both lists; playing consumes Up Next only, so final queueIds still contains the episode. Seek uses a 30s tolerance.",
+      "expected_changes": ["apps.broadcast.queueIds", "apps.broadcast.player.currentEpisodeId", "apps.broadcast.episodes.e_42_bubble.progressSec"],
+      "assertions": [
+        {"field": "泡沫单集插播进队列", "source": "apps", "path": "broadcast.queueIds", "op": "new_contains", "expected": "e_42_bubble"},
+        {"field": "从待播播放泡沫单集", "source": "apps", "path": "broadcast.player.currentEpisodeId", "expected": "e_42_bubble", "initial_must_differ": true},
+        {"field": "进度拖到30分钟", "source": "apps", "path": "broadcast.episodes.e_42_bubble.progressSec", "op": "approx", "expected": 1800, "tolerance": 30, "initial_must_differ": true}
+      ]
+    },
+    "explore_broadcast_broadcast_task_05": {
+      "review_status": "passed",
+      "review_notes": "Both genres must be newly selected and the seeded active dragon notification must be disabled.",
+      "expected_changes": ["apps.broadcast.favoriteGenreIds", "apps.broadcast.notifications.s_dragon"],
+      "assertions": [
+        {"field": "喜爱哲学", "source": "apps", "path": "broadcast.favoriteGenreIds", "op": "new_contains", "expected": "philosophy"},
+        {"field": "喜爱投资", "source": "apps", "path": "broadcast.favoriteGenreIds", "op": "new_contains", "expected": "invest"},
+        {"field": "关闭屠龙通知", "source": "apps", "path": "broadcast.notifications.s_dragon", "expected": false, "initial_must_differ": true}
+      ]
+    },
+    "explore_broadcast_broadcast_task_06": {
+      "review_status": "passed",
+      "review_notes": "LateTalk is initially unfollowed; exact follow and full-play state are required.",
+      "expected_changes": ["apps.broadcast.followedShowIds", "apps.broadcast.episodes.e_latetalk_minimax"],
+      "assertions": [
+        {"field": "关注晚点聊", "source": "apps", "path": "broadcast.followedShowIds", "op": "new_contains", "expected": "s_latetalk"},
+        {"field": "MiniMax单集标为已播放", "source": "apps", "path": "broadcast.episodes.e_latetalk_minimax", "op": "contains", "expected": {"played": true, "progressSec": 3600}}
+      ]
+    },
+    "explore_broadcast_broadcast_task_08": {
+      "review_status": "passed",
+      "review_notes": "After clearing, the final queue must contain exactly the two requested comedy episodes in order.",
+      "expected_changes": ["apps.broadcast.queueIds"],
+      "assertions": [
+        {"field": "轻松喜剧队列顺序", "source": "apps", "path": "broadcast.queueIds", "expected": ["e_wuliao_summer", "e_feihua_trip"], "initial_must_differ": true}
+      ]
+    },
+    "explore_didi_didi_001": {
+      "review_status": "passed",
+      "review_notes": "The route, selected vehicle types and assigned carType prove that the call was issued; POI search may truncate the gate suffix from the destination label.",
+      "expected_changes": ["apps.didi.trip", "apps.didi.carGroups"],
+      "assertions": [
+        {"field": "目标路线已设置并发起叫车", "source": "apps", "path": "didi.trip", "op": "contains", "expected": {"carType": "惊喜特价"}},
+        {"field": "目的地含星辰广场", "source": "apps", "path": "didi.trip.to", "op": "contains", "expected": "星辰广场(西湖店)"},
+        {"field": "惊喜特价已勾选", "source": "apps", "path": "didi.carGroups", "op": "contains", "expected": {"types": [{"id": "c_surprise", "checked": true}]}},
+        {"field": "特惠快车已勾选", "source": "apps", "path": "didi.carGroups", "op": "contains", "expected": {"types": [{"id": "c_thrift", "checked": true}]}}
+      ]
+    },
+    "explore_didi_didi_002": {
+      "review_status": "passed",
+      "review_notes": "Viewing the exact coupon and subsequently issuing a ride request to the deterministic destination are both required.",
+      "expected_changes": ["apps.didi.taskAudit.viewedCouponId", "apps.didi.trip"],
+      "assertions": [
+        {"field": "确认AI叫车券", "source": "apps", "path": "didi.taskAudit.viewedCouponId", "expected": "cp_2"},
+        {"field": "呼叫前往乐游城", "source": "apps", "path": "didi.trip", "op": "contains", "expected": {"to": "乐游城(滨湖店)", "carType": "惊喜特价"}}
+      ]
+    },
+    "explore_didi_didi_003": {
+      "review_status": "passed",
+      "review_notes": "The exact seeded unrated order must become a good rating with both specified tags.",
+      "expected_changes": ["apps.didi.orders[id=o_2]"],
+      "assertions": [
+        {"field": "o_2好评提交", "source": "apps", "path": "didi.orders[id=o_2]", "op": "contains", "expected": {"rated": true, "rating": {"level": "good"}}},
+        {"field": "o_2至少两个好评标签", "source": "apps", "path": "didi.orders[id=o_2].rating.tags", "op": "length_at_least", "expected": 2}
+      ]
+    },
+    "explore_didi_didi_004": {
+      "review_status": "passed",
+      "review_notes": "A persisted invoice application preserves selected orders, company fields and itinerary after the draft is cleared.",
+      "expected_changes": ["apps.didi.invoiceApplications", "apps.didi.orders[id=o_1].invoiced", "apps.didi.orders[id=o_2].invoiced"],
+      "assertions": [
+        {"field": "公司发票申请落库", "source": "apps", "path": "didi.invoiceApplications", "op": "new_contains", "expected": {"orderIds": ["o_1", "o_2"], "headType": "company", "itinerary": true}},
+        {"field": "公司名称已填写", "source": "apps", "path": "didi.invoiceApplications.0.fields.company", "op": "nonempty"},
+        {"field": "公司税号已填写", "source": "apps", "path": "didi.invoiceApplications.0.fields.taxNo", "op": "nonempty"},
+        {"field": "o_1已开票", "source": "apps", "path": "didi.orders[id=o_1].invoiced", "expected": true, "initial_must_differ": true},
+        {"field": "o_2已开票", "source": "apps", "path": "didi.orders[id=o_2].invoiced", "expected": true, "initial_must_differ": true}
+      ]
+    },
+    "explore_didi_didi_005": {
+      "review_status": "passed",
+      "review_notes": "The exact emergency contact and automatic trip sharing switch are direct final-state facts.",
+      "expected_changes": ["apps.didi.settings.emergencyContacts", "apps.didi.settings.autoShareTrip"],
+      "assertions": [
+        {"field": "添加紧急联系人", "source": "apps", "path": "didi.settings.emergencyContacts", "op": "new_contains", "expected": "13800138000"},
+        {"field": "自动分享行程开启", "source": "apps", "path": "didi.settings.autoShareTrip", "expected": true, "initial_must_differ": true}
+      ]
+    },
+    "explore_didi_didi_006": {
+      "review_status": "passed",
+      "review_notes": "Waypoint and destination mutation are required; the UI allows edits from both ongoing and driver phases.",
+      "expected_changes": ["apps.didi.trip"],
+      "assertions": [
+        {"field": "途经点与终点已改", "source": "apps", "path": "didi.trip", "op": "contains", "expected": {"to": "云江东站", "waypoints": ["青石桥-地铁站"]}}
+      ]
+    },
+    "explore_didi_didi_008": {
+      "review_status": "passed",
+      "review_notes": "Clearing the safety thread followed by clearing the center yields an empty persisted message collection.",
+      "expected_changes": ["apps.didi.messageThreads"],
+      "assertions": [
+        {"field": "消息中心全部清空", "source": "apps", "path": "didi.messageThreads", "expected": [], "initial_must_differ": true}
+      ]
+    },
+    "explore_douban_task_01": {
+      "review_status": "passed", "review_notes": "Exact mark fields, feed synchronization and the seeded friend review vote are required.",
+      "expected_changes": ["apps.douban.marks", "apps.douban.broadcasts", "apps.douban.reviewVotes.gvr_4"],
+      "assertions": [
+        {"field": "复仇名单四星短评标记", "source": "apps", "path": "douban.marks", "op": "new_contains", "expected": {"subjectId": "m4", "status": "done", "rating": 4, "tags": ["女性动作"], "comment": "动作戏流畅，女主角撑起全片", "syncToFeed": true}},
+        {"field": "标记同步动态", "source": "apps", "path": "douban.broadcasts", "op": "new_contains", "expected": {"fromMarkSubjectId": "m4"}},
+        {"field": "友邻影评有用", "source": "apps", "path": "douban.reviewVotes.gvr_4", "expected": "useful"}
+      ]
+    },
+    "explore_douban_task_02": {
+      "review_status": "passed", "review_notes": "A newly wish-marked movie must be one of the deterministic unseen US thrillers above six points.",
+      "expected_changes": ["apps.douban.marks"],
+      "assertions": [{"field": "合格筛选结果标记想看", "source": "apps", "path": "douban.marks", "op": "new_contains_any", "expected": [{"subjectId": "m3", "status": "wish"}, {"subjectId": "m11", "status": "wish"}]}]
+    },
+    "explore_douban_task_03": {
+      "review_status": "passed", "review_notes": "Like, quoted reply and collection in the exact doulist are three independent persisted effects.",
+      "expected_changes": ["apps.douban.likes", "apps.douban.replies", "apps.douban.collects", "apps.douban.doulists[id=dl_new1]"],
+      "assertions": [
+        {"field": "点赞旧船票客广播", "source": "apps", "path": "douban.likes", "op": "new_contains", "expected": {"targetType": "broadcast", "targetId": "b_jinse", "userId": "100200300"}},
+        {"field": "引用回复指定文字", "source": "apps", "path": "douban.replies", "op": "new_contains_regex", "expected": {"match": {"targetType": "broadcast", "targetId": "b_jinse", "text": "确实，旧文字里藏着另一个自己"}, "field": "text", "pattern": ".+", "nonempty_fields": ["quoteReplyId"]}},
+        {"field": "收藏到新1豆列", "source": "apps", "path": "douban.collects", "op": "new_contains", "expected": {"targetType": "broadcast", "targetId": "b_jinse", "doulistId": "dl_new1"}},
+        {"field": "新1包含广播", "source": "apps", "path": "douban.doulists[id=dl_new1].items", "op": "new_contains", "expected": {"kind": "broadcast", "refId": "b_jinse"}}
+      ]
+    },
+    "explore_douban_task_04": {
+      "review_status": "passed", "review_notes": "Both initially-unfollowed exact celebrities must be followed.",
+      "expected_changes": ["apps.douban.follows.celebrities"],
+      "assertions": [
+        {"field": "关注沈默之", "source": "apps", "path": "douban.follows.celebrities", "op": "new_contains", "expected": "cel_liuye"},
+        {"field": "关注顾长临", "source": "apps", "path": "douban.follows.celebrities", "op": "new_contains", "expected": "cel_xuzhanxiong"}
+      ]
+    },
+    "explore_douban_task_05": {
+      "review_status": "passed", "review_notes": "The optional unsupported self-like was removed; the exact post in the exact group is the semantic outcome.",
+      "expected_changes": ["apps.douban.groupPosts"],
+      "assertions": [{"field": "恋综观察室帖子发布", "source": "apps", "path": "douban.groupPosts", "op": "new_contains", "expected": {"groupId": "g_banshu", "authorId": "100200300", "title": "第五季EP3心动时刻盘点", "content": "本期最心动的瞬间是两人在天台的那场对话，你们觉得呢？"}}]
+    },
+    "explore_douban_task_06": {
+      "review_status": "passed", "review_notes": "All notification rows must be read and the exact outgoing DM must be newly persisted.",
+      "expected_changes": ["apps.douban.notifications", "apps.douban.messages"],
+      "assertions": [
+        {"field": "不存在未读提醒", "source": "apps", "path": "douban.notifications", "op": "not_contains", "expected": {"read": false}},
+        {"field": "回复甜筒不加糖", "source": "apps", "path": "douban.messages", "op": "new_contains", "expected": {"peerId": "u_shasitian", "fromSelf": true, "text": "谢谢你的互动，最近在看什么好片吗？"}}
+      ]
+    },
+    "explore_douban_task_07": {
+      "review_status": "passed", "review_notes": "A new draft proves the intermediate save; the published review must link the subject without requiring a hardcoded body.",
+      "expected_changes": ["apps.douban.drafts", "apps.douban.reviews"],
+      "assertions": [
+        {"field": "赤水长歌影评草稿已保存", "source": "apps", "path": "douban.drafts", "op": "new_contains", "expected": {"title": "长卷气象与人物锚点的两难"}},
+        {"field": "赤水长歌影评最终发布", "source": "apps", "path": "douban.reviews", "op": "new_contains_regex", "expected": {"match": {"subjectId": "m1", "authorId": "100200300", "title": "长卷气象与人物锚点的两难"}, "field": "text", "pattern": "[\\s\\S]{30,}", "nonempty_fields": ["text"]}}
+      ]
+    },
+    "explore_maoyan_t01": {
+      "review_status": "passed", "review_notes": "The expanded synopsis audit and exact newly paid movie order close the full browse-to-purchase chain.",
+      "expected_changes": ["apps.maoyan.taskAudit.expandedSynopsisMovieId", "apps.maoyan.orders", "apps.maoyan.payMethod"],
+      "assertions": [
+        {"field": "展开功夫女足简介", "source": "apps", "path": "maoyan.taskAudit.expandedSynopsisMovieId", "expected": "m_kungfu", "initial_must_differ": true},
+        {"field": "明日文悦IMAX双人餐两座订单", "source": "apps", "path": "maoyan.orders", "op": "new_contains", "expected": {"kind": "movie", "movieId": "m_kungfu", "cinemaOrVenue": "文悦国际影城(空港店)", "sessionDesc": "明天 17:20-19:06 英语IMAX 2D", "count": 2, "snacks": ["sn_couple"]}},
+        {"field": "云闪付", "source": "apps", "path": "maoyan.payMethod", "expected": "云闪付", "initial_must_differ": true}
+      ]
+    },
+    "explore_maoyan_t02": {
+      "review_status": "passed", "review_notes": "Both exact movies start unwished and must be present after the task.",
+      "expected_changes": ["apps.maoyan.wishMovies"],
+      "assertions": [
+        {"field": "蜘蛛侠想看", "source": "apps", "path": "maoyan.wishMovies", "op": "new_contains", "expected": "m_spider"},
+        {"field": "想你了想看", "source": "apps", "path": "maoyan.wishMovies", "op": "new_contains", "expected": "m_missyou"}
+      ]
+    },
+    "explore_maoyan_t03": {
+      "review_status": "passed", "review_notes": "Viewing the notice and a new exact show order with the selected tier, quantity, viewer and payment method are required.",
+      "expected_changes": ["apps.maoyan.taskAudit.viewedShowNoticeId", "apps.maoyan.orders", "apps.maoyan.payMethod"],
+      "assertions": [
+        {"field": "查看汪峰购票须知", "source": "apps", "path": "maoyan.taskAudit.viewedShowNoticeId", "expected": "sh_believe", "initial_must_differ": true},
+        {"field": "汪峰内场两张惠嘉订单", "source": "apps", "path": "maoyan.orders", "op": "new_contains", "expected": {"kind": "show", "showId": "sh_believe", "tierDesc": "内场899元×2张", "count": 2, "viewerName": "*惠嘉"}},
+        {"field": "京东白条", "source": "apps", "path": "maoyan.payMethod", "expected": "京东白条", "initial_must_differ": true}
+      ]
+    },
+    "explore_maoyan_t04": {
+      "review_status": "passed", "review_notes": "The seeded top review must be liked and the exact rating, tag and text must persist in watched state.",
+      "expected_changes": ["apps.maoyan.reviews[id=rv_01]", "apps.maoyan.watched.m_backroom"],
+      "assertions": [
+        {"field": "最高赞短评已点赞", "source": "apps", "path": "maoyan.reviews[id=rv_01]", "op": "contains", "expected": {"liked": true, "likes": 3809}},
+        {"field": "后室短评落库", "source": "apps", "path": "maoyan.watched.m_backroom", "op": "contains", "expected": {"stars": 8, "text": "压迫感贯穿全片", "tags": ["氛围感强"]}}
+      ]
+    },
+    "explore_maoyan_t05": {
+      "review_status": "passed", "review_notes": "Today has 三国 sessions, so favorite 文悦 and write the earliest start time 14:30 into Notes. If today had no sessions, neither favorite nor note. Do not name 14:30 in the instruction.",
+      "expected_changes": ["apps.maoyan.taskAudit.cinemaBrowse", "apps.maoyan.taskAudit.cinemaSchedule", "apps.maoyan.cinemas[id=c_wenyue].favorite", "apps.notes.notes"],
+      "assertions": [
+        {"field": "距离排序和激光厅筛选", "source": "apps", "path": "maoyan.taskAudit.cinemaBrowse", "op": "contains", "expected": {"sort": "distance", "service": "激光厅"}},
+        {"field": "文悦今日三国排片", "source": "apps", "path": "maoyan.taskAudit.cinemaSchedule", "op": "contains", "expected": {"cinemaId": "c_wenyue", "movieId": "m_sanguo", "dayOffset": 0}},
+        {"field": "收藏文悦影院", "source": "apps", "path": "maoyan.cinemas[id=c_wenyue].favorite", "expected": true, "initial_must_differ": true},
+        {"field": "笔记记下最早开场时间", "source": "apps", "path": "notes.notes", "op": "new_contains_regex", "expected": {"match": {"title": "文悦三国"}, "field": "content", "pattern": "(?s)(?=.*14:30).*"}}
+      ]
+    },
+    "explore_maoyan_t06": {
+      "review_status": "passed", "review_notes": "The exact seeded profile must disappear and the deterministic replacement must be newly created.",
+      "expected_changes": ["apps.maoyan.profiles"],
+      "assertions": [
+        {"field": "靖雯已删除", "source": "apps", "path": "maoyan.profiles", "op": "not_contains", "expected": {"id": "vp_5"}},
+        {"field": "新增林晓岚", "source": "apps", "path": "maoyan.profiles", "op": "new_contains", "expected": {"name": "*晓岚", "idMasked": "110************234"}}
+      ]
+    },
+    "explore_maoyan_t07": {
+      "review_status": "passed", "review_notes": "Wish, artist follow and notice reading are three independent observable results on the exact show.",
+      "expected_changes": ["apps.maoyan.wishShows", "apps.maoyan.shows[id=sh_liang].artistFollowed", "apps.maoyan.taskAudit.viewedShowNoticeId"],
+      "assertions": [
+        {"field": "梁静茹演唱会想看", "source": "apps", "path": "maoyan.wishShows", "op": "new_contains", "expected": "sh_liang"},
+        {"field": "关注梁静茹", "source": "apps", "path": "maoyan.shows[id=sh_liang].artistFollowed", "expected": true, "initial_must_differ": true},
+        {"field": "查看梁静茹购票须知", "source": "apps", "path": "maoyan.taskAudit.viewedShowNoticeId", "expected": "sh_liang", "initial_must_differ": true}
+      ]
+    },
+    "explore_slack_slack_task_01": {
+      "review_status": "passed", "review_notes": "Both the threaded reply and its explicit channel copy must be newly persisted.",
+      "expected_changes": ["apps.slack.messages"],
+      "assertions": [
+        {"field": "消息列回复", "source": "apps", "path": "slack.messages", "op": "new_contains", "expected": {"convId": "c_general", "threadParentId": "m_gen_4", "text": "议题顺序已确认，按原计划进行", "alsoSent": true}},
+        {"field": "同时发送到频道", "source": "apps", "path": "slack.messages", "op": "new_contains", "expected": {"convId": "c_general", "threadParentId": null, "text": "议题顺序已确认，按原计划进行", "alsoSent": true}}
+      ]
+    },
+    "explore_slack_slack_task_02": {
+      "review_status": "passed", "review_notes": "The exact seeded decision message must transition from unpinned to pinned.",
+      "expected_changes": ["apps.slack.messages[id=m_edu_10].pinned"],
+      "assertions": [{"field": "周五上线消息已钉选", "source": "apps", "path": "slack.messages[id=m_edu_10].pinned", "expected": true, "initial_must_differ": true}]
+    },
+    "explore_slack_slack_task_03": {
+      "review_status": "passed", "review_notes": "A new public channel, exact members and first message form the creation closure.",
+      "expected_changes": ["apps.slack.conversations", "apps.slack.messages"],
+      "assertions": [
+        {"field": "公开Q4频道和成员", "source": "apps", "path": "slack.conversations", "op": "new_contains", "expected": {"name": "q4-launch-plan", "kind": "channel", "isPrivate": false, "memberIds": ["u_lin", "u_chen"]}},
+        {"field": "Q4频道开场消息关联新频道", "source": "apps", "path": "slack.messages", "op": "new_linked", "expected": {"match": {"text": "Q4 上线计划频道正式开启，请大家在这里同步进度 🚀"}, "reference_path": "slack.conversations", "reference_field": "convId", "reference_match": {"name": "q4-launch-plan", "kind": "channel", "isPrivate": false, "memberIds": ["u_lin", "u_chen"]}}}
+      ]
+    },
+    "explore_slack_slack_task_04": {
+      "review_status": "passed", "review_notes": "Both exact seeded drafts must become empty.",
+      "expected_changes": ["apps.slack.conversations[id=c_design].draft", "apps.slack.conversations[id=d_su].draft"],
+      "assertions": [
+        {"field": "设计评审草稿删除", "source": "apps", "path": "slack.conversations[id=c_design].draft", "expected": "", "initial_must_differ": true},
+        {"field": "苏雅私信草稿删除", "source": "apps", "path": "slack.conversations[id=d_su].draft", "expected": "", "initial_must_differ": true}
+      ]
+    },
+    "explore_slack_slack_task_05": {
+      "review_status": "passed", "review_notes": "Both global home ordering preferences start different and must be persisted.",
+      "expected_changes": ["apps.slack.settings.homeSort", "apps.slack.settings.unreadSort"],
+      "assertions": [
+        {"field": "最新至最旧", "source": "apps", "path": "slack.settings.homeSort", "expected": "recent", "initial_must_differ": true},
+        {"field": "未读移至顶部", "source": "apps", "path": "slack.settings.unreadSort", "expected": "top", "initial_must_differ": true}
+      ]
+    },
+    "explore_slack_slack_task_06": {
+      "review_status": "passed", "review_notes": "Exact channel metadata and a newly sent announcement are required.",
+      "expected_changes": ["apps.slack.conversations[id=c_education]", "apps.slack.messages"],
+      "assertions": [
+        {"field": "education频道信息更新", "source": "apps", "path": "slack.conversations[id=c_education]", "op": "contains", "expected": {"name": "education-v2", "topic": "课程 2.0 迭代", "description": "沉淀 2.0 版本课程素材与反馈"}},
+        {"field": "频道更新通知", "source": "apps", "path": "slack.messages", "op": "new_contains", "expected": {"convId": "c_education", "text": "频道已更新，请大家注意新的主题方向"}}
+      ]
+    },
+    "explore_slack_slack_task_08": {
+      "review_status": "passed", "review_notes": "Cleared canonical status and the exact self profile title must both persist.",
+      "expected_changes": ["apps.slack.status", "apps.slack.users[id=u_me].title"],
+      "assertions": [
+        {"field": "状态已清除", "source": "apps", "path": "slack.status", "op": "contains", "expected": {"emoji": "", "text": "", "clearAfter": "", "clearAtTs": null}},
+        {"field": "职位更新", "source": "apps", "path": "slack.users[id=u_me].title", "expected": "产品负责人 & 项目协调", "initial_must_differ": true}
+      ]
+    },
+    "explore_weibo_wb_task_01": {
+      "review_status": "passed", "review_notes": "A new repost and a new comment on the exact source post prove both send options.",
+      "expected_changes": ["apps.weibo.statuses", "apps.weibo.statuses[id=s_typhoon].commentList"],
+      "assertions": [
+        {"field": "转发台风预警", "source": "apps", "path": "weibo.statuses", "op": "new_contains", "expected": {"userId": "me", "repostOf": "s_typhoon", "text": "浙江的朋友注意安全，提前做好防范！"}},
+        {"field": "同时评论", "source": "apps", "path": "weibo.statuses[id=s_typhoon].commentList", "op": "new_contains", "expected": {"userId": "me", "text": "浙江的朋友注意安全，提前做好防范！"}}
+      ]
+    },
+    "explore_weibo_wb_task_02": {
+      "review_status": "passed", "review_notes": "The exact text, inserted topic, location and fans-only visibility must coexist in one newly published status.",
+      "expected_changes": ["apps.weibo.statuses"],
+      "assertions": [{"field": "深夜火锅微博", "source": "apps", "path": "weibo.statuses", "op": "new_contains", "expected": {"userId": "me", "text": "今晚和朋友去吃火锅，毛肚绝了！#火锅局# 📍仙林奥莱城(金鹰湖滨天地店)", "visibility": "fans"}}]
+    },
+    "explore_weibo_wb_task_04": {
+      "review_status": "passed", "review_notes": "The exact outgoing DM and zero unread counters are both required.",
+      "expected_changes": ["apps.weibo.chats[id=u_xinduo].messages", "apps.weibo.chats", "apps.weibo.unreadTotal"],
+      "assertions": [
+        {"field": "回复心动半盏茶", "source": "apps", "path": "weibo.chats[id=u_xinduo].messages", "op": "new_contains", "expected": {"fromMe": true, "text": "好啊！周末一起二刷，你定时间"}},
+        {"field": "没有未读会话", "source": "apps", "path": "weibo.chats", "op": "not_contains", "expected": {"unread": 1}},
+        {"field": "总未读清零", "source": "apps", "path": "weibo.unreadTotal", "expected": 0, "initial_must_differ": true}
+      ]
+    },
+    "explore_weibo_wb_task_05": {
+      "review_status": "passed", "review_notes": "Xu Song starts unfollowed; follow state plus the audited exact realtime query/time sort prove the full search task.",
+      "expected_changes": ["apps.weibo.users[id=u_xusong].followedByMe", "apps.weibo.taskAudit.realtimeSearch"],
+      "assertions": [
+        {"field": "关注许嵩", "source": "apps", "path": "weibo.users[id=u_xusong].followedByMe", "expected": true, "initial_must_differ": true},
+        {"field": "实时结果按时间排序", "source": "apps", "path": "weibo.taskAudit.realtimeSearch", "op": "contains", "expected": {"query": "许嵩 安泊猜想", "sort": "time"}}
+      ]
+    },
+    "explore_weibo_wb_task_06": {
+      "review_status": "passed", "review_notes": "Both individually requested topics and every other followed topic must be signed today.",
+      "expected_changes": ["apps.weibo.supertopics"],
+      "assertions": [
+        {"field": "许嵩签到", "source": "apps", "path": "weibo.supertopics[id=st_xusong].signedToday", "expected": true, "initial_must_differ": true},
+        {"field": "恐龙签到", "source": "apps", "path": "weibo.supertopics[id=st_dino].signedToday", "expected": true, "initial_must_differ": true},
+        {"field": "电视剧超话一键签到", "source": "apps", "path": "weibo.supertopics[id=st_drama].signedToday", "expected": true, "initial_must_differ": true}
+      ]
+    },
+    "explore_weibo_wb_task_07": {
+      "review_status": "passed", "review_notes": "Status like, favorite, exact hot-comment like and exact new comment are independent required effects.",
+      "expected_changes": ["apps.weibo.likedStatusIds", "apps.weibo.favorites", "apps.weibo.statuses[id=s_ganfan].commentList"],
+      "assertions": [
+        {"field": "点赞探店微博", "source": "apps", "path": "weibo.likedStatusIds", "op": "new_contains", "expected": "s_ganfan"},
+        {"field": "收藏探店微博", "source": "apps", "path": "weibo.favorites", "op": "new_contains", "expected": "s_ganfan"},
+        {"field": "热评点赞", "source": "apps", "path": "weibo.statuses[id=s_ganfan].commentList", "op": "contains", "expected": {"id": "c_gf1", "likedByMe": true, "likes": 157}},
+        {"field": "发送求地址评论", "source": "apps", "path": "weibo.statuses[id=s_ganfan].commentList", "op": "new_contains", "expected": {"userId": "me", "text": "求地址+1，毛肚控路过"}}
+      ]
+    },
+    "explore_weibo_wb_task_08": {
+      "review_status": "passed", "review_notes": "The exact DM and audited visit to the at-me notification category are required.",
+      "expected_changes": ["apps.weibo.chats[id=u_shiyidui].messages", "apps.weibo.taskAudit.viewedNoticeType"],
+      "assertions": [
+        {"field": "发送武汉场拼车私信", "source": "apps", "path": "weibo.chats[id=u_shiyidui].messages", "op": "new_contains", "expected": {"fromMe": true, "text": "票抢到了！周末一起拼车去武汉场，你来定集合地点"}},
+        {"field": "查看@我的", "source": "apps", "path": "weibo.taskAudit.viewedNoticeType", "expected": "atMe", "initial_must_differ": true}
+      ]
+    },
+    "explore_xiaorichang_task_01": {
+      "review_status": "passed", "review_notes": "A newly created habit must carry every deterministic requested field; color is intentionally unconstrained by the instruction.",
+      "expected_changes": ["apps.xiaorichang.habits"],
+      "assertions": [{"field": "唯一新增冥想工作日晚间习惯", "source": "apps", "path": "xiaorichang.habits", "op": "new_contains_exactly_once", "expected": {"name": "冥想 10 分钟", "contextId": "ctx_night", "reward": 20, "recurrence": {"kind": "weekly", "weekdays": [1, 2, 3, 4, 5]}, "focusRequired": true, "iconStyle": "text", "iconText": "冥", "motivation": "静下来，才能听见自己"}}]
+    },
+    "explore_xiaorichang_task_02": {
+      "review_status": "passed", "review_notes": "The task now ends at an observable running timer instead of requiring a 45-minute wall-clock wait.",
+      "expected_changes": ["apps.xiaorichang.settings", "apps.xiaorichang._temp.activeFocus"],
+      "assertions": [
+        {"field": "森林鸟鸣", "source": "apps", "path": "xiaorichang.settings.focusMusic", "expected": "forest", "initial_must_differ": true},
+        {"field": "保持常亮", "source": "apps", "path": "xiaorichang.settings.focusKeepAwake", "expected": true, "initial_must_differ": true},
+        {"field": "自动循环", "source": "apps", "path": "xiaorichang.settings.focusAutoLoop", "expected": true, "initial_must_differ": true},
+        {"field": "45分钟读书计时运行中", "source": "apps", "path": "xiaorichang._temp.activeFocus", "op": "contains", "expected": {"targetMin": 45, "habitId": "h_read", "countUp": false}}
+      ]
+    },
+    "explore_xiaorichang_task_03": {
+      "review_status": "passed", "review_notes": "A new today log must preserve done state, 5km quantity, a timestamped note and at least one check-in stamp.",
+      "expected_changes": ["apps.xiaorichang.logs"],
+      "assertions": [{"field": "夜跑5公里打卡日志", "source": "apps", "path": "xiaorichang.logs", "op": "new_contains_regex", "expected": {"match": {"habitId": "h_run", "status": "done", "quantity": 5}, "field": "note", "pattern": "^【[0-2][0-9]:[0-5][0-9]】今晚状态很好，超额完成目标$", "nonempty_fields": ["stamps"]}}]
+    },
+    "explore_xiaorichang_task_04": {
+      "review_status": "passed", "review_notes": "The exact wish redemption and 50-point redeemed balance delta are both required.",
+      "expected_changes": ["apps.xiaorichang.wishes[id=w_milktea].redeemedAt", "apps.xiaorichang.glow.redeemed"],
+      "assertions": [
+        {"field": "奶茶心愿已兑换", "source": "apps", "path": "xiaorichang.wishes[id=w_milktea].redeemedAt", "op": "changed"},
+        {"field": "消耗50光芒", "source": "apps", "path": "xiaorichang.glow.redeemed", "expected": 50, "initial_must_differ": true}
+      ]
+    },
+    "explore_xiaorichang_task_05": {
+      "review_status": "passed", "review_notes": "The exact daily-visible reading habit must move from day to morning context.",
+      "expected_changes": ["apps.xiaorichang.habits[id=h_read].contextId"],
+      "assertions": [{"field": "读书30分钟移到晨间", "source": "apps", "path": "xiaorichang.habits[id=h_read].contextId", "expected": "ctx_morning", "initial_must_differ": true}]
+    },
+    "explore_xiaorichang_task_06": {
+      "review_status": "passed", "review_notes": "A newly added exact soft reminder is required; the existing 06:30 daily reminder cannot satisfy it.",
+      "expected_changes": ["apps.xiaorichang.habits[id=h_wakeup].reminders"],
+      "assertions": [{"field": "早起工作日六点软提醒", "source": "apps", "path": "xiaorichang.habits[id=h_wakeup].reminders", "op": "new_contains", "expected": {"mode": "soft", "time": "06:00", "repeat": "workday", "sound": "short_guitar"}}]
+    },
+    "explore_xiaorichang_task_07": {
+      "review_status": "passed", "review_notes": "A newly saved card must preserve the exact user-authored note; no unprovided all-habits-complete precondition is assumed.",
+      "expected_changes": ["apps.xiaorichang.cards"],
+      "assertions": [{"field": "指定纪念卡存入卡包", "source": "apps", "path": "xiaorichang.cards", "op": "new_contains", "expected": {"note": "坚持第 30 天，继续加油！"}}]
+    },
+    "explore_vipshop_vipshop_001": {
+      "review_status": "passed", "review_notes": "The highest-sales exact item, persisted review-media audit and deterministic SKU cart line are required.",
+      "expected_changes": ["apps.vipshop.taskAudit.viewedReviewMediaItemId", "apps.vipshop.cart"],
+      "assertions": [
+        {"field": "查看卡其裙评价大图", "source": "apps", "path": "vipshop.taskAudit.viewedReviewMediaItemId", "expected": "it006", "initial_must_differ": true},
+        {"field": "藏蓝M码卡其裙加入购物车", "source": "apps", "path": "vipshop.cart", "op": "new_contains", "expected": {"itemId": "it006", "skuDesc": "颜色:藏蓝;尺码:M", "qty": 1}}
+      ]
+    },
+    "explore_vipshop_vipshop_002": {
+      "review_status": "passed", "review_notes": "Move-to-favorite, exact coupon consumption and a newly paid exact remaining cart order form the checkout closure.",
+      "expected_changes": ["apps.vipshop.cart", "apps.vipshop.favorites", "apps.vipshop.coupons[id=cp3].used", "apps.vipshop.orders"],
+      "assertions": [
+        {"field": "降价连衣裙移出购物车", "source": "apps", "path": "vipshop.cart", "op": "not_contains", "expected": {"id": "c1"}},
+        {"field": "降价连衣裙移入收藏", "source": "apps", "path": "vipshop.favorites", "op": "new_contains", "expected": "it000"},
+        {"field": "女装专享券已使用", "source": "apps", "path": "vipshop.coupons[id=cp3].used", "expected": true, "initial_must_differ": true},
+        {"field": "唇釉订单唯品支付完成", "source": "apps", "path": "vipshop.orders", "op": "new_contains", "expected": {"status": "pendingReceipt", "payMethod": "唯品支付", "lines": [{"itemId": "it064", "qty": 2}]}}
+      ]
+    },
+    "explore_vipshop_vipshop_003": {
+      "review_status": "passed", "review_notes": "Brand subscription, audited discount sorting, favorite and price alert must all target the deterministic first item.",
+      "expected_changes": ["apps.vipshop.subscribedBrands", "apps.vipshop.taskAudit.brandSort", "apps.vipshop.favorites", "apps.vipshop.priceAlerts"],
+      "assertions": [
+        {"field": "订阅花漾年华", "source": "apps", "path": "vipshop.subscribedBrands", "op": "new_contains", "expected": "hy"},
+        {"field": "专场折扣升序", "source": "apps", "path": "vipshop.taskAudit.brandSort", "op": "contains", "expected": {"brandId": "hy", "sort": "discount"}},
+        {"field": "收藏白色印花T恤", "source": "apps", "path": "vipshop.favorites", "op": "new_contains", "expected": "it012"},
+        {"field": "T恤降价提醒", "source": "apps", "path": "vipshop.priceAlerts", "op": "new_contains", "expected": "it012"}
+      ]
+    },
+    "explore_vipshop_vipshop_004": {
+      "review_status": "passed", "review_notes": "Logistics viewing, receipt confirmation and exact rated review are independently observable.",
+      "expected_changes": ["apps.vipshop.taskAudit.viewedLogisticsOrderId", "apps.vipshop.orders[id=o3]", "apps.vipshop.reviews"],
+      "assertions": [
+        {"field": "查看o3物流", "source": "apps", "path": "vipshop.taskAudit.viewedLogisticsOrderId", "expected": "o3", "initial_must_differ": true},
+        {"field": "o3确认收货并评价", "source": "apps", "path": "vipshop.orders[id=o3]", "op": "contains", "expected": {"status": "completed", "reviewed": true}},
+        {"field": "白色A字裙五星评价", "source": "apps", "path": "vipshop.reviews", "op": "new_contains", "expected": {"itemId": "it030", "rating": 5, "content": "版型好看，做工细致", "tag": "版型好评", "mine": true}}
+      ]
+    },
+    "explore_vipshop_vipshop_005": {
+      "review_status": "passed", "review_notes": "The exact beauty reminder and deterministic men's SKU cart line prove both halves of the task.",
+      "expected_changes": ["apps.vipshop.flashReminders", "apps.vipshop.cart"],
+      "assertions": [
+        {"field": "唇釉开抢提醒", "source": "apps", "path": "vipshop.flashReminders", "op": "new_contains", "expected": "it064"},
+        {"field": "男装短裤加入购物车", "source": "apps", "path": "vipshop.cart", "op": "new_contains", "expected": {"itemId": "it036", "skuDesc": "颜色:同图色;尺码:M", "qty": 1}}
+      ]
+    },
+    "explore_vipshop_vipshop_007": {
+      "review_status": "passed", "review_notes": "A new exact Hangzhou home address must be created and the previous default must be cleared.",
+      "expected_changes": ["apps.vipshop.addresses"],
+      "assertions": [
+        {"field": "新增杭州默认家庭地址", "source": "apps", "path": "vipshop.addresses", "op": "new_contains", "expected": {"name": "王爸爸", "phone": "13900139000", "region": "浙江省 杭州市 西湖区", "detail": "西溪路588号西溪诚园5幢102室", "tag": "家庭", "isDefault": true}},
+        {"field": "旧默认地址已取消", "source": "apps", "path": "vipshop.addresses[id=a1].isDefault", "expected": false, "initial_must_differ": true}
+      ]
+    },
+    "explore_ximalaya_xm_001": {
+      "review_status": "passed", "review_notes": "Exact resumed track, active playback, speed and timer are all persisted.",
+      "expected_changes": ["apps.ximalaya.player"],
+      "assertions": [{"field":"续播星河纪元第3集并设置倍速定时","source":"apps","path":"ximalaya.player","op":"contains","expected":{"currentAlbumId":"a_novel","currentTrackId":"a_novel_t3","playing":true,"speed":1.5,"timerLabel":"30分钟后"}}]
+    },
+    "explore_ximalaya_xm_002": {
+      "review_status": "passed", "review_notes": "Subscription, descending album order, exact last episode playback and like form a closed state.",
+      "expected_changes": ["apps.ximalaya.subscribedAlbumIds", "apps.ximalaya.taskAudit.albumSort", "apps.ximalaya.player", "apps.ximalaya.likedTrackIds"],
+      "assertions": [
+        {"field":"订阅欢乐相声大会","source":"apps","path":"ximalaya.subscribedAlbumIds","op":"new_contains","expected":"a_cross"},
+        {"field":"专辑切为倒序","source":"apps","path":"ximalaya.taskAudit.albumSort","op":"contains","expected":{"albumId":"a_cross","sort":"desc"}},
+        {"field":"播放倒序首集","source":"apps","path":"ximalaya.player","op":"contains","expected":{"currentAlbumId":"a_cross","currentTrackId":"a_cross_t8","playing":true}},
+        {"field":"点赞当前集","source":"apps","path":"ximalaya.likedTrackIds","op":"new_contains","expected":"a_cross_t8"}
+      ]
+    },
+    "explore_ximalaya_xm_003": {
+      "review_status": "passed", "review_notes": "Both exact subscriptions must be removed and the requested remaining-list sort audited.",
+      "expected_changes": ["apps.ximalaya.subscribedAlbumIds", "apps.ximalaya.taskAudit.subscriptionSort"],
+      "assertions": [
+        {"field":"移除万界之门","source":"apps","path":"ximalaya.subscribedAlbumIds","op":"not_contains","expected":"nv02"},
+        {"field":"移除九天玄帝","source":"apps","path":"ximalaya.subscribedAlbumIds","op":"not_contains","expected":"nv04"},
+        {"field":"订阅按最近更新排序","source":"apps","path":"ximalaya.taskAudit.subscriptionSort","expected":"最近更新","initial_must_differ":true}
+      ]
+    },
+    "explore_ximalaya_xm_005": {
+      "review_status": "passed", "review_notes": "The deterministic first item interactions and final refreshed next item are all observable.",
+      "expected_changes": ["apps.ximalaya.likedTrackIds", "apps.ximalaya.subscribedAlbumIds", "apps.ximalaya.taskAudit.quickListen", "apps.ximalaya.player"],
+      "assertions": [
+        {"field":"点赞快听首条","source":"apps","path":"ximalaya.likedTrackIds","op":"new_contains","expected":"a_novel_t1"},
+        {"field":"订阅首条所属专辑","source":"apps","path":"ximalaya.subscribedAlbumIds","op":"new_contains","expected":"a_novel"},
+        {"field":"推荐流上滑下一条","source":"apps","path":"ximalaya.taskAudit.quickListen","op":"contains","expected":{"tab":"推荐","trackId":"a_cross_t4"}},
+        {"field":"下一条自动播放","source":"apps","path":"ximalaya.player","op":"contains","expected":{"currentTrackId":"a_cross_t4","playing":true}}
+      ]
+    },
+    "explore_ximalaya_xm_007": {
+      "review_status": "passed", "review_notes": "Exact search tab/sort and two previously-unfollowed anchors are required.",
+      "expected_changes": ["apps.ximalaya.taskAudit.search", "apps.ximalaya.followedAnchorIds"],
+      "assertions": [
+        {"field":"悬疑推理专辑按播放最多排序","source":"apps","path":"ximalaya.taskAudit.search","op":"contains","expected":{"query":"悬疑推理","tab":"专辑","sort":"播放最多"}},
+        {"field":"关注夜行者","source":"apps","path":"ximalaya.followedAnchorIds","op":"new_contains","expected":"an_yx"},
+        {"field":"关注深井故事","source":"apps","path":"ximalaya.followedAnchorIds","op":"new_contains","expected":"an_sj2"}
+      ]
+    },
+    "explore_ximalaya_xm_008": {
+      "review_status": "passed", "review_notes": "Exact track, texts, hot sort, reply expansion and comment like are independently verified.",
+      "expected_changes": ["apps.ximalaya.danmakuMessages", "apps.ximalaya.taskAudit", "apps.ximalaya.likedCommentIds", "apps.ximalaya.comments"],
+      "assertions": [
+        {"field":"发送指定弹幕","source":"apps","path":"ximalaya.danmakuMessages","op":"new_contains","expected":{"trackId":"a_novel_t3","content":"这一段太精彩了"}},
+        {"field":"评论按最热排序","source":"apps","path":"ximalaya.taskAudit.commentSort","expected":"最热","initial_must_differ":true},
+        {"field":"展开最高赞评论回复","source":"apps","path":"ximalaya.taskAudit.expandedCommentIds","op":"contains","expected":"c3"},
+        {"field":"点赞最高赞评论","source":"apps","path":"ximalaya.likedCommentIds","op":"new_contains","expected":"c3"},
+        {"field":"发送指定评论","source":"apps","path":"ximalaya.comments","op":"new_contains","expected":{"albumId":"a_novel","trackId":"a_novel_t3","content":"期待下一集更新"}}
+      ]
+    }
+  }
+}

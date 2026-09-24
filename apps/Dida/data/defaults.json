@@ -1,0 +1,46 @@
+{
+  "user": {
+    "name": "盖世π哒星",
+    "avatar": "",
+    "signature": "计划 · 专注 · 回顾",
+    "level": 6,
+    "badges": 18,
+    "premium": false,
+    "loggedIn": true
+  },
+  "lists": [
+    { "id": "inbox", "name": "收件箱", "nameEn": "Inbox", "color": "#4772F5", "icon": "IcInbox", "kind": "inbox" },
+    { "id": "welcome", "name": "Welcome", "nameEn": "Welcome", "color": "#34C77B", "icon": "IcToday", "kind": "list" },
+    { "id": "life", "name": "生活", "nameEn": "Life", "color": "#F5A623", "icon": "IcToday", "kind": "list" }
+  ],
+  "tasks": [
+    { "id": "t1", "title": "写周报", "note": "梳理本周进度与下周计划", "listId": "inbox", "priority": "high", "quadrant": 1, "dueOffsetDays": 0, "dueTimeMin": 1273, "reminder": "reminder.onTime", "repeat": null, "tags": ["工作"], "subtasks": [{ "id": "s1", "title": "梳理进度", "done": false }], "completed": false, "pinned": false },
+    { "id": "t2", "title": "回复导师邮件", "note": "", "listId": "inbox", "priority": "medium", "quadrant": 1, "dueOffsetDays": 0, "dueTimeMin": null, "reminder": null, "repeat": null, "tags": [], "subtasks": [], "completed": false, "pinned": false },
+    { "id": "t3", "title": "读一篇论文", "note": "关注方法部分", "listId": "welcome", "priority": "low", "quadrant": 2, "dueOffsetDays": 1, "dueTimeMin": null, "reminder": null, "repeat": "每周一", "tags": ["学习"], "subtasks": [{ "id": "s2", "title": "记笔记", "done": false }], "completed": false, "pinned": false },
+    { "id": "t4", "title": "买菜", "note": "", "listId": "life", "priority": "none", "quadrant": 4, "dueOffsetDays": 0, "dueTimeMin": null, "reminder": null, "repeat": null, "tags": [], "subtasks": [], "completed": false, "pinned": false },
+    { "id": "t5", "title": "健身 45 分钟", "note": "", "listId": "welcome", "priority": "medium", "quadrant": 2, "dueOffsetDays": 2, "dueTimeMin": null, "reminder": null, "repeat": "每周三、五", "tags": ["健康"], "subtasks": [], "completed": false, "pinned": true },
+    { "id": "t6", "title": "预约牙医", "note": "", "listId": "inbox", "priority": "high", "quadrant": 1, "dueOffsetDays": -1, "dueTimeMin": null, "reminder": null, "repeat": null, "tags": [], "subtasks": [], "completed": false, "pinned": false },
+    { "id": "t7", "title": "交房租", "note": "", "listId": "life", "priority": "none", "quadrant": 4, "dueOffsetDays": 0, "dueTimeMin": null, "reminder": null, "repeat": null, "tags": [], "subtasks": [], "completed": true },
+    { "id": "t8", "title": "看一部电影", "note": "", "listId": "welcome", "priority": "none", "quadrant": 4, "dueOffsetDays": -2, "dueTimeMin": null, "reminder": null, "repeat": null, "tags": [], "subtasks": [], "completed": true },
+    { "id": "t9", "title": "整理桌面", "note": "", "listId": "inbox", "priority": "low", "quadrant": 4, "dueOffsetDays": -3, "dueTimeMin": null, "reminder": null, "repeat": null, "tags": [], "subtasks": [], "completed": true }
+  ],
+  "records": [
+    { "id": "r1", "taskName": "写周报", "dayOffset": 0, "startMin": 697, "durationMin": 45, "type": "pomo" },
+    { "id": "r2", "taskName": "读一篇论文", "dayOffset": -1, "startMin": 900, "durationMin": 120, "type": "stopwatch" },
+    { "id": "r3", "taskName": "健身 45 分钟", "dayOffset": -1, "startMin": 1140, "durationMin": 45, "type": "pomo" }
+  ],
+  "settings": {
+    "theme": "dark",
+    "accent": "orange",
+    "startOfWeek": 0,
+    "timeFormat": "24h",
+    "showCompleted": true,
+    "matrixShowCompleted": true,
+    "quadrantOrder": [2, 1, 3, 4],
+    "pomoMinutes": 25
+  },
+  "stats": {
+    "totalFocusMin": 3173,
+    "totalPomo": 42
+  }
+}

@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MobileGym: A Verifiable and Highly Parallel Simulation Platform for Mobile GUI Agent Research</title>
+<meta name="description" content="MobileGym is a verifiable and highly parallel simulation platform for mobile GUI agent research — programmatic state verification, structured state snapshots, identical-state replication, and scalable online RL across 28 mobile apps." />
+<link rel="canonical" href="https://mobilegym.dev/paper/" />
+<meta property="og:title" content="MobileGym: A Verifiable and Highly Parallel Simulation Platform for Mobile GUI Agent Research" />
+<meta property="og:description" content="Structured environment state enables verifiable evaluation (vs. 10.2% VLM-judge misjudgment) and scalable online training (single-machine batch-parallel GRPO). 28 apps, 416 parameterized task templates, +40.7 pt Sim-to-Real." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://mobilegym.dev/paper/" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="MobileGym: A Verifiable and Highly Parallel Simulation Platform for Mobile GUI Agent Research" />
+<meta name="twitter:description" content="28 apps, 416 parameterized task templates, programmatic state verification, scalable online RL, +40.7 pt Sim-to-Real." />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%B1%3C/text%3E%3C/svg%3E" />
+
+<link rel="stylesheet" href="tailwind.css" />
+<link rel="stylesheet" href="styles.css" />
+<script defer src="scripts/state-builder.js"></script>
+<script defer src="scripts/boot-hero.js"></script>
+</head>
+
+<body class="text-stone-900 gradient-bg">
+
+
+<section id="demo" class="hero-demo scroll-mt-8" aria-label="MobileGym live simulator">
+  <div class="hero-demo-brand">
+    <span class="hero-demo-brand-name">MobileGym</span>
+    <span class="hero-demo-brand-meta">Live demo</span>
+  </div>
+  <div class="hero-demo-actions">
+    <a href="https://arxiv.org/abs/2605.26114" target="_blank" rel="noopener"
+       class="hero-demo-action hero-demo-action-arxiv" aria-label="Read paper on arXiv">
+      <span class="hero-demo-arxiv-mark">arXiv</span>
+    </a>
+    <a href="https://github.com/Purewhiter/mobilegym" target="_blank" rel="noopener"
+       class="hero-demo-action" aria-label="View source on GitHub">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.4 3-.405 1.02.005 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+    </a>
+    <button type="button" id="demo-poweroff-btn" class="hero-demo-poweroff hidden">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v10"/><path d="M18.4 6.6a9 9 0 1 1-12.77.04"/></svg>
+      <span>Power off</span>
+    </button>
+  </div>
+  <div class="demo-layout ui">
+    <div class="demo-phone-wrap">
+      <!-- 现代全面屏：iframe 尺寸严格匹配 simulator 原生 360×800 设计视口，
+           避免 simulator 的 #root 居中后产生黑色边距 -->
+      <div class="phone-rig relative" style="width: 360px; height: 800px;">
+        <!-- 侧边按钮（极简装饰） -->
+        <span class="absolute -right-[1.5px] top-[170px] w-[2px] h-[74px] rounded-r-sm pointer-events-none"
+              style="background: #2a2c32;"></span>
+        <span class="absolute -left-[1.5px] top-[132px] w-[2px] h-[32px] rounded-l-sm pointer-events-none"
+              style="background: #2a2c32;"></span>
+        <span class="absolute -left-[1.5px] top-[185px] w-[2px] h-[55px] rounded-l-sm pointer-events-none"
+              style="background: #2a2c32;"></span>
+        <span class="absolute -left-[1.5px] top-[254px] w-[2px] h-[55px] rounded-l-sm pointer-events-none"
+              style="background: #2a2c32;"></span>
+
+        <!-- 手机壳 = 屏幕本身（圆角直接裁屏幕内容，无 padding bezel）。
+             box-shadow 移到 CSS 里以便在 hero pre-boot 状态下隐藏（让电源键
+             浮在纯黑虚空中），post-boot 再 fade-in。 -->
+        <div id="demo-frame"
+             class="relative overflow-hidden bg-black"
+             style="
+               width: 360px;
+               height: 800px;
+               border-radius: 44px;
+             ">
+          <!-- 开机占位（点击后被替换为 iframe） -->
+          <button type="button" id="demo-boot-btn"
+                  class="ui group w-full h-full flex flex-col items-center justify-center bg-stone-950 text-stone-400 hover:text-white transition cursor-pointer focus:outline-none">
+            <span class="w-[72px] h-[72px] rounded-full border-2 border-stone-600 flex items-center justify-center mb-5 group-hover:border-stone-300 group-hover:scale-105 transition">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v10"/><path d="M18.4 6.6a9 9 0 1 1-12.77.04"/></svg>
+            </span>
+            <span class="hero-boot-label">Click to start</span>
+          </button>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- State Dock — 6 个外挂图标贴在手机右边缘，点击打开右侧抽屉。     -->
+        <!-- 每个 .state-dock-tab 同时带 data-studio-tab，复用现有 JS。     -->
+        <!-- ============================================================ -->
+        <aside class="state-dock ui" aria-label="State Builder dock" role="toolbar">
+          <span class="state-dock-eyebrow" aria-hidden="true">State Builder</span>
+          <span class="state-dock-divider" aria-hidden="true"></span>
+          <button type="button" class="state-dock-tab" data-studio-tab="session" data-state-dock-tab="session" aria-selected="true" aria-label="Session snapshots">
+            <span class="state-dock-tab-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>
+            </span>
+          </button>
+          <button type="button" class="state-dock-tab" data-studio-tab="language" data-state-dock-tab="language" aria-selected="false" aria-label="Phone language">
+            <span class="state-dock-tab-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+            </span>
+            <span class="state-dock-tab-badge" id="state-dock-language-badge" aria-hidden="true">中</span>
+          </button>
+          <button type="button" class="state-dock-tab" data-studio-tab="device" data-state-dock-tab="device" aria-selected="false" aria-label="Device controls">
+            <span class="state-dock-tab-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.6"/><path d="M10.5 18.5h3"/></svg>
+            </span>
+          </button>
+          <button type="button" class="state-dock-tab" data-studio-tab="wechat" data-state-dock-tab="wechat" aria-selected="false" aria-label="WeChat data">
+            <span class="state-dock-tab-icon state-dock-tab-icon-img">
+              <img src="figures/icons/com.tencent.mm.png" alt="" loading="lazy" />
+            </span>
+          </button>
+          <button type="button" class="state-dock-tab" data-studio-tab="alipay" data-state-dock-tab="alipay" aria-selected="false" aria-label="Alipay data">
+            <span class="state-dock-tab-icon state-dock-tab-icon-img">
+              <img src="figures/icons/com.eg.android.AlipayGphone.png" alt="" loading="lazy" />
+            </span>
+          </button>
+          <button type="button" class="state-dock-tab" data-studio-tab="sms" data-state-dock-tab="sms" aria-selected="false" aria-label="SMS data">
+            <span class="state-dock-tab-icon state-dock-tab-icon-img">
+              <img src="figures/icons/com.android.mms.png" alt="" loading="lazy" />
+            </span>
+          </button>
+          <button type="button" class="state-dock-tab" data-studio-tab="railway" data-state-dock-tab="railway" aria-selected="false" aria-label="12306 data">
+            <span class="state-dock-tab-icon state-dock-tab-icon-img">
+              <img src="figures/icons/com.MobileTicket.png" alt="" loading="lazy" />
+            </span>
+          </button>
+          <button type="button" class="state-dock-tab" data-studio-tab="weather" data-state-dock-tab="weather" aria-selected="false" aria-label="Weather data">
+            <span class="state-dock-tab-icon state-dock-tab-icon-img">
+              <img src="figures/icons/com.miui.weather2.png" alt="" loading="lazy" />
+            </span>
+          </button>
+        </aside>
+        <span class="state-dock-hint" aria-hidden="true">Patch state</span>
+
+        <!-- ============================================================ -->
+        <!-- Gesture Guide — 左侧"软键盘 + 图例"二合一卡片，与右侧 State    -->
+        <!-- Dock 对称。每个图标既是手势示意（SVG 内 .gesture-trail 用      -->
+        <!-- stroke-dasharray 动画反复"划出"轨迹），也是可点的硬键          -->
+        <!-- (data-gesture-action)，点击直接调用 iframe 内的                -->
+        <!-- __OS__.handleBack / goHome / showRecents。绑定见               -->
+        <!-- scripts/boot-hero.js 的委托。                                  -->
+        <!-- ============================================================ -->
+        <aside class="gesture-guide ui" aria-label="Phone gesture controls">
+          <div class="gesture-guide-head">
+            <span class="gesture-guide-eyebrow">Gestures</span>
+            <span class="gesture-guide-meta">or click</span>
+          </div>
+          <ul class="gesture-guide-list" role="list">
+            <li>
+              <button type="button" class="gesture-guide-item" data-gesture-action="back" aria-label="Back — same as edge-swipe">
+                <span class="gesture-guide-icon" aria-hidden="true">
+                  <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <!-- phone left edge -->
+                    <line x1="6" y1="5" x2="6" y2="27"/>
+                    <!-- finger contact dot -->
+                    <circle cx="6" cy="16" r="1.6" fill="currentColor" stroke="none"/>
+                    <!-- swipe trail rightward -->
+                    <path class="gesture-trail" d="M7.5 16 L 22 16"/>
+                    <polyline class="gesture-trail" points="18.5 12, 22 16, 18.5 20"/>
+                  </svg>
+                </span>
+                <span class="gesture-guide-text">
+                  <span class="gesture-guide-label">Back</span>
+                  <span class="gesture-guide-desc">Swipe in from left or right edge</span>
+                </span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="gesture-guide-item" data-gesture-action="home" aria-label="Home — same as swipe-up from bottom">
+                <span class="gesture-guide-icon" aria-hidden="true">
+                  <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <!-- home indicator bar at bottom -->
+                    <line x1="11" y1="27" x2="21" y2="27" stroke-width="2"/>
+                    <!-- finger contact dot -->
+                    <circle cx="16" cy="24" r="1.6" fill="currentColor" stroke="none"/>
+                    <!-- upward swipe trail -->
+                    <path class="gesture-trail" d="M16 22 L 16 8"/>
+                    <polyline class="gesture-trail" points="12 11.5, 16 8, 20 11.5"/>
+                  </svg>
+                </span>
+                <span class="gesture-guide-text">
+                  <span class="gesture-guide-label">Home</span>
+                  <span class="gesture-guide-desc">Swipe up from bottom edge</span>
+                </span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="gesture-guide-item" data-gesture-action="recents" aria-label="Recents — same as swipe-up and hold">
+                <span class="gesture-guide-icon" aria-hidden="true">
+                  <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <!-- stacked recents preview cards -->
+                    <rect x="8.5" y="5" width="15" height="8.5" rx="1.6"/>
+                    <line x1="11.5" y1="3" x2="20.5" y2="3" opacity="0.55"/>
+                    <!-- home indicator -->
+                    <line x1="11" y1="27" x2="21" y2="27" stroke-width="2"/>
+                    <!-- finger contact dot -->
+                    <circle cx="16" cy="24" r="1.6" fill="currentColor" stroke="none"/>
+                    <!-- short upward swipe + pause -->
+                    <path class="gesture-trail" d="M16 22 L 16 17"/>
+                    <polyline class="gesture-trail" points="13 19.5, 16 17, 19 19.5"/>
+                  </svg>
+                </span>
+                <span class="gesture-guide-text">
+                  <span class="gesture-guide-label">Recents</span>
+                  <span class="gesture-guide-desc">Swipe up &amp; hold mid-screen</span>
+                </span>
+              </button>
+            </li>
+            <li>
+              <!-- Hint-only row: switching home-screen pages happens on the
+                   desktop itself (workspace pager) — there's no single
+                   __OS__ action to trigger from a button, so this is a
+                   static <div> with the .gesture-guide-item--hint modifier
+                   suppressing hover/active affordances. -->
+              <div class="gesture-guide-item gesture-guide-item--hint" role="note" aria-label="Switch home-screen pages by swiping or dragging horizontally">
+                <span class="gesture-guide-icon" aria-hidden="true">
+                  <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <!-- page indicator dots at top, middle one active -->
+                    <circle cx="13" cy="7" r="0.9" fill="currentColor" stroke="none" opacity="0.4"/>
+                    <circle cx="16" cy="7" r="1.2" fill="currentColor" stroke="none"/>
+                    <circle cx="19" cy="7" r="0.9" fill="currentColor" stroke="none" opacity="0.4"/>
+                    <!-- finger contact dot on the right -->
+                    <circle cx="22" cy="18" r="1.6" fill="currentColor" stroke="none"/>
+                    <!-- horizontal swipe trail leftward across the page -->
+                    <path class="gesture-trail" d="M20.5 18 L 8 18"/>
+                    <polyline class="gesture-trail" points="11.5 14.5, 8 18, 11.5 21.5"/>
+                  </svg>
+                </span>
+                <span class="gesture-guide-text">
+                  <span class="gesture-guide-label">Switch pages</span>
+                  <span class="gesture-guide-desc">Swipe or drag horizontally on the desktop</span>
+                </span>
+              </div>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- State Popover — 锚定在 dock 右侧的浮层卡片，无遮罩。点击 dock  -->
+    <!-- 任意 tab 滑出，点击卡片外区域 / ESC 关闭。复用原有              -->
+    <!-- .state-builder-tabs / .state-builder-panel-shell 子树。       -->
+    <!-- ============================================================ -->
+    <aside id="state-drawer" class="state-drawer" data-open="false" aria-label="State Builder" aria-hidden="true">
+      <div class="state-drawer-head">
+        <div>
+          <div class="state-builder-board-kicker">State Builder · Live Injection</div>
+          <h3 class="state-builder-board-title">Patch runtime state without restarting the device</h3>
+          <p class="state-builder-board-lede">Snapshot · time-travel · inject cross-app data while the simulator keeps running.</p>
+        </div>
+        <button type="button" id="state-drawer-close" class="state-drawer-close" aria-label="Close State Builder">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+      <div class="state-drawer-body">
+      <div class="state-builder-board">
+        <div class="state-builder-tabs" role="tablist" aria-label="State Builder capabilities">
+          <button type="button" class="state-builder-tab" data-studio-tab="session" aria-selected="true" aria-controls="state-panel-session">
+            <span class="state-builder-tab-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>
+            </span>
+            <span class="state-builder-tab-label">Session</span>
+          </button>
+          <button type="button" class="state-builder-tab" data-studio-tab="language" aria-selected="false" aria-controls="state-panel-language">
+            <span class="state-builder-tab-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+            </span>
+            <span class="state-builder-tab-label">Language</span>
+          </button>
+          <button type="button" class="state-builder-tab" data-studio-tab="device" aria-selected="false" aria-controls="state-panel-device">
+            <span class="state-builder-tab-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.6"/><path d="M10.5 18.5h3"/></svg>
+            </span>
+            <span class="state-builder-tab-label">Device</span>
+          </button>
+          <button type="button" class="state-builder-tab" data-studio-tab="wechat" aria-selected="false" aria-controls="state-panel-wechat">
+            <span class="state-builder-tab-icon state-builder-tab-icon-img">
+              <img src="figures/icons/com.tencent.mm.png" alt="" loading="lazy" />
+            </span>
+            <span class="state-builder-tab-label">WeChat</span>
+          </button>
+          <button type="button" class="state-builder-tab" data-studio-tab="alipay" aria-selected="false" aria-controls="state-panel-alipay">
+            <span class="state-builder-tab-icon state-builder-tab-icon-img">
+              <img src="figures/icons/com.eg.android.AlipayGphone.png" alt="" loading="lazy" />
+            </span>
+            <span class="state-builder-tab-label">Alipay</span>
+          </button>
+          <button type="button" class="state-builder-tab" data-studio-tab="sms" aria-selected="false" aria-controls="state-panel-sms">
+            <span class="state-builder-tab-icon state-builder-tab-icon-img">
+              <img src="figures/icons/com.android.mms.png" alt="" loading="lazy" />
+            </span>
+            <span class="state-builder-tab-label">SMS</span>
+          </button>
+          <button type="button" class="state-builder-tab" data-studio-tab="railway" aria-selected="false" aria-controls="state-panel-railway">
+            <span class="state-builder-tab-icon state-builder-tab-icon-img">
+              <img src="figures/icons/com.MobileTicket.png" alt="" loading="lazy" />
+            </span>
+            <span class="state-builder-tab-label">12306</span>
+          </button>
+          <button type="button" class="state-builder-tab" data-studio-tab="weather" aria-selected="false" aria-controls="state-panel-weather">
+            <span class="state-builder-tab-icon state-builder-tab-icon-img">
+              <img src="figures/icons/com.miui.weather2.png" alt="" loading="lazy" />
+            </span>
+            <span class="state-builder-tab-label">Weather</span>
+          </button>
+        </div>
+
+        <div class="state-builder-panel-shell">
+        <section id="state-panel-session" class="studio-panel space-y-3" data-studio-panel="session" data-active="true">
+              <div class="studio-action-rail" role="tablist" aria-label="Session state actions">
+                <button type="button" class="studio-action-tab" data-studio-action="session-reset" aria-selected="true">Reset</button>
+                <button type="button" class="studio-action-tab" data-studio-action="session-save" aria-selected="false">Save</button>
+                <button type="button" class="studio-action-tab" data-studio-action="session-restore" aria-selected="false">Restore</button>
+              </div>
+              <div class="studio-action-panel space-y-3" data-studio-action-panel="session-reset" data-active="true">
+                <div class="studio-snapshot-meta">Reset clears the simulator and reloads a fresh session. Saved snapshots stay in this browser.</div>
+                <button type="button" id="studio-reset-session" class="studio-action w-full">Reset simulator</button>
+              </div>
+              <div class="studio-action-panel space-y-3" data-studio-action-panel="session-save" data-active="false">
+                <div class="studio-field">
+                  <label for="studio-snapshot-name">Snapshot name</label>
+                  <input id="studio-snapshot-name" class="studio-input" value="Snapshot" />
+                </div>
+                <button type="button" id="studio-save-snapshot" class="studio-action w-full">Save snapshot</button>
+              </div>
+              <div class="studio-action-panel space-y-3" data-studio-action-panel="session-restore" data-active="false">
+                <div class="studio-field">
+                  <label for="studio-snapshot-select">Snapshot</label>
+                  <select id="studio-snapshot-select" class="studio-input"><option value="">No snapshots yet</option></select>
+                </div>
+                <button type="button" id="studio-restore-snapshot" class="studio-action w-full">Restore snapshot</button>
+                <button type="button" id="studio-delete-snapshot" class="studio-action w-full">Delete snapshot</button>
+              </div>
+            </section>
+        <section id="state-panel-language" class="studio-panel space-y-3" data-studio-panel="language" data-active="false">
+              <div class="studio-snapshot-meta">
+                Sets the simulated phone's language. Also clears per-app overrides (Alipay, Bilibili, RedBook, Map) so every app follows the new system locale.
+              </div>
+              <div class="studio-language-choices" role="radiogroup" aria-label="Phone language">
+                <button type="button" class="studio-language-choice" data-language-choice="zh-Hans" role="radio" aria-checked="true">
+                  <span class="studio-language-choice-name">中文</span>
+                  <span class="studio-language-choice-meta">Simplified Chinese</span>
+                </button>
+                <button type="button" class="studio-language-choice" data-language-choice="en" role="radio" aria-checked="false">
+                  <span class="studio-language-choice-name">English</span>
+                  <span class="studio-language-choice-meta">United States</span>
+                </button>
+              </div>
+              <button type="button" id="studio-apply-language" class="studio-action w-full">Apply language</button>
+            </section>
+        <section id="state-panel-device" class="studio-panel space-y-3" data-studio-panel="device" data-active="false">
+              <div class="studio-action-rail" role="tablist" aria-label="Device state actions">
+                <button type="button" class="studio-action-tab" data-studio-action="device-time" aria-selected="true">Time</button>
+                <button type="button" class="studio-action-tab" data-studio-action="device-battery" aria-selected="false">Battery</button>
+                <button type="button" class="studio-action-tab" data-studio-action="device-location" aria-selected="false">Location</button>
+              </div>
+              <div class="studio-action-panel space-y-3" data-studio-action-panel="device-time" data-active="true">
+                <div class="grid grid-cols-2 gap-3">
+                  <div class="studio-field">
+                    <label for="studio-device-time-mode">Mode</label>
+                    <select id="studio-device-time-mode" class="studio-input">
+                      <option value="real">Real</option>
+                      <option value="simulated">Simulated</option>
+                    </select>
+                  </div>
+                  <div class="studio-field">
+                    <label for="studio-device-time-flow">Flow</label>
+                    <select id="studio-device-time-flow" class="studio-input"><option value="flow">Flow</option></select>
+                  </div>
+                </div>
+                <div class="studio-field" id="studio-device-time-value-field" hidden>
+                  <label for="studio-device-time-value">Device time</label>
+                  <input id="studio-device-time-value" class="studio-input" type="datetime-local" />
+                </div>
+                <button type="button" id="studio-apply-device-time" class="studio-action w-full">Apply time</button>
+              </div>
+              <div class="studio-action-panel space-y-3" data-studio-action-panel="device-battery" data-active="false">
+                <div class="grid grid-cols-2 gap-3">
+                  <div class="studio-field">
+                    <label for="studio-device-battery-level">Battery</label>
+                    <input id="studio-device-battery-level" class="studio-input" type="number" min="0" max="100" step="1" value="80" />
+                  </div>
+                  <div class="studio-field">
+                    <label for="studio-device-battery-status">Status</label>
+                    <select id="studio-device-battery-status" class="studio-input">
+                      <option value="unplugged">Unplugged</option>
+                      <option value="charging">Charging</option>
+                      <option value="fast">Fast charge</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="studio-field">
+                  <label for="studio-device-battery-saver">Battery saver</label>
+                  <select id="studio-device-battery-saver" class="studio-input">
+                    <option value="off">Off</option>
+                    <option value="on">On</option>
+                  </select>
+                </div>
+                <button type="button" id="studio-apply-device-battery" class="studio-action w-full">Apply battery</button>
+              </div>
+              <div class="studio-action-panel space-y-3" data-studio-action-panel="device-location" data-active="false">
+                <div class="studio-field">
+                  <label for="studio-device-location-preset">Preset</label>
+                  <select id="studio-device-location-preset" class="studio-input">
+                    <option value="beijing">Beijing</option>
+                    <option value="shanghai">Shanghai</option>
+                    <option value="guangzhou">Guangzhou</option>
+                    <option value="shenzhen">Shenzhen</option>
+                    <option value="hangzhou">Hangzhou</option>
+                    <option value="chengdu">Chengdu</option>
+                    <option value="wuhan">Wuhan</option>
+                    <option value="nanjing">Nanjing</option>
+                    <option value="newyork">New York</option>
+                    <option value="london">London</option>
+                    <option value="tokyo">Tokyo</option>
+                    <option value="custom">Custom coordinates</option>
+                  </select>
+                </div>
+                <div class="grid grid-cols-2 gap-3" id="studio-device-location-custom" hidden>
+                  <div class="studio-field">
+                    <label for="studio-device-location-lat">Latitude</label>
+                    <input id="studio-device-location-lat" class="studio-input" type="number" step="0.000001" value="39.9042" />
+                  </div>
+                  <div class="studio-field">
+                    <label for="studio-device-location-lon">Longitude</label>
+                    <input id="studio-device-location-lon" class="studio-input" type="number" step="0.000001" value="116.4074" />
+                  </div>
+                </div>
+                <button type="button" id="studio-apply-device-location" class="studio-action w-full">Apply location</button>
+              </div>
+            </section>
+        <section id="state-panel-wechat" class="studio-panel space-y-3" data-studio-panel="wechat" data-active="false">
+              <div class="studio-action-rail" role="tablist" aria-label="WeChat data actions">
+                <button type="button" class="studio-action-tab" data-studio-action="wechat-message" aria-selected="true">Message</button>
+                <button type="button" class="studio-action-tab" data-studio-action="wechat-contact" aria-selected="false">Contact</button>
+              </div>
+              <div class="studio-action-panel space-y-3" data-studio-action-panel="wechat-message" data-active="true">
+                <div class="studio-field">
+                  <label for="studio-wechat-contact">Chat</label>
+                  <select id="studio-wechat-contact" class="studio-input"><option value="">陈静</option></select>
+                </div>
+                <div class="studio-field">
+                  <label for="studio-wechat-time">Message time</label>
+                  <input id="studio-wechat-time" class="studio-input" type="datetime-local" />
+                </div>
+                <div class="studio-field">
+                  <label for="studio-wechat-message">Incoming message</label>
+                  <textarea id="studio-wechat-message" class="studio-input min-h-[82px] resize-none">今晚 7 点开会，记得带材料。</textarea>
+                </div>
+                <button type="button" id="studio-insert-wechat-message" class="studio-action w-full">Insert message</button>
+              </div>
+              <div class="studio-action-panel space-y-3" data-studio-action-panel="wechat-contact" data-active="false">
+                <div class="grid grid-cols-2 gap-3">
+                  <div class="studio-field">
+                    <label for="studio-wechat-new-name">New contact</label>
+                    <input id="studio-wechat-new-name" class="studio-input" value="林小雨" />
+                  </div>
+                  <div class="studio-field">
+                    <label for="studio-wechat-new-wxid">WeChat ID</label>
+                    <input id="studio-wechat-new-wxid" class="studio-input" value="linxiaoyu_2026" />
+                  </div>
+                </div>
+                <div class="studio-field">
+                  <label>Avatar</label>
+                  <div class="avatar-picker" id="studio-wechat-avatar-picker" aria-label="Choose WeChat avatar">
+                    <button type="button" class="avatar-choice" data-avatar="avatars/avatar_default.jpg" aria-pressed="true" title="Default"><img src="/@app-assets/Wechat/avatars/avatar_default.jpg" alt="" /></button>
+                    <button type="button" class="avatar-choice" data-avatar="avatars/avatar_88.jpg" aria-pressed="false" title="Avatar 88"><img src="/@app-assets/Wechat/avatars/avatar_88.jpg" alt="" /></button>
+                    <button type="button" class="avatar-choice" data-avatar="avatars/avatar_64.jpg" aria-pressed="false" title="Avatar 64"><img src="/@app-assets/Wechat/avatars/avatar_64.jpg" alt="" /></button>
+                    <button type="button" class="avatar-choice" data-avatar="avatars/avatar_10.jpg" aria-pressed="false" title="Avatar 10"><img src="/@app-assets/Wechat/avatars/avatar_10.jpg" alt="" /></button>
+                    <button type="button" class="avatar-choice" data-avatar="avatars/avatar_20.jpg" aria-pressed="false" title="Avatar 20"><img src="/@app-assets/Wechat/avatars/avatar_20.jpg" alt="" /></button>
+                    <button type="button" class="avatar-choice" data-avatar="avatars/avatar_50.jpg" aria-pressed="false" title="Avatar 50"><img src="/@app-assets/Wechat/avatars/avatar_50.jpg" alt="" /></button>
+                  </div>
+                </div>
+                <div class="studio-field">
+                  <label for="studio-wechat-new-signature">Signature</label>
+                  <input id="studio-wechat-new-signature" class="studio-input" value="明天会更好" />
+                </div>
+                <button type="button" id="studio-add-wechat-contact" class="studio-action w-full">Add contact</button>
+              </div>
+            </section>
+        <section id="state-panel-alipay" class="studio-panel space-y-3" data-studio-panel="alipay" data-active="false">
+              <div class="studio-action-rail" role="tablist" aria-label="Alipay data actions">
+                <button type="button" class="studio-action-tab" data-studio-action="alipay-balance" aria-selected="true">Balance</button>
+                <button type="button" class="studio-action-tab" data-studio-action="alipay-bill" aria-selected="false">Bill</button>
+              </div>
+              <div class="studio-action-panel space-y-3" data-studio-action-panel="alipay-balance" data-active="true">
+                <div class="studio-field">
+                  <label for="studio-alipay-balance">Account balance</label>
+                  <input id="studio-alipay-balance" class="studio-input" type="number" step="0.01" value="520.13" />
+                </div>
+                <button type="button" id="studio-set-alipay-balance" class="studio-action w-full">Set balance</button>
+              </div>
+              <div class="studio-action-panel space-y-3" data-studio-action-panel="alipay-bill" data-active="false">
+                <div class="grid grid-cols-2 gap-3">
+                  <div class="studio-field">
+                    <label for="studio-alipay-amount">Bill amount</label>
+                    <input id="studio-alipay-amount" class="studio-input" type="number" step="0.01" value="32" />
+                  </div>
+                  <div class="studio-field">
+                    <label for="studio-alipay-direction">Type</label>
+                    <select id="studio-alipay-direction" class="studio-input">
+                      <option value="expense">Expense</option>
+                      <option value="income">Income</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="studio-field">
+                  <label for="studio-alipay-title">Bill title</label>
+                  <input id="studio-alipay-title" class="studio-input" value="星巴克" />
+                </div>
+                <div class="studio-field">
+                  <label for="studio-alipay-note">Note</label>
+                  <input id="studio-alipay-note" class="studio-input" value="拿铁" />
+                </div>
+                <button type="button" id="studio-add-alipay-bill" class="studio-action w-full">Add bill</button>
+              </div>
+            </section>
+        <section id="state-panel-sms" class="studio-panel space-y-3" data-studio-panel="sms" data-active="false">
+              <div class="studio-action-rail" role="tablist" aria-label="SMS and contacts data actions">
+                <button type="button" class="studio-action-tab" data-studio-action="sms-contact" aria-selected="true">Contact</button>
+                <button type="button" class="studio-action-tab" data-studio-action="sms-message" aria-selected="false">SMS</button>
+              </div>
+              <div class="studio-action-panel space-y-3" data-studio-action-panel="sms-contact" data-active="true">
+                <div class="grid grid-cols-2 gap-3">
+                  <div class="studio-field">
+                    <label for="studio-contact-name">Contact name</label>
+                    <input id="studio-contact-name" class="studio-input" value="张三" />
+                  </div>
+                  <div class="studio-field">
+                    <label for="studio-contact-phone">Phone</label>
+                    <input id="studio-contact-phone" class="studio-input" value="13800138000" />
+                  </div>
+                </div>
+                <button type="button" id="studio-save-contact" class="studio-action w-full">Save contact</button>
+              </div>
+              <div class="studio-action-panel space-y-3" data-studio-action-panel="sms-message" data-active="false">
+                <div class="studio-field">
+                  <label for="studio-sms-sender">SMS sender</label>
+                  <input id="studio-sms-sender" class="studio-input" value="12306" />
+                </div>
+                <div class="studio-field">
+                  <label for="studio-sms-body">Message content</label>
+                  <textarea id="studio-sms-body" class="studio-input min-h-[88px] resize-none">您的验证码是 482913，用于 MobileGym 场景演示，请勿泄露。</textarea>
+                </div>
+                <button type="button" id="studio-send-sms" class="studio-action w-full">Receive SMS</button>
+              </div>
+            </section>
+        <section id="state-panel-railway" class="studio-panel space-y-3" data-studio-panel="railway" data-active="false">
+              <div class="studio-action-rail" role="tablist" aria-label="12306 data actions">
+                <button type="button" class="studio-action-tab" data-studio-action="railway-order" aria-selected="true">Ticket order</button>
+              </div>
+              <div class="studio-action-panel space-y-3" data-studio-action-panel="railway-order" data-active="true">
+                <div class="grid grid-cols-2 gap-3">
+                  <div class="studio-field">
+                    <label for="studio-railway-train">Train</label>
+                    <input id="studio-railway-train" class="studio-input" value="G123" />
+                  </div>
+                  <div class="studio-field">
+                    <label for="studio-railway-status">Status</label>
+                    <select id="studio-railway-status" class="studio-input">
+                      <option value="completed">Paid</option>
+                      <option value="pending">Unpaid</option>
+                      <option value="cancelled">Cancelled</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                  <div class="studio-field">
+                    <label for="studio-railway-from">From station</label>
+                    <input id="studio-railway-from" class="studio-input" value="北京南" />
+                  </div>
+                  <div class="studio-field">
+                    <label for="studio-railway-to">To station</label>
+                    <input id="studio-railway-to" class="studio-input" value="上海虹桥" />
+                  </div>
+                </div>
+                <div class="studio-field">
+                  <label for="studio-railway-date">Date</label>
+                  <input id="studio-railway-date" class="studio-input" type="date" value="2026-05-03" />
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                  <div class="studio-field">
+                    <label for="studio-railway-depart">Depart</label>
+                    <input id="studio-railway-depart" class="studio-input" value="09:30" />
+                  </div>
+                  <div class="studio-field">
+                    <label for="studio-railway-arrive">Arrive</label>
+                    <input id="studio-railway-arrive" class="studio-input" value="14:48" />
+                  </div>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                  <div class="studio-field">
+                    <label for="studio-railway-passenger">Passenger</label>
+                    <input id="studio-railway-passenger" class="studio-input" value="林小雨" />
+                  </div>
+                  <div class="studio-field">
+                    <label for="studio-railway-price">Price</label>
+                    <input id="studio-railway-price" class="studio-input" type="number" step="0.5" value="553" />
+                  </div>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                  <div class="studio-field">
+                    <label for="studio-railway-seat-type">Seat type</label>
+                    <select id="studio-railway-seat-type" class="studio-input">
+                      <option value="商务座">商务座</option>
+                      <option value="一等座">一等座</option>
+                      <option value="二等座">二等座</option>
+                      <option value="高级软卧">高级软卧</option>
+                      <option value="软卧">软卧</option>
+                      <option value="硬卧">硬卧</option>
+                      <option value="软座">软座</option>
+                      <option value="硬座">硬座</option>
+                      <option value="无座">无座</option>
+                    </select>
+                  </div>
+                  <div class="studio-field">
+                    <label for="studio-railway-seat-no">Seat</label>
+                    <input id="studio-railway-seat-no" class="studio-input" value="03车 08A号" />
+                  </div>
+                </div>
+                <button type="button" id="studio-add-railway-order" class="studio-action w-full">Add ticket/order</button>
+              </div>
+            </section>
+        <section id="state-panel-weather" class="studio-panel space-y-3" data-studio-panel="weather" data-active="false">
+              <div class="studio-action-rail" role="tablist" aria-label="Weather data actions">
+                <button type="button" class="studio-action-tab" data-studio-action="weather-now" aria-selected="true">Conditions</button>
+              </div>
+              <div class="studio-action-panel space-y-3" data-studio-action-panel="weather-now" data-active="true">
+                <div class="studio-snapshot-meta">
+                  Patches the located page's current weather. Switch city via the Device → Location panel.
+                </div>
+                <div class="studio-field">
+                  <label for="studio-weather-condition">Condition</label>
+                  <select id="studio-weather-condition" class="studio-input">
+                    <option value="sunny">晴 (Sunny)</option>
+                    <option value="cloudy">多云 (Partly cloudy)</option>
+                    <option value="overcast">阴 (Overcast)</option>
+                    <option value="light-rain">小雨 (Light rain)</option>
+                    <option value="heavy-rain">大雨 (Heavy rain)</option>
+                    <option value="thunderstorm">雷阵雨 (Thunderstorm)</option>
+                    <option value="light-snow">小雪 (Light snow)</option>
+                    <option value="fog">雾 (Fog)</option>
+                    <option value="haze">霾 (Haze)</option>
+                  </select>
+                </div>
+                <div class="grid grid-cols-3 gap-3">
+                  <div class="studio-field">
+                    <label for="studio-weather-temp">Temp °C</label>
+                    <input id="studio-weather-temp" class="studio-input" type="number" step="1" value="20" />
+                  </div>
+                  <div class="studio-field">
+                    <label for="studio-weather-high">High °C</label>
+                    <input id="studio-weather-high" class="studio-input" type="number" step="1" value="25" />
+                  </div>
+                  <div class="studio-field">
+                    <label for="studio-weather-low">Low °C</label>
+                    <input id="studio-weather-low" class="studio-input" type="number" step="1" value="15" />
+                  </div>
+                </div>
+                <div class="studio-field">
+                  <label for="studio-weather-aqi">AQI (0–500)</label>
+                  <input id="studio-weather-aqi" class="studio-input" type="number" step="1" value="50" />
+                </div>
+                <button type="button" id="studio-apply-weather-now" class="studio-action w-full">Apply weather</button>
+              </div>
+            </section>
+        </div>
+
+        <div id="studio-status" class="studio-status" data-kind="warn" role="status" aria-live="polite">
+          Power on the phone, then apply a scenario.
+        </div>
+
+        <p class="state-builder-board-foot">
+          One <code>setState</code> patch per action · persists across reloads
+        </p>
+      </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+import{defineAppTools,ID,LIMIT,STRING}from'../../core/define';export const ALIPAY_TOOL_DEFINITIONS=defineAppTools('alipay',[
+{name:'search_bills',description:'Search bill records with optional text, date, income/expense, and the same quick-filter categories shown in the Alipay bills UI. Use quick_filter="order" for the UI category labeled \u8ba2\u5355. Omit query to list every bill matching the other filters.',properties:{query:STRING,date_from:STRING,date_to:STRING,direction:{type:'string',enum:['all','income','expense'],default:'all'},quick_filter:{type:'string',enum:['expense','shopping','offline','wealth','transfer','withdrawal','redPacket','repayment','utility','phoneRecharge','merchantCollection','freeze','order','refund','topUp']},limit:LIMIT}},
+{name:'summarize_bills',description:'Aggregate income and expense totals over a date range, optionally grouped by category or counterparty.',properties:{date_from:STRING,date_to:STRING,group_by:{type:'string',enum:['none','category','counterparty'],default:'none'}}},
+{name:'get_bill_summary',description:'Return one bill record without exposing internal task state.',properties:{bill_id:ID},required:['bill_id']},
+{name:'search_contacts',description:'Search Alipay contacts by name or account.',properties:{query:STRING,limit:LIMIT},required:['query']},
+{name:'get_balance_summary',description:'Return account balance and daily income summary.'},
+{name:'list_bank_cards',description:'List bound bank cards with masked identifiers and available amount.'},
+{name:'list_conversations',description:'List compact Alipay conversation previews and unread status.',properties:{limit:LIMIT}},
+{name:'open_bills',description:'Open the Alipay bills page.',kind:'navigation'},
+{name:'open_bill',description:'Open one bill detail page.',properties:{bill_id:ID},required:['bill_id'],kind:'navigation'},
+{name:'open_contact',description:'Open one Alipay contact profile.',properties:{contact_id:ID},required:['contact_id'],kind:'navigation'},
+{name:'prepare_transfer',description:'Open a transfer form for a selected contact. Amount entry and payment confirmation remain GUI actions.',properties:{contact_id:ID},required:['contact_id'],kind:'draft'},
+{name:'open_scan',description:'Open Alipay Scan. Scanning and payment remain GUI actions.',kind:'navigation'},
+{name:'send_chat_message',description:'Send one plain-text message in an existing person conversation. It cannot send money or payment cards.',properties:{conversation_id:ID,text:STRING},required:['conversation_id','text'],kind:'write'},
+]);

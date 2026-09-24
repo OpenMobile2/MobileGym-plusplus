@@ -1,0 +1,8532 @@
+{
+ "profile": {
+  "name": "氨基酸",
+  "bczId": "100000001",
+  "avatar": "user",
+  "listenVocab": 4638,
+  "readVocab": 4839,
+  "learnedCount": 1889
+ },
+ "words": [
+  {
+   "id": "w001",
+   "word": "prudent",
+   "phonetic": "/ˈpruːdnt/",
+   "pos": "adj.",
+   "meaning": "谨慎的,精明的",
+   "options": [
+    "吊着的,悬挂的",
+    "谈性色变者",
+    "堕落的,颓废的"
+   ],
+   "sentence": "The lemur has always been prudent to guard his house.",
+   "sentenceCn": "狐猴在看家的时候总会很谨慎。",
+   "image": "words/prudent.png",
+   "examFreq": 15,
+   "roots": "prud(小心)+ent → 小心的 = 谨慎的"
+  },
+  {
+   "id": "w002",
+   "word": "arid",
+   "phonetic": "/ˈærɪd/",
+   "pos": "adj.",
+   "meaning": "干旱的,干燥的",
+   "options": [
+    "辛辣的,刻薄的",
+    "独唱曲,咏叹调",
+    "格子;网格"
+   ],
+   "sentence": "The lake turned to an arid place.",
+   "sentenceCn": "这个湖变成了一个干旱之地。",
+   "image": "words/arid.png",
+   "examFreq": 41,
+   "roots": "ar(干燥)+id(形容词后缀) → 干旱的"
+  },
+  {
+   "id": "w003",
+   "word": "appropriate",
+   "phonetic": "/əˈprəʊpriət/",
+   "pos": "adj.",
+   "meaning": "合适的,适当的",
+   "options": [
+    "征用,没收,剥夺",
+    "学徒,徒弟",
+    "评估,估价"
+   ],
+   "sentence": "Wearing a helmet is appropriate when riding a bicycle.",
+   "sentenceCn": "骑自行车时戴头盔是合适的。",
+   "image": "words/appropriate.png",
+   "examFreq": 22,
+   "roots": "ap+propri(自己的)+ate → 据为己有 / 恰当的"
+  },
+  {
+   "id": "w004",
+   "word": "brim",
+   "phonetic": "/brɪm/",
+   "pos": "n.",
+   "meaning": "边缘;(浅底容器的)边缘",
+   "options": [
+    "拘谨的,整洁的",
+    "修剪,装饰",
+    "严肃的,坚定的"
+   ],
+   "sentence": "The glass was full to the brim.",
+   "sentenceCn": "这个玻璃杯被装得满满的。",
+   "image": "words/brim.png",
+   "examFreq": 8
+  },
+  {
+   "id": "w005",
+   "word": "monarch",
+   "phonetic": "/ˈmɒnərk/",
+   "pos": "n.",
+   "meaning": "君主,帝王",
+   "options": [
+    "无政府状态,政治混乱",
+    "修道院",
+    "(精神等)病态的"
+   ],
+   "sentence": "They bowed down before the monarch, who ruled the country.",
+   "sentenceCn": "他们向统治国家的君主鞠躬。",
+   "image": "words/monarch.png",
+   "examFreq": 6,
+   "roots": "mon(单一)+arch(统治) → 独裁者 = 君主"
+  },
+  {
+   "id": "w006",
+   "word": "cascade",
+   "phonetic": "/kæˈskeɪd/",
+   "pos": "n.",
+   "meaning": "小瀑布;像瀑布般冲下",
+   "options": [
+    "后退,退化,恶化",
+    "煽动",
+    "使…习惯,使…适应"
+   ],
+   "sentence": "The cascade of warm water felt great!",
+   "sentenceCn": "温水如瀑布般冲下感觉很棒!",
+   "image": "words/cascade.png",
+   "examFreq": 5
+  },
+  {
+   "id": "w007",
+   "word": "dissolve",
+   "phonetic": "/dɪˈzɒlv/",
+   "pos": "v.",
+   "meaning": "(使)溶解",
+   "options": [
+    "不一致;不调和",
+    "被移交;转让",
+    "宣告…无罪;赦免"
+   ],
+   "sentence": "The tablet will dissolve in water.",
+   "sentenceCn": "药片会在水中溶解。",
+   "image": "words/dissolve.png",
+   "examFreq": 9,
+   "roots": "dis(分开)+solve(松开) → 分解 = 溶解"
+  },
+  {
+   "id": "w008",
+   "word": "default",
+   "phonetic": "/dɪˈfɔːlt/",
+   "pos": "n.",
+   "meaning": "默认;违约,缺席",
+   "options": [
+    "谨慎的,精明的",
+    "小瀑布",
+    "君主,帝王"
+   ],
+   "sentence": "You can sign in with the default settings.",
+   "sentenceCn": "你可以用默认设置登录。",
+   "image": "words/default.png",
+   "examFreq": 7,
+   "roots": "de(否定)+fault(过错) → 缺席 / 默认"
+  },
+  {
+   "id": "w009",
+   "word": "badger",
+   "phonetic": "/ˈbædʒər/",
+   "pos": "n.",
+   "meaning": "獾;v. 纠缠,烦扰",
+   "options": [
+    "浮雕玉石",
+    "名字;名声",
+    "照相机"
+   ],
+   "sentence": "The badger dug a deep hole under the fence.",
+   "sentenceCn": "獾在栅栏下挖了一个深洞。",
+   "image": "words/badger.png",
+   "examFreq": 4
+  },
+  {
+   "id": "w010",
+   "word": "tackle",
+   "phonetic": "/ˈtækl/",
+   "pos": "v.",
+   "meaning": "对付,处理,解决",
+   "options": [
+    "积攒;逐渐增加",
+    "陪伴,陪同",
+    "告知收到"
+   ],
+   "sentence": "We must tackle this problem right away.",
+   "sentenceCn": "我们必须立刻解决这个问题。",
+   "image": "words/tackle.png",
+   "examFreq": 6
+  },
+  {
+   "id": "w011",
+   "word": "cameo",
+   "phonetic": "/ˈkæmiəʊ/",
+   "pos": "n.",
+   "meaning": "浮雕玉石;客串",
+   "options": [
+    "名字;名声",
+    "照相机,摄影机",
+    "骆驼;浮船箱"
+   ],
+   "sentence": "The famous actor made a brief cameo in the film.",
+   "sentenceCn": "那位著名演员在电影里短暂客串。",
+   "image": "words/cameo.png",
+   "examFreq": 3
+  },
+  {
+   "id": "w012",
+   "word": "acknowledge",
+   "phonetic": "/əkˈnɒlɪdʒ/",
+   "pos": "v.",
+   "meaning": "告知收到;承认",
+   "options": [
+    "加速,增长",
+    "陪伴,伴随",
+    "积攒;聚积"
+   ],
+   "sentence": "She refused to acknowledge her mistake.",
+   "sentenceCn": "她拒绝承认自己的错误。",
+   "image": "words/acknowledge.png",
+   "examFreq": 11,
+   "roots": "ac+knowledge(知道) → 承认"
+  },
+  {
+   "id": "w013",
+   "word": "dilemma",
+   "phonetic": "/dɪˈlemə/",
+   "pos": "n.",
+   "meaning": "困境,进退两难",
+   "options": [
+    "独白,自言自语",
+    "对话,谈话",
+    "民主,平等"
+   ],
+   "sentence": "He faced the dilemma of telling the truth or keeping silent.",
+   "sentenceCn": "他面临说真话还是保持沉默的两难。",
+   "image": "words/dilemma.png",
+   "examFreq": 10,
+   "roots": "di(二)+lemma(前提) → 两个前提 = 两难"
+  },
+  {
+   "id": "w014",
+   "word": "potential",
+   "phonetic": "/pəˈtenʃl/",
+   "pos": "n.",
+   "meaning": "潜力,潜能;adj. 潜在的",
+   "options": [
+    "势力,势能",
+    "耐心,忍耐",
+    "专利,许可"
+   ],
+   "sentence": "The young player has great potential.",
+   "sentenceCn": "这位年轻球员很有潜力。",
+   "image": "words/potential.png",
+   "examFreq": 12,
+   "roots": "potent(有力的)+ial → 潜在的力量"
+  },
+  {
+   "id": "w015",
+   "word": "resident",
+   "phonetic": "/ˈrezɪdənt/",
+   "pos": "n.",
+   "meaning": "居民,住户",
+   "options": [
+    "总统,主席",
+    "总裁,总监",
+    "常驻记者"
+   ],
+   "sentence": "The residents complained about the noise.",
+   "sentenceCn": "居民们抱怨噪音。",
+   "image": "words/resident.png",
+   "examFreq": 7,
+   "roots": "resid(居留)+ent(人) → 居民"
+  },
+  {
+   "id": "w016",
+   "word": "departure",
+   "phonetic": "/dɪˈpɑːtʃər/",
+   "pos": "n.",
+   "meaning": "离开,启程;背离",
+   "options": [
+    "部门,系",
+    "百货公司",
+    "出发点"
+   ],
+   "sentence": "Our departure was delayed by the storm.",
+   "sentenceCn": "我们的出发被暴风雨耽搁了。",
+   "image": "words/departure.png",
+   "examFreq": 6,
+   "roots": "depart(离开)+ure(名词) → 离开"
+  },
+  {
+   "id": "w017",
+   "word": "blossom",
+   "phonetic": "/ˈblɒsəm/",
+   "pos": "n.",
+   "meaning": "花;v. 开花,兴旺",
+   "options": [
+    "扫帚",
+    "手足,兄弟",
+    "预算,经费"
+   ],
+   "sentence": "The cherry trees blossom in spring.",
+   "sentenceCn": "樱花在春天开放。",
+   "image": "words/blossom.png",
+   "examFreq": 5
+  },
+  {
+   "id": "w018",
+   "word": "famine",
+   "phonetic": "/ˈfæmɪn/",
+   "pos": "n.",
+   "meaning": "饥荒",
+   "options": [
+    "女性的;阴柔的",
+    "著名的,出名的",
+    "家庭,家族"
+   ],
+   "sentence": "The famine forced many people to flee.",
+   "sentenceCn": "饥荒迫使许多人逃离。",
+   "image": "words/famine.png",
+   "examFreq": 6,
+   "roots": "fam(饿)+ine → 饥荒"
+  },
+  {
+   "id": "w019",
+   "word": "ethics",
+   "phonetic": "/ˈeθɪks/",
+   "pos": "n.",
+   "meaning": "伦理学;道德准则",
+   "options": [
+    "种族,民族",
+    "回声,反响",
+    "习惯,风俗"
+   ],
+   "sentence": "Medical ethics guide a doctor's decisions.",
+   "sentenceCn": "医学伦理指导医生的决定。",
+   "image": "words/ethics.png",
+   "examFreq": 9,
+   "roots": "eth(品行)+ics(学) → 伦理学"
+  },
+  {
+   "id": "w020",
+   "word": "feast",
+   "phonetic": "/fiːst/",
+   "pos": "n.",
+   "meaning": "盛宴,宴会;节日",
+   "options": [
+    "野兽,畜生",
+    "壮举,功绩",
+    "拳头,一把"
+   ],
+   "sentence": "They held a great feast to celebrate.",
+   "sentenceCn": "他们举办盛宴来庆祝。",
+   "image": "words/feast.png",
+   "examFreq": 5
+  },
+  {
+   "id": "w021",
+   "word": "precisely",
+   "phonetic": "/prɪˈsaɪsli/",
+   "pos": "adv.",
+   "meaning": "精确地,恰好",
+   "options": [
+    "珍贵地",
+    "简洁地",
+    "严肃地,坚定地"
+   ],
+   "sentence": "That is precisely what I meant.",
+   "sentenceCn": "那正是我的意思。",
+   "image": "words/precisely.png",
+   "examFreq": 8,
+   "roots": "precise(精确的)+ly → 精确地"
+  },
+  {
+   "id": "w022",
+   "word": "fortnight",
+   "phonetic": "/ˈfɔːtnaɪt/",
+   "pos": "n.",
+   "meaning": "两星期",
+   "options": [
+    "堡垒,要塞",
+    "幸运,财富",
+    "先见之明"
+   ],
+   "sentence": "We will meet again in a fortnight.",
+   "sentenceCn": "我们两周后再见面。",
+   "image": "words/fortnight.png",
+   "examFreq": 3,
+   "roots": "fort(十四)+night → 十四夜 = 两周"
+  },
+  {
+   "id": "w023",
+   "word": "fragrant",
+   "phonetic": "/ˈfreɪɡrənt/",
+   "pos": "adj.",
+   "meaning": "芳香的",
+   "options": [
+    "脆弱的,易碎的",
+    "残片,碎块",
+    "坦率的,直率的"
+   ],
+   "sentence": "The garden was fragrant with roses.",
+   "sentenceCn": "花园里玫瑰芬芳。",
+   "image": "words/fragrant.png",
+   "examFreq": 5,
+   "roots": "fragr(香)+ant → 芳香的"
+  },
+  {
+   "id": "w024",
+   "word": "genuine",
+   "phonetic": "/ˈdʒenjuɪn/",
+   "pos": "adj.",
+   "meaning": "真正的,真诚的",
+   "options": [
+    "宽宏大量的",
+    "天才,天赋",
+    "温和的,亲切的"
+   ],
+   "sentence": "She showed genuine concern for others.",
+   "sentenceCn": "她对他人表现出真诚的关心。",
+   "image": "words/genuine.png",
+   "examFreq": 8,
+   "roots": "gen(生)+uine → 天生的 = 真正的"
+  },
+  {
+   "id": "w025",
+   "word": "melancholy",
+   "phonetic": "/ˈmelənkəli/",
+   "pos": "n.",
+   "meaning": "忧郁,悲伤;adj. 忧郁的",
+   "options": [
+    "旋律,曲调",
+    "混合物",
+    "颂歌,赞美诗"
+   ],
+   "sentence": "A deep melancholy settled over him.",
+   "sentenceCn": "一种深深的忧郁笼罩着他。",
+   "image": "words/melancholy.png",
+   "examFreq": 7,
+   "roots": "melan(黑)+choly(胆汁) → 黑胆汁 = 忧郁"
+  },
+  {
+   "id": "w026",
+   "word": "critical",
+   "phonetic": "/ˈkrɪtɪkl/",
+   "pos": "adj.",
+   "meaning": "批判的;关键的,危急的",
+   "options": [
+    "古典的,经典的",
+    "临床的",
+    "循环的,周期的"
+   ],
+   "sentence": "The next few days are critical to the plan.",
+   "sentenceCn": "接下来几天对计划至关重要。",
+   "image": "words/critical.png",
+   "examFreq": 13,
+   "roots": "crit(判断)+ical → 批判的 / 关键的"
+  },
+  {
+   "id": "w027",
+   "word": "renowned",
+   "phonetic": "/rɪˈnaʊnd/",
+   "pos": "adj.",
+   "meaning": "著名的,有声望的",
+   "options": [
+    "重建的,翻新的",
+    "退回的,归还的",
+    "更新的,续订的"
+   ],
+   "sentence": "She is a renowned scientist.",
+   "sentenceCn": "她是一位著名的科学家。",
+   "image": "words/renowned.png",
+   "examFreq": 7,
+   "roots": "re+nown(名声) → 有名的"
+  },
+  {
+   "id": "w028",
+   "word": "coordinate",
+   "phonetic": "/kəʊˈɔːdɪneɪt/",
+   "pos": "v.",
+   "meaning": "协调;n. 坐标",
+   "options": [
+    "从属,隶属",
+    "服从,顺从",
+    "普通的,平凡的"
+   ],
+   "sentence": "We need to coordinate our efforts.",
+   "sentenceCn": "我们需要协调各自的努力。",
+   "image": "words/coordinate.png",
+   "examFreq": 8,
+   "roots": "co(共同)+ordin(次序)+ate → 使同序 = 协调"
+  },
+  {
+   "id": "w029",
+   "word": "merchandise",
+   "phonetic": "/ˈmɜːtʃəndaɪz/",
+   "pos": "n.",
+   "meaning": "商品,货品;v. 推销",
+   "options": [
+    "商人,批发商",
+    "怜悯,慈悲",
+    "水银,水星"
+   ],
+   "sentence": "The store sells a wide range of merchandise.",
+   "sentenceCn": "这家店销售各种各样的商品。",
+   "image": "words/merchandise.png",
+   "examFreq": 6,
+   "roots": "merch(交易)+andise → 商品"
+  },
+  {
+   "id": "w030",
+   "word": "dialogue",
+   "phonetic": "/ˈdaɪəlɒɡ/",
+   "pos": "n.",
+   "meaning": "对话,谈话",
+   "options": [
+    "独白,自言自语",
+    "目录,分类",
+    "方言,土话"
+   ],
+   "sentence": "The two leaders held a constructive dialogue.",
+   "sentenceCn": "两位领导人进行了建设性对话。",
+   "image": "words/dialogue.png",
+   "examFreq": 5,
+   "roots": "dia(之间)+logue(说) → 之间说话 = 对话"
+  },
+  {
+   "id": "w031",
+   "word": "abundant",
+   "phonetic": "/əˈbʌndənt/",
+   "pos": "adj.",
+   "meaning": "丰富的,充裕的",
+   "options": [
+    "多余的,过剩的",
+    "冗长的,啰嗦的",
+    "傲慢的,自大的"
+   ],
+   "sentence": "The region has abundant natural resources.",
+   "sentenceCn": "这个地区有丰富的自然资源。",
+   "image": "words/abundant.png",
+   "examFreq": 9,
+   "roots": "abund(涌流)+ant → 涌流的 = 丰富的"
+  },
+  {
+   "id": "w032",
+   "word": "candid",
+   "phonetic": "/ˈkændɪd/",
+   "pos": "adj.",
+   "meaning": "坦率的,直言的",
+   "options": [
+    "谨慎的,小心的",
+    "华丽的,炫目的",
+    "苍白的,虚弱的"
+   ],
+   "sentence": "She gave a candid account of the events.",
+   "sentenceCn": "她坦率地叙述了事情经过。",
+   "image": "words/candid.png",
+   "examFreq": 6,
+   "roots": "cand(白)+id → 清白的 = 坦率的"
+  },
+  {
+   "id": "w033",
+   "word": "deficit",
+   "phonetic": "/ˈdefɪsɪt/",
+   "pos": "n.",
+   "meaning": "赤字,亏损;不足",
+   "options": [
+    "盈余,顺差",
+    "存款,押金",
+    "定义,界定"
+   ],
+   "sentence": "The company reported a large deficit.",
+   "sentenceCn": "公司报告了巨额亏损。",
+   "image": "words/deficit.png",
+   "examFreq": 7,
+   "roots": "de(否定)+fic(做)+it → 做得不够 = 不足"
+  },
+  {
+   "id": "w034",
+   "word": "elaborate",
+   "phonetic": "/ɪˈlæbərət/",
+   "pos": "adj.",
+   "meaning": "精心制作的,复杂的;v. 详述",
+   "options": [
+    "合作的,协作的",
+    "可推敲的",
+    "劳动的,费力的"
+   ],
+   "sentence": "He gave an elaborate explanation.",
+   "sentenceCn": "他给出了详尽的解释。",
+   "image": "words/elaborate.png",
+   "examFreq": 8,
+   "roots": "e+labor(劳动)+ate → 费工的 = 精心的"
+  },
+  {
+   "id": "w035",
+   "word": "hostile",
+   "phonetic": "/ˈhɒstaɪl/",
+   "pos": "adj.",
+   "meaning": "敌对的,怀有敌意的",
+   "options": [
+    "好客的,殷勤的",
+    "人质的",
+    "历史的"
+   ],
+   "sentence": "The crowd grew hostile toward the speaker.",
+   "sentenceCn": "人群对演讲者变得充满敌意。",
+   "image": "words/hostile.png",
+   "examFreq": 9,
+   "roots": "host(敌人)+ile → 敌对的"
+  },
+  {
+   "id": "w036",
+   "word": "inevitable",
+   "phonetic": "/ɪnˈevɪtəbl/",
+   "pos": "adj.",
+   "meaning": "不可避免的,必然的",
+   "options": [
+    "无价值的",
+    "无止境的",
+    "不可估量的"
+   ],
+   "sentence": "Change is inevitable in any organization.",
+   "sentenceCn": "任何组织中变革都不可避免。",
+   "image": "words/inevitable.png",
+   "examFreq": 10,
+   "roots": "in(不)+evit(避开)+able → 不可避开的"
+  },
+  {
+   "id": "w037",
+   "word": "lucrative",
+   "phonetic": "/ˈluːkrətɪv/",
+   "pos": "adj.",
+   "meaning": "有利可图的,赚钱的",
+   "options": [
+    "润滑的",
+    "松散的,散漫的",
+    "透明的,清澈的"
+   ],
+   "sentence": "Selling software can be a lucrative business.",
+   "sentenceCn": "卖软件可能是很赚钱的生意。",
+   "image": "words/lucrative.png",
+   "examFreq": 6,
+   "roots": "lucr(利润)+ative → 有利可图的"
+  },
+  {
+   "id": "w038",
+   "word": "notorious",
+   "phonetic": "/nəʊˈtɔːriəs/",
+   "pos": "adj.",
+   "meaning": "臭名昭著的",
+   "options": [
+    "著名的,受尊敬的",
+    "显而易见的",
+    "夜行的"
+   ],
+   "sentence": "The area is notorious for crime.",
+   "sentenceCn": "这个地区因犯罪而臭名昭著。",
+   "image": "words/notorious.png",
+   "examFreq": 8,
+   "roots": "not(知道)+orious → 广为人知的(贬)"
+  },
+  {
+   "id": "w039",
+   "word": "obscure",
+   "phonetic": "/əbˈskjʊər/",
+   "pos": "adj.",
+   "meaning": "晦涩的,模糊的;v. 遮蔽",
+   "options": [
+    "安全的,可靠的",
+    "华丽的",
+    "急切的"
+   ],
+   "sentence": "The meaning of the poem remains obscure.",
+   "sentenceCn": "这首诗的含义依然晦涩。",
+   "image": "words/obscure.png",
+   "examFreq": 9,
+   "roots": "ob+scur(覆盖) → 被盖住的 = 模糊的"
+  },
+  {
+   "id": "w040",
+   "word": "plausible",
+   "phonetic": "/ˈplɔːzəbl/",
+   "pos": "adj.",
+   "meaning": "似乎合理的,貌似可信的",
+   "options": [
+    "可鼓掌的",
+    "可塑的,柔软的",
+    "可责备的"
+   ],
+   "sentence": "His excuse sounded plausible enough.",
+   "sentenceCn": "他的借口听起来足够可信。",
+   "image": "words/plausible.png",
+   "examFreq": 8,
+   "roots": "plaus(鼓掌)+ible → 可获掌声的 = 可信的"
+  },
+  {
+   "id": "w041",
+   "word": "reluctant",
+   "phonetic": "/rɪˈlʌktənt/",
+   "pos": "adj.",
+   "meaning": "不情愿的,勉强的",
+   "options": [
+    "流畅的,顺畅的",
+    "多余的,冗余的",
+    "反射的"
+   ],
+   "sentence": "He was reluctant to admit the truth.",
+   "sentenceCn": "他不愿承认真相。",
+   "image": "words/reluctant.png",
+   "examFreq": 9,
+   "roots": "re(反)+luct(挣扎)+ant → 挣扎着的 = 不情愿的"
+  },
+  {
+   "id": "w042",
+   "word": "scrutiny",
+   "phonetic": "/ˈskruːtəni/",
+   "pos": "n.",
+   "meaning": "仔细审查,细看",
+   "options": [
+    "丑闻,流言",
+    "废墟,残骸",
+    "对称,匀称"
+   ],
+   "sentence": "The plan came under close scrutiny.",
+   "sentenceCn": "这个计划受到了严格审查。",
+   "image": "words/scrutiny.png",
+   "examFreq": 8,
+   "roots": "scrut(检查)+iny → 审查"
+  },
+  {
+   "id": "w043",
+   "word": "tangible",
+   "phonetic": "/ˈtændʒəbl/",
+   "pos": "adj.",
+   "meaning": "有形的,可触摸的;确凿的",
+   "options": [
+    "纠缠的,复杂的",
+    "可尝的",
+    "易怒的"
+   ],
+   "sentence": "We need tangible evidence, not guesses.",
+   "sentenceCn": "我们需要确凿的证据,而不是猜测。",
+   "image": "words/tangible.png",
+   "examFreq": 8,
+   "roots": "tang(接触)+ible → 可触的 = 有形的"
+  },
+  {
+   "id": "w044",
+   "word": "vigorous",
+   "phonetic": "/ˈvɪɡərəs/",
+   "pos": "adj.",
+   "meaning": "精力充沛的,有力的",
+   "options": [
+    "警惕的,机警的",
+    "巨大的,庞大的",
+    "邪恶的,恶毒的"
+   ],
+   "sentence": "She took vigorous exercise every morning.",
+   "sentenceCn": "她每天早上做剧烈运动。",
+   "image": "words/vigorous.png",
+   "examFreq": 7,
+   "roots": "vig(活力)+orous → 精力充沛的"
+  },
+  {
+   "id": "w045",
+   "word": "chagrin",
+   "phonetic": "/ʃəˈɡrɪn/",
+   "pos": "n.",
+   "meaning": "懊恼,失望",
+   "options": [
+    "古代双轮马拉战车",
+    "慈善机构;施舍",
+    "一系列;链条"
+   ],
+   "sentence": "Much to his chagrin, he was beaten by the younger boy.",
+   "sentenceCn": "让他非常懊恼的是,他输给了更小的男孩。",
+   "image": "words/chagrin.png",
+   "examFreq": 4
+  },
+  {
+   "id": "w046",
+   "word": "frugal",
+   "phonetic": "/ˈfruːɡl/",
+   "pos": "adj.",
+   "meaning": "节俭的,朴素的",
+   "options": [
+    "丰饶的,肥沃的",
+    "脆弱的,易碎的",
+    "残暴的,凶猛的"
+   ],
+   "sentence": "Her frugal lifestyle helped her save a fortune.",
+   "sentenceCn": "她节俭的生活方式帮她攒下了一大笔钱。",
+   "image": "words/frugal.png",
+   "examFreq": 6,
+   "roots": "frug(果实)+al → 有果实的 = 节俭有余"
+  },
+  {
+   "id": "w047",
+   "word": "meticulous",
+   "phonetic": "/məˈtɪkjələs/",
+   "pos": "adj.",
+   "meaning": "一丝不苟的,细致的",
+   "options": [
+    "恶毒的,狠毒的",
+    "含金属的",
+    "机械的,呆板的"
+   ],
+   "sentence": "He kept meticulous records of every experiment.",
+   "sentenceCn": "他为每个实验都保存了细致的记录。",
+   "image": "words/meticulous.png",
+   "examFreq": 7,
+   "roots": "metic(害怕)+ulous → 因怕错而细致"
+  },
+  {
+   "id": "w048",
+   "word": "ambiguous",
+   "phonetic": "/æmˈbɪɡjuəs/",
+   "pos": "adj.",
+   "meaning": "模棱两可的,含糊的",
+   "options": [
+    "雄心勃勃的",
+    "两栖的",
+    "环境的,周围的"
+   ],
+   "sentence": "The instructions were so ambiguous that no one understood them.",
+   "sentenceCn": "说明如此含糊,以至于没人看得懂。",
+   "image": "words/ambiguous.png",
+   "examFreq": 9,
+   "roots": "ambi(两边)+gu(走)+ous → 两边走 = 模棱两可"
+  },
+  {
+   "id": "w049",
+   "word": "benevolent",
+   "phonetic": "/bəˈnevələnt/",
+   "pos": "adj.",
+   "meaning": "仁慈的,慈善的",
+   "options": [
+    "恶意的,狠毒的",
+    "暴力的",
+    "暧昧的,含糊的"
+   ],
+   "sentence": "The benevolent old man donated all his savings.",
+   "sentenceCn": "那位仁慈的老人捐出了全部积蓄。",
+   "image": "words/benevolent.png",
+   "examFreq": 6,
+   "roots": "bene(好)+vol(意愿)+ent → 好意的 = 仁慈的"
+  },
+  {
+   "id": "w050",
+   "word": "conspicuous",
+   "phonetic": "/kənˈspɪkjuəs/",
+   "pos": "adj.",
+   "meaning": "显眼的,惹人注目的",
+   "options": [
+    "共谋的,串通的",
+    "多疑的,可疑的",
+    "连续的,持续的"
+   ],
+   "sentence": "Her red coat made her conspicuous in the crowd.",
+   "sentenceCn": "她的红大衣让她在人群中很显眼。",
+   "image": "words/conspicuous.png",
+   "examFreq": 8,
+   "roots": "con+spic(看)+uous → 大家都看得到 = 显眼的"
+  },
+  {
+   "id": "w051",
+   "word": "diligent",
+   "phonetic": "/ˈdɪlɪdʒənt/",
+   "pos": "adj.",
+   "meaning": "勤奋的,勤勉的",
+   "options": [
+    "聪明的,机灵的",
+    "有耐心的",
+    "挑剔的,苛求的"
+   ],
+   "sentence": "A diligent student, she never missed a class.",
+   "sentenceCn": "作为一个勤奋的学生,她从不缺课。",
+   "image": "words/diligent.png",
+   "examFreq": 7,
+   "roots": "di+lig(选择)+ent → 用心选择去做 = 勤勉"
+  },
+  {
+   "id": "w052",
+   "word": "eloquent",
+   "phonetic": "/ˈeləkwənt/",
+   "pos": "adj.",
+   "meaning": "雄辩的,有说服力的",
+   "options": [
+    "优雅的,精致的",
+    "谦逊的,谦虚的",
+    "冗长的,啰嗦的"
+   ],
+   "sentence": "The lawyer gave an eloquent closing argument.",
+   "sentenceCn": "律师作了雄辩的结案陈词。",
+   "image": "words/eloquent.png",
+   "examFreq": 6,
+   "roots": "e(出)+loqu(说)+ent → 说得出彩 = 雄辩的"
+  },
+  {
+   "id": "w053",
+   "word": "formidable",
+   "phonetic": "/ˈfɔːmɪdəbl/",
+   "pos": "adj.",
+   "meaning": "强大的,令人敬畏的",
+   "options": [
+    "可塑的,易变形的",
+    "可原谅的",
+    "可食用的"
+   ],
+   "sentence": "They faced a formidable opponent in the final.",
+   "sentenceCn": "他们在决赛中面对一个强大的对手。",
+   "image": "words/formidable.png",
+   "examFreq": 8,
+   "roots": "formid(害怕)+able → 令人害怕的 = 令人敬畏的"
+  },
+  {
+   "id": "w054",
+   "word": "indifferent",
+   "phonetic": "/ɪnˈdɪfrənt/",
+   "pos": "adj.",
+   "meaning": "漠不关心的,冷淡的",
+   "options": [
+    "无法区分的",
+    "不可或缺的",
+    "间接的"
+   ],
+   "sentence": "He remained indifferent to their complaints.",
+   "sentenceCn": "他对他们的抱怨依旧漠不关心。",
+   "image": "words/indifferent.png",
+   "examFreq": 7,
+   "roots": "in(不)+different(不同)→ 觉得没差别 = 漠不关心"
+  },
+  {
+   "id": "w055",
+   "word": "perpetual",
+   "phonetic": "/pərˈpetʃuəl/",
+   "pos": "adj.",
+   "meaning": "永久的,持续不断的",
+   "options": [
+    "困惑的,迷惑的",
+    "垂直的",
+    "个人的,私人的"
+   ],
+   "sentence": "The machine is in perpetual motion.",
+   "sentenceCn": "这台机器处于永不停歇的运动中。",
+   "image": "words/perpetual.png",
+   "examFreq": 6,
+   "roots": "per(始终)+pet(寻求)+ual → 始终不停 = 永久的"
+  },
+  {
+   "id": "w056",
+   "word": "resilient",
+   "phonetic": "/rɪˈzɪliənt/",
+   "pos": "adj.",
+   "meaning": "有韧性的,能恢复的",
+   "options": [
+    "顺从的,恭顺的",
+    "多余的,冗余的",
+    "闪耀的,灿烂的"
+   ],
+   "sentence": "Children are often remarkably resilient.",
+   "sentenceCn": "孩子们往往有着惊人的恢复力。",
+   "image": "words/resilient.png",
+   "examFreq": 7,
+   "roots": "re(回)+sil(跳)+ient → 弹回来 = 有韧性的"
+  },
+  {
+   "id": "w057",
+   "word": "skeptical",
+   "phonetic": "/ˈskeptɪkl/",
+   "pos": "adj.",
+   "meaning": "怀疑的,多疑的",
+   "options": [
+    "骨骼的",
+    "敏感的",
+    "球形的"
+   ],
+   "sentence": "Scientists were skeptical of the bold claim.",
+   "sentenceCn": "科学家们对这一大胆断言持怀疑态度。",
+   "image": "words/skeptical.png",
+   "examFreq": 8,
+   "roots": "skept(观察)+ical → 反复审视 = 怀疑的"
+  },
+  {
+   "id": "w058",
+   "word": "tedious",
+   "phonetic": "/ˈtiːdiəs/",
+   "pos": "adj.",
+   "meaning": "冗长乏味的,枯燥的",
+   "options": [
+    "美味的,可口的",
+    "凶猛的,残暴的",
+    "短暂的,片刻的"
+   ],
+   "sentence": "Filling out the forms was a tedious task.",
+   "sentenceCn": "填这些表格是件枯燥乏味的差事。",
+   "image": "words/tedious.png",
+   "examFreq": 6,
+   "roots": "ted(厌倦)+ious → 令人厌倦的 = 乏味的"
+  },
+  {
+   "id": "w059",
+   "word": "versatile",
+   "phonetic": "/ˈvɜːsətaɪl/",
+   "pos": "adj.",
+   "meaning": "多才多艺的,多用途的",
+   "options": [
+    "垂直的",
+    "真实的,真诚的",
+    "易挥发的"
+   ],
+   "sentence": "A versatile tool that can do many jobs.",
+   "sentenceCn": "一件能干许多活的多用途工具。",
+   "image": "words/versatile.png",
+   "examFreq": 6,
+   "roots": "vers(转)+atile → 能转向多方 = 多才多艺的"
+  },
+  {
+   "id": "w060",
+   "word": "wary",
+   "phonetic": "/ˈweəri/",
+   "pos": "adj.",
+   "meaning": "警惕的,谨慎的",
+   "options": [
+    "疲倦的,厌烦的",
+    "多样的,不同的",
+    "温暖的,热情的"
+   ],
+   "sentence": "Be wary of deals that sound too good.",
+   "sentenceCn": "对听起来太美好的交易要保持警惕。",
+   "image": "words/wary.png",
+   "examFreq": 5
+  },
+  {
+   "id": "w061",
+   "word": "zealous",
+   "phonetic": "/ˈzeləs/",
+   "pos": "adj.",
+   "meaning": "热心的,狂热的",
+   "options": [
+    "嫉妒的,羡慕的",
+    "无价值的",
+    "零散的"
+   ],
+   "sentence": "He was a zealous supporter of the reform.",
+   "sentenceCn": "他是这项改革的狂热支持者。",
+   "image": "words/zealous.png",
+   "examFreq": 5,
+   "roots": "zeal(热情)+ous → 满怀热情的 = 狂热的"
+  },
+  {
+   "id": "w062",
+   "word": "obstinate",
+   "phonetic": "/ˈɒbstɪnət/",
+   "pos": "adj.",
+   "meaning": "固执的,顽固的",
+   "options": [
+    "障碍的,阻碍的",
+    "明显的,显著的",
+    "抽象的"
+   ],
+   "sentence": "The obstinate child refused to apologize.",
+   "sentenceCn": "那个固执的孩子拒绝道歉。",
+   "image": "words/obstinate.png",
+   "examFreq": 6,
+   "roots": "ob+stin(站)+ate → 站着不动 = 固执的"
+  },
+  {
+   "id": "w063",
+   "word": "hello",
+   "phonetic": "",
+   "pos": "int.",
+   "meaning": "喂;你好(打招呼用语)",
+   "options": [
+    "提倡,拥护",
+    "澄清,阐明",
+    "推断,演绎"
+   ],
+   "sentence": "The word \"hello\" often appears in exams.",
+   "sentenceCn": "「hello」这个词常在考试中出现。",
+   "image": "words/hello.png"
+  },
+  {
+   "id": "w064",
+   "word": "world",
+   "phonetic": "",
+   "pos": "n.",
+   "meaning": "世界;领域",
+   "options": [
+    "真正的,可信的",
+    "限制,约束",
+    "分发,分布"
+   ],
+   "sentence": "The word \"world\" often appears in exams.",
+   "sentenceCn": "「world」这个词常在考试中出现。",
+   "image": "words/world.png"
+  },
+  {
+   "id": "w065",
+   "word": "apple",
+   "phonetic": "",
+   "pos": "n.",
+   "meaning": "苹果",
+   "options": [
+    "邻近的,毗连的",
+    "珍爱,怀有",
+    "欺骗"
+   ],
+   "sentence": "The word \"apple\" often appears in exams.",
+   "sentenceCn": "「apple」这个词常在考试中出现。",
+   "image": "words/apple.png"
+  },
+  {
+   "id": "w066",
+   "word": "book",
+   "phonetic": "",
+   "pos": "n.",
+   "meaning": "书;v. 预订",
+   "options": [
+    "对话,谈话",
+    "朋友",
+    "喝"
+   ],
+   "sentence": "The word \"book\" often appears in exams.",
+   "sentenceCn": "「book」这个词常在考试中出现。",
+   "image": "words/book.png"
+  },
+  {
+   "id": "w067",
+   "word": "water",
+   "phonetic": "",
+   "pos": "n.",
+   "meaning": "水",
+   "options": [
+    "评估,估价",
+    "连续的",
+    "派遣,发送"
+   ],
+   "sentence": "The word \"water\" often appears in exams.",
+   "sentenceCn": "「water」这个词常在考试中出现。",
+   "image": "words/water.png"
+  },
+  {
+   "id": "w068",
+   "word": "friend",
+   "phonetic": "",
+   "pos": "n.",
+   "meaning": "朋友",
+   "options": [
+    "有资格的",
+    "阴郁的,悲观的",
+    "隔离,孤立"
+   ],
+   "sentence": "The word \"friend\" often appears in exams.",
+   "sentenceCn": "「friend」这个词常在考试中出现。",
+   "image": "words/friend.png"
+  },
+  {
+   "id": "w069",
+   "word": "school",
+   "phonetic": "",
+   "pos": "n.",
+   "meaning": "学校",
+   "options": [
+    "评估,评价",
+    "激励,动机",
+    "过时的,废弃的"
+   ],
+   "sentence": "The word \"school\" often appears in exams.",
+   "sentenceCn": "「school」这个词常在考试中出现。",
+   "image": "words/school.png"
+  },
+  {
+   "id": "w070",
+   "word": "teacher",
+   "phonetic": "",
+   "pos": "n.",
+   "meaning": "老师",
+   "options": [
+    "现象",
+    "同时的",
+    "浮雕玉石;客串"
+   ],
+   "sentence": "The word \"teacher\" often appears in exams.",
+   "sentenceCn": "「teacher」这个词常在考试中出现。",
+   "image": "words/teacher.png"
+  },
+  {
+   "id": "w071",
+   "word": "student",
+   "phonetic": "",
+   "pos": "n.",
+   "meaning": "学生",
+   "options": [
+    "足够",
+    "花;v. 开花,兴旺",
+    "漠不关心的,冷淡的"
+   ],
+   "sentence": "The word \"student\" often appears in exams.",
+   "sentenceCn": "「student」这个词常在考试中出现。",
+   "image": "words/student.png"
+  },
+  {
+   "id": "w072",
+   "word": "family",
+   "phonetic": "",
+   "pos": "n.",
+   "meaning": "家庭;家人",
+   "options": [
+    "需要,使承担",
+    "点燃,引发",
+    "减轻,缓和"
+   ],
+   "sentence": "The word \"family\" often appears in exams.",
+   "sentenceCn": "「family」这个词常在考试中出现。",
+   "image": "words/family.png"
+  },
+  {
+   "id": "w073",
+   "word": "mother",
+   "phonetic": "",
+   "pos": "n.",
+   "meaning": "母亲",
+   "options": [
+    "异国的,奇异的",
+    "居住于",
+    "感知,察觉"
+   ],
+   "sentence": "The word \"mother\" often appears in exams.",
+   "sentenceCn": "「mother」这个词常在考试中出现。",
+   "image": "words/mother.png"
+  },
+  {
+   "id": "w074",
+   "word": "father",
+   "phonetic": "",
+   "pos": "n.",
+   "meaning": "父亲",
+   "options": [
+    "出现,浮现",
+    "亲切的,优雅的",
+    "证明…正当,辩护"
+   ],
+   "sentence": "The word \"father\" often appears in exams.",
+   "sentenceCn": "「father」这个词常在考试中出现。",
+   "image": "words/father.png"
+  },
+  {
+   "id": "w075",
+   "word": "happy",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "快乐的,高兴的",
+   "options": [
+    "断言,主张",
+    "面对,对抗",
+    "揭露,透露"
+   ],
+   "sentence": "The word \"happy\" often appears in exams.",
+   "sentenceCn": "「happy」这个词常在考试中出现。",
+   "image": "words/happy.png"
+  },
+  {
+   "id": "w076",
+   "word": "sad",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "悲伤的",
+   "options": [
+    "逗留,徘徊",
+    "追求,继续",
+    "转变,改造"
+   ],
+   "sentence": "The word \"sad\" often appears in exams.",
+   "sentenceCn": "「sad」这个词常在考试中出现。",
+   "image": "words/sad.png"
+  },
+  {
+   "id": "w077",
+   "word": "good",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "好的",
+   "options": [
+    "协调;n. 坐标",
+    "苹果",
+    "走,散步"
+   ],
+   "sentence": "The word \"good\" often appears in exams.",
+   "sentenceCn": "「good」这个词常在考试中出现。",
+   "image": "words/good.png"
+  },
+  {
+   "id": "w078",
+   "word": "bad",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "坏的,糟糕的",
+   "options": [
+    "固有的,内在的",
+    "坚持,持续",
+    "散布,驱散"
+   ],
+   "sentence": "The word \"bad\" often appears in exams.",
+   "sentenceCn": "「bad」这个词常在考试中出现。",
+   "image": "words/bad.png"
+  },
+  {
+   "id": "w079",
+   "word": "big",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "大的",
+   "options": [
+    "入侵,侵犯",
+    "深刻的,深远的",
+    "超越,胜过"
+   ],
+   "sentence": "The word \"big\" often appears in exams.",
+   "sentenceCn": "「big」这个词常在考试中出现。",
+   "image": "words/big.png"
+  },
+  {
+   "id": "w080",
+   "word": "small",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "小的",
+   "options": [
+    "有雄心的,有抱负的",
+    "补偿,弥补",
+    "耗尽,枯竭"
+   ],
+   "sentence": "The word \"small\" often appears in exams.",
+   "sentenceCn": "「small」这个词常在考试中出现。",
+   "image": "words/small.png"
+  },
+  {
+   "id": "w081",
+   "word": "morning",
+   "phonetic": "",
+   "pos": "n.",
+   "meaning": "早晨,上午",
+   "options": [
+    "保留,记住",
+    "边缘;(浅底容器的)边缘",
+    "不情愿的,勉强的"
+   ],
+   "sentence": "The word \"morning\" often appears in exams.",
+   "sentenceCn": "「morning」这个词常在考试中出现。",
+   "image": "words/morning.png"
+  },
+  {
+   "id": "w082",
+   "word": "night",
+   "phonetic": "",
+   "pos": "n.",
+   "meaning": "夜晚",
+   "options": [
+    "类比,类推",
+    "有能力的,称职的",
+    "剥夺"
+   ],
+   "sentence": "The word \"night\" often appears in exams.",
+   "sentenceCn": "「night」这个词常在考试中出现。",
+   "image": "words/night.png"
+  },
+  {
+   "id": "w083",
+   "word": "today",
+   "phonetic": "",
+   "pos": "n.",
+   "meaning": "今天",
+   "options": [
+    "集合,装配",
+    "谴责,判刑",
+    "辨别,察觉"
+   ],
+   "sentence": "The word \"today\" often appears in exams.",
+   "sentenceCn": "「today」这个词常在考试中出现。",
+   "image": "words/today.png"
+  },
+  {
+   "id": "w084",
+   "word": "tomorrow",
+   "phonetic": "",
+   "pos": "n.",
+   "meaning": "明天",
+   "options": [
+    "关闭;adj. 亲近的",
+    "渴望,追求",
+    "构想,怀孕"
+   ],
+   "sentence": "The word \"tomorrow\" often appears in exams.",
+   "sentenceCn": "「tomorrow」这个词常在考试中出现。",
+   "image": "words/tomorrow.png"
+  },
+  {
+   "id": "w085",
+   "word": "yesterday",
+   "phonetic": "",
+   "pos": "n.",
+   "meaning": "昨天",
+   "options": [
+    "密谋,共谋",
+    "分散(注意力)",
+    "可行的"
+   ],
+   "sentence": "The word \"yesterday\" often appears in exams.",
+   "sentenceCn": "「yesterday」这个词常在考试中出现。",
+   "image": "words/yesterday.png"
+  },
+  {
+   "id": "w086",
+   "word": "time",
+   "phonetic": "",
+   "pos": "n.",
+   "meaning": "时间",
+   "options": [
+    "精心制作的,复杂的;v. 详述",
+    "学生",
+    "帮助"
+   ],
+   "sentence": "The word \"time\" often appears in exams.",
+   "sentenceCn": "「time」这个词常在考试中出现。",
+   "image": "words/time.png"
+  },
+  {
+   "id": "w087",
+   "word": "food",
+   "phonetic": "",
+   "pos": "n.",
+   "meaning": "食物",
+   "options": [
+    "著名的,有声望的",
+    "世界;领域",
+    "跑;经营"
+   ],
+   "sentence": "The word \"food\" often appears in exams.",
+   "sentenceCn": "「food」这个词常在考试中出现。",
+   "image": "words/food.png"
+  },
+  {
+   "id": "w088",
+   "word": "music",
+   "phonetic": "",
+   "pos": "n.",
+   "meaning": "音乐",
+   "options": [
+    "集合,装配",
+    "谴责,判刑",
+    "辨别,察觉"
+   ],
+   "sentence": "The word \"music\" often appears in exams.",
+   "sentenceCn": "「music」这个词常在考试中出现。",
+   "image": "words/music.png"
+  },
+  {
+   "id": "w089",
+   "word": "movie",
+   "phonetic": "",
+   "pos": "n.",
+   "meaning": "电影",
+   "options": [
+    "渴望,追求",
+    "构想,怀孕",
+    "丢弃,抛弃"
+   ],
+   "sentence": "The word \"movie\" often appears in exams.",
+   "sentenceCn": "「movie」这个词常在考试中出现。",
+   "image": "words/movie.png"
+  },
+  {
+   "id": "w090",
+   "word": "phone",
+   "phonetic": "",
+   "pos": "n.",
+   "meaning": "电话,手机",
+   "options": [
+    "类比,类推",
+    "有能力的,称职的",
+    "剥夺"
+   ],
+   "sentence": "The word \"phone\" often appears in exams.",
+   "sentenceCn": "「phone」这个词常在考试中出现。",
+   "image": "words/phone.png"
+  },
+  {
+   "id": "w091",
+   "word": "computer",
+   "phonetic": "",
+   "pos": "n.",
+   "meaning": "计算机,电脑",
+   "options": [
+    "明天",
+    "冷的",
+    "使迷惑,使为难"
+   ],
+   "sentence": "The word \"computer\" often appears in exams.",
+   "sentenceCn": "「computer」这个词常在考试中出现。",
+   "image": "words/computer.png"
+  },
+  {
+   "id": "w092",
+   "word": "home",
+   "phonetic": "",
+   "pos": "n.",
+   "meaning": "家",
+   "options": [
+    "协调;n. 坐标",
+    "苹果",
+    "走,散步"
+   ],
+   "sentence": "The word \"home\" often appears in exams.",
+   "sentenceCn": "「home」这个词常在考试中出现。",
+   "image": "words/home.png"
+  },
+  {
+   "id": "w093",
+   "word": "city",
+   "phonetic": "",
+   "pos": "n.",
+   "meaning": "城市",
+   "options": [
+    "精力充沛的,有力的",
+    "早晨,上午",
+    "旧的,老的"
+   ],
+   "sentence": "The word \"city\" often appears in exams.",
+   "sentenceCn": "「city」这个词常在考试中出现。",
+   "image": "words/city.png"
+  },
+  {
+   "id": "w094",
+   "word": "country",
+   "phonetic": "",
+   "pos": "n.",
+   "meaning": "国家;乡村",
+   "options": [
+    "统一的,一致的",
+    "对话,谈话",
+    "水"
+   ],
+   "sentence": "The word \"country\" often appears in exams.",
+   "sentenceCn": "「country」这个词常在考试中出现。",
+   "image": "words/country.png"
+  },
+  {
+   "id": "w095",
+   "word": "money",
+   "phonetic": "",
+   "pos": "n.",
+   "meaning": "钱",
+   "options": [
+    "真正的,可信的",
+    "限制,约束",
+    "分发,分布"
+   ],
+   "sentence": "The word \"money\" often appears in exams.",
+   "sentenceCn": "「money」这个词常在考试中出现。",
+   "image": "words/money.png"
+  },
+  {
+   "id": "w096",
+   "word": "work",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "工作;n. 工作",
+   "options": [
+    "漠不关心的,冷淡的",
+    "计算机,电脑",
+    "积累,积聚"
+   ],
+   "sentence": "The word \"work\" often appears in exams.",
+   "sentenceCn": "「work」这个词常在考试中出现。",
+   "image": "words/work.png"
+  },
+  {
+   "id": "w097",
+   "word": "study",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "学习",
+   "options": [
+    "澄清,阐明",
+    "推断,演绎",
+    "流行病"
+   ],
+   "sentence": "The word \"study\" often appears in exams.",
+   "sentenceCn": "「study」这个词常在考试中出现。",
+   "image": "words/study.png"
+  },
+  {
+   "id": "w098",
+   "word": "read",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "阅读",
+   "options": [
+    "居民,住户",
+    "雄辩的,有说服力的",
+    "电影"
+   ],
+   "sentence": "The word \"read\" often appears in exams.",
+   "sentenceCn": "「read」这个词常在考试中出现。",
+   "image": "words/read.png"
+  },
+  {
+   "id": "w099",
+   "word": "write",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "写",
+   "options": [
+    "使迷惑,使为难",
+    "反驳,与…矛盾",
+    "可疑的,怀疑的"
+   ],
+   "sentence": "The word \"write\" often appears in exams.",
+   "sentenceCn": "「write」这个词常在考试中出现。",
+   "image": "words/write.png"
+  },
+  {
+   "id": "w100",
+   "word": "speak",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "说,讲",
+   "options": [
+    "提倡,拥护",
+    "澄清,阐明",
+    "推断,演绎"
+   ],
+   "sentence": "The word \"speak\" often appears in exams.",
+   "sentenceCn": "「speak」这个词常在考试中出现。",
+   "image": "words/speak.png"
+  },
+  {
+   "id": "w101",
+   "word": "listen",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "听",
+   "options": [
+    "异国的,奇异的",
+    "居住于",
+    "感知,察觉"
+   ],
+   "sentence": "The word \"listen\" often appears in exams.",
+   "sentenceCn": "「listen」这个词常在考试中出现。",
+   "image": "words/listen.png"
+  },
+  {
+   "id": "w102",
+   "word": "run",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "跑;经营",
+   "options": [
+    "盛行,占优势",
+    "肤浅的,表面的",
+    "饥荒"
+   ],
+   "sentence": "The word \"run\" often appears in exams.",
+   "sentenceCn": "「run」这个词常在考试中出现。",
+   "image": "words/run.png"
+  },
+  {
+   "id": "w103",
+   "word": "walk",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "走,散步",
+   "options": [
+    "精心制作的,复杂的;v. 详述",
+    "学生",
+    "帮助"
+   ],
+   "sentence": "The word \"walk\" often appears in exams.",
+   "sentenceCn": "「walk」这个词常在考试中出现。",
+   "image": "words/walk.png"
+  },
+  {
+   "id": "w104",
+   "word": "eat",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "吃",
+   "options": [
+    "维持,主张",
+    "认为,估计",
+    "琐碎的,不重要的"
+   ],
+   "sentence": "The word \"eat\" often appears in exams.",
+   "sentenceCn": "「eat」这个词常在考试中出现。",
+   "image": "words/eat.png"
+  },
+  {
+   "id": "w105",
+   "word": "drink",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "喝",
+   "options": [
+    "分配,拨给",
+    "强迫,迫使",
+    "表示,意味着"
+   ],
+   "sentence": "The word \"drink\" often appears in exams.",
+   "sentenceCn": "「drink」这个词常在考试中出现。",
+   "image": "words/drink.png"
+  },
+  {
+   "id": "w106",
+   "word": "sleep",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "睡觉",
+   "options": [
+    "有雄心的,有抱负的",
+    "补偿,弥补",
+    "耗尽,枯竭"
+   ],
+   "sentence": "The word \"sleep\" often appears in exams.",
+   "sentenceCn": "「sleep」这个词常在考试中出现。",
+   "image": "words/sleep.png"
+  },
+  {
+   "id": "w107",
+   "word": "love",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "爱;n. 爱",
+   "options": [
+    "不情愿的,勉强的",
+    "坏的,糟糕的",
+    "困难的"
+   ],
+   "sentence": "The word \"love\" often appears in exams.",
+   "sentenceCn": "「love」这个词常在考试中出现。",
+   "image": "words/love.png"
+  },
+  {
+   "id": "w108",
+   "word": "like",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "喜欢",
+   "options": [
+    "真正的,真诚的",
+    "热心的,狂热的",
+    "阅读"
+   ],
+   "sentence": "The word \"like\" often appears in exams.",
+   "sentenceCn": "「like」这个词常在考试中出现。",
+   "image": "words/like.png"
+  },
+  {
+   "id": "w109",
+   "word": "help",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "帮助",
+   "options": [
+    "协调;n. 坐标",
+    "苹果",
+    "跑;经营"
+   ],
+   "sentence": "The word \"help\" often appears in exams.",
+   "sentenceCn": "「help」这个词常在考试中出现。",
+   "image": "words/help.png"
+  },
+  {
+   "id": "w110",
+   "word": "open",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "打开;adj. 开着的",
+   "options": [
+    "有利可图的,赚钱的",
+    "父亲",
+    "开始"
+   ],
+   "sentence": "The word \"open\" often appears in exams.",
+   "sentenceCn": "「open」这个词常在考试中出现。",
+   "image": "words/open.png"
+  },
+  {
+   "id": "w111",
+   "word": "close",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "关闭;adj. 亲近的",
+   "options": [
+    "总和,聚合",
+    "倒塌,崩溃",
+    "故意的,深思熟虑的"
+   ],
+   "sentence": "The word \"close\" often appears in exams.",
+   "sentenceCn": "「close」这个词常在考试中出现。",
+   "image": "words/close.png"
+  },
+  {
+   "id": "w112",
+   "word": "start",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "开始",
+   "options": [
+    "边界,界限",
+    "腐败的,堕落的",
+    "出现,浮现"
+   ],
+   "sentence": "The word \"start\" often appears in exams.",
+   "sentenceCn": "「start」这个词常在考试中出现。",
+   "image": "words/start.png"
+  },
+  {
+   "id": "w113",
+   "word": "stop",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "停止",
+   "options": [
+    "怀疑的,多疑的",
+    "国家;乡村",
+    "适应,改编"
+   ],
+   "sentence": "The word \"stop\" often appears in exams.",
+   "sentenceCn": "「stop」这个词常在考试中出现。",
+   "image": "words/stop.png"
+  },
+  {
+   "id": "w114",
+   "word": "beautiful",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "美丽的",
+   "options": [
+    "有能力的",
+    "培养,耕作",
+    "支持,背书"
+   ],
+   "sentence": "The word \"beautiful\" often appears in exams.",
+   "sentenceCn": "「beautiful」这个词常在考试中出现。",
+   "image": "words/beautiful.png"
+  },
+  {
+   "id": "w115",
+   "word": "important",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "重要的",
+   "options": [
+    "反驳,与…矛盾",
+    "可疑的,怀疑的",
+    "基本的,根本的"
+   ],
+   "sentence": "The word \"important\" often appears in exams.",
+   "sentenceCn": "「important」这个词常在考试中出现。",
+   "image": "words/important.png"
+  },
+  {
+   "id": "w116",
+   "word": "difficult",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "困难的",
+   "options": [
+    "偏见,偏差",
+    "争论,争议",
+    "耐用的,持久的"
+   ],
+   "sentence": "The word \"difficult\" often appears in exams.",
+   "sentenceCn": "「difficult」这个词常在考试中出现。",
+   "image": "words/difficult.png"
+  },
+  {
+   "id": "w117",
+   "word": "easy",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "容易的",
+   "options": [
+    "有利可图的,赚钱的",
+    "父亲",
+    "关闭;adj. 亲近的"
+   ],
+   "sentence": "The word \"easy\" often appears in exams.",
+   "sentenceCn": "「easy」这个词常在考试中出现。",
+   "image": "words/easy.png"
+  },
+  {
+   "id": "w118",
+   "word": "new",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "新的",
+   "options": [
+    "穿透,渗透",
+    "严格的,严谨的",
+    "(使)溶解"
+   ],
+   "sentence": "The word \"new\" often appears in exams.",
+   "sentenceCn": "「new」这个词常在考试中出现。",
+   "image": "words/new.png"
+  },
+  {
+   "id": "w119",
+   "word": "old",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "旧的,老的",
+   "options": [
+    "修改,更改",
+    "拒绝,排斥",
+    "证实,核实"
+   ],
+   "sentence": "The word \"old\" often appears in exams.",
+   "sentenceCn": "「old」这个词常在考试中出现。",
+   "image": "words/old.png"
+  },
+  {
+   "id": "w120",
+   "word": "young",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "年轻的",
+   "options": [
+    "取消,抵消",
+    "至关重要的",
+    "强调"
+   ],
+   "sentence": "The word \"young\" often appears in exams.",
+   "sentenceCn": "「young」这个词常在考试中出现。",
+   "image": "words/young.png"
+  },
+  {
+   "id": "w121",
+   "word": "hot",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "热的",
+   "options": [
+    "感知,察觉",
+    "强健的,稳健的",
+    "默认;违约,缺席"
+   ],
+   "sentence": "The word \"hot\" often appears in exams.",
+   "sentenceCn": "「hot」这个词常在考试中出现。",
+   "image": "words/hot.png"
+  },
+  {
+   "id": "w122",
+   "word": "cold",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "冷的",
+   "options": [
+    "精确地,恰好",
+    "冗长乏味的,枯燥的",
+    "钱"
+   ],
+   "sentence": "The word \"cold\" often appears in exams.",
+   "sentenceCn": "「cold」这个词常在考试中出现。",
+   "image": "words/cold.png"
+  },
+  {
+   "id": "w123",
+   "word": "abandon",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "抛弃,放弃",
+   "options": [
+    "乐观的",
+    "恢复,修复",
+    "干旱的,干燥的"
+   ],
+   "sentence": "The word \"abandon\" often appears in exams.",
+   "sentenceCn": "「abandon」这个词常在考试中出现。",
+   "image": "words/abandon.png"
+  },
+  {
+   "id": "w124",
+   "word": "abolish",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "废除,取消",
+   "options": [
+    "占主导的,显著的",
+    "足够",
+    "花;v. 开花,兴旺"
+   ],
+   "sentence": "The word \"abolish\" often appears in exams.",
+   "sentenceCn": "「abolish」这个词常在考试中出现。",
+   "image": "words/abolish.png"
+  },
+  {
+   "id": "w125",
+   "word": "absorb",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "吸收,吸引",
+   "options": [
+    "拥抱,接受",
+    "华丽的,极好的",
+    "危及,损害"
+   ],
+   "sentence": "The word \"absorb\" often appears in exams.",
+   "sentenceCn": "「absorb」这个词常在考试中出现。",
+   "image": "words/absorb.png"
+  },
+  {
+   "id": "w126",
+   "word": "abstract",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "抽象的",
+   "options": [
+    "怀疑的,多疑的",
+    "国家;乡村",
+    "适应,改编"
+   ],
+   "sentence": "The word \"abstract\" often appears in exams.",
+   "sentenceCn": "「abstract」这个词常在考试中出现。",
+   "image": "words/abstract.png"
+  },
+  {
+   "id": "w127",
+   "word": "accelerate",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "加速,促进",
+   "options": [
+    "杰出的,著名的",
+    "妨碍,阻碍",
+    "合法的,正当的"
+   ],
+   "sentence": "The word \"accelerate\" often appears in exams.",
+   "sentenceCn": "「accelerate」这个词常在考试中出现。",
+   "image": "words/accelerate.png"
+  },
+  {
+   "id": "w128",
+   "word": "accompany",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "陪伴,伴随",
+   "options": [
+    "古怪的,离奇的",
+    "传达,运送",
+    "动态的,有活力的"
+   ],
+   "sentence": "The word \"accompany\" often appears in exams.",
+   "sentenceCn": "「accompany」这个词常在考试中出现。",
+   "image": "words/accompany.png"
+  },
+  {
+   "id": "w129",
+   "word": "accumulate",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "积累,积聚",
+   "options": [
+    "可行的",
+    "强烈的,紧张的",
+    "描绘,刻画"
+   ],
+   "sentence": "The word \"accumulate\" often appears in exams.",
+   "sentenceCn": "「accumulate」这个词常在考试中出现。",
+   "image": "words/accumulate.png"
+  },
+  {
+   "id": "w130",
+   "word": "accurate",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "精确的,准确的",
+   "options": [
+    "懊恼,失望",
+    "夜晚",
+    "旧的,老的"
+   ],
+   "sentence": "The word \"accurate\" often appears in exams.",
+   "sentenceCn": "「accurate」这个词常在考试中出现。",
+   "image": "words/accurate.png"
+  },
+  {
+   "id": "w131",
+   "word": "acquire",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "获得,习得",
+   "options": [
+    "激怒,引起",
+    "容忍,忍受",
+    "忧郁,悲伤;adj. 忧郁的"
+   ],
+   "sentence": "The word \"acquire\" often appears in exams.",
+   "sentenceCn": "「acquire」这个词常在考试中出现。",
+   "image": "words/acquire.png"
+  },
+  {
+   "id": "w132",
+   "word": "adapt",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "适应,改编",
+   "options": [
+    "吸收,吸引",
+    "边界,界限",
+    "应付,处理"
+   ],
+   "sentence": "The word \"adapt\" often appears in exams.",
+   "sentenceCn": "「adapt」这个词常在考试中出现。",
+   "image": "words/adapt.png"
+  },
+  {
+   "id": "w133",
+   "word": "adequate",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "足够的,适当的",
+   "options": [
+    "一丝不苟的,细致的",
+    "明天",
+    "热的"
+   ],
+   "sentence": "The word \"adequate\" often appears in exams.",
+   "sentenceCn": "「adequate」这个词常在考试中出现。",
+   "image": "words/adequate.png"
+  },
+  {
+   "id": "w134",
+   "word": "adjacent",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "邻近的,毗连的",
+   "options": [
+    "丰富的,充裕的",
+    "朋友",
+    "喝"
+   ],
+   "sentence": "The word \"adjacent\" often appears in exams.",
+   "sentenceCn": "「adjacent」这个词常在考试中出现。",
+   "image": "words/adjacent.png"
+  },
+  {
+   "id": "w135",
+   "word": "adopt",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "采纳,收养",
+   "options": [
+    "分配,拨给",
+    "强迫,迫使",
+    "表示,意味着"
+   ],
+   "sentence": "The word \"adopt\" often appears in exams.",
+   "sentenceCn": "「adopt」这个词常在考试中出现。",
+   "image": "words/adopt.png"
+  },
+  {
+   "id": "w136",
+   "word": "advocate",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "提倡,拥护",
+   "options": [
+    "精力充沛的,有力的",
+    "早晨,上午",
+    "新的"
+   ],
+   "sentence": "The word \"advocate\" often appears in exams.",
+   "sentenceCn": "「advocate」这个词常在考试中出现。",
+   "image": "words/advocate.png"
+  },
+  {
+   "id": "w137",
+   "word": "aesthetic",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "美学的,审美的",
+   "options": [
+    "偏见,偏差",
+    "争论,争议",
+    "耐用的,持久的"
+   ],
+   "sentence": "The word \"aesthetic\" often appears in exams.",
+   "sentenceCn": "「aesthetic」这个词常在考试中出现。",
+   "image": "words/aesthetic.png"
+  },
+  {
+   "id": "w138",
+   "word": "aggregate",
+   "phonetic": "",
+   "pos": "n.",
+   "meaning": "总和,聚合",
+   "options": [
+    "有雄心的,有抱负的",
+    "补偿,弥补",
+    "耗尽,枯竭"
+   ],
+   "sentence": "The word \"aggregate\" often appears in exams.",
+   "sentenceCn": "「aggregate」这个词常在考试中出现。",
+   "image": "words/aggregate.png"
+  },
+  {
+   "id": "w139",
+   "word": "alleviate",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "减轻,缓和",
+   "options": [
+    "使迷惑,使为难",
+    "反驳,与…矛盾",
+    "可疑的,怀疑的"
+   ],
+   "sentence": "The word \"alleviate\" often appears in exams.",
+   "sentenceCn": "「alleviate」这个词常在考试中出现。",
+   "image": "words/alleviate.png"
+  },
+  {
+   "id": "w140",
+   "word": "allocate",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "分配,拨给",
+   "options": [
+    "仔细审查,细看",
+    "大的",
+    "困难的"
+   ],
+   "sentence": "The word \"allocate\" often appears in exams.",
+   "sentenceCn": "「allocate」这个词常在考试中出现。",
+   "image": "words/allocate.png"
+  },
+  {
+   "id": "w141",
+   "word": "ambitious",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "有雄心的,有抱负的",
+   "options": [
+    "有能力的,称职的",
+    "剥夺",
+    "唤起,引起"
+   ],
+   "sentence": "The word \"ambitious\" often appears in exams.",
+   "sentenceCn": "「ambitious」这个词常在考试中出现。",
+   "image": "words/ambitious.png"
+  },
+  {
+   "id": "w142",
+   "word": "analogy",
+   "phonetic": "",
+   "pos": "n.",
+   "meaning": "类比,类推",
+   "options": [
+    "追求,继续",
+    "转变,改造",
+    "批判的;关键的,危急的"
+   ],
+   "sentence": "The word \"analogy\" often appears in exams.",
+   "sentenceCn": "「analogy」这个词常在考试中出现。",
+   "image": "words/analogy.png"
+  },
+  {
+   "id": "w143",
+   "word": "anticipate",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "预期,期望",
+   "options": [
+    "捏造,制造",
+    "插入",
+    "猛跌,投入"
+   ],
+   "sentence": "The word \"anticipate\" often appears in exams.",
+   "sentenceCn": "「anticipate」这个词常在考试中出现。",
+   "image": "words/anticipate.png"
+  },
+  {
+   "id": "w144",
+   "word": "apparent",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "明显的,表面的",
+   "options": [
+    "世界;领域",
+    "听",
+    "总和,聚合"
+   ],
+   "sentence": "The word \"apparent\" often appears in exams.",
+   "sentenceCn": "「apparent」这个词常在考试中出现。",
+   "image": "words/apparent.png"
+  },
+  {
+   "id": "w145",
+   "word": "appeal",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "呼吁,上诉",
+   "options": [
+    "多样的,不同的",
+    "培养,促进",
+    "复杂的,错综的"
+   ],
+   "sentence": "The word \"appeal\" often appears in exams.",
+   "sentenceCn": "「appeal」这个词常在考试中出现。",
+   "image": "words/appeal.png"
+  },
+  {
+   "id": "w146",
+   "word": "arbitrary",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "任意的,专断的",
+   "options": [
+    "包含,构成",
+    "恶化,变坏",
+    "排除,拒绝"
+   ],
+   "sentence": "The word \"arbitrary\" often appears in exams.",
+   "sentenceCn": "「arbitrary」这个词常在考试中出现。",
+   "image": "words/arbitrary.png"
+  },
+  {
+   "id": "w147",
+   "word": "articulate",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "口齿清晰的",
+   "options": [
+    "妨碍,阻碍",
+    "合法的,正当的",
+    "激怒,引起"
+   ],
+   "sentence": "The word \"articulate\" often appears in exams.",
+   "sentenceCn": "「articulate」这个词常在考试中出现。",
+   "image": "words/articulate.png"
+  },
+  {
+   "id": "w148",
+   "word": "aspire",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "渴望,追求",
+   "options": [
+    "相等的,等价的",
+    "模仿",
+    "监控,监测"
+   ],
+   "sentence": "The word \"aspire\" often appears in exams.",
+   "sentenceCn": "「aspire」这个词常在考试中出现。",
+   "image": "words/aspire.png"
+  },
+  {
+   "id": "w149",
+   "word": "assemble",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "集合,装配",
+   "options": [
+    "仁慈的,慈善的",
+    "时间",
+    "抛弃,放弃"
+   ],
+   "sentence": "The word \"assemble\" often appears in exams.",
+   "sentenceCn": "「assemble」这个词常在考试中出现。",
+   "image": "words/assemble.png"
+  },
+  {
+   "id": "w150",
+   "word": "assert",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "断言,主张",
+   "options": [
+    "利用,开发",
+    "开始,发起",
+    "现象"
+   ],
+   "sentence": "The word \"assert\" often appears in exams.",
+   "sentenceCn": "「assert」这个词常在考试中出现。",
+   "image": "words/assert.png"
+  },
+  {
+   "id": "w151",
+   "word": "assess",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "评估,估价",
+   "options": [
+    "利用,开发",
+    "开始,发起",
+    "现象"
+   ],
+   "sentence": "The word \"assess\" often appears in exams.",
+   "sentenceCn": "「assess」这个词常在考试中出现。",
+   "image": "words/assess.png"
+  },
+  {
+   "id": "w152",
+   "word": "assign",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "分配,指派",
+   "options": [
+    "侵蚀,削弱",
+    "巨大的",
+    "微不足道的"
+   ],
+   "sentence": "The word \"assign\" often appears in exams.",
+   "sentenceCn": "「assign」这个词常在考试中出现。",
+   "image": "words/assign.png"
+  },
+  {
+   "id": "w153",
+   "word": "assume",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "假定,承担",
+   "options": [
+    "施加,尽力",
+    "推断",
+    "穿透,渗透"
+   ],
+   "sentence": "The word \"assume\" often appears in exams.",
+   "sentenceCn": "「assume」这个词常在考试中出现。",
+   "image": "words/assume.png"
+  },
+  {
+   "id": "w154",
+   "word": "attain",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "达到,获得",
+   "options": [
+    "使丰富,使富裕",
+    "完全相同的",
+    "调解,斡旋"
+   ],
+   "sentence": "The word \"attain\" often appears in exams.",
+   "sentenceCn": "「attain」这个词常在考试中出现。",
+   "image": "words/attain.png"
+  },
+  {
+   "id": "w155",
+   "word": "attribute",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "把…归因于",
+   "options": [
+    "谴责,判刑",
+    "辨别,察觉",
+    "加快,促进"
+   ],
+   "sentence": "The word \"attribute\" often appears in exams.",
+   "sentenceCn": "「attribute」这个词常在考试中出现。",
+   "image": "words/attribute.png"
+  },
+  {
+   "id": "w156",
+   "word": "authentic",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "真正的,可信的",
+   "options": [
+    "珍爱,怀有",
+    "欺骗",
+    "使丰富,使富裕"
+   ],
+   "sentence": "The word \"authentic\" often appears in exams.",
+   "sentenceCn": "「authentic」这个词常在考试中出现。",
+   "image": "words/authentic.png"
+  },
+  {
+   "id": "w157",
+   "word": "autonomy",
+   "phonetic": "",
+   "pos": "n.",
+   "meaning": "自治,自主",
+   "options": [
+    "学习",
+    "邻近的,毗连的",
+    "循环,流通"
+   ],
+   "sentence": "The word \"autonomy\" often appears in exams.",
+   "sentenceCn": "「autonomy」这个词常在考试中出现。",
+   "image": "words/autonomy.png"
+  },
+  {
+   "id": "w158",
+   "word": "aversion",
+   "phonetic": "",
+   "pos": "n.",
+   "meaning": "厌恶,反感",
+   "options": [
+    "悲伤的",
+    "停止",
+    "断言,主张"
+   ],
+   "sentence": "The word \"aversion\" often appears in exams.",
+   "sentenceCn": "「aversion」这个词常在考试中出现。",
+   "image": "words/aversion.png"
+  },
+  {
+   "id": "w159",
+   "word": "bewilder",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "使迷惑,使为难",
+   "options": [
+    "勤奋的,勤勉的",
+    "音乐",
+    "吸收,吸引"
+   ],
+   "sentence": "The word \"bewilder\" often appears in exams.",
+   "sentenceCn": "「bewilder」这个词常在考试中出现。",
+   "image": "words/bewilder.png"
+  },
+  {
+   "id": "w160",
+   "word": "bias",
+   "phonetic": "",
+   "pos": "n.",
+   "meaning": "偏见,偏差",
+   "options": [
+    "饥荒",
+    "永久的,持续不断的",
+    "家"
+   ],
+   "sentence": "The word \"bias\" often appears in exams.",
+   "sentenceCn": "「bias」这个词常在考试中出现。",
+   "image": "words/bias.png"
+  },
+  {
+   "id": "w161",
+   "word": "bizarre",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "古怪的,离奇的",
+   "options": [
+    "提炼,改进",
+    "统一的,一致的",
+    "对话,谈话"
+   ],
+   "sentence": "The word \"bizarre\" often appears in exams.",
+   "sentenceCn": "「bizarre」这个词常在考试中出现。",
+   "image": "words/bizarre.png"
+  },
+  {
+   "id": "w162",
+   "word": "boost",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "促进,提高",
+   "options": [
+    "达到,获得",
+    "密谋,共谋",
+    "分散(注意力)"
+   ],
+   "sentence": "The word \"boost\" often appears in exams.",
+   "sentenceCn": "「boost」这个词常在考试中出现。",
+   "image": "words/boost.png"
+  },
+  {
+   "id": "w163",
+   "word": "boundary",
+   "phonetic": "",
+   "pos": "n.",
+   "meaning": "边界,界限",
+   "options": [
+    "母亲",
+    "打开;adj. 开着的",
+    "口齿清晰的"
+   ],
+   "sentence": "The word \"boundary\" often appears in exams.",
+   "sentenceCn": "「boundary」这个词常在考试中出现。",
+   "image": "words/boundary.png"
+  },
+  {
+   "id": "w164",
+   "word": "brisk",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "轻快的,活跃的",
+   "options": [
+    "类比,类推",
+    "遵从,服从",
+    "起源,衍生"
+   ],
+   "sentence": "The word \"brisk\" often appears in exams.",
+   "sentenceCn": "「brisk」这个词常在考试中出现。",
+   "image": "words/brisk.png"
+  },
+  {
+   "id": "w165",
+   "word": "calculate",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "计算,估计",
+   "options": [
+    "口齿清晰的",
+    "构想,怀孕",
+    "丢弃,抛弃"
+   ],
+   "sentence": "The word \"calculate\" often appears in exams.",
+   "sentenceCn": "「calculate」这个词常在考试中出现。",
+   "image": "words/calculate.png"
+  },
+  {
+   "id": "w166",
+   "word": "cancel",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "取消,抵消",
+   "options": [
+    "指定,标明",
+    "超过,胜过",
+    "诱导,引起"
+   ],
+   "sentence": "The word \"cancel\" often appears in exams.",
+   "sentenceCn": "「cancel」这个词常在考试中出现。",
+   "image": "words/cancel.png"
+  },
+  {
+   "id": "w167",
+   "word": "capable",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "有能力的",
+   "options": [
+    "维持,主张",
+    "认为,估计",
+    "琐碎的,不重要的"
+   ],
+   "sentence": "The word \"capable\" often appears in exams.",
+   "sentenceCn": "「capable」这个词常在考试中出现。",
+   "image": "words/capable.png"
+  },
+  {
+   "id": "w168",
+   "word": "capacity",
+   "phonetic": "",
+   "pos": "n.",
+   "meaning": "容量,能力",
+   "options": [
+    "勤奋的,勤勉的",
+    "音乐",
+    "吸收,吸引"
+   ],
+   "sentence": "The word \"capacity\" often appears in exams.",
+   "sentenceCn": "「capacity」这个词常在考试中出现。",
+   "image": "words/capacity.png"
+  },
+  {
+   "id": "w169",
+   "word": "catastrophe",
+   "phonetic": "",
+   "pos": "n.",
+   "meaning": "大灾难",
+   "options": [
+    "转变,改造",
+    "批判的;关键的,危急的",
+    "喂;你好(打招呼用语)"
+   ],
+   "sentence": "The word \"catastrophe\" often appears in exams.",
+   "sentenceCn": "「catastrophe」这个词常在考试中出现。",
+   "image": "words/catastrophe.png"
+  },
+  {
+   "id": "w170",
+   "word": "cease",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "停止,终止",
+   "options": [
+    "困难的",
+    "假定,承担",
+    "一致的,连贯的"
+   ],
+   "sentence": "The word \"cease\" often appears in exams.",
+   "sentenceCn": "「cease」这个词常在考试中出现。",
+   "image": "words/cease.png"
+  },
+  {
+   "id": "w171",
+   "word": "cherish",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "珍爱,怀有",
+   "options": [
+    "禁止",
+    "暂停,悬挂",
+    "精确地,恰好"
+   ],
+   "sentence": "The word \"cherish\" often appears in exams.",
+   "sentenceCn": "「cherish」这个词常在考试中出现。",
+   "image": "words/cherish.png"
+  },
+  {
+   "id": "w172",
+   "word": "circulate",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "循环,流通",
+   "options": [
+    "古怪的,离奇的",
+    "合作,协作",
+    "有资格的"
+   ],
+   "sentence": "The word \"circulate\" often appears in exams.",
+   "sentenceCn": "「circulate」这个词常在考试中出现。",
+   "image": "words/circulate.png"
+  },
+  {
+   "id": "w173",
+   "word": "clarify",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "澄清,阐明",
+   "options": [
+    "激怒,引起",
+    "容忍,忍受",
+    "忧郁,悲伤;adj. 忧郁的"
+   ],
+   "sentence": "The word \"clarify\" often appears in exams.",
+   "sentenceCn": "「clarify」这个词常在考试中出现。",
+   "image": "words/clarify.png"
+  },
+  {
+   "id": "w174",
+   "word": "coherent",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "连贯的,一致的",
+   "options": [
+    "热心的,狂热的",
+    "阅读",
+    "采纳,收养"
+   ],
+   "sentence": "The word \"coherent\" often appears in exams.",
+   "sentenceCn": "「coherent」这个词常在考试中出现。",
+   "image": "words/coherent.png"
+  },
+  {
+   "id": "w175",
+   "word": "collapse",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "倒塌,崩溃",
+   "options": [
+    "有韧性的,能恢复的",
+    "城市",
+    "精确的,准确的"
+   ],
+   "sentence": "The word \"collapse\" often appears in exams.",
+   "sentenceCn": "「collapse」这个词常在考试中出现。",
+   "image": "words/collapse.png"
+  },
+  {
+   "id": "w176",
+   "word": "commence",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "开始",
+   "options": [
+    "节俭的,朴素的",
+    "今天",
+    "热的"
+   ],
+   "sentence": "The word \"commence\" often appears in exams.",
+   "sentenceCn": "「commence」这个词常在考试中出现。",
+   "image": "words/commence.png"
+  },
+  {
+   "id": "w177",
+   "word": "compel",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "强迫,迫使",
+   "options": [
+    "巨大的",
+    "假设,假说",
+    "边缘的,微小的"
+   ],
+   "sentence": "The word \"compel\" often appears in exams.",
+   "sentenceCn": "「compel」这个词常在考试中出现。",
+   "image": "words/compel.png"
+  },
+  {
+   "id": "w178",
+   "word": "compensate",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "补偿,弥补",
+   "options": [
+    "危险,危害",
+    "逗留,徘徊",
+    "追求,继续"
+   ],
+   "sentence": "The word \"compensate\" often appears in exams.",
+   "sentenceCn": "「compensate」这个词常在考试中出现。",
+   "image": "words/compensate.png"
+  },
+  {
+   "id": "w179",
+   "word": "competent",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "有能力的,称职的",
+   "options": [
+    "综合的,全面的",
+    "指定,标明",
+    "超过,胜过"
+   ],
+   "sentence": "The word \"competent\" often appears in exams.",
+   "sentenceCn": "「competent」这个词常在考试中出现。",
+   "image": "words/competent.png"
+  },
+  {
+   "id": "w180",
+   "word": "comply",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "遵从,服从",
+   "options": [
+    "捏造,制造",
+    "插入",
+    "猛跌,投入"
+   ],
+   "sentence": "The word \"comply\" often appears in exams.",
+   "sentenceCn": "「comply」这个词常在考试中出现。",
+   "image": "words/comply.png"
+  },
+  {
+   "id": "w181",
+   "word": "comprehensive",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "综合的,全面的",
+   "options": [
+    "欺骗",
+    "使丰富,使富裕",
+    "完全相同的"
+   ],
+   "sentence": "The word \"comprehensive\" often appears in exams.",
+   "sentenceCn": "「comprehensive」这个词常在考试中出现。",
+   "image": "words/comprehensive.png"
+  },
+  {
+   "id": "w182",
+   "word": "comprise",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "包含,构成",
+   "options": [
+    "学生",
+    "喜欢",
+    "呼吁,上诉"
+   ],
+   "sentence": "The word \"comprise\" often appears in exams.",
+   "sentenceCn": "「comprise」这个词常在考试中出现。",
+   "image": "words/comprise.png"
+  },
+  {
+   "id": "w183",
+   "word": "conceal",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "隐藏,隐瞒",
+   "options": [
+    "暴行,愤怒",
+    "保留,记住",
+    "边缘;(浅底容器的)边缘"
+   ],
+   "sentence": "The word \"conceal\" often appears in exams.",
+   "sentenceCn": "「conceal」这个词常在考试中出现。",
+   "image": "words/conceal.png"
+  },
+  {
+   "id": "w184",
+   "word": "concede",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "承认,让步",
+   "options": [
+    "晦涩的,模糊的",
+    "类似,像",
+    "产生,屈服"
+   ],
+   "sentence": "The word \"concede\" often appears in exams.",
+   "sentenceCn": "「concede」这个词常在考试中出现。",
+   "image": "words/concede.png"
+  },
+  {
+   "id": "w185",
+   "word": "conceive",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "构想,怀孕",
+   "options": [
+    "仁慈的,慈善的",
+    "时间",
+    "抛弃,放弃"
+   ],
+   "sentence": "The word \"conceive\" often appears in exams.",
+   "sentenceCn": "「conceive」这个词常在考试中出现。",
+   "image": "words/conceive.png"
+  },
+  {
+   "id": "w186",
+   "word": "condemn",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "谴责,判刑",
+   "options": [
+    "宣布,声明",
+    "压制,抑制",
+    "伦理学;道德准则"
+   ],
+   "sentence": "The word \"condemn\" often appears in exams.",
+   "sentenceCn": "「condemn」这个词常在考试中出现。",
+   "image": "words/condemn.png"
+  },
+  {
+   "id": "w187",
+   "word": "confront",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "面对,对抗",
+   "options": [
+    "坏的,糟糕的",
+    "重要的",
+    "分配,指派"
+   ],
+   "sentence": "The word \"confront\" often appears in exams.",
+   "sentenceCn": "「confront」这个词常在考试中出现。",
+   "image": "words/confront.png"
+  },
+  {
+   "id": "w188",
+   "word": "consecutive",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "连续的",
+   "options": [
+    "抵挡,经受",
+    "不可避免的,必然的",
+    "母亲"
+   ],
+   "sentence": "The word \"consecutive\" often appears in exams.",
+   "sentenceCn": "「consecutive」这个词常在考试中出现。",
+   "image": "words/consecutive.png"
+  },
+  {
+   "id": "w189",
+   "word": "consensus",
+   "phonetic": "",
+   "pos": "n.",
+   "meaning": "共识,一致",
+   "options": [
+    "合作,协作",
+    "有资格的",
+    "阴郁的,悲观的"
+   ],
+   "sentence": "The word \"consensus\" often appears in exams.",
+   "sentenceCn": "「consensus」这个词常在考试中出现。",
+   "image": "words/consensus.png"
+  },
+  {
+   "id": "w190",
+   "word": "conserve",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "保存,节约",
+   "options": [
+    "父亲",
+    "关闭;adj. 亲近的",
+    "渴望,追求"
+   ],
+   "sentence": "The word \"conserve\" often appears in exams.",
+   "sentenceCn": "「conserve」这个词常在考试中出现。",
+   "image": "words/conserve.png"
+  },
+  {
+   "id": "w191",
+   "word": "consistent",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "一致的,连贯的",
+   "options": [
+    "干预,介入",
+    "先于,领先",
+    "微妙的,细微的"
+   ],
+   "sentence": "The word \"consistent\" often appears in exams.",
+   "sentenceCn": "「consistent」这个词常在考试中出现。",
+   "image": "words/consistent.png"
+  },
+  {
+   "id": "w192",
+   "word": "conspire",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "密谋,共谋",
+   "options": [
+    "家庭;家人",
+    "帮助",
+    "任意的,专断的"
+   ],
+   "sentence": "The word \"conspire\" often appears in exams.",
+   "sentenceCn": "「conspire」这个词常在考试中出现。",
+   "image": "words/conspire.png"
+  },
+  {
+   "id": "w193",
+   "word": "constrain",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "限制,约束",
+   "options": [
+    "包含,构成",
+    "设计,想出",
+    "被免除的"
+   ],
+   "sentence": "The word \"constrain\" often appears in exams.",
+   "sentenceCn": "「constrain」这个词常在考试中出现。",
+   "image": "words/constrain.png"
+  },
+  {
+   "id": "w194",
+   "word": "contaminate",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "污染",
+   "options": [
+    "努力,奋斗",
+    "居民,住户",
+    "雄辩的,有说服力的"
+   ],
+   "sentence": "The word \"contaminate\" often appears in exams.",
+   "sentenceCn": "「contaminate」这个词常在考试中出现。",
+   "image": "words/contaminate.png"
+  },
+  {
+   "id": "w195",
+   "word": "contemplate",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "沉思,考虑",
+   "options": [
+    "传送,传播",
+    "著名的,有声望的",
+    "世界;领域"
+   ],
+   "sentence": "The word \"contemplate\" often appears in exams.",
+   "sentenceCn": "「contemplate」这个词常在考试中出现。",
+   "image": "words/contemplate.png"
+  },
+  {
+   "id": "w196",
+   "word": "contradict",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "反驳,与…矛盾",
+   "options": [
+    "阴郁的,悲观的",
+    "隔离,孤立",
+    "突出的,著名的"
+   ],
+   "sentence": "The word \"contradict\" often appears in exams.",
+   "sentenceCn": "「contradict」这个词常在考试中出现。",
+   "image": "words/contradict.png"
+  },
+  {
+   "id": "w197",
+   "word": "controversy",
+   "phonetic": "",
+   "pos": "n.",
+   "meaning": "争论,争议",
+   "options": [
+    "有利可图的,赚钱的",
+    "父亲",
+    "关闭;adj. 亲近的"
+   ],
+   "sentence": "The word \"controversy\" often appears in exams.",
+   "sentenceCn": "「controversy」这个词常在考试中出现。",
+   "image": "words/controversy.png"
+  },
+  {
+   "id": "w198",
+   "word": "convey",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "传达,运送",
+   "options": [
+    "捏造,制造",
+    "插入",
+    "猛跌,投入"
+   ],
+   "sentence": "The word \"convey\" often appears in exams.",
+   "sentenceCn": "「convey」这个词常在考试中出现。",
+   "image": "words/convey.png"
+  },
+  {
+   "id": "w199",
+   "word": "cooperate",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "合作,协作",
+   "options": [
+    "有能力的",
+    "累积的",
+    "忍受,持久"
+   ],
+   "sentence": "The word \"cooperate\" often appears in exams.",
+   "sentenceCn": "「cooperate」这个词常在考试中出现。",
+   "image": "words/cooperate.png"
+  },
+  {
+   "id": "w200",
+   "word": "cope",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "应付,处理",
+   "options": [
+    "批判的;关键的,危急的",
+    "喂;你好(打招呼用语)",
+    "说,讲"
+   ],
+   "sentence": "The word \"cope\" often appears in exams.",
+   "sentenceCn": "「cope」这个词常在考试中出现。",
+   "image": "words/cope.png"
+  },
+  {
+   "id": "w201",
+   "word": "corrupt",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "腐败的,堕落的",
+   "options": [
+    "容忍,忍受",
+    "忧郁,悲伤;adj. 忧郁的",
+    "固执的,顽固的"
+   ],
+   "sentence": "The word \"corrupt\" often appears in exams.",
+   "sentenceCn": "「corrupt」这个词常在考试中出现。",
+   "image": "words/corrupt.png"
+  },
+  {
+   "id": "w202",
+   "word": "credible",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "可信的",
+   "options": [
+    "丰富的,充裕的",
+    "朋友",
+    "喝"
+   ],
+   "sentence": "The word \"credible\" often appears in exams.",
+   "sentenceCn": "「credible」这个词常在考试中出现。",
+   "image": "words/credible.png"
+  },
+  {
+   "id": "w203",
+   "word": "crucial",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "至关重要的",
+   "options": [
+    "盛行,占优势",
+    "肤浅的,表面的",
+    "饥荒"
+   ],
+   "sentence": "The word \"crucial\" often appears in exams.",
+   "sentenceCn": "「crucial」这个词常在考试中出现。",
+   "image": "words/crucial.png"
+  },
+  {
+   "id": "w204",
+   "word": "cultivate",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "培养,耕作",
+   "options": [
+    "包含,构成",
+    "设计,想出",
+    "被免除的"
+   ],
+   "sentence": "The word \"cultivate\" often appears in exams.",
+   "sentenceCn": "「cultivate」这个词常在考试中出现。",
+   "image": "words/cultivate.png"
+  },
+  {
+   "id": "w205",
+   "word": "cumulative",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "累积的",
+   "options": [
+    "放纵,沉溺",
+    "压倒,淹没",
+    "取回,检索"
+   ],
+   "sentence": "The word \"cumulative\" often appears in exams.",
+   "sentenceCn": "「cumulative」这个词常在考试中出现。",
+   "image": "words/cumulative.png"
+  },
+  {
+   "id": "w206",
+   "word": "curb",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "抑制,约束",
+   "options": [
+    "坦率的,直言的",
+    "学校",
+    "睡觉"
+   ],
+   "sentence": "The word \"curb\" often appears in exams.",
+   "sentenceCn": "「curb」这个词常在考试中出现。",
+   "image": "words/curb.png"
+  },
+  {
+   "id": "w207",
+   "word": "decay",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "腐烂,衰败",
+   "options": [
+    "热的",
+    "厌恶,反感",
+    "沉思,考虑"
+   ],
+   "sentence": "The word \"decay\" often appears in exams.",
+   "sentenceCn": "「decay」这个词常在考试中出现。",
+   "image": "words/decay.png"
+  },
+  {
+   "id": "w208",
+   "word": "deceive",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "欺骗",
+   "options": [
+    "暴行,愤怒",
+    "保留,记住",
+    "边缘;(浅底容器的)边缘"
+   ],
+   "sentence": "The word \"deceive\" often appears in exams.",
+   "sentenceCn": "「deceive」这个词常在考试中出现。",
+   "image": "words/deceive.png"
+  },
+  {
+   "id": "w209",
+   "word": "dedicate",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "奉献,致力于",
+   "options": [
+    "真正的,真诚的",
+    "热心的,狂热的",
+    "阅读"
+   ],
+   "sentence": "The word \"dedicate\" often appears in exams.",
+   "sentenceCn": "「dedicate」这个词常在考试中出现。",
+   "image": "words/dedicate.png"
+  },
+  {
+   "id": "w210",
+   "word": "deduce",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "推断,演绎",
+   "options": [
+    "丢弃,抛弃",
+    "异国的,奇异的",
+    "居住于"
+   ],
+   "sentence": "The word \"deduce\" often appears in exams.",
+   "sentenceCn": "「deduce」这个词常在考试中出现。",
+   "image": "words/deduce.png"
+  },
+  {
+   "id": "w211",
+   "word": "defer",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "推迟,遵从",
+   "options": [
+    "热的",
+    "厌恶,反感",
+    "沉思,考虑"
+   ],
+   "sentence": "The word \"defer\" often appears in exams.",
+   "sentenceCn": "「defer」这个词常在考试中出现。",
+   "image": "words/defer.png"
+  },
+  {
+   "id": "w212",
+   "word": "deliberate",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "故意的,深思熟虑的",
+   "options": [
+    "流行病",
+    "照亮,阐明",
+    "修改,更改"
+   ],
+   "sentence": "The word \"deliberate\" often appears in exams.",
+   "sentenceCn": "「deliberate」这个词常在考试中出现。",
+   "image": "words/deliberate.png"
+  },
+  {
+   "id": "w213",
+   "word": "demolish",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "拆毁,推翻",
+   "options": [
+    "冗长乏味的,枯燥的",
+    "钱",
+    "适应,改编"
+   ],
+   "sentence": "The word \"demolish\" often appears in exams.",
+   "sentenceCn": "「demolish」这个词常在考试中出现。",
+   "image": "words/demolish.png"
+  },
+  {
+   "id": "w214",
+   "word": "denote",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "表示,意味着",
+   "options": [
+    "提高,增强",
+    "谦逊的,卑微的",
+    "操纵,控制"
+   ],
+   "sentence": "The word \"denote\" often appears in exams.",
+   "sentenceCn": "「denote」这个词常在考试中出现。",
+   "image": "words/denote.png"
+  },
+  {
+   "id": "w215",
+   "word": "deplete",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "耗尽,枯竭",
+   "options": [
+    "盛行,占优势",
+    "肤浅的,表面的",
+    "饥荒"
+   ],
+   "sentence": "The word \"deplete\" often appears in exams.",
+   "sentenceCn": "「deplete」这个词常在考试中出现。",
+   "image": "words/deplete.png"
+  },
+  {
+   "id": "w216",
+   "word": "deprive",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "剥夺",
+   "options": [
+    "提炼,改进",
+    "统一的,一致的",
+    "对话,谈话"
+   ],
+   "sentence": "The word \"deprive\" often appears in exams.",
+   "sentenceCn": "「deprive」这个词常在考试中出现。",
+   "image": "words/deprive.png"
+  },
+  {
+   "id": "w217",
+   "word": "derive",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "起源,衍生",
+   "options": [
+    "提高,增强",
+    "谦逊的,卑微的",
+    "操纵,控制"
+   ],
+   "sentence": "The word \"derive\" often appears in exams.",
+   "sentenceCn": "「derive」这个词常在考试中出现。",
+   "image": "words/derive.png"
+  },
+  {
+   "id": "w218",
+   "word": "designate",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "指定,标明",
+   "options": [
+    "假定,承担",
+    "保存,节约",
+    "扭曲,歪曲"
+   ],
+   "sentence": "The word \"designate\" often appears in exams.",
+   "sentenceCn": "「designate」这个词常在考试中出现。",
+   "image": "words/designate.png"
+  },
+  {
+   "id": "w219",
+   "word": "deteriorate",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "恶化,变坏",
+   "options": [
+    "超越,胜过",
+    "盛宴,宴会;节日",
+    "怀疑的,多疑的"
+   ],
+   "sentence": "The word \"deteriorate\" often appears in exams.",
+   "sentenceCn": "「deteriorate」这个词常在考试中出现。",
+   "image": "words/deteriorate.png"
+  },
+  {
+   "id": "w220",
+   "word": "devise",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "设计,想出",
+   "options": [
+    "巨大的",
+    "假设,假说",
+    "边缘的,微小的"
+   ],
+   "sentence": "The word \"devise\" often appears in exams.",
+   "sentenceCn": "「devise」这个词常在考试中出现。",
+   "image": "words/devise.png"
+  },
+  {
+   "id": "w221",
+   "word": "diminish",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "减少,缩小",
+   "options": [
+    "冗长乏味的,枯燥的",
+    "钱",
+    "适应,改编"
+   ],
+   "sentence": "The word \"diminish\" often appears in exams.",
+   "sentenceCn": "「diminish」这个词常在考试中出现。",
+   "image": "words/diminish.png"
+  },
+  {
+   "id": "w222",
+   "word": "discard",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "丢弃,抛弃",
+   "options": [
+    "坚持,持续",
+    "散布,驱散",
+    "獾;v. 纠缠,烦扰"
+   ],
+   "sentence": "The word \"discard\" often appears in exams.",
+   "sentenceCn": "「discard」这个词常在考试中出现。",
+   "image": "words/discard.png"
+  },
+  {
+   "id": "w223",
+   "word": "discern",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "辨别,察觉",
+   "options": [
+    "推进,驱使",
+    "终止,结束",
+    "芳香的"
+   ],
+   "sentence": "The word \"discern\" often appears in exams.",
+   "sentenceCn": "「discern」这个词常在考试中出现。",
+   "image": "words/discern.png"
+  },
+  {
+   "id": "w224",
+   "word": "disclose",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "揭露,透露",
+   "options": [
+    "多才多艺的,多用途的",
+    "工作;n. 工作",
+    "足够的,适当的"
+   ],
+   "sentence": "The word \"disclose\" often appears in exams.",
+   "sentenceCn": "「disclose」这个词常在考试中出现。",
+   "image": "words/disclose.png"
+  },
+  {
+   "id": "w225",
+   "word": "dispatch",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "派遣,发送",
+   "options": [
+    "强大的,令人敬畏的",
+    "电话,手机",
+    "加速,促进"
+   ],
+   "sentence": "The word \"dispatch\" often appears in exams.",
+   "sentenceCn": "「dispatch」这个词常在考试中出现。",
+   "image": "words/dispatch.png"
+  },
+  {
+   "id": "w226",
+   "word": "disperse",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "驱散,散布",
+   "options": [
+    "朋友",
+    "喝",
+    "类比,类推"
+   ],
+   "sentence": "The word \"disperse\" often appears in exams.",
+   "sentenceCn": "「disperse」这个词常在考试中出现。",
+   "image": "words/disperse.png"
+  },
+  {
+   "id": "w227",
+   "word": "disrupt",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "扰乱,中断",
+   "options": [
+    "暂停,悬挂",
+    "精确地,恰好",
+    "冗长乏味的,枯燥的"
+   ],
+   "sentence": "The word \"disrupt\" often appears in exams.",
+   "sentenceCn": "「disrupt」这个词常在考试中出现。",
+   "image": "words/disrupt.png"
+  },
+  {
+   "id": "w228",
+   "word": "distort",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "扭曲,歪曲",
+   "options": [
+    "压制,抑制",
+    "伦理学;道德准则",
+    "有韧性的,能恢复的"
+   ],
+   "sentence": "The word \"distort\" often appears in exams.",
+   "sentenceCn": "「distort」这个词常在考试中出现。",
+   "image": "words/distort.png"
+  },
+  {
+   "id": "w229",
+   "word": "distract",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "分散(注意力)",
+   "options": [
+    "水",
+    "吃",
+    "有雄心的,有抱负的"
+   ],
+   "sentence": "The word \"distract\" often appears in exams.",
+   "sentenceCn": "「distract」这个词常在考试中出现。",
+   "image": "words/distract.png"
+  },
+  {
+   "id": "w230",
+   "word": "distribute",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "分发,分布",
+   "options": [
+    "放纵,沉溺",
+    "压倒,淹没",
+    "取回,检索"
+   ],
+   "sentence": "The word \"distribute\" often appears in exams.",
+   "sentenceCn": "「distribute」这个词常在考试中出现。",
+   "image": "words/distribute.png"
+  },
+  {
+   "id": "w231",
+   "word": "diverse",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "多样的,不同的",
+   "options": [
+    "拒绝,排斥",
+    "证实,核实",
+    "赤字,亏损;不足"
+   ],
+   "sentence": "The word \"diverse\" often appears in exams.",
+   "sentenceCn": "「diverse」这个词常在考试中出现。",
+   "image": "words/diverse.png"
+  },
+  {
+   "id": "w232",
+   "word": "dominate",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "支配,统治",
+   "options": [
+    "漠不关心的,冷淡的",
+    "计算机,电脑",
+    "陪伴,伴随"
+   ],
+   "sentence": "The word \"dominate\" often appears in exams.",
+   "sentenceCn": "「dominate」这个词常在考试中出现。",
+   "image": "words/dominate.png"
+  },
+  {
+   "id": "w233",
+   "word": "dubious",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "可疑的,怀疑的",
+   "options": [
+    "取回,检索",
+    "君主,帝王",
+    "仔细审查,细看"
+   ],
+   "sentence": "The word \"dubious\" often appears in exams.",
+   "sentenceCn": "「dubious」这个词常在考试中出现。",
+   "image": "words/dubious.png"
+  },
+  {
+   "id": "w234",
+   "word": "durable",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "耐用的,持久的",
+   "options": [
+    "沉思,考虑",
+    "刺激,激励",
+    "潜力,潜能;adj. 潜在的"
+   ],
+   "sentence": "The word \"durable\" often appears in exams.",
+   "sentenceCn": "「durable」这个词常在考试中出现。",
+   "image": "words/durable.png"
+  },
+  {
+   "id": "w235",
+   "word": "dynamic",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "动态的,有活力的",
+   "options": [
+    "深刻的,深远的",
+    "超越,胜过",
+    "盛宴,宴会;节日"
+   ],
+   "sentence": "The word \"dynamic\" often appears in exams.",
+   "sentenceCn": "「dynamic」这个词常在考试中出现。",
+   "image": "words/dynamic.png"
+  },
+  {
+   "id": "w236",
+   "word": "eligible",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "有资格的",
+   "options": [
+    "精心制作的,复杂的;v. 详述",
+    "学生",
+    "喜欢"
+   ],
+   "sentence": "The word \"eligible\" often appears in exams.",
+   "sentenceCn": "「eligible」这个词常在考试中出现。",
+   "image": "words/eligible.png"
+  },
+  {
+   "id": "w237",
+   "word": "embrace",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "拥抱,接受",
+   "options": [
+    "微不足道的",
+    "不情愿的",
+    "脆弱的,易受伤的"
+   ],
+   "sentence": "The word \"embrace\" often appears in exams.",
+   "sentenceCn": "「embrace」这个词常在考试中出现。",
+   "image": "words/embrace.png"
+  },
+  {
+   "id": "w238",
+   "word": "emerge",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "出现,浮现",
+   "options": [
+    "支配,统治",
+    "基本的,根本的",
+    "内在的,固有的"
+   ],
+   "sentence": "The word \"emerge\" often appears in exams.",
+   "sentenceCn": "「emerge」这个词常在考试中出现。",
+   "image": "words/emerge.png"
+  },
+  {
+   "id": "w239",
+   "word": "eminent",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "杰出的,著名的",
+   "options": [
+    "驳斥,反驳",
+    "利用",
+    "丰富的,充裕的"
+   ],
+   "sentence": "The word \"eminent\" often appears in exams.",
+   "sentenceCn": "「eminent」这个词常在考试中出现。",
+   "image": "words/eminent.png"
+  },
+  {
+   "id": "w240",
+   "word": "emphasize",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "强调",
+   "options": [
+    "珍爱,怀有",
+    "欺骗",
+    "需要,使承担"
+   ],
+   "sentence": "The word \"emphasize\" often appears in exams.",
+   "sentenceCn": "「emphasize」这个词常在考试中出现。",
+   "image": "words/emphasize.png"
+  },
+  {
+   "id": "w241",
+   "word": "endorse",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "支持,背书",
+   "options": [
+    "驳斥,反驳",
+    "利用",
+    "丰富的,充裕的"
+   ],
+   "sentence": "The word \"endorse\" often appears in exams.",
+   "sentenceCn": "「endorse」这个词常在考试中出现。",
+   "image": "words/endorse.png"
+  },
+  {
+   "id": "w242",
+   "word": "endure",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "忍受,持久",
+   "options": [
+    "流行病",
+    "照亮,阐明",
+    "修改,更改"
+   ],
+   "sentence": "The word \"endure\" often appears in exams.",
+   "sentenceCn": "「endure」这个词常在考试中出现。",
+   "image": "words/endure.png"
+  },
+  {
+   "id": "w243",
+   "word": "enhance",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "提高,增强",
+   "options": [
+    "过时的,废弃的",
+    "居住,存在于",
+    "谨慎的,精明的"
+   ],
+   "sentence": "The word \"enhance\" often appears in exams.",
+   "sentenceCn": "「enhance」这个词常在考试中出现。",
+   "image": "words/enhance.png"
+  },
+  {
+   "id": "w244",
+   "word": "enormous",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "巨大的",
+   "options": [
+    "钱",
+    "适应,改编",
+    "大灾难"
+   ],
+   "sentence": "The word \"enormous\" often appears in exams.",
+   "sentenceCn": "「enormous」这个词常在考试中出现。",
+   "image": "words/enormous.png"
+  },
+  {
+   "id": "w245",
+   "word": "enrich",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "使丰富,使富裕",
+   "options": [
+    "有资格的",
+    "华丽的,极好的",
+    "危及,损害"
+   ],
+   "sentence": "The word \"enrich\" often appears in exams.",
+   "sentenceCn": "「enrich」这个词常在考试中出现。",
+   "image": "words/enrich.png"
+  },
+  {
+   "id": "w246",
+   "word": "entail",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "需要,使承担",
+   "options": [
+    "强调",
+    "遗产,传统",
+    "放大,夸大"
+   ],
+   "sentence": "The word \"entail\" often appears in exams.",
+   "sentenceCn": "「entail」这个词常在考试中出现。",
+   "image": "words/entail.png"
+  },
+  {
+   "id": "w247",
+   "word": "epidemic",
+   "phonetic": "",
+   "pos": "n.",
+   "meaning": "流行病",
+   "options": [
+    "有利可图的,赚钱的",
+    "父亲",
+    "关闭;adj. 亲近的"
+   ],
+   "sentence": "The word \"epidemic\" often appears in exams.",
+   "sentenceCn": "「epidemic」这个词常在考试中出现。",
+   "image": "words/epidemic.png"
+  },
+  {
+   "id": "w248",
+   "word": "equivalent",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "相等的,等价的",
+   "options": [
+    "诱导,引起",
+    "暴行,愤怒",
+    "保留,记住"
+   ],
+   "sentence": "The word \"equivalent\" often appears in exams.",
+   "sentenceCn": "「equivalent」这个词常在考试中出现。",
+   "image": "words/equivalent.png"
+  },
+  {
+   "id": "w249",
+   "word": "erode",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "侵蚀,削弱",
+   "options": [
+    "精确的,准确的",
+    "有能力的",
+    "培养,耕作"
+   ],
+   "sentence": "The word \"erode\" often appears in exams.",
+   "sentenceCn": "「erode」这个词常在考试中出现。",
+   "image": "words/erode.png"
+  },
+  {
+   "id": "w250",
+   "word": "essential",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "必要的,本质的",
+   "options": [
+    "澄清,阐明",
+    "推断,演绎",
+    "流行病"
+   ],
+   "sentence": "The word \"essential\" often appears in exams.",
+   "sentenceCn": "「essential」这个词常在考试中出现。",
+   "image": "words/essential.png"
+  },
+  {
+   "id": "w251",
+   "word": "evacuate",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "疏散,撤离",
+   "options": [
+    "勤奋的,勤勉的",
+    "音乐",
+    "吸收,吸引"
+   ],
+   "sentence": "The word \"evacuate\" often appears in exams.",
+   "sentenceCn": "「evacuate」这个词常在考试中出现。",
+   "image": "words/evacuate.png"
+  },
+  {
+   "id": "w252",
+   "word": "evaluate",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "评估,评价",
+   "options": [
+    "警惕的,谨慎的",
+    "学习",
+    "邻近的,毗连的"
+   ],
+   "sentence": "The word \"evaluate\" often appears in exams.",
+   "sentenceCn": "「evaluate」这个词常在考试中出现。",
+   "image": "words/evaluate.png"
+  },
+  {
+   "id": "w253",
+   "word": "evoke",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "唤起,引起",
+   "options": [
+    "有雄心的,有抱负的",
+    "补偿,弥补",
+    "耗尽,枯竭"
+   ],
+   "sentence": "The word \"evoke\" often appears in exams.",
+   "sentenceCn": "「evoke」这个词常在考试中出现。",
+   "image": "words/evoke.png"
+  },
+  {
+   "id": "w254",
+   "word": "exaggerate",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "夸大,夸张",
+   "options": [
+    "异国的,奇异的",
+    "居住于",
+    "感知,察觉"
+   ],
+   "sentence": "The word \"exaggerate\" often appears in exams.",
+   "sentenceCn": "「exaggerate」这个词常在考试中出现。",
+   "image": "words/exaggerate.png"
+  },
+  {
+   "id": "w255",
+   "word": "exceed",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "超过,胜过",
+   "options": [
+    "派遣,发送",
+    "提取,榨取",
+    "创新,革新"
+   ],
+   "sentence": "The word \"exceed\" often appears in exams.",
+   "sentenceCn": "「exceed」这个词常在考试中出现。",
+   "image": "words/exceed.png"
+  },
+  {
+   "id": "w256",
+   "word": "exclude",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "排除,拒绝",
+   "options": [
+    "激怒,引起",
+    "容忍,忍受",
+    "忧郁,悲伤;adj. 忧郁的"
+   ],
+   "sentence": "The word \"exclude\" often appears in exams.",
+   "sentenceCn": "「exclude」这个词常在考试中出现。",
+   "image": "words/exclude.png"
+  },
+  {
+   "id": "w257",
+   "word": "exempt",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "被免除的",
+   "options": [
+    "提取,榨取",
+    "创新,革新",
+    "保证,发誓"
+   ],
+   "sentence": "The word \"exempt\" often appears in exams.",
+   "sentenceCn": "「exempt」这个词常在考试中出现。",
+   "image": "words/exempt.png"
+  },
+  {
+   "id": "w258",
+   "word": "exert",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "施加,尽力",
+   "options": [
+    "把…归因于",
+    "密谋,共谋",
+    "分散(注意力)"
+   ],
+   "sentence": "The word \"exert\" often appears in exams.",
+   "sentenceCn": "「exert」这个词常在考试中出现。",
+   "image": "words/exert.png"
+  },
+  {
+   "id": "w259",
+   "word": "exotic",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "异国的,奇异的",
+   "options": [
+    "超过,胜过",
+    "放纵,沉溺",
+    "压倒,淹没"
+   ],
+   "sentence": "The word \"exotic\" often appears in exams.",
+   "sentenceCn": "「exotic」这个词常在考试中出现。",
+   "image": "words/exotic.png"
+  },
+  {
+   "id": "w260",
+   "word": "expedite",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "加快,促进",
+   "options": [
+    "热心的,狂热的",
+    "阅读",
+    "采纳,收养"
+   ],
+   "sentence": "The word \"expedite\" often appears in exams.",
+   "sentenceCn": "「expedite」这个词常在考试中出现。",
+   "image": "words/expedite.png"
+  },
+  {
+   "id": "w261",
+   "word": "explicit",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "明确的,清楚的",
+   "options": [
+    "学生",
+    "喜欢",
+    "呼吁,上诉"
+   ],
+   "sentence": "The word \"explicit\" often appears in exams.",
+   "sentenceCn": "「explicit」这个词常在考试中出现。",
+   "image": "words/explicit.png"
+  },
+  {
+   "id": "w262",
+   "word": "exploit",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "利用,开发",
+   "options": [
+    "努力,奋斗",
+    "居民,住户",
+    "雄辩的,有说服力的"
+   ],
+   "sentence": "The word \"exploit\" often appears in exams.",
+   "sentenceCn": "「exploit」这个词常在考试中出现。",
+   "image": "words/exploit.png"
+  },
+  {
+   "id": "w263",
+   "word": "extract",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "提取,榨取",
+   "options": [
+    "取回,检索",
+    "君主,帝王",
+    "仔细审查,细看"
+   ],
+   "sentence": "The word \"extract\" often appears in exams.",
+   "sentenceCn": "「extract」这个词常在考试中出现。",
+   "image": "words/extract.png"
+  },
+  {
+   "id": "w264",
+   "word": "fabricate",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "捏造,制造",
+   "options": [
+    "邻近的,毗连的",
+    "珍爱,怀有",
+    "欺骗"
+   ],
+   "sentence": "The word \"fabricate\" often appears in exams.",
+   "sentenceCn": "「fabricate」这个词常在考试中出现。",
+   "image": "words/fabricate.png"
+  },
+  {
+   "id": "w265",
+   "word": "facilitate",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "促进,使便利",
+   "options": [
+    "疏散,撤离",
+    "激励,动机",
+    "过时的,废弃的"
+   ],
+   "sentence": "The word \"facilitate\" often appears in exams.",
+   "sentenceCn": "「facilitate」这个词常在考试中出现。",
+   "image": "words/facilitate.png"
+  },
+  {
+   "id": "w266",
+   "word": "feasible",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "可行的",
+   "options": [
+    "坦率的,直言的",
+    "学校",
+    "睡觉"
+   ],
+   "sentence": "The word \"feasible\" often appears in exams.",
+   "sentenceCn": "「feasible」这个词常在考试中出现。",
+   "image": "words/feasible.png"
+  },
+  {
+   "id": "w267",
+   "word": "fluctuate",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "波动,起伏",
+   "options": [
+    "补偿,弥补",
+    "耗尽,枯竭",
+    "评估,评价"
+   ],
+   "sentence": "The word \"fluctuate\" often appears in exams.",
+   "sentenceCn": "「fluctuate」这个词常在考试中出现。",
+   "image": "words/fluctuate.png"
+  },
+  {
+   "id": "w268",
+   "word": "foster",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "培养,促进",
+   "options": [
+    "利用,开发",
+    "创新,革新",
+    "保证,发誓"
+   ],
+   "sentence": "The word \"foster\" often appears in exams.",
+   "sentenceCn": "「foster」这个词常在考试中出现。",
+   "image": "words/foster.png"
+  },
+  {
+   "id": "w269",
+   "word": "fulfil",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "履行,实现",
+   "options": [
+    "使丰富,使富裕",
+    "点燃,引发",
+    "减轻,缓和"
+   ],
+   "sentence": "The word \"fulfil\" often appears in exams.",
+   "sentenceCn": "「fulfil」这个词常在考试中出现。",
+   "image": "words/fulfil.png"
+  },
+  {
+   "id": "w270",
+   "word": "fundamental",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "基本的,根本的",
+   "options": [
+    "同时的",
+    "浮雕玉石;客串",
+    "模棱两可的,含糊的"
+   ],
+   "sentence": "The word \"fundamental\" often appears in exams.",
+   "sentenceCn": "「fundamental」这个词常在考试中出现。",
+   "image": "words/fundamental.png"
+  },
+  {
+   "id": "w271",
+   "word": "generate",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "产生,生成",
+   "options": [
+    "模棱两可的,含糊的",
+    "昨天",
+    "冷的"
+   ],
+   "sentence": "The word \"generate\" often appears in exams.",
+   "sentenceCn": "「generate」这个词常在考试中出现。",
+   "image": "words/generate.png"
+  },
+  {
+   "id": "w272",
+   "word": "glimpse",
+   "phonetic": "",
+   "pos": "n.",
+   "meaning": "一瞥",
+   "options": [
+    "加强,增援",
+    "模糊的,含糊的",
+    "坦率的,直言的"
+   ],
+   "sentence": "The word \"glimpse\" often appears in exams.",
+   "sentenceCn": "「glimpse」这个词常在考试中出现。",
+   "image": "words/glimpse.png"
+  },
+  {
+   "id": "w273",
+   "word": "gloomy",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "阴郁的,悲观的",
+   "options": [
+    "可行的",
+    "干预,介入",
+    "先于,领先"
+   ],
+   "sentence": "The word \"gloomy\" often appears in exams.",
+   "sentenceCn": "「gloomy」这个词常在考试中出现。",
+   "image": "words/gloomy.png"
+  },
+  {
+   "id": "w274",
+   "word": "gorgeous",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "华丽的,极好的",
+   "options": [
+    "小的",
+    "容易的",
+    "达到,获得"
+   ],
+   "sentence": "The word \"gorgeous\" often appears in exams.",
+   "sentenceCn": "「gorgeous」这个词常在考试中出现。",
+   "image": "words/gorgeous.png"
+  },
+  {
+   "id": "w275",
+   "word": "gracious",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "亲切的,优雅的",
+   "options": [
+    "书;v. 预订",
+    "走,散步",
+    "分配,拨给"
+   ],
+   "sentence": "The word \"gracious\" often appears in exams.",
+   "sentenceCn": "「gracious」这个词常在考试中出现。",
+   "image": "words/gracious.png"
+  },
+  {
+   "id": "w276",
+   "word": "hamper",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "妨碍,阻碍",
+   "options": [
+    "强调",
+    "遗产,传统",
+    "放大,夸大"
+   ],
+   "sentence": "The word \"hamper\" often appears in exams.",
+   "sentenceCn": "「hamper」这个词常在考试中出现。",
+   "image": "words/hamper.png"
+  },
+  {
+   "id": "w277",
+   "word": "hazard",
+   "phonetic": "",
+   "pos": "n.",
+   "meaning": "危险,危害",
+   "options": [
+    "拥抱,接受",
+    "华丽的,极好的",
+    "证明…正当,辩护"
+   ],
+   "sentence": "The word \"hazard\" often appears in exams.",
+   "sentenceCn": "「hazard」这个词常在考试中出现。",
+   "image": "words/hazard.png"
+  },
+  {
+   "id": "w278",
+   "word": "heritage",
+   "phonetic": "",
+   "pos": "n.",
+   "meaning": "遗产,传统",
+   "options": [
+    "节俭的,朴素的",
+    "今天",
+    "年轻的"
+   ],
+   "sentence": "The word \"heritage\" often appears in exams.",
+   "sentenceCn": "「heritage」这个词常在考试中出现。",
+   "image": "words/heritage.png"
+  },
+  {
+   "id": "w279",
+   "word": "hinder",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "阻碍,妨碍",
+   "options": [
+    "拥抱,接受",
+    "华丽的,极好的",
+    "证明…正当,辩护"
+   ],
+   "sentence": "The word \"hinder\" often appears in exams.",
+   "sentenceCn": "「hinder」这个词常在考试中出现。",
+   "image": "words/hinder.png"
+  },
+  {
+   "id": "w280",
+   "word": "humble",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "谦逊的,卑微的",
+   "options": [
+    "强调",
+    "危险,危害",
+    "放大,夸大"
+   ],
+   "sentence": "The word \"humble\" often appears in exams.",
+   "sentenceCn": "「humble」这个词常在考试中出现。",
+   "image": "words/humble.png"
+  },
+  {
+   "id": "w281",
+   "word": "hypothesis",
+   "phonetic": "",
+   "pos": "n.",
+   "meaning": "假设,假说",
+   "options": [
+    "隔离,孤立",
+    "突出的,著名的",
+    "维持,支撑"
+   ],
+   "sentence": "The word \"hypothesis\" often appears in exams.",
+   "sentenceCn": "「hypothesis」这个词常在考试中出现。",
+   "image": "words/hypothesis.png"
+  },
+  {
+   "id": "w282",
+   "word": "identical",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "完全相同的",
+   "options": [
+    "任意的,专断的",
+    "隐藏,隐瞒",
+    "设计,想出"
+   ],
+   "sentence": "The word \"identical\" often appears in exams.",
+   "sentenceCn": "「identical」这个词常在考试中出现。",
+   "image": "words/identical.png"
+  },
+  {
+   "id": "w283",
+   "word": "ignite",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "点燃,引发",
+   "options": [
+    "提高,增强",
+    "谦逊的,卑微的",
+    "边缘的,微小的"
+   ],
+   "sentence": "The word \"ignite\" often appears in exams.",
+   "sentenceCn": "「ignite」这个词常在考试中出现。",
+   "image": "words/ignite.png"
+  },
+  {
+   "id": "w284",
+   "word": "illuminate",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "照亮,阐明",
+   "options": [
+    "假设,假说",
+    "调解,斡旋",
+    "驳斥,反驳"
+   ],
+   "sentence": "The word \"illuminate\" often appears in exams.",
+   "sentenceCn": "「illuminate」这个词常在考试中出现。",
+   "image": "words/illuminate.png"
+  },
+  {
+   "id": "w285",
+   "word": "imitate",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "模仿",
+   "options": [
+    "认为,估计",
+    "琐碎的,不重要的",
+    "协调;n. 坐标"
+   ],
+   "sentence": "The word \"imitate\" often appears in exams.",
+   "sentenceCn": "「imitate」这个词常在考试中出现。",
+   "image": "words/imitate.png"
+  },
+  {
+   "id": "w286",
+   "word": "immense",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "巨大的",
+   "options": [
+    "驳斥,反驳",
+    "利用",
+    "丰富的,充裕的"
+   ],
+   "sentence": "The word \"immense\" often appears in exams.",
+   "sentenceCn": "「immense」这个词常在考试中出现。",
+   "image": "words/immense.png"
+  },
+  {
+   "id": "w287",
+   "word": "impair",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "损害,削弱",
+   "options": [
+    "使丰富,使富裕",
+    "完全相同的",
+    "减轻,缓和"
+   ],
+   "sentence": "The word \"impair\" often appears in exams.",
+   "sentenceCn": "「impair」这个词常在考试中出现。",
+   "image": "words/impair.png"
+  },
+  {
+   "id": "w288",
+   "word": "impose",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "强加,征收",
+   "options": [
+    "排除,拒绝",
+    "不可避免的",
+    "悖论,矛盾"
+   ],
+   "sentence": "The word \"impose\" often appears in exams.",
+   "sentenceCn": "「impose」这个词常在考试中出现。",
+   "image": "words/impose.png"
+  },
+  {
+   "id": "w289",
+   "word": "incentive",
+   "phonetic": "",
+   "pos": "n.",
+   "meaning": "激励,动机",
+   "options": [
+    "停止,终止",
+    "腐烂,衰败",
+    "巨大的"
+   ],
+   "sentence": "The word \"incentive\" often appears in exams.",
+   "sentenceCn": "「incentive」这个词常在考试中出现。",
+   "image": "words/incentive.png"
+  },
+  {
+   "id": "w290",
+   "word": "incline",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "倾向,倾斜",
+   "options": [
+    "占主导的,显著的",
+    "足够",
+    "花;v. 开花,兴旺"
+   ],
+   "sentence": "The word \"incline\" often appears in exams.",
+   "sentenceCn": "「incline」这个词常在考试中出现。",
+   "image": "words/incline.png"
+  },
+  {
+   "id": "w291",
+   "word": "indispensable",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "不可或缺的",
+   "options": [
+    "承认,让步",
+    "减少,缩小",
+    "施加,尽力"
+   ],
+   "sentence": "The word \"indispensable\" often appears in exams.",
+   "sentenceCn": "「indispensable」这个词常在考试中出现。",
+   "image": "words/indispensable.png"
+  },
+  {
+   "id": "w292",
+   "word": "induce",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "诱导,引起",
+   "options": [
+    "动态的,有活力的",
+    "一瞥",
+    "隔离,孤立"
+   ],
+   "sentence": "The word \"induce\" often appears in exams.",
+   "sentenceCn": "「induce」这个词常在考试中出现。",
+   "image": "words/induce.png"
+  },
+  {
+   "id": "w293",
+   "word": "indulge",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "放纵,沉溺",
+   "options": [
+    "推进,驱使",
+    "终止,结束",
+    "芳香的"
+   ],
+   "sentence": "The word \"indulge\" often appears in exams.",
+   "sentenceCn": "「indulge」这个词常在考试中出现。",
+   "image": "words/indulge.png"
+  },
+  {
+   "id": "w294",
+   "word": "inevitable",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "不可避免的",
+   "options": [
+    "捏造,制造",
+    "整合,使一体化",
+    "沉思,考虑"
+   ],
+   "sentence": "The word \"inevitable\" often appears in exams.",
+   "sentenceCn": "「inevitable」这个词常在考试中出现。",
+   "image": "words/inevitable.png"
+  },
+  {
+   "id": "w295",
+   "word": "infer",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "推断",
+   "options": [
+    "采纳,收养",
+    "循环,流通",
+    "奉献,致力于"
+   ],
+   "sentence": "The word \"infer\" often appears in exams.",
+   "sentenceCn": "「infer」这个词常在考试中出现。",
+   "image": "words/infer.png"
+  },
+  {
+   "id": "w296",
+   "word": "inhabit",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "居住于",
+   "options": [
+    "沉思,考虑",
+    "刺激,激励",
+    "潜力,潜能;adj. 潜在的"
+   ],
+   "sentence": "The word \"inhabit\" often appears in exams.",
+   "sentenceCn": "「inhabit」这个词常在考试中出现。",
+   "image": "words/inhabit.png"
+  },
+  {
+   "id": "w297",
+   "word": "inherent",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "固有的,内在的",
+   "options": [
+    "书;v. 预订",
+    "走,散步",
+    "分配,拨给"
+   ],
+   "sentence": "The word \"inherent\" often appears in exams.",
+   "sentenceCn": "「inherent」这个词常在考试中出现。",
+   "image": "words/inherent.png"
+  },
+  {
+   "id": "w298",
+   "word": "inhibit",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "抑制,阻止",
+   "options": [
+    "突出的,著名的",
+    "维持,支撑",
+    "两星期"
+   ],
+   "sentence": "The word \"inhibit\" often appears in exams.",
+   "sentenceCn": "「inhibit」这个词常在考试中出现。",
+   "image": "words/inhibit.png"
+  },
+  {
+   "id": "w299",
+   "word": "initiate",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "开始,发起",
+   "options": [
+    "警惕的,谨慎的",
+    "学习",
+    "邻近的,毗连的"
+   ],
+   "sentence": "The word \"initiate\" often appears in exams.",
+   "sentenceCn": "「initiate」这个词常在考试中出现。",
+   "image": "words/initiate.png"
+  },
+  {
+   "id": "w300",
+   "word": "innovate",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "创新,革新",
+   "options": [
+    "母亲",
+    "打开;adj. 开着的",
+    "口齿清晰的"
+   ],
+   "sentence": "The word \"innovate\" often appears in exams.",
+   "sentenceCn": "「innovate」这个词常在考试中出现。",
+   "image": "words/innovate.png"
+  },
+  {
+   "id": "w301",
+   "word": "insert",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "插入",
+   "options": [
+    "捏造,制造",
+    "整合,使一体化",
+    "沉思,考虑"
+   ],
+   "sentence": "The word \"insert\" often appears in exams.",
+   "sentenceCn": "「insert」这个词常在考试中出现。",
+   "image": "words/insert.png"
+  },
+  {
+   "id": "w302",
+   "word": "integrate",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "整合,使一体化",
+   "options": [
+    "容量,能力",
+    "累积的",
+    "忍受,持久"
+   ],
+   "sentence": "The word \"integrate\" often appears in exams.",
+   "sentenceCn": "「integrate」这个词常在考试中出现。",
+   "image": "words/integrate.png"
+  },
+  {
+   "id": "w303",
+   "word": "intense",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "强烈的,紧张的",
+   "options": [
+    "类似,像",
+    "产生,屈服",
+    "有利可图的,赚钱的"
+   ],
+   "sentence": "The word \"intense\" often appears in exams.",
+   "sentenceCn": "「intense」这个词常在考试中出现。",
+   "image": "words/intense.png"
+  },
+  {
+   "id": "w304",
+   "word": "intervene",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "干预,介入",
+   "options": [
+    "综合的,全面的",
+    "指定,标明",
+    "超过,胜过"
+   ],
+   "sentence": "The word \"intervene\" often appears in exams.",
+   "sentenceCn": "「intervene」这个词常在考试中出现。",
+   "image": "words/intervene.png"
+  },
+  {
+   "id": "w305",
+   "word": "intricate",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "复杂的,错综的",
+   "options": [
+    "容量,能力",
+    "累积的",
+    "忍受,持久"
+   ],
+   "sentence": "The word \"intricate\" often appears in exams.",
+   "sentenceCn": "「intricate」这个词常在考试中出现。",
+   "image": "words/intricate.png"
+  },
+  {
+   "id": "w306",
+   "word": "intrigue",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "激起兴趣,密谋",
+   "options": [
+    "悲伤的",
+    "停止",
+    "断言,主张"
+   ],
+   "sentence": "The word \"intrigue\" often appears in exams.",
+   "sentenceCn": "「intrigue」这个词常在考试中出现。",
+   "image": "words/intrigue.png"
+  },
+  {
+   "id": "w307",
+   "word": "intrinsic",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "内在的,固有的",
+   "options": [
+    "承认,让步",
+    "减少,缩小",
+    "施加,尽力"
+   ],
+   "sentence": "The word \"intrinsic\" often appears in exams.",
+   "sentenceCn": "「intrinsic」这个词常在考试中出现。",
+   "image": "words/intrinsic.png"
+  },
+  {
+   "id": "w308",
+   "word": "invade",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "入侵,侵犯",
+   "options": [
+    "耐用的,持久的",
+    "产生,生成",
+    "调查,研究"
+   ],
+   "sentence": "The word \"invade\" often appears in exams.",
+   "sentenceCn": "「invade」这个词常在考试中出现。",
+   "image": "words/invade.png"
+  },
+  {
+   "id": "w309",
+   "word": "investigate",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "调查,研究",
+   "options": [
+    "利用",
+    "丰富的,充裕的",
+    "朋友"
+   ],
+   "sentence": "The word \"investigate\" often appears in exams.",
+   "sentenceCn": "「investigate」这个词常在考试中出现。",
+   "image": "words/investigate.png"
+  },
+  {
+   "id": "w310",
+   "word": "isolate",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "隔离,孤立",
+   "options": [
+    "加强,增援",
+    "模糊的,含糊的",
+    "坦率的,直言的"
+   ],
+   "sentence": "The word \"isolate\" often appears in exams.",
+   "sentenceCn": "「isolate」这个词常在考试中出现。",
+   "image": "words/isolate.png"
+  },
+  {
+   "id": "w311",
+   "word": "jeopardize",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "危及,损害",
+   "options": [
+    "华丽的,极好的",
+    "证明…正当,辩护",
+    "繁荣,兴旺"
+   ],
+   "sentence": "The word \"jeopardize\" often appears in exams.",
+   "sentenceCn": "「jeopardize」这个词常在考试中出现。",
+   "image": "words/jeopardize.png"
+  },
+  {
+   "id": "w312",
+   "word": "justify",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "证明…正当,辩护",
+   "options": [
+    "繁荣,茁壮成长",
+    "真正的,真诚的",
+    "热心的,狂热的"
+   ],
+   "sentence": "The word \"justify\" often appears in exams.",
+   "sentenceCn": "「justify」这个词常在考试中出现。",
+   "image": "words/justify.png"
+  },
+  {
+   "id": "w313",
+   "word": "legitimate",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "合法的,正当的",
+   "options": [
+    "可行的",
+    "强烈的,紧张的",
+    "先于,领先"
+   ],
+   "sentence": "The word \"legitimate\" often appears in exams.",
+   "sentenceCn": "「legitimate」这个词常在考试中出现。",
+   "image": "words/legitimate.png"
+  },
+  {
+   "id": "w314",
+   "word": "linger",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "逗留,徘徊",
+   "options": [
+    "巨大的",
+    "假设,假说",
+    "调解,斡旋"
+   ],
+   "sentence": "The word \"linger\" often appears in exams.",
+   "sentenceCn": "「linger」这个词常在考试中出现。",
+   "image": "words/linger.png"
+  },
+  {
+   "id": "w315",
+   "word": "magnify",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "放大,夸大",
+   "options": [
+    "追求,继续",
+    "转变,改造",
+    "批判的;关键的,危急的"
+   ],
+   "sentence": "The word \"magnify\" often appears in exams.",
+   "sentenceCn": "「magnify」这个词常在考试中出现。",
+   "image": "words/magnify.png"
+  },
+  {
+   "id": "w316",
+   "word": "maintain",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "维持,主张",
+   "options": [
+    "漠不关心的,冷淡的",
+    "计算机,电脑",
+    "陪伴,伴随"
+   ],
+   "sentence": "The word \"maintain\" often appears in exams.",
+   "sentenceCn": "「maintain」这个词常在考试中出现。",
+   "image": "words/maintain.png"
+  },
+  {
+   "id": "w317",
+   "word": "manipulate",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "操纵,控制",
+   "options": [
+    "危险,危害",
+    "逗留,徘徊",
+    "激进的,根本的"
+   ],
+   "sentence": "The word \"manipulate\" often appears in exams.",
+   "sentenceCn": "「manipulate」这个词常在考试中出现。",
+   "image": "words/manipulate.png"
+  },
+  {
+   "id": "w318",
+   "word": "marginal",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "边缘的,微小的",
+   "options": [
+    "模棱两可的,含糊的",
+    "昨天",
+    "冷的"
+   ],
+   "sentence": "The word \"marginal\" often appears in exams.",
+   "sentenceCn": "「marginal」这个词常在考试中出现。",
+   "image": "words/marginal.png"
+  },
+  {
+   "id": "w319",
+   "word": "mediate",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "调解,斡旋",
+   "options": [
+    "感知,察觉",
+    "强健的,稳健的",
+    "默认;违约,缺席"
+   ],
+   "sentence": "The word \"mediate\" often appears in exams.",
+   "sentenceCn": "「mediate」这个词常在考试中出现。",
+   "image": "words/mediate.png"
+  },
+  {
+   "id": "w320",
+   "word": "mitigate",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "减轻,缓和",
+   "options": [
+    "多才多艺的,多用途的",
+    "工作;n. 工作",
+    "足够的,适当的"
+   ],
+   "sentence": "The word \"mitigate\" often appears in exams.",
+   "sentenceCn": "「mitigate」这个词常在考试中出现。",
+   "image": "words/mitigate.png"
+  },
+  {
+   "id": "w321",
+   "word": "modify",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "修改,更改",
+   "options": [
+    "疏散,撤离",
+    "强加,征收",
+    "过时的,废弃的"
+   ],
+   "sentence": "The word \"modify\" often appears in exams.",
+   "sentenceCn": "「modify」这个词常在考试中出现。",
+   "image": "words/modify.png"
+  },
+  {
+   "id": "w322",
+   "word": "monitor",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "监控,监测",
+   "options": [
+    "肤浅的,表面的",
+    "饥荒",
+    "永久的,持续不断的"
+   ],
+   "sentence": "The word \"monitor\" often appears in exams.",
+   "sentenceCn": "「monitor」这个词常在考试中出现。",
+   "image": "words/monitor.png"
+  },
+  {
+   "id": "w323",
+   "word": "negligible",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "微不足道的",
+   "options": [
+    "流行病",
+    "照亮,阐明",
+    "修改,更改"
+   ],
+   "sentence": "The word \"negligible\" often appears in exams.",
+   "sentenceCn": "「negligible」这个词常在考试中出现。",
+   "image": "words/negligible.png"
+  },
+  {
+   "id": "w324",
+   "word": "nourish",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "滋养,养育",
+   "options": [
+    "肤浅的,表面的",
+    "饥荒",
+    "永久的,持续不断的"
+   ],
+   "sentence": "The word \"nourish\" often appears in exams.",
+   "sentenceCn": "「nourish」这个词常在考试中出现。",
+   "image": "words/nourish.png"
+  },
+  {
+   "id": "w325",
+   "word": "obscure",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "晦涩的,模糊的",
+   "options": [
+    "相关的,切题的",
+    "生动的,鲜明的",
+    "精心制作的,复杂的;v. 详述"
+   ],
+   "sentence": "The word \"obscure\" often appears in exams.",
+   "sentenceCn": "「obscure」这个词常在考试中出现。",
+   "image": "words/obscure.png"
+  },
+  {
+   "id": "w326",
+   "word": "obsolete",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "过时的,废弃的",
+   "options": [
+    "书;v. 预订",
+    "走,散步",
+    "分配,拨给"
+   ],
+   "sentence": "The word \"obsolete\" often appears in exams.",
+   "sentenceCn": "「obsolete」这个词常在考试中出现。",
+   "image": "words/obsolete.png"
+  },
+  {
+   "id": "w327",
+   "word": "optimistic",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "乐观的",
+   "options": [
+    "抑制,阻止",
+    "现象",
+    "同时的"
+   ],
+   "sentence": "The word \"optimistic\" often appears in exams.",
+   "sentenceCn": "「optimistic」这个词常在考试中出现。",
+   "image": "words/optimistic.png"
+  },
+  {
+   "id": "w328",
+   "word": "originate",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "起源,发起",
+   "options": [
+    "有能力的",
+    "培养,耕作",
+    "支持,背书"
+   ],
+   "sentence": "The word \"originate\" often appears in exams.",
+   "sentenceCn": "「originate」这个词常在考试中出现。",
+   "image": "words/originate.png"
+  },
+  {
+   "id": "w329",
+   "word": "outrage",
+   "phonetic": "",
+   "pos": "n.",
+   "meaning": "暴行,愤怒",
+   "options": [
+    "居住,存在于",
+    "谨慎的,精明的",
+    "臭名昭著的"
+   ],
+   "sentence": "The word \"outrage\" often appears in exams.",
+   "sentenceCn": "「outrage」这个词常在考试中出现。",
+   "image": "words/outrage.png"
+  },
+  {
+   "id": "w330",
+   "word": "overwhelm",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "压倒,淹没",
+   "options": [
+    "保存,节约",
+    "扰乱,中断",
+    "捏造,制造"
+   ],
+   "sentence": "The word \"overwhelm\" often appears in exams.",
+   "sentenceCn": "「overwhelm」这个词常在考试中出现。",
+   "image": "words/overwhelm.png"
+  },
+  {
+   "id": "w331",
+   "word": "paradox",
+   "phonetic": "",
+   "pos": "n.",
+   "meaning": "悖论,矛盾",
+   "options": [
+    "提炼,改进",
+    "统一的,一致的",
+    "对话,谈话"
+   ],
+   "sentence": "The word \"paradox\" often appears in exams.",
+   "sentenceCn": "「paradox」这个词常在考试中出现。",
+   "image": "words/paradox.png"
+  },
+  {
+   "id": "w332",
+   "word": "penetrate",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "穿透,渗透",
+   "options": [
+    "澄清,阐明",
+    "推断,演绎",
+    "流行病"
+   ],
+   "sentence": "The word \"penetrate\" often appears in exams.",
+   "sentenceCn": "「penetrate」这个词常在考试中出现。",
+   "image": "words/penetrate.png"
+  },
+  {
+   "id": "w333",
+   "word": "perceive",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "感知,察觉",
+   "options": [
+    "有韧性的,能恢复的",
+    "城市",
+    "精确的,准确的"
+   ],
+   "sentence": "The word \"perceive\" often appears in exams.",
+   "sentenceCn": "「perceive」这个词常在考试中出现。",
+   "image": "words/perceive.png"
+  },
+  {
+   "id": "w334",
+   "word": "persist",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "坚持,持续",
+   "options": [
+    "超越,胜过",
+    "盛宴,宴会;节日",
+    "怀疑的,多疑的"
+   ],
+   "sentence": "The word \"persist\" often appears in exams.",
+   "sentenceCn": "「persist」这个词常在考试中出现。",
+   "image": "words/persist.png"
+  },
+  {
+   "id": "w335",
+   "word": "pervasive",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "普遍的,弥漫的",
+   "options": [
+    "谴责,判刑",
+    "辨别,察觉",
+    "加快,促进"
+   ],
+   "sentence": "The word \"pervasive\" often appears in exams.",
+   "sentenceCn": "「pervasive」这个词常在考试中出现。",
+   "image": "words/pervasive.png"
+  },
+  {
+   "id": "w336",
+   "word": "phenomenon",
+   "phonetic": "",
+   "pos": "n.",
+   "meaning": "现象",
+   "options": [
+    "照亮,阐明",
+    "修改,更改",
+    "相关的,切题的"
+   ],
+   "sentence": "The word \"phenomenon\" often appears in exams.",
+   "sentenceCn": "「phenomenon」这个词常在考试中出现。",
+   "image": "words/phenomenon.png"
+  },
+  {
+   "id": "w337",
+   "word": "pledge",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "保证,发誓",
+   "options": [
+    "扭曲,歪曲",
+    "促进,使便利",
+    "整合,使一体化"
+   ],
+   "sentence": "The word \"pledge\" often appears in exams.",
+   "sentenceCn": "「pledge」这个词常在考试中出现。",
+   "image": "words/pledge.png"
+  },
+  {
+   "id": "w338",
+   "word": "plunge",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "猛跌,投入",
+   "options": [
+    "夸大,夸张",
+    "不可或缺的",
+    "起源,发起"
+   ],
+   "sentence": "The word \"plunge\" often appears in exams.",
+   "sentenceCn": "「plunge」这个词常在考试中出现。",
+   "image": "words/plunge.png"
+  },
+  {
+   "id": "w339",
+   "word": "ponder",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "沉思,考虑",
+   "options": [
+    "唤起,引起",
+    "倾向,倾斜",
+    "乐观的"
+   ],
+   "sentence": "The word \"ponder\" often appears in exams.",
+   "sentenceCn": "「ponder」这个词常在考试中出现。",
+   "image": "words/ponder.png"
+  },
+  {
+   "id": "w340",
+   "word": "portray",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "描绘,刻画",
+   "options": [
+    "传送,传播",
+    "著名的,有声望的",
+    "世界;领域"
+   ],
+   "sentence": "The word \"portray\" often appears in exams.",
+   "sentenceCn": "「portray」这个词常在考试中出现。",
+   "image": "words/portray.png"
+  },
+  {
+   "id": "w341",
+   "word": "precede",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "先于,领先",
+   "options": [
+    "悖论,矛盾",
+    "严格的,严谨的",
+    "(使)溶解"
+   ],
+   "sentence": "The word \"precede\" often appears in exams.",
+   "sentenceCn": "「precede」这个词常在考试中出现。",
+   "image": "words/precede.png"
+  },
+  {
+   "id": "w342",
+   "word": "predominant",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "占主导的,显著的",
+   "options": [
+    "破坏,削弱",
+    "商品,货品;v. 推销",
+    "书;v. 预订"
+   ],
+   "sentence": "The word \"predominant\" often appears in exams.",
+   "sentenceCn": "「predominant」这个词常在考试中出现。",
+   "image": "words/predominant.png"
+  },
+  {
+   "id": "w343",
+   "word": "prevail",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "盛行,占优势",
+   "options": [
+    "相关的,切题的",
+    "生动的,鲜明的",
+    "精心制作的,复杂的;v. 详述"
+   ],
+   "sentence": "The word \"prevail\" often appears in exams.",
+   "sentenceCn": "「prevail」这个词常在考试中出现。",
+   "image": "words/prevail.png"
+  },
+  {
+   "id": "w344",
+   "word": "proclaim",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "宣布,声明",
+   "options": [
+    "警惕的,谨慎的",
+    "学习",
+    "邻近的,毗连的"
+   ],
+   "sentence": "The word \"proclaim\" often appears in exams.",
+   "sentenceCn": "「proclaim」这个词常在考试中出现。",
+   "image": "words/proclaim.png"
+  },
+  {
+   "id": "w345",
+   "word": "profound",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "深刻的,深远的",
+   "options": [
+    "夜晚",
+    "旧的,老的",
+    "真正的,可信的"
+   ],
+   "sentence": "The word \"profound\" often appears in exams.",
+   "sentenceCn": "「profound」这个词常在考试中出现。",
+   "image": "words/profound.png"
+  },
+  {
+   "id": "w346",
+   "word": "prohibit",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "禁止",
+   "options": [
+    "老师",
+    "爱;n. 爱",
+    "明显的,表面的"
+   ],
+   "sentence": "The word \"prohibit\" often appears in exams.",
+   "sentenceCn": "「prohibit」这个词常在考试中出现。",
+   "image": "words/prohibit.png"
+  },
+  {
+   "id": "w347",
+   "word": "prominent",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "突出的,著名的",
+   "options": [
+    "限制,约束",
+    "分发,分布",
+    "波动,起伏"
+   ],
+   "sentence": "The word \"prominent\" often appears in exams.",
+   "sentenceCn": "「prominent」这个词常在考试中出现。",
+   "image": "words/prominent.png"
+  },
+  {
+   "id": "w348",
+   "word": "propel",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "推进,驱使",
+   "options": [
+    "明确的,清楚的",
+    "抑制,阻止",
+    "普遍的,弥漫的"
+   ],
+   "sentence": "The word \"propel\" often appears in exams.",
+   "sentenceCn": "「propel」这个词常在考试中出现。",
+   "image": "words/propel.png"
+  },
+  {
+   "id": "w349",
+   "word": "prosper",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "繁荣,兴旺",
+   "options": [
+    "暂停,悬挂",
+    "精确地,恰好",
+    "冗长乏味的,枯燥的"
+   ],
+   "sentence": "The word \"prosper\" often appears in exams.",
+   "sentenceCn": "「prosper」这个词常在考试中出现。",
+   "image": "words/prosper.png"
+  },
+  {
+   "id": "w350",
+   "word": "provoke",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "激怒,引起",
+   "options": [
+    "微妙的,细微的",
+    "离开,启程;背离",
+    "强大的,令人敬畏的"
+   ],
+   "sentence": "The word \"provoke\" often appears in exams.",
+   "sentenceCn": "「provoke」这个词常在考试中出现。",
+   "image": "words/provoke.png"
+  },
+  {
+   "id": "w351",
+   "word": "pursue",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "追求,继续",
+   "options": [
+    "阻碍,妨碍",
+    "维持,主张",
+    "调和,使和解"
+   ],
+   "sentence": "The word \"pursue\" often appears in exams.",
+   "sentenceCn": "「pursue」这个词常在考试中出现。",
+   "image": "words/pursue.png"
+  },
+  {
+   "id": "w352",
+   "word": "radical",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "激进的,根本的",
+   "options": [
+    "微不足道的",
+    "使成为,给予",
+    "抵挡,经受"
+   ],
+   "sentence": "The word \"radical\" often appears in exams.",
+   "sentenceCn": "「radical」这个词常在考试中出现。",
+   "image": "words/radical.png"
+  },
+  {
+   "id": "w353",
+   "word": "reckon",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "认为,估计",
+   "options": [
+    "使丰富,使富裕",
+    "完全相同的",
+    "调解,斡旋"
+   ],
+   "sentence": "The word \"reckon\" often appears in exams.",
+   "sentenceCn": "「reckon」这个词常在考试中出现。",
+   "image": "words/reckon.png"
+  },
+  {
+   "id": "w354",
+   "word": "reconcile",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "调和,使和解",
+   "options": [
+    "假定,承担",
+    "保存,节约",
+    "扰乱,中断"
+   ],
+   "sentence": "The word \"reconcile\" often appears in exams.",
+   "sentenceCn": "「reconcile」这个词常在考试中出现。",
+   "image": "words/reconcile.png"
+  },
+  {
+   "id": "w355",
+   "word": "refine",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "提炼,改进",
+   "options": [
+    "有资格的",
+    "阴郁的,悲观的",
+    "隔离,孤立"
+   ],
+   "sentence": "The word \"refine\" often appears in exams.",
+   "sentenceCn": "「refine」这个词常在考试中出现。",
+   "image": "words/refine.png"
+  },
+  {
+   "id": "w356",
+   "word": "refute",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "驳斥,反驳",
+   "options": [
+    "夸大,夸张",
+    "不可或缺的",
+    "起源,发起"
+   ],
+   "sentence": "The word \"refute\" often appears in exams.",
+   "sentenceCn": "「refute」这个词常在考试中出现。",
+   "image": "words/refute.png"
+  },
+  {
+   "id": "w357",
+   "word": "reinforce",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "加强,增援",
+   "options": [
+    "促进,提高",
+    "合作,协作",
+    "有资格的"
+   ],
+   "sentence": "The word \"reinforce\" often appears in exams.",
+   "sentenceCn": "「reinforce」这个词常在考试中出现。",
+   "image": "words/reinforce.png"
+  },
+  {
+   "id": "w358",
+   "word": "reject",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "拒绝,排斥",
+   "options": [
+    "强调",
+    "危险,危害",
+    "逗留,徘徊"
+   ],
+   "sentence": "The word \"reject\" often appears in exams.",
+   "sentenceCn": "「reject」这个词常在考试中出现。",
+   "image": "words/reject.png"
+  },
+  {
+   "id": "w359",
+   "word": "relevant",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "相关的,切题的",
+   "options": [
+    "老师",
+    "爱;n. 爱",
+    "明显的,表面的"
+   ],
+   "sentence": "The word \"relevant\" often appears in exams.",
+   "sentenceCn": "「relevant」这个词常在考试中出现。",
+   "image": "words/relevant.png"
+  },
+  {
+   "id": "w360",
+   "word": "reluctant",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "不情愿的",
+   "options": [
+    "隐藏,隐瞒",
+    "设计,想出",
+    "被免除的"
+   ],
+   "sentence": "The word \"reluctant\" often appears in exams.",
+   "sentenceCn": "「reluctant」这个词常在考试中出现。",
+   "image": "words/reluctant.png"
+  },
+  {
+   "id": "w361",
+   "word": "render",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "使成为,给予",
+   "options": [
+    "提高,增强",
+    "谦逊的,卑微的",
+    "操纵,控制"
+   ],
+   "sentence": "The word \"render\" often appears in exams.",
+   "sentenceCn": "「render」这个词常在考试中出现。",
+   "image": "words/render.png"
+  },
+  {
+   "id": "w362",
+   "word": "resemble",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "类似,像",
+   "options": [
+    "雄辩的,有说服力的",
+    "电影",
+    "抽象的"
+   ],
+   "sentence": "The word \"resemble\" often appears in exams.",
+   "sentenceCn": "「resemble」这个词常在考试中出现。",
+   "image": "words/resemble.png"
+  },
+  {
+   "id": "w363",
+   "word": "reside",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "居住,存在于",
+   "options": [
+    "杰出的,著名的",
+    "妨碍,阻碍",
+    "合法的,正当的"
+   ],
+   "sentence": "The word \"reside\" often appears in exams.",
+   "sentenceCn": "「reside」这个词常在考试中出现。",
+   "image": "words/reside.png"
+  },
+  {
+   "id": "w364",
+   "word": "restore",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "恢复,修复",
+   "options": [
+    "刺激,激励",
+    "潜力,潜能;adj. 潜在的",
+    "勤奋的,勤勉的"
+   ],
+   "sentence": "The word \"restore\" often appears in exams.",
+   "sentenceCn": "「restore」这个词常在考试中出现。",
+   "image": "words/restore.png"
+  },
+  {
+   "id": "w365",
+   "word": "restrain",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "抑制,约束",
+   "options": [
+    "大的",
+    "困难的",
+    "假定,承担"
+   ],
+   "sentence": "The word \"restrain\" often appears in exams.",
+   "sentenceCn": "「restrain」这个词常在考试中出现。",
+   "image": "words/restrain.png"
+  },
+  {
+   "id": "w366",
+   "word": "retain",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "保留,记住",
+   "options": [
+    "需要,使承担",
+    "点燃,引发",
+    "减轻,缓和"
+   ],
+   "sentence": "The word \"retain\" often appears in exams.",
+   "sentenceCn": "「retain」这个词常在考试中出现。",
+   "image": "words/retain.png"
+  },
+  {
+   "id": "w367",
+   "word": "retrieve",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "取回,检索",
+   "options": [
+    "快乐的,高兴的",
+    "开始",
+    "集合,装配"
+   ],
+   "sentence": "The word \"retrieve\" often appears in exams.",
+   "sentenceCn": "「retrieve」这个词常在考试中出现。",
+   "image": "words/retrieve.png"
+  },
+  {
+   "id": "w368",
+   "word": "reveal",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "揭示,显示",
+   "options": [
+    "忍受,持久",
+    "阻碍,妨碍",
+    "维持,主张"
+   ],
+   "sentence": "The word \"reveal\" often appears in exams.",
+   "sentenceCn": "「reveal」这个词常在考试中出现。",
+   "image": "words/reveal.png"
+  },
+  {
+   "id": "w369",
+   "word": "rigorous",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "严格的,严谨的",
+   "options": [
+    "钱",
+    "适应,改编",
+    "大灾难"
+   ],
+   "sentence": "The word \"rigorous\" often appears in exams.",
+   "sentenceCn": "「rigorous」这个词常在考试中出现。",
+   "image": "words/rigorous.png"
+  },
+  {
+   "id": "w370",
+   "word": "robust",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "强健的,稳健的",
+   "options": [
+    "华丽的,极好的",
+    "危及,损害",
+    "推进,驱使"
+   ],
+   "sentence": "The word \"robust\" often appears in exams.",
+   "sentenceCn": "「robust」这个词常在考试中出现。",
+   "image": "words/robust.png"
+  },
+  {
+   "id": "w371",
+   "word": "scatter",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "散布,驱散",
+   "options": [
+    "使成为,给予",
+    "产生,屈服",
+    "有利可图的,赚钱的"
+   ],
+   "sentence": "The word \"scatter\" often appears in exams.",
+   "sentenceCn": "「scatter」这个词常在考试中出现。",
+   "image": "words/scatter.png"
+  },
+  {
+   "id": "w372",
+   "word": "scrutinize",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "仔细审查",
+   "options": [
+    "调查,研究",
+    "禁止",
+    "维持,支撑"
+   ],
+   "sentence": "The word \"scrutinize\" often appears in exams.",
+   "sentenceCn": "「scrutinize」这个词常在考试中出现。",
+   "image": "words/scrutinize.png"
+  },
+  {
+   "id": "w373",
+   "word": "simultaneous",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "同时的",
+   "options": [
+    "陪伴,伴随",
+    "计算,估计",
+    "可信的"
+   ],
+   "sentence": "The word \"simultaneous\" often appears in exams.",
+   "sentenceCn": "「simultaneous」这个词常在考试中出现。",
+   "image": "words/simultaneous.png"
+  },
+  {
+   "id": "w374",
+   "word": "sophisticated",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "复杂的,老练的",
+   "options": [
+    "至关重要的",
+    "强调",
+    "危险,危害"
+   ],
+   "sentence": "The word \"sophisticated\" often appears in exams.",
+   "sentenceCn": "「sophisticated」这个词常在考试中出现。",
+   "image": "words/sophisticated.png"
+  },
+  {
+   "id": "w375",
+   "word": "spontaneous",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "自发的,自然的",
+   "options": [
+    "两星期",
+    "多才多艺的,多用途的",
+    "工作;n. 工作"
+   ],
+   "sentence": "The word \"spontaneous\" often appears in exams.",
+   "sentenceCn": "「spontaneous」这个词常在考试中出现。",
+   "image": "words/spontaneous.png"
+  },
+  {
+   "id": "w376",
+   "word": "stimulate",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "刺激,激励",
+   "options": [
+    "共识,一致",
+    "驱散,散布",
+    "提取,榨取"
+   ],
+   "sentence": "The word \"stimulate\" often appears in exams.",
+   "sentenceCn": "「stimulate」这个词常在考试中出现。",
+   "image": "words/stimulate.png"
+  },
+  {
+   "id": "w377",
+   "word": "strive",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "努力,奋斗",
+   "options": [
+    "一瞥",
+    "调查,研究",
+    "禁止"
+   ],
+   "sentence": "The word \"strive\" often appears in exams.",
+   "sentenceCn": "「strive」这个词常在考试中出现。",
+   "image": "words/strive.png"
+  },
+  {
+   "id": "w378",
+   "word": "subtle",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "微妙的,细微的",
+   "options": [
+    "施加,尽力",
+    "推断",
+    "穿透,渗透"
+   ],
+   "sentence": "The word \"subtle\" often appears in exams.",
+   "sentenceCn": "「subtle」这个词常在考试中出现。",
+   "image": "words/subtle.png"
+  },
+  {
+   "id": "w379",
+   "word": "suffice",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "足够",
+   "options": [
+    "宣布,声明",
+    "超越,胜过",
+    "盛宴,宴会;节日"
+   ],
+   "sentence": "The word \"suffice\" often appears in exams.",
+   "sentenceCn": "「suffice」这个词常在考试中出现。",
+   "image": "words/suffice.png"
+  },
+  {
+   "id": "w380",
+   "word": "superficial",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "肤浅的,表面的",
+   "options": [
+    "压制,抑制",
+    "伦理学;道德准则",
+    "有韧性的,能恢复的"
+   ],
+   "sentence": "The word \"superficial\" often appears in exams.",
+   "sentenceCn": "「superficial」这个词常在考试中出现。",
+   "image": "words/superficial.png"
+  },
+  {
+   "id": "w381",
+   "word": "suppress",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "压制,抑制",
+   "options": [
+    "睡觉",
+    "预期,期望",
+    "遵从,服从"
+   ],
+   "sentence": "The word \"suppress\" often appears in exams.",
+   "sentenceCn": "「suppress」这个词常在考试中出现。",
+   "image": "words/suppress.png"
+  },
+  {
+   "id": "w382",
+   "word": "surpass",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "超越,胜过",
+   "options": [
+    "传送,传播",
+    "著名的,有声望的",
+    "世界;领域"
+   ],
+   "sentence": "The word \"surpass\" often appears in exams.",
+   "sentenceCn": "「surpass」这个词常在考试中出现。",
+   "image": "words/surpass.png"
+  },
+  {
+   "id": "w383",
+   "word": "suspend",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "暂停,悬挂",
+   "options": [
+    "同时的",
+    "告知收到;承认",
+    "仁慈的,慈善的"
+   ],
+   "sentence": "The word \"suspend\" often appears in exams.",
+   "sentenceCn": "「suspend」这个词常在考试中出现。",
+   "image": "words/suspend.png"
+  },
+  {
+   "id": "w384",
+   "word": "sustain",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "维持,支撑",
+   "options": [
+    "微妙的,细微的",
+    "花;v. 开花,兴旺",
+    "漠不关心的,冷淡的"
+   ],
+   "sentence": "The word \"sustain\" often appears in exams.",
+   "sentenceCn": "「sustain」这个词常在考试中出现。",
+   "image": "words/sustain.png"
+  },
+  {
+   "id": "w385",
+   "word": "terminate",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "终止,结束",
+   "options": [
+    "连贯的,一致的",
+    "推迟,遵从",
+    "相等的,等价的"
+   ],
+   "sentence": "The word \"terminate\" often appears in exams.",
+   "sentenceCn": "「terminate」这个词常在考试中出现。",
+   "image": "words/terminate.png"
+  },
+  {
+   "id": "w386",
+   "word": "thrive",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "繁荣,茁壮成长",
+   "options": [
+    "明确的,清楚的",
+    "抑制,阻止",
+    "普遍的,弥漫的"
+   ],
+   "sentence": "The word \"thrive\" often appears in exams.",
+   "sentenceCn": "「thrive」这个词常在考试中出现。",
+   "image": "words/thrive.png"
+  },
+  {
+   "id": "w387",
+   "word": "tolerate",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "容忍,忍受",
+   "options": [
+    "学校",
+    "睡觉",
+    "预期,期望"
+   ],
+   "sentence": "The word \"tolerate\" often appears in exams.",
+   "sentenceCn": "「tolerate」这个词常在考试中出现。",
+   "image": "words/tolerate.png"
+  },
+  {
+   "id": "w388",
+   "word": "transform",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "转变,改造",
+   "options": [
+    "限制,约束",
+    "分发,分布",
+    "波动,起伏"
+   ],
+   "sentence": "The word \"transform\" often appears in exams.",
+   "sentenceCn": "「transform」这个词常在考试中出现。",
+   "image": "words/transform.png"
+  },
+  {
+   "id": "w389",
+   "word": "transmit",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "传送,传播",
+   "options": [
+    "食物",
+    "废除,取消",
+    "古怪的,离奇的"
+   ],
+   "sentence": "The word \"transmit\" often appears in exams.",
+   "sentenceCn": "「transmit」这个词常在考试中出现。",
+   "image": "words/transmit.png"
+  },
+  {
+   "id": "w390",
+   "word": "trivial",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "琐碎的,不重要的",
+   "options": [
+    "保留,记住",
+    "君主,帝王",
+    "仔细审查,细看"
+   ],
+   "sentence": "The word \"trivial\" often appears in exams.",
+   "sentenceCn": "「trivial」这个词常在考试中出现。",
+   "image": "words/trivial.png"
+  },
+  {
+   "id": "w391",
+   "word": "undermine",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "破坏,削弱",
+   "options": [
+    "循环,流通",
+    "奉献,致力于",
+    "需要,使承担"
+   ],
+   "sentence": "The word \"undermine\" often appears in exams.",
+   "sentenceCn": "「undermine」这个词常在考试中出现。",
+   "image": "words/undermine.png"
+  },
+  {
+   "id": "w392",
+   "word": "uniform",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "统一的,一致的",
+   "options": [
+    "散布,驱散",
+    "对付,处理,解决",
+    "一丝不苟的,细致的"
+   ],
+   "sentence": "The word \"uniform\" often appears in exams.",
+   "sentenceCn": "「uniform」这个词常在考试中出现。",
+   "image": "words/uniform.png"
+  },
+  {
+   "id": "w393",
+   "word": "utilize",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "利用",
+   "options": [
+    "努力,奋斗",
+    "离开,启程;背离",
+    "强大的,令人敬畏的"
+   ],
+   "sentence": "The word \"utilize\" often appears in exams.",
+   "sentenceCn": "「utilize」这个词常在考试中出现。",
+   "image": "words/utilize.png"
+  },
+  {
+   "id": "w394",
+   "word": "vague",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "模糊的,含糊的",
+   "options": [
+    "减轻,缓和",
+    "开始",
+    "拆毁,推翻"
+   ],
+   "sentence": "The word \"vague\" often appears in exams.",
+   "sentenceCn": "「vague」这个词常在考试中出现。",
+   "image": "words/vague.png"
+  },
+  {
+   "id": "w395",
+   "word": "verify",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "证实,核实",
+   "options": [
+    "捏造,制造",
+    "插入",
+    "猛跌,投入"
+   ],
+   "sentence": "The word \"verify\" often appears in exams.",
+   "sentenceCn": "「verify」这个词常在考试中出现。",
+   "image": "words/verify.png"
+  },
+  {
+   "id": "w396",
+   "word": "vivid",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "生动的,鲜明的",
+   "options": [
+    "集合,装配",
+    "谴责,判刑",
+    "辨别,察觉"
+   ],
+   "sentence": "The word \"vivid\" often appears in exams.",
+   "sentenceCn": "「vivid」这个词常在考试中出现。",
+   "image": "words/vivid.png"
+  },
+  {
+   "id": "w397",
+   "word": "vulnerable",
+   "phonetic": "",
+   "pos": "adj.",
+   "meaning": "脆弱的,易受伤的",
+   "options": [
+    "危险,危害",
+    "逗留,徘徊",
+    "追求,继续"
+   ],
+   "sentence": "The word \"vulnerable\" often appears in exams.",
+   "sentenceCn": "「vulnerable」这个词常在考试中出现。",
+   "image": "words/vulnerable.png"
+  },
+  {
+   "id": "w398",
+   "word": "withstand",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "抵挡,经受",
+   "options": [
+    "面对,对抗",
+    "揭露,透露",
+    "明确的,清楚的"
+   ],
+   "sentence": "The word \"withstand\" often appears in exams.",
+   "sentenceCn": "「withstand」这个词常在考试中出现。",
+   "image": "words/withstand.png"
+  },
+  {
+   "id": "w399",
+   "word": "yield",
+   "phonetic": "",
+   "pos": "v.",
+   "meaning": "产生,屈服",
+   "options": [
+    "总和,聚合",
+    "倒塌,崩溃",
+    "故意的,深思熟虑的"
+   ],
+   "sentence": "The word \"yield\" often appears in exams.",
+   "sentenceCn": "「yield」这个词常在考试中出现。",
+   "image": "words/yield.png"
+  }
+ ],
+ "learn": {
+  "w001": {
+   "status": "known",
+   "nextReviewDay": 32,
+   "collected": true
+  },
+  "w002": {
+   "status": "known",
+   "nextReviewDay": 25,
+   "collected": true
+  },
+  "w003": {
+   "status": "learning",
+   "nextReviewDay": 1,
+   "collected": true
+  },
+  "w004": {
+   "status": "learning",
+   "nextReviewDay": 1,
+   "collected": true
+  },
+  "w005": {
+   "status": "learning",
+   "nextReviewDay": 1,
+   "collected": true
+  },
+  "w006": {
+   "status": "learning",
+   "nextReviewDay": 6,
+   "collected": true
+  },
+  "w007": {
+   "status": "learning",
+   "nextReviewDay": 7,
+   "collected": true
+  },
+  "w008": {
+   "status": "learning",
+   "nextReviewDay": 8,
+   "collected": true
+  },
+  "w009": {
+   "status": "zhan",
+   "nextReviewDay": 999,
+   "collected": true
+  },
+  "w010": {
+   "status": "zhan",
+   "nextReviewDay": 999,
+   "collected": true
+  },
+  "w011": {
+   "status": "learning",
+   "nextReviewDay": 2,
+   "collected": true
+  },
+  "w012": {
+   "status": "learning",
+   "nextReviewDay": 3,
+   "collected": true
+  },
+  "w013": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": true
+  },
+  "w014": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": true
+  },
+  "w015": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": true
+  },
+  "w016": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": true
+  },
+  "w017": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": true
+  },
+  "w018": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": true
+  },
+  "w019": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": true
+  },
+  "w020": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": true
+  },
+  "w021": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": true
+  },
+  "w022": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": true
+  },
+  "w023": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": true
+  },
+  "w024": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": true
+  },
+  "w025": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": true
+  },
+  "w026": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": true
+  },
+  "w027": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": true
+  },
+  "w028": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": true
+  },
+  "w029": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": true
+  },
+  "w030": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": true
+  },
+  "w031": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": true
+  },
+  "w032": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": true
+  },
+  "w033": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": true
+  },
+  "w034": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w035": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": true
+  },
+  "w036": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": true
+  },
+  "w037": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": true
+  },
+  "w038": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": true
+  },
+  "w039": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": true
+  },
+  "w040": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w041": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w042": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w043": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w044": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w045": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w046": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w047": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w048": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w049": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w050": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w051": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w052": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w053": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w054": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w055": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w056": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w057": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w058": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w059": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w060": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w061": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w062": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w063": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w064": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w065": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w066": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w067": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w068": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w069": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w070": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w071": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w072": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w073": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w074": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w075": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w076": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w077": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w078": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w079": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w080": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w081": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w082": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w083": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w084": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w085": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w086": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w087": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w088": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w089": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w090": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w091": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w092": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w093": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w094": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w095": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w096": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w097": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w098": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w099": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w100": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w101": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w102": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w103": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w104": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w105": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w106": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w107": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w108": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w109": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w110": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w111": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w112": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w113": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w114": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w115": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w116": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w117": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w118": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w119": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w120": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w121": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w122": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w123": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w124": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w125": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w126": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w127": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w128": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w129": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w130": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w131": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w132": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w133": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w134": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w135": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w136": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w137": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w138": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w139": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w140": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w141": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w142": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w143": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w144": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w145": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w146": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w147": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w148": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w149": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w150": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w151": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w152": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w153": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w154": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w155": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w156": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w157": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w158": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w159": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w160": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w161": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w162": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w163": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w164": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w165": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w166": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w167": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w168": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w169": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w170": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w171": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w172": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w173": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w174": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w175": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w176": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w177": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w178": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w179": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w180": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w181": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w182": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w183": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w184": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w185": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w186": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w187": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w188": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w189": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w190": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w191": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w192": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w193": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w194": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w195": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w196": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w197": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w198": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w199": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w200": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w201": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w202": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w203": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w204": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w205": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w206": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w207": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w208": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w209": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w210": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w211": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w212": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w213": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w214": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w215": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w216": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w217": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w218": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w219": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w220": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w221": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w222": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w223": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w224": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w225": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w226": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w227": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w228": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w229": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w230": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w231": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w232": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w233": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w234": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w235": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w236": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w237": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w238": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w239": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w240": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w241": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w242": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w243": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w244": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w245": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w246": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w247": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w248": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w249": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w250": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w251": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w252": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w253": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w254": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w255": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w256": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w257": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w258": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w259": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w260": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w261": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w262": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w263": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w264": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w265": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w266": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w267": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w268": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w269": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w270": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w271": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w272": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w273": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w274": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w275": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w276": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w277": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w278": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w279": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w280": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w281": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w282": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w283": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w284": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w285": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w286": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w287": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w288": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w289": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w290": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w291": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w292": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w293": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w294": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w295": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w296": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w297": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w298": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w299": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w300": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w301": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w302": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w303": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w304": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w305": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w306": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w307": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w308": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w309": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w310": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w311": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w312": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w313": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w314": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w315": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w316": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w317": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w318": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w319": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w320": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w321": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w322": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w323": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w324": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w325": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w326": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w327": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w328": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w329": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w330": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w331": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w332": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w333": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w334": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w335": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w336": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w337": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w338": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w339": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w340": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w341": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w342": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w343": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w344": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w345": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w346": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w347": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w348": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w349": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w350": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w351": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w352": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w353": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w354": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w355": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w356": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w357": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w358": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w359": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w360": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w361": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w362": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w363": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w364": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w365": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w366": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w367": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w368": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w369": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w370": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w371": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w372": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w373": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w374": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w375": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w376": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w377": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w378": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w379": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w380": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w381": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w382": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w383": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w384": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w385": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w386": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w387": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w388": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w389": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w390": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w391": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w392": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w393": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w394": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w395": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w396": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w397": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w398": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  },
+  "w399": {
+   "status": "new",
+   "nextReviewDay": 0,
+   "collected": false
+  }
+ },
+ "books": [
+  {
+   "id": "gre3000",
+   "name": "GRE3000",
+   "cover": "#3B3F8F",
+   "total": 2904,
+   "added": true,
+   "tag": "hot",
+   "desc": "GRE 核心词汇 2904 词"
+  },
+  {
+   "id": "ielts",
+   "name": "雅思核心",
+   "cover": "#D64541",
+   "total": 3500,
+   "added": true,
+   "tag": "abroad",
+   "desc": "雅思核心词汇"
+  },
+  {
+   "id": "cet6hi",
+   "name": "六级核心高分版",
+   "cover": "#C0392B",
+   "total": 2200,
+   "added": true,
+   "tag": "college",
+   "desc": "六级高频词"
+  },
+  {
+   "id": "cet4hi",
+   "name": "四级高频",
+   "cover": "#27AE60",
+   "total": 739,
+   "added": true,
+   "tag": "college",
+   "desc": "四级超高频词"
+  },
+  {
+   "id": "cet6",
+   "name": "六级词汇",
+   "cover": "#2C3E50",
+   "total": 6204,
+   "added": true,
+   "tag": "college",
+   "desc": "六级全部词汇"
+  },
+  {
+   "id": "gaokao",
+   "name": "高考词汇",
+   "cover": "#E67E22",
+   "total": 4135,
+   "added": true,
+   "tag": "highschool",
+   "desc": "高考大纲词汇"
+  },
+  {
+   "id": "nce1",
+   "name": "新概念第一册",
+   "cover": "#F1C40F",
+   "total": 900,
+   "added": true,
+   "tag": "hot",
+   "desc": "新概念英语第一册"
+  },
+  {
+   "id": "zhongkao",
+   "name": "中考词汇",
+   "cover": "#F39C12",
+   "total": 2124,
+   "added": false,
+   "tag": "hot",
+   "desc": "中考核心词汇"
+  },
+  {
+   "id": "cet4full",
+   "name": "四级词汇大全",
+   "cover": "#16A085",
+   "total": 4440,
+   "added": false,
+   "tag": "college",
+   "desc": "四级全部词汇"
+  },
+  {
+   "id": "kaoyan",
+   "name": "考研2027完整版",
+   "cover": "#8E44AD",
+   "total": 5063,
+   "added": false,
+   "tag": "college",
+   "desc": "考研大纲词汇"
+  }
+ ],
+ "currentBookId": "gre3000",
+ "dailyGroups": 10,
+ "today": {
+  "newDone": 0,
+  "reviewDone": 0,
+  "newTarget": 10,
+  "reviewTarget": 1
+ },
+ "coins": 5,
+ "streakDays": 0,
+ "protectEquipped": 0,
+ "stars": 0,
+ "claimedTasks": [],
+ "wordbooks": [
+  {
+   "id": "wb_collect",
+   "name": "收藏的单词",
+   "wordIds": [
+    "w001",
+    "w002",
+    "w003",
+    "w004",
+    "w005",
+    "w006",
+    "w007",
+    "w008",
+    "w009",
+    "w010",
+    "w011",
+    "w012",
+    "w013",
+    "w014",
+    "w015",
+    "w016",
+    "w017",
+    "w018",
+    "w019",
+    "w020",
+    "w021",
+    "w022",
+    "w023",
+    "w024",
+    "w025",
+    "w026",
+    "w027",
+    "w028",
+    "w029",
+    "w030",
+    "w031",
+    "w032",
+    "w033",
+    "w035",
+    "w036",
+    "w037",
+    "w038",
+    "w039"
+   ]
+  }
+ ],
+ "products": [
+  {
+   "id": "p_max",
+   "title": "百词斩单词机Max超大屏幕真人外教发音单词机",
+   "subtitle": "随时随地背单词",
+   "price": 349,
+   "coinPrice": 37,
+   "image": "products/max.png",
+   "sold": 19100,
+   "specs": [
+    "小蜜瓜",
+    "云母白",
+    "薄荷绿"
+   ]
+  },
+  {
+   "id": "p_std",
+   "title": "百词斩单词机 便携背单词神器",
+   "subtitle": "让碎片时间更高效",
+   "price": 349,
+   "coinPrice": 37,
+   "image": "products/std.png",
+   "sold": 20000,
+   "specs": [
+    "经典白",
+    "太空灰"
+   ]
+  },
+  {
+   "id": "p_pen",
+   "title": "百词斩词典笔扫描笔 考纲真题例句",
+   "subtitle": "备考词典笔",
+   "price": 399,
+   "coinPrice": 340,
+   "image": "products/pen.png",
+   "sold": 3713,
+   "specs": [
+    "标准版"
+   ]
+  },
+  {
+   "id": "p_ruler",
+   "title": "Easy Parallel小直尺 可在凹槽轻松画直线",
+   "price": 8.9,
+   "coinPrice": 7.9,
+   "image": "products/ruler.png",
+   "sold": 49000,
+   "specs": [
+    "1支",
+    "3支装"
+   ]
+  },
+  {
+   "id": "p_cet4",
+   "title": "英语四级词汇书 收录历年真题高频词",
+   "price": 48.9,
+   "coinPrice": 44.9,
+   "image": "products/cet4book.png",
+   "sold": 1199,
+   "specs": [
+    "单册"
+   ]
+  },
+  {
+   "id": "p_cet6pack",
+   "title": "英语六级真题备考包",
+   "price": 48,
+   "coinPrice": 28,
+   "image": "products/cet6pack.png",
+   "sold": 784,
+   "specs": [
+    "套装"
+   ]
+  },
+  {
+   "id": "p_board",
+   "title": "A4多功能方格板夹 有它就可以在床上写试卷啦",
+   "price": 18.9,
+   "coinPrice": 17.9,
+   "image": "products/board.png",
+   "sold": 34000,
+   "specs": [
+    "A4"
+   ]
+  },
+  {
+   "id": "p_notebook",
+   "title": "康奈尔5R记忆法笔记本 课堂笔记之选",
+   "price": 29.8,
+   "coinPrice": 27.8,
+   "image": "products/notebook.png",
+   "sold": 220000,
+   "specs": [
+    "方格",
+    "横线"
+   ]
+  },
+  {
+   "id": "p_clip",
+   "title": "百词斩浅铜色金属水滴书签回形针 12颗一袋",
+   "price": 3.9,
+   "coinPrice": 2.9,
+   "image": "products/clip.png",
+   "sold": 133000,
+   "specs": [
+    "12颗装"
+   ]
+  },
+  {
+   "id": "p_tape",
+   "title": "无痕可移强粘性双面圆点胶 一看就会",
+   "price": 11.9,
+   "coinPrice": 10.9,
+   "image": "products/tape.png",
+   "sold": 55000,
+   "specs": [
+    "1卷"
+   ]
+  },
+  {
+   "id": "p_earphone",
+   "title": "百词斩单词机专用3.5mm 有线耳机",
+   "price": 39,
+   "coinPrice": 35,
+   "image": "products/earphone.png",
+   "sold": 7794,
+   "specs": [
+    "经典白"
+   ]
+  },
+  {
+   "id": "p_pencase",
+   "title": "大容量猫窝笔袋 文具收纳",
+   "price": 38.9,
+   "coinPrice": 35.9,
+   "image": "products/pencase.png",
+   "sold": 100000,
+   "specs": [
+    "奶牛",
+    "橘猫"
+   ]
+  }
+ ],
+ "cart": [],
+ "addresses": [],
+ "order": {
+  "payMethod": "wechat",
+  "useCoin": true,
+  "note": ""
+ },
+ "articles": [
+  {
+   "id": "a_711",
+   "title": "7-Eleven Sues Nike Over Similar Stripe Design",
+   "titleCn": "7-Eleven 起诉耐克:球鞋配色涉嫌商标侵权",
+   "wordCount": 415,
+   "level": "中阶+",
+   "cover": "articles/711.png",
+   "tag": "时事",
+   "body": [
+    {
+     "en": "7-Eleven has filed a lawsuit in a federal court in Texas, accusing the sportswear giant of borrowing the convenience-store chain's well-known orange, green and red stripe design for an upcoming Air Max 95 sneaker.",
+     "cn": "7-Eleven 已在得州联邦法院提起诉讼,指控这家运动服饰巨头为即将推出的 Air Max 95 球鞋盗用了该便利店连锁标志性的橙、绿、红三色条纹设计。"
+    },
+    {
+     "en": "In a lawsuit filed on July 1 in Dallas, 7-Eleven argued that the sneaker features a \"confusingly similar imitation\" of its tri-color branding, which has appeared for decades on store signs, advertising materials, merchandise and other products.",
+     "cn": "在 7 月 1 日于达拉斯提起的诉讼中,7-Eleven 主张该球鞋呈现出对其三色品牌标识\"令人混淆的相似模仿\",而这一标识数十年来出现在店招、广告物料、商品等各处。"
+    },
+    {
+     "en": "The convenience-store chain claims that the resemblance is so strong that ordinary shoppers might reasonably believe the shoe was produced in an official partnership between the two brands, or that 7-Eleven had somehow approved the design.",
+     "cn": "这家便利店连锁声称,二者的相似度如此之高,以至于普通消费者可能会合理地相信,这款鞋是两个品牌官方合作的产物,或者 7-Eleven 曾以某种方式批准了该设计。"
+    },
+    {
+     "en": "According to the complaint, the company had reached out to the sportswear maker before taking legal action, but the two sides failed to arrive at an agreement. 7-Eleven is now seeking to block the release of the sneaker and to recover damages.",
+     "cn": "根据诉状,该公司在采取法律行动之前曾与这家运动服饰厂商接洽,但双方未能达成一致。7-Eleven 现在寻求阻止这款球鞋上市,并索赔损失。"
+    },
+    {
+     "en": "Legal experts note that trademark disputes over color combinations are notoriously difficult to win, since a brand must prove that consumers strongly associate a particular set of colors with its own identity rather than with the product category in general.",
+     "cn": "法律专家指出,围绕配色组合的商标纠纷向来极难胜诉,因为品牌必须证明:消费者会将某一组特定颜色与其自身身份强烈关联,而非与整个产品品类关联。"
+    },
+    {
+     "en": "For now, the sportswear giant has declined to comment on the pending litigation, while sneaker enthusiasts online remain divided over whether the striped design was a deliberate homage or simply a coincidence.",
+     "cn": "目前,这家运动服饰巨头拒绝就尚未了结的诉讼置评,而网上的球鞋爱好者们则对这条纹设计究竟是刻意致敬还是纯属巧合争论不休。"
+    }
+   ]
+  },
+  {
+   "id": "a_tencent",
+   "title": "Tencent Tests AI Assistant To Catch Up",
+   "titleCn": "起步落后对手,小微能否扭转腾讯 AI 劣势?",
+   "wordCount": 636,
+   "level": "高阶",
+   "cover": "articles/tencent.png",
+   "tag": "商业",
+   "body": [
+    {
+     "en": "Tencent is rolling out an upgraded AI assistant as it races to close the gap with domestic rivals in the fast-moving field of generative artificial intelligence.",
+     "cn": "腾讯正在推出升级版 AI 助手,以在快速演进的生成式人工智能领域追赶国内竞争对手。"
+    },
+    {
+     "en": "The new assistant, deeply integrated into the company's messaging and payment ecosystem, is designed to answer questions, summarize documents and help users draft messages without leaving the apps they already use every day.",
+     "cn": "这款新助手深度集成到公司的即时通讯与支付生态中,旨在让用户无需离开他们每天使用的应用,就能获得问答、文档摘要和消息草拟等帮助。"
+    },
+    {
+     "en": "Analysts say Tencent's greatest advantage lies not in the raw capability of its underlying model, but in its enormous user base, which gives any new feature an instant audience of hundreds of millions.",
+     "cn": "分析人士认为,腾讯最大的优势并不在于其底层模型的原始能力,而在于其庞大的用户群——这让任何新功能都能瞬间拥有数以亿计的受众。"
+    },
+    {
+     "en": "Still, the company faces the delicate task of introducing AI features without overwhelming users or raising fresh concerns about privacy, a balance that has tripped up several of its competitors.",
+     "cn": "尽管如此,该公司仍面临一个微妙的难题:如何在不让用户感到负担、也不引发新的隐私担忧的前提下推出 AI 功能——这一平衡曾让它的数个竞争对手栽了跟头。"
+    },
+    {
+     "en": "Whether Tencent can turn its late start into a lasting advantage will depend on how quickly it can iterate, and on whether users find the assistant genuinely useful rather than merely novel.",
+     "cn": "腾讯能否将其起步的迟缓转化为持久的优势,将取决于它迭代的速度,以及用户是否觉得这款助手真正有用,而非仅仅新奇。"
+    }
+   ]
+  },
+  {
+   "id": "a_choc",
+   "title": "Why Do We Give Chocolate On Valentine's Day?",
+   "titleCn": "巧克力为何成为情人节首选礼物?",
+   "wordCount": 340,
+   "level": "中阶",
+   "cover": "articles/choc.png",
+   "tag": "文化",
+   "body": [
+    {
+     "en": "The tradition of giving chocolate on Valentine's Day dates back to the 19th century, when a British chocolate maker began selling heart-shaped boxes filled with sweets.",
+     "cn": "情人节送巧克力的传统可追溯到 19 世纪,当时一家英国巧克力制造商开始出售装满糖果的心形礼盒。"
+    },
+    {
+     "en": "Long before that, chocolate was considered a rare and precious luxury, reserved for royalty and the wealthy, and even believed by some to have romantic and medicinal powers.",
+     "cn": "而在更早之前,巧克力被视为稀有而珍贵的奢侈品,专供王室与富人享用,甚至有人相信它具有浪漫与药用的功效。"
+    },
+    {
+     "en": "Clever advertising in the following century transformed the treat into a symbol of affection, until offering a box of chocolates became one of the most recognizable gestures of love.",
+     "cn": "在随后的一个世纪里,巧妙的广告将这种甜食塑造成情感的象征,直到送上一盒巧克力成为最易辨识的爱意表达之一。"
+    },
+    {
+     "en": "Today, millions of boxes are exchanged each February, proof that a simple marketing idea can, over time, harden into a global custom that few of us ever stop to question.",
+     "cn": "如今,每年二月都有数以百万计的礼盒被交换,这证明了一个简单的营销创意,经过时间的沉淀,能固化为一项我们几乎从不停下来质疑的全球习俗。"
+    }
+   ]
+  }
+ ],
+ "shelf": [],
+ "readChars": 827,
+ "readArticleIds": [],
+ "readPlan": null,
+ "readCampLevel": null,
+ "courseProgress": {},
+ "memberships": {
+  "proPlan": null,
+  "readActive": false
+ },
+ "favoriteProductIds": [],
+ "settings": {
+  "sound": true,
+  "vibrate": true,
+  "pushMaster": true,
+  "push": {
+   "challenge": true,
+   "together": true,
+   "daily": true,
+   "review": true
+  },
+  "personalizePush": true,
+  "accent": "us",
+  "wordSort": "timeAsc",
+  "identity": "工作党",
+  "studyMode": "recognize"
+ }
+}
