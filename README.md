@@ -8,7 +8,7 @@ This repository is the MobileGym++ environment. It is not the earlier MobileGym 
 
 The paper counts **63 installable clients**: 49 commercial-style applications and 14 system clients.
 
-- Commercial-style clients live in `apps/`. That directory also contains `apps/BilibiliV2`, which is not part of the 63.
+- Commercial-style clients live in `apps/`.
 - System clients live in `system/` (Answer Sheet, Browser, Calculator, Calculator 2, Calendar, Clock, Compass, Contacts, File Manager, Gallery, Notes, Settings, SMS, Theme Store).
 
 **MobileGym++ Bench** is 215 tasks and covers **48** of these applications. The coverage count is the span of the benchmark, not the size of the simulator. Of the 215 tasks, 109 touch one app, 74 touch two, 27 touch three, and 5 touch four (106 are cross-app). A task can fall in more than one domain, so domain counts overlap.
