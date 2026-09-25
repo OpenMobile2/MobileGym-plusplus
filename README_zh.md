@@ -19,12 +19,12 @@
 | `system/` | 系统客户端 |
 | `os/` | 设备外壳：导航、剪贴板、文件、通知 |
 | `app_tools/` | 应用自带工具的 schema 与处理函数 |
-| `bench215/` | 冻结的 215 题入口（`official.json`、`run.sh`） |
+| `bench_env/benchmark/` | 唯一正式的 215 题评测集及运行入口 |
 | `bench_env/` | 模拟器驱动、混合动作智能体、任务代码与测试 |
 | `docs/guides/` | 如何新增应用、任务或智能体适配器 |
 | `scripts/` | 检查与维护脚本 |
 
-跑这 215 题用 `bench215/run.sh`。`bench_env/task/` 下的其他套件属于任务实现和测试，不是另一套正式评测。
+完整运行正式评测集用 `bench_env/benchmark/run.sh`；任务设置和程序化检查器实现在 `bench_env/task/`。
 
 ## 启动模拟器
 
@@ -51,7 +51,7 @@ python3 -m playwright install chromium
 先启动模拟器，再在仓库根目录执行：
 
 ```bash
-zsh bench215/run.sh \
+zsh bench_env/benchmark/run.sh \
   --mode hybrid \
   --env-url http://127.0.0.1:3000 \
   --model-base-url http://HOST:PORT/v1 \
@@ -60,7 +60,7 @@ zsh bench215/run.sh \
   --output-dir runs/bench-hybrid
 ```
 
-`--mode gui_only` 使用同一批题目和检查器，但不提供应用自带工具。结果写在输出目录的 `results.jsonl` 和 `summary.json`。套件列表见 `bench215/README.md`。
+`--mode gui_only` 使用同一套 215 道题和检查器，只开放图形界面操作。一次运行会在输出目录生成 `results.jsonl`、`summary.json` 和题目运行记录。完整说明见 `bench_env/benchmark/README.md`。
 
 ## 许可
 

@@ -19,12 +19,12 @@ The paper counts **63 installable clients**: 49 commercial-style applications an
 | `system/` | System clients |
 | `os/` | Device shell: navigation, clipboard, files, notifications |
 | `app_tools/` | App-native tool schemas and handlers |
-| `bench215/` | Frozen 215-task entry point (`official.json`, `run.sh`) |
+| `bench_env/benchmark/` | The single official 215-task set and its runner |
 | `bench_env/` | Simulator driver, hybrid agent, task code, and tests |
 | `docs/guides/` | How to add an app, a task, or an agent adapter |
 | `scripts/` | Lint and maintenance helpers |
 
-`bench215/run.sh` is the supported way to run the 215 tasks. Other suites under `bench_env/task/` are part of the task code and tests; they are not a second official benchmark.
+Run the complete official set with `bench_env/benchmark/run.sh`. Task setup and checkers live under `bench_env/task/`.
 
 ## Run the simulator
 
@@ -51,7 +51,7 @@ python3 -m playwright install chromium
 Start the simulator first, then from the repository root:
 
 ```bash
-zsh bench215/run.sh \
+zsh bench_env/benchmark/run.sh \
   --mode hybrid \
   --env-url http://127.0.0.1:3000 \
   --model-base-url http://HOST:PORT/v1 \
@@ -60,7 +60,7 @@ zsh bench215/run.sh \
   --output-dir runs/bench-hybrid
 ```
 
-`--mode gui_only` uses the same tasks and checkers without app-native tools. Results land in the output directory as `results.jsonl` and `summary.json`. See `bench215/README.md` for the suite list.
+`--mode gui_only` uses the same 215 tasks and checkers without app-native tools. One run writes `results.jsonl`, `summary.json`, and task artifacts to the output directory. See `bench_env/benchmark/README.md` for the complete instructions.
 
 ## License
 
