@@ -14,8 +14,8 @@ This guide walks you from a fresh clone to a fully evaluated task in about 10 mi
 ## Install
 
 ```bash
-git clone https://github.com/<YOUR_ORG>/mobilegym.git
-cd mobilegym
+git clone https://github.com/OpenMobile2/openmobile2.git
+cd openmobile2
 
 # Front-end / simulator
 npm install
