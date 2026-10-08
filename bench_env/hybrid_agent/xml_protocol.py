@@ -111,6 +111,22 @@ def parse_tool_call_response(
     )
 
 
+def _extract_thought(text: str) -> str:
+    block = re.search(r"<think>(.*?)</think>", text or "", re.IGNORECASE | re.DOTALL)
+    if block:
+        return block.group(1).strip()
+    labeled = _extract_label(text, "Thought")
+    if labeled:
+        return labeled
+    preamble = re.split(
+        r"\n\s*Action\s*:|\n\s*<tool_call>",
+        text or "",
+        maxsplit=1,
+        flags=re.IGNORECASE,
+    )[0]
+    return re.sub(r"</?think>", "", preamble, flags=re.IGNORECASE).strip()
+
+
 def _extract_label(text: str, label: str) -> str:
     match = re.search(
         rf"(?:^|\n)\s*{label}\s*:\s*(.*?)(?=\n\s*(?:Thought|Action)\s*:|\n\s*<tool_call>|$)",

@@ -9,7 +9,13 @@ import os
 from pathlib import Path
 import time
 
-from bench_env.hybrid_agent.modes import HYBRID_MODE, INTERACTION_MODES
+from bench_env.hybrid_agent.modes import (
+    BENCHMARK_RUNTIMES,
+    HYBRID_MODE,
+    HYBRID_XML_RUNTIME,
+    INTERACTION_MODES,
+    QWEN35_SESSION_RUNTIME,
+)
 from bench_env.hybrid_benchmark.runner import HybridBenchmarkConfig, run_benchmark
 from bench_env.task.registry import TaskRegistry
 
@@ -30,6 +36,47 @@ def create_parser() -> argparse.ArgumentParser:
         choices=INTERACTION_MODES,
         default=HYBRID_MODE,
         help="hybrid exposes foreground App Tools; gui_only exposes only mobile_use",
+    )
+    parser.add_argument(
+        "--runtime",
+        choices=list(BENCHMARK_RUNTIMES),
+        default=QWEN35_SESSION_RUNTIME,
+        help=(
+            "qwen35_session is the Bench 215 protocol: system and query once, "
+            "tools=[mobile_use], last-n screenshots. "
+            "qwen35_thought_session writes Thought: plus XML and does not send native thinking. "
+            "hybrid_xml rebuilds the XML system prompt every turn; use it with "
+            "venus, gpt_responses, or kimi_k2_6."
+        ),
+    )
+    parser.add_argument(
+        "--last-n",
+        type=int,
+        default=3,
+        help="qwen35_session: how many recent screenshots stay in the dialogue",
+    )
+    parser.add_argument(
+        "--enable-thinking",
+        choices=["true", "false"],
+        default="true",
+        help="qwen35_session: chat_template enable_thinking. Ignored by thought_session.",
+    )
+    parser.add_argument(
+        "--require-think-tags",
+        choices=["true", "false"],
+        default="false",
+    )
+    parser.add_argument(
+        "--qwen35-tool-call-mode",
+        choices=["native", "xml"],
+        default="native",
+        help="qwen35_session: native OpenAI tools= or XML tool_call text",
+    )
+    parser.add_argument(
+        "--start-delay",
+        type=float,
+        default=0.0,
+        help="Seconds to wait after task setup before the first model call",
     )
     parser.add_argument("--suite", default="core")
     parser.add_argument("--task-ids", default="", help="Comma-separated full task IDs or class names")
@@ -153,6 +200,12 @@ async def async_main(args: argparse.Namespace) -> int:
         reasoning_effort=args.reasoning_effort,
         kimi_thinking=args.kimi_thinking == "enabled",
         kimi_history_images=args.kimi_history_images,
+        start_delay=args.start_delay,
+        runtime=args.runtime if args.agent_protocol == "xml" else HYBRID_XML_RUNTIME,
+        last_n=args.last_n,
+        enable_thinking=args.enable_thinking == "true",
+        require_think_tags=args.require_think_tags == "true",
+        qwen35_tool_call_mode=args.qwen35_tool_call_mode,
     )
     results = await run_benchmark(config)
     summary = json.loads((output_dir / "summary.json").read_text(encoding="utf-8"))

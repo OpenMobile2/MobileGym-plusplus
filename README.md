@@ -153,7 +153,7 @@ zsh bench_env/benchmark/run.sh \
   --output-dir runs/bench-hybrid
 ```
 
-`--mode gui_only` uses the same 215 tasks and the same checkers, with the app-native tools turned off. The run writes `results.jsonl` and `summary.json`. For many parallel episodes, use `scripts/server/start_nginx_gateway.sh` as described in [`docs/getting-started.md`](docs/getting-started.md). The Vite server above is one process.
+`--mode gui_only` uses the same 215 tasks and the same checkers, with the app-native tools turned off. With the default protocol the script runs `qwen35_session`: the system prompt and the task are sent once, `tools` stays `mobile_use`, and the last 3 screenshots are kept. Inside that protocol the model name selects the adapter: Qwen, Gemini, Kimi K3, DeepSeek, or GLM. The run writes `results.jsonl` and `summary.json`. For many parallel episodes, use `scripts/server/start_nginx_gateway.sh` as described in [`docs/getting-started.md`](docs/getting-started.md). The Vite server above is one process.
 
 ## License
 

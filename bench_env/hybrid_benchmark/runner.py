@@ -24,7 +24,16 @@ from bench_env.hybrid_agent.kimi_k2_6 import (
     kimi_k2_6_model_args,
 )
 from bench_env.hybrid_agent.artifacts import HybridArtifactRecorder
-from bench_env.hybrid_agent.modes import HYBRID_MODE, validate_interaction_mode
+from bench_env.hybrid_agent.modes import (
+    HYBRID_MODE,
+    HYBRID_XML_RUNTIME,
+    QWEN35_SESSION_RUNTIME,
+    QWEN35_THOUGHT_SESSION_RUNTIME,
+    is_session_runtime,
+    validate_interaction_mode,
+    validate_runtime,
+)
+from bench_env.hybrid_agent.qwen35_session import Qwen35SessionAgent
 from bench_env.hybrid_agent.runtime import HybridAgentRuntime
 from bench_env.llm import LLMClient
 from bench_env.task.judge import JudgeInput
@@ -60,6 +69,12 @@ class HybridBenchmarkConfig:
     reasoning_effort: str = "medium"
     kimi_thinking: bool = True
     kimi_history_images: int = 3
+    start_delay: float = 0.0
+    runtime: str = QWEN35_SESSION_RUNTIME
+    last_n: int = 3
+    enable_thinking: bool = True
+    require_think_tags: bool = False
+    qwen35_tool_call_mode: str = "native"
 
 
 def _split_suites(suite: str) -> list[str]:
@@ -145,6 +160,37 @@ def _create_env(config: HybridBenchmarkConfig, worker_id: int) -> MobileGymEnv:
 
 
 def _create_agent(config: HybridBenchmarkConfig) -> Any:
+    runtime = validate_runtime(config.runtime)
+    if is_session_runtime(runtime):
+        if config.agent_protocol not in {"xml", QWEN35_SESSION_RUNTIME, QWEN35_THOUGHT_SESSION_RUNTIME}:
+            raise ValueError(
+                f"--runtime {runtime} cannot be combined with "
+                f"--agent-protocol {config.agent_protocol}"
+            )
+        llm = LLMClient(
+            base_url=config.model_base_url,
+            api_key=config.model_api_key,
+            model=config.model_name,
+            total_timeout_s=config.infer_timeout,
+        )
+        extra_body = dict(config.model_extra_body or {})
+        thought = runtime == QWEN35_THOUGHT_SESSION_RUNTIME
+        return Qwen35SessionAgent(
+            llm,
+            last_n=config.last_n,
+            enable_thinking=False if thought else config.enable_thinking,
+            require_think_tags=False if thought else config.require_think_tags,
+            tool_call_mode="xml" if thought else config.qwen35_tool_call_mode,
+            max_tokens=config.max_tokens,
+            extra_body=extra_body,
+            verbose=not config.quiet,
+            interaction_mode=config.interaction_mode,
+            model_name=config.model_name,
+            reasoning_effort=config.reasoning_effort,
+            thought_session=thought,
+        )
+    if config.runtime not in {"", HYBRID_XML_RUNTIME}:
+        raise ValueError(f"unsupported runtime {config.runtime!r}")
     if config.agent_protocol == "venus":
         # Reuse the session-aware Venus adapter used by the SPA/OL runners.
         # Import lazily so the regular hybrid protocols do not require the
@@ -211,9 +257,11 @@ def _create_agent(config: HybridBenchmarkConfig) -> Any:
     )
     model_args: dict[str, Any] = {
         "temperature": config.temperature,
-        "top_p": config.top_p,
         "max_tokens": config.max_tokens,
     }
+    # Anthropic-compatible gateways reject requests that set both sampling controls.
+    if not config.model_name.casefold().startswith("claude"):
+        model_args["top_p"] = config.top_p
     if config.model_extra_body is not None:
         model_args["extra_body"] = config.model_extra_body
 
@@ -246,6 +294,8 @@ async def _run_one(
     try:
         initial_obs = await task.setup(env)
         recorder = HybridArtifactRecorder(episode_dir)
+        if config.start_delay > 0:
+            await asyncio.sleep(config.start_delay)
         runtime = HybridAgentRuntime(
             env,
             agent,
