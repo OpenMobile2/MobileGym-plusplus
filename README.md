@@ -21,12 +21,12 @@
 </p>
 
 <p align="center">
-  <img src="docs/images/hybrid-gui-and-tools.png" alt="Hybrid GUI and app-native tools on one calendar task. Both paths write the same event, and the checker reads the state diff." width="100%">
+  <img src="docs/images/fig2b-hybrid.png" alt="GUI-only actions on top. Below, the same task interleaves clicks with app-native calls such as list_order and search_item. Both write one shared application state." width="780">
 </p>
 
 <p align="center">
   <em>Same task, same application state, same checker.</em><br>
-  GUI-only walks the screen. Hybrid may prefill the draft with an app-native tool, then save it in the GUI.
+  The top path is GUI only. The bottom path interleaves those gestures with the app's own tools.
 </p>
 
 Mobile agents are being asked to finish real workflows on commercial applications: book a trip, pay an order, carry a value from one app into another. Those workflows are long, and the outcome that matters is a change in the application's own records.
@@ -37,7 +37,7 @@ This repository is that phone, together with **MobileGym++ Bench**: 215 tasks, e
 
 ## Two channels, one state
 
-Computer use is moving past GUI-only interaction. MobileGym++ brings that idea to the phone. An application's tools are not an outside API glued on afterwards. Each tool is a structured lookup or write over that application's own objects, and it changes the same persistent state as the matching taps and keystrokes. A call such as `calendar__prepare_event_draft` fills the draft; the event is still saved from the screen. GUI-only and hybrid therefore share the task, the initial state, and the checker. The only thing that changes is the path.
+Computer use is moving past GUI-only interaction. MobileGym++ brings that idea to the phone. An application's tools are not an outside API glued on afterwards. Each tool is a structured lookup or write over that application's own objects, and it changes the same persistent state as the matching taps and keystrokes. A call such as `search_item` and the taps that would reach the same screen write one store. GUI-only and hybrid therefore share the task, the initial state, and the checker. The only thing that changes is the path.
 
 More than 300 such tools are exposed across 50-plus applications, including system clients such as Clock and Notes. A tool is offered only while its application is in front. Every benchmark task remains solvable from the GUI alone.
 
@@ -50,6 +50,12 @@ More than 300 such tools are exposed across 50-plus applications, including syst
 ## The phone
 
 The phone installs **63** clients: **35** built for this release and **28** kept from MobileGym. **47** are commercial-style applications and **16** are system clients. They cover travel, shopping, finance, content, social, office, and local services.
+
+<p align="center">
+  <img src="docs/images/app-coverage.png" alt="Application coverage. The simulator phone has 63 apps and is this repository. The emulator phone has 62 apps and is not in this repository. Each square is two applications. Dots mark apps that expose native tools." width="720">
+</p>
+
+The upper phone is this repository. The lower phone is the Android-emulator playground released with OpenMobile2, and those apps are not in this clone. Each square stands for two applications. A dot marks an application that exposes native tools.
 
 Each client keeps its own business objects — orders, bills, itineraries, messages — and those objects change as the agent acts. Clipboard transfer, app-to-app sharing, payment redirection, and media selection connect the clients, so a workflow can leave one application and write into another. The whole device can be snapshotted and restored, which is what makes a training episode and an evaluation run start from the same place.
 
