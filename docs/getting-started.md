@@ -23,42 +23,35 @@ npm install
 # Benchmark / agent runtime
 pip install -r bench_env/requirements.txt
 playwright install chromium
-
-# Companion dataset (~1.4 GB, expands to ~1.7 GB; CC BY-NC 4.0)
-curl -L -o mobilegym-data.tar.gz \
-  https://github.com/Purewhiter/mobilegym/releases/download/data-v1.0/mobilegym-data-v1.tar.gz
-tar -xzf mobilegym-data.tar.gz && rm mobilegym-data.tar.gz
 ```
 
-> Without the dataset, most simulated apps (Bilibili, RedBook, eBay, ThemeStore) will render empty. Alternatively set `VITE_CDN_BASE` to a URL that serves these files (the deployed demo uses a CDN mirror).
+Each client's interface assets are in the clone. Wallpapers and the larger in-app feeds (RedBook, eBay, Bilibili, themes) load from the public media host, the same one the hosted phone uses:
+
+```bash
+VITE_CDN_BASE=https://cdn.mobilegym.dev npm run dev
+```
 
 ## Configure simulator keys (optional)
 
-Simulator keys are recommended for the best local fidelity, but optional for the canonical MobileGym-Bench tasks. The shipped tasks are designed around bundled offline snapshots; without live keys they should still be runnable, although apps may fall back to cached or synthetic data and some visual details can be less complete. Configure keys when you want richer live behavior:
+Simulator keys are optional. MobileGym++ Bench is written against bundled offline snapshots, so the 215 tasks run without them. Set a key when you want richer live behavior:
 
 - **`VITE_GOOGLE_MAPS_API_KEY`** — recommended for the best Map rendering and live Google fallback. Without it, Map uses bundled places/routes snapshots first and loads captured Maps JS/resources from the local Service Worker cache; benchmark tasks are expected to remain usable, but uncached places, details, tiles, or online fallbacks may be missing. The common failure case is the nginx gateway at `https://localhost:4180`: if Chromium rejects nginx's self-signed localhost certificate, `/map-sw.js` cannot register, the placeholder SDK load is no longer intercepted by the cache, and Google reports `InvalidKeyMapError`. Set a real key when you want better visual fidelity, live Google fallback beyond the offline cache, fresh online map resources, or to regenerate Map snapshots.
 - **`VITE_GOOGLE_MAP_ID`** — custom vector-map style ID. Falls back to a demo Map ID if empty.
 - **`VITE_AMAP_API_KEY`** — AMap reverse geocoding (coordinates → address) for the Weather app. Offline city names cover the common cases when empty.
 - **`VITE_QWEATHER_API_KEY`** (+ `VITE_QWEATHER_HOST`) — live weather/forecast in the Weather app. Major cities have offline data; the key is needed for other coordinates or to regenerate snapshots.
 - **`VITE_AI_BASE_URL`** / **`VITE_AI_MODEL`** / **`VITE_AI_API_KEY`** — OpenAI-compatible endpoint for the built-in OS LLM. Empty → mock/random replies.
-- **`VITE_CDN_BASE`** — CDN prefix for large media (wallpapers, ringtones, app icons). Empty → uses the local `/cdn` mirror from the companion dataset.
+- **`VITE_CDN_BASE`** — public media host for wallpapers and the larger in-app feeds. Use `https://cdn.mobilegym.dev`, the same host as the hosted phone.
 
-See [`.env.example`](../.env.example) for the full list (including advanced flags like `VITE_GW_ALLOW_HOSTS` and `VITE_STORAGE_ISOLATION_MODE`). To use any of these:
-
-```bash
-cp .env.example .env.local
-# edit .env.local, then restart the dev server (or rebuild for preview/nginx —
-# VITE_* values are baked into the frontend bundle at build time).
-```
+Put any of these in the shell before `npm run dev`, or in a local `.env.local` that you do not commit. `VITE_*` values are baked into the frontend bundle at build time, so restart the dev server or rebuild after changing them.
 
 ## Boot the simulator
 
 ```bash
-npm run dev
+VITE_CDN_BASE=https://cdn.mobilegym.dev npm run dev
 # → Vite dev server starts at http://localhost:3000
 ```
 
-Open `http://localhost:3000` in any modern browser. You'll see an Android-style launcher. Tap around — everything works locally, no network calls to any real service.
+Open `http://localhost:3000` in any modern browser. You'll see an Android-style launcher. The phone runs locally. Wallpapers and the larger in-app feeds come from the public media host set above.
 
 > 💡 If you want to inspect or script the simulator from the page, the browser developer console exposes `window.__SIM__`, `window.__OS__`, `window.__SIM_INPUT__`, and `window.__SIM_QUERY__`. See [api/runtime-api.md](api/runtime-api.md) for the full reference.
 
@@ -66,7 +59,7 @@ Open `http://localhost:3000` in any modern browser. You'll see an Android-style 
 >
 > ```bash
 > conda install -c conda-forge nginx                # one-time, if not already installed
-> npm run build
+> VITE_CDN_BASE=https://cdn.mobilegym.dev npm run build
 > ./scripts/server/start_nginx_gateway.sh           # → https://localhost:4180  (HTTP/2 + TLS, 8 workers)
 > # stop: ./scripts/server/start_nginx_gateway.sh stop
 > ```
@@ -173,15 +166,11 @@ This flag only affects the Playwright browser's outbound requests; the agent pro
 If you just want every command in one block:
 
 ```bash
-git clone https://github.com/<YOUR_ORG>/mobilegym.git && cd mobilegym
+git clone https://github.com/OpenMobile2/openmobile2.git && cd openmobile2
 npm install
 pip install -r bench_env/requirements.txt && playwright install chromium
 
-curl -L -o mobilegym-data.tar.gz \
-  https://github.com/Purewhiter/mobilegym/releases/download/data-v1.0/mobilegym-data-v1.tar.gz
-tar -xzf mobilegym-data.tar.gz && rm mobilegym-data.tar.gz
-
-npm run dev &                                              # http://localhost:3000
+VITE_CDN_BASE=https://cdn.mobilegym.dev npm run dev &      # http://localhost:3000
 
 export MODEL_BASE_URL=http://localhost:8001/v1
 export MODEL_NAME=qwen3-vl-4b
