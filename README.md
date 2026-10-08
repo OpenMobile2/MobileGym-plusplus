@@ -125,8 +125,8 @@ Open the phone to use the product. Open `bench_env/benchmark/` to score a model.
 Node.js 22 or newer. This is the only command the phone needs. Leave the terminal running and open <http://127.0.0.1:3000>.
 
 ```bash
-git clone https://github.com/OpenMobile2/openmobile2.git
-cd openmobile2
+git clone https://github.com/OpenMobile2/MobileGym-plusplus.git
+cd MobileGym-plusplus
 zsh scripts/start_phone.sh
 ```
 

@@ -125,8 +125,8 @@
 需要 Node.js 22 或更新版本。手机只需要这一条命令。终端不要关，浏览器打开 <http://127.0.0.1:3000>。
 
 ```bash
-git clone https://github.com/OpenMobile2/openmobile2.git
-cd openmobile2
+git clone https://github.com/OpenMobile2/MobileGym-plusplus.git
+cd MobileGym-plusplus
 zsh scripts/start_phone.sh
 ```
 
