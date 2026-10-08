@@ -127,17 +127,28 @@ def _task_payload(task: Any) -> dict[str, Any]:
     }
 
 
-def _configured_env_url(config: HybridBenchmarkConfig) -> str:
-    if config.suite not in {"clocked", "prior", "native"}:
-        return config.env_url
-    from bench_env.task.clocked.time_control import simulated_time_bootstrap_url
+_FIXED_TIME_SUITES = {
+    "additional",
+    "clocked",
+    "compose",
+    "continued",
+    "crossapp",
+    "flow",
+    "hybrid_demo_crossapp",
+    "native",
+    "prior",
+    "services",
+    "social",
+    "workflows",
+}
 
-    if config.suite == "native":
-        from bench_env.task.native.specs import SIMULATED_TIME
-    elif config.suite == "prior":
-        from bench_env.task.prior.specs import SIMULATED_TIME
-    else:
-        from bench_env.task.clocked.specs import SIMULATED_TIME
+
+def _configured_env_url(config: HybridBenchmarkConfig) -> str:
+    suites = _split_suites(config.suite)
+    if not any(suite in _FIXED_TIME_SUITES for suite in suites):
+        return config.env_url
+    from bench_env.task.clocked.specs import SIMULATED_TIME
+    from bench_env.task.clocked.time_control import simulated_time_bootstrap_url
 
     return simulated_time_bootstrap_url(config.env_url, SIMULATED_TIME)
 

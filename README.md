@@ -153,7 +153,9 @@ zsh bench_env/benchmark/run.sh \
   --output-dir runs/bench-hybrid
 ```
 
-`--mode gui_only` uses the same 215 tasks and the same checkers, with the app-native tools turned off. With the default protocol the script runs `qwen35_session`: the system prompt and the task are sent once, `tools` stays `mobile_use`, and the last 3 screenshots are kept. Inside that protocol the model name selects the adapter: Qwen, Gemini, Kimi K3, DeepSeek, or GLM. The run writes `results.jsonl` and `summary.json`. For many parallel episodes, use `scripts/server/start_nginx_gateway.sh` as described in [`docs/getting-started.md`](docs/getting-started.md). The Vite server above is one process.
+`--mode gui_only` uses the same 215 tasks and the same checkers, with the app-native tools turned off. With the default protocol the script runs `qwen35_session`: the system prompt and the task are sent once, `tools` stays `mobile_use`, and the last 3 screenshots are kept. Inside that protocol the model name selects the adapter: Qwen, Gemini, Kimi K3, DeepSeek, or GLM. The run writes `results.jsonl` and `summary.json`.
+
+OpenMobile2-Code can score this same phone. Leave `scripts/start_phone.sh` running, then from `MobileGymPP/` run `eval_bench215.py` with `--mock-root` set to this repository and `--env-url http://127.0.0.1:3000`. The task list it reads is `bench215/official.json`. Pass `--runtime qwen35_session` to use the protocol above. For many parallel episodes, use `scripts/server/start_nginx_gateway.sh` as described in [`docs/getting-started.md`](docs/getting-started.md). The Vite server above is one process.
 
 ## License
 

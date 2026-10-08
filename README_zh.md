@@ -153,7 +153,9 @@ zsh bench_env/benchmark/run.sh \
   --output-dir runs/bench-hybrid
 ```
 
-`--mode gui_only` 仍是这 215 题和同一套检查器，只是关掉应用自带工具。默认协议是 `qwen35_session`：系统提示和题目只发一次，`tools` 保持 `mobile_use`，只留最近 3 张截图。模型名字会选适配：Qwen、Gemini、Kimi K3、DeepSeek 或 GLM。跑完会写下 `results.jsonl` 和 `summary.json`。并行很多路时，用 `scripts/server/start_nginx_gateway.sh`，做法在 [`docs/getting-started.md`](docs/getting-started.md)。上面的 Vite 是单进程。
+`--mode gui_only` 仍是这 215 题和同一套检查器，只是关掉应用自带工具。默认协议是 `qwen35_session`：系统提示和题目只发一次，`tools` 保持 `mobile_use`，只留最近 3 张截图。模型名字会选适配：Qwen、Gemini、Kimi K3、DeepSeek 或 GLM。跑完会写下 `results.jsonl` 和 `summary.json`。
+
+OpenMobile2-Code 也可以评这部手机。本仓库的 `scripts/start_phone.sh` 不要关，再到 `MobileGymPP/` 里跑 `eval_bench215.py`，`--mock-root` 指到本仓库，`--env-url http://127.0.0.1:3000`。它读的题单是 `bench215/official.json`。协议用 `--runtime qwen35_session`。并行很多路时，用 `scripts/server/start_nginx_gateway.sh`，做法在 [`docs/getting-started.md`](docs/getting-started.md)。上面的 Vite 是单进程。
 
 ## 许可
 
