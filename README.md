@@ -120,31 +120,30 @@ Commercial-app counts below follow the same definition as the paper: for MobileG
 
 Open the phone to use the product. Open `bench_env/benchmark/` to score a model.
 
-## Run the phone
+## 1. Start the phone
 
-Node.js 22 or newer.
+Node.js 22 or newer. This is the only command the phone needs. Leave the terminal running and open <http://127.0.0.1:3000>.
 
 ```bash
 git clone https://github.com/OpenMobile2/openmobile2.git
 cd openmobile2
-npm install
-VITE_CDN_BASE=https://cdn.mobilegym.dev npm run dev
+zsh scripts/start_phone.sh
 ```
 
-Vite prints an address, usually `http://127.0.0.1:3000`. `VITE_CDN_BASE` points wallpapers and the larger in-app feeds at the public media host, the same host the live phone uses. Each client's own interface assets are already in the clone.
+The script installs Node packages on the first run and loads wallpapers from `https://cdn.mobilegym.dev`, the same host as the hosted phone. The 215 tasks do not need map, weather, or assistant keys.
 
-A phone is already up at <https://mobilegym-mock-production.up.railway.app>.
+## 2. Score your model
 
-Maps, live weather, and the in-phone assistant read optional `VITE_*` keys. The 215 tasks are written against bundled snapshots and do not need those keys. The steps from clone to a judged task are in [`docs/getting-started.md`](docs/getting-started.md).
-
-## Run the 215 tasks
-
-Python 3.11 or newer. Leave the phone running, then from the repository root:
+Python 3.11 or newer. In a second terminal, at the repository root, install the checker once:
 
 ```bash
 python3 -m pip install -r bench_env/requirements.txt
 python3 -m playwright install chromium
+```
 
+Then point it at the phone and at your OpenAI-compatible endpoint:
+
+```bash
 zsh bench_env/benchmark/run.sh \
   --mode hybrid \
   --env-url http://127.0.0.1:3000 \
@@ -154,9 +153,7 @@ zsh bench_env/benchmark/run.sh \
   --output-dir runs/bench-hybrid
 ```
 
-Any OpenAI-compatible `/v1` endpoint works. `--mode gui_only` keeps the same tasks and checkers and turns the app-native tools off. The run writes `results.jsonl`, `summary.json`, and per-task artifacts. Details are in [`bench_env/benchmark/README.md`](bench_env/benchmark/README.md).
-
-For more than a handful of parallel episodes, build the static phone and use `scripts/server/start_nginx_gateway.sh`, as described in the getting-started guide. The Vite dev server is one process.
+`--mode gui_only` uses the same 215 tasks and the same checkers, with the app-native tools turned off. The run writes `results.jsonl` and `summary.json`. For many parallel episodes, use `scripts/server/start_nginx_gateway.sh` as described in [`docs/getting-started.md`](docs/getting-started.md). The Vite server above is one process.
 
 ## License
 

@@ -120,31 +120,30 @@
 
 想用产品，就打开手机。想给模型打分，就看 `bench_env/benchmark/`。
 
-## 打开手机
+## 1. 起手机
 
-需要 Node.js 22 或更新版本。
+需要 Node.js 22 或更新版本。手机只需要这一条命令。终端不要关，浏览器打开 <http://127.0.0.1:3000>。
 
 ```bash
 git clone https://github.com/OpenMobile2/openmobile2.git
 cd openmobile2
-npm install
-VITE_CDN_BASE=https://cdn.mobilegym.dev npm run dev
+zsh scripts/start_phone.sh
 ```
 
-Vite 会打印地址，一般是 `http://127.0.0.1:3000`。`VITE_CDN_BASE` 让壁纸和应用里较大的内容图从公开媒体地址加载，和线上那部手机用的是同一处。每个客户端自己的界面图已经在克隆下来的仓库里。
+脚本第一次会安装 Node 依赖，并从 `https://cdn.mobilegym.dev` 加载壁纸，和线上那部手机是同一处。215 道题不需要地图、天气或助手的密钥。
 
-线上已经有一部可点的手机：<https://mobilegym-mock-production.up.railway.app>。
+## 2. 用你的模型打分
 
-地图、实时天气和手机里的助手可以读可选的 `VITE_*`。215 道题按自带的离线快照来写，不需要这些密钥。从克隆到判完一道题的步骤在 [`docs/getting-started.md`](docs/getting-started.md)。
-
-## 跑 215 题
-
-需要 Python 3.11 或更新版本。先把手机开着，再在仓库根目录执行：
+需要 Python 3.11 或更新版本。另开一个终端，在仓库根目录先装一次检查器：
 
 ```bash
 python3 -m pip install -r bench_env/requirements.txt
 python3 -m playwright install chromium
+```
 
+然后把手机和你自己的、兼容 OpenAI `/v1` 的模型接上：
+
+```bash
 zsh bench_env/benchmark/run.sh \
   --mode hybrid \
   --env-url http://127.0.0.1:3000 \
@@ -154,9 +153,7 @@ zsh bench_env/benchmark/run.sh \
   --output-dir runs/bench-hybrid
 ```
 
-模型地址用任何兼容 OpenAI `/v1` 的接口。`--mode gui_only` 仍是这 215 题和同一套检查器，只是关掉应用自带工具。跑完会在输出目录写下 `results.jsonl`、`summary.json` 和每题的记录。细节在 [`bench_env/benchmark/README.md`](bench_env/benchmark/README.md)。
-
-并行比较多的时候，先构建静态页面，再用 `scripts/server/start_nginx_gateway.sh`。做法写在入门文档里。Vite 的开发服务器是单进程。
+`--mode gui_only` 仍是这 215 题和同一套检查器，只是关掉应用自带工具。跑完会写下 `results.jsonl` 和 `summary.json`。并行很多路时，用 `scripts/server/start_nginx_gateway.sh`，做法在 [`docs/getting-started.md`](docs/getting-started.md)。上面的 Vite 是单进程。
 
 ## 许可
 
