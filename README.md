@@ -20,6 +20,97 @@
   <a href="#the-phone"><img alt="63 clients" src="https://img.shields.io/badge/clients-63-111111.svg"></a>
 </p>
 
+## Leaderboard
+
+215 tasks. GUI-only and hybrid use the same tasks, the same initial state, and the same checker. Success is the percentage of tasks completed. Average steps are filled only for the rows the paper plots; a blank means that row has no step count in the paper. A star marks a result the paper reproduced.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left" rowspan="2">Model</th>
+      <th align="center" colspan="2">GUI only</th>
+      <th align="center" colspan="2">Hybrid</th>
+    </tr>
+    <tr>
+      <th align="right">Success ↑</th>
+      <th align="right">Steps ↓</th>
+      <th align="right">Success ↑</th>
+      <th align="right">Steps ↓</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td colspan="5"><em>Open-weight models</em></td></tr>
+    <tr>
+      <td>UI-Venus-1.5-8B</td>
+      <td align="right">19.5*</td><td align="right">—</td>
+      <td align="right">16.3*</td><td align="right">—</td>
+    </tr>
+    <tr>
+      <td>GUI-Owl-1.5-8B</td>
+      <td align="right">13.0*</td><td align="right">33.9</td>
+      <td align="right">12.6*</td><td align="right">34.6</td>
+    </tr>
+    <tr>
+      <td>GUI-Owl-1.5-32B</td>
+      <td align="right">18.6*</td><td align="right">32.3</td>
+      <td align="right">23.3*</td><td align="right">36.7</td>
+    </tr>
+    <tr>
+      <td>MAI-UI-8B</td>
+      <td align="right">19.1*</td><td align="right">—</td>
+      <td align="right">18.6*</td><td align="right">—</td>
+    </tr>
+    <tr><td colspan="5"><em>Open-data models</em></td></tr>
+    <tr>
+      <td>OpenMobile-1-8B</td>
+      <td align="right">13.5*</td><td align="right">—</td>
+      <td align="right">7.0*</td><td align="right">—</td>
+    </tr>
+    <tr>
+      <td>Qwen3.5-9B</td>
+      <td align="right">9.3*</td><td align="right">43.4</td>
+      <td align="right">12.1*</td><td align="right">42.9</td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;OpenMobile-2-9B, GUI-only SFT</td>
+      <td align="right">40.9</td><td align="right">—</td>
+      <td align="right">41.9</td><td align="right">—</td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;OpenMobile-2-9B, hybrid SFT</td>
+      <td align="right">39.1</td><td align="right">28.0</td>
+      <td align="right">44.7</td><td align="right">23.2</td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;OpenMobile-2-9B + RL</td>
+      <td align="right">40.5</td><td align="right">—</td>
+      <td align="right">46.5</td><td align="right">—</td>
+    </tr>
+    <tr>
+      <td>Qwen3.6-27B</td>
+      <td align="right">46.5*</td><td align="right">32.0</td>
+      <td align="right">50.7*</td><td align="right">28.6</td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;OpenMobile-2-27B, GUI-only SFT</td>
+      <td align="right">54.9</td><td align="right">—</td>
+      <td align="right">57.7</td><td align="right">—</td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;OpenMobile-2-27B, hybrid SFT</td>
+      <td align="right">55.3</td><td align="right">25.0</td>
+      <td align="right"><b>65.6</b></td><td align="right"><b>19.2</b></td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;OpenMobile-2-27B + RL</td>
+      <td align="right"><b>57.2</b></td><td align="right">—</td>
+      <td align="right"><b>67.0</b></td><td align="right">—</td>
+    </tr>
+  </tbody>
+</table>
+
+Success rates are Table 2 of the OpenMobile-2 paper. Average steps are Figure 5. Closed-weight models in that table were not scored on this bench.
+
 <p align="center">
   <img src="docs/images/fig2b-hybrid.png" alt="GUI-only actions on top. Below, the same task interleaves clicks with app-native calls such as list_order and search_item. Both write one shared application state." width="780">
 </p>

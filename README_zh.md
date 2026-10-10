@@ -20,6 +20,97 @@
   <a href="#这部手机"><img alt="63 个客户端" src="https://img.shields.io/badge/clients-63-111111.svg"></a>
 </p>
 
+## 排行榜
+
+215 道题。只点屏幕和可调工具用的是同一批题、同一份初始状态、同一套检查器。分数是做完的百分比。平均步数只填论文图里画出来的那些行，空着表示这篇论文没有给这一行的步数。星号是论文里标明由作者复现的结果。
+
+<table>
+  <thead>
+    <tr>
+      <th align="left" rowspan="2">模型</th>
+      <th align="center" colspan="2">只点屏幕</th>
+      <th align="center" colspan="2">可调工具</th>
+    </tr>
+    <tr>
+      <th align="right">成功率 ↑</th>
+      <th align="right">平均步数 ↓</th>
+      <th align="right">成功率 ↑</th>
+      <th align="right">平均步数 ↓</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td colspan="5"><em>开放权重</em></td></tr>
+    <tr>
+      <td>UI-Venus-1.5-8B</td>
+      <td align="right">19.5*</td><td align="right">—</td>
+      <td align="right">16.3*</td><td align="right">—</td>
+    </tr>
+    <tr>
+      <td>GUI-Owl-1.5-8B</td>
+      <td align="right">13.0*</td><td align="right">33.9</td>
+      <td align="right">12.6*</td><td align="right">34.6</td>
+    </tr>
+    <tr>
+      <td>GUI-Owl-1.5-32B</td>
+      <td align="right">18.6*</td><td align="right">32.3</td>
+      <td align="right">23.3*</td><td align="right">36.7</td>
+    </tr>
+    <tr>
+      <td>MAI-UI-8B</td>
+      <td align="right">19.1*</td><td align="right">—</td>
+      <td align="right">18.6*</td><td align="right">—</td>
+    </tr>
+    <tr><td colspan="5"><em>开放数据</em></td></tr>
+    <tr>
+      <td>OpenMobile-1-8B</td>
+      <td align="right">13.5*</td><td align="right">—</td>
+      <td align="right">7.0*</td><td align="right">—</td>
+    </tr>
+    <tr>
+      <td>Qwen3.5-9B</td>
+      <td align="right">9.3*</td><td align="right">43.4</td>
+      <td align="right">12.1*</td><td align="right">42.9</td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;OpenMobile-2-9B，只点屏幕 SFT</td>
+      <td align="right">40.9</td><td align="right">—</td>
+      <td align="right">41.9</td><td align="right">—</td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;OpenMobile-2-9B，混合 SFT</td>
+      <td align="right">39.1</td><td align="right">28.0</td>
+      <td align="right">44.7</td><td align="right">23.2</td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;OpenMobile-2-9B + RL</td>
+      <td align="right">40.5</td><td align="right">—</td>
+      <td align="right">46.5</td><td align="right">—</td>
+    </tr>
+    <tr>
+      <td>Qwen3.6-27B</td>
+      <td align="right">46.5*</td><td align="right">32.0</td>
+      <td align="right">50.7*</td><td align="right">28.6</td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;OpenMobile-2-27B，只点屏幕 SFT</td>
+      <td align="right">54.9</td><td align="right">—</td>
+      <td align="right">57.7</td><td align="right">—</td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;OpenMobile-2-27B，混合 SFT</td>
+      <td align="right">55.3</td><td align="right">25.0</td>
+      <td align="right"><b>65.6</b></td><td align="right"><b>19.2</b></td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;OpenMobile-2-27B + RL</td>
+      <td align="right"><b>57.2</b></td><td align="right">—</td>
+      <td align="right"><b>67.0</b></td><td align="right">—</td>
+    </tr>
+  </tbody>
+</table>
+
+成功率来自 OpenMobile-2 论文 Table 2。平均步数来自 Figure 5。那张总表里的闭源模型没有在这个基准上给分。
+
 <p align="center">
   <img src="docs/images/fig2b-hybrid.png" alt="上面是只点屏幕。下面是同一道题里，点击和应用自带工具交替进行，例如 list_order 和 search_item。两条路写入同一份应用状态。" width="780">
 </p>
