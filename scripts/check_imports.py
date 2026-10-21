@@ -20,10 +20,11 @@ for f in files:
 
 EXTS = ["", ".ts", ".tsx", ".js", ".jsx", ".mjs", ".cjs", ".json", ".d.ts"]
 IMPORT_RE = re.compile(
-    r"""(?:import|export)\s[^'"]*?\sfrom\s*['"]([^'"]+)['"]"""
-    r"""|import\s*['"]([^'"]+)['"]"""
-    r"""|import\(\s*['"]([^'"]+)['"]\s*\)"""
-    r"""|new\s+URL\(\s*['"](\.[^'"]+)['"]\s*,\s*import\.meta\.url"""
+    r"""^\s*(?:import|export)\s[^'";]*?\sfrom\s*['"]([^'"]+)['"]"""
+    r"""|^\s*import\s*['"]([^'"]+)['"]"""
+    r"""|(?<![\w'"])import\(\s*['"]([^'"]+)['"]\s*\)"""
+    r"""|new\s+URL\(\s*['"](\.[^'"]+)['"]\s*,\s*import\.meta\.url""",
+    re.M,
 )
 SKIP_DIRS = ("node_modules/", "dist/", "bench_env/", "docs/")
 
