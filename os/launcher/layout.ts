@@ -225,11 +225,17 @@ export function buildDefaultLauncherLayout(appRegistry: AppManifest[]): Launcher
       .map(i => i.appId),
   ]);
 
+  // `meituan` is an early thin demo (emoji covers, account name "测试用户").
+  // It stays installed so tools and saved states that name it still resolve,
+  // but it gets no home-screen slot; hiddenApps also stops reconcile from
+  // putting it back on a later page.
+  const desktopHiddenAppIds = new Set<string>(['meituan']);
+
   // Remaining apps go to screen 2 sequentially.
   const remainingAppIds = appRegistry
     .map(a => a.id)
     .filter(id => !!id && isValidAppIdFromRegistry(id, appRegistry))
-    .filter(id => !usedAppIds.has(id));
+    .filter(id => !usedAppIds.has(id) && !desktopHiddenAppIds.has(id));
 
   const screen2Id = 'screen_2';
   const screen2Placements: LauncherPlacement[] = [];
@@ -281,7 +287,7 @@ export function buildDefaultLauncherLayout(appRegistry: AppManifest[]): Launcher
     items,
     folders: {},
     wallpaper,
-    hiddenApps: [],
+    hiddenApps: [...desktopHiddenAppIds],
   }, appRegistry);
 }
 
