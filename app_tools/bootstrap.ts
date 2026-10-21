@@ -20,6 +20,14 @@ import { TAOBAO_TOOL_DEFINITIONS } from './apps/taobao/definitions';
 import { BROADCAST_TOOL_DEFINITIONS } from './apps/broadcast/definitions';
 import { CTRIP_TOOL_DEFINITIONS } from './apps/ctrip/definitions';
 import { LUCKIN_TOOL_DEFINITIONS } from './apps/luckin/definitions';
+import { JINGDONG_TOOL_DEFINITIONS } from './apps/jingdong/definitions';
+import { DIANPING_TOOL_DEFINITIONS } from './apps/dianping/definitions';
+import { KAPI_TOOL_DEFINITIONS } from './apps/kapi/definitions';
+import { DIDA_TOOL_DEFINITIONS } from './apps/dida/definitions';
+import { SLACK_TOOL_DEFINITIONS } from './apps/slack/definitions';
+import { MAIL_TOOL_DEFINITIONS } from './apps/mail/definitions';
+import { GOOGLEDRIVE_TOOL_DEFINITIONS } from './apps/googledrive/definitions';
+import { CATALOG_EXPANSION } from './apps/catalog_expansion';
 import { toolRegistry } from './core/registry';
 import type { JsonObject, ToolDefinition } from './core/types';
 
@@ -76,6 +84,26 @@ registerLazyTools(CTRIP_TOOL_DEFINITIONS, async (name, input) =>
   (await import('./apps/ctrip')).executeCtripTool(name, input));
 registerLazyTools(LUCKIN_TOOL_DEFINITIONS, async (name, input) =>
   (await import('./apps/luckin')).executeLuckinTool(name, input));
+registerLazyTools(JINGDONG_TOOL_DEFINITIONS, async (name, input) =>
+  (await import('./apps/jingdong')).executeJingdongTool(name, input));
+registerLazyTools(DIANPING_TOOL_DEFINITIONS, async (name, input) =>
+  (await import('./apps/dianping')).executeDianpingTool(name, input));
+registerLazyTools(KAPI_TOOL_DEFINITIONS, async (name, input) =>
+  (await import('./apps/kapi')).executeKapiTool(name, input));
+registerLazyTools(DIDA_TOOL_DEFINITIONS, async (name, input) =>
+  (await import('./apps/dida')).executeDidaTool(name, input));
+registerLazyTools(SLACK_TOOL_DEFINITIONS, async (name, input) =>
+  (await import('./apps/slack')).executeSlackTool(name, input));
+registerLazyTools(MAIL_TOOL_DEFINITIONS, async (name, input) =>
+  (await import('./apps/mail')).executeMailTool(name, input));
+registerLazyTools(GOOGLEDRIVE_TOOL_DEFINITIONS, async (name, input) =>
+  (await import('./apps/googledrive')).executeGoogleDriveTool(name, input));
+const explicitlyRegisteredCatalogNamespaces = new Set([
+  'dianping', 'dida', 'googledrive', 'jingdong', 'kapi', 'mail',
+]);
+CATALOG_EXPANSION
+  .filter(({ definitions }) => !explicitlyRegisteredCatalogNamespaces.has(definitions[0]?.name.split('__')[0] ?? ''))
+  .forEach(({ definitions, execute }) => registerLazyTools(definitions, execute));
 
 if (typeof window !== 'undefined') {
   window.__MOBILE_GYM_TOOLS__ = {
