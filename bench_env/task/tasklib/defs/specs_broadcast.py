@@ -1,4 +1,4 @@
-"""Broadcast (Apple Podcasts clone) hybrid GUI+Tools tasks (tasklib)."""
+"""Broadcast (Apple Podcasts clone) hybrid GUI+Tools tasks (selfbuilt-v1)."""
 
 from __future__ import annotations
 

@@ -7,7 +7,6 @@ import ComposeTagsuggestPage from './ComposeTagsuggestPage';
 import ComposeListmenuPage from './ComposeListmenuPage';
 import ComposeMoretoolbarPage from './ComposeMoretoolbarPage';
 import ImagePickerPage from './ImagePickerPage';
-import MemoCardmenuPage from './MemoCardmenuPage';
 import MemoDetailPage from './MemoDetailPage';
 import MemoLongpressmenuPage from './MemoLongpressmenuPage';
 import MemoDetailmenuPage from './MemoDetailmenuPage';
@@ -48,7 +47,6 @@ export const ROUTES: { path: string; element: React.ReactNode }[] = [
   { path: '/compose/listMenu', element: <ComposeListmenuPage /> },
   { path: '/compose/moreToolbar', element: <ComposeMoretoolbarPage /> },
   { path: '/image/picker', element: <ImagePickerPage /> },
-  { path: '/memo/cardMenu', element: <MemoCardmenuPage /> },
   { path: '/memo/detail', element: <MemoDetailPage /> },
   { path: '/memo/longPressMenu', element: <MemoLongpressmenuPage /> },
   { path: '/memo/detailMenu', element: <MemoDetailmenuPage /> },

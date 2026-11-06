@@ -18,7 +18,6 @@ export const NAVIGATION_DECLARATION = {
             { id: "menu.mode.select.target", label: "自提/外送 分段", behavior: "select" },
             { id: "menu.tab.select.target", label: "经典菜单/天天9.9/我的常点 子Tab", behavior: "select" },
             { id: "menu.category.select.target", label: "左侧分类锚点", behavior: "select" },
-            { id: "menu.usual.add", label: "我的常点/收藏口味 卡", behavior: "modify" },
             { id: "menu.cart.open", label: "底部购物袋浮条", behavior: "open" },
             { id: "menu.daily99.claim", label: "天天9.9「立即领取」banner", behavior: "submit" },
             { id: "common.feature.unavailable", label: "拼单按钮", behavior: "other" },
@@ -109,7 +108,6 @@ export const NAVIGATION_DECLARATION = {
             { id: "product.addon.select.target", label: "奶/加料选项", behavior: "select" },
             { id: "product.qty.step", label: "数量 − / +", behavior: "modify" },
             { id: "product.flavor.save", label: "保存口味", behavior: "submit" },
-            { id: "product.exchange.add", label: "换购小食「+」", behavior: "modify" },
             { id: "product.cart.add", label: "加入购物车", behavior: "modify" },
           ],
         },
@@ -660,6 +658,11 @@ export const NAVIGATION_DECLARATION = {
       label: "门店栏(门店名+距离)", ui: { placement: "content", icon: 'forward', gesture: 'tap' },
     },
     {
+      id: "menu.address-open", from: "/", to: "/address",
+      search: {source: "menu"}, searchParams: {}, mode: "push", params: {},
+      label: "外送地址栏", ui: { placement: "content", icon: 'pin', gesture: 'tap' },
+    },
+    {
       id: "menu.coupons-open", from: "/", to: "/coupons/center",
       search: {}, searchParams: {}, mode: "push", params: {},
       label: "券banner「更多优惠›」", ui: { placement: "content", icon: 'forward', gesture: 'tap' },
@@ -705,6 +708,11 @@ export const NAVIGATION_DECLARATION = {
       label: "立即购买", ui: { placement: "content", icon: 'forward', gesture: 'tap' },
     },
     {
+      id: "product.exchange-open", from: "/product/:itemId", to: "/product/:itemId",
+      search: {}, searchParams: {}, mode: "push", params: {"itemId": "string"},
+      label: "换购商品定制入口", ui: { placement: "content", icon: 'forward', gesture: 'tap' },
+    },
+    {
       id: "cart.checkout-open", from: {"path": "/", "search": {"cart": "1"}}, to: "/order/confirm",
       search: {}, searchParams: {}, mode: "push", params: {},
       label: "去结算", ui: { placement: "content", icon: 'forward', gesture: 'tap' },
@@ -716,7 +724,7 @@ export const NAVIGATION_DECLARATION = {
     },
     {
       id: "order.address-open", from: "/order/confirm", to: "/address",
-      search: {}, searchParams: {}, mode: "push", params: {},
+      search: {source: "order"}, searchParams: {}, mode: "push", params: {},
       label: "收货地址行(外送)", ui: { placement: "content", icon: 'forward', gesture: 'tap' },
     },
     {
@@ -775,9 +783,19 @@ export const NAVIGATION_DECLARATION = {
       label: "门店列表项", ui: { placement: "content", icon: 'forward', gesture: 'tap' },
     },
     {
-      id: "address.select-back", from: "/address", to: "/order/confirm",
-      search: {}, searchParams: {}, mode: "push", params: {},
-      label: "地址项", ui: { placement: "content", icon: 'forward', gesture: 'tap' },
+      id: "address.select-menu", from: {path: "/address", search: {source: "menu"}}, to: "/",
+      search: {}, searchParams: {}, mode: "replace", params: {},
+      label: "菜单外送地址项", ui: { placement: "content", icon: 'forward', gesture: 'tap' },
+    },
+    {
+      id: "address.select-order", from: {path: "/address", search: {source: "order"}}, to: "/order/confirm",
+      search: {}, searchParams: {}, mode: "replace", params: {},
+      label: "订单收货地址项", ui: { placement: "content", icon: 'forward', gesture: 'tap' },
+    },
+    {
+      id: "address.select-profile", from: {path: "/address", search: {source: "profile"}}, to: "/mine/profile",
+      search: {}, searchParams: {}, mode: "replace", params: {},
+      label: "个人资料地址项", ui: { placement: "content", icon: 'forward', gesture: 'tap' },
     },
     {
       id: "address.edit-open", from: "/address", to: "/address/edit",
@@ -916,7 +934,7 @@ export const NAVIGATION_DECLARATION = {
     },
     {
       id: "profile.address-open", from: "/mine/profile", to: "/address",
-      search: {}, searchParams: {}, mode: "push", params: {},
+      search: {source: "profile"}, searchParams: {}, mode: "push", params: {},
       label: "收货地址", ui: { placement: "content", icon: 'forward', gesture: 'tap' },
     },
     {

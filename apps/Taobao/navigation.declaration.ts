@@ -106,6 +106,7 @@ export const NAVIGATION_DECLARATION = {
             { id: 'detail.sku.openForBuy', label: '打开SKU面板(立即购买)', behavior: 'open' },
             { id: 'detail.reviews.open', label: '打开评价弹层', behavior: 'open' },
             { id: 'detail.favorite.toggle', label: '收藏/取消收藏', behavior: 'toggle' },
+            { id: 'detail.share.wechat', label: '分享商品到微信(跨app ACTION_SEND)', behavior: 'other' },
           ],
         },
         {
@@ -144,7 +145,12 @@ export const NAVIGATION_DECLARATION = {
             { id: 'shop.more.open', label: '店铺更多面板', behavior: 'open' },
           ],
         },
-        { id: 'taobao.shop.items', search: { tab: 'items' }, description: '店铺-宝贝' },
+        {
+          id: 'taobao.shop.items', search: { tab: 'items' }, description: '店铺-宝贝',
+          actions: [
+            { id: 'shop.items.sort.select', label: '店铺宝贝排序', behavior: 'select', paramsSchema: { sort: 'string' } },
+          ],
+        },
         { id: 'taobao.shop.posts', search: { tab: 'posts' }, description: '店铺-晒单' },
         {
           id: 'taobao.shop.member', search: { tab: 'member' }, description: '店铺-会员',
@@ -152,7 +158,7 @@ export const NAVIGATION_DECLARATION = {
         },
         { id: 'taobao.shop.more', search: { panel: 'more' }, description: '右上更多面板' },
       ],
-      queryParams: {},
+      queryParams: { tab: 'string', panel: 'string' },
       description: '店铺页(四 Tab)',
     },
     {
@@ -590,6 +596,10 @@ export const NAVIGATION_DECLARATION = {
       label: '点击搜索栏', ui: { placement: 'content', icon: 'search', gesture: 'tap' } },
     { id: 'home.item-open', from: ['/', '/me', '/orders', '/order/success/:orderId'], to: '/item/:itemId', search: {}, searchParams: {}, mode: 'push',
       params: { itemId: 'string' }, label: '瀑布流商品卡',
+      ui: { placement: 'content', icon: 'card', gesture: 'tap' },
+      dataSource: { ref: 'items', paramMapping: { itemId: 'id' }, labelField: 'title' } },
+    { id: 'orderDetail.item-open', from: '/orders/:orderId', to: '/item/:itemId', search: {}, searchParams: {}, mode: 'push',
+      params: { itemId: 'string' }, label: '订单详情商品卡',
       ui: { placement: 'content', icon: 'card', gesture: 'tap' },
       dataSource: { ref: 'items', paramMapping: { itemId: 'id' }, labelField: 'title' } },
     { id: 'home.heybox-open', from: '/', to: '/heybox', search: {}, searchParams: {}, mode: 'push', params: {},

@@ -101,6 +101,7 @@ class _FakeEnv:
         self.page = _FakePage(self)
         self.agent_answer = None
         self.agent_message = None
+        self.awake_calls = []
 
     async def get_route(self):
         return dict(self.route)
@@ -112,6 +113,7 @@ class _FakeEnv:
         done = False
         info = {}
         if action.action_type == ActionType.AWAKE:
+            self.awake_calls.append(str(action.data.get("value") or ""))
             self.route = {"app": "calendar", "path": "/"}
         elif action.action_type == ActionType.COMPLETE:
             done = True
@@ -130,19 +132,94 @@ def test_open_app_returns_app_not_found_without_executing_unknown_app():
             _FakeLlm(), HybridAgentConfig(stream=False, verbose=False)
         )
         runtime = HybridAgentRuntime(env, agent)
-        return await runtime._execute_mobile_use(
+        return env, await runtime._execute_mobile_use(
             FunctionCall(
                 name="mobile_use",
                 arguments={"action": "open_app", "app": "淘宝闪购"},
             )
         )
 
-    feedback, observation, done = asyncio.run(scenario())
+    env, (feedback, observation, done) = asyncio.run(scenario())
 
     assert feedback.ok is False
     assert feedback.result["code"] == "APP_NOT_FOUND"
+    assert "not installed" in feedback.result["message"]
     assert observation.current_app == "notes"
     assert done is False
+    assert env.awake_calls == []
+
+
+def test_open_app_loose_name_still_executes():
+    async def scenario():
+        env = _FakeEnv()
+        env.APP_NAME_MAP = {"QQ Music": "qqmusic", "Calendar": "calendar"}
+        env._KNOWN_APP_IDS = frozenset({"qqmusic", "calendar"})
+        agent = HybridXmlAgent(
+            _FakeLlm(), HybridAgentConfig(stream=False, verbose=False)
+        )
+        runtime = HybridAgentRuntime(env, agent)
+        return env, await runtime._execute_mobile_use(
+            FunctionCall(
+                name="mobile_use",
+                arguments={"action": "open_app", "app": "qq music"},
+            )
+        )
+
+    env, (feedback, _observation, done) = asyncio.run(scenario())
+    assert feedback.ok is True
+    assert done is False
+    assert env.awake_calls == ["qq music"]
+
+
+class _UnknownThenCalendarLlm:
+    def __init__(self):
+        self.messages = []
+        self.responses = iter(
+            [
+                """Thought: Open Meituan first.
+Action: Launch it.
+<tool_call><function=mobile_use>
+<parameter=action>open_app</parameter><parameter=app>美团</parameter>
+</function></tool_call>""",
+                """Thought: That app is missing; open Calendar instead.
+Action: Launch Calendar.
+<tool_call><function=mobile_use>
+<parameter=action>open_app</parameter><parameter=app>calendar</parameter>
+</function></tool_call>""",
+                """Thought: Done.
+Action: Finish.
+<tool_call><function=mobile_use>
+<parameter=action>terminate</parameter><parameter=status>success</parameter>
+</function></tool_call>""",
+            ]
+        )
+
+    def chat(self, *, messages, args):
+        self.messages.append(messages)
+        return _ChatResult(next(self.responses))
+
+
+def test_runtime_forwards_app_not_found_to_the_next_agent_turn():
+    async def scenario():
+        env = _FakeEnv()
+        env.APP_NAME_MAP = {"Calendar": "calendar"}
+        env._KNOWN_APP_IDS = frozenset({"calendar"})
+        env.route = {"app": "notes", "path": "/"}
+        llm = _UnknownThenCalendarLlm()
+        agent = HybridXmlAgent(llm, HybridAgentConfig(stream=False, verbose=False))
+        result = await HybridAgentRuntime(env, agent).run("Open calendar", max_steps=5)
+        return env, llm, result
+
+    env, llm, result = asyncio.run(scenario())
+
+    assert result.trace[0].feedback.ok is False
+    assert result.trace[0].feedback.result["code"] == "APP_NOT_FOUND"
+    second_user = llm.messages[1][-1]["content"]
+    second_text = second_user[1]["text"] if isinstance(second_user, list) else second_user
+    assert "APP_NOT_FOUND" in second_text
+    assert "美团" in second_text
+    assert env.awake_calls == ["calendar"]
+    assert result.stop_reason == "COMPLETE"
 
 
 def test_runtime_exposes_only_foreground_app_tools_and_executes_sequentially():

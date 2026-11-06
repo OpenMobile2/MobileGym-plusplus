@@ -1,11 +1,13 @@
 import React, { useRef } from 'react';
 import { useFlomoStore } from '../state';
 import { useFlomoGestures } from '../hooks/useFlomoGestures';
+import { useFlomoStrings } from '../hooks/useFlomoStrings';
 import { C } from '../components/ui';
 import { IcTag, IcImage, IcBold, IcList, IcMore, IcArrowDown, IcSend } from '../res/icons';
 
 export default function ComposeEditorPage() {
   const { bindTap, bindBack, back } = useFlomoGestures();
+  const s = useFlomoStrings();
   const mode = useFlomoStore((s) => s.composeMode);
   const draft = useFlomoStore((s) => s.composeDraft);
   const images = useFlomoStore((s) => s.composeDraftImages);
@@ -36,33 +38,39 @@ export default function ComposeEditorPage() {
 
   const send = () => {
     if (!canSend) {
-      back();
+      toast(s.pleaseInput);
       return;
     }
     if (mode === 'edit' && currentMemoId) {
       updateMemo(currentMemoId, draft);
-      toast('笔记已保存');
+      toast(s.memoSaved);
     } else if (mode === 'annotate' && currentMemoId) {
       addMemo(draft, { sourceMemoId: currentMemoId });
-      toast('笔记发布成功');
+      toast(s.memoPublished);
     } else {
       addMemo(draft, { images });
-      toast('笔记发布成功');
+      toast(s.memoPublished);
     }
     clearDraft();
     back();
   };
 
-  const tool = (node: React.ReactNode, bind: object, key: string) => (
-    <button key={key} {...bind} className="w-9 h-9 flex items-center justify-center bg-transparent border-none cursor-pointer" style={{ color: C.sub }}>
+  const tool = (node: React.ReactNode, bind: object, key: string, label: string) => (
+    <button
+      key={key}
+      {...bind}
+      aria-label={label}
+      className="w-9 h-9 flex items-center justify-center bg-transparent border-none cursor-pointer"
+      style={{ color: C.sub }}
+    >
       {node}
     </button>
   );
 
   return (
-    <div className="flex flex-col h-full" style={{ background: C.bg }} data-status-bar-foreground="dark">
+    <div className="flex flex-col h-full" style={{ background: C.bg }}>
       <div className="flex justify-end items-center px-3 h-10 shrink-0">
-        <button {...bindBack()} className="bg-transparent border-none cursor-pointer" style={{ color: C.sub }} aria-label="收起">
+        <button {...bindBack()} className="bg-transparent border-none cursor-pointer" style={{ color: C.sub }} aria-label={s.collapse}>
           <IcArrowDown size={22} />
         </button>
       </div>
@@ -96,8 +104,8 @@ export default function ComposeEditorPage() {
 
       {images.length > 0 && (
         <div className="px-4 pb-2 flex flex-wrap gap-2">
-          {images.map((src) => (
-            <div key={src} className="relative w-20 h-20">
+          {images.filter(Boolean).map((src, i) => (
+            <div key={`${src}-${i}`} className="relative w-20 h-20">
               <img src={src} alt="" className="w-full h-full object-cover rounded-lg" />
               <button
                 {...bindTap({ kind: 'action', id: 'compose.editor.image.remove' }, {
@@ -120,17 +128,17 @@ export default function ComposeEditorPage() {
         className="flex items-center gap-1 px-2 h-12 shrink-0 border-t"
         style={{ borderColor: C.border, background: C.surface }}
       >
-        {tool(<IcTag size={20} />, bindTap('compose.tagSuggest.open'), 'tag')}
-        {tool(<IcImage size={20} />, bindTap('image.picker.open'), 'img')}
-        {tool(<IcBold size={20} />, bindTap({ kind: 'action', id: 'compose.editor.bold.toggle' }, { onTrigger: applyBold }), 'bold')}
-        {tool(<IcList size={20} />, bindTap('compose.listMenu.open'), 'list')}
-        {tool(<IcMore size={20} />, bindTap('compose.moreToolbar.open'), 'more')}
+        {tool(<IcTag size={20} />, bindTap('compose.tagSuggest.open'), 'tag', '添加标签')}
+        {tool(<IcImage size={20} />, bindTap('image.picker.open'), 'img', '添加图片')}
+        {tool(<IcBold size={20} />, bindTap({ kind: 'action', id: 'compose.editor.bold.toggle' }, { onTrigger: applyBold }), 'bold', '加粗')}
+        {tool(<IcList size={20} />, bindTap('compose.listMenu.open'), 'list', '列表')}
+        {tool(<IcMore size={20} />, bindTap('compose.moreToolbar.open'), 'more', '更多工具')}
         <div className="flex-1" />
         <button
           {...bindTap({ kind: 'action', id: 'compose.editor.send.submit' }, { onTrigger: send })}
           className="w-9 h-9 rounded-full flex items-center justify-center border-none cursor-pointer"
           style={{ background: canSend ? C.green : '#C8E6D4', color: '#fff' }}
-          aria-label="发送"
+          aria-label={s.send}
         >
           <IcSend size={17} />
         </button>

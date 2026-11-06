@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
+import * as TimeService from '../../../os/TimeService';
 import { useFanqieTodoStore } from '../state';
 import { useFanqieTodoGestures } from '../hooks/useFanqieTodoGestures';
 import { useI18n } from '../i18n';
@@ -74,7 +75,7 @@ export default function TodoPage() {
   const sorted = [...todos].sort((a, b) => a.order - b.order);
 
   return (
-    <div className="flex h-full flex-col bg-[#F4F6F8]" data-status-bar-foreground="light">
+    <div className="flex h-full flex-col bg-[var(--app-bg)]" data-status-bar-foreground="light">
       {/* 顶栏(番茄蓝) */}
       <div className="shrink-0 bg-gradient-to-b from-[#5CA4E0] to-[#7FB8E8] px-4 pb-3 pt-10">
         <div className="flex items-start justify-between">
@@ -97,7 +98,7 @@ export default function TodoPage() {
               </span>
             </button>
             <button {...bindTap('todo.checkin.open')} aria-label="打卡"><IcClock size={22} /></button>
-            <button {...bindTap('todo.add.open')} aria-label="添加"><IcPlus size={24} /></button>
+            <button {...bindTap('todo.add.open', { beforeTrigger: () => useFanqieTodoStore.getState().setDraft(null) })} aria-label="添加"><IcPlus size={24} /></button>
             <button {...bindTap('todo.quickmenu.open')} aria-label="更多"><IcMore size={22} /></button>
           </div>
         </div>
@@ -172,16 +173,23 @@ function AddDialog({ mode, todoId }: { mode: 'add' | 'edit'; todoId?: string }) 
   const { t, locale } = useI18n();
   const store = useFanqieTodoStore();
   const existing = mode === 'edit' ? store.todos.find((x) => x.id === todoId) : undefined;
-  const [name, setName] = React.useState(existing?.name ?? '');
-  const [type, setType] = React.useState<TodoType>(existing?.type ?? 'normal');
-  const [timing, setTiming] = React.useState<TimingMode>(existing?.timing ?? 'countdown');
+  const draft = store._temp.draft;
+  const base = draft ?? existing;
+  const [name, setName] = React.useState(base?.name ?? '');
+  const [type, setType] = React.useState<TodoType>(base?.type ?? 'normal');
+  const [timing, setTiming] = React.useState<TimingMode>(base?.timing ?? 'countdown');
   const preset = existing && [25, 35].includes(existing.durationMin);
-  const [dur, setDur] = React.useState<number>(existing?.durationMin ?? 25);
+  const [dur, setDur] = React.useState<number>(base?.durationMin ?? 25);
   const [customMin, setCustomMin] = React.useState<number | null>(
     existing && !preset ? existing.durationMin : null);
   const [showCustom, setShowCustom] = React.useState(false);
   const [customInput, setCustomInput] = React.useState('');
-  const [freq, setFreq] = React.useState<Freq>('daily');
+  const [freq, setFreq] = React.useState<Freq>(base?.frequency ?? 'daily');
+  const [goalDate, setGoalDate] = React.useState(() => base?.goalDate
+    ? TimeService.fromTimestamp(base.goalDate).toISOString().slice(0, 10) : '');
+  const [goalAmount, setGoalAmount] = React.useState(() => String(
+    base?.type === 'habit' ? (base.habitTargetMin ?? '') : (base?.goalHours ?? ''),
+  ));
   const L = mode === 'add' ? 0 : 1;
 
   const applyCustom = () => {
@@ -191,13 +199,31 @@ function AddDialog({ mode, todoId }: { mode: 'add' | 'edit'; todoId?: string }) 
   };
 
   const commit = () => {
+    const parsedGoalDate = goalDate ? TimeService.parseToTimestamp(`${goalDate}T00:00:00`) : undefined;
+    const parsedAmount = Number(goalAmount);
+    const patch: Partial<Todo> = {
+      ...store._temp.draft,
+      name, type, timing, durationMin: dur, frequency: type === 'habit' ? freq : undefined,
+      goalDate: type === 'goal' && Number.isFinite(parsedGoalDate) ? parsedGoalDate : undefined,
+      goalHours: type === 'goal' && Number.isFinite(parsedAmount) ? parsedAmount : undefined,
+      habitTargetMin: type === 'habit' && Number.isFinite(parsedAmount) ? parsedAmount : undefined,
+    };
     if (mode === 'edit' && existing) {
-      store.updateTodo(existing.id, { name, type, timing, durationMin: dur });
+      store.updateTodo(existing.id, patch);
     } else {
-      store.addTodo({ name, type, timing, durationMin: dur });
+      store.addTodo(patch);
     }
+    store.setDraft(null);
     back();
   };
+
+  const saveDraft = () => store.setDraft({
+    ...store._temp.draft,
+    name, type, timing, durationMin: dur, frequency: freq,
+    goalDate: goalDate ? TimeService.parseToTimestamp(`${goalDate}T00:00:00`) : undefined,
+    goalHours: type === 'goal' && Number.isFinite(Number(goalAmount)) ? Number(goalAmount) : undefined,
+    habitTargetMin: type === 'habit' && Number.isFinite(Number(goalAmount)) ? Number(goalAmount) : undefined,
+  });
 
   return (
     <Scrim>
@@ -249,9 +275,12 @@ function AddDialog({ mode, todoId }: { mode: 'add' | 'edit'; todoId?: string }) 
       )}
       {type === 'goal' && (
         <div className="mb-2 flex flex-col gap-2">
-          <input {...action(M('todo.add.goal.date.input', 'todo.edit.goal.date.input', mode), () => {}, { params: { value: '' } })}
-            placeholder={locale === 'en' ? 'Set target date' : '设定目标日期'} className="border-b border-[#EEE] pb-1 text-sm outline-none" />
-          <input {...action(M('todo.add.goal.amount.input', 'todo.edit.goal.amount.input', mode), () => {}, { params: { value: '' } })}
+          <input type="text" inputMode="numeric" {...action(M('todo.add.goal.date.input', 'todo.edit.goal.date.input', mode), () => {}, { params: { value: goalDate } })}
+            value={goalDate} onChange={(e) => setGoalDate(e.target.value)}
+            placeholder="YYYY-MM-DD"
+            aria-label={locale === 'en' ? 'Set target date, YYYY-MM-DD' : '设定目标日期，格式YYYY-MM-DD'} className="border-b border-[#EEE] pb-1 text-sm outline-none" />
+          <input type="number" inputMode="numeric" {...action(M('todo.add.goal.amount.input', 'todo.edit.goal.amount.input', mode), () => {}, { params: { value: goalAmount } })}
+            value={goalAmount} onChange={(e) => setGoalAmount(e.target.value)}
             placeholder={locale === 'en' ? 'Target (hours)' : '完成量(小时)'} className="border-b border-[#EEE] pb-1 text-sm outline-none" />
         </div>
       )}
@@ -263,14 +292,15 @@ function AddDialog({ mode, todoId }: { mode: 'add' | 'edit'; todoId?: string }) 
                 className={freq === fq ? CHIP_ON : CHIP_OFF}>{FREQ_LABEL[fq][L]}</button>
             ))}
           </div>
-          <input {...action(M('todo.add.goal.amount.input', 'todo.edit.goal.amount.input', mode), () => {}, { params: { value: '' } })}
-            placeholder={locale === 'en' ? 'Target (hours)' : '完成量(小时)'} className="border-b border-[#EEE] pb-1 text-sm outline-none" />
+          <input type="number" inputMode="numeric" {...action(M('todo.add.goal.amount.input', 'todo.edit.goal.amount.input', mode), () => {}, { params: { value: goalAmount } })}
+            value={goalAmount} onChange={(e) => setGoalAmount(e.target.value)}
+            placeholder={locale === 'en' ? 'Target (minutes)' : '目标完成量(分钟)'} className="border-b border-[#EEE] pb-1 text-sm outline-none" />
         </div>
       )}
       {mode === 'add' ? (
-        <button {...bindTap('todo.add.advanced.open')} className="mt-1 text-sm text-[#4A90D9]">{t('add.advanced')}</button>
+        <button {...bindTap('todo.add.advanced.open', { beforeTrigger: saveDraft })} className="mt-1 text-sm text-[#4A90D9]">{t('add.advanced')}</button>
       ) : (
-        <button {...bindTap('todo.edit.advanced.open')} className="mt-1 text-sm text-[#4A90D9]">{t('add.advanced')}</button>
+        <button {...bindTap('todo.edit.advanced.open', { beforeTrigger: saveDraft })} className="mt-1 text-sm text-[#4A90D9]">{t('add.advanced')}</button>
       )}
     </Scrim>
   );
@@ -278,13 +308,30 @@ function AddDialog({ mode, todoId }: { mode: 'add' | 'edit'; todoId?: string }) 
 
 function AdvancedDialog() {
   const { bindBack, action, back } = useFanqieTodoGestures();
-  const [hide, setHide] = React.useState(false);
+  const store = useFanqieTodoStore();
+  const draft = store._temp.draft;
+  const [hide, setHide] = React.useState(draft?.hideNextDay ?? false);
+  const [note, setNote] = React.useState(draft?.note ?? '');
+  const [loops, setLoops] = React.useState(draft?.loops != null ? String(draft.loops) : '');
+  const [restTime, setRestTime] = React.useState(draft?.restTimeMin != null ? String(draft.restTimeMin) : '');
+  const commit = () => {
+    const parsedLoops = Number(loops);
+    const parsedRest = Number(restTime);
+    store.setDraft({
+      ...draft,
+      hideNextDay: hide,
+      note,
+      loops: Number.isFinite(parsedLoops) && parsedLoops > 0 ? parsedLoops : undefined,
+      restTimeMin: Number.isFinite(parsedRest) && parsedRest >= 0 ? parsedRest : undefined,
+    });
+    back();
+  };
   return (
     <Scrim>
       <div className="mb-3 flex items-center justify-between">
         <span className="text-base font-semibold">高级设置</span>
         <div className="flex gap-4">
-          <button {...action('todo.add.advanced.commit.action', () => back())} aria-label="保存"><IcCheck size={22} /></button>
+          <button {...action('todo.add.advanced.commit.action', commit)} aria-label="保存"><IcCheck size={22} /></button>
           <button {...bindBack()} aria-label="关闭"><IcClose size={22} /></button>
         </div>
       </div>
@@ -292,9 +339,12 @@ function AdvancedDialog() {
         className="mb-3 flex items-center gap-2 text-sm">
         <span className={`inline-block h-4 w-4 rounded border ${hide ? 'bg-[#4A90D9]' : 'bg-white'}`} />完成后第二天不再显示
       </label>
-      <input {...action('todo.add.advanced.note.input', () => {}, { params: { value: '' } })} placeholder="任务备注" className="mb-2 block w-full border-b border-[#EEE] pb-1 text-sm text-[#4A90D9] outline-none" />
-      <input {...action('todo.add.advanced.loops.input', () => {}, { params: { value: '' } })} placeholder="单次预期循环次数" className="mb-2 block w-full border-b border-[#EEE] pb-1 text-sm text-[#4A90D9] outline-none" />
-      <input {...action('todo.add.advanced.restTime.input', () => {}, { params: { value: '' } })} placeholder="自定义休息时间" className="block w-full border-b border-[#EEE] pb-1 text-sm text-[#4A90D9] outline-none" />
+      <input {...action('todo.add.advanced.note.input', () => {}, { params: { value: note } })}
+        value={note} onChange={(e) => setNote(e.target.value)} placeholder="任务备注" className="mb-2 block w-full border-b border-[#EEE] pb-1 text-sm text-[#4A90D9] outline-none" />
+      <input type="number" inputMode="numeric" {...action('todo.add.advanced.loops.input', () => {}, { params: { value: loops } })}
+        value={loops} onChange={(e) => setLoops(e.target.value)} placeholder="单次预期循环次数" className="mb-2 block w-full border-b border-[#EEE] pb-1 text-sm text-[#4A90D9] outline-none" />
+      <input type="number" inputMode="numeric" {...action('todo.add.advanced.restTime.input', () => {}, { params: { value: restTime } })}
+        value={restTime} onChange={(e) => setRestTime(e.target.value)} placeholder="自定义休息时间" className="block w-full border-b border-[#EEE] pb-1 text-sm text-[#4A90D9] outline-none" />
     </Scrim>
   );
 }
@@ -353,7 +403,7 @@ function CardMenuDialog({ todoId }: { todoId: string }) {
         <button {...action('todo.card.menu.whitelist.wontfixToast', toast)}>独立白名单</button>
       </div>
       <div className="mb-2 flex gap-2 text-sm">
-        <button {...bindTap('todo.card.menu.edit', { params: { todoId } })} className="flex-1 rounded-lg bg-[#EAF2FB] py-2 text-[#4A90D9]">编辑</button>
+        <button {...bindTap('todo.card.menu.edit', { params: { todoId }, beforeTrigger: () => s.setDraft(null) })} className="flex-1 rounded-lg bg-[#EAF2FB] py-2 text-[#4A90D9]">编辑</button>
         <button {...action('todo.card.menu.reorder.action', () => s.showToast('排序|移动'))} className="flex-1 rounded-lg bg-[#F1F3F5] py-2">排序|移动</button>
         <button {...action('todo.card.menu.delete.action', () => { s.deleteTodo(todoId); back(); })} className="flex-1 rounded-lg bg-[#FDECEC] py-2 text-[#E5533C]">删除</button>
       </div>

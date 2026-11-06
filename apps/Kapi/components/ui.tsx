@@ -1,6 +1,7 @@
 import React from 'react';
 import { CategoryGlyph, IcNavBack, IcArrowRight } from '../res/icons';
 import { useToastQueue } from './toast';
+import { useStrings } from '../hooks/useStrings';
 
 const FALLBACK_AVATAR =
   'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96"><rect width="96" height="96" rx="48" fill="%23EAF0FE"/><circle cx="48" cy="40" r="16" fill="%23B3B9C6"/><path d="M24 84c0-13 11-20 24-20s24 7 24 20z" fill="%23B3B9C6"/></svg>';
@@ -20,7 +21,7 @@ export function Avatar({ src, size = 40, className = '' }: { src?: string; size?
   );
 }
 
-/** 胖咪猫吉祥物 */
+/** AI 助手统一头像：对话气泡 + 星光。 */
 export function MascotCat({ size = 36 }: { size?: number }) {
   return <Avatar src="/@app-assets/Kapi/avatars/cat.svg" size={size} />;
 }
@@ -55,7 +56,7 @@ export function CategoryIcon({
 }
 
 export function Card({ className = '', children }: { className?: string; children: React.ReactNode }) {
-  return <div className={`bg-white rounded-2xl ${className}`}>{children}</div>;
+  return <div className={`bg-app-surface rounded-2xl ${className}`}>{children}</div>;
 }
 
 /**
@@ -72,14 +73,15 @@ export function TopTabs({
   recordBind?: React.HTMLAttributes<HTMLElement>;
   aiBind?: React.HTMLAttributes<HTMLElement>;
 }) {
+  const s = useStrings();
   const cls = (on: boolean) =>
     `text-[18px] bg-transparent border-none cursor-pointer p-0 transition-colors ${
-      on ? 'font-bold text-[#1A1D26]' : 'text-[#B3B9C6]'
+      on ? 'font-bold text-app-text' : 'text-app-text-muted'
     }`;
   return (
     <div className="flex items-center gap-5">
-      <button {...(active === 'record' ? {} : recordBind)} className={cls(active === 'record')}>记录</button>
-      <button {...(active === 'ai' ? {} : aiBind)} className={cls(active === 'ai')}>AI助手</button>
+      <button {...(active === 'record' ? {} : recordBind)} className={cls(active === 'record')}>{s.tabRecord}</button>
+      <button {...(active === 'ai' ? {} : aiBind)} className={cls(active === 'ai')}>{s.tabAi}</button>
     </div>
   );
 }
@@ -87,7 +89,7 @@ export function TopTabs({
 export function SectionTitle({ children, right }: { children: React.ReactNode; right?: React.ReactNode }) {
   return (
     <div className="flex items-center justify-between px-1 mb-2">
-      <span className="text-[16px] font-semibold text-[#1A1D26]">{children}</span>
+      <span className="text-[16px] font-semibold text-app-text">{children}</span>
       {right}
     </div>
   );
@@ -112,12 +114,12 @@ export function Row({
   return (
     <div
       {...bind}
-      className={`flex items-center min-h-[52px] px-4 ${bind ? 'cursor-pointer active:bg-[#F7F8FB]' : ''} ${className}`}
+      className={`flex items-center min-h-[52px] px-4 ${bind ? 'cursor-pointer active:bg-app-bg' : ''} ${className}`}
     >
       {leading && <span className="mr-2 flex items-center">{leading}</span>}
-      <span className="text-[15px] text-[#1A1D26]">{label}</span>
+      <span className="text-[15px] text-app-text">{label}</span>
       <span className="flex-1" />
-      {value !== undefined && <span className="text-[15px] text-[#8A92A6] mr-1">{value}</span>}
+      {value !== undefined && <span className="text-[15px] text-app-text-muted mr-1">{value}</span>}
       {chevron && <IcArrowRight size={18} className="text-[#C5CAD4]" />}
     </div>
   );
@@ -132,7 +134,7 @@ export function Switch({ on, bind }: { on: boolean; bind?: React.HTMLAttributes<
       style={{ width: 44, height: 26, padding: 3, background: on ? '#4B6EF5' : '#E3E6EE' }}
     >
       <span
-        className="rounded-full bg-white transition-transform"
+        className="rounded-full bg-app-surface transition-transform"
         style={{ width: 20, height: 20, transform: on ? 'translateX(18px)' : 'translateX(0)' }}
       />
     </span>
@@ -151,6 +153,7 @@ export function TopBar({
   right?: React.ReactNode;
   foreground?: 'dark' | 'light';
 }) {
+  const s = useStrings();
   return (
     <div
       data-status-bar-foreground={foreground}
@@ -158,12 +161,12 @@ export function TopBar({
     >
       <div className="w-12 flex items-center">
         {backBind && (
-          <button {...backBind} className="p-1 bg-transparent border-none cursor-pointer" aria-label="返回">
-            <IcNavBack size={26} className="text-[#1A1D26]" />
+          <button {...backBind} className="p-1 bg-transparent border-none cursor-pointer" aria-label={s.backAriaLabel}>
+            <IcNavBack size={26} className="text-app-text" />
           </button>
         )}
       </div>
-      <div className="flex-1 text-center text-[17px] font-semibold text-[#1A1D26] truncate">{title}</div>
+      <div className="flex-1 text-center text-[17px] font-semibold text-app-text truncate">{title}</div>
       <div className="min-w-12 shrink-0 flex justify-end items-center pl-1">{right}</div>
     </div>
   );

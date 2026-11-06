@@ -6,6 +6,8 @@ import { TopBar, Img, Countdown, VIP } from '../components/ui';
 export default function BrandListPage() {
   const { bindTap } = useVipshopGestures();
   const brands = useVipshopStore((s) => s.brands);
+  const favoriteBrands = useVipshopStore((s) => s.favoriteBrands);
+  const toggleFavoriteBrand = useVipshopStore((s) => s.toggleFavoriteBrand);
 
   return (
     <div className="flex flex-col h-full bg-[#F5F5F5]">
@@ -13,7 +15,9 @@ export default function BrandListPage() {
 
       <div className="flex-1 overflow-y-auto" data-scroll-container="brands-list" data-scroll-direction="vertical">
         <div className="px-2 pt-2 flex flex-col gap-2">
-          {brands.map((brand) => (
+          {brands.map((brand) => {
+            const fav = favoriteBrands.includes(brand.id);
+            return (
             <div key={brand.id} className="bg-white rounded-lg overflow-hidden">
               <div
                 {...bindTap('brandList.event-open', { params: { id: brand.id } })}
@@ -44,6 +48,16 @@ export default function BrandListPage() {
                   </div>
                 </button>
                 <button
+                  {...bindTap({ kind: 'action', id: 'brandList.favorite.toggle' }, {
+                    params: { id: brand.id },
+                    onTrigger: () => toggleFavoriteBrand(brand.id),
+                  })}
+                  className="shrink-0 text-[12px] rounded-full px-3 py-1 cursor-pointer bg-white"
+                  style={{ color: fav ? '#888' : VIP.primary, border: `1px solid ${fav ? '#CCC' : VIP.primary}` }}
+                >
+                  {fav ? '已收藏' : '收藏品牌'}
+                </button>
+                <button
                   {...bindTap('brandList.event-open', { params: { id: brand.id } })}
                   className="shrink-0 text-[12px] rounded-full px-3 py-1 cursor-pointer bg-white"
                   style={{ color: VIP.primary, border: `1px solid ${VIP.primary}` }}
@@ -52,7 +66,8 @@ export default function BrandListPage() {
                 </button>
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
         <div className="h-3" />
       </div>

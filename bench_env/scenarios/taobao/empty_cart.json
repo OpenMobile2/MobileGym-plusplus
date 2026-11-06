@@ -1,0 +1,12 @@
+{
+  "_meta": {
+    "id": "taobao.empty_cart",
+    "description": "Empty cart while catalog remains: AddItemToCart still judges via store cart[+1].",
+    "apply": "env.set_state(patch, deep=True) after reset/open_app"
+  },
+  "apps": {
+    "taobao": {
+      "cart": []
+    }
+  }
+}

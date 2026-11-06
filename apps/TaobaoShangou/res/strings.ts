@@ -95,6 +95,7 @@ export const strings = {
   groupTitle: '拼单详情',
   groupCancel: '取消拼单',
   groupInvite: '邀请好友',
+  groupShareSuccess: '分享成功',
   groupShopping: '选购中',
   groupInitiate: '发起',
   groupInitiatorMe: '一号发起人',

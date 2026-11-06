@@ -1,0 +1,13 @@
+{
+  "_meta": {
+    "id": "ctrip.empty_orders",
+    "description": "No upcoming orders; PayHotelOrder / favorite tasks start from a clean orders list.",
+    "apply": "env.set_state(patch, deep=True)"
+  },
+  "apps": {
+    "ctrip": {
+      "orders": [],
+      "favoriteHotels": []
+    }
+  }
+}

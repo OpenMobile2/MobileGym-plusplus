@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { usePinduoduoGestures } from '../hooks/usePinduoduoGestures';
 import { usePinduoduoStore } from '../state';
 import { usePinduoduoStrings } from '../hooks/usePinduoduoStrings';
@@ -7,12 +8,14 @@ import { IcNavBack, IcSearch, IcTrash } from '../res/icons';
 export function SearchPage() {
   const { bindTap, bindBack } = usePinduoduoGestures();
   const s = usePinduoduoStrings();
+  const [sp] = useSearchParams();
   const searchHistory = usePinduoduoStore((st) => st.searchHistory);
   const hotSearch = usePinduoduoStore((st) => st.hotSearch);
   const allItems = usePinduoduoStore((st) => st.items);
   const addSearchHistory = usePinduoduoStore((st) => st.addSearchHistory);
   const clearSearchHistory = usePinduoduoStore((st) => st.clearSearchHistory);
-  const [query, setQuery] = useState('');
+  // 从结果页返回改词时,URL 带上当前关键词 → 预填输入框,可直接编辑再搜。
+  const [query, setQuery] = useState(sp.get('q') || '');
 
   const q = query.trim();
   const suggestions = q
@@ -47,7 +50,7 @@ export function SearchPage() {
         <button
           {...bindTap('search.submit', {
             params: { q: query },
-            onTrigger: () => addSearchHistory(query),
+            beforeTrigger: () => addSearchHistory(query),
           })}
           className="px-3 text-[15px] text-[#E22E1F] font-medium"
         >
@@ -66,7 +69,7 @@ export function SearchPage() {
             {suggestions.map((word) => (
               <button
                 key={word}
-                {...bindTap('search.suggest-open', { params: { q: word } })}
+                {...bindTap('search.suggest-open', { params: { q: word }, beforeTrigger: () => addSearchHistory(word) })}
                 className="flex items-center gap-2 px-3 h-11 border-b border-[#F5F5F5] text-left"
               >
                 <IcSearch size={16} className="text-[#BBB]" />
@@ -114,7 +117,7 @@ export function SearchPage() {
             {hotSearch.map((word) => (
               <button
                 key={word}
-                {...bindTap('search.suggest-open', { params: { q: word } })}
+                {...bindTap('search.suggest-open', { params: { q: word }, beforeTrigger: () => addSearchHistory(word) })}
                 className="px-3 py-1.5 rounded-full bg-[#FFF0E8] text-[13px] text-[#E22E1F]"
               >
                 {word}

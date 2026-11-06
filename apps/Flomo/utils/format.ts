@@ -26,6 +26,13 @@ export function dayKey(ts: number): string {
   return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
 }
 
+/** 按日历加减天,避免用 86400000ms 跨 DST 撞上同一天 key。 */
+export function shiftDay(ts: number, delta: number): number {
+  const d = TimeService.fromTimestamp(ts);
+  d.setDate(d.getDate() + delta);
+  return d.getTime();
+}
+
 /** 'YYYY-MM-DD' -> 'YYYY/MM/DD'。 */
 export function dayLabel(dateStr: string): string {
   return dateStr.replace(/-/g, '/');

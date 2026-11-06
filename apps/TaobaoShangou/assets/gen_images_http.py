@@ -18,10 +18,14 @@ import requests
 from PIL import Image
 
 HERE = Path(__file__).parent
+_REPO_ROOT = Path(__file__).resolve().parents[5]
+sys.path.insert(0, str(_REPO_ROOT / "tools"))
+from image_gen_client import image_gen_api_key, image_gen_base_url, image_gen_model  # noqa: E402
+
 PROMPTS = json.loads((HERE / "asset_prompts.json").read_text(encoding="utf-8"))
-API_KEY = os.environ.get("IMAGE_GEN_API_KEY", "")
-BASE_URL = os.environ.get("IMAGE_GEN_BASE_URL", "http://15.204.107.114:3009/v1").rstrip("/")
-MODEL = os.environ.get("IMAGE_GEN_MODEL", "gpt-image-2")
+API_KEY = image_gen_api_key() or ""
+BASE_URL = image_gen_base_url().rstrip("/")
+MODEL = image_gen_model()
 URL = f"{BASE_URL}/images/generations" if BASE_URL.endswith("/v1") else f"{BASE_URL}/v1/images/generations"
 MAX_RETRY = 3
 

@@ -3,6 +3,8 @@ import { useFlomoStore } from '../state';
 import { useFlomoGestures } from '../hooks/useFlomoGestures';
 import { C } from '../components/ui';
 import { IcClose, IcShare, IcMore } from '../res/icons';
+import { shareWithSystem } from '../capabilities';
+import * as TimeService from '@/os/TimeService';
 
 // 主题峰预置布局(归一化坐标 + 尺寸),标签名由 store 填入
 const PEAK_LAYOUT = [
@@ -19,15 +21,40 @@ const MONTHS = ['2025年 03月', '2025年 06月', '2025年 09月', '2025年 12�
 export default function MindMapPage() {
   const { bindTap, bindBack } = useFlomoGestures();
   const tags = useFlomoStore((s) => s.tags);
+  const memos = useFlomoStore((s) => s.memos);
   const setCurrentTag = useFlomoStore((s) => s.setCurrentTag);
   const toast = useFlomoStore((s) => s.toast);
   const [monthIdx, setMonthIdx] = useState(MONTHS.length - 1);
 
-  // 取顶层标签(无 parentId)作为主题峰,与预置布局位置一一对应
+  const shareMap = () => {
+    const tagNames = tags.filter((t) => !t.parentId).map((t) => `#${t.name}`).join(' ');
+    const launched = shareWithSystem(
+      `flomo 认知地图 · ${MONTHS[monthIdx]}\n${tagNames}`,
+      (result) => { if (result.resultCode === 'OK') toast('分享成功'); },
+    );
+    if (!launched) toast('未找到可分享的应用');
+  };
+
+  // 取顶层标签(无 parentId)作为主题峰；时间轴按笔记创建月过滤可见标签
   const peaks = useMemo(() => {
-    const top = tags.filter((t) => !t.parentId);
-    return PEAK_LAYOUT.map((pos, i) => ({ ...pos, tag: top[i % top.length] }));
-  }, [tags]);
+    const label = MONTHS[monthIdx];
+    const ym = label.match(/(\d{4})年\s*(\d{2})月/);
+    const year = ym ? Number(ym[1]) : null;
+    const month = ym ? Number(ym[2]) - 1 : null;
+    const activeTagIds = new Set<string>();
+    memos.filter((m) => !m.deleted).forEach((m) => {
+      if (year == null || month == null) {
+        m.tags.forEach((id) => activeTagIds.add(id));
+        return;
+      }
+      const dt = TimeService.fromTimestamp(m.createdAt);
+      if (dt.getFullYear() < year || (dt.getFullYear() === year && dt.getMonth() <= month)) {
+        m.tags.forEach((id) => activeTagIds.add(id));
+      }
+    });
+    const top = tags.filter((t) => !t.parentId && (activeTagIds.size === 0 || activeTagIds.has(t.id)));
+    return PEAK_LAYOUT.map((pos, i) => ({ ...pos, tag: top[i] ?? top[i % Math.max(top.length, 1)] }));
+  }, [tags, memos, monthIdx]);
 
   return (
     <div className="flex flex-col h-full" style={{ background: C.bg }} data-status-bar-foreground="dark">
@@ -45,7 +72,7 @@ export default function MindMapPage() {
           认知地图
         </div>
         <button
-          {...bindTap({ kind: 'action', id: 'mind.map.share.do' }, { onTrigger: () => toast('已生成认知地图分享图') })}
+          {...bindTap({ kind: 'action', id: 'mind.map.share.do' }, { onTrigger: shareMap })}
           className="w-9 h-9 flex items-center justify-center bg-transparent border-none cursor-pointer"
           style={{ color: C.text }}
           aria-label="分享"

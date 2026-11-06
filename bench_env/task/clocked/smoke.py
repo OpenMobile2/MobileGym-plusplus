@@ -64,6 +64,11 @@ async def run_smoke(env_url: str, *, headless: bool) -> dict[str, Any]:
             )
 
         for task in tasks:
+            if task.spec.index == 47 and task.params.get("date") != "2026-07-14":
+                raise AssertionError(
+                    f"{task.id} date is not pinned to the fixed instruction: "
+                    f"{task.params.get('date')!r}"
+                )
             initial_obs = await task.setup(env)
             state = await env.get_state(required_apps=list(task.apps))
             actual = _timestamp_ms(state.get("os") or {})

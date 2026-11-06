@@ -9,6 +9,7 @@ export default function FaqPage() {
   const { t } = useI18n();
   const { action } = useDaysmatterGestures();
   const showToast = useDaysmatterStore((s) => s.showToast);
+  const submitFeedback = useDaysmatterStore((s) => s.submitFeedback);
   const [email, setEmail] = useState('');
   const [type, setType] = useState('suggest');
   const [text, setText] = useState('');
@@ -68,7 +69,7 @@ export default function FaqPage() {
         <textarea {...action<HTMLTextAreaElement>('faq.form.input', () => {})} value={text} onChange={(e) => setText(e.target.value)}
           rows={7} className="mt-1.5 w-full resize-none rounded-md border border-[#D8D6D0] p-3 text-[15px] outline-none focus:border-[#3E7CB1]" />
 
-        <button {...action<HTMLButtonElement>('faq.form.submit', () => { setText(''); setEmail(''); showToast(t('toast.feedbackSubmitted')); })}
+        <button {...action<HTMLButtonElement>('faq.form.submit', () => { if (!text.trim()) return; submitFeedback({ email, type, text }); setText(''); setEmail(''); showToast(t('toast.feedbackSubmitted')); })}
           className="mb-6 mt-4 rounded-md bg-[#7A7A7A] px-5 py-2.5 text-[15px] text-white active:bg-[#6B6B6B]">
           {t('faq.submit')}
         </button>

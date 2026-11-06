@@ -39,8 +39,9 @@ export const manifest: AppManifest = {
     {
       action: 'ACTION_SEND',
       type: 'text/plain',
-      route: '/',
-      description: '接收文本分享',
+      route: '/share/forward',
+      launchMode: 'singleTask',
+      description: '接收文本分享 — 选择会话后发送文本，完成后进入目标会话',
     },
     {
       action: 'ACTION_SEND',

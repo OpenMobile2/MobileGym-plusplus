@@ -4,6 +4,8 @@ import { useFlomoGestures } from '../hooks/useFlomoGestures';
 import { C, MemoImages, renderContent } from '../components/ui';
 import { fullTime } from '../utils/format';
 import { IcClose, IcShare } from '../res/icons';
+import { makeTextPosterDataUrl } from '@/os/albumBridge';
+import { saveImageToAlbumWithSystem, shareWithSystem } from '../capabilities';
 
 type Style = { id: string; name: string; bg: string; fg: string; sub: string; accent?: string };
 
@@ -15,7 +17,7 @@ const STYLES: Style[] = [
 ];
 
 export default function ShareImagePage() {
-  const { bindTap } = useFlomoGestures();
+  const { bindTap, bindBack } = useFlomoGestures();
   const memos = useFlomoStore((s) => s.memos);
   const user = useFlomoStore((s) => s.user);
   const currentMemoId = useFlomoStore((s) => s.currentMemoId);
@@ -24,14 +26,29 @@ export default function ShareImagePage() {
   const [selectedStyle, setSelectedStyle] = useState('red');
   const style = STYLES.find((x) => x.id === selectedStyle) ?? STYLES[0];
 
-  const memo = memos.find((m) => m.id === currentMemoId) ?? memos[0];
+  const memo = memos.find((m) => m.id === currentMemoId) ?? null;
+
+  const makePoster = () => makeTextPosterDataUrl(
+    [memo?.content?.slice(0, 200) || 'flomo memo', `${user.name} · ${user.memoCount} MEMOS`],
+    { title: 'flomo' },
+  );
+
+  const sharePoster = () => {
+    const launched = shareWithSystem(
+      memo?.content?.slice(0, 120) || '【flomo】分享一条笔记',
+      (result) => { if (result.resultCode === 'OK') toast('分享成功'); },
+    );
+    if (!launched) toast('未找到可分享的应用');
+  };
 
   return (
     <div className="flex flex-col h-full" style={{ background: '#E9EBEE' }} data-status-bar-foreground="dark">
       {/* 顶栏:关闭 */}
       <div className="flex items-center h-12 px-3 shrink-0">
         <button
-          {...bindTap('share.image.close')}
+          {...bindBack()}
+          data-action="share.image.close"
+          data-action-type="submit"
           className="w-9 h-9 rounded-full flex items-center justify-center bg-black/5 border-none cursor-pointer"
           style={{ color: C.text }}
           aria-label="关闭"
@@ -44,6 +61,9 @@ export default function ShareImagePage() {
 
       {/* 成图预览 */}
       <div className="flex-1 overflow-y-auto px-5 py-4" data-scroll-container="main" data-scroll-direction="vertical">
+        {!memo && (
+          <div className="py-16 text-center text-sm" style={{ color: C.sub }}>请先选择一条笔记再分享</div>
+        )}
         <div
           className="rounded-2xl overflow-hidden shadow-sm"
           style={{ background: style.bg, borderLeft: style.accent ? `4px solid ${style.accent}` : undefined }}
@@ -85,7 +105,14 @@ export default function ShareImagePage() {
       {/* 底部操作条 */}
       <div className="shrink-0 px-4 py-3" style={{ background: C.surface, borderTop: `1px solid ${C.border}` }}>
         <button
-          {...bindTap({ kind: 'action', id: 'share.image.save.do' }, { onTrigger: () => toast('已保存') })}
+          {...bindTap({ kind: 'action', id: 'share.image.save.do' }, {
+            onTrigger: () => {
+              const launched = saveImageToAlbumWithSystem(makePoster(), (result) => {
+                toast(result.resultCode === 'OK' ? '已保存到系统相册' : '保存失败');
+              });
+              if (!launched) toast('保存失败');
+            },
+          })}
           className="w-full h-11 rounded-xl border-none cursor-pointer font-semibold mb-3"
           style={{ background: C.green, color: '#fff', fontSize: 15 }}
         >
@@ -95,7 +122,11 @@ export default function ShareImagePage() {
           {['微信', '朋友圈', '更多'].map((label) => (
             <button
               key={label}
-              {...bindTap({ kind: 'action', id: 'share.image.send.wechat' }, { onTrigger: () => toast('该功能暂未开放') })}
+              {...bindTap({ kind: 'action', id: 'share.image.send.wechat' }, {
+                onTrigger: () => {
+                  sharePoster();
+                },
+              })}
               className="flex-1 flex flex-col items-center gap-1 bg-transparent border-none cursor-pointer"
               style={{ color: C.text, fontSize: 12 }}
             >

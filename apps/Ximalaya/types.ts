@@ -135,6 +135,12 @@ export interface XmlyUser {
   follows: number;
   isVip: boolean;
   vipExpireAt: number;
+  gender?: string;
+  birthday?: string;
+  region?: string;
+  background?: string;
+  /** 个人主页相册（系统相册选图写入，getState 可见） */
+  photos?: string[];
 }
 
 export interface PlayerState {
@@ -172,6 +178,15 @@ export interface XmlyState {
   followedAnchorIds: string[];
   likedTrackIds: string[];
   likedCommentIds: string[];
+  danmakuMessages: Array<{ trackId: string; content: string; createdAt: number }>;
+  taskAudit: {
+    albumSort?: { albumId: string; sort: 'asc' | 'desc' };
+    subscriptionSort?: string;
+    quickListen?: { tab: string; trackId: string };
+    search?: { query: string; tab: string; sort: string };
+    commentSort?: string;
+    expandedCommentIds?: string[];
+  };
   appliedSkinId: string | null;
   player: PlayerState;
 }
@@ -182,6 +197,7 @@ export interface XmlyActions {
   toggleFollow: (anchorId: string) => void;
   toggleLikeTrack: (trackId: string) => void;
   toggleLikeComment: (commentId: string) => void;
+  addDanmaku: (trackId: string, content: string) => void;
   playTrack: (albumId: string, trackId: string) => void;
   togglePlay: () => void;
   setSpeed: (speed: number) => void;
@@ -190,9 +206,11 @@ export interface XmlyActions {
   applySkin: (skinId: string) => void;
   addComment: (albumId: string, trackId: string | undefined, content: string, timePoint?: number) => void;
   openVip: () => void;
+  updateUser: (patch: Partial<XmlyUser>) => void;
   removeHistory: (trackId: string) => void;
   addSearchHistory: (word: string) => void;
   clearSearchHistory: () => void;
   markThreadRead: (threadId: string) => void;
   markAllThreadsRead: () => void;
+  recordTaskAudit: (patch: Partial<XmlyState['taskAudit']>) => void;
 }

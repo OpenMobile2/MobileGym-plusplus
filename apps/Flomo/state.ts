@@ -24,10 +24,66 @@ const initialState: FlomoState = {
   previewImage: null,
   payPlan: 'monthly',
   lastToast: null,
+  interactionAudit: { dailyReviewNextCount: 0 },
 };
 
 let seq = 0;
 const newId = (prefix: string) => `${prefix}_${TimeService.now()}_${seq++}`;
+
+function extractTagNames(content: string): string[] {
+  const hits = content.match(/#[\u4e00-\u9fffA-Za-z0-9_/-]+/g) ?? [];
+  return [...new Set(hits.map((h) => h.slice(1).replace(/\/+$/, '')).filter(Boolean))];
+}
+
+function resolveTagsFromContent(
+  content: string,
+  tags: FlomoState['tags'],
+  extraIds: string[] = [],
+): { tagIds: string[]; tags: FlomoState['tags'] } {
+  let next = tags;
+  const ids = [...extraIds];
+  for (const name of extractTagNames(content)) {
+    let tag = next.find((t) => t.name === name);
+    if (!tag) {
+      tag = { id: newId('t'), name, parentId: name.includes('/') ? null : null, count: 0 };
+      next = [...next, tag];
+    }
+    if (!ids.includes(tag.id)) ids.push(tag.id);
+  }
+  return { tagIds: ids, tags: next };
+}
+
+function recountTags(memos: FlomoState['memos'], tags: FlomoState['tags']): FlomoState['tags'] {
+  const counts: Record<string, number> = {};
+  tags.forEach((t) => { counts[t.id] = 0; });
+  memos.forEach((m) => {
+    if (m.deleted) return;
+    m.tags.forEach((id) => {
+      if (counts[id] !== undefined) counts[id] += 1;
+    });
+  });
+  return tags.map((t) => ({ ...t, count: counts[t.id] ?? 0 }));
+}
+
+function withUserCounts<T extends { memos: FlomoState['memos']; tags: FlomoState['tags']; user: FlomoState['user'] }>(
+  s: T,
+): Pick<T, 'user'> {
+  const live = s.memos.filter((m) => !m.deleted);
+  return {
+    user: {
+      ...s.user,
+      memoCount: live.length,
+      tagCount: s.tags.filter((t) => t.count > 0).length,
+    },
+  };
+}
+
+function withSyncedMeta<T extends { memos: FlomoState['memos']; tags: FlomoState['tags']; user: FlomoState['user'] }>(
+  s: T,
+): Pick<T, 'tags' | 'user'> {
+  const tags = recountTags(s.memos, s.tags);
+  return { tags, ...withUserCounts({ ...s, tags }) };
+}
 
 export const useFlomoStore = createAppStoreWithActions<FlomoState, FlomoActions>(
   manifest.id,
@@ -36,12 +92,13 @@ export const useFlomoStore = createAppStoreWithActions<FlomoState, FlomoActions>
     addMemo: (content, opts) =>
       set((s) => {
         const now = TimeService.now();
+        const resolved = resolveTagsFromContent(content, s.tags, opts?.tags ?? []);
         const memo: FlomoMemo = {
           id: newId('m'),
           content,
           createdAt: now,
           updatedAt: now,
-          tags: opts?.tags ?? [],
+          tags: resolved.tagIds,
           images: opts?.images ?? [],
           hasLink: /https?:\/\//.test(content),
           hasAudio: false,
@@ -50,45 +107,53 @@ export const useFlomoStore = createAppStoreWithActions<FlomoState, FlomoActions>
           pinned: false,
           deleted: false,
         };
-        return { memos: [memo, ...s.memos] };
+        const next = { ...s, memos: [memo, ...s.memos], tags: resolved.tags };
+        return { memos: next.memos, ...withSyncedMeta(next) };
       }),
 
     updateMemo: (id, content) =>
-      set((s) => ({
-        memos: s.memos.map((m) =>
-          m.id === id ? { ...m, content, updatedAt: TimeService.now() } : m,
-        ),
-      })),
+      set((s) => {
+        const resolved = resolveTagsFromContent(content, s.tags);
+        const memos = s.memos.map((m) =>
+          m.id === id
+            ? { ...m, content, tags: resolved.tagIds, updatedAt: TimeService.now() }
+            : m,
+        );
+        const next = { ...s, memos, tags: resolved.tags };
+        return { memos, ...withSyncedMeta(next) };
+      }),
 
     deleteMemo: (id) =>
-      set((s) => ({
-        memos: s.memos.map((m) => (m.id === id ? { ...m, deleted: true } : m)),
-        lastDeleted: [id],
-      })),
+      set((s) => {
+        const memos = s.memos.map((m) => (m.id === id ? { ...m, deleted: true } : m));
+        return { memos, lastDeleted: [id], ...withSyncedMeta({ ...s, memos }) };
+      }),
 
     deleteMemos: (ids) =>
-      set((s) => ({
-        memos: s.memos.map((m) => (ids.includes(m.id) ? { ...m, deleted: true } : m)),
-        lastDeleted: ids,
-      })),
+      set((s) => {
+        const memos = s.memos.map((m) => (ids.includes(m.id) ? { ...m, deleted: true } : m));
+        return { memos, lastDeleted: ids, ...withSyncedMeta({ ...s, memos }) };
+      }),
 
     undoDelete: () =>
       set((s) => {
         if (!s.lastDeleted) return {};
         const ids = s.lastDeleted;
-        return {
-          memos: s.memos.map((m) => (ids.includes(m.id) ? { ...m, deleted: false } : m)),
-          lastDeleted: null,
-        };
+        const memos = s.memos.map((m) => (ids.includes(m.id) ? { ...m, deleted: false } : m));
+        return { memos, lastDeleted: null, ...withSyncedMeta({ ...s, memos }) };
       }),
 
     restoreMemo: (id) =>
-      set((s) => ({
-        memos: s.memos.map((m) => (m.id === id ? { ...m, deleted: false } : m)),
-      })),
+      set((s) => {
+        const memos = s.memos.map((m) => (m.id === id ? { ...m, deleted: false } : m));
+        return { memos, ...withSyncedMeta({ ...s, memos }) };
+      }),
 
     purgeMemo: (id) =>
-      set((s) => ({ memos: s.memos.filter((m) => m.id !== id) })),
+      set((s) => {
+        const memos = s.memos.filter((m) => m.id !== id);
+        return { memos, ...withSyncedMeta({ ...s, memos }) };
+      }),
 
     duplicateMemo: (id) =>
       set((s) => {
@@ -96,7 +161,8 @@ export const useFlomoStore = createAppStoreWithActions<FlomoState, FlomoActions>
         if (!src) return {};
         const now = TimeService.now();
         const copy: FlomoMemo = { ...src, id: newId('m'), createdAt: now, updatedAt: now, pinned: false };
-        return { memos: [copy, ...s.memos] };
+        const memos = [copy, ...s.memos];
+        return { memos, ...withSyncedMeta({ ...s, memos }) };
       }),
 
     togglePin: (id) =>
@@ -109,28 +175,34 @@ export const useFlomoStore = createAppStoreWithActions<FlomoState, FlomoActions>
         const tag = s.tags.find((t) => t.name === tagName);
         const tagId = tag ? tag.id : newId('t');
         const tags = tag ? s.tags : [...s.tags, { id: tagId, name: tagName, parentId: null, count: 0 }];
-        return {
-          tags,
-          memos: s.memos.map((m) =>
-            memoIds.includes(m.id) && !m.tags.includes(tagId)
-              ? { ...m, tags: [...m.tags, tagId], updatedAt: TimeService.now() }
-              : m,
-          ),
-        };
+        const memos = s.memos.map((m) =>
+          memoIds.includes(m.id) && !m.tags.includes(tagId)
+            ? { ...m, tags: [...m.tags, tagId], updatedAt: TimeService.now() }
+            : m,
+        );
+        return { memos, ...withSyncedMeta({ ...s, memos, tags }) };
       }),
 
     renameTag: (id, name) =>
       set((s) => ({ tags: s.tags.map((t) => (t.id === id ? { ...t, name } : t)) })),
 
+    moveTagToFront: (id) =>
+      set((s) => {
+        const tag = s.tags.find((t) => t.id === id);
+        if (!tag) return {};
+        return { tags: [tag, ...s.tags.filter((t) => t.id !== id)] };
+      }),
+
     deleteTag: (id, alsoDeleteMemos) =>
-      set((s) => ({
-        tags: s.tags.filter((t) => t.id !== id),
-        memos: alsoDeleteMemos
+      set((s) => {
+        const tags = s.tags.filter((t) => t.id !== id);
+        const memos = alsoDeleteMemos
           ? s.memos.map((m) => (m.tags.includes(id) ? { ...m, deleted: true } : m))
           : s.memos.map((m) =>
               m.tags.includes(id) ? { ...m, tags: m.tags.filter((t) => t !== id) } : m,
-            ),
-      })),
+            );
+        return { memos, ...withSyncedMeta({ ...s, memos, tags }) };
+      }),
 
     setTheme: (theme) =>
       set((s) => ({ settings: { ...s.settings, theme } })),
@@ -157,7 +229,10 @@ export const useFlomoStore = createAppStoreWithActions<FlomoState, FlomoActions>
     setDraft: (text) => set(() => ({ composeDraft: text })),
     insertDraft: (snippet) => set((s) => ({ composeDraft: s.composeDraft + snippet })),
     addDraftImage: (src) =>
-      set((s) => ({ composeDraftImages: [...s.composeDraftImages, src] })),
+      set((s) => {
+        if (!src) return s;
+        return { composeDraftImages: [...s.composeDraftImages, src] };
+      }),
     clearDraft: () => set(() => ({ composeDraft: '', composeDraftImages: [] })),
     removeDraftImage: (src) =>
       set((s) => ({ composeDraftImages: s.composeDraftImages.filter((x) => x !== src) })),
@@ -177,6 +252,7 @@ export const useFlomoStore = createAppStoreWithActions<FlomoState, FlomoActions>
           ? s.searchFilters.filter((x) => x !== id)
           : [...s.searchFilters, id],
       })),
+    setSearchFilters: (ids) => set(() => ({ searchFilters: ids })),
     setSort: (by, order) => set(() => ({ sortBy: by, sortOrder: order })),
     setPreviewImage: (src) => set(() => ({ previewImage: src })),
     setPayPlan: (p) => set(() => ({ payPlan: p })),
@@ -194,6 +270,12 @@ export const useFlomoStore = createAppStoreWithActions<FlomoState, FlomoActions>
         };
       }),
     toast: (msg) => set(() => ({ lastToast: msg })),
+    recordDailyReviewNext: () => set((s) => ({
+      interactionAudit: {
+        ...s.interactionAudit,
+        dailyReviewNextCount: s.interactionAudit.dailyReviewNextCount + 1,
+      },
+    })),
     toggleSelectMemo: (id) =>
       set((s) => ({
         selectedMemoIds: s.selectedMemoIds.includes(id)

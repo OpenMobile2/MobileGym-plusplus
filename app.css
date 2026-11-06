@@ -10,6 +10,10 @@
 @source "./apps/**/data/defaults.json";
 @source not "./apps/**/hooks/**";
 @source not "./apps/**/*.declaration.ts";
+/* Runtime walkthrough/audit scripts contain Playwright selectors such as
+ * `[data-action="..."]:visible`; they are not UI class sources. Scanning them
+ * makes Tailwind emit invalid CSS selectors during production builds. */
+@source not "./apps/**/assets/**";
 
 @theme inline {
   --color-app-primary: var(--app-primary, #000000);

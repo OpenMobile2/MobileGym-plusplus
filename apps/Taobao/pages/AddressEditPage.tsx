@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import { useTaobaoStore } from '../state';
 import { ADDRESS_TAGS } from '../constants';
 import { useTaobaoGestures } from '../hooks/useTaobaoGestures';
+import { useStrings } from '../hooks/useStrings';
 import { TopBar, Img, BottomSheet, usePanel, useToast } from '../components/ui';
 
 const MAP_SRC = '/@app-assets/Taobao/misc/map.svg';
@@ -33,10 +34,11 @@ export default function AddressEditPage() {
   const { open: openPanel, searchParams: sp } = usePanel('region');
   const regionOpen = sp.get('region') === 'open';
   const { bindTap, back, go } = useTaobaoGestures();
+  const s = useStrings();
   const [toast, showToast] = useToast();
 
-  const addresses = useTaobaoStore((s) => s.addresses);
-  const saveAddress = useTaobaoStore((s) => s.saveAddress);
+  const addresses = useTaobaoStore((st) => st.addresses);
+  const saveAddress = useTaobaoStore((st) => st.saveAddress);
   const existing = addresses.find((a) => a.id === editId);
 
   const [region, setRegion] = useState(existing?.region ?? '');
@@ -50,63 +52,63 @@ export default function AddressEditPage() {
   const canSave = region && detail.trim() && name.trim() && /^1\d{10}$/.test(phone);
 
   return (
-    <div className="flex flex-col h-full bg-[#F5F6F7]">
-      <TopBar title={existing ? '编辑收货地址' : '新增收货地址'} />
+    <div className="flex flex-col h-full bg-app-bg">
+      <TopBar title={existing ? s.editAddressTitle : s.newAddressTitle} />
       <div className="flex-1 overflow-y-auto">
         {/* 地图定位卡 */}
         <div className="relative">
           <Img src={MAP_SRC} className="w-full h-24 object-cover" />
-          <div className="absolute left-3 right-3 bottom-2 bg-white rounded-lg px-3 py-2 flex items-center justify-between shadow">
+          <div className="absolute left-3 right-3 bottom-2 bg-app-surface rounded-lg px-3 py-2 flex items-center justify-between shadow">
             <div>
-              <div className="text-[13px] font-medium">📍 新业园1号楼</div>
-              <div className="text-[10px] text-[#999999]">15m | 上海市徐汇区虹梅路1801号新业园</div>
+              <div className="text-[13px] font-medium">{s.demoLocationName}</div>
+              <div className="text-[10px] text-app-text-muted">{s.demoLocationDetail}</div>
             </div>
             <button
               {...bindTap({ kind: 'action', id: 'address.locate.use' }, {
-                onTrigger: () => { setRegion('上海市 上海市 徐汇区'); setDetail('虹梅路1801号新业园1号楼'); showToast('已使用定位地址'); },
+                onTrigger: () => { setRegion('上海市 上海市 徐汇区'); setDetail('虹梅路1801号新业园1号楼'); showToast(s.usedLocationToast); },
               })}
-              className="text-[12px] text-[#FF5000] border border-[#FF5000] rounded-full px-2.5 py-1 bg-white cursor-pointer"
+              className="text-[12px] text-[#FF5000] border border-[#FF5000] rounded-full px-2.5 py-1 bg-app-surface cursor-pointer"
             >
-              使用
+              {s.useLabel}
             </button>
           </div>
         </div>
 
         {/* 表单 */}
-        <div className="bg-white mt-3 px-4">
-          <FormRow label="所在地区" required>
+        <div className="bg-app-surface mt-3 px-4">
+          <FormRow label={s.regionLabel} required>
             <button
               {...bindTap({ kind: 'action', id: 'address.region.open' }, {
                 onTrigger: () => openPanel('open'),
               })}
               className={`flex-1 text-left text-[14px] bg-transparent border-none cursor-pointer ${region ? '' : 'text-[#BBBBBB]'}`}
             >
-              {region || '省、市、区、街道'} ▾
+              {region || s.regionPlaceholder} ▾
             </button>
           </FormRow>
-          <FormRow label="详细地址" required hint="导入已有地址">
+          <FormRow label={s.detailAddressFieldLabel} required hint={s.importExistingAddressLabel}>
             <input
               value={detail}
               onChange={(e) => setDetail(e.target.value)}
-              placeholder="小区楼栋/乡村名称、门牌号"
+              placeholder={s.detailPlaceholder}
               className="flex-1 text-[14px] bg-transparent border-none outline-none"
               data-keep-keyboard="true"
             />
           </FormRow>
-          <FormRow label="收件人名字" required>
+          <FormRow label={s.recipientNameLabel} required>
             <input
               value={name}
               onChange={(e) => setName(e.target.value)}
-              placeholder="名字"
+              placeholder={s.namePlaceholder}
               className="flex-1 text-[14px] bg-transparent border-none outline-none"
               data-keep-keyboard="true"
             />
           </FormRow>
-          <FormRow label="+86" required>
+          <FormRow label={s.phonePrefixLabel} required>
             <input
               value={phone}
               onChange={(e) => setPhone(e.target.value.replace(/\D/g, '').slice(0, 11))}
-              placeholder="手机号"
+              placeholder={s.phonePlaceholder}
               inputMode="numeric"
               className="flex-1 text-[14px] bg-transparent border-none outline-none"
               data-keep-keyboard="true"
@@ -115,8 +117,8 @@ export default function AddressEditPage() {
         </div>
 
         {/* 标签 */}
-        <div className="bg-white mt-2 px-4 py-3">
-          <div className="text-[13px] text-[#666666] mb-2">地址标签</div>
+        <div className="bg-app-surface mt-2 px-4 py-3">
+          <div className="text-[13px] text-app-text-muted mb-2">{s.addressTagSectionLabel}</div>
           <div className="flex gap-2 flex-wrap">
             {ADDRESS_TAGS.map((t) => (
               <button
@@ -126,20 +128,20 @@ export default function AddressEditPage() {
                   onTrigger: () => setTag((cur) => (cur === t ? null : t)),
                 })}
                 className={`text-[12px] rounded-full px-3.5 py-1.5 border cursor-pointer ${
-                  tag === t ? 'bg-[#FFF1E8] text-[#FF5000] border-[#FF5000]' : 'bg-[#F8F8F8] text-[#333333] border-transparent'
+                  tag === t ? 'bg-[#FFF1E8] text-[#FF5000] border-[#FF5000]' : 'bg-app-bg text-app-text border-transparent'
                 }`}
               >
                 {t}
               </button>
             ))}
-            <button className="text-[12px] rounded-full px-3.5 py-1.5 border border-dashed border-[#CCCCCC] bg-white text-[#666666] cursor-pointer">
-              自定义
+            <button className="text-[12px] rounded-full px-3.5 py-1.5 border border-dashed border-[#CCCCCC] bg-app-surface text-app-text-muted cursor-pointer">
+              {s.customTagLabel}
             </button>
           </div>
         </div>
       </div>
 
-      <div className="shrink-0 bg-white border-t border-[#EEEEEE] px-3 py-2">
+      <div className="shrink-0 bg-app-surface border-t border-app-border px-3 py-2">
         <button
           {...bindTap('address.save', {
             preventDefault: !canSave,
@@ -153,13 +155,13 @@ export default function AddressEditPage() {
           disabled={!canSave}
           className="w-full h-11 rounded-full bg-gradient-to-r from-[#FF9402] to-[#FF5000] text-white text-[15px] border-none cursor-pointer disabled:opacity-40"
         >
-          保存地址
+          {s.saveAddressLabel}
         </button>
       </div>
 
       {/* 省市区选择器 */}
       {regionOpen && (
-        <BottomSheet onClose={() => back()} title="选择所在地区">
+        <BottomSheet onClose={() => back()} title={s.selectRegionTitle}>
           <div className="flex px-2 pb-2 h-64">
             <Column
               options={Object.keys(REGIONS)}
@@ -192,7 +194,7 @@ function FormRow({
 }: { label: string; required?: boolean; hint?: string; children: React.ReactNode }) {
   return (
     <div className="flex items-center gap-3 py-3.5 border-b border-[#F5F5F5]">
-      <span className="w-20 shrink-0 text-[13px] text-[#666666]">
+      <span className="w-20 shrink-0 text-[13px] text-app-text-muted">
         {required && <span className="text-[#FF0036]">* </span>}{label}
       </span>
       {children}
@@ -211,7 +213,7 @@ function Column({
           key={o}
           onClick={() => onPick(o)}
           className={`block w-full text-left px-3 py-2.5 text-[13px] bg-transparent border-none cursor-pointer ${
-            value === o ? 'text-[#FF5000] font-semibold' : 'text-[#333333]'
+            value === o ? 'text-[#FF5000] font-semibold' : 'text-app-text'
           }`}
         >
           {o}

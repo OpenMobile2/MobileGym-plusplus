@@ -1,7 +1,12 @@
-import React, { useCallback, useContext, useEffect, useRef } from 'react';
+import React, { useCallback, useContext, useEffect, useMemo, useRef } from 'react';
 import { MemoryRouter, Routes, Route, useLocation, UNSAFE_NavigationContext } from 'react-router-dom';
 import { useAppNavigationHandler } from '@/os/hooks/useAppNavigationHandler';
+import { useDarkMode } from '@/os/hooks/useDarkMode';
+import { themeToCssVars, dimensToCssVars } from '@/os/utils/themeToCssVars';
+import { applySkinToThemeColors } from '@/os/SkinService';
 import { manifest } from './manifest';
+import { colors, colorsDark } from './res/colors';
+import { dimens } from './res/dimens';
 import { SheetHost } from './components/SheetHost';
 import { ToastHost } from './components/ui';
 
@@ -34,7 +39,7 @@ function KapiNavigationHandler() {
       mem.go?.(-1);
       return true;
     }
-    return false; // 栈底:交还 OS 退到桌面
+    return false;
   }, []);
 
   useEffect(() => {}, [location]);
@@ -50,8 +55,27 @@ function KapiNavigationHandler() {
 }
 
 function AppShell() {
+  const { isDark } = useDarkMode();
+  const themeColors = isDark
+    ? { ...manifest.theme.colors, ...(manifest.theme.colorsDark ?? {}) }
+    : manifest.theme.colors;
+  const appColors = isDark ? { ...colors, ...colorsDark } : colors;
+  const cssVars = useMemo(
+    () => ({
+      ...themeToCssVars(applySkinToThemeColors(themeColors)),
+      ...dimensToCssVars(appColors, { prefix: '--app-c-' }),
+      ...dimensToCssVars(dimens),
+    }),
+    [themeColors, appColors],
+  );
+  const statusFg = themeColors.statusBarForeground ?? (isDark ? 'light' : 'dark');
+
   return (
-    <div className="relative flex flex-col h-full bg-[#EEF1F9] overflow-hidden" data-status-bar-foreground="dark">
+    <div
+      className="relative flex flex-col h-full bg-app-bg text-app-text overflow-hidden"
+      style={cssVars as React.CSSProperties}
+      data-status-bar-foreground={statusFg}
+    >
       <div className="h-10 shrink-0" />
       <div className="flex-1 overflow-hidden relative">
         <Routes>

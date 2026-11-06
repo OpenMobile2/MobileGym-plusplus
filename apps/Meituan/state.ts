@@ -82,8 +82,11 @@ export const useMeituanStore = createAppStoreWithActions<MeituanState, MeituanAc
     },
     placeOrder: (restaurantId, restaurantName, deliveryFee) => {
       const { cart } = get();
-      const total = cart.items.reduce((sum, i) => sum + i.price * i.count, 0) + deliveryFee;
-      const orderId = `o${Date.now()}`;
+      const subtotal = cart.items.reduce((sum, i) => sum + i.price * i.count, 0);
+      const restaurant = MEITUAN_CONFIG.restaurants.find(item => item.id === restaurantId);
+      if (!restaurant || cart.restaurantId !== restaurantId || cart.items.length === 0 || subtotal < restaurant.minOrder) return '';
+      const total = subtotal + deliveryFee;
+      const orderId = `o${simNow()}`;
       const newOrder: MeituanOrder = {
         id: orderId,
         restaurantId,

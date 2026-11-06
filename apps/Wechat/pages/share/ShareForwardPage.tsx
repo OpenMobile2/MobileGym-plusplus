@@ -361,14 +361,15 @@ const CreateChatView: React.FC<{
 // ----- Bottom slide-up confirm sheet -----
 const ConfirmSheet: React.FC<{
   targets: ShareTarget[];
-  imagePath: string;
+  imagePath?: string;
   imageCount: number;
+  textPreview?: string;
   caption: string;
   onCaptionChange: (s: string) => void;
   onCancel: () => void;
   onSend: () => void;
   sending: boolean;
-}> = ({ targets, imagePath, imageCount, caption, onCaptionChange, onCancel, onSend, sending }) => {
+}> = ({ targets, imagePath, imageCount, textPreview, caption, onCaptionChange, onCancel, onSend, sending }) => {
   const t = useWechatStrings();
   const primary = targets[0];
   const extra = targets.length - 1;
@@ -377,7 +378,9 @@ const ConfirmSheet: React.FC<{
     <div className="absolute inset-0 z-[300] flex flex-col">
       <div className="flex-1 bg-black/35" onClick={onCancel} />
       <div className="bg-app-surface rounded-t-[14px] animate-slide-up shadow-2xl">
-        <div className="px-5 pt-4 pb-3 text-[15px] text-app-text">{t.share_send_image_to}</div>
+        <div className="px-5 pt-4 pb-3 text-[15px] text-app-text">
+          {imagePath ? t.share_send_image_to : '发送给：'}
+        </div>
 
         {/* Selected target row */}
         <div className="px-5 pb-3 flex items-center gap-3 border-b border-(--app-c-tw-border-gray-100)">
@@ -398,16 +401,22 @@ const ConfirmSheet: React.FC<{
           <IcNavForward size={18} className="text-(--app-c-tw-text-gray-300) shrink-0" />
         </div>
 
-        {/* Image preview */}
-        <div className="py-4 flex items-center justify-center">
-          <div className="relative w-[120px] h-[160px] bg-(--app-c-tw-bg-gray-100) rounded-[6px] overflow-hidden">
-            <WechatSmartImage src={imagePath} className="w-full h-full object-cover" alt="preview" />
-            {imageCount > 1 && (
-              <div className="absolute top-1.5 right-1.5 px-1.5 py-0.5 rounded-full bg-black/60 text-white text-[11px]">
-                +{imageCount - 1}
-              </div>
-            )}
-          </div>
+        {/* Image or text preview */}
+        <div className="py-4 flex items-center justify-center px-5">
+          {imagePath ? (
+            <div className="relative w-[120px] h-[160px] bg-(--app-c-tw-bg-gray-100) rounded-[6px] overflow-hidden">
+              <WechatSmartImage src={imagePath} className="w-full h-full object-cover" alt="preview" />
+              {imageCount > 1 && (
+                <div className="absolute top-1.5 right-1.5 px-1.5 py-0.5 rounded-full bg-black/60 text-white text-[11px]">
+                  +{imageCount - 1}
+                </div>
+              )}
+            </div>
+          ) : (
+            <div className="w-full max-h-[120px] overflow-y-auto rounded-[8px] bg-(--app-c-tw-bg-gray-100) px-3 py-2 text-[14px] text-app-text whitespace-pre-wrap">
+              {textPreview || ''}
+            </div>
+          )}
         </div>
 
         {/* Caption input */}
@@ -478,6 +487,16 @@ export const ShareForwardPage: React.FC = () => {
     return [];
   }, [activityId]);
 
+  const intentText = useMemo(() => {
+    const os = window.__OS__;
+    const payload = os?.getIntentPayload?.(activityId) ?? os?.getIntentPayload?.('wechat');
+    const data = (payload as { data?: Record<string, any> } | null)?.data;
+    const text = data?.text;
+    return typeof text === 'string' ? text.trim() : '';
+  }, [activityId]);
+
+  const hasSharePayload = intentImages.length > 0 || intentText.length > 0;
+
   const [view, setView] = useState<View>('main');
   const [searchMain, setSearchMain] = useState('');
   const [searchCreate, setSearchCreate] = useState('');
@@ -486,11 +505,19 @@ export const ShareForwardPage: React.FC = () => {
   const [caption, setCaption] = useState('');
   const [sending, setSending] = useState(false);
 
-  // 取消分享：回到 wechat 主页（singleTask 启动后历史是 ['/', '/share/forward']，
-  // 退一步即落到 '/'）。本入口完全运行在微信 Task 内，不再借栈到调用方。
+  useEffect(() => {
+    if (intentText) setCaption((prev) => prev || intentText);
+  }, [intentText]);
+
+  // 外部 ACTION_SEND 进来：取消/完成后 finishActivity 回到调用方（否则多数 App 会停在微信）。
+  // 无外部 payload（站内转发）：退回微信主页。
   const cancelAndClose = useCallback(() => {
+    if (hasSharePayload) {
+      window.__OS__?.finishActivity?.({ resultCode: 'CANCELED' });
+      return;
+    }
     back();
-  }, [back]);
+  }, [back, hasSharePayload]);
 
   const closeConfirm = useCallback(() => {
     setConfirmTargets(null);
@@ -561,10 +588,10 @@ export const ShareForwardPage: React.FC = () => {
   }, [chats, currentUserWxid, searchMain]);
 
   const handlePickTarget = useCallback((target: ShareTarget) => {
-    if (intentImages.length === 0) return;
+    if (!hasSharePayload) return;
     setConfirmTargets([target]);
     setCaption('');
-  }, [intentImages.length]);
+  }, [hasSharePayload]);
 
   const contactMatches = useMemo(() => {
     const q = searchMain.trim().toLowerCase();
@@ -573,20 +600,31 @@ export const ShareForwardPage: React.FC = () => {
   }, [visibleContacts, searchMain]);
 
   const handleSend = useCallback(() => {
-    if (!confirmTargets || confirmTargets.length === 0 || sending || intentImages.length === 0) return;
+    if (!confirmTargets || confirmTargets.length === 0 || sending || !hasSharePayload) return;
     setSending(true);
     const trimmedCaption = caption.trim();
     for (const target of confirmTargets) {
-      sendImages(target.wxid, intentImages);
-      if (trimmedCaption) sendMessage(target.wxid, trimmedCaption);
+      if (intentImages.length > 0) {
+        sendImages(target.wxid, intentImages);
+        if (trimmedCaption) sendMessage(target.wxid, trimmedCaption);
+      } else if (intentText) {
+        const body = trimmedCaption ? `${intentText}\n${trimmedCaption}` : intentText;
+        sendMessage(target.wxid, body);
+      }
     }
-    // 真机微信：发送后跳到目标会话页面，wechat 主页留作返回栈底。
-    // 这里 replace 当前 '/share/forward' 为 '/chat/:id'，使历史变为 ['/', '/chat/:id']。
+    // 外部分享：发完回调用方（支付页同款 finishActivity），避免停在微信。
+    // 站内转发仍进目标会话。
     const target = confirmTargets[0];
     requestAnimationFrame(() => {
+      const os = window.__OS__;
+      const payload = os?.getIntentPayload?.(activityId) ?? os?.getIntentPayload?.('wechat');
+      if (payload) {
+        os?.finishActivity?.({ resultCode: 'OK', data: { sharedTo: target.wxid } });
+        return;
+      }
       go('share.forward.send.toChat', { id: target.wxid });
     });
-  }, [confirmTargets, sending, intentImages, caption, sendImages, sendMessage, go]);
+  }, [confirmTargets, sending, hasSharePayload, intentImages, intentText, caption, sendImages, sendMessage, go, activityId]);
 
   const toggleCreateContact = (wxid: string) => {
     setCreateSelectedIds(prev => {
@@ -623,11 +661,12 @@ export const ShareForwardPage: React.FC = () => {
         />
       )}
 
-      {confirmTargets && intentImages.length > 0 && (
+      {confirmTargets && hasSharePayload && (
         <ConfirmSheet
           targets={confirmTargets}
           imagePath={intentImages[0]}
           imageCount={intentImages.length}
+          textPreview={intentText}
           caption={caption}
           onCaptionChange={setCaption}
           onCancel={closeConfirm}

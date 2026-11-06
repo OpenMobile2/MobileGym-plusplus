@@ -1,7 +1,8 @@
 import React from 'react';
 import { useParams, useSearchParams } from 'react-router-dom';
 import { useXimalayaGestures } from '../hooks/useXimalayaGestures';
-import { TopBar, Sheet, Img, wontfix, formatCount, formatDuration } from '../components/ui';
+import { TopBar, Sheet, Img, wontfix, formatCount, formatDuration, showToast } from '../components/ui';
+import { sharePlainText } from '@/os/shareBridge';
 import { useXimalayaStore } from '../state';
 import { IcSparkles, IcShare, IcClose, IcHeadphones } from '../res/icons';
 
@@ -88,7 +89,7 @@ export function SoundDetailPage() {
             {SHARE_CHANNELS.map((c) => (
               <button
                 key={c}
-                {...bindTap({ kind: 'action', id: 'share.thirdparty.wontfix2' }, { onTrigger: wontfix })}
+                {...bindTap({ kind: 'action', id: 'share.thirdparty.wontfix2' }, { onTrigger: () => { const launched = sharePlainText('【喜马拉雅】声音分享', { onResult: (r) => { if (r.resultCode === 'OK') showToast('分享成功'); } }); if (!launched) wontfix(); } })}
                 className="flex flex-col items-center gap-1.5 text-[12px] text-[#333]"
               >
                 <span className="w-11 h-11 rounded-full bg-[#F2F2F2] flex items-center justify-center text-[#999]"><IcShare size={20} /></span>

@@ -868,7 +868,6 @@
     "s_dragon",
     "s_yaoyao",
     "s_zhangxj",
-    "s_latetalk",
     "s_gv101cn"
   ],
   "favoriteShowIds": [
@@ -897,7 +896,11 @@
     "e_crossing_minimax"
   ],
   "queueIds": [
-    "e_42_bubble"
+    "e_42_albert",
+    "e_yaoyao_y27",
+    "e_dragon_ai",
+    "e_whatsnext_s10",
+    "e_crossing_minimax"
   ],
   "notifications": {
     "s_42": true,

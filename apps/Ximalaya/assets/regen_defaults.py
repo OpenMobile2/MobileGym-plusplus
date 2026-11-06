@@ -400,10 +400,11 @@ data = {
     "quickListenTrackIds": quickListenTrackIds,
     "hotSearch": hotSearch, "searchHistory": searchHistory,
     # 运行时写入(初始态)
-    "subscribedAlbumIds": ["a_novel","a_cul","a_cross","ps01","hi01"],
+    "taskAudit": {},
+    "subscribedAlbumIds": ["a_cul","nv02","nv04","ps01","hi01"],
     "collectedTrackIds": ["a_cul_t1","a_novel_t3","a_myst_t1","ps01_t1","hi05_t2"],
     "followedAnchorIds": ["an_wy","an_xm","an_dg"],
-    "likedTrackIds": [], "likedCommentIds": [], "appliedSkinId": "sk_def",
+    "likedTrackIds": [], "likedCommentIds": [], "danmakuMessages": [], "appliedSkinId": "sk_def",
     "player": {"currentAlbumId":"a_novel","currentTrackId":"a_novel_t3","playing":False,
                "progressSec":300,"speed":1.0,"quality":"标准","timerLabel":""},
 }

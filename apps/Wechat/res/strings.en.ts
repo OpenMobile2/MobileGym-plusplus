@@ -474,6 +474,8 @@ export const stringsEn: Partial<Record<StringKey, string>> = {
   pay_agreement_prefix: 'By continuing, you agree to the ',
   pay_agreement: 'Auto-Deduction Authorization',
   pay_paying: 'Processing...',
+  pay_confirm: 'Confirm Payment',
+  pay_one_time_description: 'This is a one-time payment and will not renew automatically.',
   pay_and_open: 'Pay & Activate',
   pay_give_up_payment: 'Give up this payment?',
   pay_continue_pay: 'Continue',

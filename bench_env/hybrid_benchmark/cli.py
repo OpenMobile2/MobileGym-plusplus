@@ -10,11 +10,10 @@ from pathlib import Path
 import time
 
 from bench_env.hybrid_agent.modes import (
-    BENCHMARK_RUNTIMES,
     HYBRID_MODE,
-    HYBRID_XML_RUNTIME,
     INTERACTION_MODES,
-    QWEN35_SESSION_RUNTIME,
+    BENCHMARK_RUNTIMES,
+    HYBRID_XML_RUNTIME,
 )
 from bench_env.hybrid_benchmark.runner import HybridBenchmarkConfig, run_benchmark
 from bench_env.task.registry import TaskRegistry
@@ -40,43 +39,37 @@ def create_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--runtime",
         choices=list(BENCHMARK_RUNTIMES),
-        default=QWEN35_SESSION_RUNTIME,
+        default=HYBRID_XML_RUNTIME,
         help=(
-            "qwen35_session is the Bench 215 protocol: system and query once, "
-            "tools=[mobile_use], last-n screenshots. "
-            "qwen35_thought_session writes Thought: plus XML and does not send native thinking. "
-            "hybrid_xml rebuilds the XML system prompt every turn; use it with "
-            "venus, gpt_responses, or kimi_k2_6."
+            "hybrid_xml rebuilds a Qwen XML system prompt every turn; "
+            "qwen35_session keeps system+query once, tools=[mobile_use], last_n screenshots; "
+            "qwen35_thought_session is the same packing with Thought: + XML and no tools=/thinking "
+            "(hybrid uses the GUI+MCP system prompt)"
         ),
     )
     parser.add_argument(
         "--last-n",
         type=int,
         default=3,
-        help="qwen35_session: how many recent screenshots stay in the dialogue",
+        help="qwen35_session: keep this many recent screenshot slots as images",
     )
     parser.add_argument(
         "--enable-thinking",
         choices=["true", "false"],
         default="true",
-        help="qwen35_session: chat_template enable_thinking. Ignored by thought_session.",
+        help="qwen35_session: chat_template enable_thinking",
     )
     parser.add_argument(
         "--require-think-tags",
         choices=["true", "false"],
         default="false",
+        help="qwen35_session XML mode: require a <think> block (native mode ignores this)",
     )
     parser.add_argument(
         "--qwen35-tool-call-mode",
         choices=["native", "xml"],
         default="native",
-        help="qwen35_session: native OpenAI tools= or XML tool_call text",
-    )
-    parser.add_argument(
-        "--start-delay",
-        type=float,
-        default=0.0,
-        help="Seconds to wait after task setup before the first model call",
+        help="qwen35_session: native OpenAI tools= or XML <tool_call> in content",
     )
     parser.add_argument("--suite", default="core")
     parser.add_argument("--task-ids", default="", help="Comma-separated full task IDs or class names")
@@ -89,6 +82,7 @@ def create_parser() -> argparse.ArgumentParser:
     parser.add_argument("--top-p", type=float, default=0.95)
     parser.add_argument("--infer-timeout", type=float, default=300.0)
     parser.add_argument("--delay-after-action", type=float, default=0.8)
+    parser.add_argument("--start-delay", type=float, default=0.0, help="Seconds to wait after setup before the agent starts")
     parser.add_argument("--coord-space", default="norm_0_1000")
     parser.add_argument("--browser-type", default="chromium")
     parser.add_argument("--browser-proxy", default=None)
@@ -97,9 +91,9 @@ def create_parser() -> argparse.ArgumentParser:
     parser.add_argument("--quiet", action="store_true")
     parser.add_argument(
         "--agent-protocol",
-        choices=["xml", "venus", "gpt_responses", "kimi_k2_6"],
+        choices=["xml", "gpt_responses", "kimi_k2_6"],
         default="xml",
-        help="Model protocol: Qwen-style XML, Venus session, GPT Responses, or Kimi K2.6 JSON",
+        help="Model protocol: Qwen-style XML, GPT Responses, or Kimi K2.6 JSON",
     )
     parser.add_argument(
         "--reasoning-effort",
@@ -173,12 +167,7 @@ async def async_main(args: argparse.Namespace) -> int:
         interaction_mode=args.interaction_mode,
         suite=args.suite,
         task_ids=tuple(
-            line.strip()
-            for line in (
-                Path(args.task_ids_file).read_text(encoding="utf-8").splitlines()
-                if args.task_ids_file
-                else args.task_ids.split(",")
-            )
+            line.strip() for line in (Path(args.task_ids_file).read_text(encoding="utf-8").splitlines() if args.task_ids_file else args.task_ids.split(","))
             if line.strip() and not line.lstrip().startswith("#")
         ),
         limit=args.limit,
@@ -201,7 +190,7 @@ async def async_main(args: argparse.Namespace) -> int:
         kimi_thinking=args.kimi_thinking == "enabled",
         kimi_history_images=args.kimi_history_images,
         start_delay=args.start_delay,
-        runtime=args.runtime if args.agent_protocol == "xml" else HYBRID_XML_RUNTIME,
+        runtime=args.runtime,
         last_n=args.last_n,
         enable_thinking=args.enable_thinking == "true",
         require_think_tags=args.require_think_tags == "true",
@@ -210,7 +199,8 @@ async def async_main(args: argparse.Namespace) -> int:
     results = await run_benchmark(config)
     summary = json.loads((output_dir / "summary.json").read_text(encoding="utf-8"))
     print(
-        f"[Hybrid benchmark] mode={summary['interaction_mode']} "
+        f"[Hybrid benchmark] runtime={getattr(config, 'runtime', 'hybrid_xml')} "
+        f"mode={summary['interaction_mode']} "
         f"SR={summary['sr']:.3f} ({summary['successful']}/{summary['total']}) "
         f"output={output_dir}"
     )

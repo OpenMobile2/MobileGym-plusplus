@@ -14,17 +14,19 @@ export default function ProfilePage() {
   const avatar = avatarUrl('user');
 
   const Row = ({ id, label }: { id: string; label: string }) => (
-    <button {...action(id, toast)} className="flex w-full items-center justify-between border-b border-[#F0F0F0] bg-white px-4 py-3.5 text-left text-sm text-[#333]">
-      <span>{label}</span><span className="text-[#C8CDD4]">›</span>
+    <button {...action(id, toast)} className="flex w-full items-center justify-between border-b border-[var(--app-border)] bg-[var(--app-surface)] px-4 py-3.5 text-left text-sm text-[var(--app-text)]">
+      <span>{label}</span><span className="text-[var(--app-text-muted)]">›</span>
     </button>
   );
 
   return (
-    <div className="flex h-full flex-col bg-[#F4F6F8]" data-status-bar-foreground="light">
+    <div className="flex h-full flex-col bg-[var(--app-bg)]" data-status-bar-foreground="light">
       {/* 用户卡(深蓝星空) */}
       <button {...bindTap('profile.account.open')} className="block w-full bg-gradient-to-b from-[#1E2A5A] to-[#2B3A72] px-4 pb-5 pt-10 text-left">
         <div className="flex items-center gap-3">
-          <div className="h-16 w-16 overflow-hidden rounded-full bg-white/20" style={avatar ? { background: `center/cover url(${avatar})` } : undefined} />
+          <div className="h-16 w-16 overflow-hidden rounded-full bg-white/20">
+            {avatar && <img src={avatar} alt="头像" className="h-full w-full object-cover" />}
+          </div>
           <div>
             <div className="text-lg font-bold text-white">{user.name}</div>
             <div className="text-sm text-white/80">{user.signature}</div>

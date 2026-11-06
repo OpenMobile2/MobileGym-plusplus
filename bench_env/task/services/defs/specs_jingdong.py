@@ -1,4 +1,4 @@
-"""Jingdong App-Tool boundary probes (services).
+"""Jingdong App-Tool boundary probes (selfbuilt-v4).
 
 Unlike tasklib (which just exercises every Jingdong tool once),
 this batch is designed to answer a narrower question: *are the Jingdong App

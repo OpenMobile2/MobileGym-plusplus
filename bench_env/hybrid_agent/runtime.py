@@ -3,10 +3,10 @@
 from __future__ import annotations
 
 import asyncio
+import json
 import time
 from typing import Any, Protocol
 
-from bench_env.env.app_aliases import resolve_app_id
 from bench_env.env.base import ActionType, Observation
 from bench_env.hybrid_agent.agent import HybridXmlAgent
 from bench_env.hybrid_agent.browser_tools import BrowserToolClient
@@ -20,6 +20,7 @@ from bench_env.hybrid_agent.modes import (
     HYBRID_MODE,
     validate_interaction_mode,
 )
+from bench_env.hybrid_agent.artifacts import format_live_action, format_live_cli
 from bench_env.hybrid_agent.types import (
     FunctionCall,
     HybridRunResult,
@@ -50,11 +51,13 @@ class HybridAgentRuntime:
         agent: Any,
         recorder: HybridStepRecorder | None = None,
         interaction_mode: str = HYBRID_MODE,
+        forbid_open_app: bool = False,
     ):
         self.env = env
         self.agent = agent
         self.recorder = recorder
         self.interaction_mode = validate_interaction_mode(interaction_mode)
+        self.forbid_open_app = forbid_open_app
         self.browser_tools = BrowserToolClient(env.page)
         self._local_call_sequence = 0
 
@@ -123,7 +126,49 @@ class HybridAgentRuntime:
                 continue
 
             call = parsed.call
+            if hasattr(self.recorder, "publish_live"):
+                is_tool = call.name != MOBILE_USE_NAME
+                self.recorder.publish_live({
+                    "step": step,
+                    "phase": "acting",
+                    "kind": "tool" if is_tool else "gui",
+                    "kind_label": "App Tool" if is_tool else "GUI",
+                    "app": current_app or "launcher",
+                    "thought": parsed.thought,
+                    "action": format_live_action(call, parsed.action),
+                    "cli": format_live_cli(call),
+                    "tool_return": "",
+                })
             if call.name == MOBILE_USE_NAME:
+                mobile_action = str(call.arguments.get("action") or "").lower()
+                if self.forbid_open_app and mobile_action == "open_app":
+                    feedback = self._local_error(
+                        MOBILE_USE_NAME,
+                        "OPEN_APP_DISABLED",
+                        "open_app is disabled for this demo; press Home then tap the launcher icon.",
+                    )
+                    done = False
+                    obs = await self.env.get_observation()
+                    ui_effect = "none"
+                    record = HybridStepRecord(
+                        step=step,
+                        current_app=current_app,
+                        available_tools=available_names,
+                        response=parsed.raw_response,
+                        call=call,
+                        feedback=feedback,
+                        ui_effect=ui_effect,
+                        route_before=route_before,
+                        route_after=dict(obs.route),
+                        started_at=started_at,
+                        finished_at=time.time(),
+                    )
+                    trace.append(record)
+                    if self.recorder:
+                        self.recorder.record_step(
+                            record, before_obs, obs, self.agent.last_messages
+                        )
+                    continue
                 feedback, obs, done = await self._execute_mobile_use(call)
                 mobile_action = str(call.arguments.get("action") or "").lower()
                 ui_effect = "navigation" if mobile_action in {
@@ -207,6 +252,17 @@ class HybridAgentRuntime:
         )
         if self.recorder:
             self.recorder.finish(result)
+            export = getattr(self.agent, "export_session_record", None)
+            output_dir = getattr(self.recorder, "output_dir", None)
+            if callable(export) and output_dir is not None:
+                try:
+                    payload = export(episode_id=task, goal=task)
+                    (output_dir / "session.json").write_text(
+                        json.dumps(payload, ensure_ascii=False, indent=2),
+                        encoding="utf-8",
+                    )
+                except Exception as error:
+                    print(f"Failed to export session.json: {error}")
         return result
 
     async def _execute_mobile_use(
@@ -231,22 +287,55 @@ class HybridAgentRuntime:
 
         if action.action_type == ActionType.AWAKE:
             app_name = str(action.data.get("value") or "").strip()
-            app_name_map = getattr(self.env, "APP_NAME_MAP", None)
-            known_app_ids = getattr(self.env, "_KNOWN_APP_IDS", None)
-            if isinstance(app_name_map, dict) and known_app_ids is not None:
-                if resolve_app_id(app_name, app_name_map, known_app_ids) is None:
+            resolved: str | None = None
+            resolver = getattr(self.env, "resolve_open_app", None)
+            if callable(resolver):
+                maybe = resolver(app_name)
+                resolved = await maybe if asyncio.iscoroutine(maybe) else maybe
+            elif hasattr(self.env, "APP_NAME_MAP"):
+                from bench_env.env.mobile_gym import resolve_app_name_from_map
+
+                resolved = resolve_app_name_from_map(
+                    getattr(self.env, "APP_NAME_MAP", {}),
+                    getattr(self.env, "_KNOWN_APP_IDS", frozenset()),
+                    app_name,
+                )
+            if resolver is not None or hasattr(self.env, "APP_NAME_MAP"):
+                if not resolved:
                     obs = await self.env.get_observation()
                     return (
                         self._local_error(
                             call.name,
                             "APP_NOT_FOUND",
-                            f"Unknown app '{app_name}'; use a supported app name or app id.",
+                            (
+                                f"App {app_name!r} is not installed. "
+                                "Retry open_app with an installed display name or app id "
+                                "(case and spaces are ignored), or tap the launcher icon."
+                            ),
                         ),
                         obs,
                         False,
                     )
 
         result = await self.env.step(action)
+        if (
+            action.action_type == ActionType.AWAKE
+            and result.info.get("code") == "APP_NOT_FOUND"
+        ):
+            call_id = self._next_local_call_id()
+            return (
+                StepFeedback(
+                    call_id,
+                    call.name,
+                    False,
+                    {
+                        "code": "APP_NOT_FOUND",
+                        "message": result.info.get("message") or "App is not installed.",
+                    },
+                ),
+                result.observation,
+                False,
+            )
         call_id = self._next_local_call_id()
         output = {
             "action_type": action.action_type.value,

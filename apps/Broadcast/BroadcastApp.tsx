@@ -1,6 +1,7 @@
-import React, { useCallback, useContext, useEffect, useRef } from 'react';
+import React, { useCallback, useContext, useEffect, useMemo, useRef } from 'react';
 import { MemoryRouter, Routes, Route, Outlet, useLocation, UNSAFE_NavigationContext } from 'react-router-dom';
 import { useAppNavigationHandler } from '@/os/hooks/useAppNavigationHandler';
+import { useDarkMode } from '@/os/hooks/useDarkMode';
 import { themeToCssVars } from '@/os/utils/themeToCssVars';
 import { manifest } from './manifest';
 import { TABS, MAIN_TAB_ROUTES } from './constants';
@@ -171,9 +172,14 @@ const Layout: React.FC = () => {
 };
 
 export const BroadcastApp: React.FC = () => {
-  const cssVars = themeToCssVars(manifest.theme.colors);
+  const { isDark } = useDarkMode();
+  const themeColors = isDark
+    ? { ...manifest.theme.colors, ...(manifest.theme.colorsDark ?? {}) }
+    : manifest.theme.colors;
+  const cssVars = useMemo(() => themeToCssVars(themeColors), [themeColors]);
+  const statusFg = themeColors.statusBarForeground ?? (isDark ? 'light' : 'dark');
   return (
-    <div className="h-full w-full" style={cssVars as React.CSSProperties}>
+    <div className="h-full w-full" style={cssVars as React.CSSProperties} data-status-bar-foreground={statusFg}>
       <MemoryRouter initialEntries={['/']}>
         <NavigationHandler />
         <PlayerProgressClock />

@@ -11,7 +11,10 @@ export const OS = {
 /**
  * DATA_VERSION —— 每次修改 data/defaults.json 必须递增,触发 localStorage 重置。
  */
-export const DATA_VERSION = 4;
+export const DATA_VERSION = 11;
+
+/** 种子指纹:hydration 时不一致则强制重种(跨月数据) */
+export const SEED_TAG = 'cross-month-90-latest-yesterday';
 
 /** 底部导航 5 个 tab(与 spec chrome.tabbar 一致) */
 export const TABS = [

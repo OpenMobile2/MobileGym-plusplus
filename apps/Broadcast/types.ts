@@ -87,8 +87,8 @@ export interface BroadcastState {
   favoriteChannelIds: string[];
   savedEpisodeIds: string[];
   downloadedEpisodeIds: string[];
-  upNextIds: string[];           // 待播清单
-  queueIds: string[];            // 播放队列(正在播放下面排队)
+  upNextIds: string[];           // 待播清单（GUI / list_up_next）
+  queueIds: string[];            // 播放队列；写入与待播双写，播放只从待播消费
   notifications: Record<string, boolean>;   // showId -> 新单集通知开关
   myRatings: Record<string, number>;        // showId -> 我打的星级
 

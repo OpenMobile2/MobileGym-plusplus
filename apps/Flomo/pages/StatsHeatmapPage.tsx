@@ -5,8 +5,7 @@ import { useFlomoGestures } from '../hooks/useFlomoGestures';
 import { C } from '../components/ui';
 import { dayKey } from '../utils/format';
 import { IcNavBack, IcShare } from '../res/icons';
-
-const DAY_MS = 86400000;
+import { shareWithSystem } from '../capabilities';
 
 const WEEK = ['一', '二', '三', '四', '五', '六', '日'];
 
@@ -51,18 +50,20 @@ export default function StatsHeatmapPage() {
     return counts;
   }, [live]);
 
-  // 月视图:锚点所在月的真实日历(周一为首列;从当月 1 号起逐天 +86400000,月份变化即止)
+  // 月视图:锚点所在月的真实日历(周一为首列;按日历 setDate,避免 DST 撞 key)
   const monthGrid = useMemo(() => {
     const a = TimeService.fromTimestamp(anchorTs);
     const year = a.getFullYear();
     const month = a.getMonth(); // 0-based
-    const firstTs = anchorTs - (a.getDate() - 1) * DAY_MS;
-    const offset = (TimeService.fromTimestamp(firstTs).getDay() + 6) % 7;
+    const first = TimeService.fromTimestamp(anchorTs);
+    first.setDate(1);
+    const offset = (first.getDay() + 6) % 7;
     const days: { day: number; key: string }[] = [];
-    let ts = firstTs;
-    while (TimeService.fromTimestamp(ts).getMonth() === month) {
-      days.push({ day: days.length + 1, key: dayKey(ts) });
-      ts += DAY_MS;
+    for (let day = 1; ; day += 1) {
+      const d = TimeService.fromTimestamp(first.getTime());
+      d.setDate(day);
+      if (d.getMonth() !== month) break;
+      days.push({ day, key: dayKey(d.getTime()) });
     }
     return { year, month: month + 1, offset, days };
   }, [anchorTs]);
@@ -80,6 +81,14 @@ export default function StatsHeatmapPage() {
 
   const liveCount = live.length;
   const wordCount = useMemo(() => live.reduce((sum, m) => sum + m.content.length, 0), [live]);
+  const shareSummary = () => {
+    const period = range === 'month' ? `${monthGrid.year}年${monthGrid.month}月` : `${monthGrid.year}年`;
+    const launched = shareWithSystem(
+      `flomo ${period}记录统计\n${liveCount} 条笔记 · ${wordCount} 字 · 坚持记录 ${user.days} 天`,
+      (result) => { if (result.resultCode === 'OK') toast('分享成功'); },
+    );
+    if (!launched) toast('未找到可分享的应用');
+  };
 
   return (
     <div className="flex flex-col h-full" style={{ background: C.bg }} data-status-bar-foreground="dark">
@@ -150,7 +159,7 @@ export default function StatsHeatmapPage() {
           <button
             {...bindTap(
               { kind: 'action', id: 'stats.heatmap.share.do' },
-              { onTrigger: () => toast('已生成统计分享图') },
+              { onTrigger: shareSummary },
             )}
             className="w-9 h-9 rounded-full flex items-center justify-center border-none cursor-pointer"
             style={{ background: C.surface, color: C.sub }}

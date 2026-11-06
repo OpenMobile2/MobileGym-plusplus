@@ -63,7 +63,15 @@ export default function ReviewDailysettingsPage() {
         <Section title="回顾范围">
           <SetRow label="回顾条件" value="全部内容" bind={act('review.dailySettings.condition.select', () => toast('该功能暂未开放'))} />
           {divider}
-          <SetRow label="时间范围" value="所有时间" bind={act('review.dailySettings.timerange.select', () => toast('该功能暂未开放'))} />
+          <SetRow
+            label="时间范围"
+            value={settings.dailyReviewRange === 'year' ? '最近一年' : '所有时间'}
+            bind={act('review.dailySettings.timerange.select', () => {
+              const next = settings.dailyReviewRange === 'year' ? 'all' : 'year';
+              setSetting('dailyReviewRange', next);
+              toast(next === 'year' ? '时间范围:最近一年' : '时间范围:所有时间');
+            })}
+          />
           {divider}
           <SetRow
             label="回顾条数"

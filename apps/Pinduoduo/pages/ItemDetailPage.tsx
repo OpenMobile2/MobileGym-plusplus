@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { useParams, useSearchParams } from 'react-router-dom';
+import type { ActivityResult } from '@/os/types/manifest';
 import { usePinduoduoGestures } from '../hooks/usePinduoduoGestures';
 import { usePinduoduoStore } from '../state';
 import { Img, PriceYuan, FufeiTag, showToast, wontfix, Tag } from '../components/ui';
 import { IcNavBack, IcStore, IcHeart, IcHeadphones, IcShare, IcClose, IcChevronRight, IcStar } from '../res/icons';
+import { sharePlainText } from '@/os/shareBridge';
+import { PayPinCapture } from '@/os/components/PayPinCapture';
 
 const PAY_METHODS = ['先用后付', '微信支付', '支付宝', '多多钱包余额', '银行卡'];
 
@@ -22,13 +25,22 @@ export function ItemDetailPage() {
   const { bindTap, bindBack, go, back } = usePinduoduoGestures();
 
   const item = usePinduoduoStore((s) => s.items.find((i) => i.id === itemId));
+  const allItems = usePinduoduoStore((s) => s.items);
   const shop = usePinduoduoStore((s) => s.shops.find((sh) => sh.id === item?.shopId));
+  const reviews = usePinduoduoStore((s) => s.reviews);
   const favorites = usePinduoduoStore((s) => s.favorites);
   const fufeiEnabled = usePinduoduoStore((s) => s.settings.fufeiEnabled);
   const toggleFavorite = usePinduoduoStore((s) => s.toggleFavorite);
   const addFootprint = usePinduoduoStore((s) => s.addFootprint);
   const ensureShopChat = usePinduoduoStore((s) => s.ensureShopChat);
   const placeOrder = usePinduoduoStore((s) => s.placeOrder);
+  const addresses = usePinduoduoStore((s) => s.addresses);
+  const selectedAddressId = usePinduoduoStore((s) => s.selectedAddressId);
+  // 当前收货地址:选中 > 默认 > 首个;与 placeOrder 里的取址逻辑一致。
+  const curAddr =
+    addresses.find((a) => a.id === selectedAddressId) ||
+    addresses.find((a) => a.isDefault) ||
+    addresses[0];
 
   const [selected, setSelected] = useState<Record<string, string>>({});
   const [qty, setQty] = useState(1);
@@ -44,10 +56,15 @@ export function ItemDetailPage() {
   const isFufei = payMethod === '先用后付' && fufeiEnabled && item.fufei;
   const buyMode: 'group' | 'single' | 'join' = mode === 'spec' ? 'group' : mode;
   const unitPrice = buyMode === 'single' ? item.singlePrice : item.pinPrice;
+  const itemReviews = reviews.filter((review) => review.itemId === item.id);
+  const variantImages = Array.from(new Set([
+    ...(item.gallery.length ? item.gallery : [item.image]),
+    ...allItems.filter((candidate) => candidate.category === item.category && candidate.id !== item.id).slice(0, 5).map((candidate) => candidate.image),
+  ])).slice(0, 7);
 
   const submitOrder = () => {
     const skuDesc = item.specs.map((sp2) => selected[sp2.name] || sp2.options[0]).join(' ');
-    if (buyMode === 'group') {
+    if (buyMode === 'group' && isFufei) {
       placeOrder({ itemId: item.id, skuDesc, qty, mode: buyMode, payMethod, fufei: isFufei });
       go('sku.order.group');
     } else if (isFufei) {
@@ -59,18 +76,7 @@ export function ItemDetailPage() {
   };
 
   return (
-    <div className="h-full flex flex-col bg-[#F5F5F5] pt-10 overflow-hidden" data-status-bar-foreground="dark">
-      {/* 顶栏 */}
-      <div className="shrink-0 h-11 flex items-center px-2 bg-white">
-        <button {...bindBack()} aria-label="返回" className="w-9 h-9 flex items-center justify-center">
-          <IcNavBack size={24} />
-        </button>
-        <div className="flex-1 text-center font-medium">商品</div>
-        <button {...bindTap('detail.share.show', { params: { itemId: item.id } })} aria-label="分享" className="w-9 h-9 flex items-center justify-center">
-          <IcShare size={20} />
-        </button>
-      </div>
-
+    <div className="h-full flex flex-col bg-[#F3F3F3] pt-10 overflow-hidden" data-status-bar-foreground="dark">
       {/* 内容滚动 */}
       <div className="flex-1 overflow-y-auto" data-scroll-container data-scroll-direction="vertical">
         <div className="relative w-full aspect-square bg-white">
@@ -90,11 +96,49 @@ export function ItemDetailPage() {
               </div>
             ))}
           </div>
-          <span className="absolute right-2 bottom-2 bg-black/40 text-white text-[11px] px-2 py-0.5 rounded-full">
+          <span className="absolute right-2 bottom-3 bg-black/40 text-white text-[11px] px-2 py-0.5 rounded-full z-10">
             {imgIndex + 1}/{Math.max(item.gallery.length, 1)}
           </span>
+          <div className="absolute left-2 right-2 top-2 flex items-center justify-between pointer-events-none">
+            <button
+              {...bindBack()}
+              aria-label="返回"
+              className="pointer-events-auto w-9 h-9 rounded-full bg-black/45 text-white flex items-center justify-center"
+            >
+              <IcNavBack size={23} />
+            </button>
+            <div className="flex items-center gap-2">
+              <button
+                {...bindTap({ kind: 'action', id: 'detail.discover.wontfix' }, { onTrigger: wontfix })}
+                aria-label="发现"
+                className="pointer-events-auto w-9 h-9 rounded-full bg-black/45 text-white flex items-center justify-center"
+              >
+                <IcStar size={19} />
+              </button>
+              <button
+                {...bindTap('detail.share.show', { params: { itemId: item.id } })}
+                aria-label="分享"
+                className="pointer-events-auto w-9 h-9 rounded-full bg-black/45 text-white flex items-center justify-center"
+              >
+                <IcShare size={19} />
+              </button>
+            </div>
+          </div>
+          {item.gallery[1] && (
+            <button
+              {...bindTap({ kind: 'action', id: 'detail.explain.wontfix' }, { onTrigger: wontfix })}
+              className="absolute right-3 top-[42%] w-[78px] z-10"
+            >
+              <span className="block w-[78px] h-[104px] rounded-lg overflow-hidden border border-white/80 shadow-lg">
+                <Img src={item.gallery[1]} className="w-full h-full object-cover" alt="达人讲解" />
+              </span>
+              <span className="mt-1 inline-flex items-center gap-1 px-2 py-1 rounded-full bg-black/55 text-white text-[11px]">
+                <IcHeadphones size={12} fill="currentColor" />听讲解
+              </span>
+            </button>
+          )}
           {item.gallery.length > 1 && (
-            <div className="absolute left-0 right-0 bottom-2 flex justify-center gap-1 pointer-events-none">
+            <div className="absolute left-0 right-0 bottom-3 flex justify-center gap-1 pointer-events-none">
               {item.gallery.map((_, i) => (
                 <span key={i} className={`w-1.5 h-1.5 rounded-full ${i === imgIndex ? 'bg-white' : 'bg-white/40'}`} />
               ))}
@@ -102,44 +146,116 @@ export function ItemDetailPage() {
           )}
         </div>
 
-        {/* 价格区 */}
-        <div className="bg-gradient-to-r from-[#FF4D2E] to-[#E22E1F] text-white px-3 py-2.5">
-          <div className="flex items-end gap-2">
-            <PriceYuan value={item.pinPrice} className="text-[26px]" symbolClass="text-[15px]" />
-            <span className="text-[13px] line-through opacity-80">¥{item.originPrice}</span>
-            <span className="ml-auto text-[12px] bg-white/20 rounded px-1.5 py-0.5">{item.sold}</span>
+        {/* 价格区：百亿补贴商品展示惊喜特价，普通商品维持常规价格。 */}
+        {item.subsidy ? (
+          <div className="flex min-h-[66px]">
+            <div className="flex-1 bg-[#F52E29] text-white px-3 py-2">
+              <div className="flex items-end gap-2">
+                <span className="text-[12px] mb-1">限1件</span>
+                <PriceYuan value={item.pinPrice} className="text-[29px]" symbolClass="text-[15px]" />
+                <span className="mb-1 text-[11px] bg-[#FFE4D1] text-[#E43B2E] rounded-[3px] px-1.5 py-0.5">
+                  限时狂降{Math.max(item.originPrice - item.pinPrice, 0).toFixed(1)}元
+                </span>
+              </div>
+              <div className="text-[11px] mt-0.5">
+                <span className="border border-white/60 rounded-[2px] px-1 py-0.5">{item.sold}</span>
+              </div>
+            </div>
+            <div className="w-[104px] bg-[#FFF0CD] text-[#8D451A] flex flex-col items-center justify-center">
+              <span className="text-[17px] font-bold italic">惊喜特价</span>
+              <span className="text-[11px] mt-0.5">先到先得</span>
+            </div>
           </div>
-          <div className="text-[12px] mt-1 opacity-95">拼单价 · 单独购买 ¥{item.singlePrice}</div>
+        ) : (
+          <div className="bg-white px-3 pt-2.5 pb-2">
+            <div className="flex items-end gap-2">
+              <PriceYuan value={item.pinPrice} className="text-[29px] text-[#E22E1F]" symbolClass="text-[15px]" />
+              <span className="mb-1 text-[12px] text-[#999]">{item.sold}</span>
+            </div>
+            <div className="mt-0.5 flex items-center gap-2 text-[11px] text-[#999]">
+              <span>拼单价</span>
+              <span>单独购买 ¥{item.singlePrice.toFixed(2)}</span>
+              <span className="line-through">原价 ¥{item.originPrice.toFixed(2)}</span>
+            </div>
+          </div>
+        )}
+
+        {/* 款式缩略图 */}
+        <div className="h-[62px] bg-white px-2 flex items-center gap-2 overflow-hidden border-b border-[#EFEFEF]">
+          <div className="relative w-11 h-11 shrink-0 rounded-[3px] overflow-hidden border-2 border-[#E22E1F]">
+            <Img src={item.image} className="w-full h-full object-cover" alt="商品" />
+            <span className="absolute inset-x-0 bottom-0 bg-black/55 text-white text-[9px] text-center leading-4">商品</span>
+          </div>
+          {item.gallery[1] && (
+            <div className="relative w-11 h-11 shrink-0 rounded-[3px] overflow-hidden border border-[#222]">
+              <Img src={item.gallery[1]} className="w-full h-full object-cover" alt="达人秀" />
+              <span className="absolute inset-x-0 bottom-0 bg-black/55 text-white text-[9px] text-center leading-4">达人秀</span>
+            </div>
+          )}
+          {variantImages.slice(1).map((image, index) => (
+            <div
+              key={`${image}_${index}`}
+              className={`w-11 h-11 shrink-0 rounded-[3px] overflow-hidden ${
+                index + 1 === imgIndex ? 'border-2 border-[#E22E1F]' : 'border border-[#E5E5E5]'
+              }`}
+            >
+              <Img src={image} className="w-full h-full object-cover" alt={`${item.title}款式${index + 1}`} />
+            </div>
+          ))}
         </div>
 
-        {/* 标题 + 标签 */}
-        <div className="bg-white px-3 py-2">
-          <div className="flex gap-1 flex-wrap mb-1">
-            {item.fufei && <FufeiTag />}
-            {item.tags.map((t) => (
-              <Tag key={t} className="text-[#E22E1F] bg-[#FFF0E8]">{t}</Tag>
+        {/* 优惠、先用后付、标题与标签 */}
+        <div className="bg-white px-3 pt-2.5 pb-2">
+          <div className="flex items-center h-8 border-b border-[#F1F1F1] text-[12px]">
+            <span className="text-[#E22E1F] border border-[#E9A39C] rounded-[2px] px-1.5 mr-2">领月卡券</span>
+            <span className="text-[#D94338]">满40减3　立减10元 · 限1件</span>
+            <IcChevronRight size={16} className="ml-auto text-[#AAA]" />
+          </div>
+          {item.fufei && (
+            <div className="mt-2 h-8 px-2 rounded-[3px] bg-[#EAF9E8] text-[#18A432] flex items-center text-[12px]">
+              <FufeiTag label="先用后付" />
+              <span className="ml-1.5">支持0元下单，确认收货后再付款</span>
+            </div>
+          )}
+          <div className="mt-2 text-[16px] font-medium leading-[23px] text-[#222]">
+            <span className="inline-block mr-1 px-1 leading-[18px] border border-[#E56B62] text-[#E22E1F] text-[11px] rounded-[2px]">
+              专卖店
+            </span>
+            {item.title}
+          </div>
+          <div className="flex gap-1 mt-2 overflow-hidden whitespace-nowrap">
+            <Tag className="text-[#9A6B3D] border border-[#D7B38A] bg-white">{itemReviews.length}人好评</Tag>
+            {item.tags.slice(0, 3).map((tag) => (
+              <Tag key={tag} className="text-[#9A6B3D] border border-[#D7B38A] bg-white">{tag}</Tag>
             ))}
           </div>
-          <div className="text-[15px] font-medium leading-snug text-[#333]">{item.title}</div>
+          {shop && (
+            <div className="w-full h-10 mt-2 px-2 rounded-[3px] bg-[#392D2A] text-[#F8E6D2] flex items-center text-left">
+              <Img src={shop.logo} className="w-6 h-6 rounded-[3px] object-cover bg-white mr-2" alt={shop.name} />
+              <span className="text-[13px] truncate">{shop.name}｜品牌官方正品，100%保障</span>
+              <IcChevronRight size={17} className="ml-auto shrink-0" />
+            </div>
+          )}
         </div>
 
         {/* 大家都在拼(可直接参团) */}
-        <div className="bg-white mt-2 px-3 py-3">
+        <div className="bg-white mt-2 px-3 py-2.5">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-[14px] font-medium text-[#333]">大家都在拼</span>
-            <span className="text-[12px] text-[#999]">{item.sold}</span>
+            <span className="text-[14px] text-[#333]">
+              <span className="text-[#E22E1F] font-medium">券后低价只剩1次</span>，全店704人在拼
+            </span>
           </div>
-          {PIN_USERS.map((u, i) => (
-            <div key={i} className="flex items-center gap-2 py-1.5">
+          {PIN_USERS.slice(0, 2).map((u, i) => (
+            <div key={i} className="flex items-center gap-2 py-1">
               <span className="w-7 h-7 rounded-full bg-[#FFE0D6] text-[#E22E1F] text-[12px] flex items-center justify-center shrink-0">{u.name[0]}</span>
               <div className="flex-1 min-w-0">
                 <div className="text-[13px] text-[#333] truncate">{u.name}</div>
-                <div className="text-[11px] text-[#999]">还差 1 人成团 · <span className="text-[#E22E1F]">{u.left}</span></div>
+                <div className="text-[11px] text-[#999]">拼单即将结束 · <span className="text-[#E22E1F]">{u.left}</span></div>
               </div>
               <button
                 {...bindTap('detail.sku.show', { params: { itemId: item.id, mode: 'join' } })}
-                className="px-3.5 h-7 rounded-full bg-gradient-to-r from-[#FF4D2E] to-[#E22E1F] text-white text-[12px] shrink-0"
-              >去拼单</button>
+                className="px-3 h-8 rounded-[4px] bg-[#E9362C] text-white text-[12px] shrink-0"
+              >直接拼成</button>
             </div>
           ))}
         </div>
@@ -157,14 +273,26 @@ export function ItemDetailPage() {
         </button>
 
         {/* 评价入口 */}
-        <button {...bindTap('detail.reviews-open', { params: { itemId: item.id } })} className="w-full bg-white mt-2 px-3 py-3 flex items-center justify-between text-left">
-          <div className="flex items-center gap-1">
-            <IcStar size={16} className="text-[#E22E1F]" />
-            <span className="text-[14px] text-[#333]">商品评价({item.reviewCount})</span>
+        <button {...bindTap('detail.reviews-open', { params: { itemId: item.id } })} className="w-full bg-white mt-2 px-3 py-3 text-left">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-1">
+              <IcStar size={16} className="text-[#E22E1F]" />
+              <span className="text-[14px] text-[#333]">商品评价({itemReviews.length})</span>
+            </div>
+            <div className="flex items-center gap-1 text-[#999] text-[12px]">
+              查看全部 <IcChevronRight size={16} />
+            </div>
           </div>
-          <div className="flex items-center gap-1 text-[#999] text-[12px]">
-            {item.reviewTags.slice(0, 2).join(' · ')} <IcChevronRight size={16} />
-          </div>
+          {itemReviews[0] && (
+            <div className="mt-2">
+              <div className="flex items-center gap-2 text-[12px] text-[#666]">
+                <Img src={itemReviews[0].avatar} className="w-6 h-6 rounded-full object-cover" alt={itemReviews[0].user} />
+                {itemReviews[0].user}
+                <span className="text-[#E22E1F]">★★★★★</span>
+              </div>
+              <div className="mt-1.5 text-[12px] leading-[18px] text-[#555] line-clamp-2">{itemReviews[0].content}</div>
+            </div>
+          )}
         </button>
 
         {/* 举报 */}
@@ -186,32 +314,51 @@ export function ItemDetailPage() {
       </div>
 
       {/* 底部操作栏 */}
-      <div className="shrink-0 bg-white border-t border-[#EEE] flex items-center px-1 h-14" data-hide-on-keyboard>
-        <button {...bindTap('detail.shop-open', { params: { shopId: item.shopId } })} className="flex flex-col items-center justify-center w-12 text-[10px] text-[#666]">
-          <IcStore size={19} /> 店铺
+      <div className="shrink-0 bg-white border-t border-[#EEE] flex items-stretch h-[58px]" data-hide-on-keyboard>
+        <button {...bindTap('detail.shop-open', { params: { shopId: item.shopId } })} className="flex flex-col items-center justify-center w-[52px] text-[10px] text-[#666]">
+          <IcStore size={20} strokeWidth={1.5} /> 店铺
         </button>
         <button
           {...bindTap({ kind: 'action', id: 'detail.favorite.toggle' }, { onTrigger: () => { toggleFavorite(item.id); showToast(isFav ? '已取消收藏' : '收藏成功'); } })}
-          className="flex flex-col items-center justify-center w-12 text-[10px] text-[#666]"
+          className="flex flex-col items-center justify-center w-[52px] text-[10px] text-[#666]"
         >
-          <IcHeart size={19} className={isFav ? 'text-[#E22E1F] fill-[#E22E1F]' : ''} /> 收藏
+          <IcHeart size={20} strokeWidth={1.5} className={isFav ? 'text-[#E22E1F] fill-[#E22E1F]' : ''} /> 收藏
         </button>
         <button
           {...bindTap('detail.cs-open', { params: { chatId: `ch_${item.shopId}` }, beforeTrigger: () => ensureShopChat(item.shopId) })}
-          className="flex flex-col items-center justify-center w-12 text-[10px] text-[#666]"
+          className="flex flex-col items-center justify-center w-[52px] text-[10px] text-[#666]"
         >
-          <IcHeadphones size={19} /> 客服
+          <IcHeadphones size={20} strokeWidth={1.5} /> 客服
         </button>
-        <div className="flex-1 flex ml-1 rounded-full overflow-hidden h-10">
-          <button {...bindTap('detail.sku.show', { params: { itemId: item.id, mode: 'single' } })} className="flex-1 bg-[#FF8C1A] text-white flex flex-col items-center justify-center leading-tight">
-            <PriceYuan value={item.singlePrice} className="text-[15px]" symbolClass="text-[11px]" />
-            <span className="text-[10px]">单独购买</span>
-          </button>
-          <button {...bindTap('detail.sku.show', { params: { itemId: item.id, mode: 'group' } })} className="flex-1 bg-[#E22E1F] text-white flex flex-col items-center justify-center leading-tight">
-            <PriceYuan value={item.pinPrice} className="text-[15px]" symbolClass="text-[11px]" />
-            <span className="text-[10px]">发起拼单</span>
-          </button>
-        </div>
+        {item.subsidy ? (
+          <div className="flex-1 flex bg-[#F32B25] text-white">
+            <button {...bindTap('detail.sku.show', { params: { itemId: item.id, mode: 'single' } })} className="w-[48%] flex flex-col items-center justify-center leading-tight border-r border-white/20">
+              <span className="text-[13px]">限量价 限1件</span>
+              <PriceYuan value={item.singlePrice} className="text-[18px]" symbolClass="text-[12px]" />
+            </button>
+            <button {...bindTap('detail.sku.show', { params: { itemId: item.id, mode: 'group' } })} className="flex-1 bg-[#E22E1F] text-white flex flex-col items-center justify-center leading-tight">
+              <span className="text-[17px] font-semibold">惊喜特价</span>
+              <span className="text-[11px] mt-0.5">发起拼单</span>
+            </button>
+          </div>
+        ) : (
+          <div className="flex-1 flex items-center gap-1.5 px-1">
+            <button
+              {...bindTap('detail.sku.show', { params: { itemId: item.id, mode: 'single' } })}
+              className="flex-1 h-10 rounded-l-full bg-[#FF8C1A] text-white flex flex-col items-center justify-center leading-tight"
+            >
+              <PriceYuan value={item.singlePrice} className="text-[15px]" symbolClass="text-[11px]" />
+              <span className="text-[10px]">单独购买</span>
+            </button>
+            <button
+              {...bindTap('detail.sku.show', { params: { itemId: item.id, mode: 'group' } })}
+              className="flex-1 h-10 rounded-r-full bg-[#E22E1F] text-white flex flex-col items-center justify-center leading-tight"
+            >
+              <PriceYuan value={item.pinPrice} className="text-[15px]" symbolClass="text-[11px]" />
+              <span className="text-[10px]">发起拼单</span>
+            </button>
+          </div>
+        )}
       </div>
 
       {/* —— SKU 下单弹层 —— */}
@@ -227,6 +374,7 @@ export function ItemDetailPage() {
           isFufei={isFufei}
           unitPrice={unitPrice}
           mode={buyMode}
+          addr={curAddr}
           onClose={() => back()}
           onSubmit={submitOrder}
           bindTap={bindTap}
@@ -253,7 +401,46 @@ export function ItemDetailPage() {
                 <span className={`w-4 h-4 rounded-full border ${payMethod === m ? 'border-[#E22E1F] bg-[#E22E1F]' : 'border-[#CCC]'}`} />
               </button>
             ))}
-            <button {...bindTap('cashier.pay.confirm', { params: { itemId: item.id } })} className="w-full mt-4 h-11 rounded-full bg-[#E22E1F] text-white font-medium">
+            <button
+              {...bindTap('cashier.pay.confirm', {
+                params: { itemId: item.id },
+                onTrigger: () => {
+                  const amount = unitPrice * qty;
+                  const skuDesc = item.specs.map((sp2) => selected[sp2.name] || sp2.options[0]).join(' ');
+                  const finishLocal = () => go('cashier.pay.confirm', { itemId: item.id });
+                  const afterPaid = () => {
+                    placeOrder({ itemId: item.id, skuDesc, qty, mode: buyMode, payMethod, fufei: false });
+                    go('paypwd.pay.done');
+                  };
+                  if (payMethod === '支付宝') {
+                    const launched = window.__OS__?.startActivityForResult?.(
+                      'alipay',
+                      {
+                        action: 'ACTION_PAY',
+                        scheme: 'alipays',
+                        data: { amount, orderId: `pdd-${item.id}`, merchantName: '拼多多', subject: item.title, source: 'pinduoduo' },
+                      },
+                      (result: ActivityResult) => { if (result.resultCode === 'OK') afterPaid(); },
+                    );
+                    if (launched) return;
+                  }
+                  if (payMethod === '微信支付') {
+                    const launched = window.__OS__?.startActivityForResult?.(
+                      'wechat',
+                      {
+                        action: 'ACTION_PAY',
+                        scheme: 'weixin',
+                        data: { amount, orderId: `pdd-${item.id}`, merchantName: '拼多多', subject: item.title, source: 'pinduoduo' },
+                      },
+                      (result: ActivityResult) => { if (result.resultCode === 'OK') afterPaid(); },
+                    );
+                    if (launched) return;
+                  }
+                  finishLocal();
+                },
+              })}
+              className="w-full mt-4 h-11 rounded-full bg-[#E22E1F] text-white font-medium"
+            >
               确认支付 ¥{(unitPrice * qty).toFixed(2)}
             </button>
           </div>
@@ -273,7 +460,18 @@ export function ItemDetailPage() {
             <div className="text-center font-medium mb-4">分享给好友一起拼</div>
             <div className="flex justify-around text-[12px] text-[#666] mb-4">
               {['微信', '朋友圈', 'QQ好友', 'QQ空间'].map((c) => (
-                <button key={c} onClick={() => { showToast('已唤起分享'); back(); }} className="flex flex-col items-center gap-1">
+                <button
+                  key={c}
+                  onClick={() => {
+                    if (c === '微信' || c === '朋友圈') {
+                      const launched = sharePlainText(`【拼多多】${item.title}`, { onResult: (r) => { if (r.resultCode === 'OK') showToast('分享成功'); } });
+                      if (launched) { back(); return; }
+                    }
+                    showToast('已唤起分享');
+                    back();
+                  }}
+                  className="flex flex-col items-center gap-1"
+                >
                   <span className="w-11 h-11 rounded-full bg-[#F2F2F2]" />{c}
                 </button>
               ))}
@@ -307,7 +505,7 @@ export function ItemDetailPage() {
 
 // ——— SKU 下单弹层 ———
 function SkuPanel({
-  item, selected, setSelected, qty, setQty, payMethod, setPayMethod, isFufei, unitPrice, mode, onClose, onSubmit, bindTap,
+  item, selected, setSelected, qty, setQty, payMethod, setPayMethod, isFufei, unitPrice, mode, addr, onClose, onSubmit, bindTap,
 }: any) {
   const modeLabel = mode === 'single' ? '单独购买' : mode === 'join' ? '直接拼成' : '发起拼单';
   const firstSpec = item.specs[0];
@@ -328,10 +526,17 @@ function SkuPanel({
           <button onClick={onClose} aria-label="关闭"><IcClose size={22} className="text-[#999]" /></button>
         </div>
 
-        {/* 收货地址 */}
-        <button {...bindTap('sku.address-open')} className="mx-3 mb-2 px-3 py-2 bg-[#F7F7F7] rounded-lg flex items-center justify-between text-left">
-          <span className="text-[12px] text-[#666] truncate">送至:江苏省南京市栖霞区仙林大道…</span>
-          <IcChevronRight size={16} className="text-[#999]" />
+        {/* 收货地址(读当前选中地址,选地址页选择后同步) */}
+        <button {...bindTap('sku.address-open')} className="mx-3 mb-2 px-3 py-2 bg-[#F7F7F7] rounded-lg flex items-center justify-between text-left gap-2">
+          {addr ? (
+            <span className="min-w-0 flex-1">
+              <span className="text-[12px] text-[#333] mr-1">{addr.name} {addr.phone.replace(/(\d{3})\d{4}(\d{4})/, '$1****$2')}</span>
+              <span className="text-[12px] text-[#666] block truncate">送至:{addr.region} {addr.detail}</span>
+            </span>
+          ) : (
+            <span className="text-[12px] text-[#666] truncate">请选择收货地址</span>
+          )}
+          <IcChevronRight size={16} className="text-[#999] shrink-0" />
         </button>
 
         <div className="flex-1 overflow-y-auto px-3">
@@ -372,7 +577,7 @@ function SkuPanel({
         </div>
 
         <div className="p-3 border-t border-[#F0F0F0]">
-          <button {...bindTap(mode === 'group' ? 'sku.order.group' : (isFufei ? 'sku.order.success' : 'sku.pay.open'), mode === 'group' || isFufei ? { params: {}, onTrigger: onSubmit } : { params: { itemId: item.id }, onTrigger: onSubmit })} className="w-full h-12 rounded-full bg-gradient-to-r from-[#FF4D2E] to-[#E22E1F] text-white font-medium flex flex-col items-center justify-center leading-tight">
+              <button {...bindTap(mode === 'group' && isFufei ? 'sku.order.group' : (isFufei ? 'sku.order.success' : 'sku.pay.open'), (mode === 'group' && isFufei) || isFufei ? { params: {}, onTrigger: onSubmit } : { params: { itemId: item.id }, onTrigger: onSubmit })} className="w-full h-12 rounded-full bg-gradient-to-r from-[#FF4D2E] to-[#E22E1F] text-white font-medium flex flex-col items-center justify-center leading-tight">
             {isFufei ? (
               <><span>0元下单,确认收货后付款 ¥{(unitPrice * qty).toFixed(2)}</span></>
             ) : (
@@ -388,15 +593,21 @@ function SkuPanel({
 // ——— 支付密码键盘 ———
 function PwdPanel({ amount, onDone, bindTap, bindBack }: any) {
   const [digits, setDigits] = useState('');
-  const press = (d: string) => {
-    const next = (digits + d).slice(0, 6);
-    setDigits(next);
-    if (next.length === 6) setTimeout(onDone, 200);
+  const doneRef = useRef(false);
+  const apply = (next: string) => {
+    const clipped = next.replace(/\D/g, '').slice(0, 6);
+    setDigits(clipped);
+    if (clipped.length === 6 && !doneRef.current) {
+      doneRef.current = true;
+      setTimeout(onDone, 200);
+    }
   };
+  const press = (d: string) => apply(digits + d);
   return (
     <div className="absolute inset-0 z-40 flex flex-col justify-end">
       <div className="absolute inset-0 bg-black/50" {...bindBack()} />
       <div className="relative bg-white rounded-t-2xl p-4" data-keep-keyboard>
+        <PayPinCapture value={digits} onChange={apply} />
         <div className="text-center font-medium mb-1">请输入多多钱包密码</div>
         <div className="text-center text-[13px] text-[#999] mb-3">¥{amount.toFixed(2)}</div>
         <div className="flex justify-center gap-2 mb-4">
@@ -412,7 +623,7 @@ function PwdPanel({ amount, onDone, bindTap, bindBack }: any) {
               {...(k && k !== '⌫'
                 ? bindTap({ kind: 'action', id: 'paypwd.digit.input' }, { params: { value: k }, onTrigger: () => press(k) })
                 : {})}
-              onClick={k === '⌫' ? () => setDigits((d) => d.slice(0, -1)) : undefined}
+              onClick={k === '⌫' ? () => { doneRef.current = false; setDigits((d) => d.slice(0, -1)); } : undefined}
               className={`h-11 rounded text-lg ${k ? 'bg-[#F5F5F5]' : ''}`}
             >
               {k}

@@ -193,6 +193,14 @@ export interface TbsgState {
   monthSpend: { month: string; amount: number };
   reviewStats: { viewed: number; liked: number; quality: number };
   burstUsedToday: boolean;
+  /** 只读筛选/浏览步骤的持久化审计证据，供语义 verifier 使用 */
+  taskAudit: {
+    foodChannel?: { sort: string; perCapitaRange: [number, number] };
+    redpacketSlot?: string;
+    shopReview?: { shopId: string; contentOnly: boolean; expandedReplyId?: string };
+    shopSearch?: { shopId: string; query: string };
+    paymentMethod?: 'alipay' | 'yuebao';
+  };
   /** 下单页草稿(从店铺/购物车进入结算时写入) */
   checkoutDraft: {
     /** 预生成的首订单id(支付/弃单跳转参数在渲染期即已知) */
@@ -228,6 +236,7 @@ export interface TbsgActions {
   claimShopCoupon: (shopId: string) => void;
   claimNightCoupons: () => void;
   burstDaily: () => void;
+  claimRushCoupon: (slot: string, amount: number, threshold: number) => void;
   buyFoodCard: () => void;
   // 结算
   beginCheckout: (shopId: string | null, mode: 'delivery' | 'pickup') => void;
@@ -266,4 +275,5 @@ export interface TbsgActions {
   updateSettings: (patch: Partial<TbsgState['settings']>) => void;
   updateProfile: (patch: Partial<Pick<TbsgState['user'], 'nickname' | 'signature' | 'avatar'>>) => void;
   clearCache: () => void;
+  recordTaskAudit: (patch: Partial<TbsgState['taskAudit']>) => void;
 }

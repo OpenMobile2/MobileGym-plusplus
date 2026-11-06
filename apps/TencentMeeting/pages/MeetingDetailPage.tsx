@@ -49,6 +49,12 @@ export const MeetingDetailPage: React.FC = () => {
     const endTime = startTime + meeting.duration * 60000;
     const timeReached = TimeService.now() >= startTime;
     const meetingTimezone = localizeMeetingTimezone(meeting.timezone, s);
+    const note = String(meeting.note || "").trim();
+    const materialMarker = note.indexOf("会前材料");
+    const materialBody = materialMarker >= 0
+        ? note.slice(materialMarker + 4).replace(/^[:：]\s*/, "")
+        : note;
+    const materials = materialBody.split(/[；;。]/).map(item => item.trim()).filter(Boolean);
 
     return (
         <div className="flex flex-col h-full bg-[#F3F3F3]">
@@ -74,7 +80,11 @@ export const MeetingDetailPage: React.FC = () => {
                 {/* 会议主题 */}
                 <div className="bg-app-surface px-4 py-5">
                     <h2 className="text-xl font-medium text-gray-900 mb-1">{meeting.title}</h2>
-                    <span className="text-blue-600 text-[14px]">{s.meeting_detail_add_note}</span>
+                    {note ? (
+                        <p className="text-[14px] text-gray-700 leading-relaxed mt-2">{note}</p>
+                    ) : (
+                        <span className="text-blue-600 text-[14px]">{s.meeting_detail_add_note}</span>
+                    )}
                 </div>
 
                 {/* 时间信息 */}
@@ -103,6 +113,28 @@ export const MeetingDetailPage: React.FC = () => {
                             <span className="text-[12px] text-gray-500 mt-1">{formatMeetingFullDate(TimeService.fromTimestamp(endTime), s, { padMonth: true, padDay: true })}</span>
                         </div>
                     </div>
+                </div>
+
+                {/* 会议资料：有备注就顶上来，避免详情页底部一直「暂无内容」 */}
+                <div className="bg-app-surface px-4 py-4 mt-3">
+                    <div className="flex items-center justify-between">
+                        <span className="text-gray-900 text-[15px]">{s.meeting_detail_materials}</span>
+                        {!materials.length && (
+                            <div className="flex items-center gap-1 text-gray-500 text-[15px]">
+                                <span>{s.meeting_detail_materials_empty}</span>
+                                <IcNavForward size={16} className="text-gray-300" />
+                            </div>
+                        )}
+                    </div>
+                    {materials.length > 0 && (
+                        <ul className="mt-3 space-y-2">
+                            {materials.map(item => (
+                                <li key={item} className="text-[14px] text-gray-800 leading-relaxed">
+                                    · {item}
+                                </li>
+                            ))}
+                        </ul>
+                    )}
                 </div>
 
                 {/* 发起人信息 */}
@@ -171,17 +203,6 @@ export const MeetingDetailPage: React.FC = () => {
                         </div>
                         <div className="flex items-center gap-1 text-gray-500 text-[15px]">
                             <span>{s.meeting_detail_apps_add}</span>
-                            <IcNavForward size={16} className="text-gray-300" />
-                        </div>
-                    </div>
-                </div>
-
-                {/* 会议资料 */}
-                <div className="bg-app-surface px-4 py-4 mt-3 mb-6">
-                    <div className="flex items-center justify-between">
-                        <span className="text-gray-900 text-[15px]">{s.meeting_detail_materials}</span>
-                        <div className="flex items-center gap-1 text-gray-500 text-[15px]">
-                            <span>{s.meeting_detail_materials_empty}</span>
                             <IcNavForward size={16} className="text-gray-300" />
                         </div>
                     </div>

@@ -4,6 +4,7 @@ import { useFlomoStore } from '../state';
 import { useFlomoGestures } from '../hooks/useFlomoGestures';
 import { C } from '../components/ui';
 import { IcClose, IcEdit, IcArrowDown } from '../res/icons';
+import { shareWithSystem } from '../capabilities';
 
 function StatCell({ value, label }: { value: number; label: string }) {
   return (
@@ -14,17 +15,27 @@ function StatCell({ value, label }: { value: number; label: string }) {
   );
 }
 
+const MONTH_SCOPES = ['本月', '上月', '全部'] as const;
+
 export default function StatsRecordPage() {
   const { bindTap, bindBack } = useFlomoGestures();
   const memos = useFlomoStore((s) => s.memos);
   const user = useFlomoStore((s) => s.user);
   const toast = useFlomoStore((s) => s.toast);
+  const [scope, setScope] = React.useState<(typeof MONTH_SCOPES)[number]>('本月');
 
   const stats = useMemo(() => {
-    const live = memos.filter((m) => !m.deleted);
+    const now = TimeService.fromTimestamp(TimeService.now());
+    const live = memos.filter((m) => {
+      if (m.deleted) return false;
+      if (scope === '全部') return true;
+      const dt = TimeService.fromTimestamp(m.createdAt);
+      const monthOffset = scope === '上月' ? -1 : 0;
+      const target = TimeService.fromLocalParts(now.getFullYear(), now.getMonth() + monthOffset, 1);
+      return dt.getFullYear() === target.getFullYear() && dt.getMonth() === target.getMonth();
+    });
     const noteCount = live.length;
     const wordCount = live.reduce((sum, m) => sum + m.content.length, 0);
-    // 按天聚合:单日最多条数 / 单日最多字数
     const byDay: Record<string, { notes: number; words: number }> = {};
     for (const m of live) {
       const dt = TimeService.fromTimestamp(m.createdAt);
@@ -38,7 +49,15 @@ export default function StatsRecordPage() {
     const maxNotesPerDay = buckets.reduce((mx, b) => Math.max(mx, b.notes), 0);
     const maxWordsPerDay = buckets.reduce((mx, b) => Math.max(mx, b.words), 0);
     return { noteCount, wordCount, maxNotesPerDay, maxWordsPerDay };
-  }, [memos]);
+  }, [memos, scope]);
+
+  const shareSummary = () => {
+    const launched = shareWithSystem(
+      `flomo 记录统计\n${stats.noteCount} 条笔记 · ${stats.wordCount} 字 · 坚持记录 ${user.days} 天`,
+      (result) => { if (result.resultCode === 'OK') toast('分享成功'); },
+    );
+    if (!launched) toast('未找到可分享的应用');
+  };
 
   return (
     <div className="flex flex-col h-full" style={{ background: C.bg }} data-status-bar-foreground="dark">
@@ -76,18 +95,18 @@ export default function StatsRecordPage() {
             <button
               {...bindTap(
                 { kind: 'action', id: 'stats.record.month.select' },
-                { onTrigger: () => toast('切换统计月份') },
+                { onTrigger: () => setScope((v) => MONTH_SCOPES[(MONTH_SCOPES.indexOf(v) + 1) % MONTH_SCOPES.length]) },
               )}
               className="flex items-center gap-1 border-none cursor-pointer bg-transparent"
               style={{ color: C.sub, fontSize: 13 }}
             >
-              本月
+              {scope}
               <IcArrowDown size={14} />
             </button>
             <button
               {...bindTap(
                 { kind: 'action', id: 'stats.record.share.do' },
-                { onTrigger: () => toast('已生成记录统计分享图') },
+                { onTrigger: shareSummary },
               )}
               className="border-none cursor-pointer bg-transparent"
               style={{ color: C.linkBlue, fontSize: 13 }}

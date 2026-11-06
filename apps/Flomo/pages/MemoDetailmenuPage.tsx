@@ -3,6 +3,7 @@ import { useFlomoStore } from '../state';
 import { useFlomoGestures } from '../hooks/useFlomoGestures';
 import { Sheet, Row } from '../components/Sheet';
 import { IcPin, IcLink, IcAi, IcSetDate, IcDoc, IcHistory, IcDelete } from '../res/icons';
+import { copyToClipboard } from '../capabilities';
 
 export default function MemoDetailmenuPage() {
   const { bindTap, back } = useFlomoGestures();
@@ -14,10 +15,22 @@ export default function MemoDetailmenuPage() {
   const act = (id: string, fn: () => void) =>
     bindTap({ kind: 'action', id }, { onTrigger: () => { fn(); back(); } });
 
+  const copyMemoLink = () => {
+    if (!cur) {
+      toast('笔记不存在');
+      return;
+    }
+    if (!copyToClipboard(`https://v.flomoapp.com/mine/?memo_id=${encodeURIComponent(cur)}`)) {
+      toast('无法访问剪切板');
+      return;
+    }
+    toast('已复制链接');
+  };
+
   return (
     <Sheet>
       <Row icon={<IcPin size={16} />} label="置顶" bind={act('memo.detailMenu.pin.toggle', () => { if (cur) togglePin(cur); })} />
-      <Row icon={<IcLink size={16} />} label="复制链接" bind={act('memo.detailMenu.copylink.do', () => toast('已复制链接'))} />
+      <Row icon={<IcLink size={16} />} label="复制链接" bind={act('memo.detailMenu.copylink.do', copyMemoLink)} />
       <Row icon={<IcAi size={16} />} label="AI 调整" bind={bindTap('ai.insight.adjust')} />
       <Row icon={<IcSetDate size={16} />} label="设定日期" bind={act('memo.detailMenu.setdate.open', () => toast('该功能暂未开放'))} />
       <Row icon={<IcDoc size={16} />} label="相关笔记" bind={bindTap('memo.detailMenu.related')} />

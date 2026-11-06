@@ -61,6 +61,8 @@ export default function DailyRedpacketPage() {
   const coupons = useTbsgStore((st) => st.coupons);
   const burstUsedToday = useTbsgStore((st) => st.burstUsedToday);
   const burstDaily = useTbsgStore((st) => st.burstDaily);
+  const recordTaskAudit = useTbsgStore((st) => st.recordTaskAudit);
+  const claimRushCoupon = useTbsgStore((st) => st.claimRushCoupon);
 
   const [slot, setSlot] = useState('11:00');
   const [kw, setKw] = useState('');
@@ -146,7 +148,7 @@ export default function DailyRedpacketPage() {
                 key={t}
                 {...bindTap<HTMLButtonElement>({ kind: 'action', id: 'redpacket.timeslot.select' }, {
                   params: { slot: t },
-                  onTrigger: () => setSlot(t),
+                  onTrigger: () => { setSlot(t); recordTaskAudit({ redpacketSlot: t }); },
                 })}
                 className={`text-[14px] bg-transparent border-none cursor-pointer p-0 ${
                   slot === t ? 'text-[#F53F3F] font-bold border-b-2 border-[#F53F3F]' : 'text-[#666666]'
@@ -162,7 +164,10 @@ export default function DailyRedpacketPage() {
               <button
                 key={c.amount}
                 {...bindTap<HTMLButtonElement>({ kind: 'action', id: 'redpacket.rush.claim' }, {
-                  onTrigger: () => showToast(`${slot}开抢,先逛逛`),
+                  onTrigger: () => {
+                    claimRushCoupon(slot, c.amount, c.threshold);
+                    showToast(`已领取${slot}限时红包`);
+                  },
                 })}
                 className="flex rounded-xl overflow-hidden bg-[#F53F3F] border-none cursor-pointer p-0 text-left"
               >

@@ -1,7 +1,8 @@
 // 结构性常量(非用户数据)。用户数据放 data/defaults.json。
 
 // 改动 defaults.json 时 +1,重置本地 localStorage。
-export const DATA_VERSION = 2;
+// v4: 修正分类图片映射,并为全部商品补足至少 2 条评价。
+export const DATA_VERSION = 5;
 
 // 底部主 Tab(真机:首页/多多视频/618会场→复刻用百亿补贴/聊天/个人中心)
 export const MAIN_TABS = [

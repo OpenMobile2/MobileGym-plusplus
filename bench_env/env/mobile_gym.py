@@ -9,27 +9,18 @@ import base64
 import gzip
 import json as json_mod
 import logging
-import os
 import random
+import re
 from pathlib import Path
 from typing import Any, Optional, Tuple
 
 from playwright.async_api import async_playwright, Browser, BrowserContext, Page, Playwright
 
 from bench_env.logger import get_logger
-from bench_env.env.app_aliases import build_app_name_map, known_app_ids, resolve_app_id
 from bench_env.env.base import Action, ActionType, BaseMobileEnv, Observation, StepResult
 from bench_env.task import TaskRegistry, JudgeInput, JudgeResult, BaseTask
 
 logger = get_logger(__name__)
-
-# A fresh browser profile imports the public/sdcard seed into IndexedDB before
-# exposing __SIM_FS__.  The seed contains hundreds of files and can take much
-# longer than the normal per-action timeout on a cold start.  Keep the old
-# 60-second API available to callers that pass an explicit timeout, but use a
-# longer default for benchmark startup.  It can be shortened/extended without
-# a code change when running on a different machine.
-_DEFAULT_READY_TIMEOUT_MS = int(os.environ.get("MOBILE_GYM_READY_TIMEOUT_MS", "300000"))
 
 
 def _env_message(env: "MobileGymEnv", message: str) -> str:
@@ -43,6 +34,78 @@ def _log_env_info(env: "MobileGymEnv", message: str) -> None:
 
 def _log_env_debug(env: "MobileGymEnv", message: str) -> None:
     logger.debug(_env_message(env, message))
+
+
+_APP_NAME_COMPACT_RE = re.compile(r"[\s_\-]+")
+
+
+def compact_app_query(name: str) -> str:
+    """Lowercase and drop spaces/underscores/hyphens so 'QQ Music' == 'qqmusic'."""
+    return _APP_NAME_COMPACT_RE.sub("", str(name or "").strip().lower())
+
+
+def resolve_app_name_from_map(
+    name_map: dict[str, str],
+    known_ids: frozenset[str] | set[str],
+    app_name: str,
+) -> str | None:
+    """Loose static alias lookup: exact, case-insensitive, then compact equality.
+
+    Unique compact prefix match is allowed so 'file manager' / 'days matter'
+    still hit, without collapsing '淘宝' into '淘宝闪购' when both exist.
+    """
+    raw = str(app_name or "").strip()
+    if not raw:
+        return None
+    if raw in name_map:
+        return name_map[raw]
+    lowered = raw.lower()
+    ci_hits = {v for k, v in name_map.items() if k.lower() == lowered}
+    if len(ci_hits) == 1:
+        return next(iter(ci_hits))
+    if lowered in known_ids:
+        return lowered
+    compact = compact_app_query(raw)
+    if not compact:
+        return None
+    compact_hits: set[str] = set()
+    for key, app_id in name_map.items():
+        if compact_app_query(key) == compact:
+            compact_hits.add(app_id)
+    if compact in known_ids:
+        compact_hits.add(compact)
+    if len(compact_hits) == 1:
+        return next(iter(compact_hits))
+    if len(compact) < 3:
+        return None
+    prefix_hits: set[str] = set()
+    for key, app_id in name_map.items():
+        ck = compact_app_query(key)
+        if ck.startswith(compact) or compact.startswith(ck):
+            prefix_hits.add(app_id)
+    for app_id in known_ids:
+        if app_id.startswith(compact) or compact.startswith(app_id):
+            prefix_hits.add(app_id)
+    if len(prefix_hits) == 1:
+        return next(iter(prefix_hits))
+    return None
+
+
+class AppNotFoundError(LookupError):
+    """open_app asked for an app that is not installed. Recoverable for the agent."""
+
+    def __init__(self, app_name: str, suggestions: list[str] | None = None):
+        self.app_name = app_name
+        self.suggestions = list(suggestions or [])
+        hint = ""
+        if self.suggestions:
+            hint = " Installed examples: " + ", ".join(self.suggestions[:12]) + "."
+        super().__init__(
+            f"App {app_name!r} is not installed.{hint} "
+            "Retry open_app with an installed display name or app id, "
+            "or tap the launcher icon."
+        )
+
 
 class ActionHandler:
     """
@@ -181,10 +244,28 @@ class WaitHandler(ActionHandler):
 class AwakeHandler(ActionHandler):
     async def execute(self, action: Action) -> Optional[StepResult]:
         app_name = str(action.data.get("value", "")).strip()
-        if app_name:
-            if self.env.verbose:
-                _log_env_info(self.env, f"AWAKE: {app_name}")
+        if not app_name:
+            obs = await self.env.get_observation()
+            return StepResult(
+                obs,
+                done=False,
+                info={
+                    "ok": False,
+                    "code": "APP_NOT_FOUND",
+                    "message": "open_app requires a non-empty app name or id.",
+                },
+            )
+        if self.env.verbose:
+            _log_env_info(self.env, f"AWAKE: {app_name}")
+        try:
             await self.env._open_app(app_name)
+        except AppNotFoundError as error:
+            obs = await self.env.get_observation()
+            return StepResult(
+                obs,
+                done=False,
+                info={"ok": False, "code": "APP_NOT_FOUND", "message": str(error)},
+            )
         return None
 
 
@@ -263,8 +344,213 @@ class MobileGymEnv(BaseMobileEnv):
 
     # App 名称映射：中文名/英文名 -> appId（与 os/data/appRegistry.tsx 完全对应）
     # 模型可能输出中文、英文或各种变体，全部映射到统一的 appId
-    # Built from apps/*/manifest.ts + system/*/manifest.ts, plus legacy aliases.
-    APP_NAME_MAP: dict[str, str] = build_app_name_map()
+    APP_NAME_MAP: dict[str, str] = {
+        # settings - 设置
+        "设置": "settings",
+        "Settings": "settings",
+        # gallery - 相册
+        "相册": "gallery",
+        "Gallery": "gallery",
+        # file_manager - 文件
+        "文件": "file_manager",
+        "文件管理": "file_manager",
+        "File Manager": "file_manager",
+        "Files": "file_manager",
+        "File": "file_manager",
+        # calculator - 计算器
+        "计算器": "calculator",
+        "Calculator": "calculator",
+        # calculator2 - 计算器2
+        "计算器2": "calculator2",
+        # clock - 时钟
+        "时钟": "clock",
+        "Clock": "clock",
+        # contacts - 电话(通讯录)
+        "通讯录": "contacts",
+        "联系人": "contacts",
+        "Contacts": "contacts",
+        # notes
+        "笔记": "notes",
+        "备忘录": "notes",
+        "Notes": "notes",
+        # compass - 指南针
+        "指南针": "compass",
+        "Compass": "compass",
+        # phone - 电话(拨号)
+        "电话": "phone",
+        "Phone": "phone",
+        # browser - 浏览器
+        "浏览器": "browser",
+        "Browser": "browser",
+        # camera - 相机
+        "相机": "camera",
+        "Camera": "camera",
+        # wechat - 微信
+        "微信": "wechat",
+        "WeChat": "wechat",
+        # weather - 天气
+        "天气": "weather",
+        "Weather": "weather",
+        # wechat_reading - 微信读书
+        "微信读书": "wechat_reading",
+        "WeChat Reading": "wechat_reading",
+        # bilibili - 哔哩哔哩
+        "哔哩哔哩": "bilibili",
+        "B站": "bilibili",
+        "Bilibili": "bilibili",
+        # tencent_meeting - 腾讯会议
+        "腾讯会议": "tencent_meeting",
+        "Tencent Meeting": "tencent_meeting",
+        # qqmusic - QQ音乐
+        "QQ音乐": "qqmusic",
+        "QQMusic": "qqmusic",
+        "QQ Music": "qqmusic",
+        # alipay - 支付宝
+        "支付宝": "alipay",
+        "Alipay": "alipay",
+        # map - 地图
+        "地图": "map",
+        "高德地图": "map",
+        "高德": "map",
+        "Map": "map",
+        "Maps": "map",
+        "AMap": "map",
+        "Amap": "map",
+        "谷歌地图": "map",
+        "Google Maps": "map",
+        # redbook - 小红书
+        "小红书": "redbook",
+        "RedNote": "redbook",
+        # spotify
+        "Spotify": "spotify",
+        # x
+        "X": "x",
+        "Twitter": "x",
+        # reddit
+        "Reddit": "reddit",
+        # sms - 短信
+        "短信": "sms",
+        "SMS": "sms",
+        # calendar - 日历
+        "日历": "calendar",
+        "Calendar": "calendar",
+        # theme_store - 主题商店
+        "主题商店": "theme_store",
+        "Theme Store": "theme_store",
+        # railway12306 - 铁路12306
+        "铁路12306": "railway12306",
+        "12306": "railway12306",
+        # ebay
+        "eBay": "ebay",
+        "Ebay": "ebay",
+        # taobao - 淘宝
+        "淘宝": "taobao",
+        "淘宝网": "taobao",
+        "Taobao": "taobao",
+        "taobao": "taobao",
+        # answer_sheet - 答题卡
+        "答题卡": "answer_sheet",
+        "Answer Sheet": "answer_sheet",
+        "AnswerSheet": "answer_sheet",
+        # —— 自建 / 示范业务 App（roll / bench openApp 硬依赖）——
+        "淘宝": "taobao",
+        "Taobao": "taobao",
+        "淘宝闪购": "tbsg",
+        "闪购": "tbsg",
+        "TaobaoShangou": "tbsg",
+        "TB Instant": "tbsg",
+        "tbsg": "tbsg",
+        "咔皮": "kapi",
+        "卡皮": "kapi",
+        "卡皮记账": "kapi",
+        "Kapi": "kapi",
+        "瑞幸": "luckin",
+        "瑞幸咖啡": "luckin",
+        "Luckin": "luckin",
+        "携程": "ctrip",
+        "携程旅行": "ctrip",
+        "Ctrip": "ctrip",
+        "播客": "broadcast",
+        "小宇宙": "broadcast",
+        "Podcast": "broadcast",
+        "Podcasts": "broadcast",
+        "podcast": "broadcast",
+        "podcasts": "broadcast",
+        "Broadcast": "broadcast",
+        "京东": "jingdong",
+        "JD": "jingdong",
+        "Jingdong": "jingdong",
+        "拼多多": "pinduoduo",
+        "Pinduoduo": "pinduoduo",
+        "唯品会": "vipshop",
+        "Vipshop": "vipshop",
+        "猫眼": "maoyan",
+        "Maoyan": "maoyan",
+        "Keep": "keep",
+        "豆瓣": "douban",
+        "Douban": "douban",
+        "百词斩": "baicizhan",
+        "Baicizhan": "baicizhan",
+        "喜马拉雅": "ximalaya",
+        "Ximalaya": "ximalaya",
+        "腾讯视频": "tencentvideo",
+        "Tencentvideo": "tencentvideo",
+        "BOSS直聘": "boss",
+        "Boss": "boss",
+        "微博": "weibo",
+        "Weibo": "weibo",
+        "滴滴": "didi",
+        "滴滴出行": "didi",
+        "Didi": "didi",
+        "滴答": "dida",
+        "滴答清单": "dida",
+        "TickTick": "dida",
+        "Dida": "dida",
+        "flomo": "flomo",
+        "Flomo": "flomo",
+        "番茄Todo": "fanqietodo",
+        "番茄ToDo": "fanqietodo",
+        "番茄待办": "fanqietodo",
+        "FanqieTodo": "fanqietodo",
+        "番茄小说": "fanqiexiaoshuo",
+        "番茄免费小说": "fanqiexiaoshuo",
+        "FanqieXiaoshuo": "fanqiexiaoshuo",
+        "Google 云端硬盘": "googledrive",
+        "云端硬盘": "googledrive",
+        "谷歌云盘": "googledrive",
+        "GoogleDrive": "googledrive",
+        "Google Drive": "googledrive",
+        "Drive": "googledrive",
+        "邮件": "mail",
+        "邮箱": "mail",
+        "Mail": "mail",
+        "Email": "mail",
+        "email": "mail",
+        "inbox": "mail",
+        "小日常": "xiaorichang",
+        "Xiaorichang": "xiaorichang",
+        "倒数日": "daysmatter",
+        "Daysmatter": "daysmatter",
+        "Days Matter": "daysmatter",
+        "Days Matter App": "daysmatter",
+        "美柚": "meiyou",
+        "Meiyou": "meiyou",
+        "菜鸟": "cainiao",
+        "菜鸟裹裹": "cainiao",
+        "Cainiao": "cainiao",
+        "大众点评": "dianping",
+        "点评": "dianping",
+        "Dianping": "dianping",
+        "苏宁易购": "suning",
+        "苏宁": "suning",
+        "Suning": "suning",
+        "闲鱼": "xianyu",
+        "咸鱼": "xianyu",
+        "Xianyu": "xianyu",
+        "优酷": "youku",
+        "优酷视频": "youku",
+        "Youku": "youku",
+    }
 
     # Valid coordinate space options
     # - norm_0_1000: 归一化坐标 0..1000（默认）
@@ -782,11 +1068,7 @@ class MobileGymEnv(BaseMobileEnv):
         """Get current route info."""
         return await self._get_route() or {}
 
-    async def wait_ready(
-        self,
-        app_ids: list[str] | None = None,
-        timeout_ms: int = _DEFAULT_READY_TIMEOUT_MS,
-    ) -> None:
+    async def wait_ready(self, app_ids: list[str] | None = None, timeout_ms: int = 60000) -> None:
         """Wait until __SIM__ is ready and optional app data is available."""
         await self._wait_ready(timeout_ms=timeout_ms, app_ids=app_ids)
 
@@ -1039,6 +1321,13 @@ class MobileGymEnv(BaseMobileEnv):
     async def _back(self) -> None:
         try:
             await self.page.evaluate("""() => {
+                // Agent typing often leaves the simulated IME visible. Treat the
+                // first Back exactly like Android: dismiss the keyboard without
+                // navigating away from the current App/page. This explicit guard
+                // also protects against a missing/stale BackDispatcher keyboard
+                // registration in long-running benchmark pages.
+                const keyboard = window.__OS__?.keyboard;
+                if (keyboard?.isVisible?.()) { keyboard.hide?.(); return; }
                 if (window.__OS__?.handleBack) { window.__OS__.handleBack(); return; }
                 history.back();
             }""")
@@ -1101,59 +1390,122 @@ class MobileGymEnv(BaseMobileEnv):
             logger.debug(f"_enter() failed: {type(e).__name__}: {e}")
 
     # Pre-computed set of known valid appIds (values of APP_NAME_MAP)
-    _KNOWN_APP_IDS: frozenset[str] = known_app_ids(APP_NAME_MAP)
+    _KNOWN_APP_IDS: frozenset[str] = frozenset(set(APP_NAME_MAP.values()))
+
+    async def resolve_open_app(self, app_name: str) -> str | None:
+        """Resolve a model-supplied name/id to an installed appId, or None."""
+        mapped = resolve_app_name_from_map(self.APP_NAME_MAP, self._KNOWN_APP_IDS, app_name)
+        if mapped:
+            return mapped
+        try:
+            await self.page.wait_for_function(
+                "() => Boolean(window.__OS__?.resolveApp || window.__OS__?.openApp)",
+                timeout=5000,
+            )
+        except Exception:
+            pass
+        try:
+            resolved = await self.page.evaluate(
+                """(name) => {
+                  try {
+                    const os = window.__OS__ || {};
+                    const sim = window.__SIM__ || {};
+                    const fromOs = os.resolveApp?.(name) || sim.resolveApp?.(name) || null;
+                    if (typeof fromOs === 'string' && fromOs) return fromOs;
+                    return null;
+                  } catch { return null; }
+                }""",
+                str(app_name or "").strip(),
+            )
+        except Exception:
+            resolved = None
+        if isinstance(resolved, str) and resolved.strip():
+            return resolved.strip()
+        return None
+
+    async def _installed_app_suggestions(self) -> list[str]:
+        try:
+            listed = await self.page.evaluate(
+                """() => {
+                  try {
+                    const apps = window.__OS__?.listInstalledApps?.();
+                    if (Array.isArray(apps) && apps.length) {
+                      return apps.slice(0, 16).map((app) => {
+                        const label = app.displayName || app.displayNameEn || app.id;
+                        return `${label} (${app.id})`;
+                      });
+                    }
+                    const ids = window.__OS__?.listAppIds?.() || window.__SIM__?.listAppIds?.() || [];
+                    return Array.isArray(ids) ? ids.slice(0, 12) : [];
+                  } catch { return []; }
+                }"""
+            )
+        except Exception:
+            listed = None
+        if isinstance(listed, list) and listed:
+            return [str(item) for item in listed if item]
+        aliases = []
+        seen: set[str] = set()
+        for alias, app_id in self.APP_NAME_MAP.items():
+            if app_id in seen:
+                continue
+            seen.add(app_id)
+            aliases.append(f"{alias} ({app_id})")
+            if len(aliases) >= 12:
+                break
+        return aliases
 
     async def _open_app(self, app_name: str, timeout_ms: int = 60000) -> None:
         """
-        打开应用。
-        
-        Args:
-            app_name: 应用名称（支持中文名，会自动映射到 appId）
-            timeout_ms: 等待应用打开的超时时间
+        打开应用。未知名称抛 AppNotFoundError（可恢复）；前台未确认才视为基础设施错误。
         """
-        app_id = resolve_app_id(app_name, self.APP_NAME_MAP, self._KNOWN_APP_IDS)
+        app_id = await self.resolve_open_app(app_name)
         if not app_id:
-            if self.verbose:
-                _log_env_info(self, f"OPEN_APP: '{app_name}' not recognized, skipping")
-            return
-        
+            raise AppNotFoundError(app_name, await self._installed_app_suggestions())
+
         if self.verbose:
             if app_name != app_id:
                 _log_env_info(self, f"OPEN_APP: {app_name} -> {app_id}")
             else:
                 _log_env_info(self, f"OPEN_APP: {app_id}")
-        
+
         try:
-            # __OS__.openApp not ready = page not initialized = system-level failure → raise
             await self.page.wait_for_function(
                 "() => Boolean(window.__OS__?.openApp)",
                 timeout=timeout_ms,
             )
 
             await self.page.evaluate(
-                "({a}) => { window.__OS__.openApp(a); }",
+                """({a}) => {
+                  const os = window.__OS__;
+                  if (os.launchApp) os.launchApp(a);
+                  else os.openApp(a);
+                }""",
                 {"a": app_id},
             )
             try:
-                expected = json_mod.dumps(app_id)
                 await self.page.wait_for_function(
-                    f"""() => {{
-                        const id = {expected};
-                        const os = window.__OS__;
-                        if (!os) return false;
-                        const live = os.getState?.()?.activeAppId;
-                        if (live === id) return true;
-                        return (os.getAppRoute?.() || {{}}).app === id;
-                    }}""",
+                    """(expected) => {
+                      const routed = window.__OS__?.getAppRoute?.()?.app === expected;
+                      const root = document.querySelector(`[data-app-root="${CSS.escape(expected)}"]`);
+                      if (!root) return routed;
+                      const style = window.getComputedStyle(root);
+                      const rect = root.getBoundingClientRect();
+                      const rendered = style.display !== 'none' && style.visibility !== 'hidden'
+                        && rect.width > 0 && rect.height > 0;
+                      return routed || rendered;
+                    }""",
+                    arg=app_id,
                     timeout=timeout_ms,
                 )
                 _log_env_info(self, f"OPEN_APP: '{app_id}' opened OK")
             except Exception as e:
-                # App render latency — warn but don't abort (agent may still succeed)
-                logger.warning(
-                    f"{self._log_prefix}[page#{self._page_seq}] OPEN_APP: wait for "
-                    f"__OS__.getAppRoute() timed out for '{app_id}': {type(e).__name__}"
-                )
+                raise RuntimeError(
+                    f"OPEN_APP_ROUTE_TIMEOUT: foreground route was not confirmed "
+                    f"for '{app_id}' within {timeout_ms}ms"
+                ) from e
+        except AppNotFoundError:
+            raise
         except Exception as e:
             raise RuntimeError(
                 f"{self._log_prefix}[page#{self._page_seq}] _open_app('{app_id}') failed: {type(e).__name__}: {e}"
@@ -1196,11 +1548,7 @@ class MobileGymEnv(BaseMobileEnv):
                 f"phase=goto failed: {type(e).__name__}: {e}"
             ) from e
 
-    async def _wait_ready(
-        self,
-        timeout_ms: int = _DEFAULT_READY_TIMEOUT_MS,
-        app_ids: list[str] | None = None,
-    ) -> None:
+    async def _wait_ready(self, timeout_ms: int = 60000, app_ids: list[str] | None = None) -> None:
         """Wait for page to be fully initialized. Fail-closed: exceptions propagate."""
         sw = self.stopwatch
         p = f"{self._log_prefix}[page#{self._page_seq}]"
@@ -1333,15 +1681,6 @@ class MobileGymEnv(BaseMobileEnv):
 
     async def _get_route(self) -> Optional[dict]:
         try:
-            return await self.page.evaluate(
-                """() => {
-                    const os = window.__OS__;
-                    const route = os?.getAppRoute?.() || null;
-                    if (route && route.app) return route;
-                    const app = os?.getState?.()?.activeAppId || os?.state?.activeAppId;
-                    if (app) return { app, path: (route && route.path) || '/' };
-                    return route;
-                }"""
-            )
+            return await self.page.evaluate("window.__OS__?.getAppRoute?.() || null")
         except Exception:
             return None

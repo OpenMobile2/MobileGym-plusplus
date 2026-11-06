@@ -28,4 +28,9 @@ export const manifest: AppManifest = {
       navigationBarForeground: 'dark',
     },
   },
+  intentFilters: [],
+  queries: [
+    { action: 'ACTION_PAY', scheme: 'alipays' },
+    { action: 'ACTION_SEND', type: 'text/plain' },
+  ],
 };

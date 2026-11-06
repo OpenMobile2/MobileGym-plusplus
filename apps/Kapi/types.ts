@@ -77,6 +77,8 @@ export interface KapiBill {
   toAccountId?: string | null;
   payee?: string;
   tags: string[];
+  /** 从系统相册选取的账单凭证 URI。 */
+  images?: string[];
   discount?: KapiBillDiscount | null;
   refund?: KapiBillRefund | null;
   reimburse: boolean;

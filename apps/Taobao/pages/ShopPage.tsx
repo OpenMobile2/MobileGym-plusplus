@@ -2,17 +2,24 @@ import React, { useMemo, useState } from 'react';
 import { useParams, useSearchParams } from 'react-router-dom';
 import { useTaobaoStore } from '../state';
 import { useTaobaoGestures } from '../hooks/useTaobaoGestures';
+import { useStrings } from '../hooks/useStrings';
 import { TopBar, Img, Price, ShopBadge, usePanel, useToast } from '../components/ui';
+import { fmt } from '../utils/format';
+import type { TaobaoStringKey } from '../res/strings';
 import { IcMore, IcSearch } from '../res/icons';
 
-const SHOP_TABS = [
-  { id: 'home', label: '首页' },
-  { id: 'items', label: '宝贝' },
-  { id: 'posts', label: '晒单' },
-  { id: 'member', label: '会员' },
+const SHOP_TAB_KEYS = [
+  { id: 'home', labelKey: 'shopTabHome' },
+  { id: 'items', labelKey: 'shopTabItems' },
+  { id: 'posts', labelKey: 'shopTabPosts' },
+  { id: 'member', labelKey: 'shopTabMember' },
 ] as const;
 
-const MORE_ITEMS = ['消息', '回到首页', '分享', '我的淘宝', '购物车', '我的足迹', '我的收藏', '官方客服', '意见反馈', '举报', '添加到桌面'];
+const MORE_ITEM_KEYS: TaobaoStringKey[] = [
+  'moreMessages', 'moreBackHome', 'moreShare', 'moreMyTaobao', 'moreCart',
+  'moreFootprints', 'moreFavorites', 'moreOfficialService', 'moreFeedback',
+  'moreReport', 'moreAddToDesktop',
+];
 
 /** 店铺页(spec: shop.home 四 Tab + morePanel,IMG_8703/8704/8710/8711/8712) */
 export default function ShopPage() {
@@ -21,12 +28,14 @@ export default function ShopPage() {
   const tab = searchParams.get('tab') ?? 'home';
   const { value: panel, open: openPanel } = usePanel();
   const { bindTap, back } = useTaobaoGestures();
+  const s = useStrings();
   const [toast, showToast] = useToast();
   const [shopQuery, setShopQuery] = useState('');
+  const [itemSort, setItemSort] = useState<'default' | 'sales' | 'new' | 'price'>('default');
 
-  const shop = useTaobaoStore((s) => s.shops.find((x) => x.id === shopId));
-  const allItems = useTaobaoStore((s) => s.items);
-  const allReviews = useTaobaoStore((s) => s.reviews);
+  const shop = useTaobaoStore((st) => st.shops.find((x) => x.id === shopId));
+  const allItems = useTaobaoStore((st) => st.items);
+  const allReviews = useTaobaoStore((st) => st.reviews);
   const items = useMemo(() => {
     const base = allItems.filter((i) => i.shopId === shopId);
     const kw = shopQuery.trim().toLowerCase();
@@ -36,16 +45,25 @@ export default function ShopPage() {
     () => allReviews.filter((r) => items.some((i) => i.id === r.itemId)),
     [allReviews, items],
   );
-  const followedShops = useTaobaoStore((s) => s.followedShops);
-  const memberShops = useTaobaoStore((s) => s.memberShops);
-  const toggleFollowShop = useTaobaoStore((s) => s.toggleFollowShop);
-  const joinShopMember = useTaobaoStore((s) => s.joinShopMember);
+  const sortedItems = useMemo(() => {
+    if (itemSort === 'price') return [...items].sort((a, b) => a.price - b.price);
+    if (itemSort === 'sales') {
+      const sold = (value: string) => Number.parseFloat(value.replace(/[^\d.]/g, '')) * (value.includes('万') ? 10000 : 1);
+      return [...items].sort((a, b) => sold(b.sold) - sold(a.sold));
+    }
+    if (itemSort === 'new') return [...items].reverse();
+    return items;
+  }, [itemSort, items]);
+  const followedShops = useTaobaoStore((st) => st.followedShops);
+  const memberShops = useTaobaoStore((st) => st.memberShops);
+  const toggleFollowShop = useTaobaoStore((st) => st.toggleFollowShop);
+  const joinShopMember = useTaobaoStore((st) => st.joinShopMember);
 
   if (!shop) {
     return (
-      <div className="flex flex-col h-full bg-[#F5F6F7]">
-        <TopBar title="店铺" />
-        <div className="flex-1 flex items-center justify-center text-[#999999]">店铺不存在</div>
+      <div className="flex flex-col h-full bg-app-bg">
+        <TopBar title={s.shopFallbackTitle} />
+        <div className="flex-1 flex items-center justify-center text-app-text-muted">{s.shopNotFound}</div>
       </div>
     );
   }
@@ -54,7 +72,7 @@ export default function ShopPage() {
   const isMember = memberShops.includes(shop.id);
 
   return (
-    <div className="flex flex-col h-full bg-[#F5F6F7]">
+    <div className="flex flex-col h-full bg-app-bg">
       <TopBar
         title={
           <span className="flex items-center justify-center gap-1.5 text-[14px]">
@@ -66,15 +84,15 @@ export default function ShopPage() {
             {...bindTap({ kind: 'action', id: 'shop.more.open' }, { onTrigger: () => openPanel('more') })}
             className="bg-transparent border-none cursor-pointer"
           >
-            <IcMore size={20} className="text-[#333333]" />
+            <IcMore size={20} className="text-app-text" />
           </button>
         }
       />
 
       {/* 店内搜索框 */}
-      <div className="bg-white px-3 pb-1.5 shrink-0">
+      <div className="bg-app-surface px-3 pb-1.5 shrink-0">
         <div className="flex items-center bg-[#F5F5F5] rounded-full h-8 px-3 gap-1.5">
-          <IcSearch size={14} className="text-[#999999]" />
+          <IcSearch size={14} className="text-app-text-muted" />
           <input
             value={shopQuery}
             {...bindTap({ kind: 'action', id: 'shop.search.input' }, { onTrigger: () => {} })}
@@ -84,7 +102,7 @@ export default function ShopPage() {
                 setSearchParams((p) => { p.set('tab', 'items'); return p; }, { replace: true });
               }
             }}
-            placeholder="搜索店内宝贝"
+            placeholder={s.shopSearchPlaceholder}
             className="flex-1 bg-transparent border-none outline-none text-[13px]"
             data-keep-keyboard="true"
           />
@@ -92,12 +110,12 @@ export default function ShopPage() {
       </div>
 
       {/* 店铺头 */}
-      <div className="bg-white px-3 py-2.5 shrink-0 flex items-center gap-2.5">
+      <div className="bg-app-surface px-3 py-2.5 shrink-0 flex items-center gap-2.5">
         <Img src={shop.logo} className="w-12 h-12 rounded-xl" />
         <div className="flex-1 min-w-0">
           <div className="flex items-center text-[15px] font-semibold"><ShopBadge badge={shop.badge} />{shop.name}</div>
-          <div className="text-[11px] text-[#999999] mt-0.5">
-            ★ {shop.rating} · {shop.fans}粉丝 · ✓ {shop.certifiedText}
+          <div className="text-[11px] text-app-text-muted mt-0.5">
+            {fmt(s.shopHeaderStatsFmt, { rating: shop.rating, fans: shop.fans, certified: shop.certifiedText })}
           </div>
         </div>
         <button
@@ -106,11 +124,11 @@ export default function ShopPage() {
           })}
           className={`text-[13px] rounded-full px-3.5 py-1.5 cursor-pointer ${
             followed
-              ? 'bg-[#F5F5F5] text-[#999999] border-none'
+              ? 'bg-[#F5F5F5] text-app-text-muted border-none'
               : 'bg-gradient-to-r from-[#FF9402] to-[#FF5000] text-white border-none'
           }`}
         >
-          {followed ? '已关注' : '+ 关注'}
+          {followed ? s.followedLabel : s.followLabel}
         </button>
       </div>
 
@@ -118,15 +136,15 @@ export default function ShopPage() {
         {tab === 'home' && (
           <>
             <div className="m-2.5 rounded-xl bg-gradient-to-br from-[#2A2A2A] to-[#4A4236] text-[#E8DCC3] p-5">
-              <div className="text-[18px] font-bold">年中臻礼</div>
-              <div className="text-[12px] opacity-80 mt-1">天猫618狂欢节 · 热门优惠</div>
+              <div className="text-[18px] font-bold">{s.midYearGiftTitle}</div>
+              <div className="text-[12px] opacity-80 mt-1">{s.midYearGiftSubtitle}</div>
             </div>
             <div className="mx-2.5 grid grid-cols-2 gap-2">
               {items.slice(0, 4).map((it) => (
                 <div
                   key={it.id}
                   {...bindTap('shop.item-open', { params: { itemId: it.id } })}
-                  className="bg-white rounded-xl overflow-hidden cursor-pointer"
+                  className="bg-app-surface rounded-xl overflow-hidden cursor-pointer"
                 >
                   <Img src={it.image} className="w-full aspect-square object-cover" />
                   <div className="p-2">
@@ -141,14 +159,30 @@ export default function ShopPage() {
 
         {tab === 'items' && (
           <div className="mx-2.5 mt-2">
-            <div className="flex gap-4 text-[13px] text-[#666666] px-1 mb-2">
-              <span className="text-[#FF5000] font-semibold">综合</span><span>销量</span><span>新品</span><span>价格</span>
+            <div className="flex gap-4 text-[13px] text-app-text-muted px-1 mb-2">
+              {([
+                ['default', s.sortComprehensive],
+                ['sales', s.sortSales],
+                ['new', s.sortNew],
+                ['price', s.sortPrice],
+              ] as const).map(([id, label]) => (
+                <button
+                  key={id}
+                  {...bindTap({ kind: 'action', id: 'shop.items.sort.select' }, {
+                    params: { sort: id },
+                    onTrigger: () => setItemSort(id),
+                  })}
+                  className={itemSort === id ? 'text-[#FF5000] font-semibold' : undefined}
+                >
+                  {label}{id === 'price' ? ' ↑' : ''}
+                </button>
+              ))}
             </div>
-            {items.map((it) => (
+            {sortedItems.map((it) => (
               <div
                 key={it.id}
                 {...bindTap('shop.item-open', { params: { itemId: it.id } })}
-                className="bg-white rounded-xl p-2.5 mb-2 flex gap-2.5 cursor-pointer"
+                className="bg-app-surface rounded-xl p-2.5 mb-2 flex gap-2.5 cursor-pointer"
               >
                 <Img src={it.image} className="w-24 h-24 rounded-lg object-cover" />
                 <div className="flex-1 min-w-0">
@@ -160,7 +194,7 @@ export default function ShopPage() {
                   </div>
                   <div className="flex items-baseline justify-between mt-1.5">
                     <Price value={it.price} size="m" />
-                    <span className="text-[11px] text-[#999999]">{it.sold}</span>
+                    <span className="text-[11px] text-app-text-muted">{it.sold}</span>
                   </div>
                 </div>
               </div>
@@ -171,19 +205,19 @@ export default function ShopPage() {
         {tab === 'posts' && (
           <div className="mx-2.5 mt-2">
             <div className="flex gap-3 text-[13px] mb-2 px-1">
-              <span className="text-[#FF5000] font-semibold"># 笔记</span>
-              <span className="text-[#666666]"># 直播</span>
-              <span className="text-[#666666]"># 讲解</span>
+              <span className="text-[#FF5000] font-semibold">{s.tagNotes}</span>
+              <span className="text-app-text-muted">{s.tagLive}</span>
+              <span className="text-app-text-muted">{s.tagExplain}</span>
             </div>
             <div className="grid grid-cols-2 gap-2">
               {reviews.filter((r) => r.images.length > 0).concat(reviews.slice(0, 2)).slice(0, 6).map((r, i) => (
-                <div key={r.id + i} className="bg-white rounded-xl overflow-hidden">
+                <div key={r.id + i} className="bg-app-surface rounded-xl overflow-hidden">
                   {r.images[0] && <Img src={r.images[0]} className="w-full aspect-square object-cover" />}
                   <div className="p-2">
                     <div className="text-[12px] line-clamp-2">{r.content}</div>
                     <div className="flex items-center gap-1.5 mt-1.5">
                       <Img src={r.userAvatar} className="w-4 h-4 rounded-full" />
-                      <span className="text-[10px] text-[#999999]">{r.userNick}</span>
+                      <span className="text-[10px] text-app-text-muted">{r.userNick}</span>
                     </div>
                   </div>
                 </div>
@@ -195,25 +229,25 @@ export default function ShopPage() {
         {tab === 'member' && (
           <div className="mx-2.5 mt-2">
             <div className="rounded-xl bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] text-white p-5">
-              <div className="text-[16px] font-bold">邀请您加入店铺会员</div>
-              <div className="text-[12px] opacity-70 mt-1">尊享丰富特权</div>
+              <div className="text-[16px] font-bold">{s.memberInviteTitle}</div>
+              <div className="text-[12px] opacity-70 mt-1">{s.memberInviteSubtitle}</div>
               <button
                 {...bindTap({ kind: 'action', id: 'shop.member.join' }, {
-                  onTrigger: () => { joinShopMember(shop.id); showToast('入会成功'); },
+                  onTrigger: () => { joinShopMember(shop.id); showToast(s.joinMemberSuccessToast); },
                 })}
                 disabled={isMember}
                 className="mt-3 w-full h-10 rounded-full bg-gradient-to-r from-[#FF9402] to-[#FF5000] text-white text-[14px] border-none cursor-pointer disabled:opacity-50"
               >
-                {isMember ? '已是会员' : '立即加入会员'}
+                {isMember ? s.alreadyMemberLabel : s.joinMemberLabel}
               </button>
             </div>
-            <div className="text-[13px] font-semibold mt-3 mb-2 px-1">优先购 · 提前抢购专享优品</div>
+            <div className="text-[13px] font-semibold mt-3 mb-2 px-1">{s.priorityPurchaseTitle}</div>
             <div className="grid grid-cols-2 gap-2">
               {items.slice(0, 2).map((it) => (
                 <div
                   key={it.id}
                   {...bindTap('shop.item-open', { params: { itemId: it.id } })}
-                  className="bg-white rounded-xl overflow-hidden cursor-pointer"
+                  className="bg-app-surface rounded-xl overflow-hidden cursor-pointer"
                 >
                   <Img src={it.image} className="w-full aspect-square object-cover" />
                   <div className="p-2">
@@ -229,8 +263,8 @@ export default function ShopPage() {
       </div>
 
       {/* 店铺底部 Tab */}
-      <div className="shrink-0 bg-white border-t border-[#EEEEEE] flex">
-        {SHOP_TABS.map((t) => (
+      <div className="shrink-0 bg-app-surface border-t border-app-border flex">
+        {SHOP_TAB_KEYS.map((t) => (
           <button
             key={t.id}
             {...bindTap({ kind: 'action', id: 'shop.tab.select.target' }, {
@@ -242,10 +276,10 @@ export default function ShopPage() {
               }, { replace: true }),
             })}
             className={`flex-1 py-2.5 text-[13px] bg-transparent border-none cursor-pointer ${
-              tab === t.id ? 'text-[#FF5000] font-semibold' : 'text-[#666666]'
+              tab === t.id ? 'text-[#FF5000] font-semibold' : 'text-app-text-muted'
             }`}
           >
-            {t.label}
+            {s[t.labelKey]}
           </button>
         ))}
       </div>
@@ -254,24 +288,27 @@ export default function ShopPage() {
       {panel === 'more' && (
         <div className="absolute inset-0 z-40">
           <div className="absolute inset-0 bg-black/50" onClick={() => back()} />
-          <div className="absolute left-0 right-0 bottom-0 bg-white rounded-t-2xl p-4">
+          <div className="absolute left-0 right-0 bottom-0 bg-app-surface rounded-t-2xl p-4">
             <div className="grid grid-cols-5 gap-y-4">
-              {MORE_ITEMS.map((m) => (
-                <button
-                  key={m}
-                  onClick={() => showToast(`${m}(演示入口)`)}
-                  className="flex flex-col items-center gap-1.5 bg-transparent border-none cursor-pointer"
-                >
-                  <span className="w-11 h-11 rounded-full bg-[#F5F5F5] flex items-center justify-center text-[15px]">{m[0]}</span>
-                  <span className="text-[10px] text-[#666666]">{m}</span>
-                </button>
-              ))}
+              {MORE_ITEM_KEYS.map((mKey) => {
+                const label = s[mKey];
+                return (
+                  <button
+                    key={mKey}
+                    onClick={() => showToast(fmt(s.demoEntryFmt, { name: label }))}
+                    className="flex flex-col items-center gap-1.5 bg-transparent border-none cursor-pointer"
+                  >
+                    <span className="w-11 h-11 rounded-full bg-[#F5F5F5] flex items-center justify-center text-[15px]">{label[0]}</span>
+                    <span className="text-[10px] text-app-text-muted">{label}</span>
+                  </button>
+                );
+              })}
             </div>
             <button
               onClick={() => back()}
               className="w-full h-11 rounded-full bg-[#F5F5F5] text-[14px] border-none cursor-pointer mt-4"
             >
-              取消
+              {s.cancelLabel}
             </button>
             <div className="h-2" />
           </div>

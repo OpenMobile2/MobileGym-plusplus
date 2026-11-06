@@ -13,7 +13,6 @@ import {
   getBillRefundStatusLabel,
   recordMatchesBillFilters,
 } from '../utils/bills';
-import { wheelScrollTop, wheelValueAtScroll } from '../utils/wheelPicker';
 
 const MONTH_LABELS_EN = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
@@ -107,21 +106,30 @@ export const BillSearchPage: React.FC = () => {
   const yearRef = React.useRef<HTMLDivElement>(null);
   const monthRef = React.useRef<HTMLDivElement>(null);
 
+  const confirmMonthPicker = () => {
+    const yearIndex = Math.max(0, Math.min(yearOptions.length - 1, Math.round((yearRef.current?.scrollTop ?? 0) / 36)));
+    const monthIndex = Math.max(0, Math.min(monthOptions.length - 1, Math.round((monthRef.current?.scrollTop ?? 0) / 36)));
+    setSelectedYear(yearOptions[yearIndex]);
+    setSelectedMonth(monthOptions[monthIndex]);
+    setSingleMonthMode(true);
+    setIsMonthPickerOpen(false);
+  };
+
   React.useEffect(() => {
     inputRef.current?.focus();
   }, []);
 
-  const pickerInitializedRef = React.useRef(false);
+  const pickerJustOpened = React.useRef(false);
   React.useEffect(() => {
     if (!isMonthPickerOpen) {
-      pickerInitializedRef.current = false;
+      pickerJustOpened.current = false;
       return;
     }
-    if (pickerInitializedRef.current) return;
-    pickerInitializedRef.current = true;
+    pickerJustOpened.current = true;
     requestAnimationFrame(() => {
-      yearRef.current?.scrollTo({ top: wheelScrollTop(yearOptions, selectedYear) });
-      monthRef.current?.scrollTo({ top: wheelScrollTop(monthOptions, selectedMonth) });
+      yearRef.current?.scrollTo({ top: Math.max(0, yearOptions.indexOf(selectedYear)) * 36 });
+      monthRef.current?.scrollTo({ top: Math.max(0, monthOptions.indexOf(selectedMonth)) * 36 });
+      setTimeout(() => { pickerJustOpened.current = false; }, 100);
     });
   }, [isMonthPickerOpen, monthOptions, selectedMonth, selectedYear, yearOptions]);
 
@@ -205,16 +213,18 @@ export const BillSearchPage: React.FC = () => {
                   className="w-24 overflow-y-auto no-scrollbar"
                   style={{ scrollBehavior: 'smooth', paddingTop: 70, paddingBottom: 70, scrollSnapType: 'y mandatory' }}
                   onScroll={event => {
-                    setSelectedYear(wheelValueAtScroll(yearOptions, event.currentTarget.scrollTop, selectedYear));
+                    if (pickerJustOpened.current) return;
+                    const index = Math.max(0, Math.min(yearOptions.length - 1, Math.round(event.currentTarget.scrollTop / 36)));
+                    setSelectedYear(yearOptions[index]);
                   }}
                 >
-                  {yearOptions.map((year) => (
+                  {yearOptions.map((year, index) => (
                     <div
                       key={year}
                       className={selectedYear === year ? 'font-medium text-black' : 'text-gray-300'}
                       style={{ height: 36, lineHeight: '36px', scrollSnapAlign: 'center' }}
                       onClick={() => {
-                        yearRef.current?.scrollTo({ top: wheelScrollTop(yearOptions, year), behavior: 'smooth' });
+                        yearRef.current?.scrollTo({ top: index * 36, behavior: 'smooth' });
                         setSelectedYear(year);
                       }}
                     >
@@ -228,16 +238,18 @@ export const BillSearchPage: React.FC = () => {
                   className="w-24 overflow-y-auto no-scrollbar"
                   style={{ scrollBehavior: 'smooth', paddingTop: 70, paddingBottom: 70, scrollSnapType: 'y mandatory' }}
                   onScroll={event => {
-                    setSelectedMonth(wheelValueAtScroll(monthOptions, event.currentTarget.scrollTop, selectedMonth));
+                    if (pickerJustOpened.current) return;
+                    const index = Math.max(0, Math.min(monthOptions.length - 1, Math.round(event.currentTarget.scrollTop / 36)));
+                    setSelectedMonth(monthOptions[index]);
                   }}
                 >
-                  {monthOptions.map((month) => (
+                  {monthOptions.map((month, index) => (
                     <div
                       key={month}
                       className={selectedMonth === month ? 'font-medium text-black' : 'text-gray-300'}
                       style={{ height: 36, lineHeight: '36px', scrollSnapAlign: 'center' }}
                       onClick={() => {
-                        monthRef.current?.scrollTo({ top: wheelScrollTop(monthOptions, month), behavior: 'smooth' });
+                        monthRef.current?.scrollTo({ top: index * 36, behavior: 'smooth' });
                         setSelectedMonth(month);
                       }}
                     >
@@ -250,12 +262,7 @@ export const BillSearchPage: React.FC = () => {
 
             <button
               className="mb-2 w-full rounded-lg bg-app-primary py-3 text-lg font-medium text-white"
-              onClick={() => {
-                setSelectedYear(wheelValueAtScroll(yearOptions, yearRef.current?.scrollTop ?? 0, selectedYear));
-                setSelectedMonth(wheelValueAtScroll(monthOptions, monthRef.current?.scrollTop ?? 0, selectedMonth));
-                setSingleMonthMode(true);
-                setIsMonthPickerOpen(false);
-              }}
+              onClick={confirmMonthPicker}
             >
               {s.confirm_2}
             </button>

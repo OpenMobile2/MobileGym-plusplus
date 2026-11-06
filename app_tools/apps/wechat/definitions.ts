@@ -94,7 +94,7 @@ export const WECHAT_TOOL_DEFINITIONS: ToolDefinition[] = [
   {
     name: WECHAT_TOOL_NAMES.sendTextMessage,
     app: 'wechat',
-    description: 'Send one text message to a known contact_id using the same send action as the chat UI. This does not open the chat.',
+    description: 'Send one text message to a known contact_id. This does not open the chat; tap the conversation first so the new bubble is visible.',
     inputSchema: { type: 'object', properties: { contact_id: STRING, text: { ...STRING, maxLength: 2000 } }, required: ['contact_id', 'text'], additionalProperties: false },
     outputSchema: { type: 'object', properties: { contact_id: STRING, message_id: STRING, sent_at: STRING }, required: ['contact_id', 'message_id', 'sent_at'] },
     annotations: annotations(false, 'none', false),

@@ -56,7 +56,7 @@
     {
       "id": "e_trip",
       "title": "旅行出发",
-      "targetDate": 1785542400000,
+      "targetDate": 1757894400000,
       "notebookId": "nb_life",
       "calendar": "solar",
       "pinned": false,
@@ -156,5 +156,9 @@
   "filter": {
     "kind": "home"
   },
-  "widgetEventId": "e_launch"
+  "widgetEventId": null,
+  "selectedIconId": "green",
+  "feedbackSubmissions": [],
+  "lastDateCalculation": null,
+  "detailDisplayModes": {}
 }

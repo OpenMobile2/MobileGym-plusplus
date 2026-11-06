@@ -16,11 +16,12 @@ export function ProfileEditPage() {
   const { bindTap } = useXimalayaGestures();
   const s = useXimalayaStrings();
   const user = useXimalayaStore((st) => st.user);
+  const updateUser = useXimalayaStore((st) => st.updateUser);
   const [fields, setFields] = useState<Record<Field, string>>({
     昵称: user.name,
-    性别: '男',
-    生日: '1995-06',
-    地区: '江苏 南京',
+    性别: user.gender || '男',
+    生日: user.birthday || '1995-06',
+    地区: user.region || '江苏 南京',
   });
 
   // —— 本地弹层态 ——
@@ -41,6 +42,10 @@ export function ProfileEditPage() {
   const close = () => setEditor(null);
   const set = (field: Field, value: string) => {
     setFields((f) => ({ ...f, [field]: value }));
+    if (field === '昵称') updateUser({ name: value });
+    else if (field === '性别') updateUser({ gender: value });
+    else if (field === '生日') updateUser({ birthday: value });
+    else if (field === '地区') updateUser({ region: value });
     showToast('已更新' + field);
   };
 
@@ -69,14 +74,34 @@ export function ProfileEditPage() {
         <div className="bg-white mt-2 px-4 py-4 flex items-center justify-between">
           <span className="text-[15px] text-[#333]">头像</span>
           <div className="flex items-center gap-3">
-            <button {...bindTap({ kind: 'action', id: 'pedit.avatar.wontfix' }, { onTrigger: () => showToast('该功能暂未开放') })}>
+            <button {...bindTap({ kind: 'action', id: 'pedit.avatar.pick' }, {
+              onTrigger: () => {
+                void import('@/os/albumBridge').then(({ pickImages }) =>
+                  pickImages({ multiple: false, maxSelect: 1 }).then((r) => {
+                    if (r.cancelled || !r.selected.length) return;
+                    updateUser({ avatar: r.selected[0].uri });
+                    showToast('头像已从系统相册更新');
+                  }),
+                );
+              },
+            })}>
               <Img src={user.avatar} className="w-14 h-14 rounded-full object-cover" />
             </button>
             <IcChevronRight size={18} className="text-[#CCC]" />
           </div>
         </div>
         <button
-          {...bindTap({ kind: 'action', id: 'pedit.avatar.wontfix' }, { onTrigger: () => showToast('该功能暂未开放') })}
+          {...bindTap({ kind: 'action', id: 'pedit.bg.pick' }, {
+            onTrigger: () => {
+              void import('@/os/albumBridge').then(({ pickImages }) =>
+                pickImages({ multiple: false, maxSelect: 1 }).then((r) => {
+                  if (r.cancelled || !r.selected.length) return;
+                  updateUser({ background: r.selected[0].uri });
+                  showToast('主页背景已从系统相册更新');
+                }),
+              );
+            },
+          })}
           className="w-full bg-white mt-px px-4 py-3.5 flex items-center justify-between text-[15px] text-[#333]"
         >
           <span>编辑主页背景</span>

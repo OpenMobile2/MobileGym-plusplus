@@ -303,6 +303,7 @@
     "aiRelated": true,
     "aiInsight": true,
     "dailyReviewCount": 8,
+    "dailyReviewRange": "all",
     "dailyNotify": true
   }
 }

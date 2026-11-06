@@ -41,6 +41,18 @@ const handlers: Record<string, ToolHandler> = {
       expiry: coupon.expiry, kind: coupon.kind, claimed: coupon.claimed,
     })), getLimit(input, 50));
   },
+  luckin__claim_coupon: (input) => {
+    assertAllowedKeys(input, ['coupon_id']);
+    const couponId = getQuery(input, 'coupon_id');
+    const coupon = requireFound(
+      state().coupons.find((item) => item.id === couponId),
+      'COUPON_NOT_FOUND',
+      `Luckin coupon not found: ${couponId}`,
+    );
+    state().claimCoupon(couponId);
+    const claimed = state().coupons.find((item) => item.id === couponId);
+    return { coupon_id: couponId, claimed: Boolean(claimed?.claimed), title: coupon.title, amount: coupon.amount };
+  },
   luckin__get_cart: (input) => {
     assertAllowedKeys(input, ['limit']);
     const rows = state().cart.map((item) => {

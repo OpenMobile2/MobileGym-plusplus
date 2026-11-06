@@ -1,0 +1,12 @@
+{
+  "_meta": {
+    "id": "kapi.empty_bills",
+    "description": "Empty ledger: agent must not crash on empty state; add-bill tasks still verifiable via store.",
+    "apply": "env.set_state(patch, deep=True) after reset/open_app"
+  },
+  "apps": {
+    "kapi": {
+      "bills": []
+    }
+  }
+}

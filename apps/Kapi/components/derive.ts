@@ -1,8 +1,15 @@
 import type { KapiBill } from '../types';
 import { monthKey, dateKey } from './format';
 import * as TimeService from '@/os/TimeService';
+import { getLocale } from '@/os/locale';
+import { strings } from '../res/strings';
+import { stringsEn } from '../res/strings.en';
 
 /** 纯函数派生(在组件内用 useMemo 调用,勿放进 store selector 以免无限重渲染) */
+
+function t(key: keyof typeof strings): string {
+  return getLocale() === 'en' ? (stringsEn[key] ?? strings[key]) : strings[key];
+}
 
 export type StatsPeriod = 'week' | 'month' | 'year' | 'custom';
 export interface PeriodRange { start: number; end: number; label: string }
@@ -30,7 +37,7 @@ export function periodRange(
     return {
       start: TimeService.fromLocalParts(yr, 0, 1).getTime(),
       end: TimeService.fromLocalParts(yr + 1, 0, 1).getTime(),
-      label: `${yr}年`,
+      label: getLocale() === 'en' ? `${yr}` : `${yr}年`,
     };
   }
 
@@ -44,7 +51,7 @@ export function periodRange(
   }
 
   if (period === 'custom') {
-    if (!custom) return { start: 0, end: 0, label: '选择起止日期' };
+    if (!custom) return { start: 0, end: 0, label: t('pickDateRangeLabel') };
     const e = TimeService.fromTimestamp(custom.end);
     const end = TimeService.fromLocalParts(e.getFullYear(), e.getMonth(), e.getDate() + 1).getTime();
     const s = TimeService.fromTimestamp(custom.start);

@@ -471,6 +471,8 @@ export const strings = {
   pay_agreement_prefix: '开通即视为你已阅读并同意',
   pay_agreement: '《扣款授权确认书》',
   pay_paying: '支付中...',
+  pay_confirm: '确认支付',
+  pay_one_time_description: '本次为一次性支付，支付成功后不会自动续费。',
   pay_and_open: '支付并开通',
   pay_give_up_payment: '是否放弃本次支付？',
   pay_continue_pay: '继续支付',

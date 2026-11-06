@@ -2,35 +2,50 @@ import React, { useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useVipshopStore } from '../state';
 import { useVipshopGestures } from '../hooks/useVipshopGestures';
-import { TopBar, Img, Countdown, useToast, VIP } from '../components/ui';
+import { TopBar, Img, Countdown, useToast, usePanel, VIP } from '../components/ui';
 import { ItemGrid } from '../components/ItemCard';
+import { FilterSheet } from '../components/FilterSheet';
+import { applyFilters, soldCount } from '../utils/search';
 import { subsOf, BRAND_SORTS } from '../constants';
 import { IcFilter } from '../res/icons';
 
 export default function BrandEventPage() {
   const { id = '' } = useParams();
-  const { bindTap } = useVipshopGestures();
+  const { bindTap, back } = useVipshopGestures();
   const [toast] = useToast();
+  const { value: panel } = usePanel('filter');
 
   const brand = useVipshopStore((s) => s.brands.find((b) => b.id === id));
   const items = useVipshopStore((s) => s.items);
   const subscribedBrands = useVipshopStore((s) => s.subscribedBrands);
   const toggleSubscribe = useVipshopStore((s) => s.toggleSubscribe);
+  const recordBrandSort = useVipshopStore((s) => s.recordBrandSort);
 
   const [subcat, setSubcat] = useState<string>('全部');
   const [sort, setSort] = useState<string>(BRAND_SORTS[0].id);
+  const [filters, setFilters] = useState<string[]>([]);
+  const [draft, setDraft] = useState<string[]>([]);
 
-  const brandItems = useMemo(() => {
+  // 排序前的候选集(筛选弹层的选项从它派生)
+  const candidates = useMemo(() => {
     let arr = items.filter((it) => it.brandId === id);
     if (arr.length === 0) arr = items.slice(0, 8); // 兜底:专场内容不为空
-    // 二级分类筛选(按品牌类目派生的子分类)
     if (subcat !== '全部') arr = arr.filter((it) => it.subCategory === subcat);
-    // 排序(销量默认 / 价格升 / 折扣深),折扣同比时用价格兜底,保证可见重排
-    if (sort === 'price') arr = [...arr].sort((a, b) => a.price - b.price);
-    else if (sort === 'discount') arr = [...arr].sort((a, b) => (a.price / a.originPrice - b.price / b.originPrice) || (a.price - b.price));
-    else arr = [...arr].sort((a, b) => b.reviewCount - a.reviewCount);
     return arr;
-  }, [items, id, subcat, sort]);
+  }, [items, id, subcat]);
+
+  const brandItems = useMemo(() => {
+    // 次序键一路兜到 id:比较值并列时 Array.sort 保持原序,看上去就是"点了没反应"
+    const arr = [...candidates];
+    if (sort === 'price') {
+      arr.sort((a, b) => (a.price - b.price) || a.id.localeCompare(b.id));
+    } else if (sort === 'discount') {
+      arr.sort((a, b) => (a.price / a.originPrice - b.price / b.originPrice) || (a.price - b.price) || a.id.localeCompare(b.id));
+    } else {
+      arr.sort((a, b) => (soldCount(b.sold) - soldCount(a.sold)) || (a.price - b.price) || a.id.localeCompare(b.id));
+    }
+    return applyFilters(arr, filters);
+  }, [candidates, sort, filters]);
 
   if (!brand) {
     return (
@@ -108,7 +123,7 @@ export default function BrandEventPage() {
                   key={s.id}
                   {...bindTap({ kind: 'action', id: 'brand.sort.select.target' }, {
                     params: { target: s.id },
-                    onTrigger: () => setSort(s.id),
+                    onTrigger: () => { setSort(s.id); recordBrandSort(brand.id, s.id); },
                   })}
                   className="text-[13px] bg-transparent border-none cursor-pointer"
                   style={on ? { color: VIP.primary, fontWeight: 600 } : { color: '#666' }}
@@ -119,10 +134,11 @@ export default function BrandEventPage() {
             })}
           </div>
           <button
-            {...bindTap('brand.filter-open')}
-            className="flex items-center gap-1 text-[13px] text-[#666666] bg-transparent border-none cursor-pointer"
+            {...bindTap('brand.filter-open', { params: { id: brand.id }, beforeTrigger: () => setDraft(filters) })}
+            className="flex items-center gap-1 text-[13px] bg-transparent border-none cursor-pointer"
+            style={filters.length > 0 ? { color: VIP.primary, fontWeight: 600 } : { color: '#666666' }}
           >
-            <IcFilter size={15} />筛选
+            <IcFilter size={15} />筛选{filters.length > 0 ? `(${filters.length})` : ''}
           </button>
         </div>
 
@@ -133,11 +149,26 @@ export default function BrandEventPage() {
             bindingOf={(it) => bindTap('brand.item-open', { params: { id: it.id } })}
           />
           {brandItems.length === 0 && (
-            <div className="text-center text-[13px] text-[#888888] py-10">该专场暂无商品</div>
+            <div className="text-center text-[13px] text-[#888888] py-10">
+              {filters.length > 0 ? '当前筛选条件下没有商品,换个条件试试' : '该专场暂无商品'}
+            </div>
           )}
         </div>
         <div className="h-3" />
       </div>
+
+      {panel === 'open' && (
+        <FilterSheet
+          candidates={candidates}
+          draft={draft}
+          onToggle={(token) => setDraft((prev) => (prev.includes(token) ? prev.filter((t) => t !== token) : [...prev, token]))}
+          onClose={() => back()}
+          optionBindingOf={(token, onTrigger) =>
+            bindTap({ kind: 'action', id: 'brandFilter.option.toggle' }, { params: { option: token }, onTrigger })}
+          resetBinding={bindTap({ kind: 'action', id: 'brandFilter.reset.submit' }, { onTrigger: () => setDraft([]) })}
+          confirmBinding={bindTap({ kind: 'action', id: 'brandFilter.confirm.submit' }, { onTrigger: () => { setFilters(draft); back(); } })}
+        />
+      )}
       {toast}
     </div>
   );

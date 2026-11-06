@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E8F1F8"/>
+      <stop offset="100%" stop-color="#D5E4F0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1024" height="1024" fill="url(#g)"/>
+  <!-- 街道网格 -->
+  <g stroke="#C5D5E4" stroke-width="3">
+    <line x1="0" y1="64" x2="1024" y2="64"/>
+<line x1="0" y1="128" x2="1024" y2="128"/>
+<line x1="0" y1="192" x2="1024" y2="192"/>
+<line x1="0" y1="256" x2="1024" y2="256"/>
+<line x1="0" y1="320" x2="1024" y2="320"/>
+<line x1="0" y1="384" x2="1024" y2="384"/>
+<line x1="0" y1="448" x2="1024" y2="448"/>
+<line x1="0" y1="512" x2="1024" y2="512"/>
+<line x1="0" y1="576" x2="1024" y2="576"/>
+<line x1="0" y1="640" x2="1024" y2="640"/>
+<line x1="0" y1="704" x2="1024" y2="704"/>
+<line x1="0" y1="768" x2="1024" y2="768"/>
+<line x1="0" y1="832" x2="1024" y2="832"/>
+<line x1="0" y1="896" x2="1024" y2="896"/>
+<line x1="0" y1="960" x2="1024" y2="960"/>
+    <line x1="64" y1="0" x2="64" y2="1024"/>
+<line x1="128" y1="0" x2="128" y2="1024"/>
+<line x1="192" y1="0" x2="192" y2="1024"/>
+<line x1="256" y1="0" x2="256" y2="1024"/>
+<line x1="320" y1="0" x2="320" y2="1024"/>
+<line x1="384" y1="0" x2="384" y2="1024"/>
+<line x1="448" y1="0" x2="448" y2="1024"/>
+<line x1="512" y1="0" x2="512" y2="1024"/>
+<line x1="576" y1="0" x2="576" y2="1024"/>
+<line x1="640" y1="0" x2="640" y2="1024"/>
+<line x1="704" y1="0" x2="704" y2="1024"/>
+<line x1="768" y1="0" x2="768" y2="1024"/>
+<line x1="832" y1="0" x2="832" y2="1024"/>
+<line x1="896" y1="0" x2="896" y2="1024"/>
+<line x1="960" y1="0" x2="960" y2="1024"/>
+  </g>
+  <g stroke="#A8C0D6" stroke-width="6">
+    <line x1="0" y1="180" x2="1024" y2="220"/>
+    <line x1="0" y1="520" x2="1024" y2="480"/>
+    <line x1="220" y1="0" x2="260" y2="1024"/>
+    <line x1="700" y1="0" x2="640" y2="1024"/>
+  </g>
+  <!-- 黄浦江 -->
+  <path d="M 380 0 C 420 180, 360 320, 430 480 S 390 760, 450 1024" fill="none" stroke="#7EB6E8" stroke-width="28" stroke-linecap="round"/>
+  <path d="M 380 0 C 420 180, 360 320, 430 480 S 390 760, 450 1024" fill="none" stroke="#A8D4F5" stroke-width="14" stroke-linecap="round"/>
+  <!-- 街区色块 -->
+  <rect x="480" y="200" width="120" height="90" rx="8" fill="#B7D0E4" opacity="0.7"/>
+  <rect x="160" y="300" width="140" height="110" rx="8" fill="#C2D8E8" opacity="0.75"/>
+  <rect x="560" y="560" width="160" height="100" rx="8" fill="#B7D0E4" opacity="0.7"/>
+  <circle cx="540" cy="360" r="10" fill="#0086F6"/>
+  <circle cx="300" cy="480" r="8" fill="#0086F6"/>
+  <circle cx="640" cy="620" r="8" fill="#0086F6"/>
+</svg>

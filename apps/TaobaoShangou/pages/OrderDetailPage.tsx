@@ -16,6 +16,7 @@ import {
 import { ORDER_TICK } from '../constants';
 import { fmt } from '../utils';
 import { useStatusBarBg } from '../statusbar';
+import type { ActivityResult } from '@/os/types/manifest';
 
 const hm = (ts: number) => {
   const d = TimeService.fromTimestamp(ts);
@@ -519,7 +520,25 @@ export default function OrderDetailPage() {
           amount={order.totalPaid}
           payBinding={bindTap<HTMLButtonElement>('checkout.pay.success', {
             params: { orderId: order.id },
-            beforeTrigger: () => payUnpaidOrder(order.id),
+            onTrigger: () => {
+              const launched = window.__OS__?.startActivityForResult?.(
+                'alipay',
+                {
+                  action: 'ACTION_PAY',
+                  scheme: 'alipays',
+                  data: {
+                    amount: order.totalPaid,
+                    orderId: order.id,
+                    merchantName: '淘宝闪购',
+                    subject: shop.name,
+                  },
+                },
+                (result: ActivityResult) => {
+                  if (result.resultCode === 'OK') payUnpaidOrder(order.id);
+                },
+              );
+              if (!launched) showToast('支付宝暂不可用，请稍后重试');
+            },
           })}
           closeBinding={bindBack<HTMLButtonElement>()}
         />

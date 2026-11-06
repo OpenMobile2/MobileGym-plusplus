@@ -8,7 +8,8 @@
   "fans": 42,
   "follows": 36,
   "isVip": false,
-  "vipExpireAt": 1784592000000
+  "vipExpireAt": 1784592000000,
+  "photos": []
  },
  "albums": [
   {
@@ -12509,10 +12510,11 @@
   "文明通识",
   "三国演义"
  ],
+ "taskAudit": {},
  "subscribedAlbumIds": [
-  "a_novel",
   "a_cul",
-  "a_cross",
+  "nv02",
+  "nv04",
   "ps01",
   "hi01"
  ],
@@ -12530,6 +12532,7 @@
  ],
  "likedTrackIds": [],
  "likedCommentIds": [],
+ "danmakuMessages": [],
  "appliedSkinId": "sk_def",
  "player": {
   "currentAlbumId": "a_novel",

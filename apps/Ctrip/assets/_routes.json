@@ -10,6 +10,11 @@
     "SearchResultPage"
   ],
   [
+    "guide.home",
+    "/guide",
+    "GuideHomePage"
+  ],
+  [
     "dest.city",
     "/dest/:city",
     "DestCityPage"

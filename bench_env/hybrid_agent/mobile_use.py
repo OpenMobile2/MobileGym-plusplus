@@ -77,7 +77,7 @@ MOBILE_USE_FUNCTION: dict[str, Any] = {
                 },
                 "app": {
                     "type": "string",
-                    "description": "App name or app id, required for open_app.",
+                    "description": "App name or app id for open_app. Matching ignores case and spaces (QQ Music = qqmusic). Unknown names fail with APP_NOT_FOUND.",
                 },
                 "status": {
                     "type": "string",

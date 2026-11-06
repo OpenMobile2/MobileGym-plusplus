@@ -492,10 +492,26 @@ const PhotosPage: React.FC<{ onSelectModeChange?: (active: boolean) => void }> =
   }, [selectMode, onSelectModeChange]);
 
   useEffect(() => {
-    const loadedItems = MediaService.getMediaItems({ type: 'all' });
-    // Sort by date, newest first
-    loadedItems.sort((a, b) => b.createdAt - a.createdAt);
-    setItems(loadedItems);
+    const reload = () => {
+      const fromFs = MediaService.getMediaItems({ type: 'all' });
+      let fromResolver: MediaItem[] = [];
+      try {
+        fromResolver = ContentResolver.query<MediaItem>('content://media/images').items || [];
+      } catch {
+        fromResolver = [];
+      }
+      const byPath = new Map<string, MediaItem>();
+      for (const item of [...fromResolver, ...fromFs]) {
+        const key = item.path || item.id;
+        if (!byPath.has(key)) byPath.set(key, item);
+      }
+      const loadedItems = Array.from(byPath.values());
+      loadedItems.sort((a, b) => b.createdAt - a.createdAt);
+      setItems(loadedItems);
+    };
+    reload();
+    const unsub = ContentResolver.registerContentObserver('content://media', reload);
+    return unsub;
   }, []);
 
   const subtitle = useMemo(() => getDateRangeLabel(items, s.date_today, s.date_yesterday, s.gallery_month_suffix, s.gallery_day_suffix, s.gallery_year_suffix, s.date_range_separator), [items, s]);

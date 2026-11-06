@@ -486,8 +486,10 @@ class FullMeetingConflictCheckBroadcast(BaseTask):
     ] + WECHAT_SEND_CHANGES + ["os.providers.sms"]
 
     async def _post_sample(self, env: Any) -> None:
-        rng = random.Random((self._seed or 0) ^ 0xC001D00D)
-        self._injected_conflict = rng.choice((False, True))
+        # Delivery 215 always takes the busy branch: freeze traces never hit the
+        # free-path meeting/calendar/sms chain, so the sampled 50/50 split is
+        # not part of the official set.
+        self._injected_conflict = True
         if not self._injected_conflict:
             return
         state = await env.get_state()

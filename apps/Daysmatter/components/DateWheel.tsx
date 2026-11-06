@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { useDaysmatterGestures } from '../hooks/useDaysmatterGestures';
 import { useI18n } from '../i18n';
+import * as TimeService from '../../../os/TimeService';
 
 interface Props {
   y: number;
@@ -38,13 +39,13 @@ function Col({ items, sel, suffix, actionId, pick }: { items: number[]; sel: num
     const el = ref.current;
     if (!el || idx < 0) return;
     const smooth = !first.current;
-    lockUntil.current = Date.now() + (smooth ? 380 : 80);
+    lockUntil.current = TimeService.realNow() + (smooth ? 380 : 80);
     el.scrollTo({ top: idx * ITEM_H, behavior: smooth ? 'smooth' : 'auto' });
     first.current = false;
   }, [idx]);
 
   const onScroll = () => {
-    if (Date.now() < lockUntil.current) return;
+    if (TimeService.realNow() < lockUntil.current) return;
     if (scrollTimer.current) window.clearTimeout(scrollTimer.current);
     scrollTimer.current = window.setTimeout(() => {
       const el = ref.current;
@@ -53,7 +54,7 @@ function Col({ items, sel, suffix, actionId, pick }: { items: number[]; sel: num
       if (items[i] !== sel) {
         pick(items[i]);
       } else if (el.scrollTop !== i * ITEM_H) {
-        lockUntil.current = Date.now() + 380;
+        lockUntil.current = TimeService.realNow() + 380;
         el.scrollTo({ top: i * ITEM_H, behavior: 'smooth' });
       }
     }, 140);

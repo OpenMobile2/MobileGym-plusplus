@@ -11,6 +11,6 @@ export const FILE_MANAGER_TOOL_DEFINITIONS = defineAppTools('file_manager', [
   { name: 'open_recent', description: 'Open the File Manager recent-files page.', kind: 'navigation' },
   { name: 'open_containing_folder', description: 'Open the containing folder for a file. Select and rename it through the normal GUI.', properties: { path: STRING }, required: ['path'], kind: 'navigation' },
   { name: 'create_folder', description: 'Create one folder at an exact path. It fails if a file already occupies that path.', properties: { path: STRING }, required: ['path'], kind: 'write' },
-  { name: 'copy_file', description: 'Copy one file to a new exact path.', properties: { source_path: STRING, destination_path: STRING }, required: ['source_path', 'destination_path'], kind: 'write' },
-  { name: 'move_file', description: 'Move one file to a new exact path, preserving metadata and removing the source path.', properties: { source_path: STRING, destination_path: STRING }, required: ['source_path', 'destination_path'], kind: 'write' },
+  { name: 'copy_file', description: 'Copy one file to a new exact path. The source is kept.', properties: { source_path: STRING, destination_path: STRING }, required: ['source_path', 'destination_path'], kind: 'write' },
+  { name: 'move_file', description: 'Move one file to a new exact path. Metadata is preserved and the source path disappears.', properties: { source_path: STRING, destination_path: STRING }, required: ['source_path', 'destination_path'], kind: 'write' },
 ]);

@@ -62,6 +62,7 @@ export function TopBar({
         {left ?? (
           <button
             {...bindBack()}
+            aria-label="返回"
             className="w-9 h-9 flex items-center justify-center text-2xl bg-transparent border-none cursor-pointer"
             style={{ color: C.text }}
           >
@@ -94,19 +95,20 @@ export function CircleBtn({
 }
 
 export function MemoImages({ images }: { images: string[] }) {
-  if (!images?.length) return null;
-  const cols = images.length === 1 ? 1 : images.length === 2 ? 2 : 3;
+  const srcs = (images ?? []).filter((src) => Boolean(src));
+  if (!srcs.length) return null;
+  const cols = srcs.length === 1 ? 1 : srcs.length === 2 ? 2 : 3;
   return (
     <div
       className="mt-2 grid gap-1"
       style={{ gridTemplateColumns: `repeat(${cols}, minmax(0,1fr))` }}
     >
-      {images.map((src, i) => (
+      {srcs.map((src, i) => (
         <img
-          key={i}
+          key={`${src}-${i}`}
           src={src}
           alt=""
-          className={`w-full object-cover rounded-lg ${images.length === 1 ? 'max-h-52' : 'aspect-square'}`}
+          className={`w-full object-cover rounded-lg ${srcs.length === 1 ? 'max-h-52' : 'aspect-square'}`}
           onError={(e) => {
             (e.target as HTMLImageElement).src = IMG_FALLBACK;
           }}

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useTaobaoStore } from '../state';
 import { useTaobaoGestures } from '../hooks/useTaobaoGestures';
+import { useStrings } from '../hooks/useStrings';
 import { IcNavBack, IcCamera, IcDelete, IcClose } from '../res/icons';
 
 /**
@@ -11,12 +12,13 @@ import { IcNavBack, IcCamera, IcDelete, IcClose } from '../res/icons';
  */
 export default function SearchLandingPage() {
   const { bindTap, bindBack, go } = useTaobaoGestures();
-  const history = useTaobaoStore((s) => s.searchHistory);
-  const discover = useTaobaoStore((s) => s.searchDiscover);
-  const hot = useTaobaoStore((s) => s.hotSearch);
-  const items = useTaobaoStore((s) => s.items);
-  const submitSearch = useTaobaoStore((s) => s.submitSearch);
-  const removeSearchHistory = useTaobaoStore((s) => s.removeSearchHistory);
+  const s = useStrings();
+  const history = useTaobaoStore((st) => st.searchHistory);
+  const discover = useTaobaoStore((st) => st.searchDiscover);
+  const hot = useTaobaoStore((st) => st.hotSearch);
+  const items = useTaobaoStore((st) => st.items);
+  const submitSearch = useTaobaoStore((st) => st.submitSearch);
+  const removeSearchHistory = useTaobaoStore((st) => st.removeSearchHistory);
   const [, setSearchParams] = useSearchParams();
   const [q, setQ] = useState('');
   const [deleteMode, setDeleteMode] = useState(false);
@@ -49,11 +51,11 @@ export default function SearchLandingPage() {
     : [];
 
   return (
-    <div className="flex flex-col h-full bg-white">
+    <div className="flex flex-col h-full bg-app-surface">
       {/* 搜索头 */}
       <div className="flex items-center gap-2 px-2 h-12 shrink-0">
         <button {...bindBack()} className="w-8 h-8 flex items-center justify-center bg-transparent border-none cursor-pointer">
-          <IcNavBack size={24} className="text-[#111111]" />
+          <IcNavBack size={24} className="text-app-text" />
         </button>
         <div className="flex-1 flex items-center bg-[#F5F5F5] rounded-full h-9 px-3 gap-2">
           <input
@@ -62,16 +64,16 @@ export default function SearchLandingPage() {
             {...bindTap({ kind: 'action', id: 'search.input.type' }, { onTrigger: () => {} })}
             onChange={(e) => updateQuery(e.target.value)}
             onKeyDown={(e) => { if (e.key === 'Enter') submit(q); }}
-            placeholder="搜索宝贝"
+            placeholder={s.searchItemsPlaceholder}
             className="flex-1 bg-transparent border-none outline-none text-[14px]"
             data-keep-keyboard="true"
           />
           {q && (
             <button onClick={() => updateQuery('')} className="bg-transparent border-none cursor-pointer p-0">
-              <IcClose size={15} className="text-[#999999]" />
+              <IcClose size={15} className="text-app-text-muted" />
             </button>
           )}
-          <IcCamera size={17} className="text-[#666666]" />
+          <IcCamera size={17} className="text-app-text-muted" />
         </div>
         <button
           {...bindTap('search.submit', {
@@ -80,7 +82,7 @@ export default function SearchLandingPage() {
           })}
           className="bg-gradient-to-r from-[#FF9402] to-[#FF5000] text-white text-[14px] rounded-full px-4 py-1.5 border-none cursor-pointer"
         >
-          搜索
+          {s.search}
         </button>
       </div>
 
@@ -102,7 +104,7 @@ export default function SearchLandingPage() {
               </div>
             ))}
             {suggests.length === 0 && (
-              <div className="text-[13px] text-[#999999] py-6 text-center">无联想结果,回车直接搜索</div>
+              <div className="text-[13px] text-app-text-muted py-6 text-center">{s.noSuggestionsText}</div>
             )}
           </div>
         ) : (
@@ -111,14 +113,14 @@ export default function SearchLandingPage() {
             {history.length > 0 && (
               <div className="mt-3">
                 <div className="flex justify-between items-center mb-2">
-                  <span className="text-[14px] font-semibold">历史搜索</span>
+                  <span className="text-[14px] font-semibold">{s.searchHistoryLabel}</span>
                   <button
                     {...bindTap({ kind: 'action', id: 'search.history.deleteMode.toggle' }, {
                       onTrigger: () => setDeleteMode((m) => !m),
                     })}
-                    className="bg-transparent border-none cursor-pointer text-[#999999]"
+                    className="bg-transparent border-none cursor-pointer text-app-text-muted"
                   >
-                    {deleteMode ? <span className="text-[12px]">完成</span> : <IcDelete size={15} />}
+                    {deleteMode ? <span className="text-[12px]">{s.doneLabel}</span> : <IcDelete size={15} />}
                   </button>
                 </div>
                 <div className="flex flex-wrap gap-2">
@@ -126,7 +128,7 @@ export default function SearchLandingPage() {
                     <span key={w} className="relative">
                       <button
                         {...bindTap('search.submit', { params: { q: w }, beforeTrigger: () => submitSearch(w) })}
-                        className="bg-[#F5F5F5] text-[#333333] text-[13px] rounded-full px-3 py-1.5 border-none cursor-pointer"
+                        className="bg-[#F5F5F5] text-app-text text-[13px] rounded-full px-3 py-1.5 border-none cursor-pointer"
                       >
                         {w}
                       </button>
@@ -149,13 +151,13 @@ export default function SearchLandingPage() {
 
             {/* 猜你想搜 */}
             <div className="mt-5">
-              <div className="text-[14px] font-semibold mb-2">猜你想搜</div>
+              <div className="text-[14px] font-semibold mb-2">{s.guessSearchLabel}</div>
               <div className="grid grid-cols-2 gap-x-4">
                 {hot.map((w) => (
                   <div
                     key={w}
                     {...bindTap('search.submit', { params: { q: w }, beforeTrigger: () => submitSearch(w) })}
-                    className="h-9 leading-9 text-[13px] text-[#333333] truncate cursor-pointer"
+                    className="h-9 leading-9 text-[13px] text-app-text truncate cursor-pointer"
                   >
                     {w}
                   </div>
@@ -165,13 +167,13 @@ export default function SearchLandingPage() {
 
             {/* 搜索发现 */}
             <div className="mt-3">
-              <div className="text-[14px] font-semibold mb-2">搜索发现</div>
+              <div className="text-[14px] font-semibold mb-2">{s.searchDiscoverLabel}</div>
               <div className="grid grid-cols-2 gap-x-4">
                 {discover.map((w) => (
                   <div
                     key={w}
                     {...bindTap('search.submit', { params: { q: w }, beforeTrigger: () => submitSearch(w) })}
-                    className="h-9 leading-9 text-[13px] text-[#666666] truncate cursor-pointer"
+                    className="h-9 leading-9 text-[13px] text-app-text-muted truncate cursor-pointer"
                   >
                     {w}
                   </div>

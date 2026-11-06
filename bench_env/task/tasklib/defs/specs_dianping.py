@@ -1,5 +1,5 @@
 """Dianping (大众点评 / local-life review & deal-voucher app) hybrid GUI+Tools tasks
-(tasklib).
+(selfbuilt-v1).
 
 Tools already exist (app_tools/apps/dianping). Verification follows the
 newapps_v1 pattern: every task's primary artifact is a Notes entry

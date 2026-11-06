@@ -8,7 +8,7 @@
 用法:
     # 1) 配置环境变量(key 不要写进代码/不要提交 git)
     export IMAGE_GEN_API_KEY="sk-..."                       # 你的 key
-    export IMAGE_GEN_BASE_URL="http://15.204.107.114:3009"  # 你 test_api_imggen.py 里的网关
+    export IMAGE_GEN_BASE_URL="https://api.openai.com/v1"
     export IMAGE_GEN_MODEL="gpt-image-2"
     # 2) 在 mobilegym 仓库根目录运行
     python apps/Vipshop/assets/gen_item_images.py
@@ -23,6 +23,10 @@ from pathlib import Path
 import requests
 
 HERE = Path(__file__).resolve().parent
+_REPO_ROOT = Path(__file__).resolve().parents[5]
+sys.path.insert(0, str(_REPO_ROOT / "tools"))
+from image_gen_client import image_gen_api_key, image_gen_base_url, image_gen_model  # noqa: E402
+
 MANIFEST = HERE / "asset_manifest.json"
 CONCURRENCY = 4
 TIMEOUT = 300
@@ -30,12 +34,12 @@ RETRIES = 3
 
 
 def cfg():
-    key = os.environ.get("IMAGE_GEN_API_KEY") or os.environ.get("TOKENHUB_API_KEY")
+    key = image_gen_api_key()
     if not key:
-        sys.exit("错误: 未设置 IMAGE_GEN_API_KEY(或 TOKENHUB_API_KEY)。")
-    base = os.environ.get("IMAGE_GEN_BASE_URL", "https://example.invalid/v1").rstrip("/")
+        sys.exit("错误: 未设置 IMAGE_GEN_API_KEY(或 OPENAI_API_KEY / TOKENHUB_API_KEY)。")
+    base = image_gen_base_url().rstrip("/")
     url = base + ("/images/generations" if base.endswith("/v1") else "/v1/images/generations")
-    model = os.environ.get("IMAGE_GEN_MODEL", "gpt-image-2")
+    model = image_gen_model()
     return url, key, model
 
 

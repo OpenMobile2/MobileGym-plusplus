@@ -116,21 +116,47 @@ export function ImageLightbox() {
   );
 }
 
-/** 全局 toast:读 lastToast,1.8s 自动消失。 */
+function isUnavailableMessage(msg: string | null): boolean {
+  return Boolean(msg && (msg.includes('暂未开放') || msg.toLowerCase().includes('not available')));
+}
+
+/** 全局 toast；未开放功能升级为需手动确认的弹窗。 */
 export function Toast() {
   const lastToast = useFlomoStore((s) => s.lastToast);
+  const toast = useFlomoStore((s) => s.toast);
+  const { bindTap } = useFlomoGestures();
+  const needsConfirmation = isUnavailableMessage(lastToast);
   React.useEffect(() => {
-    if (!lastToast) return;
+    if (!lastToast || needsConfirmation) return;
     const start = TimeService.realNow();
     const id = window.setInterval(() => {
       if (TimeService.realNow() - start > 1800) {
-        (useFlomoStore as unknown as { setState: (p: object) => void }).setState({ lastToast: null });
+        toast(null);
         window.clearInterval(id);
       }
     }, 200);
     return () => window.clearInterval(id);
-  }, [lastToast]);
+  }, [lastToast, needsConfirmation, toast]);
   if (!lastToast) return null;
+  if (needsConfirmation) {
+    return (
+      <div className="absolute inset-0 z-[70] flex items-center justify-center px-8">
+        <div className="absolute inset-0 bg-black/45" />
+        <div role="alertdialog" aria-modal="true" aria-labelledby="flomo-not-open-title" className="relative w-full rounded-2xl px-5 pt-6 pb-4 shadow-xl" style={{ background: C.surface }}>
+          <div id="flomo-not-open-title" className="text-center font-semibold text-[16px]" style={{ color: C.text }}>功能未开放</div>
+          <div className="mt-2 mb-4 text-center text-[13px]" style={{ color: C.sub }}>{lastToast}</div>
+          <button
+            autoFocus
+            {...bindTap({ kind: 'action', id: 'global.notOpen.confirm' }, { onTrigger: () => toast(null) })}
+            className="w-full rounded-full border-none py-2.5 text-white"
+            style={{ background: C.green }}
+          >
+            我知道了
+          </button>
+        </div>
+      </div>
+    );
+  }
   return (
     <div
       className="absolute left-1/2 -translate-x-1/2 bottom-24 px-4 py-2 rounded-lg text-white text-sm z-50 pointer-events-none"

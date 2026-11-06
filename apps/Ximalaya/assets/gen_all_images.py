@@ -3,13 +3,19 @@
 需要梯子:代理 http://127.0.0.1:7890
 强制覆盖:先删除所有旧 .png 再重新生成。
 并发 4,每张约 30-60 秒,总计约 30-40 分钟。"""
-import os, json, base64, time, concurrent.futures as cf
+import os, json, base64, time, concurrent.futures as cf, sys
+from pathlib import Path
 import requests
 
 # ============ OpenAI API 配置 ============
-API_KEY = "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"
-MODEL = "gpt-image-2"
-BASE_URL = "https://api.openai.com/v1/images/generations"
+_REPO_ROOT = Path(__file__).resolve().parents[5]
+sys.path.insert(0, str(_REPO_ROOT / "tools"))
+from image_gen_client import image_gen_api_key, image_gen_base_url, image_gen_model  # noqa: E402
+
+API_KEY = image_gen_api_key()
+MODEL = image_gen_model()
+_API_BASE = image_gen_base_url().rstrip("/")
+BASE_URL = _API_BASE + ("/images/generations" if _API_BASE.endswith("/v1") else "/v1/images/generations")
 PROXIES = {"http": "http://127.0.0.1:7890", "https": "http://127.0.0.1:7890"}
 TIMEOUT = 300
 
@@ -264,6 +270,8 @@ def gen_avatar(item):
         return f"FAIL avatar {aid}: {e}"
 
 if __name__ == "__main__":
+    if not API_KEY:
+        raise SystemExit("未设置 IMAGE_GEN_API_KEY 或 OPENAI_API_KEY；也可写入仓库根目录下被忽略的 .env")
     total = len(COVERS) + len(AVATARS)
     print(f"OpenAI gpt-image-2 | 代理 127.0.0.1:7890 | 生成 {len(COVERS)} 封面 + {len(AVATARS)} 头像 = {total} 张", flush=True)
     print("跳过 >500KB 的已有 OpenAI 图,中途崩溃可重跑", flush=True)

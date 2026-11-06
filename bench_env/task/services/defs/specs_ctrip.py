@@ -1,4 +1,4 @@
-"""Ctrip hybrid GUI+Tools tasks (services, tool-boundary probe).
+"""Ctrip hybrid GUI+Tools tasks (selfbuilt-v4, tool-boundary probe).
 
 Four categories probing ``app_tools/apps/ctrip`` specifically (see
 ``services/__init__.py`` for the suite-level rationale):

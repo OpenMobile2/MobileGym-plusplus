@@ -90,6 +90,7 @@ export interface Order {
   autoPayAmount: number; // 确认收货后自动付款金额
   logistics: { trackingNo: string; company: string; nodes: LogisticsNode[] };
   reviewed: boolean;
+  logisticsViewed?: boolean;
   refundReason?: string;
 }
 
@@ -163,6 +164,7 @@ export interface PddSettings {
 }
 
 export interface PddState {
+  loggedIn: boolean;
   user: PddUser;
   shops: Shop[];
   items: Item[];
@@ -182,6 +184,13 @@ export interface PddState {
   subsidyTabs: string[];
   settings: PddSettings;
   selectedAddressId: string;
+  taskAudit: {
+    reviewFilter?: { itemId: string; tag: string };
+    category?: string;
+    searchResult?: { query: string; sort: string };
+    couponTab?: string;
+    reviewSubmission?: { orderId: string; rating: number; imageCount: number };
+  };
 }
 
 export interface PddActions {
@@ -212,10 +221,13 @@ export interface PddActions {
   sendMessage: (chatId: string, text: string) => void;
   quickAsk: (chatId: string, question: string) => void;
   markChatRead: (chatId: string) => void;
-  submitReview: (orderId: string, rating: number) => void;
+  submitReview: (orderId: string, rating: number, content?: string, images?: string[]) => void;
   addSearchHistory: (word: string) => void;
   clearSearchHistory: () => void;
   setFufeiEnabled: (on: boolean) => void;
   setDarkMode: (on: boolean) => void;
   setFontScale: (scale: number) => void;
+  logout: () => void;
+  markLogisticsViewed: (orderId: string) => void;
+  recordTaskAudit: (patch: Partial<PddState['taskAudit']>) => void;
 }

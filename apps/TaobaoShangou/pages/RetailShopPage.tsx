@@ -79,7 +79,16 @@ export default function RetailShopPage() {
   const addBinding = (item: TbItem) =>
     bindTap<HTMLButtonElement>(
       { kind: 'action', id: 'retail.item.add' },
-      { params: { itemId: item.id }, onTrigger: () => addToCart(item.id, null, item.price) },
+      {
+        params: { itemId: item.id },
+        onTrigger: () => {
+          if (item.skuGroups?.length) {
+            setSp((p) => { p.set('panel', 'sku'); p.set('item', item.id); return p; });
+            return;
+          }
+          addToCart(item.id, null, item.price);
+        },
+      },
     );
 
   const claimBinding = (couponId: string) =>

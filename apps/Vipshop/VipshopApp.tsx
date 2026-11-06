@@ -23,7 +23,6 @@ import FlashPage from './pages/FlashPage';
 import SearchLandingPage from './pages/SearchLandingPage';
 import SearchSuggestPage from './pages/SearchSuggestPage';
 import SearchResultPage from './pages/SearchResultPage';
-import SearchFilterPage from './pages/SearchFilterPage';
 import DetailPage from './pages/DetailPage';
 import CartPage from './pages/CartPage';
 import CartAddonPage from './pages/CartAddonPage';
@@ -41,6 +40,7 @@ import TracePage from './pages/TracePage';
 import ReviewWritePage from './pages/ReviewWritePage';
 import MinePage from './pages/MinePage';
 import FavoritesPage from './pages/FavoritesPage';
+import MyReviewsPage from './pages/MyReviewsPage';
 import FootprintsPage from './pages/FootprintsPage';
 import CouponsPage from './pages/CouponsPage';
 import VipCoinPage from './pages/VipCoinPage';
@@ -145,11 +145,26 @@ function TabBar() {
   );
 }
 
+/**
+ * 状态栏安全区底色。粉渐变头部的页面(首页/发现品牌/我的)取渐变起始色,
+ * 白色顶栏的页面取白,其余回落页面底灰 —— 避免顶部出现一条撞色的窄条。
+ */
+const PINK_TOP = '#FBDCEC';
+function statusBarBgOf(pathname: string): string {
+  if (pathname === '/' || pathname === '/discover' || pathname === '/me') return PINK_TOP;
+  return '#FFFFFF';
+}
+
 function AppShell() {
+  const location = useLocation();
   return (
-    <div className="flex flex-col h-full bg-[#F5F5F5]" data-status-bar-foreground="dark">
-      {/* OS 状态栏安全区 */}
-      <div className="h-10 shrink-0" />
+    <div
+      className="flex flex-col h-full bg-[#F5F5F5]"
+      data-status-bar-foreground="dark"
+      data-vipshop-route={`${location.pathname}${location.search}`}
+    >
+      {/* OS 状态栏安全区:跟随当前页顶部底色,否则粉色头部上方会横一条 #F5F5F5 灰缝 */}
+      <div className="h-10 shrink-0" style={{ background: statusBarBgOf(location.pathname) }} />
       <div className="flex-1 overflow-hidden relative">
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -164,7 +179,6 @@ function AppShell() {
           <Route path="/search" element={<SearchLandingPage />} />
           <Route path="/search/suggest" element={<SearchSuggestPage />} />
           <Route path="/search/result" element={<SearchResultPage />} />
-          <Route path="/search/filter" element={<SearchFilterPage />} />
           <Route path="/category/:id" element={<CategoryPage />} />
           <Route path="/detail/:id" element={<DetailPage />} />
           <Route path="/cart" element={<CartPage />} />
@@ -182,12 +196,14 @@ function AppShell() {
           <Route path="/orders/:id/review" element={<ReviewWritePage />} />
           <Route path="/me" element={<MinePage />} />
           <Route path="/favorites" element={<FavoritesPage />} />
+          <Route path="/reviews/mine" element={<MyReviewsPage />} />
           <Route path="/footprints" element={<FootprintsPage />} />
           <Route path="/coupons" element={<CouponsPage />} />
           <Route path="/vipcoin" element={<VipCoinPage />} />
           <Route path="/vipfloat" element={<VipFloatPage />} />
           <Route path="/address" element={<AddressListPage />} />
           <Route path="/address/edit" element={<AddressEditPage />} />
+          <Route path="/address/edit/:id" element={<AddressEditPage />} />
           <Route path="/settings" element={<SettingsPage />} />
           <Route path="/messages" element={<MessageListPage />} />
           <Route path="/messages/chat" element={<ChatPage />} />

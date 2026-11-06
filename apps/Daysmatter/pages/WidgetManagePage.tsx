@@ -4,7 +4,7 @@ import { Check, Plus, LayoutGrid, Clock, Lock, ChevronRight } from 'lucide-react
 import { useDaysmatterStore } from '../state';
 import { useDaysmatterGestures } from '../hooks/useDaysmatterGestures';
 import { miscUrl } from '../assets';
-import { realNow } from '../../../os/TimeService';
+import * as TimeService from '../../../os/TimeService';
 import TopBar from '../components/TopBar';
 import { useI18n } from '../i18n';
 
@@ -27,15 +27,15 @@ export default function WidgetManagePage() {
   const sky = miscUrl('widget_sky');
   const gKeys = guide ? GUIDE_KEYS[guide] : null;
 
-  const now = new Date(realNow());
+  const now = TimeService.getDate();
   const y = now.getFullYear(), m = now.getMonth() + 1, d = now.getDate();
   const hh = now.getHours(), mm = String(now.getMinutes()).padStart(2, '0');
   const ampm = hh < 12 ? 'AM' : 'PM', h12 = hh % 12 || 12;
   const dayOfYear = Math.floor((Date.UTC(y, now.getMonth(), d) - Date.UTC(y, 0, 1)) / 86400000) + 1;
   const totalDays = ((y % 4 === 0 && y % 100 !== 0) || y % 400 === 0) ? 366 : 365;
   const pct = (dayOfYear / totalDays * 100).toFixed(2);
-  const firstDow = new Date(Date.UTC(y, m - 1, 1)).getUTCDay();
-  const dim = new Date(Date.UTC(y, m, 0)).getUTCDate();
+  const firstDow = TimeService.fromTimestamp(Date.UTC(y, m - 1, 1)).getUTCDay();
+  const dim = TimeService.fromTimestamp(Date.UTC(y, m, 0)).getUTCDate();
   const cells: (number | null)[] = [...Array(firstDow).fill(null), ...Array.from({ length: dim }, (_, i) => i + 1)];
   const weekdays = t('day.weekdays').split(',');
 

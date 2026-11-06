@@ -1,4 +1,4 @@
-export const DATA_VERSION = 1;
+export const DATA_VERSION = 4;
 
 export const ROOT_TAB_PATHS = ['/', '/home', '/instant', '/member', '/mine'] as const;
 

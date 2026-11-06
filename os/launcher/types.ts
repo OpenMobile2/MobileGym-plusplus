@@ -1,6 +1,6 @@
 import type { AppId } from '../types';
 
-export const LAUNCHER_LAYOUT_VERSION = 1 as const;
+export const LAUNCHER_LAYOUT_VERSION = 2 as const;
 export const LAUNCHER_STORAGE_KEY = 'launcher' as const;
 
 export type LauncherGrid = {

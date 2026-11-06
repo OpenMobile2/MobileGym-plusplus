@@ -2,10 +2,12 @@ import React from 'react';
 import { usePinduoduoGestures } from '../hooks/usePinduoduoGestures';
 import { TopBar, showToast, wontfix } from '../components/ui';
 import { IcChevronRight } from '../res/icons';
+import { usePinduoduoStore } from '../state';
 
 // 设置
 export function SettingsPage() {
   const { bindTap } = usePinduoduoGestures();
+  const logout = usePinduoduoStore((s) => s.logout);
 
   const Row = ({
     label,
@@ -54,7 +56,7 @@ export function SettingsPage() {
         {/* 退出登录 */}
         <div className="mx-3 mt-3 mb-4">
           <button
-            {...bindTap({ kind: 'action', id: 'settings.logout.confirm' }, { onTrigger: () => showToast('已退出(模拟)') })}
+            {...bindTap({ kind: 'action', id: 'settings.logout.confirm' }, { onTrigger: () => { logout(); showToast('已退出'); } })}
             className="w-full h-11 rounded-xl bg-white text-[#E22E1F] text-[15px] font-medium"
           >
             退出登录

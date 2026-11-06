@@ -9,6 +9,11 @@ export function LogisticsPage() {
   const { orderId } = useParams();
   const { bindTap } = usePinduoduoGestures();
   const order = usePinduoduoStore((s) => s.orders.find((o) => o.id === orderId));
+  const markLogisticsViewed = usePinduoduoStore((s) => s.markLogisticsViewed);
+
+  React.useEffect(() => {
+    if (orderId) markLogisticsViewed(orderId);
+  }, [markLogisticsViewed, orderId]);
 
   if (!order) {
     return <div className="h-full pt-10 flex items-center justify-center text-[#999]">订单不存在</div>;

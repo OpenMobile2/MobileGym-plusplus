@@ -15,7 +15,9 @@ interface OSApi {
   handleBack(): void;
   finishActivity(result?: ActivityResult): void;
   openApp(appId: AppId | string, initialRoute?: string): void;
-  resolveAppId(name: string): AppId | undefined;
+  listAppIds(): string[];
+  resolveApp(name: string): string | null;
+  listInstalledApps(): Array<{ id: string; displayName: string; displayNameEn: string }>;
   startActivityForResult(
     appIdOrIntent: AppId | string | IntentPayload,
     intentOrCallback?: IntentPayload | ((result: ActivityResult) => void),
@@ -153,10 +155,14 @@ interface SimApi {
   preloadAppStores(appIds: string[]): Promise<void>;
   waitForData(appIds?: string[]): Promise<void>;
   getState(): { os: Record<string, unknown>; apps: Record<string, unknown> };
+  listAppIds(): string[];
+  resolveApp(name: string): string | null;
   setState(
     patch: { apps?: Record<string, unknown>; os?: Record<string, unknown> },
     options?: { deep?: boolean; reload?: boolean },
   ): void;
+  /** 手点采集：点 data-action 时自动记 store/OS diff；?handtrace=1 开启 */
+  handTrace?: import('../handTrace').HandTraceApi;
 }
 
 interface SimTimeApi {

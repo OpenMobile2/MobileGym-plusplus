@@ -50,7 +50,7 @@ def ev(eid, title, y, m, d, nb, **kw):
 # 通用演示事件(无任何个人信息)
 events = [
     ev("e_launch", "项目上线", 2026, 9, 15, "nb_work", pinned=True, reminder="weekly"),
-    ev("e_trip", "旅行出发", 2026, 8, 1, "nb_life", repeat="none"),
+    ev("e_trip", "旅行出发", 2025, 9, 15, "nb_life", repeat="none"),
     ev("e_report", "提交季度报告", 2026, 7, 10, "nb_work", reminder="daily"),
     ev("e_record", "开始记录", 2026, 1, 1, "nb_life", plusOne=True),  # 过去→正数
     ev("e_anniv", "重要纪念日", 2026, 11, 11, "nb_anniv", repeat="year", reminder="yearly"),
@@ -69,9 +69,14 @@ config = {
         "hideAffix": False,
         "sortBy": "eventTime",
         "adsHidden": False,
+        "locale": "zh",
     },
     "filter": {"kind": "home"},
-    "widgetEventId": "e_launch",
+    "widgetEventId": None,
+    "selectedIconId": "green",
+    "feedbackSubmissions": [],
+    "lastDateCalculation": None,
+    "detailDisplayModes": {},
 }
 
 OUT.write_text(json.dumps(config, ensure_ascii=False, indent=2), encoding="utf-8")

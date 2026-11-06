@@ -465,6 +465,7 @@ const StatusBar = () => {
   } = useTaskManagerSelector(getChromeTaskSnapshot, areChromeTaskSnapshotsEqual);
   const { themeService, version } = useTheme();
   const [time, setTime] = useState('');
+  const [dateLabel, setDateLabel] = useState('');
   const [isLight, setIsLight] = useState(true); // true = white text, false = black text
   const [isHidden, setIsHidden] = useState(false);
   const [shadeOpen, setShadeOpen] = useState(SystemShadeService.getState().open);
@@ -475,6 +476,7 @@ const StatusBar = () => {
   useEffect(() => {
     const updateTime = () => {
       setTime(TimeService.formatTime());
+      setDateLabel(TimeService.formatDate());
     };
     updateTime();
     const t = setInterval(updateTime, 1000);
@@ -685,7 +687,7 @@ const StatusBar = () => {
         transitionDuration: `${transitionDuration}ms`
       }}
     >
-      <div>{time}</div>
+      <div>{dateLabel ? `${dateLabel} ${time}` : time}</div>
       <div className="flex items-center gap-1.5">
         {vpnUrl ? (
           <img

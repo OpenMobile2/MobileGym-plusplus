@@ -8,7 +8,7 @@ import type {
   TbCartLine, TbChatMsg, TbCoupon, TbMessage, TbOrder, TbsgActions, TbsgState,
 } from './types';
 
-const cfg = TBSG_CONFIG as unknown as Omit<TbsgState, 'chats' | 'currentAddressId' | 'myReviews' | 'burstUsedToday' | 'checkoutDraft' | 'route' | 'refundDraft'> & { appId: string };
+const cfg = TBSG_CONFIG as unknown as Omit<TbsgState, 'chats' | 'currentAddressId' | 'myReviews' | 'burstUsedToday' | 'taskAudit' | 'checkoutDraft' | 'route' | 'refundDraft'> & { appId: string };
 
 const initialState: TbsgState = {
   ...JSON.parse(JSON.stringify(cfg)),
@@ -35,6 +35,7 @@ const initialState: TbsgState = {
     { id: 'myrv2', orderId: 'o1007', shopId: 's_lusen', stars: 4, riderGood: null, text: '自取很方便,牛奶日期新鲜。', images: [], anonymous: true, ts: cfg.baseTs - 9 * 24 * 3600_000 },
   ],
   burstUsedToday: false,
+  taskAudit: {},
   checkoutDraft: null,
   route: '/',
   refundDraft: { reason: '', subReason: null },
@@ -190,6 +191,16 @@ export const useTbsgStore = createAppStoreWithActions<TbsgState, TbsgActions>(
         burstable: true, scope: '全平台外卖商家可用',
       };
       set((s) => ({ coupons: [c, ...s.coupons], burstUsedToday: true }));
+    },
+    claimRushCoupon: (slot, amount, threshold) => {
+      const id = `rush_${slot.replace(':', '')}_${amount}`;
+      if (get().coupons.some((c) => c.id === id)) return;
+      const coupon: TbCoupon = {
+        id, name: `${slot}限时抢红包`, type: 'burst', amount, threshold,
+        expireAt: TimeService.now() + 24 * 3600_000, status: 'claimed',
+        burstable: true, scope: '全平台外卖商家可用',
+      };
+      set((s) => ({ coupons: [coupon, ...s.coupons], taskAudit: { ...s.taskAudit, redpacketSlot: slot } }));
     },
     buyFoodCard: () =>
       set((s) => (s.foodCard.owned ? {} : { foodCard: { owned: true, count: 12 } })),
@@ -451,6 +462,7 @@ export const useTbsgStore = createAppStoreWithActions<TbsgState, TbsgActions>(
     updateSettings: (patch) => set((s) => ({ settings: { ...s.settings, ...patch } })),
     updateProfile: (patch) => set((s) => ({ user: { ...s.user, ...patch } })),
     clearCache: () => set((s) => ({ settings: { ...s.settings, cacheMB: 0 } })),
+    recordTaskAudit: (patch) => set((s) => ({ taskAudit: { ...s.taskAudit, ...patch } })),
   }),
   {
     persistName: `${manifest.id}_v${DATA_VERSION}`,

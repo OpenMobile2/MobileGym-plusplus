@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useVipshopStore } from '../state';
 import { useVipshopGestures } from '../hooks/useVipshopGestures';
 import { TopBar, BottomSheet, usePanel, useToast, NOT_OPEN, VIP } from '../components/ui';
@@ -8,11 +8,10 @@ import { IcLocation, IcSparkles, IcArrowRight } from '../res/icons';
 
 export default function AddressEditPage() {
   const { bindTap, back } = useVipshopGestures();
-  const [searchParams] = useSearchParams();
-  const { value: regionPanel, open: openPanel } = usePanel('region');
+  const { id: editId = '' } = useParams();
+  const { value: regionPanel } = usePanel('region');
   const [toast, showToast] = useToast();
 
-  const editId = searchParams.get('id') ?? '';
   const existing = useVipshopStore((s) => s.addresses.find((a) => a.id === editId));
   const saveAddress = useVipshopStore((s) => s.saveAddress);
 
@@ -28,10 +27,10 @@ export default function AddressEditPage() {
   const [pickCity, setPickCity] = useState<string | null>(null);
 
   const doSmartFill = () => {
-    setName('李雷');
-    setPhone('13912345678');
-    setRegion('广东省 广州市 天河区');
-    setDetail('珠江新城华夏路10号富力中心32楼');
+    setName('王爸爸');
+    setPhone('13900139000');
+    setRegion('浙江省 杭州市 西湖区');
+    setDetail('西溪路588号西溪诚园5幢102室');
     showToast('已智能填写');
   };
 
@@ -84,7 +83,7 @@ export default function AddressEditPage() {
           </div>
           {/* 所在地区(点击打开选择器) */}
           <button
-            {...bindTap({ kind: 'action', id: 'addressEdit.region.open' }, { onTrigger: () => openPanel('open') })}
+            {...bindTap('addressEdit.region.open', { params: editId ? { id: editId } : {} })}
             className="w-full flex items-center px-3 h-12 border-b border-[#F5F5F5] bg-transparent border-x-0 border-t-0 cursor-pointer text-left"
           >
             <span className="w-20 text-[14px] text-[#666666]">所在地区</span>
@@ -170,8 +169,11 @@ export default function AddressEditPage() {
       {/* 底部确定 */}
       <div data-hide-on-keyboard className="shrink-0 bg-white border-t border-[#EEEEEE] p-3">
         <button
-          {...bindTap('addressEdit.save-open', {
-            beforeTrigger: () => saveAddress({ id: editId || undefined, name, phone, region, detail, tag, isDefault }),
+          {...bindTap({ kind: 'action', id: 'addressEdit.save.submit' }, {
+            onTrigger: () => {
+              saveAddress({ id: editId || undefined, name, phone, region, detail, tag, isDefault });
+              back();
+            },
           })}
           className="w-full h-11 rounded-full text-[15px] font-semibold border-none cursor-pointer text-white"
           style={{ background: VIP.primary }}

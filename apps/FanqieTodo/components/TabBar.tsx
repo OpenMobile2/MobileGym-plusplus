@@ -17,13 +17,13 @@ const TabBar: React.FC = () => {
     { path: '/profile', key: 'nav.profile', Icon: IcProfile, bind: bindTap('tabbar.profile') },
   ];
   return (
-    <div data-hide-on-keyboard className="flex shrink-0 items-center justify-around border-t border-app-border bg-white pb-1 pt-1.5">
+    <div data-hide-on-keyboard className="flex shrink-0 items-center justify-around border-t border-[var(--app-border)] bg-[var(--app-tab-bar-bg)] pb-1 pt-1.5">
       {items.map((it) => {
         const active = pathname === it.path;
         return (
           <button key={it.path} {...it.bind}
             className="flex w-1/5 flex-col items-center gap-0.5 border-none bg-transparent py-1"
-            style={{ color: active ? '#4A90D9' : '#8A8F99' }}>
+            style={{ color: active ? 'var(--app-primary)' : 'var(--app-text-muted)' }}>
             <it.Icon size={22} />
             <span className="text-[11px]">{t(it.key)}</span>
           </button>

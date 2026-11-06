@@ -3,8 +3,6 @@ import { Routes, Route, MemoryRouter, useLocation, UNSAFE_NavigationContext } fr
 import { useAppNavigationHandler } from '../../os/hooks/useAppNavigationHandler';
 import { useAppNavigate } from './navigation';
 import { useMapStore } from './state';
-import { setOptions, importLibrary } from '@googlemaps/js-api-loader';
-import { googleLangCode } from './utils/placeUtils';
 import { useLocale } from './locale';
 import { BottomNav } from './components/BottomNav';
 import { ExplorePage } from './pages/ExplorePage';
@@ -33,32 +31,7 @@ import { colorStates, colorStatesDark } from './res/colors.states';
 import { dimens } from './res/dimens';
 import { anim } from './res/anim';
 import { dispatchMapBackHandlers } from './hooks/useMapBackHandler';
-import { getGoogleMapsApiKey } from './utils/googleMapsConfig';
-import { ensureMapServiceWorkerControlling, registerMapServiceWorker } from './utils/registerMapServiceWorker';
-
-// 使用 @googlemaps/js-api-loader v2 的 setOptions + importLibrary
-let loaderInitialized = false;
-const initGoogleMaps = async (
-  apiKey: string,
-  locale: 'zh-Hans' | 'en',
-): Promise<typeof google> => {
-  if (window.google?.maps?.Map) return window.google;
-
-  if (!loaderInitialized) {
-    setOptions({ key: apiKey, v: 'weekly', language: googleLangCode(locale), region: 'CN' });
-    loaderInitialized = true;
-  }
-
-  await Promise.all([
-    importLibrary('maps'),
-    importLibrary('places'),
-    importLibrary('geometry'),
-    importLibrary('marker'),
-    importLibrary('routes'),
-  ]);
-
-  return window.google;
-};
+import { ensureGoogleMapsRuntime } from './utils/googleMapsRuntime';
 
 // 标准 App 桥接：系统返回/路由观测/（可选）外部导航
 const MapNavigationHandler: React.FC = () => {
@@ -278,11 +251,6 @@ export const MapApp: React.FC = () => {
     useMapStore.getState().refreshLocation();
   }, []);
 
-  // 在 SDK 之前注册 Service Worker：拦截后续 maps.googleapis.com 请求并走本地快照
-  useEffect(() => {
-    void registerMapServiceWorker();
-  }, []);
-
   // Load Google Maps API using @googlemaps/js-api-loader
   // 没真 key 时也尝试加载：Service Worker 会用 placeholder key 命中 canonical 缓存。
   // 既无 key 又无缓存又无网络时，loader 会失败，落到 catch 显示 placeholder。
@@ -290,19 +258,10 @@ export const MapApp: React.FC = () => {
   // 关键：在 initGoogleMaps 之前 await SW 接管完成，避免首次访问时 SDK 请求绕过 SW
   // 直接打 Google → 用 placeholder key 被拒 → 拿回 HTML 错误页 → JS 解析失败。
   useEffect(() => {
-    const realKey = getGoogleMapsApiKey();
-    const apiKey = realKey || 'OFFLINE_NO_KEY';
-    if (realKey) {
-      console.log('[Map] 检测到 Google Maps key，开始加载 Google Maps JS SDK');
-    } else {
-      console.log('[Map] 未配置 key，使用 placeholder + Service Worker 缓存加载 SDK');
-    }
     let cancelled = false;
-    void (async () => {
-      await ensureMapServiceWorkerControlling();
-      if (cancelled) return;
-      initGoogleMaps(apiKey, locale)
+    void ensureGoogleMapsRuntime(locale)
         .then((g) => {
+          if (cancelled) return;
           console.log('[Map] Google Maps JS SDK 加载成功');
           useMapStore.getState().setGoogleLoaded(g);
         })
@@ -310,7 +269,6 @@ export const MapApp: React.FC = () => {
           console.error('[Map] Google Maps JS SDK 加载失败', e);
           useMapStore.getState().setGoogleLoadError(e instanceof Error ? e : new Error(String(e)));
         });
-    })();
     return () => { cancelled = true; };
   }, [locale]);
 

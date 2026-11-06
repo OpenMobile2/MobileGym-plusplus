@@ -6,7 +6,7 @@ import {
   IcPlay, IcPause, IcLike, IcClose, IcCheck, IcTicket, IcChevronRight, IcUserCircle,
 } from '../res/icons';
 
-const SORTS = ['推荐', '最新', '时点'] as const;
+const SORTS = ['最热', '最新', '时点'] as const;
 const RATES = [
   { val: '推荐', color: '#FE4543' },
   { val: '一般', color: '#F5A623' },
@@ -25,6 +25,7 @@ export function CommentPage() {
   const togglePlay = useXimalayaStore((st) => st.togglePlay);
   const toggleLikeComment = useXimalayaStore((st) => st.toggleLikeComment);
   const addComment = useXimalayaStore((st) => st.addComment);
+  const recordTaskAudit = useXimalayaStore((st) => st.recordTaskAudit);
 
   const album = albums.find((a) => a.id === player.currentAlbumId) ?? albums[0];
   const track = tracks.find((t) => t.id === player.currentTrackId)
@@ -34,7 +35,8 @@ export function CommentPage() {
 
   const albumComments = comments.filter((c) => c.albumId === album?.id);
 
-  const [sort, setSort] = useState<(typeof SORTS)[number]>('推荐');
+  // 默认最新，使用户明确选择“最热”时形成可观测的排序状态变化。
+  const [sort, setSort] = useState<(typeof SORTS)[number]>('最新');
   const [rate, setRate] = useState<string | null>(null);
   const [voteOpen, setVoteOpen] = useState(false);
   const [expanded, setExpanded] = useState<string[]>([]);
@@ -43,7 +45,7 @@ export function CommentPage() {
   const [markTime, setMarkTime] = useState(true);
 
   const sorted = [...albumComments].sort((a, b) => {
-    if (sort === '推荐') return b.likeCount - a.likeCount;
+    if (sort === '最热') return b.likeCount - a.likeCount;
     if (sort === '最新') return b.createdAt - a.createdAt;
     return (a.timePoint ?? 1e9) - (b.timePoint ?? 1e9);
   });
@@ -107,7 +109,7 @@ export function CommentPage() {
         {/* 排序 */}
         <div className="mx-3 mt-4 flex items-center gap-4 text-[14px]">
           {SORTS.map((so) => (
-            <button key={so} {...bindTap({ kind: 'action', id: 'comment.sort.select.opt' }, { params: { sort: so }, onTrigger: () => setSort(so) })}
+            <button key={so} {...bindTap({ kind: 'action', id: 'comment.sort.select.opt' }, { params: { sort: so }, onTrigger: () => { setSort(so); recordTaskAudit({ commentSort: so }); } })}
               className={sort === so ? 'text-[#333] font-semibold' : 'text-[#999]'}>{so}</button>
           ))}
         </div>
@@ -132,7 +134,11 @@ export function CommentPage() {
                   <div className="flex items-center gap-4 mt-1.5 text-[12px] text-[#999]">
                     <span>{c.region}</span>
                     {c.replyCount > 0 && (
-                      <button {...bindTap({ kind: 'action', id: 'comment.replies.toggle' }, { params: { cid: c.id }, onTrigger: () => setExpanded((p) => p.includes(c.id) ? p.filter((x) => x !== c.id) : [...p, c.id]) })}
+                      <button {...bindTap({ kind: 'action', id: 'comment.replies.toggle' }, { params: { cid: c.id }, onTrigger: () => setExpanded((p) => {
+                        const next = p.includes(c.id) ? p.filter((x) => x !== c.id) : [...p, c.id];
+                        recordTaskAudit({ expandedCommentIds: next });
+                        return next;
+                      }) })}
                         className="text-[#576B95]">共{c.replyCount}条回复 {isExpanded ? '收起' : '›'}</button>
                     )}
                     <div className="flex-1" />

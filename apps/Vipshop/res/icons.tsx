@@ -10,6 +10,7 @@ import {
   MessageSquareMore, Copy, ShieldCheck, Gift, Zap, Footprints, RotateCcw,
   CircleAlert, Landmark, Users, QrCode, BadgePercent, Banknote, Sparkles,
   ReceiptText, CircleHelp, Crown, Coins, Bookmark, Ruler, Send, MessageCircle,
+  LayoutGrid,
 } from 'lucide-react';
 
 export const IcLauncher = ShoppingCart;
@@ -74,3 +75,4 @@ export const IcBookmark = Bookmark;
 export const IcRuler = Ruler;
 export const IcSend = Send;
 export const IcMessage = MessageCircle;
+export const IcGrid = LayoutGrid;

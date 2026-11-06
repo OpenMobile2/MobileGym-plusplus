@@ -28,6 +28,7 @@ import { ShopPage } from './pages/ShopPage';
 import { MinePage } from './pages/MinePage';
 import { OrdersPage } from './pages/OrdersPage';
 import { OrderDetailPage } from './pages/OrderDetailPage';
+import { OrderSnapshotPage } from './pages/OrderSnapshotPage';
 import { LogisticsPage } from './pages/LogisticsPage';
 import { InvoicePage } from './pages/InvoicePage';
 import { WriteReviewPage } from './pages/WriteReviewPage';
@@ -101,7 +102,11 @@ function TabBar() {
   };
 
   return (
-    <div data-hide-on-keyboard className="shrink-0 bg-white border-t border-[#EEEEEE] flex" data-navigation-bar-foreground="dark">
+    <div
+      data-hide-on-keyboard
+      className="shrink-0 h-[52px] bg-white border-t border-[#E5E5E5] flex"
+      data-navigation-bar-foreground="dark"
+    >
       {MAIN_TABS.map((tab) => {
         const active = location.pathname === tab.path;
         const Icon = TAB_ICONS[tab.id];
@@ -109,18 +114,26 @@ function TabBar() {
           <button
             key={tab.id}
             {...BIND[tab.id]}
-            className="flex-1 flex flex-col items-center justify-center py-1.5 gap-0.5 relative"
+            className="flex-1 flex flex-col items-center justify-center gap-0.5 relative"
           >
             <div className="relative">
-              <Icon size={22} className={active ? 'text-[#E22E1F]' : 'text-[#999]'} />
+              {tab.id === 'subsidy' ? (
+                <span className="block text-[19px] leading-5 font-black tracking-tight text-[#E22E1F]">七夕节</span>
+              ) : (
+                <Icon
+                  size={23}
+                  strokeWidth={active ? 2.3 : 1.6}
+                  className={active ? 'text-[#E22E1F]' : 'text-[#777]'}
+                />
+              )}
               {tab.id === 'chat' && chatUnread > 0 && (
-                <span className="absolute -top-1 -right-2 min-w-4 h-4 px-1 rounded-full bg-[#E22E1F] text-white text-[10px] leading-4 text-center">
+                <span className="absolute -top-1.5 -right-3 min-w-4 h-4 px-1 rounded-full bg-[#E22E1F] text-white text-[10px] leading-4 text-center border border-white">
                   {chatUnread}
                 </span>
               )}
             </div>
-            <span className={`text-[10px] ${active ? 'text-[#E22E1F] font-medium' : 'text-[#999]'}`}>
-              {LABEL[tab.id]}
+            <span className={`text-[10px] leading-3 ${active ? 'text-[#E22E1F] font-medium' : 'text-[#666]'}`}>
+              {tab.id === 'subsidy' ? '大促狂降价' : LABEL[tab.id]}
             </span>
           </button>
         );
@@ -150,6 +163,7 @@ function AppShell() {
           <Route path="/orders/:orderId/logistics" element={<LogisticsPage />} />
           <Route path="/orders/:orderId/invoice" element={<InvoicePage />} />
           <Route path="/orders/:orderId/review" element={<WriteReviewPage />} />
+          <Route path="/orders/:orderId/snapshot" element={<OrderSnapshotPage />} />
           <Route path="/orders/:orderId" element={<OrderDetailPage />} />
           <Route path="/orders" element={<OrdersPage />} />
           <Route path="/aftersale/apply" element={<RefundFormPage />} />

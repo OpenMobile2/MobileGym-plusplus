@@ -152,16 +152,22 @@ export function BottomSheet({
   closeBinding?: object;
   heightClass?: string;
 }) {
+  const { bindBack } = useVipshopGestures();
+  const resolvedCloseBinding = closeBinding ?? bindBack({ onTrigger: onClose });
   return (
     <div className="absolute inset-0 z-40">
-      <div className="absolute inset-0 bg-black/50" onClick={onClose} />
+      <button
+        {...resolvedCloseBinding}
+        aria-label="关闭弹层"
+        className="absolute inset-0 w-full h-full border-none bg-black/50 cursor-default"
+      />
       <div className={`absolute left-0 right-0 bottom-0 bg-white rounded-t-2xl ${heightClass} flex flex-col`}>
         {title !== undefined && (
           <div className="flex items-center justify-center relative h-12 shrink-0 border-b border-[#F5F5F5]">
             <span className="font-semibold text-[15px] text-[#222222]">{title}</span>
             <button
-              {...(closeBinding ?? {})}
-              onClick={onClose}
+              {...resolvedCloseBinding}
+              aria-label="关闭弹层"
               className="absolute right-3 top-2.5 w-7 h-7 rounded-full bg-[#F5F5F5] text-[#999999] border-none cursor-pointer text-[14px]"
             >
               ✕
@@ -197,6 +203,25 @@ export function useToast(): [React.ReactNode, (msg: string) => void] {
 /** 便捷:该功能暂未开放 toast 文案 */
 export const NOT_OPEN = '该功能暂未开放';
 
+/* ---------------- 评价星级(商品评价列表 / 我的评价 共用) ---------------- */
+export function Stars5({ value }: { value: number }) {
+  const n = Math.max(0, Math.min(5, Math.round(value)));
+  return (
+    <span className="text-[10px] tracking-tight" style={{ color: VIP.orange }} aria-label={`${n}星`}>
+      {'★'.repeat(n)}<span className="text-[#DDDDDD]">{'★'.repeat(5 - n)}</span>
+    </span>
+  );
+}
+
+/* ---------------- 评价标签胶囊 ---------------- */
+export function ReviewTag({ text }: { text: string }) {
+  return (
+    <span className="text-[10px] rounded-full px-2 py-0.5" style={{ color: VIP.primary, background: '#FDECF5' }}>
+      {text}
+    </span>
+  );
+}
+
 /* ---------------- 空态 ---------------- */
 export function EmptyState({ text, hint }: { text: string; hint?: string }) {
   return (
@@ -210,27 +235,28 @@ export function EmptyState({ text, hint }: { text: string; hint?: string }) {
 
 /* ---------------- 数量步进器 ---------------- */
 export function Stepper({
-  value, onChange, max, binding,
+  value, onChange, max, decrementBinding, incrementBinding,
 }: {
   value: number;
   onChange: (delta: number) => void;
   max?: number;
-  binding?: object;
+  decrementBinding?: object;
+  incrementBinding?: object;
 }) {
   return (
-    <span {...(binding ?? {})} className="inline-flex items-center border border-[#EEEEEE] rounded">
+    <span className="inline-flex items-center border border-[#EEEEEE] rounded">
       <button
+        {...(decrementBinding ?? { onClick: (e: React.MouseEvent) => { e.stopPropagation(); onChange(-1); } })}
         className="w-7 h-6 text-[14px] text-[#666666] bg-[#FAFAFA] border-none cursor-pointer disabled:text-[#CCCCCC]"
         disabled={value <= 1}
-        onClick={(e) => { e.stopPropagation(); onChange(-1); }}
       >
         −
       </button>
       <span className="w-8 text-center text-[13px] border-x border-[#EEEEEE]">{value}</span>
       <button
+        {...(incrementBinding ?? { onClick: (e: React.MouseEvent) => { e.stopPropagation(); onChange(1); } })}
         className="w-7 h-6 text-[14px] text-[#666666] bg-[#FAFAFA] border-none cursor-pointer disabled:text-[#CCCCCC]"
         disabled={max !== undefined && value >= max}
-        onClick={(e) => { e.stopPropagation(); onChange(1); }}
       >
         +
       </button>

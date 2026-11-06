@@ -7,6 +7,7 @@ import { useWechatStore } from '../../state';
 import { BackDispatcher } from '../../../../os/BackDispatcher';
 import { useActivityContext } from '../../../../os/ActivityContext';
 import { useWechatStrings } from '../../hooks/useWechatStrings';
+import { PayPinCapture } from '@/os/components/PayPinCapture';
 
 export const PaymentConfirmationPage: React.FC = () => {
   const { bindBack, bindTap } = useWechatGestures();
@@ -25,6 +26,7 @@ export const PaymentConfirmationPage: React.FC = () => {
   const price = String(intentData?.amount ?? searchParams.get('price') ?? '0.00');
   const type = intentData?.subject ?? searchParams.get('type') ?? t.pay_default_type;
   const period = intentData?.period ?? searchParams.get('period') ?? 'month';
+  const isSubscription = intentData?.autoRenew === true || intentData?.subscription === true || source === 'bilibili';
   const userName = intentData?.userName ?? searchParams.get('userName') ?? t.pay_default_user;
   const titleName = source === 'bilibili' ? t.pay_bilibili_monthly : type;
   const merchantName = source === 'bilibili' ? t.pay_bilibili_site : source;
@@ -58,8 +60,8 @@ export const PaymentConfirmationPage: React.FC = () => {
     }, 150);
   }, [activityId]);
 
-  const returnToCaller = () => {
-    window.__OS__?.finishActivity();
+  const returnToCaller = (result?: ActivityResult) => {
+    window.__OS__?.finishActivity(result);
   };
 
   const handleAbandon = () => {
@@ -78,8 +80,8 @@ export const PaymentConfirmationPage: React.FC = () => {
     setShowPassword(false);
     setTimeout(() => {
         const nowTs = TimeService.now();
-        const newId = `sub_${nowTs}`;
-        addSubscription({
+        const newId = `${isSubscription ? 'sub' : 'pay'}_${nowTs}`;
+        if (isSubscription) addSubscription({
             id: newId,
             membershipType: source === 'bilibili' ? t.pay_bilibili_membership : type,
             price: parseFloat(price),
@@ -94,7 +96,7 @@ export const PaymentConfirmationPage: React.FC = () => {
             data: { resultCode: 'OK', tradeNo: newId, amount: parseFloat(price), subject: type },
         });
 
-        returnToCaller();
+        returnToCaller({ resultCode: 'OK', data: { tradeNo: newId, amount: parseFloat(price), subject: type } });
     }, 1000);
   };
 
@@ -140,7 +142,7 @@ export const PaymentConfirmationPage: React.FC = () => {
              <div className="flex justify-between text-[15px]">
                  <span className="text-gray-500 min-w-[80px]">{t.pay_description}</span>
                  <div className="text-right text-gray-500 leading-relaxed max-w-[220px]">
-                    {source === 'bilibili' ? t.pay_bilibili_description : t.pay_auto_renew_description}
+                    {isSubscription ? (source === 'bilibili' ? t.pay_bilibili_description : t.pay_auto_renew_description) : t.pay_one_time_description}
                  </div>
              </div>
              <div className="flex justify-between text-[15px]">
@@ -161,7 +163,7 @@ export const PaymentConfirmationPage: React.FC = () => {
             disabled={paying}
             {...bindTap<HTMLButtonElement>({ kind: 'action', id: 'wechat.pay.confirm' }, { onTrigger: handlePay })}
           >
-              {paying ? t.pay_paying : t.pay_and_open}
+              {paying ? t.pay_paying : (isSubscription ? t.pay_and_open : t.pay_confirm)}
           </button>
       </div>
 
@@ -193,7 +195,11 @@ export const PaymentConfirmationPage: React.FC = () => {
       {showPassword && (
         <div className="fixed inset-0 z-50 flex flex-col justify-end">
             <div className="absolute inset-0 bg-black/60" onClick={() => setShowPassword(false)} />
-            <div className="bg-white rounded-t-xl animate-slide-up relative z-10 w-full pb-safe">
+            <div className="bg-white rounded-t-xl animate-slide-up relative z-10 w-full pb-safe" data-keep-keyboard>
+                <PayPinCapture value={password} onChange={(next) => {
+                  setPassword(next);
+                  if (next.length === 6) setTimeout(onPasswordComplete, 300);
+                }} />
                 <div className="flex justify-between items-center p-4 border-b border-gray-100">
                     <button className="text-gray-400 text-2xl leading-none" {...bindTap<HTMLButtonElement>({ kind: 'action', id: 'wechat.pay.cancel' }, { onTrigger: () => setShowPassword(false) })}>&times;</button>
                     <span className="text-[17px] font-bold">{t.pay_enter_password}</span>

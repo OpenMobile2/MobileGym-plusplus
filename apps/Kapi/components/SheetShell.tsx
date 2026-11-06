@@ -1,5 +1,6 @@
 import React from 'react';
 import { IcClose } from '../res/icons';
+import { useStrings } from '../hooks/useStrings';
 
 /**
  * 底部弹层外壳:暗遮罩 + 圆角白底面板。close 由调用方传入(通常 = back())。
@@ -20,12 +21,13 @@ export function SheetShell({
   variant?: 'bottom' | 'full' | 'left';
   closeIcon?: boolean;
 }) {
+  const s = useStrings();
   const panelClass =
     variant === 'left'
-      ? 'absolute inset-y-0 left-0 w-[80%] bg-[#EEF1F9] rounded-r-2xl flex flex-col animate-[slideRight_.2s_ease]'
+      ? 'absolute inset-y-0 left-0 w-[80%] bg-app-bg rounded-r-2xl flex flex-col animate-[slideRight_.2s_ease]'
       : variant === 'full'
-        ? 'absolute inset-x-0 top-10 bottom-0 bg-white rounded-t-2xl flex flex-col'
-        : 'absolute inset-x-0 bottom-0 max-h-[88%] bg-white rounded-t-2xl flex flex-col';
+        ? 'absolute inset-x-0 top-10 bottom-0 bg-app-surface rounded-t-2xl flex flex-col'
+        : 'absolute inset-x-0 bottom-0 max-h-[88%] bg-app-surface rounded-t-2xl flex flex-col';
 
   return (
     <div className="absolute inset-0 z-[120]">
@@ -35,12 +37,12 @@ export function SheetShell({
           <div className="flex items-center px-4 pt-3 pb-2 shrink-0">
             <div className="w-10">
               {closeIcon && (
-                <button onClick={close} className="bg-transparent border-none cursor-pointer p-0" aria-label="关闭">
-                  <IcClose size={20} className="text-[#8A92A6]" />
+                <button onClick={close} className="bg-transparent border-none cursor-pointer p-0" aria-label={s.closeAriaLabel}>
+                  <IcClose size={20} className="text-app-text-muted" />
                 </button>
               )}
             </div>
-            <div className="flex-1 text-center text-[17px] font-semibold text-[#1A1D26]">{title}</div>
+            <div className="flex-1 text-center text-[17px] font-semibold text-app-text">{title}</div>
             <div className="w-10 flex justify-end">{headerRight}</div>
           </div>
         )}

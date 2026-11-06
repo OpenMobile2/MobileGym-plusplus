@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { sharePlainText } from '@/os/shareBridge';
 import { useVipshopStore } from '../state';
 import { useVipshopGestures } from '../hooks/useVipshopGestures';
 import { TopBar, Img, Price, EmptyState, useToast, NOT_OPEN, VIP } from '../components/ui';
@@ -23,6 +24,7 @@ export default function OrdersPage() {
   const [toast, showToast] = useToast();
 
   const orders = useVipshopStore((s) => s.orders);
+  const cancelOrder = useVipshopStore((s) => s.cancelOrder);
   const shown = tab === 'all' ? orders : orders.filter((o) => o.status === tab);
 
   const selectTab = (id: string) => {
@@ -61,7 +63,7 @@ export default function OrdersPage() {
       <div className="flex-1 overflow-y-auto" data-scroll-container="orders-list" data-scroll-direction="vertical">
         {shown.length === 0 && <EmptyState text="暂无相关订单" hint="快去挑选心仪好物吧~" />}
         {shown.map((o) => (
-          <OrderCard key={o.id} order={o} bindTap={bindTap} showToast={showToast} />
+          <OrderCard key={o.id} order={o} bindTap={bindTap} showToast={showToast} cancelOrder={cancelOrder} />
         ))}
         <div className="h-3" />
       </div>
@@ -71,8 +73,8 @@ export default function OrdersPage() {
 }
 
 function OrderCard({
-  order: o, bindTap, showToast,
-}: { order: VipOrder; bindTap: BindTap; showToast: (m: string) => void }) {
+  order: o, bindTap, showToast, cancelOrder,
+}: { order: VipOrder; bindTap: BindTap; showToast: (m: string) => void; cancelOrder: (id: string) => void }) {
   return (
     <div className="bg-white mt-2 mx-2 rounded-lg overflow-hidden">
       {/* 头部:品牌 + 状态 */}
@@ -131,13 +133,31 @@ function OrderCard({
         {o.status === 'pendingPayment' && (
           <>
             <button
-              {...bindTap({ kind: 'action', id: 'orders.friendPay.disabled' }, { onTrigger: () => showToast(NOT_OPEN) })}
+              {...bindTap({ kind: 'action', id: 'orders.cancel.submit' }, {
+                params: { id: o.id },
+                onTrigger: () => { cancelOrder(o.id); showToast('订单已取消'); },
+              })}
+              className="text-[12px] rounded-full px-3 py-1 border cursor-pointer bg-white text-[#666666] border-[#DDDDDD]"
+            >
+              取消订单
+            </button>
+            <button
+              {...bindTap({ kind: 'action', id: 'orders.friendPay.share' }, {
+                onTrigger: () => {
+                  // 代付= 把付款链接分享给朋友,走系统分享(ACTION_SEND)
+                  const launched = sharePlainText(
+                    `【唯品会】帮我付一下这单 ¥${o.paidAmount.toFixed(2)}(订单 ${o.orderNo})`,
+                    { onResult: (r) => { if (r.resultCode === 'OK') showToast('代付链接已发出'); } },
+                  );
+                  if (!launched) showToast('没有可用的分享目标');
+                },
+              })}
               className="text-[12px] rounded-full px-3 py-1 border cursor-pointer bg-white text-[#666666] border-[#DDDDDD]"
             >
               找朋友付
             </button>
             <button
-              {...bindTap('orders.pay-open', { params: { orderId: o.id } })}
+              {...bindTap('orders.pay-open', { params: { id: o.id } })}
               className="text-[12px] rounded-full px-4 py-1 border-none cursor-pointer text-white"
               style={{ background: VIP.ctaBlack }}
             >
@@ -153,6 +173,15 @@ function OrderCard({
             style={{ color: VIP.primary, borderColor: VIP.primary }}
           >
             评价有礼
+          </button>
+        )}
+
+        {o.status === 'completed' && o.reviewed && (
+          <button
+            {...bindTap('orders.viewReview-open', { params: { id: o.lines[0].itemId } })}
+            className="text-[12px] rounded-full px-3 py-1 border cursor-pointer bg-white text-[#666666] border-[#DDDDDD]"
+          >
+            查看评价
           </button>
         )}
 

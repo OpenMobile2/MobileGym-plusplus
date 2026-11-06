@@ -4,6 +4,7 @@ import { useFanqieTodoGestures } from '../hooks/useFanqieTodoGestures';
 import { useI18n } from '../i18n';
 import { Switch } from '../components/Switch';
 import { IcBack, IcCheck } from '../res/icons';
+import { avatarUrl } from '../assets';
 
 export default function AccountPage() {
   const { bindBack, action } = useFanqieTodoGestures();
@@ -13,6 +14,7 @@ export default function AccountPage() {
   const wakeVisible = useFanqieTodoStore((s) => s.settings.wakeVisible);
   const s = useFanqieTodoStore();
   const toast = () => s.showToast('该功能暂未开放');
+  const avatar = avatarUrl('user');
 
   const [editing, setEditing] = React.useState<'name' | 'signature' | null>(null);
   const [draft, setDraft] = React.useState('');
@@ -29,7 +31,9 @@ export default function AccountPage() {
       <div className="bg-gradient-to-b from-[#3E7CB1] to-[#4A90D9] px-4 pb-6 pt-10">
         <button {...bindBack()} aria-label="返回" className="mb-2 text-white"><IcBack size={24} /></button>
         <div className="flex items-center gap-3">
-          <div className="h-16 w-16 rounded-full bg-white/25" />
+          <div className="h-16 w-16 overflow-hidden rounded-full bg-white/25">
+            {avatar && <img src={avatar} alt="头像" className="h-full w-full object-cover" />}
+          </div>
           <div className="min-w-0 text-white">
             <div className="truncate text-xs opacity-80">账号:{user.account}</div>
             <div className="text-lg font-bold">昵称:{user.name}</div>

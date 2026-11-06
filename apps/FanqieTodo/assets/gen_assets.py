@@ -43,6 +43,10 @@ CHECKIN_BG = {
 AVATAR = {
     "user": "极简友好的圆形头像插画,圆内是柔和粉彩的山峦风景,干净",
 }
+# 一周总结页装饰(浅灰蓝抽象光晕/花瓣,放在「专注时长」格右侧)
+WEEK_DECO = {
+    "focus_glow": "极简浅灰蓝色抽象装饰插画,柔和圆形光晕与淡淡花瓣轮廓,低对比度,大量留白,干净背景近乎纯白,适合做半透明水印装饰",
+}
 
 
 def _fetch(item):
@@ -82,6 +86,8 @@ def main():
         jobs.append((BASE / "checkinbg" / f"{k}.png", d, "1024x1536"))
     for k, d in AVATAR.items():
         jobs.append((BASE / "avatars" / f"{k}.png", d, "1024x1024"))
+    for k, d in WEEK_DECO.items():
+        jobs.append((BASE / "weekdeco" / f"{k}.png", d, "1024x1024"))
 
     failed = []
     with ThreadPoolExecutor(max_workers=4) as ex:

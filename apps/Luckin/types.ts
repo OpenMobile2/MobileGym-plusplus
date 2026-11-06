@@ -26,6 +26,13 @@ export interface Order {
   quantity: number;
   amount: number;
   createdAt: string;
+  items?: CartItem[];
+  fulfillmentMode?: FulfillmentMode;
+  storeId?: string;
+  addressId?: string;
+  couponId?: string;
+  note?: string;
+  paymentMethod?: string;
 }
 
 export interface Store {
@@ -39,6 +46,7 @@ export interface Store {
 export interface Address {
   id: string;
   name: string;
+  gender?: 'male' | 'female';
   phone: string;
   region: string;
   detail: string;
@@ -64,6 +72,7 @@ export interface LuckinState {
   coupons: Coupon[];
   orders: Order[];
   cart: CartItem[];
+  directPurchase: CartItem | null;
   instantCart: CartItem[];
   mode: FulfillmentMode;
   menuTab: MenuTab;
@@ -73,6 +82,9 @@ export interface LuckinState {
   flags: Record<string, boolean>;
   favorites: string[];
   memberActive: boolean;
+  memberPlan: 'monthly' | 'monthCard' | null;
+  memberSince: string | null;
+  savedFlavors: Record<string, string>;
   toast: string | null;
 }
 
@@ -85,7 +97,9 @@ export interface LuckinActions {
   toggleFlag: (key: string) => void;
   showToast: (message: string) => void;
   clearToast: () => void;
-  addToCart: (productId: string, quantity?: number) => void;
+  addToCart: (productId: string, quantity?: number, spec?: string) => void;
+  buyNow: (productId: string, quantity: number, spec: string) => void;
+  clearDirectPurchase: () => void;
   addToInstantCart: (productId: string) => void;
   changeCartQty: (productId: string, delta: number, instant?: boolean) => void;
   toggleCartItem: (productId: string) => void;
@@ -94,7 +108,10 @@ export interface LuckinActions {
   setOrderStatus: (id: string, status: Order['status']) => void;
   toggleFavorite: (productId: string) => void;
   claimCoupon: (couponId: string) => void;
+  inflateCoupon: (couponId: string) => void;
   saveAddress: (address: Address) => void;
   deleteAddress: (id: string) => void;
   activateMember: () => void;
+  purchaseMember: (plan: 'monthly' | 'monthCard') => void;
+  saveFlavor: (productId: string, spec: string) => void;
 }

@@ -38,11 +38,27 @@ export const NAVIGATION_DECLARATION = {
           id: "ctrip.search.result.base", search: {}, description: "搜索结果",
           actions: [
             { id: "search.input.value", label: "搜索输入框", behavior: "input", paramsSchema: { value: 'string' } },
+            { id: "search.submit.smart", label: "全局搜索提交", behavior: "submit", paramsSchema: { value: 'string' } },
           ],
         },
       ],
       queryParams: {},
       description: "搜索结果",
+    },
+    {
+      path: "/guide",
+      component: "GuideHomePage",
+      params: {},
+      entryPoint: "none",
+      scrollContainers: [{ name: 'main', direction: 'vertical', description: '主内容' }],
+      uiStates: [
+        {
+          id: "ctrip.guide.home.base", search: {}, description: "攻略景点首页",
+          actions: [],
+        },
+      ],
+      queryParams: {},
+      description: "攻略景点首页",
     },
     {
       path: "/dest/:city",
@@ -175,7 +191,7 @@ export const NAVIGATION_DECLARATION = {
           id: "ctrip.hotel.detail.base", search: {}, description: "酒店详情·cover",
           actions: [
             { id: "hotelDetail.favorite.toggle", label: "收藏(♡+)", behavior: "toggle" },
-            { id: "hotelDetail.share.wontfix", label: "分享/购物车", behavior: "submit" },
+            { id: "hotelDetail.share.wechat", label: "分享到微信", behavior: "submit" },
             { id: "hotelDetail.more.open", label: "右上「更多」", behavior: "open" },
           ],
         },
@@ -397,6 +413,9 @@ export const NAVIGATION_DECLARATION = {
           actions: [
             { id: "flightSearch.city.open", label: "出发/到达城市", behavior: "open" },
             { id: "flightSearch.trip.select.oneway", label: "单程/往返/多程", behavior: "select" },
+            { id: "flightSearch.passenger.open", label: "乘机人选择", behavior: "open" },
+            { id: "flightSearch.passenger.toggle", label: "乘机人勾选", behavior: "toggle" },
+            { id: "flightSearch.passenger.confirm", label: "确认乘机人", behavior: "submit" },
           ],
         },
         {
@@ -492,6 +511,8 @@ export const NAVIGATION_DECLARATION = {
           id: "ctrip.flight.priceAlert.base", search: {}, description: "低价提醒",
           actions: [
             { id: "priceAlert.threshold.value", label: "价格滑块", behavior: "input", paramsSchema: { value: 'string' } },
+            { id: "priceAlert.threshold.decrease", label: "价格阈值减100元", behavior: "submit" },
+            { id: "priceAlert.threshold.increase", label: "价格阈值加100元", behavior: "submit" },
             { id: "priceAlert.smart.toggle", label: "智能提醒开关", behavior: "toggle" },
             { id: "priceAlert.confirm.submit", label: "确认", behavior: "submit" },
           ],
@@ -860,7 +881,7 @@ export const NAVIGATION_DECLARATION = {
         {
           id: "ctrip.orders.rebook.base", search: {}, description: "改签申请",
           actions: [
-            { id: "rebook.viewflights.wontfix", label: "查看航班", behavior: "submit" },
+            { id: "rebook.viewflights.open", label: "查看可改签航班", behavior: "open" },
           ],
         },
       ],
@@ -939,6 +960,21 @@ export const NAVIGATION_DECLARATION = {
       description: "常用信息",
     },
     {
+      path: "/mine/favorites",
+      component: "MineFavoritesPage",
+      params: {},
+      entryPoint: "none",
+      scrollContainers: [{ name: 'main', direction: 'vertical', description: '主内容' }],
+      uiStates: [
+        {
+          id: "ctrip.mine.favorites.base", search: {}, description: "收藏/浏览",
+          actions: [],
+        },
+      ],
+      queryParams: { mode: 'string' },
+      description: "我的收藏与浏览记录",
+    },
+    {
       path: "/member",
       component: "MemberBenefitsPage",
       params: {},
@@ -995,37 +1031,52 @@ export const NAVIGATION_DECLARATION = {
   ],
   transitions: [
     {
-      id: "home.hotel-open", from: "/", to: "/hotel/search",
+      id: "home.hotel-open", from: ["/", "/trip"], to: "/hotel/search",
       search: {}, searchParams: {}, mode: 'push', params: {},
       label: "金刚区·酒店", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
-      id: "home.dest-open", from: "/", to: "/dest/:city",
+      id: "home.homestay-open", from: ["/", "/trip"], to: "/hotel/search",
+      search: { state: "homestay" }, searchParams: {}, mode: 'push', params: {},
+      label: "金刚区·民宿/客栈", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
+    },
+    {
+      id: "home.dest-open", from: ["/", "/trip"], to: "/guide",
       search: {}, searchParams: {}, mode: 'push', params: {},
       label: "金刚区·攻略/景点", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
-      id: "home.flight-open", from: "/", to: "/flight/search",
+      id: "guide.city-open", from: "/guide", to: "/dest/:city",
+      search: {}, searchParams: {}, mode: 'push', params: {},
+      label: "热门目的地城市卡", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
+    },
+    {
+      id: "guide.attraction-open", from: "/guide", to: "/ticket/:id",
+      search: {}, searchParams: {}, mode: 'push', params: {},
+      label: "人气景点卡", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
+    },
+    {
+      id: "home.flight-open", from: ["/", "/trip"], to: "/flight/search",
       search: {}, searchParams: {}, mode: 'push', params: {},
       label: "金刚区·机票", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
-      id: "home.train-open", from: "/", to: "/train/search",
+      id: "home.train-open", from: ["/", "/trip"], to: "/train/search",
       search: {}, searchParams: {}, mode: 'push', params: {},
       label: "金刚区·火车票", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
-      id: "home.ticket2-open", from: "/", to: "/ticket/list",
+      id: "home.ticket2-open", from: ["/", "/trip"], to: "/ticket/list",
       search: {}, searchParams: {}, mode: 'push', params: {},
       label: "金刚区·门票/玩乐", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
-      id: "home.carpickup-open", from: "/", to: "/car/pickup",
+      id: "home.carpickup-open", from: ["/", "/trip"], to: "/car/pickup",
       search: {}, searchParams: {}, mode: 'push', params: {},
       label: "金刚区·接送机/包车", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
-      id: "home.car-open", from: "/", to: "/car/home",
+      id: "home.car-open", from: ["/", "/trip"], to: "/car/home",
       search: {}, searchParams: {}, mode: 'push', params: {},
       label: "金刚区·租车自驾", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
@@ -1035,33 +1086,48 @@ export const NAVIGATION_DECLARATION = {
       label: "搜索框", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
+      id: "search.toAttraction", from: "/search", to: "/ticket/:id",
+      search: {}, searchParams: {}, mode: 'push', params: {},
+      label: "搜索结果·景点", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
+    },
+    {
+      id: "search.toDestination", from: "/search", to: "/dest/:city",
+      search: {}, searchParams: {}, mode: 'push', params: {},
+      label: "搜索结果·目的地", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
+    },
+    {
+      id: "home.feed-hotel-open", from: "/", to: "/hotel/:id",
+      search: {}, searchParams: { source: 'string' }, mode: 'push', params: {},
+      label: "首页酒店feed卡片", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
+    },
+    {
       id: "home.feed-open", from: "/", to: "/dest/:city",
       search: {}, searchParams: {}, mode: 'push', params: {},
-      label: "本地feed卡片", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
+      label: "首页景点feed卡片", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
       id: "search.toList", from: "/search", to: "/hotel/list",
-      search: {}, searchParams: {}, mode: 'push', params: {},
+      search: {}, searchParams: { city: 'string', q: 'string' }, mode: 'push', params: {},
       label: "联想结果行", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
       id: "search.chip-toList", from: "/search", to: "/hotel/list",
-      search: {}, searchParams: {}, mode: 'push', params: {},
-      label: "热搜chip", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
+      search: {}, searchParams: { city: 'string', q: 'string' }, mode: 'push', params: {},
+      label: "热搜/历史chip", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
       id: "destCity.toHotel", from: "/dest/:city", to: "/hotel/search",
-      search: {}, searchParams: {}, mode: 'push', params: {},
+      search: {}, searchParams: { city: 'string' }, mode: 'push', params: {},
       label: "品类入口·酒店", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
       id: "destCity.toTicket", from: "/dest/:city", to: "/ticket/list",
-      search: {}, searchParams: {}, mode: 'push', params: {},
+      search: {}, searchParams: { city: 'string' }, mode: 'push', params: {},
       label: "品类入口·景点/日游", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
       id: "destCity.toFlight", from: "/dest/:city", to: "/flight/search",
-      search: {}, searchParams: {}, mode: 'push', params: {},
+      search: {}, searchParams: { to: 'string', from: 'string' }, mode: 'push', params: {},
       label: "品类入口·机票/火车票", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
@@ -1076,52 +1142,52 @@ export const NAVIGATION_DECLARATION = {
     },
     {
       id: "hotelSearch.query", from: "/hotel/search", to: "/hotel/list",
-      search: {}, searchParams: {}, mode: 'push', params: {},
+      search: {}, searchParams: { city: 'string', q: 'string', checkIn: 'string', checkOut: 'string' }, mode: 'push', params: {},
       label: "查询按钮", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
-      id: "cityPicker.select", from: "/hotel/city", to: "/hotel/list",
-      search: {}, searchParams: {}, mode: 'replace', params: {},
+      id: "cityPicker.select", from: "/hotel/city", to: "/hotel/search",
+      search: {}, searchParams: { city: 'string' }, mode: 'replace', params: {},
       label: "城市卡片", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
-      id: "hotelList.toDetail", from: ["/hotel/list", "/hotel/map"], to: "/hotel/:id",
-      search: {}, searchParams: {}, mode: 'push', params: {},
+      id: "hotelList.toDetail", from: ["/hotel/list", "/hotel/map", "/mine/favorites"], to: "/hotel/:id",
+      search: {}, searchParams: { source: 'string' }, preserveParams: ['checkIn', 'checkOut', 'city', 'q'], mode: 'push', params: {},
       label: "酒店卡片(卡片主体)", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
       id: "hotelList.toRoom", from: "/hotel/list", to: "/hotel/:id/rooms",
-      search: {}, searchParams: {}, mode: 'push', params: {},
+      search: {}, searchParams: {}, preserveParams: ['checkIn', 'checkOut', 'city', 'q'], mode: 'push', params: {},
       label: "卡片「订/¥价格」", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
       id: "hotelList.toMap", from: "/hotel/list", to: "/hotel/map",
-      search: {}, searchParams: {}, mode: 'push', params: {},
+      search: {}, searchParams: { city: 'string' }, preserveParams: ['city', 'q', 'checkIn', 'checkOut'], mode: 'push', params: {},
       label: "地图入口", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
       id: "hotelMap.toList", from: "/hotel/map", to: "/hotel/list",
-      search: {}, searchParams: {}, mode: 'push', params: {},
+      search: {}, searchParams: { city: 'string' }, preserveParams: ['city', 'q', 'checkIn', 'checkOut'], mode: 'replace', params: {},
       label: "返回列表", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
       id: "hotelDetail.toRoom", from: "/hotel/:id", to: "/hotel/:id/rooms",
-      search: {}, searchParams: {}, mode: 'push', params: {},
+      search: {}, searchParams: {}, preserveParams: ['checkIn', 'checkOut', 'city', 'q', 'source'], mode: 'push', params: {},
       label: "查看房型 / 房型卡", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
-      id: "hotelDetail.toReview", from: "/hotel/:id", to: "/hotel/:id/review",
-      search: {}, searchParams: {}, mode: 'push', params: {},
+      id: "hotelDetail.toReview", from: ["/hotel/:id", "/orders"], to: "/hotel/:id/review",
+      search: {}, searchParams: { orderId: 'string' }, preserveParams: ['checkIn', 'checkOut', 'city', 'q', 'source'], mode: 'push', params: {},
       label: "点评 tab/评分卡", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
       id: "hotelDetail.toFacilities", from: "/hotel/:id", to: "/hotel/:id/facilities",
-      search: {}, searchParams: {}, mode: 'push', params: {},
+      search: {}, searchParams: {}, preserveParams: ['checkIn', 'checkOut', 'city', 'q', 'source'], mode: 'push', params: {},
       label: "设施 tab", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
       id: "hotelDetail.toCs", from: "/hotel/:id", to: "/hotel/:id/cs",
-      search: {}, searchParams: {}, mode: 'push', params: {},
+      search: {}, searchParams: {}, preserveParams: ['checkIn', 'checkOut', 'city', 'q', 'source'], mode: 'push', params: {},
       label: "底部「问酒店」", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
@@ -1136,7 +1202,7 @@ export const NAVIGATION_DECLARATION = {
     },
     {
       id: "hotelRoom.toBooking", from: "/hotel/:id/rooms", to: "/hotel/:id/booking",
-      search: {}, searchParams: {}, mode: 'push', params: {},
+      search: {}, searchParams: { roomId: 'string', checkIn: 'string', checkOut: 'string' }, preserveParams: ['checkIn', 'checkOut', 'city', 'q', 'source'], mode: 'push', params: {},
       label: "房型方案「订」", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
@@ -1146,22 +1212,22 @@ export const NAVIGATION_DECLARATION = {
     },
     {
       id: "hotelCs.toInfo", from: "/hotel/:id/cs", to: "/hotel/:id/cs/info",
-      search: {}, searchParams: {}, mode: 'push', params: {},
+      search: {}, searchParams: {}, preserveParams: ['checkIn', 'checkOut', 'city', 'q', 'source'], mode: 'push', params: {},
       label: "右上设置→聊天信息", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
-      id: "trainSearch.query", from: "/train/search", to: "/train/list",
-      search: {}, searchParams: {}, mode: 'push', params: {},
+      id: "trainSearch.query", from: ["/train/search", "/train/list"], to: "/train/list",
+      search: {}, searchParams: { from: 'string', to: 'string', date: 'string' }, mode: 'push', params: {},
       label: "查询/学生票查询", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
       id: "trainList.toDetail", from: "/train/list", to: "/train/:no",
-      search: {}, searchParams: {}, mode: 'push', params: {},
+      search: {}, searchParams: {}, preserveParams: ['from', 'to', 'date'], mode: 'push', params: {},
       label: "车次卡片", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
       id: "trainDetail.toBooking", from: "/train/:no", to: "/train/:no/booking",
-      search: {}, searchParams: {}, mode: 'push', params: {},
+      search: {}, searchParams: {}, preserveParams: ['from', 'to', 'date'], mode: 'push', params: {},
       label: "席别方案「订」", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
@@ -1171,32 +1237,32 @@ export const NAVIGATION_DECLARATION = {
     },
     {
       id: "flightSearch.toCalendar", from: "/flight/search", to: "/flight/calendar",
-      search: {}, searchParams: {}, mode: 'push', params: {},
+      search: {}, searchParams: { from: 'string', to: 'string', passengers: 'string' }, mode: 'push', params: {},
       label: "出发日期", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
-      id: "flightSearch.query", from: "/flight/search", to: "/flight/list",
-      search: {}, searchParams: {}, mode: 'push', params: {},
+      id: "flightSearch.query", from: ["/flight/search", "/flight/list"], to: "/flight/list",
+      search: {}, searchParams: { from: 'string', to: 'string', date: 'string', passengers: 'string', direct: 'string' }, mode: 'push', params: {},
       label: "查询", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
-      id: "flightCalendar.pick", from: "/flight/calendar", to: "/flight/list",
-      search: {}, searchParams: { date: 'string' }, mode: 'replace', params: {},
+      id: "flightCalendar.pick", from: "/flight/calendar", to: "/flight/search",
+      search: {}, searchParams: { from: 'string', to: 'string', date: 'string', passengers: 'string', direct: 'string' }, preserveParams: ['from', 'to'], mode: 'replace', params: {},
       label: "日期格", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
       id: "flightList.toDetail", from: "/flight/list", to: "/flight/:no",
-      search: {}, searchParams: {}, mode: 'push', params: {},
+      search: {}, searchParams: {}, preserveParams: ['from', 'to', 'date', 'direct'], mode: 'push', params: {},
       label: "航班卡片", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
       id: "flightList.toAlert", from: "/flight/list", to: "/flight/alert",
-      search: {}, searchParams: {}, mode: 'push', params: {},
+      search: {}, searchParams: { from: 'string', to: 'string' }, preserveParams: ['from', 'to', 'date'], mode: 'push', params: {},
       label: "低价提醒", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
       id: "flightDetail.toBooking", from: "/flight/:no", to: "/flight/:no/booking",
-      search: {}, searchParams: {}, mode: 'push', params: {},
+      search: {}, searchParams: {}, preserveParams: ['from', 'to', 'date', 'direct'], mode: 'push', params: {},
       label: "票价方案「订」", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
@@ -1205,7 +1271,7 @@ export const NAVIGATION_DECLARATION = {
       label: "下一步/去支付", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
-      id: "ticketList.toDetail", from: "/ticket/list", to: "/ticket/:id",
+      id: "ticketList.toDetail", from: ["/ticket/list", "/mine/favorites", "/dest/:city"], to: "/ticket/:id",
       search: {}, searchParams: {}, mode: 'push', params: {},
       label: "景点卡片", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
@@ -1226,37 +1292,37 @@ export const NAVIGATION_DECLARATION = {
     },
     {
       id: "paySuccess.toOrders", from: "/cashier/success", to: "/orders",
-      search: {}, searchParams: {}, mode: 'push', params: {},
+      search: {}, searchParams: {}, mode: 'replace', params: {},
       label: "查看订单", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
       id: "paySuccess.toHome", from: ["/cashier/success", "/hotel/:id"], to: "/",
-      search: {}, searchParams: {}, mode: 'push', params: {},
+      search: {}, searchParams: {}, mode: 'replace', params: {},
       label: "返回首页", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
-      id: "carHome.toLocation", from: "/car/home", to: "/car/location",
-      search: {}, searchParams: {}, mode: 'push', params: {},
+      id: "carHome.toLocation", from: ["/car/home", "/car/list"], to: "/car/location",
+      search: {}, searchParams: { locTarget: 'string', location: 'string', dropoff: 'string' }, preserveParams: ['location', 'dropoff'], mode: 'push', params: {},
       label: "取/还车地点", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
       id: "carHome.query", from: "/car/home", to: "/car/list",
-      search: {}, searchParams: {}, mode: 'push', params: {},
+      search: {}, searchParams: { location: 'string', dropoff: 'string', pickupDate: 'string', dropoffDate: 'string', pickupHour: 'string' }, mode: 'push', params: {},
       label: "查询", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
-      id: "carLocation.select", from: "/car/location", to: "/car/list",
-      search: {}, searchParams: {}, mode: 'push', params: {},
+      id: "carLocation.select", from: "/car/location", to: "/car/home",
+      search: {}, searchParams: { location: 'string', locTarget: 'string', dropoff: 'string' }, preserveParams: ['location', 'dropoff'], mode: 'replace', params: {},
       label: "地点条目", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
       id: "carList.toDetail", from: "/car/list", to: "/car/:id",
-      search: {}, searchParams: {}, mode: 'push', params: {},
+      search: {}, searchParams: {}, preserveParams: ['location', 'dropoff', 'pickupDate', 'dropoffDate', 'pickupHour'], mode: 'push', params: {},
       label: "车型卡片", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
       id: "carDetail.toBooking", from: "/car/:id", to: "/car/:id/booking",
-      search: {}, searchParams: {}, mode: 'push', params: {},
+      search: {}, searchParams: {}, preserveParams: ['location', 'dropoff', 'pickupDate', 'dropoffDate', 'pickupHour'], mode: 'push', params: {},
       label: "订", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
@@ -1271,7 +1337,7 @@ export const NAVIGATION_DECLARATION = {
     },
     {
       id: "message.toSub", from: "/message", to: "/message/sub",
-      search: {}, searchParams: {}, mode: 'push', params: {},
+      search: {}, searchParams: { group: 'string' }, mode: 'push', params: {},
       label: "消息金刚(订单出行/账户通知/会员服务)", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
@@ -1290,7 +1356,7 @@ export const NAVIGATION_DECLARATION = {
       label: "会话条目", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
-      id: "orders.toDetail", from: "/orders", to: "/orders/:id",
+      id: "orders.toDetail", from: ["/orders", "/trip"], to: "/orders/:id",
       search: {}, searchParams: {}, mode: 'push', params: {},
       label: "待付款订单「立即支付」", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
@@ -1305,9 +1371,36 @@ export const NAVIGATION_DECLARATION = {
       label: "报销凭证", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
-      id: "orders.rebookSame", from: "/orders", to: "/hotel/search",
-      search: {}, searchParams: {}, mode: 'push', params: {},
+      id: "orders.rebookSame", from: "/orders", to: "/hotel/list",
+      search: {}, searchParams: { category: 'string', city: 'string', from: 'string', to: 'string', location: 'string' }, mode: 'push', params: {},
       label: "再次预订", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
+      cases: [
+        { when: { op: 'eq', left: { ref: 'param', key: 'category' }, right: 'flight' }, to: '/flight/search', search: {}, searchParams: { from: 'string', to: 'string' } },
+        { when: { op: 'eq', left: { ref: 'param', key: 'category' }, right: 'train' }, to: '/train/search', search: {}, searchParams: { from: 'string', to: 'string' } },
+        { when: { op: 'eq', left: { ref: 'param', key: 'category' }, right: 'car' }, to: '/car/home', search: {}, searchParams: { location: 'string' } },
+        { when: { op: 'eq', left: { ref: 'param', key: 'category' }, right: 'ticket' }, to: '/ticket/list', search: {}, searchParams: { city: 'string' } },
+        { when: { op: 'always' }, to: '/hotel/list', search: {}, searchParams: { city: 'string' } },
+      ],
+    },
+    {
+      id: "hotelCs.toRoom", from: "/hotel/:id/cs", to: "/hotel/:id/rooms",
+      search: {}, searchParams: {}, mode: 'push', params: {},
+      label: "客服面板·房型", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
+    },
+    {
+      id: "hotelCs.toOrders", from: "/hotel/:id/cs", to: "/orders",
+      search: {}, searchParams: {}, mode: 'push', params: {},
+      label: "客服面板·订单", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
+    },
+    {
+      id: "hotelCs.toMap", from: "/hotel/:id/cs", to: "/hotel/map",
+      search: {}, searchParams: {}, mode: 'push', params: {},
+      label: "客服面板·位置", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
+    },
+    {
+      id: "hotelCs.toDetail", from: ["/hotel/:id/cs", "/hotel/:id/cs/info"], to: "/hotel/:id",
+      search: {}, searchParams: {}, mode: 'push', params: {},
+      label: "进入店铺/回酒店详情", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
       id: "orders.toRefund", from: "/orders", to: "/orders/:id/cancel",
@@ -1325,8 +1418,8 @@ export const NAVIGATION_DECLARATION = {
       label: "取消订单", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
-      id: "mine.toOrders", from: ["/mine", "/hotel/:id"], to: "/orders",
-      search: {}, searchParams: {}, mode: 'push', params: {},
+      id: "mine.toOrders", from: ["/mine", "/hotel/:id", "/hotel/search", "/trip", "/orders/:id/rebook", "/orders/:id", "/cashier/success"], to: "/orders",
+      search: {}, searchParams: { state: 'string' }, mode: 'push', params: {},
       label: "全部订单/各状态订单", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
@@ -1335,7 +1428,7 @@ export const NAVIGATION_DECLARATION = {
       label: "钱包/优惠券", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
-      id: "mine.toMember", from: "/mine", to: "/member",
+      id: "mine.toMember", from: ["/mine", "/hotel/search"], to: "/member",
       search: {}, searchParams: {}, mode: 'push', params: {},
       label: "会员权益/会员中心", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
@@ -1350,33 +1443,38 @@ export const NAVIGATION_DECLARATION = {
       label: "常用信息", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
+      id: "mine.toFavorites", from: ["/mine", "/hotel/search"], to: "/mine/favorites",
+      search: {}, searchParams: { mode: 'string' }, mode: 'push', params: {},
+      label: "收藏/浏览", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
+    },
+    {
       id: "mine.toInvoice", from: "/mine", to: "/orders/invoice",
       search: {}, searchParams: {}, mode: 'push', params: {},
       label: "报销凭证", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
       id: "settings.toSub", from: "/settings", to: "/settings/sub",
-      search: {}, searchParams: {}, mode: 'push', params: {},
+      search: {}, searchParams: { type: 'string' }, mode: 'push', params: {},
       label: "个人信息/账号安全/隐私设置 二级页", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
       id: "tabbar.home-open", from: '*', to: "/",
-      search: {}, searchParams: {}, mode: 'push', params: {},
+      search: {}, searchParams: {}, mode: 'replace', params: {},
       label: "首页 Tab", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
-      id: "tabbar.message-open", from: ["/", "/message", "/trip", "/mine", "/hotel/:id"], to: "/message",
-      search: {}, searchParams: {}, mode: 'push', params: {},
+      id: "tabbar.message-open", from: '*', to: "/message",
+      search: {}, searchParams: {}, mode: 'replace', params: {},
       label: "消息 Tab", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
       id: "tabbar.trip-open", from: '*', to: "/trip",
-      search: {}, searchParams: {}, mode: 'push', params: {},
+      search: {}, searchParams: {}, mode: 'replace', params: {},
       label: "行程 Tab", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
     {
       id: "tabbar.mine-open", from: '*', to: "/mine",
-      search: {}, searchParams: {}, mode: 'push', params: {},
+      search: {}, searchParams: {}, mode: 'replace', params: {},
       label: "我的 Tab", ui: { placement: 'none', icon: 'forward', gesture: 'tap' },
     },
   ],

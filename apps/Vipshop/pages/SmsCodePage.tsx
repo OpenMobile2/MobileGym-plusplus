@@ -5,7 +5,7 @@ import { TopBar, VIP } from '../components/ui';
 import * as TimeService from '@/os/TimeService';
 
 export default function SmsCodePage() {
-  const { bindTap } = useVipshopGestures();
+  const { bindTap, go } = useVipshopGestures();
   const login = useVipshopStore((s) => s.login);
   const phone = useVipshopStore((s) => s.session.phone);
   const [code, setCode] = useState('');
@@ -62,7 +62,10 @@ export default function SmsCodePage() {
         </div>
 
         <button
-          {...bindTap('sms.confirm-open', { beforeTrigger: () => login(phone) })}
+          {...bindTap('sms.confirm-open', {
+            beforeTrigger: () => login(phone),
+            onTrigger: () => go('sms.confirm-open', {}, { popTo: '/login', popToInclusive: true }),
+          })}
           disabled={!canConfirm}
           className="w-full h-12 rounded-full mt-8 text-[16px] font-semibold border-none cursor-pointer"
           style={canConfirm ? { background: VIP.primary, color: '#fff' } : { background: '#E5D3DE', color: '#fff' }}

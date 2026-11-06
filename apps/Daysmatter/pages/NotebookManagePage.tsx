@@ -87,19 +87,17 @@ export default function NotebookManagePage() {
                 <span className="flex h-7 w-7 items-center justify-center text-[20px]">{n.icon}</span>
                 <span className="text-[16px] text-[#1A1A1A]">{n.name}</span>
               </button>
-              {!n.isSystem && (
-                <button
-                  {...action<HTMLButtonElement>('manage.notebook.reorder', () => {}, { params: { notebookId: n.id } })}
-                  onPointerDown={(e) => onHandleDown(e, n.id)}
-                  onPointerMove={(e) => onHandleMove(e, n.id)}
-                  onPointerUp={(e) => onHandleUp(e, n.id)}
-                  onPointerCancel={(e) => onHandleUp(e, n.id)}
-                  aria-label="reorder"
-                  className="flex-shrink-0 cursor-grab touch-none p-1 active:cursor-grabbing"
-                >
-                  <Menu size={20} className="text-[#C4C4C4]" />
-                </button>
-              )}
+              <button
+                {...action<HTMLButtonElement>('manage.notebook.reorder', () => {}, { params: { notebookId: n.id } })}
+                onPointerDown={(e) => onHandleDown(e, n.id)}
+                onPointerMove={(e) => onHandleMove(e, n.id)}
+                onPointerUp={(e) => onHandleUp(e, n.id)}
+                onPointerCancel={(e) => onHandleUp(e, n.id)}
+                aria-label="reorder"
+                className="flex-shrink-0 cursor-grab touch-none p-1 active:cursor-grabbing"
+              >
+                <Menu size={20} className="text-[#C4C4C4]" />
+              </button>
             </div>
           ))}
           <button

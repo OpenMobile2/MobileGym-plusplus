@@ -10,7 +10,6 @@ import { AddToPlaylistSheet } from '../components/AddToPlaylistSheet';
 import { useSpotifyStrings } from '../hooks/useSpotifyStrings';
 import type { SpotifyTrack, PlayHistoryEntry } from '../types';
 import { localizeSpotifyText } from '../utils/localizeSpotifyText';
-import * as TimeService from '@/os/TimeService';
 
 interface HistoryGroup {
     sourceType: string;
@@ -105,13 +104,6 @@ export const RecentPlayedPage: React.FC = () => {
         () => buildGroups(playHistory || [], recentPlays),
         [playHistory, recentPlays],
     );
-    const playedAtByTrackId = React.useMemo(() => {
-        const timestamps = new Map<string, number>();
-        for (const entry of playHistory || []) {
-            if (!timestamps.has(entry.track.id)) timestamps.set(entry.track.id, entry.timestamp);
-        }
-        return timestamps;
-    }, [playHistory]);
 
     // Find selected track across all groups
     const selectedTrack: SpotifyTrack | null = React.useMemo(() => {
@@ -124,12 +116,6 @@ export const RecentPlayedPage: React.FC = () => {
     }, [isMenuOpen, showAddPlaylist, menuTrackId, groups, recentPlays]);
 
     const displayText = (value: string | undefined) => localizeSpotifyText(value, isEnglish);
-    const displayPlayedAt = (trackId: string) => {
-        const timestamp = playedAtByTrackId.get(trackId);
-        if (timestamp == null) return '';
-        const value = TimeService.fromTimestamp(timestamp);
-        return `${String(value.getHours()).padStart(2, '0')}:${String(value.getMinutes()).padStart(2, '0')}`;
-    };
     const formatText = (template: string, values: Record<string, string | number>) =>
         Object.entries(values).reduce(
             (result, [key, value]) => result.replace(`{${key}}`, String(value)),
@@ -203,10 +189,7 @@ export const RecentPlayedPage: React.FC = () => {
             </div>
             <div className="flex-1 min-w-0">
                 <div className="font-bold text-base truncate text-white">{displayText(track.title)}</div>
-                <div className="text-gray-400 text-xs truncate">
-                    {displayText(track.artist)}
-                    {displayPlayedAt(track.id) ? ` · ${displayPlayedAt(track.id)}` : ''}
-                </div>
+                <div className="text-gray-400 text-xs truncate">{displayText(track.artist)}</div>
             </div>
             <button
                 {...bindTap('history.trackMenu.open', {

@@ -8,6 +8,7 @@ export default function TagManagePage() {
   const { bindTap, bindLongPress } = useFlomoGestures();
   const tags = useFlomoStore((s) => s.tags);
   const setCurrentTag = useFlomoStore((s) => s.setCurrentTag);
+  const moveTagToFront = useFlomoStore((s) => s.moveTagToFront);
   const toast = useFlomoStore((s) => s.toast);
 
   return (
@@ -25,7 +26,10 @@ export default function TagManagePage() {
             <button
               key={t.id}
               {...bindTap('tag.editSheet.open', { beforeTrigger: () => setCurrentTag(t.id) })}
-              {...bindLongPress({ kind: 'action', id: 'tag.manage.reorder.drag' }, { onTrigger: () => toast('长按拖拽,不可跨级') })}
+              {...bindLongPress({ kind: 'action', id: 'tag.manage.reorder.drag' }, { onTrigger: () => {
+                moveTagToFront(t.id);
+                toast(`已将「${t.name}」移到最前`);
+              } })}
               className="w-full flex items-center gap-3 h-12 px-4 bg-transparent border-none cursor-pointer text-left"
               style={{ color: C.text, fontSize: 15 }}
             >

@@ -6,7 +6,7 @@ import { TopBar, EmptyState, useToast, VIP } from '../components/ui';
 import { IcEdit, IcDelete, IcPlus, IcCheck } from '../res/icons';
 
 export default function AddressListPage() {
-  const { bindTap } = useVipshopGestures();
+  const { bindTap, back } = useVipshopGestures();
   const [toast, showToast] = useToast();
   const [searchParams] = useSearchParams();
   const selectMode = searchParams.get('mode') === 'select';
@@ -40,7 +40,13 @@ export default function AddressListPage() {
             <div key={a.id} className="bg-white rounded-lg p-3">
               <div
                 {...(selectMode
-                  ? bindTap('address.select-confirm', { beforeTrigger: () => setCheckoutAddress(a.id) })
+                  ? bindTap({ kind: 'action', id: 'address.select.submit' }, {
+                      params: { addressId: a.id },
+                      onTrigger: () => {
+                        setCheckoutAddress(a.id);
+                        back();
+                      },
+                    })
                   : {})}
                 className={selectMode ? 'cursor-pointer' : ''}
               >

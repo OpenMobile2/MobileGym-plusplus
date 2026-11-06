@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useVipshopStore } from '../state';
 import { useVipshopGestures } from '../hooks/useVipshopGestures';
 import { useToast, VIP } from '../components/ui';
 import { IcNavBack, IcSearch, IcDelete } from '../res/icons';
 
 export default function SearchLandingPage() {
-  const { bindTap, bindBack } = useVipshopGestures();
+  const { bindTap, bindBack, go } = useVipshopGestures();
   const [toast] = useToast();
 
   const searchHistory = useVipshopStore((s) => s.searchHistory);
@@ -13,6 +13,13 @@ export default function SearchLandingPage() {
   const clearSearchHistory = useVipshopStore((s) => s.clearSearchHistory);
 
   const [keyword, setKeyword] = useState('');
+  const inputRef = useRef<HTMLInputElement>(null);
+  // 进入即自动聚焦搜索框(光标闪烁,无需再点一次)
+  useEffect(() => { inputRef.current?.focus(); }, []);
+  // 回车/点搜索 → 直接进搜索结果页
+  const submit = () => { const w = keyword.trim(); if (w) go('searchLanding.hot-open', { q: w }); };
+  // 输入即进入联想中间页(带上已输入内容)
+  const onType = (v: string) => { setKeyword(v); if (v.trim()) go('searchLanding.suggest-open', { q: v }); };
 
   return (
     <div className="flex flex-col h-full bg-white">
@@ -24,15 +31,16 @@ export default function SearchLandingPage() {
         <div className="flex-1 h-8 bg-[#F5F5F5] rounded-full flex items-center px-3 gap-1.5">
           <IcSearch size={15} className="text-[#888888]" />
           <input
-            {...(bindTap('searchLanding.suggest-open', { params: { q: keyword } }) as any)}
+            ref={inputRef}
             value={keyword}
-            onChange={(e) => setKeyword(e.target.value)}
+            onChange={(e) => onType(e.target.value)}
+            onKeyDown={(e) => { if (e.key === 'Enter') submit(); }}
             placeholder="雪纺连衣裙"
             className="flex-1 bg-transparent border-none outline-none text-[13px] text-[#222222] placeholder:text-[#BBBBBB]"
           />
         </div>
         <button
-          {...bindTap('searchLanding.suggest-open', { params: { q: keyword } })}
+          {...bindTap('searchLanding.hot-open', { params: { q: keyword } })}
           className="text-[14px] bg-transparent border-none cursor-pointer px-1"
           style={{ color: VIP.primary }}
         >

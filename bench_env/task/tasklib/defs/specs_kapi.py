@@ -1,4 +1,4 @@
-"""Kapi (卡皮记账) hybrid GUI+Tools tasks (tasklib).
+"""Kapi (卡皮记账) hybrid GUI+Tools tasks (selfbuilt-v1).
 
 Facts referenced in instructions/notes all come from apps/Kapi/data/defaults.json:
 all 18 seeded bills fall within 2026-06-01..2026-06-12 on ledger l_main, so every

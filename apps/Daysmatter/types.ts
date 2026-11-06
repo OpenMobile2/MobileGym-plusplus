@@ -88,6 +88,12 @@ export interface DMState {
   filter: HomeFilter;
   /** 小组件绑定的事件 id */
   widgetEventId: string | null;
+  /** 当前桌面图标；同时镜像到 launcher 图标外部 store。 */
+  selectedIconId: string;
+  /** 已提交反馈；保留在状态中供跨页回读与 verifier 检查。 */
+  feedbackSubmissions: Array<{ id: string; email: string; type: string; text: string; createdAt: number }>;
+  lastDateCalculation: { rangeStart: number; rangeEnd: number; includeStart: boolean; resultDays: number } | null;
+  detailDisplayModes: Record<string, 'days' | 'date'>;
   /** 一次性 UI 反馈 + 事件草稿,不持久化 */
   _temp: { toast: string | null; toastSeq: number; draft: EventDraft | null };
 }
@@ -111,6 +117,10 @@ export interface DMActions {
   setFilter: (f: HomeFilter) => void;
   patchSettings: (patch: Partial<DMSettings>) => void;
   setWidgetEvent: (eventId: string) => void;
+  setSelectedIcon: (iconId: string) => void;
+  submitFeedback: (payload: { email: string; type: string; text: string }) => void;
+  setLastDateCalculation: (value: { rangeStart: number; rangeEnd: number; includeStart: boolean; resultDays: number }) => void;
+  setDetailDisplayMode: (eventId: string, mode: 'days' | 'date') => void;
   login: (name?: string) => void;
   logout: () => void;
 }

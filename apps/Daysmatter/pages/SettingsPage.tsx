@@ -5,7 +5,7 @@ import { useDaysmatterGestures } from '../hooks/useDaysmatterGestures';
 import { SORT_OPTIONS } from '../constants';
 import type { SortKind } from '../types';
 import TopBar from '../components/TopBar';
-import { APP_ICON_VARIANTS, IconTile, useSelectedIconId, setSelectedIconId } from '../res/appIcon';
+import { APP_ICON_VARIANTS, IconTile } from '../res/appIcon';
 import { useI18n, optionLabel } from '../i18n';
 
 export default function SettingsPage() {
@@ -16,7 +16,8 @@ export default function SettingsPage() {
   const patchSettings = useDaysmatterStore((s) => s.patchSettings);
   const showToast = useDaysmatterStore((s) => s.showToast);
   const [sw, setSw] = useState({ camRaw: false, dailyPin: false, backupImg: false, iCal: false, recommend: false });
-  const appIcon = useSelectedIconId();
+  const appIcon = useDaysmatterStore((s) => s.selectedIconId);
+  const setSelectedIcon = useDaysmatterStore((s) => s.setSelectedIcon);
 
   const sortLabel = optionLabel(t, 'sort', settings.sortBy);
   const cycleSort = () => {
@@ -52,7 +53,7 @@ export default function SettingsPage() {
               {APP_ICON_VARIANTS.map((ic) => (
                 <button
                   key={ic.id}
-                  {...action<HTMLButtonElement>('settings.appIcon.tap', () => { setSelectedIconId(ic.id); showToast(t('toast.iconUpdated')); }, { params: { value: ic.id } })}
+                  {...action<HTMLButtonElement>('settings.appIcon.tap', () => { setSelectedIcon(ic.id); showToast(t('toast.iconUpdated')); }, { params: { value: ic.id } })}
                   className="relative flex-shrink-0"
                 >
                   <span className="block overflow-hidden rounded-[11px] shadow-sm ring-1 ring-black/5">

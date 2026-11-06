@@ -55,6 +55,15 @@ def test_mobile_gym_env_maps_notes_display_name():
     assert MobileGymEnv.APP_NAME_MAP["笔记"] == "notes"
 
 
+def test_mobile_gym_env_maps_delivery_display_names():
+    from bench_env.env.mobile_gym import MobileGymEnv
+
+    assert MobileGymEnv.APP_NAME_MAP["滴答清单"] == "dida"
+    assert MobileGymEnv.APP_NAME_MAP["滴滴出行"] == "didi"
+    assert MobileGymEnv.APP_NAME_MAP["番茄ToDo"] == "fanqietodo"
+    assert MobileGymEnv.APP_NAME_MAP["番茄免费小说"] == "fanqiexiaoshuo"
+
+
 def _load_json(*parts: str) -> dict[str, Any]:
     return json.loads(ROOT.joinpath(*parts).read_text(encoding="utf-8"))
 

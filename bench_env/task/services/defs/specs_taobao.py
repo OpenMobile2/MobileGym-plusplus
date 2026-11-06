@@ -1,4 +1,4 @@
-"""Taobao tool-boundary probe tasks (services).
+"""Taobao tool-boundary probe tasks (selfbuilt-v4).
 
 See ``services/__init__.py`` for the four-category rationale.
 All product/order/cart facts below were read directly from

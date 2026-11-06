@@ -166,7 +166,7 @@ export default function ChannelFruitPage() {
           ))}
         </div>
 
-        {/* 店铺大卡列表(商品点击=进店并加购 qa:R3) */}
+        {/* 店铺大卡列表：商品卡只负责进店，规格确认后才写入购物车 */}
         <div className="px-3 py-1 flex flex-col gap-2 pb-4">
           {list.length === 0 && <EmptyState text="暂无符合条件的商家" />}
           {list.map((shop) => (
@@ -180,7 +180,6 @@ export default function ChannelFruitPage() {
               shopBinding={bindTap<HTMLDivElement>('channel.fruit.shop-open', { params: { shopId: shop.id } })}
               itemBinding={(it) => bindTap<HTMLDivElement>('channel.fruit.item-open', {
                 params: { shopId: shop.id },
-                beforeTrigger: () => addToCart(it.id, null, it.price),
               })}
             />
           ))}

@@ -47,10 +47,6 @@ function snippet(text: string) {
   return (text || '').replace(/\s+/g, ' ').trim();
 }
 
-export function compareNotesForList(a: Note, b: Note) {
-  return Number(b.pinned) - Number(a.pinned) || b.updatedAt - a.updatedAt;
-}
-
 const NoteCard: React.FC<{
   note: Note;
   selectionMode: boolean;
@@ -210,17 +206,15 @@ export const NotesListPage: React.FC = () => {
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
-    return notes
-      .filter(n => {
-        const folderOk = selectedFolderId === 'all' || n.folderId === selectedFolderId;
-        if (!folderOk) return false;
-        if (!q) return true;
-        return (
-          n.title.toLowerCase().includes(q) ||
-          n.content.toLowerCase().includes(q)
-        );
-      })
-      .sort(compareNotesForList);
+    return notes.filter(n => {
+      const folderOk = selectedFolderId === 'all' || n.folderId === selectedFolderId;
+      if (!folderOk) return false;
+      if (!q) return true;
+      return (
+        n.title.toLowerCase().includes(q) ||
+        n.content.toLowerCase().includes(q)
+      );
+    });
   }, [notes, query, selectedFolderId]);
 
   const noteById = useMemo(() => new Map(notes.map(n => [n.id, n] as const)), [notes]);
@@ -620,3 +614,4 @@ export const NotesListPage: React.FC = () => {
 };
 
 export default NotesListPage;
+

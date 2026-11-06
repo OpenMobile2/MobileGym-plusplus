@@ -1,49 +1,36 @@
-import React, { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 
-/**
- * Hidden PIN field so computer-use `type` can fill a custom keypad.
- * `inputMode="none"` keeps the OS keyboard from covering the pad.
- */
-export function PayPinCapture({
-  value,
-  onChange,
-}: {
+type PayPinCaptureProps = {
   value: string;
-  onChange: (next: string) => void;
-}) {
-  const ref = useRef<HTMLInputElement>(null);
+  onChange: (value: string) => void;
+  length?: number;
+};
 
-  useEffect(() => {
-    const focus = () => ref.current?.focus({ preventScroll: true });
-    focus();
-    const el = ref.current;
-    if (!el) return;
-    const onBlur = () => window.setTimeout(focus, 0);
-    el.addEventListener('blur', onBlur);
-    return () => el.removeEventListener('blur', onBlur);
-  }, []);
-
+/** Shared six-digit payment PIN capture used by payment sheets and dialogs. */
+export function PayPinCapture({ value, onChange, length = 6 }: PayPinCaptureProps) {
+  const inputRef = useRef<HTMLInputElement>(null);
+  const digits = value.slice(0, length);
   return (
-    <input
-      ref={ref}
-      type="tel"
-      inputMode="none"
-      autoComplete="off"
-      autoFocus
-      aria-label="pay-pin"
-      data-keep-keyboard
-      value={value}
-      maxLength={6}
-      onChange={(e) => onChange(e.target.value.replace(/\D/g, '').slice(0, 6))}
-      style={{
-        position: 'absolute',
-        opacity: 0,
-        width: 1,
-        height: 1,
-        pointerEvents: 'none',
-        border: 0,
-        padding: 0,
-      }}
-    />
+    <button
+      type="button"
+      aria-label="payment password"
+      className="flex w-full justify-center gap-2"
+      onClick={() => inputRef.current?.focus()}
+    >
+      <input
+        ref={inputRef}
+        value={digits}
+        onChange={(event) => onChange(event.target.value.replace(/\D/g, '').slice(0, length))}
+        inputMode="numeric"
+        autoComplete="off"
+        aria-label="payment password input"
+        className="sr-only"
+      />
+      {Array.from({ length }, (_, index) => (
+        <span key={index} className="flex h-10 w-10 items-center justify-center border-b-2 border-[#555] text-xl">
+          {digits[index] ? '●' : ''}
+        </span>
+      ))}
+    </button>
   );
 }

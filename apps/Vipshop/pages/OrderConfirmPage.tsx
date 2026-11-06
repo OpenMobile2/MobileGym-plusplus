@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useVipshopStore } from '../state';
 import { useVipshopGestures } from '../hooks/useVipshopGestures';
 import { TopBar, Img, Price, BottomSheet, usePanel, useToast, EmptyState, VIP } from '../components/ui';
-import { PAY_METHODS } from '../constants';
 import { IcLocation, IcTicket, IcTruck, IcCheck, IcCrown, IcArrowRight } from '../res/icons';
 
 const DELIVERY_OPTIONS = [
@@ -11,14 +10,13 @@ const DELIVERY_OPTIONS = [
 ];
 
 export default function OrderConfirmPage() {
-  const { bindTap, back } = useVipshopGestures();
-  const { value: panel, open: openPanel } = usePanel();
+  const { bindTap, back, go } = useVipshopGestures();
+  const { value: panel } = usePanel();
   const [toast, showToast] = useToast();
 
   const checkout = useVipshopStore((s) => s.checkout);
   const addresses = useVipshopStore((s) => s.addresses);
   const coupons = useVipshopStore((s) => s.coupons);
-  const setCheckoutPayMethod = useVipshopStore((s) => s.setCheckoutPayMethod);
   const setCheckoutCoupon = useVipshopStore((s) => s.setCheckoutCoupon);
   const toggleCheckoutSvip = useVipshopStore((s) => s.toggleCheckoutSvip);
   const createOrder = useVipshopStore((s) => s.createOrder);
@@ -26,6 +24,8 @@ export default function OrderConfirmPage() {
   const [deliveryExpand, setDeliveryExpand] = useState(false);
   const [deliveryId, setDeliveryId] = useState('sf');
   const [detailExpand, setDetailExpand] = useState(false);
+  // 新单 id 在点击时才产生,transition 的 params 是渲染期求值的,只能用 ref 传递
+  const createdIdRef = React.useRef<string>('');
 
   if (!checkout) {
     return (
@@ -99,7 +99,7 @@ export default function OrderConfirmPage() {
 
         {/* 优惠券行 */}
         <button
-          {...bindTap({ kind: 'action', id: 'orderConfirm.coupon.open' }, { onTrigger: () => openPanel('coupon') })}
+          {...bindTap('orderConfirm.coupon.open')}
           className="w-full bg-white mt-2 px-3 py-3 flex items-center justify-between border-none cursor-pointer text-left"
         >
           <span className="flex items-center gap-1.5 text-[13px] text-[#222222]"><IcTicket size={16} style={{ color: VIP.primary }} />优惠券</span>
@@ -128,7 +128,13 @@ export default function OrderConfirmPage() {
                 return (
                   <button
                     key={d.id}
-                    onClick={() => { setDeliveryId(d.id); setDeliveryExpand(false); }}
+                    {...bindTap(
+                      { kind: 'action', id: 'orderConfirm.delivery.select.target' },
+                      {
+                        params: { target: d.id },
+                        onTrigger: () => { setDeliveryId(d.id); setDeliveryExpand(false); },
+                      },
+                    )}
                     className="w-full flex items-center gap-2 py-2 border-t border-[#F5F5F5] bg-white border-x-0 cursor-pointer text-left"
                   >
                     <span
@@ -146,34 +152,7 @@ export default function OrderConfirmPage() {
           )}
         </div>
 
-        {/* 支付方式 */}
-        <div className="bg-white mt-2">
-          <div className="px-3 py-2 text-[13px] font-semibold text-[#222222] border-b border-[#F5F5F5]">支付方式</div>
-          {PAY_METHODS.map((pm) => {
-            const on = checkout.payMethod === pm.label;
-            return (
-              <button
-                key={pm.id}
-                {...bindTap({ kind: 'action', id: 'orderConfirm.payMethod.select.target' }, {
-                  params: { target: pm.id },
-                  onTrigger: () => setCheckoutPayMethod(pm.label),
-                })}
-                className="w-full flex items-center gap-2 px-3 py-3 border-b border-[#F5F5F5] bg-white border-x-0 cursor-pointer text-left"
-              >
-                <span className="flex-1 text-[13px] text-[#222222]">
-                  {pm.label}
-                  {pm.desc && <span className="ml-2 text-[11px]" style={{ color: VIP.orange }}>{pm.desc}</span>}
-                </span>
-                <span
-                  className="w-4 h-4 rounded-full border flex items-center justify-center shrink-0"
-                  style={on ? { borderColor: VIP.primary, background: VIP.primary } : { borderColor: '#CCC' }}
-                >
-                  {on && <span className="w-1.5 h-1.5 rounded-full bg-white" />}
-                </span>
-              </button>
-            );
-          })}
-        </div>
+        {/* 支付方式不在这里选:真机唯品会点「提交订单」后才弹收银台(见 OrderDetailPage 的 pay 弹层) */}
 
         {/* 超V年卡勾选 */}
         <button
@@ -227,10 +206,19 @@ export default function OrderConfirmPage() {
           <span className="text-[12px] text-[#888888] mr-1">合计</span>
           <Price value={payable} size="l" />
         </div>
+        {/*
+          提交只生成待付款单,然后 replace 进该订单详情页(确认页从返回栈里换掉);
+          详情页收到 state.autoPay 后再 push 收银台弹层 —— 于是收银台按返回
+          正好落回这一单的待付款页,而不是退回确认订单页。
+        */}
         <button
           {...bindTap('orderConfirm.submit-open', {
-            params: { orderId: '0' },
-            beforeTrigger: () => { createOrder(); },
+            params: { id: '0' },
+            beforeTrigger: () => { createdIdRef.current = createOrder(); },
+            onTrigger: () => {
+              const id = createdIdRef.current;
+              if (id) go('orderConfirm.submit-open', { id }, { mode: 'replace', state: { autoPay: true } });
+            },
           })}
           className="text-[15px] rounded-full px-8 py-2 border-none cursor-pointer text-white font-semibold"
           style={{ background: VIP.ctaBlack }}

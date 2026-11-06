@@ -1,0 +1,5 @@
+# 生图 API key(本地专用,禁止提交)
+.imgkey
+
+# 批量生成的商品图 / 店铺 logo(gen_catalog_images.py 可复现)。
+# 按用户决定:随仓库入库(不 ignore),故此处不再排除 *.png。

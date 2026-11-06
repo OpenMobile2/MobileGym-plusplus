@@ -21,6 +21,7 @@ class HybridAgentConfig:
     verbose: bool = True
     coord_space: str = "norm_0_1000"
     physical_size: tuple[int, int] = (1080, 2400)
+    extra_policy: str = ""
 
 
 @dataclass(frozen=True)
@@ -65,6 +66,7 @@ class HybridXmlAgent:
             interaction_mode,
             self.config.coord_space,
             self.config.physical_size,
+            self.config.extra_policy,
         )
         user_text = build_user_text(
             self._task,

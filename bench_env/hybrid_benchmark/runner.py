@@ -7,6 +7,8 @@ from collections import Counter
 from dataclasses import asdict, dataclass, replace
 import json
 from pathlib import Path
+import subprocess
+import sys
 import time
 from typing import Any
 
@@ -70,7 +72,7 @@ class HybridBenchmarkConfig:
     kimi_thinking: bool = True
     kimi_history_images: int = 3
     start_delay: float = 0.0
-    runtime: str = QWEN35_SESSION_RUNTIME
+    runtime: str = HYBRID_XML_RUNTIME
     last_n: int = 3
     enable_thinking: bool = True
     require_think_tags: bool = False
@@ -103,6 +105,7 @@ def _load_tasks(config: HybridBenchmarkConfig) -> list[Any]:
 def _jsonable_config(config: HybridBenchmarkConfig) -> dict[str, Any]:
     payload = asdict(config)
     payload["interaction_mode"] = validate_interaction_mode(config.interaction_mode)
+    payload["runtime"] = validate_runtime(config.runtime)
     payload["output_dir"] = str(config.output_dir)
     payload["model_api_key"] = "<redacted>" if config.model_api_key else ""
     return payload
@@ -128,18 +131,17 @@ def _task_payload(task: Any) -> dict[str, Any]:
 
 
 _FIXED_TIME_SUITES = {
-    "additional",
     "clocked",
-    "compose",
-    "continued",
+    "prior",
+    "native",
+    "services",
+    "workflows",
     "crossapp",
     "flow",
-    "hybrid_demo_crossapp",
-    "native",
-    "prior",
-    "services",
+    "compose",
+    "additional",
     "social",
-    "workflows",
+    "continued",
 }
 
 
@@ -147,8 +149,8 @@ def _configured_env_url(config: HybridBenchmarkConfig) -> str:
     suites = _split_suites(config.suite)
     if not any(suite in _FIXED_TIME_SUITES for suite in suites):
         return config.env_url
-    from bench_env.task.clocked.specs import SIMULATED_TIME
     from bench_env.task.clocked.time_control import simulated_time_bootstrap_url
+    from bench_env.task.clocked.specs import SIMULATED_TIME
 
     return simulated_time_bootstrap_url(config.env_url, SIMULATED_TIME)
 
@@ -185,6 +187,21 @@ def _create_agent(config: HybridBenchmarkConfig) -> Any:
             total_timeout_s=config.infer_timeout,
         )
         extra_body = dict(config.model_extra_body or {})
+        extra_policy = ""
+        if str(config.suite).startswith("crossapp"):
+            extra_policy = (
+                "- Prefer mobile_use action open_app with the launcher label exactly: "
+                "腾讯会议, 携程旅行, 微信, 卡皮记账. Do not swipe launcher pages to hunt icons.\n"
+                "- Cross-app to WeChat must use the in-app 分享 button (system share), then pick 张伟. "
+                "Do not use wechat__send_text_message or wechat__open_chat to skip the share sheet.\n"
+                "- After a share, the WeChat picker or sent result must be on the next screenshot.\n"
+                "- If the task names 卡皮记账: switch to 公司账本, prepare the housing and transport drafts, tap 完成, "
+                "then open 分享 and 发到微信, pick 张伟. Do not stop after saving the poster to the album. "
+                "Write the meeting materials in the share caption.\n"
+                "- Booking pages: fill the form and stop before pay.\n"
+                "- If the task is a Ctrip hotel: search 杭州 / 西湖国际会议中心, pick a hotel that stays within the "
+                "住房 budget, enter that booking page. Also open a Shanghai-Hangzhou train booking page. Do not pay."
+            )
         thought = runtime == QWEN35_THOUGHT_SESSION_RUNTIME
         return Qwen35SessionAgent(
             llm,
@@ -198,27 +215,8 @@ def _create_agent(config: HybridBenchmarkConfig) -> Any:
             interaction_mode=config.interaction_mode,
             model_name=config.model_name,
             reasoning_effort=config.reasoning_effort,
+            extra_policy=extra_policy,
             thought_session=thought,
-        )
-    if config.runtime not in {"", HYBRID_XML_RUNTIME}:
-        raise ValueError(f"unsupported runtime {config.runtime!r}")
-    if config.agent_protocol == "venus":
-        # Reuse the session-aware Venus adapter used by the SPA/OL runners.
-        # Import lazily so the regular hybrid protocols do not require the
-        # spabench adapter on their import path.
-        from venus_adapter import VenusSessionAdapter
-
-        llm = LLMClient(
-            base_url=config.model_base_url,
-            api_key=config.model_api_key,
-            model=config.model_name,
-            total_timeout_s=config.infer_timeout,
-        )
-        return VenusSessionAdapter(
-            llm,
-            physical_size=(1080, 2400),
-            verbose=not config.quiet,
-            last_n=3,
         )
     if config.agent_protocol == "gpt_responses":
         if config.coord_space != "physical":
@@ -270,12 +268,29 @@ def _create_agent(config: HybridBenchmarkConfig) -> Any:
         "temperature": config.temperature,
         "max_tokens": config.max_tokens,
     }
-    # Anthropic-compatible gateways reject requests that set both sampling controls.
+    # Anthropic-compatible gateways reject requests that specify both sampling
+    # controls. Keep temperature for deterministic Claude benchmark runs and
+    # retain top_p for the other OpenAI-compatible model families.
     if not config.model_name.casefold().startswith("claude"):
         model_args["top_p"] = config.top_p
     if config.model_extra_body is not None:
         model_args["extra_body"] = config.model_extra_body
 
+    extra_policy = ""
+    if str(config.suite).startswith("crossapp"):
+        extra_policy = (
+            "- Prefer mobile_use action open_app with the launcher label exactly: "
+            "腾讯会议, 携程旅行, 微信, 卡皮记账.\n"
+            "- Cross-app to WeChat must use the in-app 分享 button (system share), then pick 张伟. "
+            "Do not use wechat__send_text_message or wechat__open_chat to skip the share sheet.\n"
+            "- After a share, the WeChat picker or sent result must be on the next screenshot.\n"
+            "- If the task names 卡皮记账: switch to 公司账本, prepare the housing and transport drafts, tap 完成, "
+            "then open 分享 and 发到微信, pick 张伟. Do not stop after saving the poster to the album. "
+            "Write the meeting materials in the share caption.\n"
+            "- Booking pages: fill the form and stop before pay.\n"
+            "- If the task is a Ctrip hotel: search 杭州 / 西湖国际会议中心, pick a hotel that stays within the "
+            "住房 budget, enter that booking page. Also open a Shanghai-Hangzhou train booking page. Do not pay."
+        )
     return HybridXmlAgent(
         llm,
         HybridAgentConfig(
@@ -284,8 +299,41 @@ def _create_agent(config: HybridBenchmarkConfig) -> Any:
             verbose=not config.quiet,
             coord_space=config.coord_space,
             physical_size=(1080, 2400),
+            extra_policy=extra_policy,
         ),
     )
+
+
+async def _raise_headed_window(env: MobileGymEnv) -> None:
+    """Bring the Playwright phone window in front of Cursor so screen recording sees it."""
+    page = getattr(env, "page", None)
+    if page is not None:
+        try:
+            await page.bring_to_front()
+        except Exception:
+            pass
+    if sys.platform != "darwin":
+        return
+    script = (
+        'tell application "System Events"\n'
+        '  repeat with procName in {"Chromium", "Google Chrome for Testing", "Google Chrome"}\n'
+        '    if exists (process procName) then\n'
+        '      set frontmost of process procName to true\n'
+        '      exit repeat\n'
+        '    end if\n'
+        '  end repeat\n'
+        'end tell'
+    )
+    try:
+        await asyncio.to_thread(
+            subprocess.run,
+            ["osascript", "-e", script],
+            check=False,
+            capture_output=True,
+            timeout=3,
+        )
+    except Exception:
+        pass
 
 
 async def _run_one(
@@ -302,16 +350,31 @@ async def _run_one(
         json.dumps(_task_payload(task), ensure_ascii=False, indent=2), encoding="utf-8"
     )
     initial_obs = None
+    run_result = None
     try:
         initial_obs = await task.setup(env)
+        if not config.headless:
+            await _raise_headed_window(env)
         recorder = HybridArtifactRecorder(episode_dir)
         if config.start_delay > 0:
+            if hasattr(recorder, "publish_live"):
+                recorder.publish_live({
+                    "step": 0,
+                    "phase": "thinking",
+                    "kind": "gui",
+                    "kind_label": "准备",
+                    "app": "launcher",
+                    "thought": f"窗口已打开，先等 {int(config.start_delay)} 秒再开始，方便录屏。",
+                    "action": "",
+                    "tool_return": "",
+                })
             await asyncio.sleep(config.start_delay)
         runtime = HybridAgentRuntime(
             env,
             agent,
             recorder=recorder,
             interaction_mode=config.interaction_mode,
+            forbid_open_app=False,
         )
         max_steps = config.max_steps or task.max_steps or 45
         run_result = await runtime.run(
@@ -319,8 +382,27 @@ async def _run_one(
             max_steps=max_steps,
             initial_observation=initial_obs,
         )
+        unconfirmed_open_apps = [
+            record.step
+            for record in run_result.trace
+            if record.call is not None
+            and record.call.name == "mobile_use"
+            and str(record.call.arguments.get("action") or "").lower() == "open_app"
+            and (record.feedback is None or record.feedback.ok)
+            and not str(record.route_after.get("app") or "").strip()
+        ]
+        if unconfirmed_open_apps:
+            raise RuntimeError(
+                "OPEN_APP_ROUTE_UNCONFIRMED: open_app produced no foreground route "
+                f"at steps {unconfirmed_open_apps}"
+            )
         final_obs = await env.get_observation()
         final_state = await env.get_state(required_apps=list(task.apps))
+        terminal_state_path = episode_dir / "terminal_state.json"
+        terminal_state_path.write_text(
+            json.dumps(final_state, ensure_ascii=False, indent=2, default=str) + "\n",
+            encoding="utf-8",
+        )
         final_obs = replace(final_obs, state=final_state)
         judge = task.evaluate(
             JudgeInput(
@@ -338,6 +420,7 @@ async def _run_one(
             **_task_payload(task),
             "worker_id": worker_id,
             "interaction_mode": config.interaction_mode,
+            "runtime": validate_runtime(config.runtime),
             "success": judge.success,
             "clean": judge.clean,
             "progress": judge.progress,
@@ -352,13 +435,28 @@ async def _run_one(
             "app_tool_calls": [name for name in calls if name != "mobile_use"],
             "runtime_s": time.time() - started,
             "artifact_dir": str(episode_dir),
+            "terminal_state_artifact": str(terminal_state_path),
             "error": None,
         }
     except Exception as error:
+        trace = run_result.trace if run_result is not None else []
+        calls = [record.call.name for record in trace if record.call is not None]
+        artifact_steps = 0
+        if not trace:
+            for result_path in sorted(episode_dir.glob("step_*_result.json")):
+                try:
+                    payload = json.loads(result_path.read_text(encoding="utf-8"))
+                except (OSError, json.JSONDecodeError):
+                    continue
+                artifact_steps = max(artifact_steps, int(payload.get("step") or 0))
+                call = payload.get("call")
+                if isinstance(call, dict) and isinstance(call.get("name"), str):
+                    calls.append(call["name"])
         return {
             **_task_payload(task),
             "worker_id": worker_id,
             "interaction_mode": config.interaction_mode,
+            "runtime": validate_runtime(config.runtime),
             "success": False,
             "clean": True,
             "progress": 0.0,
@@ -366,11 +464,11 @@ async def _run_one(
             "warnings": [],
             "judge_error": None,
             "stop_reason": "ERROR",
-            "steps": 0,
-            "agent_answer": None,
-            "agent_message": None,
-            "tool_calls": [],
-            "app_tool_calls": [],
+            "steps": len(trace) or artifact_steps,
+            "agent_answer": run_result.agent_answer if run_result is not None else None,
+            "agent_message": run_result.agent_message if run_result is not None else None,
+            "tool_calls": calls,
+            "app_tool_calls": [name for name in calls if name != "mobile_use"],
             "runtime_s": time.time() - started,
             "artifact_dir": str(episode_dir),
             "error": f"{type(error).__name__}: {error}",
@@ -404,6 +502,19 @@ def _build_summary(
     return summary
 
 
+def _attach_runtime(summary: dict[str, Any], config: HybridBenchmarkConfig) -> dict[str, Any]:
+    summary["runtime"] = validate_runtime(config.runtime)
+    if is_session_runtime(summary["runtime"]):
+        summary["last_n"] = config.last_n
+        if summary["runtime"] == QWEN35_THOUGHT_SESSION_RUNTIME:
+            summary["enable_thinking"] = False
+            summary["qwen35_tool_call_mode"] = "xml"
+        else:
+            summary["enable_thinking"] = config.enable_thinking
+            summary["qwen35_tool_call_mode"] = config.qwen35_tool_call_mode
+    return summary
+
+
 def _write_results(config: HybridBenchmarkConfig, tasks: list[Any], results: list[dict[str, Any]]) -> None:
     ordered = sorted(results, key=lambda row: row["task_id"])
     (config.output_dir / "results.jsonl").write_text(
@@ -415,7 +526,10 @@ def _write_results(config: HybridBenchmarkConfig, tasks: list[Any], results: lis
     )
     (config.output_dir / "summary.json").write_text(
         json.dumps(
-            _build_summary(ordered, getattr(config, "interaction_mode", None)),
+            _attach_runtime(
+                _build_summary(ordered, getattr(config, "interaction_mode", None)),
+                config,
+            ),
             ensure_ascii=False,
             indent=2,
         ),
@@ -431,6 +545,7 @@ async def run_benchmark(config: HybridBenchmarkConfig) -> list[dict[str, Any]]:
     config = replace(
         config,
         interaction_mode=validate_interaction_mode(config.interaction_mode),
+        runtime=validate_runtime(config.runtime),
     )
     tasks = _load_tasks(config)
     config.output_dir.mkdir(parents=True, exist_ok=True)

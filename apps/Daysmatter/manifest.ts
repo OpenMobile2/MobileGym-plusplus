@@ -27,4 +27,7 @@ export const manifest: AppManifest = {
       navigationBarForeground: 'dark',
     },
   },
+  queries: [
+    { action: 'ACTION_SEND', type: 'text/plain' },
+  ],
 };

@@ -330,11 +330,12 @@ export function RestaurantPage() {
                 <span className="text-gray-400 text-xs ml-1">+配送费¥{restaurant.deliveryFee}</span>
               </div>
               <button
-                onClick={() => go('meituan.open-order-confirm')}
-                className="bg-[#FF6000] text-white px-8 py-2.5 rounded-full text-sm font-semibold"
+                onClick={() => { if (cartTotal >= restaurant.minOrder) go('meituan.open-order-confirm'); }}
+                disabled={cartTotal < restaurant.minOrder}
+                className="px-8 py-2.5 rounded-full text-sm font-semibold text-white disabled:bg-gray-300 bg-[#FF6000]"
                 data-trigger="meituan.open-order-confirm"
               >
-                去结算
+                {cartTotal >= restaurant.minOrder ? '去结算' : `还差¥${(restaurant.minOrder - cartTotal).toFixed(1)}起送`}
               </button>
             </div>
           </div>

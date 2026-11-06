@@ -25,6 +25,19 @@ export const manifest: AppManifest = {
       statusBarForeground: 'dark',
       navigationBarForeground: 'dark',
     },
+    colorsDark: {
+      primary: '#6B8AFF',
+      background: '#0F1219',
+      surface: '#1A1F2C',
+      textPrimary: '#F2F4F8',
+      textSecondary: '#9AA3B5',
+      border: '#2A3140',
+      statusBarForeground: 'light',
+      navigationBarForeground: 'light',
+    },
   },
   intentFilters: [],
+  queries: [
+    { action: 'ACTION_PAY', scheme: 'weixin' },
+  ],
 };

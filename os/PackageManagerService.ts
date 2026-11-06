@@ -20,6 +20,31 @@ function normalizeKey(v: string): string {
   return String(v ?? '').trim().toLowerCase();
 }
 
+function compactKey(v: string): string {
+  return normalizeKey(v).replace(/[\s_\-]+/g, '');
+}
+
+function resolveAppId(name: string): AppId | undefined {
+  const exact = aliasMap.get(normalizeKey(name));
+  if (exact) return exact;
+  const compact = compactKey(name);
+  if (!compact) return undefined;
+  const compactHits = new Set<AppId>();
+  for (const [alias, id] of aliasMap) {
+    if (compactKey(alias) === compact) compactHits.add(id);
+  }
+  if (compactHits.size === 1) return [...compactHits][0];
+  if (compact.length < 3) return undefined;
+  const prefixHits = new Set<AppId>();
+  for (const [alias, id] of aliasMap) {
+    const a = compactKey(alias);
+    if (!a) continue;
+    if (a.startsWith(compact) || compact.startsWith(a)) prefixHits.add(id);
+  }
+  if (prefixHits.size === 1) return [...prefixHits][0];
+  return undefined;
+}
+
 function matchType(filterType: string | undefined, intentType: string | undefined): boolean {
   if (!filterType) return true;
   if (!intentType) return false;
@@ -94,6 +119,14 @@ export const PackageManagerService = {
 
   queryByAlias(name: string): AppId | undefined {
     return aliasMap.get(normalizeKey(name));
+  },
+
+  resolveApp(name: string): AppId | undefined {
+    return resolveAppId(name);
+  },
+
+  listAppIds(): AppId[] {
+    return manifests.map((manifest) => manifest.id);
   },
 
   queryIntentActivities(intent: IntentQuery): { appId: AppId; filter: AppIntentFilter }[] {

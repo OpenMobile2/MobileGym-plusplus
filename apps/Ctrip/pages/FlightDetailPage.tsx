@@ -1,33 +1,50 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useSearchParams } from 'react-router-dom';
 import { useCtripStore } from '../state';
 import { useCtripGestures } from '../hooks/useCtripGestures';
+import { useCtripStrings } from '../hooks/useCtripStrings';
 import { TopBar, Price } from '../components/ui';
+import { flightPriceOn } from '../utils/flightAvailability';
+import { systemMonthDay } from '../utils/travelDate';
 
 /** 航班详情(spec flight.detail)。票价方案「订」→booking;金牌延误服务增值选购。 */
-const ADDONS = [
-  { id: 'none', label: '不购买增值服务', price: 0 },
-  { id: 'delay', label: '金牌延误服务', price: 40, desc: '延误30分钟起赔付' },
-  { id: 'combo', label: '延误+行李组合', price: 68, desc: '延误+行李丢失赔付' },
-];
 
 export default function FlightDetailPage() {
+  const s = useCtripStrings();
+  const ADDONS = [
+    { id: 'none', label: s.t('不购买增值服务'), price: 0 },
+    { id: 'delay', label: s.t('金牌延误服务'), price: 40, desc: s.t('延误30分钟起赔付') },
+    { id: 'combo', label: s.t('延误+行李组合'), price: 68, desc: s.t('延误+行李丢失赔付') },
+  ];
   const { no = '' } = useParams();
+  const [sp] = useSearchParams();
   const { bindTap } = useCtripGestures();
   const flights = useCtripStore((s) => s.flights);
-  const flight = flights.find((f) => f.id === no) ?? flights[0];
+  const flight = flights.find((f) => f.id === no);
+  const date = sp.get('date') || systemMonthDay();
+  const from = sp.get('from') || flight?.from || '上海';
+  const to = sp.get('to') || flight?.to || '北京';
+  const listQuery = new URLSearchParams({ from, to, date });
+  if (sp.get('direct')) listQuery.set('direct', sp.get('direct')!);
   const [addon, setAddon] = React.useState('none');
-
+  if (!flight) {
+    return (
+      <div className="flex flex-col h-full bg-[#F5F6F8]">
+        <TopBar title="航班" />
+        <div className="flex-1 flex items-center justify-center text-[14px] text-[#999999]">未找到该航班</div>
+      </div>
+    );
+  }
   return (
     <div className="flex flex-col h-full bg-[#F5F6F8]">
-      <TopBar title={`${flight.airline} ${flight.flightNo}`} />
+      <TopBar title={`${flight.airline} ${flight.flightNo}`} backTo={`/flight/list?${listQuery.toString()}`} />
       <div className="flex-1 overflow-y-auto pb-4" data-scroll-container="main" data-scroll-direction="vertical">
         {/* 航段 */}
         <div className="bg-white px-4 py-4">
           <div className="flex items-center">
             <div><div className="text-[24px] font-bold">{flight.depart}</div><div className="text-[12px] text-[#999999]">{flight.fromAirport}</div></div>
             <div className="flex-1 text-center px-3">
-              <div className="text-[12px] text-[#0086F6]">{flight.transfer ? `中转 ${flight.transfer}` : '直飞'}</div>
+              <div className="text-[12px] text-[#0086F6]">{flight.transfer ? `中转 ${flight.transfer}` : s.t('直飞')}</div>
               <div className="text-[11px] text-[#999999] mt-1">{flight.duration}</div>
             </div>
             <div className="text-right"><div className="text-[24px] font-bold">{flight.arrive}</div><div className="text-[12px] text-[#999999]">{flight.toAirport}</div></div>
@@ -37,7 +54,7 @@ export default function FlightDetailPage() {
 
         {/* 增值服务 */}
         <div className="bg-white mt-2 px-4 py-3">
-          <div className="text-[15px] font-semibold mb-2">金牌延误服务</div>
+          <div className="text-[15px] font-semibold mb-2">{s.t('金牌延误服务')}</div>
           {ADDONS.map((a) => (
             <button
               key={a.id}
@@ -55,8 +72,8 @@ export default function FlightDetailPage() {
 
         {/* 票价方案 */}
         <div className="bg-white mt-2 px-4 py-3">
-          <div className="text-[15px] font-semibold mb-2">选择票价</div>
-          {[{ n: '经济舱 特价', p: flight.price, tag: '不可改签·退票收费' }, { n: '经济舱 灵活', p: flight.price + 320, tag: '免费改签1次' }].map((plan) => (
+          <div className="text-[15px] font-semibold mb-2">{s.t('选择票价')}</div>
+          {[{ n: s.t('经济舱 特价'), p: flightPriceOn(flight, date), tag: s.t('不可改签·退票收费') }, { n: s.t('经济舱 灵活'), p: flightPriceOn(flight, date) + 320, tag: s.t('免费改签1次') }].map((plan) => (
             <div key={plan.n} className="flex items-center justify-between py-3 border-b border-[#F5F5F5]">
               <div><div className="text-[14px] text-[#222222]">{plan.n}</div><div className="text-[11px] text-[#999999]">{plan.tag}</div></div>
               <div className="flex items-center gap-3">

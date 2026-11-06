@@ -1,4 +1,4 @@
-"""Kapi (卡皮记账) hybrid GUI+Tools tasks -- tool-boundary probe (services).
+"""Kapi (卡皮记账) hybrid GUI+Tools tasks -- tool-boundary probe (selfbuilt-v4).
 
 Every fact/number referenced below was independently recomputed from
 ``apps/Kapi/data/defaults.json`` (18 seeded bills, all on ledger ``l_main``,

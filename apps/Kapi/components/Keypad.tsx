@@ -1,6 +1,7 @@
 import React from 'react';
 import { useKapiGestures } from '../hooks/useKapiGestures';
 import { IcBackspace, IcPlus, IcMinus } from '../res/icons';
+import { useStrings } from '../hooks/useStrings';
 
 /**
  * 内置数字键盘。inputActionId 走 record.amount.input.value / discount.amount.input.value 等。
@@ -9,7 +10,7 @@ import { IcBackspace, IcPlus, IcMinus } from '../res/icons';
 export function Keypad({
   inputActionId,
   onInput,
-  primaryLabel = '完成',
+  primaryLabel,
   primaryActionId,
   onPrimary,
   secondaryLabel,
@@ -26,10 +27,12 @@ export function Keypad({
   onSecondary?: () => void;
 }) {
   const { bindAction } = useKapiGestures();
+  const s = useStrings();
+  const primaryText = primaryLabel ?? s.doneBtn;
   const Key = ({ k, children }: { k: string; children: React.ReactNode }) => (
     <button
       {...bindAction(inputActionId, () => onInput(k), { value: k })}
-      className="h-12 rounded-lg bg-white text-[22px] text-[#1A1D26] flex items-center justify-center border-none cursor-pointer active:bg-[#EAECF2] shadow-[0_1px_0_rgba(0,0,0,0.04)]"
+      className="h-12 rounded-lg bg-app-surface text-[22px] text-app-text flex items-center justify-center border-none cursor-pointer active:bg-[#EAECF2] shadow-[0_1px_0_rgba(0,0,0,0.04)]"
     >
       {children}
     </button>
@@ -42,9 +45,9 @@ export function Keypad({
       <Key k="3">3</Key>
       <button
         {...bindAction(inputActionId, () => onInput('del'), { value: 'del' })}
-        className="h-12 rounded-lg bg-white flex items-center justify-center border-none cursor-pointer active:bg-[#EAECF2]"
+        className="h-12 rounded-lg bg-app-surface flex items-center justify-center border-none cursor-pointer active:bg-[#EAECF2]"
       >
-        <IcBackspace size={22} className="text-[#1A1D26]" />
+        <IcBackspace size={22} className="text-app-text" />
       </button>
 
       <Key k="4">4</Key>
@@ -52,9 +55,9 @@ export function Keypad({
       <Key k="6">6</Key>
       <button
         {...bindAction(inputActionId, () => onInput('+'), { value: '+' })}
-        className="h-12 rounded-lg bg-white flex items-center justify-center border-none cursor-pointer active:bg-[#EAECF2]"
+        className="h-12 rounded-lg bg-app-surface flex items-center justify-center border-none cursor-pointer active:bg-[#EAECF2]"
       >
-        <IcPlus size={22} className="text-[#1A1D26]" />
+        <IcPlus size={22} className="text-app-text" />
       </button>
 
       <Key k="7">7</Key>
@@ -62,20 +65,20 @@ export function Keypad({
       <Key k="9">9</Key>
       <button
         {...bindAction(inputActionId, () => onInput('-'), { value: '-' })}
-        className="h-12 rounded-lg bg-white flex items-center justify-center border-none cursor-pointer active:bg-[#EAECF2]"
+        className="h-12 rounded-lg bg-app-surface flex items-center justify-center border-none cursor-pointer active:bg-[#EAECF2]"
       >
-        <IcMinus size={22} className="text-[#1A1D26]" />
+        <IcMinus size={22} className="text-app-text" />
       </button>
 
       {secondaryActionId && onSecondary ? (
         <button
           {...bindAction(secondaryActionId, onSecondary)}
-          className="h-12 rounded-lg bg-white text-[16px] text-[#4B6EF5] flex items-center justify-center border-none cursor-pointer active:bg-[#EAECF2]"
+          className="h-12 rounded-lg bg-app-surface text-[16px] text-[#4B6EF5] flex items-center justify-center border-none cursor-pointer active:bg-[#EAECF2]"
         >
           {secondaryLabel}
         </button>
       ) : (
-        <div className="h-12 rounded-lg bg-white" />
+        <div className="h-12 rounded-lg bg-app-surface" />
       )}
       <Key k="0">0</Key>
       <Key k=".">.</Key>
@@ -83,7 +86,7 @@ export function Keypad({
         {...bindAction(primaryActionId, onPrimary)}
         className="h-12 rounded-lg bg-[#4B6EF5] text-[16px] text-white flex items-center justify-center border-none cursor-pointer active:bg-[#3D5CE0]"
       >
-        {primaryLabel}
+        {primaryText}
       </button>
     </div>
   );

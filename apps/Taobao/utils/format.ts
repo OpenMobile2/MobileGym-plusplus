@@ -1,5 +1,10 @@
 import * as TimeService from '@/os/TimeService';
 
+/** 简易文案模板替换:fmt('剩余{time}自动关闭', { time: '3天' }) */
+export function fmt(template: string, vars: Record<string, string | number>): string {
+  return template.replace(/\{(\w+)\}/g, (_, k) => String(vars[k] ?? ''));
+}
+
 /** 价格拆分:整数部分与小数部分(无小数则 dec 为 '') */
 export function splitPrice(n: number): { int: string; dec: string } {
   const fixed = Math.round(n * 100) / 100;

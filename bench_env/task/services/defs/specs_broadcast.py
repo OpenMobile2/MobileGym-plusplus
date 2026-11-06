@@ -1,4 +1,4 @@
-"""Broadcast (Apple Podcasts clone) App-Tool-quality probe tasks (services).
+"""Broadcast (Apple Podcasts clone) App-Tool-quality probe tasks (selfbuilt-v4).
 
 See ``services/__init__.py`` for the four-lens design rationale
 (``idinhand`` / ``state_direct`` / ``field_mismatch`` / ``query_scan_mismatch``).

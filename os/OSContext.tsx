@@ -48,6 +48,7 @@ import {
   buildSimState,
 } from './simState';
 import { runAppDataLoaderModule } from './appDataLoaderReady';
+import { installHandTrace } from './handTrace';
 
 /** 预加载所有 App 的 state.ts（eager: 打进主 bundle，页面加载即执行 createAppStore 副作用） */
 const _eagerAppStateModules = import.meta.glob<unknown>(
@@ -452,6 +453,7 @@ export const OSProvider: React.FC<{ children: React.ReactNode }> = ({ children }
       launchApp,
       markExternalRoute: TaskManager.markExternalRoute,
       setActivityIntent: TaskManager.setActivityIntent,
+      setLaunchedBy: TaskManager.setLaunchedBy,
     });
   }, [navigateToActivity, launchApp]);
 
@@ -477,33 +479,43 @@ export const OSProvider: React.FC<{ children: React.ReactNode }> = ({ children }
   }, [finishTopActivity]);
 
   const openApp = useCallback((appId: AppId | string, initialRoute?: string) => {
-    const resolved = PackageManagerService.queryByAlias(String(appId))
-      ?? (isValidAppId(String(appId)) ? String(appId) : undefined);
-    if (!resolved) {
+    if (!isValidAppId(appId)) {
       console.error(`[OS] Invalid appId: ${appId}`);
       return;
     }
 
-    const latestState = TaskManager.getState();
-    const taskExisted = latestState.tasks.some((t) => t.rootAppId === resolved);
+    let latestState = TaskManager.getState();
+    // Explicitly opening an app from the launcher must foreground that app's own
+    // activity, not a foreign Activity that was temporarily pushed on its task
+    // (for example Notes opened by ACTION_SEND). Unwind those transient
+    // activities and deliver a canceled result before activating the root task.
+    let existingTask = latestState.tasks.find((t) => t.rootAppId === appId);
+    while (existingTask && existingTask.stack.length > 1) {
+      const top = existingTask.stack[existingTask.stack.length - 1];
+      if (top.appId === appId) break;
+      finishTopActivity(existingTask.taskId, { resultCode: 'CANCELED' });
+      latestState = TaskManager.getState();
+      existingTask = latestState.tasks.find((t) => t.rootAppId === appId);
+    }
+    const taskExisted = latestState.tasks.some((t) => t.rootAppId === appId);
     const activeAppId = getActiveAppId(latestState);
-    const activeRoute = activeAppId ? AppNavigatorRegistry.getAppRoute(activeAppId)?.path ?? '-' : '-' ;
+    const activeRoute = activeAppId ? AppNavigatorRegistry.getAppRoute(activeAppId)?.path ?? '-' : '-';
     console.log(
-      `[OSDBG] openApp appId=${resolved} initialRoute=${initialRoute ?? '-'} taskExisted=${String(taskExisted)} `
+      `[OSDBG] openApp appId=${appId} initialRoute=${initialRoute ?? '-'} taskExisted=${String(taskExisted)} `
       + `activeApp=${activeAppId ?? '-'} activeRoute=${activeRoute} stack=${buildOsDebugStack('openApp')}`,
     );
-    launchApp(resolved);
+    launchApp(appId);
     if (!initialRoute) return;
 
     if (!taskExisted) {
-      TaskManager.markExternalRoute(resolved);
+      TaskManager.markExternalRoute(appId);
     }
 
     requestAnimationFrame(() => {
       const latestState = TaskManager.getState();
-      const task = latestState.tasks.find((t) => t.rootAppId === resolved);
+      const task = latestState.tasks.find((t) => t.rootAppId === appId);
       const activity = task
-        ? [...task.stack].reverse().find((act) => act.appId === resolved) ?? task.stack[task.stack.length - 1]
+        ? [...task.stack].reverse().find((act) => act.appId === appId) ?? task.stack[task.stack.length - 1]
         : null;
       if (activity) {
         // 永远 push（不 replace）—— 对应真机 PendingIntent + TaskStackBuilder.addNextIntentWithParentStack 的"合成 back stack"语义：
@@ -513,7 +525,7 @@ export const OSProvider: React.FC<{ children: React.ReactNode }> = ({ children }
         void navigateToActivity(activity.activityId, initialRoute, { replace: false });
       }
     });
-  }, [launchApp, navigateToActivity]);
+  }, [finishTopActivity, launchApp, navigateToActivity]);
 
   const osStateForApi = useMemo(() => ({
     ...state,
@@ -540,8 +552,15 @@ export const OSProvider: React.FC<{ children: React.ReactNode }> = ({ children }
       handleBack: handleSystemBack,
       getState: () => ({ ...TaskManager.getState(), activeAppId: getActiveAppId(TaskManager.getState()) }),
       getAppRoute: (appId?: AppId | string) => AppNavigatorRegistry.getAppRoute(appId),
-      resolveAppId: (name: string) => PackageManagerService.queryByAlias(String(name)),
       openApp,
+      listAppIds: () => PackageManagerService.listAppIds(),
+      resolveApp: (name: string) => PackageManagerService.resolveApp(name) ?? null,
+      listInstalledApps: () =>
+        PackageManagerService.getInstalledPackages().map((app) => ({
+          id: app.id,
+          displayName: app.displayName,
+          displayNameEn: app.displayNameEn ?? '',
+        })),
       startActivity,
       startActivityForResult,
       setResult,
@@ -673,6 +692,8 @@ export const OSProvider: React.FC<{ children: React.ReactNode }> = ({ children }
     window.__SIM__ = {
       /** Clear all state WITHOUT reloading. Use with Playwright page.reload(). */
       resetState: _resetStateCore,
+      listAppIds: () => PackageManagerService.listAppIds(),
+      resolveApp: (name: string) => PackageManagerService.resolveApp(name) ?? null,
       /** Clear all state AND reload (legacy). */
       reset: async () => {
         await _resetStateCore();
@@ -947,6 +968,10 @@ export const OSProvider: React.FC<{ children: React.ReactNode }> = ({ children }
         }
       },
     };
+
+    // 手点采集：?handtrace=1 自动开；点完 __SIM__.handTrace.download()
+    (window.__SIM__ as { handTrace?: ReturnType<typeof installHandTrace> }).handTrace =
+      installHandTrace(() => window.__SIM__!.getState());
   }, [state, launchApp, launchTaskById, goHome, showRecents, closeTask, closeApp, finishActivity, setBrightness, setVolume, handleSystemBack, openApp, startActivity, startActivityForResult, setResult]);
 
   const contextValue = useMemo<OSContextProps>(() => ({

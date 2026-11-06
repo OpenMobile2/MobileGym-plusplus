@@ -5,7 +5,7 @@ import { useVipshopGestures } from '../hooks/useVipshopGestures';
 import { VIP } from '../components/ui';
 
 export default function OauthPage() {
-  const { bindTap, bindBack } = useVipshopGestures();
+  const { bindTap, bindBack, go } = useVipshopGestures();
   const [searchParams] = useSearchParams();
   const provider = searchParams.get('provider') === 'qq' ? 'QQ' : '微信';
   const login = useVipshopStore((s) => s.login);
@@ -28,7 +28,10 @@ export default function OauthPage() {
           <div className="mt-1">· 用于快速登录唯品会账号</div>
         </div>
         <button
-          {...bindTap('oauth.confirm-open', { beforeTrigger: () => login('') })}
+          {...bindTap('oauth.confirm-open', {
+            beforeTrigger: () => login(''),
+            onTrigger: () => go('oauth.confirm-open', {}, { popTo: '/login', popToInclusive: true }),
+          })}
           className="w-full h-12 rounded-full mt-8 text-[16px] font-semibold border-none cursor-pointer text-white"
           style={{ background: VIP.primary }}
         >

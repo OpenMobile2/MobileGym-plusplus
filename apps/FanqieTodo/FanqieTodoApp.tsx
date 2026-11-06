@@ -11,7 +11,11 @@ import {
 import { useAppNavigationHandler } from '../../os/hooks/useAppNavigationHandler';
 import { AppNavigatorRegistry } from '../../os/AppNavigatorRegistry';
 import { useActivityContext } from '../../os/ActivityContext';
+import { useDarkMode } from '../../os/hooks/useDarkMode';
+import { dimensToCssVars, themeToCssVars } from '../../os/utils/themeToCssVars';
+import { applySkinToThemeColors } from '../../os/SkinService';
 import { manifest } from './manifest';
+import { colors, colorsDark } from './res/colors';
 import { useAppNavigate } from './navigation';
 import TabBar from './components/TabBar';
 import Toast from './components/Toast';
@@ -23,6 +27,7 @@ import LockActivePage from './pages/LockActivePage';
 import BreathPage from './pages/BreathPage';
 import StatsPage from './pages/StatsPage';
 import TimelinePage from './pages/TimelinePage';
+import WeekSummaryPage from './pages/WeekSummaryPage';
 import ProfilePage from './pages/ProfilePage';
 import AccountPage from './pages/AccountPage';
 import SettingsPage from './pages/SettingsPage';
@@ -33,7 +38,7 @@ import CheckinPage from './pages/CheckinPage';
 
 const TAB_PATHS = ['/', '/lock', '/stats', '/timeline', '/profile'];
 // 全屏页(无 TabBar):专注/锁机进行中/冥想/打卡分享
-const FULLSCREEN_PATHS = ['/focus', '/focus/rest', '/lock/active', '/lock/breath', '/checkin'];
+const FULLSCREEN_PATHS = ['/focus', '/focus/rest', '/lock/active', '/lock/breath', '/checkin', '/timeline/week'];
 
 function FanqieTodoNavigationHandler() {
   const location = useLocation();
@@ -84,7 +89,7 @@ function Layout() {
   const isTab = TAB_PATHS.includes(pathname);
   const isFullscreen = FULLSCREEN_PATHS.includes(pathname);
   return (
-    <div className="relative h-full w-full overflow-hidden bg-[#F4F6F8]">
+    <div className="relative h-full w-full overflow-hidden bg-[var(--app-bg)]">
       <div className="flex h-full w-full flex-col">
         <div className="min-h-0 flex-1">
           <Outlet />
@@ -110,6 +115,7 @@ function FanqieTodoRoot() {
           <Route path="/lock/breath" element={<BreathPage />} />
           <Route path="/stats" element={<StatsPage />} />
           <Route path="/timeline" element={<TimelinePage />} />
+          <Route path="/timeline/week" element={<WeekSummaryPage />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/profile/account" element={<AccountPage />} />
           <Route path="/settings" element={<SettingsPage />} />
@@ -124,9 +130,17 @@ function FanqieTodoRoot() {
 }
 
 export const FanqieTodoApp: React.FC = () => {
-  void manifest;
+  const { isDark } = useDarkMode();
+  const themeColors = isDark
+    ? { ...manifest.theme.colors, ...(manifest.theme.colorsDark ?? {}) }
+    : manifest.theme.colors;
+  const appColors = isDark ? { ...colors, ...colorsDark } : colors;
+  const cssVars = {
+    ...themeToCssVars(applySkinToThemeColors(themeColors)),
+    ...dimensToCssVars(appColors, { prefix: '--app-c-' }),
+  };
   return (
-    <div className="h-full w-full">
+    <div className="h-full w-full" style={cssVars as React.CSSProperties}>
       <FanqieTodoRoot />
     </div>
   );

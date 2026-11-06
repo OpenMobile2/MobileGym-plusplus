@@ -34,7 +34,7 @@ export const ADDRESSES: Address[] = [
 ];
 
 export const COUPONS: Coupon[] = [
-  { id: 'c01', title: '9.9 元饮品兑换券', amount: 9.9, threshold: '指定饮品可用', expiry: '7 天后到期', kind: 'drink', claimed: true },
+  { id: 'c01', title: '9.9 元饮品兑换券', amount: 9.9, threshold: '指定饮品可用', expiry: '7 天后到期', kind: 'drink', claimed: false },
   { id: 'c02', title: '满 20 减 8 元', amount: 8, threshold: '满 20 元可用', expiry: '3 天后到期', kind: 'drink', claimed: true },
   { id: 'c03', title: '即享新人 10 元券', amount: 10, threshold: '即享满 49 元可用', expiry: '15 天后到期', kind: 'instant', claimed: true },
   { id: 'c04', title: '咖啡卡 5 次券', amount: 5, threshold: '每日限用 1 次', expiry: '30 天后到期', kind: 'bought', claimed: true },

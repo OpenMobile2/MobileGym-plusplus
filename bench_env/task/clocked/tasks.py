@@ -6,11 +6,19 @@ from dataclasses import replace
 from typing import Any
 
 from bench_env.task.alipay.app import Alipay
+from bench_env.task.clock.app import Clock
+from bench_env.task.ebay.app import Ebay
 from bench_env.task.clocked.specs import CASES
 from bench_env.task.clocked.time_control import FrozenTimeSetupMixin
 from bench_env.task.clocked.tool_surface import tools_for
 from bench_env.task.map.app import Map
+from bench_env.task.notes.app import Notes
 from bench_env.task.redbook.app import Redbook
+from bench_env.task.railway12306.app import Railway12306
+from bench_env.task.spotify.app import Spotify, match_with_aliases
+from bench_env.task.wechat.app import Wechat
+from bench_env.task.weather.app import Weather
+from bench_env.task.wechat_reading.app import WechatReading
 from bench_env.task.registry import TaskRegistry
 
 
@@ -108,6 +116,130 @@ class _AuditedSourceMixin(FrozenTimeSetupMixin):
         ]
 
     def check_goals(self, input):
+        if self.spec.index == 9:
+            ali = Alipay(input.apps_init["alipay"])
+            wechat = Wechat(input.apps["wechat"], init=input.apps_init["wechat"])
+            ts_now = float((input.os_init.get("time") or {}).get("timestamp") or 0)
+            expenses = [
+                tx for tx in ali.transactions
+                if float(tx["delta"]) < 0 and int(tx["timestamp"]) >= ts_now - 30 * 86400 * 1000
+            ]
+            expenses.sort(key=lambda tx: abs(float(tx["delta"])), reverse=True)
+            checks = []
+            for index, transaction in enumerate(expenses[:3], start=1):
+                label = Alipay.transaction_primary_label(transaction)
+                checks.append(wechat.check_new_sent_number_near_any_keyword(
+                    self.p.contact,
+                    round(abs(float(transaction["delta"])), 2),
+                    [label],
+                    field=f"wechat_top{index}_title_amount_pair",
+                ))
+            checks.append(wechat.check_new_sent_contains(
+                self.p.contact, "省着点", field="wechat_closing",
+            ))
+            return checks
+        if self.spec.index == 38:
+            spotify = Spotify(input.apps["spotify"])
+            playlist = spotify.get_playlist_by_name(self.p.playlist)
+            tracks = list((playlist or {}).get("tracks") or [])
+            artist1_count = sum(
+                match_with_aliases(self.p.artist1, str(track.get("artist") or ""))
+                for track in tracks
+            )
+            artist2_count = sum(
+                match_with_aliases(self.p.artist2, str(track.get("artist") or ""))
+                for track in tracks
+            )
+            return [
+                {
+                    "field": "playlist_exact_composition",
+                    "expected": {self.p.artist1: self.p.count, self.p.artist2: self.p.count, "total": 2 * self.p.count},
+                    "actual": {self.p.artist1: artist1_count, self.p.artist2: artist2_count, "total": len(tracks)},
+                    "passed": len(tracks) == 2 * self.p.count and artist1_count == self.p.count and artist2_count == self.p.count,
+                },
+                spotify.check_is_playing(),
+                spotify.check_current_track_in_playlist(self.p.playlist, field="playing_two_artist_playlist"),
+            ]
+        if self.spec.index == 25:
+            spotify = Spotify(input.apps_init["spotify"])
+            wechat = Wechat(input.apps["wechat"], init=input.apps_init["wechat"])
+            content = wechat._latest_new_moment_content()
+            liked = spotify.liked_recent_intersection()
+            required = ["最近阅读最投入的一天", "现在在听的歌"] + [
+                token for track in liked for token in (str(track.get("title") or ""), str(track.get("artist") or ""))
+            ]
+            liked_titles = {str(track.get("title") or "") for track in liked}
+            forbidden = [
+                str(track.get("title") or "") for track in spotify.recent_plays
+                if str(track.get("title") or "") not in liked_titles
+            ]
+            return [{
+                "field": "moment_exact_reading_and_liked_tracks",
+                "expected": {"required": required, "forbidden_unliked_titles": forbidden},
+                "actual": content,
+                "passed": bool(content) and all(token in content for token in required) and not any(token and token in content for token in forbidden),
+            }]
+        if self.spec.index == 40:
+            checks = super().check_goals(input)
+            weather = Weather(input.apps["weather"])
+            notes = Notes(input.apps["notes"], init=input.apps_init["notes"])
+            content = notes.note_text_by_title("适合出行的日子")
+            non_rainy = set(weather.non_rainy_dates(self.p.city, 1, 5))
+            all_dates = [row["fxDate"] for row in weather.weather_daily(self.p.city)[1:6]]
+            rainy = [date for date in all_dates if date not in non_rainy]
+            forbidden_hits = [
+                label for date in rainy for label in Weather.date_labels(date, input.os)
+                if label and label in content
+            ]
+            checks.append({
+                "field": "rainy_dates_excluded",
+                "expected": rainy,
+                "actual": forbidden_hits,
+                "passed": not forbidden_hits,
+            })
+            return checks
+        if self.spec.index == 41:
+            checks = super().check_goals(input)
+            rail = Railway12306(input.apps["railway12306"], init=input.apps_init["railway12306"])
+            pending = rail.new_pending_orders()
+            checks.append({
+                "field": "high_speed_train_required",
+                "expected": "new pending order with G train",
+                "actual": [str(order.get("trainNo") or "") for order in pending],
+                "passed": bool(pending) and all(str(order.get("trainNo") or "").startswith("G") for order in pending),
+            })
+            return checks
+        if self.spec.index == 42:
+            checks = super().check_goals(input)
+            clock = Clock(input.apps["clock"], init=input.apps_init["clock"])
+            new_alarm = next((alarm for alarm in clock.new_alarms() if int(alarm.get("hour", -1)) == 8 and int(alarm.get("minute", -1)) == 0), None)
+            checks = [check for check in checks if check.get("field") != "alarm"]
+            checks.append({
+                "field": "new_enabled_alarm",
+                "expected": {"time": "08:00", "enabled": True},
+                "actual": new_alarm,
+                "passed": bool(new_alarm) and bool(new_alarm.get("enabled")),
+            })
+            return checks
+        if self.spec.index in {2, 3, 5, 6, 7}:
+            checks = super().check_goals(input)
+            notes = Notes(input.apps["notes"], init=input.apps_init["notes"]) if "notes" in self.apps else None
+            wechat = Wechat(input.apps["wechat"], init=input.apps_init["wechat"]) if "wechat" in self.apps else None
+            ebay = Ebay(input.apps["ebay"] if self.spec.index != 3 else input.apps_init["ebay"])
+            replacements = {}
+            if self.spec.index == 3:
+                replacements = {
+                    "item1_title": notes.check_latest_norm_contains(ebay.cheapest_product(query=self.p.item1).title, field="item1_title"),
+                    "item2_title": notes.check_latest_norm_contains(ebay.cheapest_product(query=self.p.item2).title, field="item2_title"),
+                }
+            else:
+                condition = "全新" if self.spec.index in {2, 6, 7} else None
+                top = ebay.cheapest_product(query=self.p.query, condition=condition)
+                if notes is not None:
+                    replacements["note_title"] = notes.check_latest_norm_contains(top.title, field="note_title")
+                if wechat is not None:
+                    replacements["wechat_title"] = wechat.check_new_sent_norm_contains(self.p.contact, top.title, field="wechat_title")
+            return [replacements.get(check.get("field"), check) for check in checks]
         if self.spec.v3_index == 42:
             return self._check_redbook_feed_and_dm(input)
         if self.spec.source_task == "map.NearestInRadiusRatingRank":
@@ -145,6 +277,10 @@ for _case in CASES:
     _source_suite, _source_name = _case.source_task.split(".", 1)
     _base = _registry.get(_source_suite, _source_name)
     _source_defaults = dict(_base().params)
+    if _case.index == 47:
+        # The V4 instruction names July 14 explicitly. Do not let the source
+        # task's host-time-dependent ``default_tomorrow`` move setup/judging.
+        _source_defaults["date"] = "2026-07-14"
     _source_spec = getattr(_base, "spec", None)
     _apps = tuple(_base.apps)
     _spec = replace(

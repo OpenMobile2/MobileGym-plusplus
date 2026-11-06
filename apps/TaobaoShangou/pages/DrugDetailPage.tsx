@@ -17,13 +17,13 @@ export default function DrugDetailPage() {
 
   const [tab, setTab] = useState<'sellers' | 'combo'>('sellers');
 
-  /** 该药品在各药店的在售条目(按价格升序) */
+  /** 该药品在各药店的在售条目(按距离升序，最近的店在前) */
   const sellers = useMemo(() => {
     const arr = items.filter((i) => i.drugKey === drugId);
     return arr
       .map((it) => ({ it, shop: shops.find((s) => s.id === it.shopId) }))
       .filter((r) => r.shop)
-      .sort((a, b) => a.it.price - b.it.price);
+      .sort((a, b) => (a.shop!.distanceKm - b.shop!.distanceKm) || (a.it.price - b.it.price));
   }, [items, shops, drugId]);
 
   if (sellers.length === 0) {

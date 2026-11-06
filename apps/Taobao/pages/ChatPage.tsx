@@ -2,7 +2,9 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useTaobaoStore } from '../state';
 import { useTaobaoGestures } from '../hooks/useTaobaoGestures';
+import { useStrings } from '../hooks/useStrings';
 import { TopBar, Img, Price, useToast } from '../components/ui';
+import { fmt } from '../utils/format';
 import { IcSmile, IcCirclePlus, IcMic } from '../res/icons';
 
 /**
@@ -12,15 +14,16 @@ import { IcSmile, IcCirclePlus, IcMic } from '../res/icons';
 export default function ChatPage() {
   const { chatId = '' } = useParams();
   const { bindTap } = useTaobaoGestures();
-  const chat = useTaobaoStore((s) => s.chats.find((c) => c.id === chatId));
-  const shop = useTaobaoStore((s) => s.shops.find((x) => x.id === chat?.shopId));
-  const items = useTaobaoStore((s) => s.items);
-  const orders = useTaobaoStore((s) => s.orders);
-  const footprints = useTaobaoStore((s) => s.footprints);
-  const sendChatMessage = useTaobaoStore((s) => s.sendChatMessage);
-  const sendChatItemCard = useTaobaoStore((s) => s.sendChatItemCard);
-  const confirmChatAddress = useTaobaoStore((s) => s.confirmChatAddress);
-  const markChatRead = useTaobaoStore((s) => s.markChatRead);
+  const s = useStrings();
+  const chat = useTaobaoStore((st) => st.chats.find((c) => c.id === chatId));
+  const shop = useTaobaoStore((st) => st.shops.find((x) => x.id === chat?.shopId));
+  const items = useTaobaoStore((st) => st.items);
+  const orders = useTaobaoStore((st) => st.orders);
+  const footprints = useTaobaoStore((st) => st.footprints);
+  const sendChatMessage = useTaobaoStore((st) => st.sendChatMessage);
+  const sendChatItemCard = useTaobaoStore((st) => st.sendChatItemCard);
+  const confirmChatAddress = useTaobaoStore((st) => st.confirmChatAddress);
+  const markChatRead = useTaobaoStore((st) => st.markChatRead);
 
   const [input, setInput] = useState('');
   const [floatCardVisible, setFloatCardVisible] = useState(true);
@@ -38,9 +41,9 @@ export default function ChatPage() {
 
   if (!chat) {
     return (
-      <div className="flex flex-col h-full bg-[#F5F6F7]">
-        <TopBar title="会话" />
-        <div className="flex-1 flex items-center justify-center text-[#999999]">会话不存在</div>
+      <div className="flex flex-col h-full bg-app-bg">
+        <TopBar title={s.chatTitle} />
+        <div className="flex-1 flex items-center justify-center text-app-text-muted">{s.chatNotFound}</div>
       </div>
     );
   }
@@ -62,7 +65,7 @@ export default function ChatPage() {
   };
 
   return (
-    <div className="flex flex-col h-full bg-[#F5F6F7]">
+    <div className="flex flex-col h-full bg-app-bg">
       <TopBar
         title={
           <span>
@@ -80,26 +83,26 @@ export default function ChatPage() {
               className="w-8 h-8 rounded-lg shrink-0"
             />
             {m.type === 'addressConfirm' ? (
-              <div className="bg-white rounded-xl p-3 max-w-[78%]">
-                <div className="text-[11px] text-[#999999] mb-1">客服机器人</div>
-                <div className="text-[14px] font-semibold">请确认收货地址</div>
+              <div className="bg-app-surface rounded-xl p-3 max-w-[78%]">
+                <div className="text-[11px] text-app-text-muted mb-1">{s.serviceBotLabel}</div>
+                <div className="text-[14px] font-semibold">{s.confirmAddressCardTitle}</div>
                 {relatedOrder && floatItem && (
                   <div className="flex gap-2 mt-2 bg-[#FAFAFA] rounded-lg p-2">
                     <Img src={floatItem.image} className="w-10 h-10 rounded" />
-                    <div className="text-[11px] text-[#666666] flex-1 line-clamp-2">{floatItem.title}</div>
+                    <div className="text-[11px] text-app-text-muted flex-1 line-clamp-2">{floatItem.title}</div>
                   </div>
                 )}
-                <div className="text-[12px] text-[#666666] mt-2 leading-relaxed">
-                  收件人:{defaultAddr?.name}<br />
-                  手机号码:{defaultAddr ? `${defaultAddr.phone.slice(0, 3)}****${defaultAddr.phone.slice(-4)}(号码保护中)` : ''}<br />
-                  详细地址:{defaultAddr ? defaultAddr.region.replace(/ /g, '') + defaultAddr.detail : ''}
+                <div className="text-[12px] text-app-text-muted mt-2 leading-relaxed">
+                  {s.recipientLabel}{defaultAddr?.name}<br />
+                  {s.phoneLabel}{defaultAddr ? `${defaultAddr.phone.slice(0, 3)}****${defaultAddr.phone.slice(-4)}${s.numberProtectedSuffix}` : ''}<br />
+                  {s.detailAddressLabel}{defaultAddr ? defaultAddr.region.replace(/ /g, '') + defaultAddr.detail : ''}
                 </div>
                 {m.confirmed ? (
-                  <div className="text-[12px] text-[#00B578] mt-2">✓ 已确认</div>
+                  <div className="text-[12px] text-[#00B578] mt-2">{s.confirmedLabel}</div>
                 ) : (
                   <div className="flex gap-2 mt-2">
-                    <button className="flex-1 text-[13px] rounded-full border border-[#FF5000] text-[#FF5000] bg-white py-1.5 cursor-pointer">
-                      修改地址
+                    <button className="flex-1 text-[13px] rounded-full border border-[#FF5000] text-[#FF5000] bg-app-surface py-1.5 cursor-pointer">
+                      {s.editAddressLabel}
                     </button>
                     <button
                       {...bindTap({ kind: 'action', id: 'chat.addressCard.confirm' }, {
@@ -108,13 +111,13 @@ export default function ChatPage() {
                       })}
                       className="flex-1 text-[13px] rounded-full bg-gradient-to-r from-[#FF9402] to-[#FF5000] text-white border-none py-1.5 cursor-pointer"
                     >
-                      确认
+                      {s.confirmLabel}
                     </button>
                   </div>
                 )}
               </div>
             ) : m.type === 'itemCard' ? (
-              <div className="bg-white rounded-xl p-2.5 max-w-[70%]">
+              <div className="bg-app-surface rounded-xl p-2.5 max-w-[70%]">
                 {(() => {
                   const it = items.find((i) => i.id === m.itemId);
                   return it ? (
@@ -125,12 +128,12 @@ export default function ChatPage() {
                         <Price value={it.price} size="s" />
                       </div>
                     </div>
-                  ) : <span className="text-[12px]">[商品]</span>;
+                  ) : <span className="text-[12px]">{s.productBracketLabel}</span>;
                 })()}
               </div>
             ) : (
               <div className={`rounded-xl px-3 py-2 max-w-[70%] text-[14px] leading-relaxed ${
-                m.sender === 'me' ? 'bg-[#CFE8FF]' : 'bg-white'
+                m.sender === 'me' ? 'bg-[#CFE8FF]' : 'bg-app-surface'
               }`}>
                 {m.content}
               </div>
@@ -141,15 +144,15 @@ export default function ChatPage() {
 
       {/* 商品浮卡 */}
       {chat.kind === 'shop' && floatItem && floatCardVisible && (
-        <div className="shrink-0 mx-3 mb-1.5 bg-white rounded-xl p-2.5 flex items-center gap-2 shadow">
+        <div className="shrink-0 mx-3 mb-1.5 bg-app-surface rounded-xl p-2.5 flex items-center gap-2 shadow">
           <Img src={floatItem.image} className="w-11 h-11 rounded-lg" />
           <div className="flex-1 min-w-0">
-            <div className="text-[11px] text-[#999999]">{recentFp ? '你可能想咨询该宝贝' : '你可能想咨询该订单'}</div>
+            <div className="text-[11px] text-app-text-muted">{recentFp ? s.floatCardItemHint : s.floatCardOrderHint}</div>
             <div className="text-[12px] line-clamp-1">{floatItem.title}</div>
             {recentFp ? (
               <div className="text-[11px]"><Price value={floatItem.price} size="s" /></div>
             ) : (
-              <div className="text-[11px]">共{relatedOrder!.lines.length}件商品 合计 <Price value={relatedOrder!.paidAmount} size="s" /></div>
+              <div className="text-[11px]">{fmt(s.floatCardOrderSummaryFmt, { count: relatedOrder!.lines.length })} <Price value={relatedOrder!.paidAmount} size="s" /></div>
             )}
           </div>
           <button
@@ -159,27 +162,27 @@ export default function ChatPage() {
             })}
             className="text-[12px] text-white bg-gradient-to-r from-[#FF9402] to-[#FF5000] rounded-full px-3 py-1.5 border-none cursor-pointer shrink-0"
           >
-            发送
+            {s.sendLabel}
           </button>
           <button onClick={() => setFloatCardVisible(false)} className="text-[#BBBBBB] bg-transparent border-none cursor-pointer">✕</button>
         </div>
       )}
 
       {/* 输入栏 */}
-      <div className="shrink-0 bg-white border-t border-[#EEEEEE] flex items-center gap-2 px-3 py-2" data-keep-keyboard="true">
-        <button onClick={() => showToast('语音输入暂未开放')} className="bg-transparent border-none cursor-pointer p-0 shrink-0">
-          <IcMic size={20} className="text-[#666666]" />
+      <div className="shrink-0 bg-app-surface border-t border-app-border flex items-center gap-2 px-3 py-2" data-keep-keyboard="true">
+        <button onClick={() => showToast(s.voiceInputUnavailable)} className="bg-transparent border-none cursor-pointer p-0 shrink-0">
+          <IcMic size={20} className="text-app-text-muted" />
         </button>
         <input
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => { if (e.key === 'Enter') send(); }}
-          placeholder={chat.kind === 'ai' ? '发消息或按住说话…' : '输入消息…'}
+          placeholder={chat.kind === 'ai' ? s.aiChatPlaceholder : s.chatPlaceholder}
           className="flex-1 bg-[#F5F5F5] rounded-full h-9 px-3 text-[14px] border-none outline-none"
           data-keep-keyboard="true"
         />
-        <button onClick={() => showToast('表情暂未开放')} className="bg-transparent border-none cursor-pointer p-0 shrink-0">
-          <IcSmile size={20} className="text-[#666666]" />
+        <button onClick={() => showToast(s.emojiUnavailable)} className="bg-transparent border-none cursor-pointer p-0 shrink-0">
+          <IcSmile size={20} className="text-app-text-muted" />
         </button>
         {input.trim() ? (
           chat.kind === 'ai' ? (
@@ -188,7 +191,7 @@ export default function ChatPage() {
               className="text-[13px] text-white bg-gradient-to-r from-[#FF9402] to-[#FF5000] rounded-full px-3.5 py-1.5 border-none cursor-pointer shrink-0"
               data-keep-keyboard="true"
             >
-              发送
+              {s.sendLabel}
             </button>
           ) : (
             <button
@@ -196,12 +199,12 @@ export default function ChatPage() {
               className="text-[13px] text-white bg-gradient-to-r from-[#FF9402] to-[#FF5000] rounded-full px-3.5 py-1.5 border-none cursor-pointer shrink-0"
               data-keep-keyboard="true"
             >
-              发送
+              {s.sendLabel}
             </button>
           )
         ) : (
-          <button onClick={() => showToast('图片/文件发送暂未开放')} className="bg-transparent border-none cursor-pointer p-0 shrink-0">
-            <IcCirclePlus size={20} className="text-[#666666]" />
+          <button onClick={() => showToast(s.fileSendUnavailable)} className="bg-transparent border-none cursor-pointer p-0 shrink-0">
+            <IcCirclePlus size={20} className="text-app-text-muted" />
           </button>
         )}
       </div>

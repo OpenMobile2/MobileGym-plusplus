@@ -242,11 +242,18 @@ class LLMClient:
                     raw = {"choices": [{"message": {"content": str(completion)}}]}
 
                 content, reasoning = _extract_content_and_reasoning(raw)
-                if reasoning:
+                has_tool_calls = False
+                try:
+                    has_tool_calls = bool(
+                        raw.get("choices", [{}])[0].get("message", {}).get("tool_calls")
+                    )
+                except Exception:
+                    has_tool_calls = False
+                if reasoning and not has_tool_calls:
                     content = _merge_reasoning_into_content(content, reasoning)
                     reasoning = None
-                if content.strip() or attempt == max_retries:
-                    if not content.strip():
+                if content.strip() or has_tool_calls or attempt == max_retries:
+                    if not content.strip() and not has_tool_calls:
                         logger.warning("[LLM] Empty response content after %d attempts", max_retries)
                     return ChatResult(content=content, reasoning=reasoning, latency_s=latency, raw=raw)
 

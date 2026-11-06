@@ -11,7 +11,7 @@ export const OS = {
 } as const;
 
 /** 每次修改 defaults.json 必须递增(persistName 版本化,变更即重置本地数据) */
-export const DATA_VERSION = 5;
+export const DATA_VERSION = 6;
 
 /** 底部主 tab(spec chrome.tabbar) */
 export const MAIN_TABS = [

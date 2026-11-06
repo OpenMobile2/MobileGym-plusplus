@@ -231,31 +231,40 @@ export function buildDefaultLauncherLayout(appRegistry: AppManifest[]): Launcher
   // putting it back on a later page.
   const desktopHiddenAppIds = new Set<string>(['meituan']);
 
-  // Remaining apps go to screen 2 sequentially.
+  // Remaining apps go to screen 2 sequentially, spilling into screen 3, 4, ...
+  // when a screen fills up (mirrors reconcileLauncherLayoutWithRegistry) so no
+  // app is ever silently dropped when the registry grows beyond one extra grid.
   const remainingAppIds = appRegistry
     .map(a => a.id)
     .filter(id => !!id && isValidAppIdFromRegistry(id, appRegistry))
     .filter(id => !usedAppIds.has(id) && !desktopHiddenAppIds.has(id));
 
-  const screen2Id = 'screen_2';
-  const screen2Placements: LauncherPlacement[] = [];
-  const occ2 = buildOccupancyFromPlacements(grid, screen2Placements);
+  const extraScreens: LauncherScreen[] = [];
+  let currentScreen: LauncherScreen = { id: 'screen_2', placements: [] };
+  extraScreens.push(currentScreen);
+  let occCurrent = createOccupancy(grid);
   for (const appId of remainingAppIds) {
-    const pos = findVacantCell(grid, occ2, 1, 1);
-    if (!pos) break;
+    let pos = findVacantCell(grid, occCurrent, 1, 1);
+    if (!pos) {
+      currentScreen = { id: `screen_${extraScreens.length + 2}`, placements: [] };
+      extraScreens.push(currentScreen);
+      occCurrent = createOccupancy(grid);
+      pos = findVacantCell(grid, occCurrent, 1, 1);
+      if (!pos) break;
+    }
     const appItem = createAppItem(appId);
     items[appItem.id] = appItem;
     const placement: LauncherPlacement = {
       itemId: appItem.id,
       container: 'workspace',
-      screenId: screen2Id,
+      screenId: currentScreen.id,
       cellX: pos.cellX,
       cellY: pos.cellY,
       spanX: 1,
       spanY: 1,
     };
-    screen2Placements.push(placement);
-    occupy(occ2, pos.cellX, pos.cellY, 1, 1);
+    currentScreen.placements.push(placement);
+    occupy(occCurrent, pos.cellX, pos.cellY, 1, 1);
   }
 
   // Hotseat placements
@@ -276,7 +285,7 @@ export function buildDefaultLauncherLayout(appRegistry: AppManifest[]): Launcher
 
   const screens: LauncherScreen[] = [
     { id: screen1Id, placements: screen1Placements },
-    { id: screen2Id, placements: screen2Placements },
+    ...extraScreens,
   ];
 
   return normalizeLauncherLayout({
@@ -342,8 +351,16 @@ export function normalizeLauncherLayout(layout: LauncherLayout, appRegistry: App
 
   const screens: LauncherScreen[] = Array.isArray(layout.screens) ? layout.screens : [];
   const normalizedScreens: LauncherScreen[] = [];
+  const usedScreenIds = new Set<string>();
   for (const s of screens) {
-    const id = typeof s?.id === 'string' && s.id ? s.id : makeId('screen');
+    const requestedId = typeof s?.id === 'string' && s.id ? s.id : makeId('screen');
+    let id = requestedId;
+    let suffix = 2;
+    while (usedScreenIds.has(id)) {
+      id = `${requestedId}_${suffix}`;
+      suffix += 1;
+    }
+    usedScreenIds.add(id);
     const rawPlacements = Array.isArray(s?.placements) ? s.placements : [];
     const placements: LauncherPlacement[] = [];
     for (const p of rawPlacements) {

@@ -23,6 +23,7 @@ export function SubscribePage() {
   const [tab, setTab] = useState<string>('全部');
   const [sort, setSort] = useState('默认排序');
   const [sortOpen, setSortOpen] = useState(false);
+  const recordTaskAudit = useXimalayaStore((st) => st.recordTaskAudit);
   const [moreOpen, setMoreOpen] = useState(false);
   const [menuAlbum, setMenuAlbum] = useState<string | null>(null);
 
@@ -149,7 +150,7 @@ export function SubscribePage() {
           <div className="absolute inset-0 bg-black/40" />
           <div className="absolute left-3 right-3 top-[152px] bg-white rounded-xl overflow-hidden" onClick={(e) => e.stopPropagation()}>
             {SORT_OPTIONS.map((o) => (
-              <button key={o} onClick={() => { setSort(o); setSortOpen(false); }} className="w-full flex items-center justify-between px-4 py-3 text-[14px] text-[#333] border-b border-[#F5F5F5] last:border-0">
+              <button key={o} onClick={() => { setSort(o); recordTaskAudit({ subscriptionSort: o }); setSortOpen(false); }} className="w-full flex items-center justify-between px-4 py-3 text-[14px] text-[#333] border-b border-[#F5F5F5] last:border-0">
                 {o}{o === sort && <IcCheck size={16} className="text-[#FE4543]" />}
               </button>
             ))}

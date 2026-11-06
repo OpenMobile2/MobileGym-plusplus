@@ -215,7 +215,7 @@ Call one with action_type `app_tool`, its exact `name`, and an `arguments` objec
 - The current foreground context is `{app_context}`.
 - Execute exactly one action per turn, then inspect the next screenshot and tool result.
 - Never invent an App Tool or call a tool that is not listed in this turn.
-- When a task names an app, prefer `open_app` with its exact name or id instead of guessing a launcher icon.
+- When a task names an app, prefer `open_app` with its display name or id (case and spaces are ignored). If you get APP_NOT_FOUND, retry with another installed name or tap the launcher icon.
 - In benchmark instructions, `笔记` or `Notes` means the system Notes app, never Flomo unless Flomo is named explicitly.
 - `answer` records an answer but does not terminate. After every requested operation is complete, use `terminate` with status `success`.
 - Use `terminate` with status `failure` only when the task is genuinely impossible, not after a recoverable error.

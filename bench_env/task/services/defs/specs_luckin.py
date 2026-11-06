@@ -1,4 +1,4 @@
-"""Luckin Coffee (瑞幸咖啡) hybrid GUI+Tools tasks -- tool-boundary probe (services).
+"""Luckin Coffee (瑞幸咖啡) hybrid GUI+Tools tasks -- tool-boundary probe (selfbuilt-v4).
 
 See ``services/__init__.py`` for the four-lens design rationale
 (``idinhand`` / ``state_direct`` / ``field_mismatch`` / ``query_scan_mismatch``).

@@ -8,7 +8,7 @@
 - 并发 8,指数退避重试;自包含(raw requests,不依赖 openai SDK)
 
 环境变量:IMAGE_GEN_API_KEY(必填)、IMAGE_GEN_BASE_URL、IMAGE_GEN_MODEL
-运行:  IMAGE_GEN_API_KEY=... IMAGE_GEN_BASE_URL=http://host:port/v1 python apps/Pinduoduo/assets/gen_item_images.py
+运行:  python apps/Pinduoduo/assets/gen_item_images.py
 
 安全红线(§5.3):prompt 只描述合成主体,禁止上传真机截图。key 只从环境变量读,禁止硬编码/提交。
 """
@@ -23,12 +23,16 @@ from pathlib import Path
 
 import requests
 
+_REPO_ROOT = Path(__file__).resolve().parents[5]
+sys.path.insert(0, str(_REPO_ROOT / "tools"))
+from image_gen_client import image_gen_api_key, image_gen_base_url, image_gen_model  # noqa: E402
+
 OUT_DIR = Path(__file__).parent / "items"
 OUT_DIR.mkdir(exist_ok=True)
 
-API_KEY = os.environ.get("IMAGE_GEN_API_KEY") or os.environ.get("TOKENHUB_API_KEY")
-BASE_URL = os.environ.get("IMAGE_GEN_BASE_URL", "https://example.invalid/v1").rstrip("/")
-MODEL = os.environ.get("IMAGE_GEN_MODEL", "gpt-image-2")
+API_KEY = image_gen_api_key()
+BASE_URL = image_gen_base_url().rstrip("/")
+MODEL = image_gen_model()
 URL = BASE_URL + ("/images/generations" if BASE_URL.endswith("/v1") else "/v1/images/generations")
 
 STYLE = ("电商商品主图,专业产品摄影,浅色干净背景,柔和棚拍打光,商品居中占画面主体,"

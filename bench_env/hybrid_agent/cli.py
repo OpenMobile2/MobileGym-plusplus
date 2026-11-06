@@ -19,7 +19,16 @@ from bench_env.hybrid_agent.kimi_k2_6 import (
     KimiK26AgentConfig,
     kimi_k2_6_model_args,
 )
-from bench_env.hybrid_agent.modes import HYBRID_MODE, INTERACTION_MODES
+from bench_env.hybrid_agent.modes import (
+    HYBRID_MODE,
+    INTERACTION_MODES,
+    BENCHMARK_RUNTIMES,
+    HYBRID_XML_RUNTIME,
+    QWEN35_SESSION_RUNTIME,
+    QWEN35_THOUGHT_SESSION_RUNTIME,
+    is_session_runtime,
+)
+from bench_env.hybrid_agent.qwen35_session import Qwen35SessionAgent
 from bench_env.hybrid_agent.runtime import HybridAgentRuntime
 from bench_env.hybrid_agent.setups import setup_calendar_demo
 from bench_env.llm import LLMClient
@@ -38,6 +47,14 @@ def create_parser() -> argparse.ArgumentParser:
         default=HYBRID_MODE,
         help="hybrid exposes foreground App Tools; gui_only exposes only mobile_use",
     )
+    parser.add_argument(
+        "--runtime",
+        choices=list(BENCHMARK_RUNTIMES),
+        default=HYBRID_XML_RUNTIME,
+        help="hybrid_xml = per-turn XML system prompt; qwen35_session = official session packing; qwen35_thought_session = Thought: + XML, no native thinking",
+    )
+    parser.add_argument("--last-n", type=int, default=3)
+    parser.add_argument("--enable-thinking", choices=["true", "false"], default="true")
     parser.add_argument("--max-steps", type=int, default=30)
     parser.add_argument("--max-tokens", type=int, default=8192)
     parser.add_argument("--temperature", type=float, default=0.1)
@@ -109,6 +126,21 @@ async def async_main(args: argparse.Namespace) -> int:
                 verbose=not args.quiet,
                 history_n_images=args.kimi_history_images,
             ),
+        )
+    elif is_session_runtime(args.runtime):
+        if args.agent_protocol != "xml":
+            raise SystemExit(f"--runtime {args.runtime} requires --agent-protocol xml")
+        agent = Qwen35SessionAgent(
+            llm,
+            last_n=args.last_n,
+            enable_thinking=False
+            if args.runtime == QWEN35_THOUGHT_SESSION_RUNTIME
+            else args.enable_thinking == "true",
+            max_tokens=args.max_tokens,
+            verbose=not args.quiet,
+            interaction_mode=args.interaction_mode,
+            model_name=args.model_name,
+            thought_session=args.runtime == QWEN35_THOUGHT_SESSION_RUNTIME,
         )
     else:
         agent = HybridXmlAgent(

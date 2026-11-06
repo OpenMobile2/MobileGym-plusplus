@@ -4,18 +4,41 @@ import { useFlomoGestures } from '../hooks/useFlomoGestures';
 import { Sheet } from '../components/Sheet';
 import { C } from '../components/ui';
 import { IcLauncher } from '../res/icons';
+import { payWithSystem } from '../capabilities';
 
 /**
- * iOS App Store 系统购买弹层(mock)。
+ * iOS App Store 购买确认弹层。
  * 渲染为底部 Sheet 卡片,标题「App Store」,展示商品名 + 价格 + 购买按钮。
  * 取消/关闭(点暗背景)→ bindBack() 回到 pro.intro。
  */
 export default function PaySheetPage() {
-  const { bindTap, back } = useFlomoGestures();
+  const { bindTap, go } = useFlomoGestures();
   const toast = useFlomoStore((s) => s.toast);
   const payPlan = useFlomoStore((s) => s.payPlan);
   const paySuccess = useFlomoStore((s) => s.paySuccess);
   const isYearly = payPlan === 'yearly';
+  const amount = isYearly ? 99 : 15;
+
+  const startPayment = () => {
+    const launched = payWithSystem(
+      {
+        amount,
+        orderId: `flomo-pro-${payPlan}`,
+        subject: `flomo PRO 会员(${isYearly ? '年度' : '月度'})`,
+        method: '支付宝支付',
+      },
+      (result) => {
+        if (result.resultCode === 'OK') {
+          paySuccess();
+          toast('支付成功，会员已续期');
+          go('pay.sheet.close');
+        } else {
+          toast('已取消支付');
+        }
+      },
+    );
+    if (!launched) toast('未找到可用的支付应用');
+  };
 
   return (
     <Sheet title="App Store">
@@ -46,11 +69,7 @@ export default function PaySheetPage() {
           {...bindTap(
             { kind: 'action', id: 'pay.sheet.pay.mock' },
             {
-              onTrigger: () => {
-                paySuccess();
-                toast('支付成功(模拟),会员已续期');
-                back();
-              },
+              onTrigger: startPayment,
             },
           )}
           className="w-full h-11 rounded-full border-none cursor-pointer font-semibold"

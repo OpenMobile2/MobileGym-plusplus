@@ -3,15 +3,18 @@ import { useSearchParams } from 'react-router-dom';
 import { useTaobaoStore } from '../state';
 import { SORT_OPTIONS } from '../constants';
 import { useTaobaoGestures } from '../hooks/useTaobaoGestures';
+import { useStrings } from '../hooks/useStrings';
 import { ItemGrid } from '../components/ItemCard';
 import { Img, usePanel } from '../components/ui';
+import { fmt } from '../utils/format';
+import type { TaobaoStringKey } from '../res/strings';
 import { IcNavBack, IcCamera, IcFilter } from '../res/icons';
 import type { TbItem } from '../types';
 
-const FILTER_GROUPS = [
-  { name: '物流', options: ['包邮', '退货宝', '48小时内发', '24小时内发', '送货上门', '次日达'] },
-  { name: '店铺评分', options: ['5分', '4.8分及以上', '4.6分及以上'] },
-  { name: '价格区间', options: ['100元以下', '100-300元', '300-600元', '600元以上'] },
+const FILTER_GROUP_KEYS: { nameKey: TaobaoStringKey; optionKeys: TaobaoStringKey[] }[] = [
+  { nameKey: 'filterGroupLogistics', optionKeys: ['logisticsFreeShipping', 'logisticsReturnGuarantee', 'logisticsShip48h', 'logisticsShip24h', 'logisticsHomeDelivery', 'logisticsNextDay'] },
+  { nameKey: 'filterGroupShopRating', optionKeys: ['rating5', 'rating48Plus', 'rating46Plus'] },
+  { nameKey: 'filterGroupPriceRange', optionKeys: ['priceUnder100', 'price100to300', 'price300to600', 'priceOver600'] },
 ];
 
 /**
@@ -25,8 +28,9 @@ export default function SearchResultPage() {
   const sort = searchParams.get('sort') ?? 'default';
   const { value: panel, open: openPanel } = usePanel();
   const { bindTap, bindBack, back } = useTaobaoGestures();
-  const items = useTaobaoStore((s) => s.items);
-  const shops = useTaobaoStore((s) => s.shops);
+  const s = useStrings();
+  const items = useTaobaoStore((st) => st.items);
+  const shops = useTaobaoStore((st) => st.shops);
   const [pendingFilters, setPendingFilters] = useState<string[]>([]);
   const [appliedFilters, setAppliedFilters] = useState<string[]>([]);
   const [priceAsc, setPriceAsc] = useState(true);
@@ -35,7 +39,7 @@ export default function SearchResultPage() {
   let matched = kw
     ? items.filter(
         (i) => i.title.toLowerCase().includes(kw) || i.category.includes(kw) ||
-          shops.find((s) => s.id === i.shopId)?.name.toLowerCase().includes(kw),
+          shops.find((sh) => sh.id === i.shopId)?.name.toLowerCase().includes(kw),
       )
     : items;
   const noResult = matched.length === 0;
@@ -48,12 +52,12 @@ export default function SearchResultPage() {
   });
 
   // 品牌官方卡:搜索词命中店铺名时展示
-  const brandShop = kw ? shops.find((s) => s.name.toLowerCase().includes(kw)) : undefined;
+  const brandShop = kw ? shops.find((sh) => sh.name.toLowerCase().includes(kw)) : undefined;
 
   return (
-    <div className="flex flex-col h-full bg-[#F5F6F7]">
+    <div className="flex flex-col h-full bg-app-bg">
       {/* 搜索头 */}
-      <div className="flex items-center gap-2 px-2 h-12 shrink-0 bg-white">
+      <div className="flex items-center gap-2 px-2 h-12 shrink-0 bg-app-surface">
         <button {...bindBack()} className="w-8 h-8 flex items-center justify-center bg-transparent border-none cursor-pointer">
           <IcNavBack size={24} />
         </button>
@@ -61,19 +65,19 @@ export default function SearchResultPage() {
           {...bindBack({ params: { reason: 'editQuery' } })}
           className="flex-1 flex items-center bg-[#F5F5F5] rounded-full h-9 px-3 gap-2 cursor-pointer"
         >
-          <span className="flex-1 text-[14px] text-[#111111] truncate">{q || '搜索宝贝'}</span>
-          <IcCamera size={17} className="text-[#666666]" />
+          <span className="flex-1 text-[14px] text-app-text truncate">{q || s.searchItemsPlaceholder}</span>
+          <IcCamera size={17} className="text-app-text-muted" />
         </div>
         <button
           {...bindTap('search.submit', { params: { q } })}
           className="bg-gradient-to-r from-[#FF9402] to-[#FF5000] text-white text-[14px] rounded-full px-4 py-1.5 border-none cursor-pointer"
         >
-          搜索
+          {s.search}
         </button>
       </div>
 
       {/* 排序栏 */}
-      <div className="flex items-center px-4 h-10 shrink-0 bg-white border-t border-[#F5F5F5] gap-5">
+      <div className="flex items-center px-4 h-10 shrink-0 bg-app-surface border-t border-[#F5F5F5] gap-5">
         {SORT_OPTIONS.map((o) => (
           <button
             key={o.id}
@@ -85,10 +89,10 @@ export default function SearchResultPage() {
               },
             })}
             className={`text-[14px] bg-transparent border-none cursor-pointer ${
-              sort === o.id ? 'text-[#FF5000] font-semibold' : 'text-[#333333]'
+              sort === o.id ? 'text-[#FF5000] font-semibold' : 'text-app-text'
             }`}
           >
-            {o.label}
+            {s[o.labelKey as TaobaoStringKey]}
             {o.id === 'price' && <span className="text-[10px] ml-0.5">{sort === 'price' ? (priceAsc ? '↑' : '↓') : '↕'}</span>}
           </button>
         ))}
@@ -98,37 +102,37 @@ export default function SearchResultPage() {
             onTrigger: () => openPanel('filter'),
           })}
           className={`flex items-center gap-1 text-[14px] bg-transparent border-none cursor-pointer ${
-            appliedFilters.length ? 'text-[#FF5000]' : 'text-[#333333]'
+            appliedFilters.length ? 'text-[#FF5000]' : 'text-app-text'
           }`}
         >
-          <IcFilter size={15} />筛选{appliedFilters.length > 0 && `·${appliedFilters.length}`}
+          <IcFilter size={15} />{s.filterLabel}{appliedFilters.length > 0 && `·${appliedFilters.length}`}
         </button>
       </div>
 
       <div className="flex-1 overflow-y-auto" data-scroll-container="search-result" data-scroll-direction="vertical">
         {/* 品牌官方卡 */}
         {brandShop && (
-          <div className="mx-2.5 mt-2 bg-white rounded-xl p-3">
-            <div className="text-[10px] text-[#999999] mb-1.5">品牌官方 <span className="text-white bg-[#FF0036] rounded px-1">天猫</span></div>
+          <div className="mx-2.5 mt-2 bg-app-surface rounded-xl p-3">
+            <div className="text-[10px] text-app-text-muted mb-1.5">{s.brandOfficialLabel} <span className="text-white bg-[#FF0036] rounded px-1">{s.tmallBadgeLabel}</span></div>
             <div className="flex items-center gap-2.5">
               <Img src={brandShop.logo} className="w-11 h-11 rounded-lg" />
               <div className="flex-1">
                 <div className="text-[15px] font-semibold">{brandShop.name}</div>
-                <div className="text-[11px] text-[#999999]">{brandShop.fans}粉丝 · 好评率{brandShop.positiveRate}</div>
+                <div className="text-[11px] text-app-text-muted">{fmt(s.shopFansRateFmt, { fans: brandShop.fans, rate: brandShop.positiveRate })}</div>
               </div>
               <button
                 {...bindTap('searchResult.shop-open', { params: { shopId: brandShop.id } })}
                 className="bg-gradient-to-r from-[#FF9402] to-[#FF5000] text-white text-[13px] rounded-full px-4 py-1.5 border-none cursor-pointer"
               >
-                进店
+                {s.enterShopLabel}
               </button>
             </div>
           </div>
         )}
 
         {noResult && (
-          <div className="mx-2.5 mt-2 text-[12px] text-[#999999] bg-white rounded-lg px-3 py-2">
-            没有找到与「{q}」相关的宝贝,为你推荐以下商品
+          <div className="mx-2.5 mt-2 text-[12px] text-app-text-muted bg-app-surface rounded-lg px-3 py-2">
+            {fmt(s.noResultsFmt, { query: q })}
           </div>
         )}
 
@@ -144,25 +148,26 @@ export default function SearchResultPage() {
       {panel === 'filter' && (
         <div className="absolute inset-0 z-40">
           <div className="absolute inset-0 bg-black/50" onClick={() => back()} />
-          <div className="absolute right-0 top-0 bottom-0 w-[78%] bg-white flex flex-col">
-            <div className="text-center font-semibold text-[15px] h-12 leading-[48px] shrink-0">全部筛选</div>
+          <div className="absolute right-0 top-0 bottom-0 w-[78%] bg-app-surface flex flex-col">
+            <div className="text-center font-semibold text-[15px] h-12 leading-[48px] shrink-0">{s.allFiltersTitle}</div>
             <div className="flex-1 overflow-y-auto px-3">
-              {FILTER_GROUPS.map((g) => (
-                <div key={g.name} className="mb-4">
-                  <div className="text-[13px] text-[#666666] mb-2">{g.name}</div>
+              {FILTER_GROUP_KEYS.map((g) => (
+                <div key={g.nameKey} className="mb-4">
+                  <div className="text-[13px] text-app-text-muted mb-2">{s[g.nameKey]}</div>
                   <div className="flex flex-wrap gap-2">
-                    {g.options.map((o) => {
+                    {g.optionKeys.map((oKey) => {
+                      const o = s[oKey];
                       const on = pendingFilters.includes(o);
                       return (
                         <button
-                          key={o}
+                          key={oKey}
                           onClick={() =>
                             setPendingFilters((f) => (on ? f.filter((x) => x !== o) : [...f, o]))
                           }
                           className={`text-[12px] rounded-lg px-3 py-2 border cursor-pointer ${
                             on
                               ? 'bg-[#FFF1E8] text-[#FF5000] border-[#FF5000]'
-                              : 'bg-[#F8F8F8] text-[#333333] border-transparent'
+                              : 'bg-app-bg text-app-text border-transparent'
                           }`}
                         >
                           {o}
@@ -178,9 +183,9 @@ export default function SearchResultPage() {
                 {...bindTap({ kind: 'action', id: 'searchResult.filter.clear' }, {
                   onTrigger: () => setPendingFilters([]),
                 })}
-                className="flex-1 rounded-full border border-[#DDDDDD] bg-white text-[14px] py-2.5 cursor-pointer"
+                className="flex-1 rounded-full border border-[#DDDDDD] bg-app-surface text-[14px] py-2.5 cursor-pointer"
               >
-                清空选择
+                {s.clearSelectionLabel}
               </button>
               <button
                 {...bindTap({ kind: 'action', id: 'searchResult.filter.apply' }, {
@@ -188,7 +193,7 @@ export default function SearchResultPage() {
                 })}
                 className="flex-1 rounded-full bg-gradient-to-r from-[#FF9402] to-[#FF5000] text-white text-[14px] py-2.5 border-none cursor-pointer"
               >
-                确定
+                {s.okLabel}
               </button>
             </div>
             <div className="h-4 shrink-0" />

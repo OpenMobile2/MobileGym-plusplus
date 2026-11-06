@@ -48,6 +48,9 @@ export function matchAlbumByKeyword<T extends SearchableAlbum>(album: T, keyword
   return kws.every((kw) =>
     matchKeyword(album.title, kw) ||
     album.tags.some((t) => matchKeyword(t, kw)) ||
+    // 用户常把相邻分类标签连续输入（如“悬疑推理”），而数据按
+    // ["悬疑", "推理"] 存储；组合标签也应视为同一可搜索语义。
+    matchKeyword(album.tags.join(''), kw) ||
     matchKeyword(album.category, kw) ||
     matchKeyword(album.anchorName, kw) ||
     matchKeyword(album.intro, kw),

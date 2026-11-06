@@ -6,6 +6,7 @@ import { useEpisodeMenu } from './cards';
 import { Artwork, showToast } from './common';
 import { IcDownload, IcSave, IcShare } from '../res/icons';
 import { useBroadcastStrings } from '../hooks/useBroadcastStrings';
+import { sharePlainText } from '@/os/shareBridge';
 
 const Item: React.FC<{ label: string; danger?: boolean; action?: string; epId?: string; onClick?: () => void; tap?: React.HTMLAttributes<HTMLButtonElement> }> = ({ label, danger, action, epId, onClick, tap }) => (
   <button
@@ -39,6 +40,16 @@ export const EpisodeMenuSheet: React.FC = () => {
   const isSaved = saved.includes(ep.id);
   const isDownloaded = downloaded.includes(ep.id);
   const run = (fn: () => void, toast?: string) => () => { fn(); if (toast) showToast(toast); back(); };
+  const shareEpisode = () => {
+    const text = `${s.share_episode_fmt.replace('{title}', ep.title).replace('{show}', show?.title || '')}`;
+    const launched = sharePlainText(text, {
+      onResult: (r) => {
+        if (r.resultCode === 'OK') showToast(s.share_success);
+      },
+    });
+    if (!launched) showToast(s.share_failed);
+    back();
+  };
 
   return (
     <div className="absolute inset-0 z-[120] flex flex-col justify-end">
@@ -64,7 +75,7 @@ export const EpisodeMenuSheet: React.FC = () => {
             <IcSave size={20} className="text-app-text" /><span className="text-[12px] text-app-text">{isSaved ? s.unsave : s.save}</span>
           </button>
           <button data-action="broadcast.share.open"
-            onClick={run(() => showToast(s.feature_unavailable))}
+            onClick={shareEpisode}
             className="flex flex-col items-center gap-1 py-2 rounded-xl bg-black/5 active:bg-black/10">
             <IcShare size={20} className="text-app-text" /><span className="text-[12px] text-app-text">{s.share}</span>
           </button>

@@ -1,6 +1,5 @@
 import { useTencentMeetingStrings } from '../hooks/useTencentMeetingStrings';
 import React, { useState, useRef, useEffect, useMemo } from 'react';
-import { useSearchParams } from 'react-router-dom';
 import { IcNavForward, IcExpand, IcInfo, IcClose, IcCheck } from '../res/icons';
 import * as TimeService from '../../../os/TimeService';
 import { useMeetingGestures } from '../hooks/useMeetingGestures';
@@ -1315,21 +1314,18 @@ const formatDurationDisplay = (minutes: number, s: TencentMeetingStrings): strin
 };
 
 export const ScheduleRegularMeetingPage: React.FC = () => {
-    const [searchParams] = useSearchParams();
     const { bindBack, bindTap } = useMeetingGestures();
     const user = useMeetingStore(s => s.user);
     const scheduleMeeting = useMeetingStore(s => s.scheduleMeeting);
     const s = useTencentMeetingStrings();
 
-    const [topic, setTopic] = useState(() => searchParams.get('title') ?? `${user.name}${s.meeting_schedule_title_suffix}`);
+    const [topic, setTopic] = useState(`${user.name}${s.meeting_schedule_title_suffix}`);
     const [autoUseCard, setAutoUseCard] = useState(false);
     const [calendarOn, setCalendarOn] = useState(true);
     const [showMore, setShowMore] = useState(false);
 
     // 时间设置（默认30分钟后开始，时长30分钟）
     const [startTime, setStartTime] = useState(() => {
-        const prefilled = Date.parse(searchParams.get('start') ?? '');
-        if (Number.isFinite(prefilled)) return prefilled;
         const now = TimeService.getDate();
         // 向上取整到下一个5分钟
         const minutes = Math.ceil((now.getMinutes() + 30) / 5) * 5;
@@ -1338,10 +1334,7 @@ export const ScheduleRegularMeetingPage: React.FC = () => {
         now.setMilliseconds(0);
         return now.getTime();
     });
-    const [duration, setDuration] = useState(() => {
-        const value = Number(searchParams.get('duration'));
-        return Number.isInteger(value) && value >= 15 && value <= 1440 ? value : 30;
-    });
+    const [duration, setDuration] = useState(30);
 
     // 时区
     const timezoneOptions = useMemo(() => getLocalizedTimezoneList(s), [s]);
@@ -1414,12 +1407,9 @@ export const ScheduleRegularMeetingPage: React.FC = () => {
     const [allowUploadDoc, setAllowUploadDoc] = useState(true);
 
     // 参会人
-    const contacts = useMeetingStore(s => s.contacts);
-    const [invitees, setInvitees] = useState<{ id: string; name: string; avatar?: string }[]>(() => {
-        const ids = new Set((searchParams.get('invitees') ?? '').split(',').filter(Boolean));
-        return contacts.filter(contact => ids.has(contact.id));
-    });
+    const [invitees, setInvitees] = useState<{ id: string; name: string; avatar?: string }[]>([]);
     const [showInviteesPicker, setShowInviteesPicker] = useState(false);
+    const contacts = useMeetingStore(s => s.contacts);
 
     // 点击完成时预定会议
     const handleComplete = () => {

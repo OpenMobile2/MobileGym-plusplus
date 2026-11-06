@@ -15,11 +15,11 @@ class ToolCallParseError(ValueError):
 
 _TOOL_CALL_RE = re.compile(r"<tool_call>(.*?)</tool_call>", re.IGNORECASE | re.DOTALL)
 _FUNCTION_RE = re.compile(
-    r"<function\s*=\s*([A-Za-z_][A-Za-z0-9_.:-]*)\s*>(.*?)</function>",
+    r"<function\s*=\s*([A-Za-z_][A-Za-z0-9_.:-]*)\s*\"?\s*>(.*?)</function>",
     re.IGNORECASE | re.DOTALL,
 )
 _PARAMETER_RE = re.compile(
-    r"<parameter\s*=\s*([A-Za-z_][A-Za-z0-9_.:-]*)\s*>(.*?)</parameter>",
+    r"<parameter\s*=\s*([A-Za-z_][A-Za-z0-9_.:-]*)\s*\"?\s*>(.*?)</parameter>",
     re.IGNORECASE | re.DOTALL,
 )
 
@@ -69,6 +69,12 @@ def parse_tool_call_response(
         raise ToolCallParseError("empty model response")
 
     blocks = _TOOL_CALL_RE.findall(raw)
+    # Claude-compatible gateways occasionally echo an identical corrected XML
+    # block more than once. Collapsing byte-equivalent calls is unambiguous;
+    # distinct calls remain a hard error so we never execute two intentions.
+    unique_blocks = {re.sub(r"\s+", " ", block).strip() for block in blocks}
+    if len(blocks) > 1 and len(unique_blocks) == 1:
+        blocks = [blocks[-1]]
     if len(blocks) != 1:
         raise ToolCallParseError(f"expected exactly one <tool_call> block, got {len(blocks)}")
 
@@ -104,7 +110,7 @@ def parse_tool_call_response(
         raise ToolCallParseError(f"missing required parameters for {name}: {', '.join(missing)}")
 
     return ParsedModelResponse(
-        thought=_extract_label(raw, "Thought"),
+        thought=_extract_thought(raw),
         action=_extract_label(raw, "Action"),
         call=FunctionCall(name=name, arguments=arguments),
         raw_response=raw,
@@ -118,12 +124,7 @@ def _extract_thought(text: str) -> str:
     labeled = _extract_label(text, "Thought")
     if labeled:
         return labeled
-    preamble = re.split(
-        r"\n\s*Action\s*:|\n\s*<tool_call>",
-        text or "",
-        maxsplit=1,
-        flags=re.IGNORECASE,
-    )[0]
+    preamble = re.split(r"\n\s*Action\s*:|\n\s*<tool_call>", text or "", maxsplit=1, flags=re.IGNORECASE)[0]
     return re.sub(r"</?think>", "", preamble, flags=re.IGNORECASE).strip()
 
 

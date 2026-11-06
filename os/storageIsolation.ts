@@ -1,4 +1,5 @@
 import { realNow } from './TimeService';
+import { randomToken } from './RandomService';
 
 export type StorageIsolationMode = 'off' | 'tab' | 'load';
 
@@ -113,8 +114,10 @@ export function getStorageIsolationMode(): StorageIsolationMode {
 }
 
 function genNamespace(): string {
-  const rand = Math.random().toString(36).slice(2, 10);
-  return `ns_${realNow().toString(36)}_${rand}`;
+  // Uses RandomService (seedable) — see os/RandomService.ts.
+  // With __SIM_RNG__.seed(N) pinned by the benchmark harness before startup,
+  // repeated runs get the same namespace stream.
+  return `ns_${realNow().toString(36)}_${randomToken(8)}`;
 }
 
 /**

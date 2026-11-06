@@ -7,6 +7,7 @@ import { useEpisodeMenu } from '../components/cards';
 import { IcPlay, IcPause, IcDownload, IcSave, IcSaved, IcShare, IcMore } from '../res/icons';
 import { useBroadcastStrings } from '../hooks/useBroadcastStrings';
 import { localizeCadence } from '../res/localize';
+import { sharePlainText } from '@/os/shareBridge';
 
 export const EpisodePage: React.FC = () => {
   const s = useBroadcastStrings();
@@ -32,11 +33,21 @@ export const EpisodePage: React.FC = () => {
 
   const seekTo = (sec: number) => { playEpisode(ep.id); seek(sec); };
 
+  const shareEpisode = () => {
+    const text = `${s.share_episode_fmt.replace('{title}', ep.title).replace('{show}', show?.title || '')}`;
+    const launched = sharePlainText(text, {
+      onResult: (r) => {
+        if (r.resultCode === 'OK') showToast(s.share_success);
+      },
+    });
+    if (!launched) showToast(s.share_failed);
+  };
+
   return (
     <div className="flex flex-col h-full bg-app-bg" data-status-bar-foreground="dark">
       <TopBar transparent showBack right={
         <>
-          <button onClick={() => showToast(s.feature_unavailable)} data-action="broadcast.share.open" className="w-9 h-9 rounded-full bg-black/5 flex items-center justify-center" aria-label={s.share}><IcShare size={18} className="text-app-text" /></button>
+          <button onClick={shareEpisode} data-action="broadcast.share.open" className="w-9 h-9 rounded-full bg-black/5 flex items-center justify-center" aria-label={s.share}><IcShare size={18} className="text-app-text" /></button>
           <button onClick={() => openEpisodeMenu(ep.id)} data-action="broadcast.episode.menu.open" data-action-params={JSON.stringify({ episodeId: ep.id })} className="w-9 h-9 rounded-full bg-black/5 flex items-center justify-center"><IcMore size={18} className="text-app-text" /></button>
         </>
       } />

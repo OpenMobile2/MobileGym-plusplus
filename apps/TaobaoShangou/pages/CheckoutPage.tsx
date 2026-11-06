@@ -14,6 +14,7 @@ import {
   IcBack, IcEdit, IcPlus, IcRight,
 } from '../res/icons';
 import type { TbCartLine } from '../types';
+import type { ActivityResult } from '@/os/types/manifest';
 import { useStatusBarBg } from '../statusbar';
 
 const clock = (ts: number) => {
@@ -42,7 +43,8 @@ export default function CheckoutPage() {
   const payCheckout = useTbsgStore((st) => st.payCheckout);
   const abandonPay = useTbsgStore((st) => st.abandonPay);
 
-  const [payMethod, setPayMethod] = useState<'alipay'>('alipay');
+  const recordTaskAudit = useTbsgStore((st) => st.recordTaskAudit);
+  const [payMethod, setPayMethod] = useState<'alipay' | 'yuebao'>('alipay');
   const [slotsOpen, setSlotsOpen] = useState(false);
 
   const now = TimeService.now();
@@ -98,6 +100,8 @@ export default function CheckoutPage() {
   const slotBase = Math.ceil((now + 30 * 60_000) / (30 * 60_000)) * 30 * 60_000;
   const slots = [0, 1, 2, 3].map((i) => `${clock(slotBase + i * 30 * 60_000)}-${clock(slotBase + (i + 1) * 30 * 60_000)}`);
   const etaText = `${clock(now + shop0.deliveryMinutes * 60_000)}-${clock(now + (shop0.deliveryMinutes + 15) * 60_000)}`;
+  const currentHour = TimeService.fromTimestamp(now).getHours();
+  const isNightLongDistance = (currentHour >= 21 || currentHour < 6) && shop0.distanceKm >= 5;
 
   /** 换购候选:单店时该店3个低价品(排除已在订单中的) */
   const exchangeItems = draft.shopGroups.length === 1
@@ -118,8 +122,12 @@ export default function CheckoutPage() {
             <IcBack size={22} className="text-[#1A1A1A]" />
           </button>
           <div className="flex-1 flex items-center justify-center gap-1 overflow-hidden">
-            <span className="text-[12px]">🔉</span>
-            <span className="text-[13px] text-[#6B5B3D] whitespace-nowrap truncate">夜间远距离配送,配送费原价上调</span>
+            {isNightLongDistance && (
+              <>
+                <span className="text-[12px]">🔉</span>
+                <span className="text-[13px] text-[#6B5B3D] whitespace-nowrap truncate">夜间远距离配送,配送费原价上调</span>
+              </>
+            )}
           </div>
           <div className="w-9" />
         </div>
@@ -481,7 +489,7 @@ export default function CheckoutPage() {
           <button
             {...bindTap<HTMLButtonElement>(
               { kind: 'action', id: 'checkout.payment.select' },
-              { params: { method: 'alipay' }, onTrigger: () => setPayMethod('alipay') },
+              { params: { method: 'alipay' }, onTrigger: () => { setPayMethod('alipay'); recordTaskAudit({ paymentMethod: 'alipay' }); } },
             )}
             className="w-full flex items-center py-3 bg-transparent border-none cursor-pointer p-0"
           >
@@ -495,6 +503,19 @@ export default function CheckoutPage() {
               {payMethod === 'alipay' && (
                 <svg viewBox="0 0 12 12" width="11" height="11"><path d="M2 6.2 5 9l5-6" stroke="white" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round" /></svg>
               )}
+            </span>
+          </button>
+          <button
+            {...bindTap<HTMLButtonElement>(
+              { kind: 'action', id: 'checkout.payment.select' },
+              { params: { method: 'yuebao' }, onTrigger: () => { setPayMethod('yuebao'); recordTaskAudit({ paymentMethod: 'yuebao' }); } },
+            )}
+            className="w-full flex items-center py-3 bg-transparent border-none cursor-pointer p-0"
+          >
+            <span className="w-6 h-6 rounded-md bg-[#1677FF] text-white text-[11px] font-bold flex items-center justify-center shrink-0">余</span>
+            <span className="text-[15px] text-[#1A1A1A] ml-2.5">余额宝</span>
+            <span className={`ml-auto w-[20px] h-[20px] rounded-full flex items-center justify-center shrink-0 ${payMethod === 'yuebao' ? 'bg-[#ED6C2C]' : 'border border-[#CCCCCC] bg-white'}`}>
+              {payMethod === 'yuebao' && <svg viewBox="0 0 12 12" width="11" height="11"><path d="M2 6.2 5 9l5-6" stroke="white" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round" /></svg>}
             </span>
           </button>
           {([['friend', '找朋友帮忙付', '💸'], ['huabei', '花呗极速付', '呗']] as const).map(([method, label, icon]) => (
@@ -588,9 +609,28 @@ export default function CheckoutPage() {
           amount={total}
           payBinding={bindTap<HTMLButtonElement>('checkout.pay.success', {
             params: { orderId: draft.draftOrderId },
-            beforeTrigger: () => payCheckout(),
-            // 下单后把已失效的 /checkout 一并移出返回栈,返回落到店铺主页而非"已提交"死页
-            onTrigger: () => go('checkout.pay.success', { orderId: draft.draftOrderId }, { popTo: '/checkout', popToInclusive: true }),
+            onTrigger: () => {
+              const launched = window.__OS__?.startActivityForResult?.(
+                'alipay',
+                {
+                  action: 'ACTION_PAY',
+                  scheme: 'alipays',
+                  data: {
+                    amount: total,
+                    orderId: draft.draftOrderId,
+                    merchantName: '淘宝闪购',
+                    subject: '淘宝闪购订单',
+                  },
+                },
+                (result: ActivityResult) => {
+                  if (result.resultCode !== 'OK') return;
+                  payCheckout();
+                  // 下单后把已失效的 /checkout 一并移出返回栈。
+                  go('checkout.pay.success', { orderId: draft.draftOrderId }, { popTo: '/checkout', popToInclusive: true });
+                },
+              );
+              if (!launched) showToast('支付宝暂不可用，请稍后重试');
+            },
           })}
           closeBinding={bindTap<HTMLButtonElement>('checkout.pay.abandon', {
             params: { orderId: draft.draftOrderId },

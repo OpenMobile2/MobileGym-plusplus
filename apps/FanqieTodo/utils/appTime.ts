@@ -1,35 +1,84 @@
 import * as TimeService from '../../../os/TimeService';
 
-/**
- * 「今天」= 模拟系统当天(与锁机页/系统时钟一致,不再硬编码某一天)。
- * 在模块加载时锚定一次(会话足够短);月历「今」、打卡卡日期、统计当日、
- * 以及种子/新建专注记录的归属日都以此为准,保证全 App 日期自洽。
- */
-const _t = TimeService.getDate();
-export const APP_TODAY_MS = TimeService.fromLocalParts(_t.getFullYear(), _t.getMonth(), _t.getDate()).getTime();
+export const DAY_MS = 86400000;
+
+/** 种子叙事锚日(截图当天 2026-07-06);defaults 绝对时间戳相对此日有 dayOffset */
+export const SEED_ANCHOR_MS = TimeService.fromLocalParts(2026, 6, 6).getTime();
+
+/** 模拟系统「今天」00:00(每次调用取最新,与锁机/系统时钟一致) */
+export function getAppTodayMs(): number {
+  const t = TimeService.getDate();
+  return TimeService.fromLocalParts(t.getFullYear(), t.getMonth(), t.getDate()).getTime();
+}
+
+/** @deprecated 兼容旧引用;请优先用 getAppTodayMs() */
+export const APP_TODAY_MS = getAppTodayMs();
 
 /** 今天的日号(月历高亮/默认选中) */
 export function appTodayDay(): number {
-  return TimeService.fromTimestamp(APP_TODAY_MS).getDate();
+  return TimeService.fromTimestamp(getAppTodayMs()).getDate();
 }
 /** 今天的月份(0-11)与年份 */
 export function appTodayMonth(): number {
-  return TimeService.fromTimestamp(APP_TODAY_MS).getMonth();
+  return TimeService.fromTimestamp(getAppTodayMs()).getMonth();
 }
 export function appTodayYear(): number {
-  return TimeService.fromTimestamp(APP_TODAY_MS).getFullYear();
+  return TimeService.fromTimestamp(getAppTodayMs()).getFullYear();
 }
 
-/** 新建记录时间戳 = 模拟此刻(即今天) */
+/** 新建记录时间戳 = 模拟此刻 */
 export function narrativeNow(): number {
   return TimeService.now();
 }
 
-/** 把一个种子时间戳「搬到今天」,保留其时:分:秒,只改日期 */
-export function toToday(ts: number): number {
+/** 某日 00:00 的本地毫秒 */
+export function dayStartMs(ts: number): number {
   const d = TimeService.fromTimestamp(ts);
+  return TimeService.fromLocalParts(d.getFullYear(), d.getMonth(), d.getDate()).getTime();
+}
+
+/**
+ * 把种子时间戳按相对 SEED_ANCHOR 的日偏移搬到「今天」附近,保留时:分:秒。
+ * todayMs 可传入以便测试/强制对齐。
+ */
+export function remapSeedTs(ts: number, todayMs: number = getAppTodayMs()): number {
+  const d = TimeService.fromTimestamp(ts);
+  const seedDay = TimeService.fromLocalParts(d.getFullYear(), d.getMonth(), d.getDate()).getTime();
+  const dayOffset = Math.round((seedDay - SEED_ANCHOR_MS) / DAY_MS);
   const todMs = ((d.getHours() * 60 + d.getMinutes()) * 60 + d.getSeconds()) * 1000 + d.getMilliseconds();
-  return APP_TODAY_MS + todMs;
+  return todayMs + dayOffset * DAY_MS + todMs;
+}
+
+/** @deprecated 旧单日种子用;新种子请用 remapSeedTs */
+export function toToday(ts: number): number {
+  return remapSeedTs(ts);
+}
+
+/** YYYY-MM-DD key,用于跨日比较 */
+export function dayKey(ts: number): string {
+  const d = TimeService.fromTimestamp(ts);
+  return `${d.getFullYear()}-${p2(d.getMonth() + 1)}-${p2(d.getDate())}`;
+}
+
+export function sameDay(a: number, b: number): boolean {
+  return dayKey(a) === dayKey(b);
+}
+
+/** 含 anchor 的自然周(周一~周日)起止 00:00 */
+export function weekRangeContaining(anchorMs: number): { start: number; end: number } {
+  const d = TimeService.fromTimestamp(dayStartMs(anchorMs));
+  const dow = d.getDay();
+  const mondayOffset = dow === 0 ? -6 : 1 - dow;
+  const start = dayStartMs(anchorMs) + mondayOffset * DAY_MS;
+  return { start, end: start + 6 * DAY_MS };
+}
+
+/** 含 anchor 的自然月起止 */
+export function monthRangeContaining(anchorMs: number): { start: number; end: number } {
+  const d = TimeService.fromTimestamp(anchorMs);
+  const start = TimeService.fromLocalParts(d.getFullYear(), d.getMonth(), 1).getTime();
+  const end = TimeService.fromLocalParts(d.getFullYear(), d.getMonth() + 1, 0).getTime();
+  return { start, end };
 }
 
 const p2 = (n: number) => String(n).padStart(2, '0');

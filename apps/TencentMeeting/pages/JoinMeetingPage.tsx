@@ -1,6 +1,5 @@
 import { useTencentMeetingStrings } from '../hooks/useTencentMeetingStrings';
 import React, { useState, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
 import { useMeetingStore } from '../state';
 import { useMeetingGestures } from '../hooks/useMeetingGestures';
 
@@ -17,7 +16,6 @@ const Toast: React.FC<{ message: string; visible: boolean }> = ({ message, visib
 };
 
 export const JoinMeetingPage: React.FC = () => {
-    const [searchParams] = useSearchParams();
     const user = useMeetingStore(s => s.user);
     const startMeeting = useMeetingStore(s => s.startMeeting);
     const ongoingMeetings = useMeetingStore(s => s.ongoingMeetings);
@@ -26,7 +24,7 @@ export const JoinMeetingPage: React.FC = () => {
     const { bindBack, go } = useMeetingGestures();
     const s = useTencentMeetingStrings();
 
-    const [meetingId, setMeetingId] = useState(() => searchParams.get('meeting') ?? '');
+    const [meetingId, setMeetingId] = useState('');
     const [name, setName] = useState(user.name);
     // 从全局设置读取默认值
     const [micOn, setMicOn] = useState(settings.micOnJoin);

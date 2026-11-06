@@ -8,7 +8,7 @@
 
 环境变量:
   IMAGE_GEN_API_KEY  生图 key(必填)
-  IMAGE_GEN_BASE_URL endpoint(默认 https://example.invalid/v1)
+  IMAGE_GEN_BASE_URL endpoint(默认 https://api.openai.com/v1)
   IMAGE_GEN_MODEL    模型(默认 gpt-image-2)
 运行: python apps/Daysmatter/assets/gen_assets.py
 """
@@ -23,19 +23,23 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 BASE = Path(__file__).parent
-MODEL = os.environ.get("IMAGE_GEN_MODEL", "gpt-image-2")
+_REPO_ROOT = Path(__file__).resolve().parents[5]
+sys.path.insert(0, str(_REPO_ROOT / "tools"))
+from image_gen_client import image_gen_api_key, image_gen_base_url, image_gen_model  # noqa: E402
+
+MODEL = image_gen_model()
 MAX_RETRY = 5
 
 
 def gen_url():
-    base = os.environ.get("IMAGE_GEN_BASE_URL", "http://15.204.107.114:3009").rstrip("/")
+    base = image_gen_base_url().rstrip("/")
     return base + ("/images/generations" if base.endswith("/v1") else "/v1/images/generations")
 
 
 def api_key():
-    k = os.environ.get("IMAGE_GEN_API_KEY") or os.environ.get("TOKENHUB_API_KEY")
+    k = image_gen_api_key()
     if not k:
-        print("ERROR: 未设置 IMAGE_GEN_API_KEY", file=sys.stderr)
+        print("ERROR: 未设置 IMAGE_GEN_API_KEY / OPENAI_API_KEY", file=sys.stderr)
         sys.exit(1)
     return k
 

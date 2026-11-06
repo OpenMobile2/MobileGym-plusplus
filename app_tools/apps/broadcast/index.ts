@@ -87,7 +87,28 @@ const handlers: Record<string, ToolHandler> = {
     assertAllowedKeys(input, ['episode_id']);
     const episode = episodeById(getQuery(input, 'episode_id'));
     state().addToQueue(episode.id);
-    return { episode_id: episode.id, queued: true, queue_length: state().queueIds.length };
+    return {
+      episode_id: episode.id,
+      queued: true,
+      queue_length: state().queueIds.length,
+      up_next_length: state().upNextIds.length,
+    };
+  },
+  broadcast__play_next: (input) => {
+    assertAllowedKeys(input, ['episode_id']);
+    const episode = episodeById(getQuery(input, 'episode_id'));
+    state().playNext(episode.id);
+    return {
+      episode_id: episode.id,
+      play_next: true,
+      queue_length: state().queueIds.length,
+      up_next_length: state().upNextIds.length,
+      up_next_front: state().upNextIds[0] ?? null,
+    };
+  },
+  broadcast__clear_queue: () => {
+    state().clearQueue();
+    return { cleared: true, queue_length: 0, up_next_length: 0 };
   },
 };
 

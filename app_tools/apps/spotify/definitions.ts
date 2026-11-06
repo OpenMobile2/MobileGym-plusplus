@@ -11,5 +11,5 @@ export const SPOTIFY_TOOL_DEFINITIONS = defineAppTools('spotify', [
   { name:'open_playlist', description:'Open the normal Spotify playlist page for visual inspection.', properties:{playlist_id:ID}, required:['playlist_id'], kind:'navigation' },
   { name:'open_queue', description:'Open the player; inspect and edit the queue through the GUI.', kind:'navigation' },
   { name:'add_to_queue', description:'Append one known track to the playback queue.', properties:{track_id:ID}, required:['track_id'], kind:'write' },
-  { name:'add_to_playlist', description:'Add one known track to an existing user playlist.', properties:{track_id:ID,playlist_name:STRING}, required:['track_id','playlist_name'], kind:'write', idempotent:true },
+  { name:'add_to_playlist', description:'Add one known track to a user playlist. If that playlist name does not exist yet, create it first (same store write as the GUI create-playlist flow).', properties:{track_id:ID,playlist_name:STRING}, required:['track_id','playlist_name'], kind:'write', idempotent:true },
 ]);

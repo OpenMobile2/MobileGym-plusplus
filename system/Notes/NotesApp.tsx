@@ -19,6 +19,7 @@ import { applySkinToThemeColors } from '../../os/SkinService';
 import { useDarkMode } from '../../os/hooks/useDarkMode';
 import { useAppStrings } from '../../os/useAppStrings';
 import { manifest } from './manifest';
+import { useNotesStore } from './state';
 import { colors, colorsDark } from './res/colors';
 import { colorStates, colorStatesDark } from './res/colors.states';
 import { dimens } from './res/dimens';
@@ -73,6 +74,7 @@ const NotesNavigationHandler: React.FC = () => {
 
 /** Notes App root component */
 const NotesApp: React.FC = () => {
+  const handledShareRef = useRef(false);
   const { isDark } = useDarkMode();
   const s = useAppStrings(strings, stringsEn);
   const themeColors = isDark
@@ -87,6 +89,17 @@ const NotesApp: React.FC = () => {
     ...dimensToCssVars(dimens),
     ...dimensToCssVars(anim, { prefix: '--app-' }),
   };
+
+  useEffect(() => {
+    if (handledShareRef.current) return;
+    const intent = window.__OS__?.getIntentPayload?.('notes');
+    if (intent?.action !== 'ACTION_SEND' || typeof intent.data?.text !== 'string') return;
+    handledShareRef.current = true;
+    const text = intent.data.text.trim();
+    useNotesStore.getState().addNote({ title: text.split('\n')[0] ?? '', content: text });
+    requestAnimationFrame(() => window.__OS__?.setResult?.({ resultCode: 'OK' }));
+  }, []);
+
   return (
     <div className="h-full w-full" style={cssVars as React.CSSProperties}>
       <MemoryRouter>

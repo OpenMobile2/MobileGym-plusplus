@@ -4,18 +4,19 @@
 幂等:已存在的 PNG(>10KB)跳过;失败重跑补齐。8 并发。
 运行: python apps/Ctrip/assets/gen_images.py
 """
-import base64, os, random, sys, time, urllib.request
+import base64, random, sys, time, urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
-from openai import OpenAI
+
+_REPO_ROOT = Path(__file__).resolve().parents[5]
+sys.path.insert(0, str(_REPO_ROOT / "tools"))
+from image_gen_client import image_gen_model, make_image_client  # noqa: E402
 
 OUT = Path(__file__).parent / "gen"
 OUT.mkdir(exist_ok=True)
 
-client = OpenAI(
-    base_url="https://example.invalid/v1",
-    api_key=os.environ.get("TOKENHUB_API_KEY", "REDACTED"),
-)
+client = make_image_client()
+MODEL = image_gen_model()
 
 HOTEL_STYLE = "酒店实拍摄影,真实建筑/客房,自然光,无任何文字、无水印、无logo"
 SCENE_STYLE = "旅游风光摄影,真实景点,明亮通透,高清,无任何文字、无水印、无logo"
@@ -67,6 +68,8 @@ JOBS = {
     "car_tesla": ("1024x1024", "黑色特斯拉Model Y纯电SUV", CAR_STYLE),
     "car_xiaomi": ("1024x1024", "绿色小米SU7/YU7纯电轿跑", CAR_STYLE),
     "car_buick": ("1024x1024", "白色别克GL8商务MPV七座", CAR_STYLE),
+    # 地图近似底图
+    "map_shanghai": ("1024x1024", "上海城市街道地图俯视图风格插画,淡蓝灰色道路网格,黄浦江曲线,陆家嘴标注区域,干净无文字无水印无logo,适合App地图底图", "地图底图插画,扁平清爽,浅色道路与街区色块,无文字无水印无logo"),
 }
 
 MAX_RETRY = 3
@@ -78,7 +81,7 @@ def gen(jid, size, desc, style):
     last = None
     for attempt in range(1, MAX_RETRY + 1):
         try:
-            r = client.images.generate(model="gpt-image-2", prompt=f"{desc},{style}",
+            r = client.images.generate(model=MODEL, prompt=f"{desc},{style}",
                                        n=1, size=size, timeout=120)
             it = r.data[0]
             if getattr(it, "b64_json", None):

@@ -1,15 +1,17 @@
 import React from 'react';
 import { useTaobaoStore } from '../state';
 import { useTaobaoGestures } from '../hooks/useTaobaoGestures';
+import { useStrings } from '../hooks/useStrings';
 import { TopBar, Img, Price, EmptyState } from '../components/ui';
-import { footprintGroupLabel } from '../utils/format';
+import { footprintGroupLabel, fmt } from '../utils/format';
 import { IcSearch } from '../res/icons';
 
 /** 我的足迹(spec: mine.footprints,IMG_8749;按日期分组三列宫格) */
 export default function FootprintsPage() {
   const { bindTap } = useTaobaoGestures();
-  const footprints = useTaobaoStore((s) => s.footprints);
-  const items = useTaobaoStore((s) => s.items);
+  const s = useStrings();
+  const footprints = useTaobaoStore((st) => st.footprints);
+  const items = useTaobaoStore((st) => st.items);
 
   const groups = new Map<string, typeof footprints>();
   for (const f of footprints) {
@@ -18,31 +20,31 @@ export default function FootprintsPage() {
   }
 
   return (
-    <div className="flex flex-col h-full bg-white">
+    <div className="flex flex-col h-full bg-app-surface">
       <TopBar
-        title={`我的足迹(${footprints.length})`}
+        title={fmt(s.myFootprintsTitleFmt, { count: footprints.length })}
         rightContent={
-          <span className="flex items-center gap-3 text-[#333333]">
-            <IcSearch size={17} /><span className="text-[12px] whitespace-nowrap">管理</span>
+          <span className="flex items-center gap-3 text-app-text">
+            <IcSearch size={17} /><span className="text-[12px] whitespace-nowrap">{s.manageLabel}</span>
           </span>
         }
       />
 
       {/* 类型 Tab(展示) */}
       <div className="flex gap-5 px-4 h-9 items-center shrink-0 text-[13px]">
-        <span className="text-[#FF5000] font-semibold border-b-2 border-[#FF5000] pb-0.5">宝贝</span>
-        <span className="text-[#666666]">店铺</span>
-        <span className="text-[#666666]">直播</span>
-        <span className="text-[#666666]">图文</span>
-        <span className="text-[#666666]">视频</span>
+        <span className="text-[#FF5000] font-semibold border-b-2 border-[#FF5000] pb-0.5">{s.footprintTabItem}</span>
+        <span className="text-app-text-muted">{s.footprintTabShop}</span>
+        <span className="text-app-text-muted">{s.footprintTabLive}</span>
+        <span className="text-app-text-muted">{s.footprintTabPost}</span>
+        <span className="text-app-text-muted">{s.footprintTabVideo}</span>
       </div>
       <div className="px-4 pb-1 shrink-0">
-        <span className="text-[11px] text-[#666666] bg-[#F5F5F5] rounded-full px-2 py-0.5">筛选浏览时间 ▾</span>
+        <span className="text-[11px] text-app-text-muted bg-[#F5F5F5] rounded-full px-2 py-0.5">{s.filterBrowseTime}</span>
       </div>
 
       <div className="flex-1 overflow-y-auto px-4" data-scroll-container="footprints-list" data-scroll-direction="vertical">
         {footprints.length === 0 ? (
-          <EmptyState text="暂无足迹" />
+          <EmptyState text={s.noFootprintsText} />
         ) : (
           [...groups.entries()].map(([label, list]) => (
             <div key={label} className="mt-3">

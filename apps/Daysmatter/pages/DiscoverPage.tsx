@@ -2,7 +2,7 @@ import { Share2, Globe } from 'lucide-react';
 import { useDaysmatterStore } from '../state';
 import { useDaysmatterGestures } from '../hooks/useDaysmatterGestures';
 import { miscUrl } from '../assets';
-import { realNow } from '../../../os/TimeService';
+import * as TimeService from '../../../os/TimeService';
 import { useI18n } from '../i18n';
 
 const EN_MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -20,7 +20,7 @@ export default function DiscoverPage() {
   const { t } = useI18n();
   const { action } = useDaysmatterGestures();
   const showToast = useDaysmatterStore((s) => s.showToast);
-  const now = new Date(realNow());
+  const now = TimeService.getDate();
   const y = now.getFullYear();
   const m = now.getMonth() + 1;
   const d = now.getDate();

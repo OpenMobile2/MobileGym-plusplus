@@ -1,22 +1,30 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useSearchParams } from 'react-router-dom';
 import { useCtripStore } from '../state';
 import { useCtripGestures } from '../hooks/useCtripGestures';
+import { useCtripStrings } from '../hooks/useCtripStrings';
 import { TopBar, Img } from '../components/ui';
 import { IcSettings, IcPlus } from '../res/icons';
 
 /** 酒店客服(spec hotel.cs)。猜您想问/政策chip→模拟问答;发送输入;+面板;右上设置→csInfo。 */
-const FAQS = ['有免费停车场吗?', '几点可以入住?', '含早餐吗?', '如何取消订单?', '酒店位置怎么走?', '可以开发票吗?'];
-const PANEL_ITEMS = ['相册', '位置', '房型', '订单'];
 
 export default function HotelCsPage() {
+  const s = useCtripStrings();
+  const FAQS = [s.t('有免费停车场吗?'), s.t('几点可以入住?'), s.t('含早餐吗?'), s.t('如何取消订单?'), s.t('酒店位置怎么走?'), s.t('可以开发票吗?')];
+  const PANEL_ITEMS = [
+    { label: s.t('相册'), kind: 'album' as const },
+    { label: s.t('位置'), kind: 'location' as const },
+    { label: s.t('房型'), kind: 'room' as const },
+    { label: s.t('订单'), kind: 'orders' as const },
+  ];
   const { id = '' } = useParams();
-  const { bindTap } = useCtripGestures();
+  const [sp] = useSearchParams();
+  const { bindTap, go } = useCtripGestures();
   const hotels = useCtripStore((s) => s.hotels);
   const log = useCtripStore((s) => s._csLog);
   const csAsk = useCtripStore((s) => s.csAsk);
   const resetCs = useCtripStore((s) => s.resetCs);
-  const hotel = hotels.find((h) => h.id === id) ?? hotels[0];
+  const hotel = hotels.find((h) => h.id === id);
   const [input, setInput] = React.useState('');
   const [showPanel, setShowPanel] = React.useState(false);
   const scrollRef = React.useRef<HTMLDivElement>(null);
@@ -24,12 +32,38 @@ export default function HotelCsPage() {
   React.useEffect(() => { resetCs(); }, [resetCs]);
   React.useEffect(() => { scrollRef.current?.scrollTo({ top: 9e9 }); }, [log]);
 
+  if (!hotel) {
+    return (
+      <div className="flex flex-col h-full bg-[#F5F6F8]">
+        <TopBar title={s.t('酒店')} />
+        <div className="flex-1 flex items-center justify-center text-[14px] text-[#999999]">{s.t('未找到该酒店')}</div>
+      </div>
+    );
+  }
   const send = (text: string) => { if (text.trim()) { csAsk(text); setInput(''); } };
+
+  const onPanel = (kind: typeof PANEL_ITEMS[number]['kind']) => {
+    setShowPanel(false);
+    if (kind === 'album') {
+      send(s.t('想看看酒店相册和实拍图'));
+      return;
+    }
+    if (kind === 'location') {
+      send(`请发送酒店位置：${hotel.name}（${hotel.city}${hotel.district}）`);
+      return;
+    }
+    if (kind === 'room') {
+      go('hotelCs.toRoom', { id: hotel.id });
+      return;
+    }
+    go('hotelCs.toOrders', { id: hotel.id });
+  };
 
   return (
     <div className="flex flex-col h-full bg-[#F2F4F7]">
       <TopBar
-        title="在线客服"
+        title={s.t('在线客服')}
+        backTo={`/hotel/${encodeURIComponent(hotel.id)}${sp.toString() ? `?${sp.toString()}` : ''}`}
         rightContent={
           <button {...bindTap('hotelCs.toInfo', { params: { id: hotel.id } })} className="bg-transparent border-none cursor-pointer p-0"><IcSettings size={18} className="text-[#333333]" /></button>
         }
@@ -46,7 +80,7 @@ export default function HotelCsPage() {
         {/* 猜您想问 */}
         {(!log || log.length === 0) && (
           <div className="bg-white rounded-xl p-3 mb-3">
-            <div className="text-[12px] text-[#999999] mb-2">猜您想问</div>
+            <div className="text-[12px] text-[#999999] mb-2">{s.t('猜您想问')}</div>
             <div className="flex flex-col gap-2">
               {FAQS.map((q) => (
                 <button
@@ -76,7 +110,7 @@ export default function HotelCsPage() {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={(e) => { if (e.key === 'Enter') send(input); }}
-            placeholder="请输入您的问题"
+            placeholder={s.t('请输入您的问题')}
             className="flex-1 bg-[#F2F4F7] rounded-full h-9 px-3 text-[14px] border-none outline-none"
           />
           <button
@@ -88,9 +122,14 @@ export default function HotelCsPage() {
         {showPanel && (
           <div className="grid grid-cols-4 gap-2 px-3 pb-3">
             {PANEL_ITEMS.map((p) => (
-              <button key={p} onClick={() => { setShowPanel(false); send(`我想了解${p}`); }} className="flex flex-col items-center gap-1 bg-transparent border-none cursor-pointer">
+              <button
+                key={p.label}
+                type="button"
+                onClick={() => onPanel(p.kind)}
+                className="flex flex-col items-center gap-1 bg-transparent border-none cursor-pointer"
+              >
                 <span className="w-11 h-11 rounded-xl bg-[#F2F4F7] text-[#0086F6] flex items-center justify-center"><IcPlus size={18} /></span>
-                <span className="text-[11px] text-[#666666]">{p}</span>
+                <span className="text-[11px] text-[#666666]">{p.label}</span>
               </button>
             ))}
           </div>

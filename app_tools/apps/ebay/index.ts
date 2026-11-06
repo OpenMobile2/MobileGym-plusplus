@@ -88,41 +88,34 @@ const handlers: Record<string, ToolHandler> = {
       'INVALID_ARGUMENT',
       `Unsupported eBay sort_by: ${sortBy}`,
     );
-    const ordered = rows.sort(sorter);
-    // Keep the tool path semantically equivalent to the GUI path.  The
-    // verifier for cross-app tasks reads the search snapshot, not merely the
-    // returned JSON, so a successful tool search must commit the same state
-    // mutation as SearchPage.
-    const sortOptionMap: Record<string, string> = {
-      total_price_asc: 'priceLow',
-      total_price_desc: 'priceHigh',
-      newly_listed: 'newlyListed',
-      ending_soon: 'endingSoon',
-      distance_asc: 'distance',
-    };
-    const buyingFormatMap: Record<string, string> = {
-      buyItNow: 'buyItNow', auction: 'auction', offer: 'offer',
-    };
-    const first = ordered[0];
-    const store = useEbayStore.getState();
-    store.setSearchCurrent({
-      query,
-      sortOption: sortOptionMap[sortBy] ?? 'bestMatch',
-      buyingFormat: buyingFormatMap[buyingFormat ?? ''] ?? 'all',
+    rows.sort(sorter);
+    const first = rows[0];
+    const sortOption =
+      sortBy === 'total_price_asc' ? 'priceLow'
+      : sortBy === 'total_price_desc' ? 'priceHigh'
+      : sortBy === 'newly_listed' ? 'newlyListed'
+      : sortBy === 'ending_soon' ? 'endingSoon'
+      : sortBy === 'distance_asc' ? 'distance'
+      : 'bestMatch';
+    const ebay = useEbayStore.getState();
+    ebay.setSearchCurrent({
+      query: getQuery(input),
+      sortOption,
+      buyingFormat: (buyingFormat as 'all' | 'auction' | 'buyItNow' | 'offer') || 'all',
       categoryId: category ?? null,
       brand: brand ?? null,
       location: location ?? null,
-      freeShippingOnly: freeShipping,
-      conditions: condition ? [condition].sort() : [],
-      priceMin: input.min_price == null ? '' : String(input.min_price),
-      priceMax: input.max_price == null ? '' : String(input.max_price),
-      resultsCount: ordered.length,
+      freeShippingOnly: Boolean(freeShipping),
+      conditions: condition ? [condition] : [],
+      priceMin: min == null ? '' : String(min),
+      priceMax: max == null ? '' : String(max),
+      resultsCount: rows.length,
       firstTitle: first?.title ?? null,
       firstTotalCents: first ? Math.round(totalPrice(first) * 100) : null,
     });
-    store.addRecentSearch(query);
-    store.recordSearchSnapshot();
-    return compactResult(ordered.map(productSummary), limit);
+    if (query) ebay.addRecentSearch(getQuery(input));
+    ebay.recordSearchSnapshot();
+    return compactResult(rows.map(productSummary), limit);
   },
   ebay__compare_products: async (input) => {
     assertAllowedKeys(input, ['product_ids']);

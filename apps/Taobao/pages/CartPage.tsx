@@ -2,10 +2,13 @@ import React, { useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useTaobaoStore } from '../state';
 import { useTaobaoGestures } from '../hooks/useTaobaoGestures';
+import { useStrings } from '../hooks/useStrings';
 import { Img, Price, BottomSheet, Stepper, SwipeRow, EmptyState, ShopBadge, usePanel, useToast } from '../components/ui';
 import { IcSearch, IcQrCode } from '../res/icons';
-import { formatMoney } from '../utils/format';
+import { formatMoney, fmt } from '../utils/format';
 import type { TbCartItem } from '../types';
+import type { TaobaoStringKey } from '../res/strings';
+import { sharePlainText } from '@/os/shareBridge';
 
 /**
  * 购物车(spec: cart.main + sharePanel + pricePanel)
@@ -20,7 +23,7 @@ export default function CartPage() {
   const priceItemId = sp.get('item');
   const { bindTap, back, go } = useTaobaoGestures();
   const [toast, showToast] = useToast();
-
+  const s = useStrings();
   const cart = useTaobaoStore((s) => s.cart);
   const items = useTaobaoStore((s) => s.items);
   const shops = useTaobaoStore((s) => s.shops);
@@ -73,6 +76,7 @@ export default function CartPage() {
       }),
       shopId: first ? first.shopId : '',
       source: 'cart',
+      sourceCartLineIds: validSelected.map((c) => c.id),
     });
     go('cart.checkout.open');
   };
@@ -89,10 +93,10 @@ export default function CartPage() {
   const manageTargets = manage ? manageChecked : validSelected.map((c) => c.id);
 
   return (
-    <div className="flex flex-col h-full bg-[#F5F6F7]">
+    <div className="flex flex-col h-full bg-app-bg">
       {/* 头部 */}
       <div className="flex items-center px-3 h-11 shrink-0">
-        <span className="text-[17px] font-bold">购物车({cart.length})</span>
+        <span className="text-[17px] font-bold">{s.cartTitle}({cart.length})</span>
         <span className="flex-1" />
         <button
           {...bindTap({ kind: 'action', id: 'cart.search.open' }, {
@@ -100,54 +104,54 @@ export default function CartPage() {
           })}
           className="bg-transparent border-none cursor-pointer mr-4"
         >
-          <IcSearch size={18} className="text-[#333333]" />
+          <IcSearch size={18} className="text-app-text" />
         </button>
-        <span className="text-[13px] text-[#333333] mr-4">对比</span>
+        <span className="text-[13px] text-app-text mr-4">{s.cartCompare}</span>
         <button
           {...bindTap({ kind: 'action', id: 'cart.manage.toggle' }, { onTrigger: () => setManage(!manage) })}
-          className="text-[13px] text-[#333333] bg-transparent border-none cursor-pointer"
+          className="text-[13px] text-app-text bg-transparent border-none cursor-pointer"
         >
-          {manage ? '退出管理' : '管理'}
+          {manage ? s.cartManageExit : s.manageLabel}
         </button>
       </div>
 
       {searchOpen && (
         <div className="px-3 pb-1.5 shrink-0">
-          <div className="flex items-center bg-white rounded-full h-8 px-3 gap-1.5">
-            <IcSearch size={14} className="text-[#999999]" />
+          <div className="flex items-center bg-app-surface rounded-full h-8 px-3 gap-1.5">
+            <IcSearch size={14} className="text-app-text-muted" />
             <input
               autoFocus
               value={cartQuery}
               {...bindTap({ kind: 'action', id: 'cart.search.input' }, { onTrigger: () => {} })}
               onChange={(e) => setCartQuery(e.target.value)}
-              placeholder="搜索购物车的宝贝"
+              placeholder={s.cartSearchPlaceholder}
               className="flex-1 bg-transparent border-none outline-none text-[13px]"
               data-keep-keyboard="true"
             />
             {cartQuery && (
-              <button onClick={() => setCartQuery('')} className="bg-transparent border-none cursor-pointer text-[#999999] text-[12px]">x</button>
+              <button onClick={() => setCartQuery('')} className="bg-transparent border-none cursor-pointer text-app-text-muted text-[12px]">x</button>
             )}
           </div>
         </div>
       )}
 
       {/* 筛选条(铁律①:给明确反馈) */}
-      <div className="flex gap-2 px-3 pb-1.5 shrink-0 text-[11px] text-[#666666]">
-        {['🎫 消费券', '官方立减', '降价', '分组', '常购'].map((c2) => (
-          <span key={c2} className="bg-white rounded-full px-2 py-0.5 cursor-pointer"
-            onClick={() => showToast('筛选维度暂未开放')}>{c2}</span>
+      <div className="flex gap-2 px-3 pb-1.5 shrink-0 text-[11px] text-app-text-muted">
+        {(['cartFilterCoupon', 'cartFilterOfficialDiscount', 'cartFilterPriceDrop', 'cartFilterGroup', 'cartFilterFrequent'] as TaobaoStringKey[]).map((k) => (
+          <span key={k} className="bg-app-surface rounded-full px-2 py-0.5 cursor-pointer"
+            onClick={() => showToast(s.cartFilterUnavailable)}>{s[k]}</span>
         ))}
       </div>
 
       <div className="flex-1 overflow-y-auto" data-scroll-container="cart-list" data-scroll-direction="vertical">
         {cart.length === 0 ? (
-          <EmptyState text="购物车还是空的" hint="快去挑选心仪的宝贝吧" />
+          <EmptyState text={s.cartEmpty} hint={s.cartEmptyHint} />
         ) : (
           groups.map(([shopId, list]) => {
             const shop = shops.find((s) => s.id === shopId);
             const shopAllSelected = list.filter((c) => !c.invalid).every((c) => c.selected);
             return (
-              <div key={shopId} className="mx-2.5 mt-2 bg-white rounded-xl overflow-hidden">
+              <div key={shopId} className="mx-2.5 mt-2 bg-app-surface rounded-xl overflow-hidden">
                 {/* 店铺行 */}
                 <div className="flex items-center px-3 pt-2.5 pb-1">
                   <Check
@@ -158,8 +162,8 @@ export default function CartPage() {
                     })}
                   />
                   {shop && <ShopBadge badge={shop.badge} />}
-                  <span className="text-[14px] font-semibold">{shop ? shop.name : '失效商品'}</span>
-                  <span className="text-[#999999] text-[12px] ml-1">›</span>
+                  <span className="text-[14px] font-semibold">{shop ? shop.name : s.cartInvalidShopName}</span>
+                  <span className="text-app-text-muted text-[12px] ml-1">›</span>
                 </div>
                 {list.map((c) => {
                   const it = itemOf(c);
@@ -173,17 +177,17 @@ export default function CartPage() {
                       })}
                       actions={
                         <>
-                          <SwipeBtn label="更多" color="#8B8B8B" onClick={() => showToast('更多功能开发中')} />
+                          <SwipeBtn label={s.cartSwipeMore} color="#8B8B8B" onClick={() => showToast(s.cartMoreUnavailable)} />
                           <SwipeBtn
-                            label="移入收藏"
+                            label={s.cartMoveToFavorites}
                             color="#FF8C00"
                             binding={bindTap({ kind: 'action', id: 'cart.item.swipe.moveToFavorites' }, {
                               params: { cartItemId: c.id },
-                              onTrigger: () => { moveCartToFavorites([c.id]); showToast('已移入收藏'); },
+                              onTrigger: () => { moveCartToFavorites([c.id]); showToast(s.movedToFavoritesToast); },
                             })}
                           />
                           <SwipeBtn
-                            label="删除"
+                            label={s.cartDelete}
                             color="#FF0036"
                             binding={bindTap({ kind: 'action', id: 'cart.item.swipe.delete' }, {
                               params: { cartItemId: c.id },
@@ -216,18 +220,18 @@ export default function CartPage() {
                           <div className="relative shrink-0">
                             <Img src={it.image} className={`w-20 h-20 rounded-lg object-cover ${c.invalid ? 'grayscale opacity-60' : ''}`} />
                             {c.invalid && (
-                              <span className="absolute bottom-0 left-0 right-0 text-center text-[10px] text-white bg-black/60 rounded-b-lg">款式缺货</span>
+                              <span className="absolute bottom-0 left-0 right-0 text-center text-[10px] text-white bg-black/60 rounded-b-lg">{s.cartOutOfStockBadge}</span>
                             )}
                           </div>
                           <div className="flex-1 min-w-0">
                             <div className="text-[13px] leading-snug line-clamp-2">{it.title}</div>
-                            <div className="text-[11px] text-[#999999] bg-[#F8F8F8] rounded inline-block px-1 mt-1 max-w-full truncate">
+                            <div className="text-[11px] text-app-text-muted bg-app-bg rounded inline-block px-1 mt-1 max-w-full truncate">
                               {c.skuDesc} ▾
                             </div>
                             {c.invalid ? (
                               <div className="flex items-center justify-between mt-1.5">
-                                <span className="text-[11px] text-[#999999]">所选款式缺货,请重新选择</span>
-                                <span className="text-[12px] text-[#FF5000] border border-[#FF5000] rounded-full px-2">重选</span>
+                                <span className="text-[11px] text-app-text-muted">{s.cartOutOfStockHint}</span>
+                                <span className="text-[12px] text-[#FF5000] border border-[#FF5000] rounded-full px-2">{s.cartReselect}</span>
                               </div>
                             ) : (
                               <div className="flex items-center justify-between mt-1.5">
@@ -239,9 +243,9 @@ export default function CartPage() {
                                       onTrigger: () => openPanel('price', { item: c.itemId }),
                                       stopPropagation: true,
                                     })}
-                                    className="text-[11px] text-[#999999] bg-transparent border-none cursor-pointer p-0"
+                                    className="text-[11px] text-app-text-muted bg-transparent border-none cursor-pointer p-0"
                                   >
-                                    明细 ▾
+                                    {s.cartPriceDetail}
                                   </button>
                                 </span>
                                 <Stepper
@@ -268,7 +272,7 @@ export default function CartPage() {
 
       {/* 底部结算/管理栏 */}
       {cart.length > 0 && (
-        <div className="shrink-0 bg-white border-t border-[#EEEEEE] flex items-center px-3 h-13 py-2 gap-2">
+        <div className="shrink-0 bg-app-surface border-t border-app-border flex items-center px-3 h-13 py-2 gap-2">
           <Check
             checked={manage ? manageChecked.length === cart.length : allSelected}
             binding={bindTap({ kind: 'action', id: 'cart.selectAll.toggle' }, {
@@ -281,25 +285,25 @@ export default function CartPage() {
               },
             })}
           />
-          <span className="text-[13px]">全选</span>
+          <span className="text-[13px]">{s.cartSelectAll}</span>
           <span className="flex-1" />
           {manage ? (
             <>
               <button
                 {...bindTap({ kind: 'action', id: 'cart.share.open' }, { onTrigger: () => openPanel('share') })}
-                className="text-[13px] rounded-full border border-[#DDDDDD] bg-white px-3 py-1.5 cursor-pointer"
+                className="text-[13px] rounded-full border border-[#DDDDDD] bg-app-surface px-3 py-1.5 cursor-pointer"
               >
-                分享
+                {s.cartShare}
               </button>
               <button
                 {...bindTap({ kind: 'action', id: 'cart.item.moveToFavorites' }, {
                   onTrigger: () => {
-                    if (manageTargets.length) { moveCartToFavorites(manageTargets); setManageChecked([]); showToast('已移入收藏'); }
+                    if (manageTargets.length) { moveCartToFavorites(manageTargets); setManageChecked([]); showToast(s.movedToFavoritesToast); }
                   },
                 })}
-                className="text-[13px] rounded-full border border-[#DDDDDD] bg-white px-3 py-1.5 cursor-pointer"
+                className="text-[13px] rounded-full border border-[#DDDDDD] bg-app-surface px-3 py-1.5 cursor-pointer"
               >
-                移入收藏
+                {s.cartMoveToFavorites}
               </button>
               <button
                 {...bindTap({ kind: 'action', id: 'cart.item.delete' }, {
@@ -309,17 +313,17 @@ export default function CartPage() {
                 })}
                 className="text-[13px] rounded-full bg-[#FF0036] text-white px-4 py-1.5 border-none cursor-pointer"
               >
-                删除
+                {s.cartDelete}
               </button>
             </>
           ) : (
             <>
               <div className="text-right mr-1">
                 <div className="text-[13px]">
-                  合计: <Price value={total} size="m" />
+                  {s.cartTotalLabel} <Price value={total} size="m" />
                 </div>
                 {total > 0 && total < 300 && (
-                  <div className="text-[10px] text-[#FF5000]">再买¥{formatMoney(300 - total)}享满300减40</div>
+                  <div className="text-[10px] text-[#FF5000]">{fmt(s.cartAlmostThresholdFmt, { amount: formatMoney(300 - total) })}</div>
                 )}
               </div>
               <button
@@ -327,7 +331,7 @@ export default function CartPage() {
                 disabled={validSelected.length === 0}
                 className="rounded-full bg-gradient-to-r from-[#FF7A00] to-[#FF2000] text-white text-[14px] font-medium px-5 py-2 border-none cursor-pointer disabled:opacity-40"
               >
-                结算{validSelected.length > 0 ? `(${validSelected.length})` : ''}
+                {s.cartCheckout}{validSelected.length > 0 ? `(${validSelected.length})` : ''}
               </button>
             </>
           )}
@@ -343,36 +347,61 @@ export default function CartPage() {
         >
           <div className="px-4 pb-2">
             <div className="bg-[#FFF7EC] rounded-xl p-3">
-              <div className="text-[14px] font-semibold">{user.nick}的购物车</div>
-              <div className="text-[12px] text-[#999999]">分享{manageTargets.length || 1}个宝贝给你</div>
+              <div className="text-[14px] font-semibold">{fmt(s.cartShareTitleFmt, { nick: user.nick })}</div>
+              <div className="text-[12px] text-app-text-muted">{fmt(s.cartShareCountFmt, { count: manageTargets.length || 1 })}</div>
             </div>
             <div className="flex justify-around mt-4">
-              {['复制链接', '保存画报', '当面扫码', '微信', 'QQ'].map((c2) => (
+              {(['cartShareCopyLink', 'cartShareSavePoster', 'cartShareScan', 'cartShareWechat', 'cartShareQQ'] as TaobaoStringKey[]).map((k) => (
                 <button
-                  key={c2}
-                  onClick={() => showToast('仅演示,分享未真实发出')}
+                  key={k}
+                  onClick={() => {
+                    if (k === 'cartShareWechat') {
+                      const source = (manage ? cart.filter((c) => manageChecked.includes(c.id)) : validSelected);
+                      const pool = source.length ? source : cart;
+                      const titles = pool
+                        .map((c) => items.find((it) => it.id === c.itemId)?.title)
+                        .filter(Boolean)
+                        .slice(0, 3) as string[];
+                      const text = titles.length
+                        ? `【淘宝购物车】${titles.join('、')}${pool.length > 3 ? '…' : ''}`
+                        : '【淘宝】看看我的购物车';
+                      const launched = sharePlainText(text, { onResult: (r) => { if (r.resultCode === 'OK') showToast('分享成功'); } });
+                      if (launched) {
+                        back();
+                        return;
+                      }
+                    }
+                    if (k === 'cartShareCopyLink') {
+                      window.__OS__?.clipboard?.copyText?.(
+                        `tb://cart/share?n=${manageTargets.length || cart.length}`,
+                      );
+                      showToast(s.cartShareCopiedToast);
+                      return;
+                    }
+                    showToast(s.cartShareDemoToast);
+                  }}
                   className="flex flex-col items-center gap-1 bg-transparent border-none cursor-pointer"
                 >
                   <span className="w-11 h-11 rounded-full bg-[#F5F5F5] flex items-center justify-center text-[16px]">
-                    {c2 === '当面扫码' ? <IcQrCode size={20} /> : c2[0]}
+                    {k === 'cartShareScan' ? <IcQrCode size={20} /> : s[k][0]}
                   </span>
-                  <span className="text-[11px] text-[#666666]">{c2}</span>
+                  <span className="text-[11px] text-app-text-muted">{s[k]}</span>
                 </button>
               ))}
             </div>
             <div className="flex justify-center mt-4 mb-1">
               <div className="w-28 h-28 bg-[#F5F5F5] rounded-lg flex items-center justify-center">
-                <IcQrCode size={64} className="text-[#333333]" />
+                <IcQrCode size={64} className="text-app-text" />
               </div>
             </div>
-            <div className="text-center text-[11px] text-[#999999]">让好友扫一扫,分享并加他为淘友</div>
+            <div className="text-center text-[11px] text-app-text-muted">{s.cartShareScanHint}</div>
           </div>
         </BottomSheet>
       )}
 
       {/* 价格走势弹层 */}
       {panel === 'price' && priceItem && (
-        <BottomSheet onClose={() => back()} title="价格走势">
+        <BottomSheet onClose={() => back()} title={s.cartPriceTrendTitle}>
           <div className="px-4 pb-2">
             <div className="flex gap-2 items-center">
               <Img src={priceItem.image} className="w-12 h-12 rounded-lg" />
@@ -380,7 +409,7 @@ export default function CartPage() {
             </div>
             <div className="text-center mt-3">
               <Price value={priceItem.price} size="l" />
-              <div className="text-[12px] text-[#999999]">商品价格</div>
+              <div className="text-[12px] text-app-text-muted">{s.cartPriceTrendCurrentLabel}</div>
             </div>
             {/* 近3个月走势(静态绘制) */}
             <svg viewBox="0 0 300 110" className="w-full mt-2">
@@ -393,18 +422,18 @@ export default function CartPage() {
               <text x="4" y="44" fontSize="9" fill="#999">¥{formatMoney(priceItem.price)}</text>
             </svg>
             <div className="flex items-center justify-between mt-2 mb-1">
-              <span className="text-[13px] font-semibold">降价提醒 <span className="text-[11px] text-[#999999] font-normal">商品低于当前价格时提醒</span></span>
+              <span className="text-[13px] font-semibold">{s.priceAlertLabel} <span className="text-[11px] text-app-text-muted font-normal">{s.cartPriceAlertDesc}</span></span>
               <button
                 {...bindTap({ kind: 'action', id: 'cart.priceAlert.set' }, {
-                  onTrigger: () => { setPriceAlert(priceItem.id); showToast('已设置降价提醒'); },
+                  onTrigger: () => { setPriceAlert(priceItem.id); showToast(s.priceAlertSetToast); },
                 })}
                 className={`rounded-full text-[13px] px-4 py-1.5 border-none cursor-pointer ${
                   priceAlerts.includes(priceItem.id)
-                    ? 'bg-[#F5F5F5] text-[#999999]'
+                    ? 'bg-[#F5F5F5] text-app-text-muted'
                     : 'bg-gradient-to-r from-[#FF9402] to-[#FF5000] text-white'
                 }`}
               >
-                {priceAlerts.includes(priceItem.id) ? '已设置' : '🔔 提醒我'}
+                {priceAlerts.includes(priceItem.id) ? s.cartPriceAlertSet : s.cartPriceAlertCta}
               </button>
             </div>
           </div>
@@ -424,10 +453,10 @@ function Check({
       disabled={disabled}
       className={`w-5 h-5 rounded-full border shrink-0 mr-1 cursor-pointer p-0 ${
         disabled
-          ? 'bg-[#F5F5F5] border-[#EEEEEE]'
+          ? 'bg-[#F5F5F5] border-app-border'
           : checked
             ? 'bg-[#FF5000] border-[#FF5000] text-white text-[12px] leading-4'
-            : 'bg-white border-[#CCCCCC]'
+            : 'bg-app-surface border-[#CCCCCC]'
       }`}
     >
       {checked && !disabled ? '✓' : ''}

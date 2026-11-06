@@ -10,7 +10,6 @@ import { useAlipayStore } from '../state';
 import type { AlipayBillCategoryId, AlipayTransferRecord } from '../types';
 import { getBillDisplayTitle, getBillPaymentMethod, inferBillCategory } from '../utils/bills';
 import { isBankPaymentMethodLabel, localizeBillCategoryName, splitBankPaymentMethod } from '../utils/localizeCatalog';
-import { wheelScrollTop, wheelValueAtScroll } from '../utils/wheelPicker';
 
 const MONTHS_EN = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const CATEGORY_MAP = new Map(BILL_CATEGORIES.map(item => [item.id, item]));
@@ -162,30 +161,26 @@ export const BillAnalysisPage: React.FC = () => {
   const [selectedMonth, setSelectedMonth] = React.useState(currentMonth);
   const yearRef = React.useRef<HTMLDivElement>(null);
   const monthRef = React.useRef<HTMLDivElement>(null);
-  const pickerInitializedRef = React.useRef(false);
+
+  const confirmPeriodPicker = () => {
+    const yearIndex = Math.max(0, Math.min(yearOptions.length - 1, Math.round((yearRef.current?.scrollTop ?? 0) / 36)));
+    setSelectedYear(yearOptions[yearIndex]);
+    if (!yearly) {
+      const monthIndex = Math.max(0, Math.min(monthOptions.length - 1, Math.round((monthRef.current?.scrollTop ?? 0) / 36)));
+      setSelectedMonth(monthOptions[monthIndex]);
+    }
+    setIsPickerOpen(false);
+  };
   const yearOptions = React.useMemo(() => [2024, 2025, 2026], []);
   const monthOptions = React.useMemo(() => Array.from({ length: 12 }, (_, index) => index + 1), []);
 
   React.useEffect(() => {
-    if (!isPickerOpen) {
-      pickerInitializedRef.current = false;
-      return;
-    }
-    if (pickerInitializedRef.current) return;
-    pickerInitializedRef.current = true;
+    if (!isPickerOpen) return;
     requestAnimationFrame(() => {
-      yearRef.current?.scrollTo({ top: wheelScrollTop(yearOptions, selectedYear) });
-      monthRef.current?.scrollTo({ top: wheelScrollTop(monthOptions, selectedMonth) });
+      yearRef.current?.scrollTo({ top: Math.max(0, yearOptions.indexOf(selectedYear)) * 36 });
+      monthRef.current?.scrollTo({ top: Math.max(0, monthOptions.indexOf(selectedMonth)) * 36 });
     });
   }, [isPickerOpen, monthOptions, selectedMonth, selectedYear, yearOptions]);
-
-  const confirmPicker = () => {
-    setSelectedYear(wheelValueAtScroll(yearOptions, yearRef.current?.scrollTop ?? 0, selectedYear));
-    if (!yearly) {
-      setSelectedMonth(wheelValueAtScroll(monthOptions, monthRef.current?.scrollTop ?? 0, selectedMonth));
-    }
-    setIsPickerOpen(false);
-  };
 
   const allStats = React.useMemo(() => buildStats(transferRecords), [transferRecords]);
   const yearly = tab === 'yearly';
@@ -301,14 +296,7 @@ export const BillAnalysisPage: React.FC = () => {
             <div className="relative mb-6 flex h-44 justify-center">
               <div className="pointer-events-none absolute left-6 right-6 top-1/2 -translate-y-1/2 border-y border-app-primary/30" style={{ height: 36 }} />
               <div className={`flex w-full justify-center ${yearly ? '' : 'gap-24'} text-center text-lg`}>
-                <div
-                  ref={yearRef}
-                  className="w-24 overflow-y-auto no-scrollbar"
-                  style={{ scrollBehavior: 'smooth', paddingTop: 70, paddingBottom: 70, scrollSnapType: 'y mandatory' }}
-                  onScroll={(event) => setSelectedYear(
-                    wheelValueAtScroll(yearOptions, event.currentTarget.scrollTop, selectedYear),
-                  )}
-                >
+                <div ref={yearRef} className="w-24 overflow-y-auto no-scrollbar" style={{ scrollBehavior: 'smooth', paddingTop: 70, paddingBottom: 70, scrollSnapType: 'y mandatory' }}>
                   {yearOptions.map((year, index) => (
                     <div
                       key={year}
@@ -321,14 +309,7 @@ export const BillAnalysisPage: React.FC = () => {
                   ))}
                 </div>
                 {!yearly && (
-                  <div
-                    ref={monthRef}
-                    className="w-24 overflow-y-auto no-scrollbar"
-                    style={{ scrollBehavior: 'smooth', paddingTop: 70, paddingBottom: 70, scrollSnapType: 'y mandatory' }}
-                    onScroll={(event) => setSelectedMonth(
-                      wheelValueAtScroll(monthOptions, event.currentTarget.scrollTop, selectedMonth),
-                    )}
-                  >
+                  <div ref={monthRef} className="w-24 overflow-y-auto no-scrollbar" style={{ scrollBehavior: 'smooth', paddingTop: 70, paddingBottom: 70, scrollSnapType: 'y mandatory' }}>
                     {monthOptions.map((month, index) => (
                       <div
                         key={month}
@@ -343,7 +324,7 @@ export const BillAnalysisPage: React.FC = () => {
                 )}
               </div>
             </div>
-            <button className="mb-2 w-full rounded-lg bg-app-primary py-3 text-lg font-medium text-white" onClick={confirmPicker}>
+            <button className="mb-2 w-full rounded-lg bg-app-primary py-3 text-lg font-medium text-white" onClick={confirmPeriodPicker}>
               {s.confirm_2}
             </button>
           </div>

@@ -163,7 +163,7 @@
     {
       "id": "o002",
       "restaurantName": "瑞幸咖啡",
-      "items": [{ "name": "生椰拿铁（大杯）", "count": 2, "price": 48.0 }],
+      "items": [{ "name": "生椰拿铁（大杯）", "count": 2, "price": 24.0 }],
       "total": 52.0,
       "status": "delivered",
       "time": "2024-05-30 09:15",

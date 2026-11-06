@@ -26,10 +26,29 @@ export const manifest: AppManifest = {
       textPrimary: '#222222',
       textSecondary: '#8A8F99',
       border: '#EEF0F3',
+      tabBarBg: '#ffffff',
       // 首屏「待办」顶栏为番茄蓝(深),状态栏前景用浅色;浅色顶栏页在页面内 override 为 dark
       statusBarForeground: 'light',
       navigationBarForeground: 'dark',
     },
+    colorsDark: {
+      primary: '#6AA8E8',
+      primaryDark: '#4A90D9',
+      background: '#121212',
+      surface: '#1E1E1E',
+      textPrimary: '#F2F2F2',
+      textSecondary: '#A8A8A8',
+      border: '#2C2C2C',
+      tabBarBg: '#1E1E1E',
+      statusBarForeground: 'light',
+      navigationBarForeground: 'light',
+    },
   },
   intentFilters: [],
+  queries: [
+    { action: 'ACTION_SEND', type: 'text/plain' },
+  ],
+  permissions: [
+    'android.permission.WRITE_EXTERNAL_STORAGE',
+  ],
 };

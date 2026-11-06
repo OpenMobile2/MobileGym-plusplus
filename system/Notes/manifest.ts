@@ -6,6 +6,7 @@ export const manifest: AppManifest = {
   packageName: 'com.miui.notes',
   displayName: '笔记',
   displayNameEn: 'Notes',
+  aliases: ['系统笔记', '备忘录', 'biji', 'beiwanglu', 'notes'],
   version: '1.0.0',
   versionCode: 1,
   type: 'system',

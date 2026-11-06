@@ -1,10 +1,12 @@
 import React, { useMemo } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useFlomoStore } from '../state';
 import { useFlomoGestures } from '../hooks/useFlomoGestures';
 import { C } from '../components/ui';
 import { dayKey, dayLabel } from '../utils/format';
 import MemoCard from '../components/MemoCard';
-import { IcMenu, IcArrowDown } from '../res/icons';
+import { IcClose, IcArrowDown } from '../res/icons';
+import MemoCardmenuPage from './MemoCardmenuPage';
 
 const LABELS: Record<string, string> = {
   images: '有图片',
@@ -15,10 +17,12 @@ const LABELS: Record<string, string> = {
 };
 
 export default function FilterBytypePage() {
-  const { bindTap } = useFlomoGestures();
+  const { bindTap, bindBack } = useFlomoGestures();
+  const location = useLocation();
   const filter = useFlomoStore((s) => s.currentFilter);
   const currentDate = useFlomoStore((s) => s.currentDate);
   const memos = useFlomoStore((s) => s.memos);
+  const showCardMenu = new URLSearchParams(location.search).get('cardMenu') === 'open';
 
   const list = useMemo(() => {
     const live = memos.filter((m) => !m.deleted);
@@ -39,14 +43,14 @@ export default function FilterBytypePage() {
   const title = filter === 'byDate' && currentDate ? dayLabel(currentDate) : LABELS[filter ?? ''] ?? '筛选';
 
   return (
-    <div className="flex flex-col h-full" style={{ background: C.bg }} data-status-bar-foreground="dark">
+    <div className="flex flex-col h-full relative" style={{ background: C.bg }} data-status-bar-foreground="dark">
       <div className="flex items-center h-12 px-3 shrink-0">
-        <button {...bindTap('tag.drawer.open')} className="w-9 h-9 rounded-full flex items-center justify-center bg-black/5 border-none cursor-pointer" style={{ color: C.text }} aria-label="菜单">
-          <IcMenu size={18} />
+        <button {...bindBack()} className="w-9 h-9 rounded-full flex items-center justify-center bg-black/5 border-none cursor-pointer" style={{ color: C.text }} aria-label="返回">
+          <IcClose size={18} />
         </button>
         {filter === 'byDate' ? (
           <button
-            {...bindTap('stats.heatmap.open')}
+            {...bindBack()}
             className="flex-1 flex items-center justify-center gap-1 bg-transparent border-none cursor-pointer"
             style={{ color: C.text }}
           >
@@ -64,10 +68,19 @@ export default function FilterBytypePage() {
           {list.length === 0 ? (
             <div className="py-16 text-center text-sm" style={{ color: C.sub }}>没有符合条件的笔记</div>
           ) : (
-            list.map((m) => <MemoCard key={m.id} memo={m} openTid="filter.byType.openMemo" />)
+            list.map((m) => (
+              <MemoCard
+                key={m.id}
+                memo={m}
+                openTid="filter.byType.openMemo"
+                longPressTid="filter.byType.longpress"
+                menuTid="filter.byType.cardMenu.open"
+              />
+            ))
           )}
         </div>
       </div>
+      {showCardMenu && <MemoCardmenuPage />}
     </div>
   );
 }

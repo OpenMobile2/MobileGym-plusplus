@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useCtripStore } from '../state';
 import { useCtripGestures } from '../hooks/useCtripGestures';
+import { useCtripStrings } from '../hooks/useCtripStrings';
 import { TopBar, Img, useToast } from '../components/ui';
 import { WONTFIX_TOAST } from '../constants';
 import { IcHotel, IcTicket, IcFlight } from '../res/icons';
@@ -10,18 +11,21 @@ import { IcHotel, IcTicket, IcFlight } from '../res/icons';
  * 城市目的地页(spec dest.city,Gate2 修订新增)。
  * 品类入口(酒店/景点/机票)、必看精选卡→景点详情、玩法chips切换、攻略内容toast。
  */
-const PLAY_CHIPS = [
-  { id: 'overview', label: '城市速览' },
-  { id: 'traffic', label: '交通攻略' },
-  { id: 'family', label: '亲子游' },
-];
 
 export default function DestCityPage() {
+  const s = useCtripStrings();
+  const PLAY_CHIPS = [
+    { id: 'overview', label: s.t('城市速览') },
+    { id: 'traffic', label: s.t('交通攻略') },
+    { id: 'family', label: s.t('亲子游') },
+  ];
   const { city = '上海' } = useParams();
-  const { bindTap } = useCtripGestures();
+  const { bindTap, go } = useCtripGestures();
   const [toast, showToast] = useToast();
   const attractions = useCtripStore((s) => s.attractions);
+  const setHotelCity = useCtripStore((s) => s.setHotelCity);
   const [chip, setChip] = React.useState('overview');
+  const cityAttractions = attractions.filter((a) => (a as { city?: string }).city === city || (!(a as { city?: string }).city && city === '上海'));
 
   return (
     <div className="flex flex-col h-full bg-[#F5F6F8]">
@@ -32,31 +36,33 @@ export default function DestCityPage() {
           <Img src="/@app-assets/Ctrip/gen/scene_bund.png" className="w-full h-full object-cover" />
           <div className="absolute left-3 bottom-3 text-white">
             <div className="text-[22px] font-bold drop-shadow">{city}</div>
-            <div className="text-[12px] opacity-90">魔都 · 必看精选 · 玩转{city}</div>
+            <div className="text-[12px] opacity-90">{city === '上海' ? '魔都 · 必看精选 · 玩转上海' : `必看精选 · 玩转${city}`}</div>
           </div>
         </div>
 
         {/* 品类入口 */}
-        <div className="bg-white mx-2 -mt-4 rounded-xl grid grid-cols-3 py-3 relative">
-          <button {...bindTap('destCity.toHotel')} className="flex flex-col items-center gap-1 bg-transparent border-none cursor-pointer">
+        <div className="bg-white mx-2 -mt-4 rounded-xl grid grid-cols-3 py-3 relative z-10">
+          <button {...bindTap({ kind: 'action', id: 'destCity.toHotel' }, { params: { city }, onTrigger: () => { setHotelCity(city); go('destCity.toHotel', { city }); } })} className="flex flex-col items-center gap-1 bg-transparent border-none cursor-pointer">
             <span className="w-9 h-9 rounded-full bg-[#FF7A45] text-white flex items-center justify-center"><IcHotel size={18} /></span>
-            <span className="text-[12px] text-[#333333]">酒店住宿</span>
+            <span className="text-[12px] text-[#333333]">{s.t('酒店住宿')}</span>
           </button>
-          <button {...bindTap('destCity.toTicket')} className="flex flex-col items-center gap-1 bg-transparent border-none cursor-pointer">
+          <button {...bindTap('destCity.toTicket', { params: { city } })} className="flex flex-col items-center gap-1 bg-transparent border-none cursor-pointer">
             <span className="w-9 h-9 rounded-full bg-[#FF9F45] text-white flex items-center justify-center"><IcTicket size={18} /></span>
-            <span className="text-[12px] text-[#333333]">景点日游</span>
+            <span className="text-[12px] text-[#333333]">{s.t('景点日游')}</span>
           </button>
-          <button {...bindTap('destCity.toFlight')} className="flex flex-col items-center gap-1 bg-transparent border-none cursor-pointer">
+          <button {...bindTap('destCity.toFlight', { params: { to: city, from: '上海' } })} className="flex flex-col items-center gap-1 bg-transparent border-none cursor-pointer">
             <span className="w-9 h-9 rounded-full bg-[#3B9BFF] text-white flex items-center justify-center"><IcFlight size={18} /></span>
-            <span className="text-[12px] text-[#333333]">机票火车</span>
+            <span className="text-[12px] text-[#333333]">{s.t('机票火车')}</span>
           </button>
         </div>
 
         {/* 必看精选 */}
         <div className="mx-2 mt-3">
-          <div className="text-[16px] font-semibold text-[#111111] mb-2">必看精选</div>
+          <div className="text-[16px] font-semibold text-[#111111] mb-2">{s.t('必看精选')}</div>
           <div className="flex gap-2 overflow-x-auto pb-1">
-            {attractions.map((a) => (
+            {cityAttractions.length === 0 ? (
+              <div className="text-[13px] text-[#999999] py-4 px-2">{city}暂无景点精选，可先订酒店或搜门票</div>
+            ) : cityAttractions.map((a) => (
               <button
                 key={a.id}
                 {...bindTap('destCity.toAttraction', { params: { id: a.id } })}
@@ -91,15 +97,21 @@ export default function DestCityPage() {
             })}
           </div>
           <div className="px-2 py-3 text-[13px] text-[#666666] leading-relaxed">
-            {chip === 'overview' && `${city}是中国最具活力的国际都市之一,外滩万国建筑、陆家嘴天际线、豫园古典园林,值得慢慢探索。`}
-            {chip === 'traffic' && `${city}地铁网络发达,机场大巴/磁悬浮直达市区,景点间建议地铁+步行组合出行。`}
-            {chip === 'family' && `迪士尼、海昌海洋公园、科技馆是${city}亲子首选,建议预留 2-3 天。`}
+            {chip === 'overview' && (city === '上海'
+              ? '上海是中国最具活力的国际都市之一,外滩万国建筑、陆家嘴天际线、豫园古典园林,值得慢慢探索。'
+              : `${city}值得慢慢逛：先看必看精选景点，再按酒店/门票入口下单，行程更省心。`)}
+            {chip === 'traffic' && (city === '上海'
+              ? '上海地铁网络发达,机场大巴/磁悬浮直达市区,景点间建议地铁+步行组合出行。'
+              : `${city}市内交通建议地铁/打车组合，热门景点周边可步行串联。`)}
+            {chip === 'family' && (city === '上海'
+              ? '迪士尼、海昌海洋公园、科技馆是上海亲子首选,建议预留 2-3 天。'
+              : `${city}亲子游可优先选评分高、距离近的景点，建议预留 1-2 天。`)}
           </div>
         </div>
 
         {/* 当地指南等(wontfix toast) */}
         <div className="mx-2 mt-3 mb-4 grid grid-cols-2 gap-2">
-          {['当地指南', '旅行热点', '线路规划', '连玩目的地'].map((g) => (
+          {[s.t('当地指南'), s.t('旅行热点'), s.t('线路规划'), s.t('连玩目的地')].map((g) => (
             <button
               key={g}
               {...bindTap({ kind: 'action', id: 'destCity.guide.wontfix' }, { onTrigger: () => showToast(WONTFIX_TOAST) })}

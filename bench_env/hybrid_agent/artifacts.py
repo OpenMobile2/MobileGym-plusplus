@@ -3,17 +3,117 @@
 from __future__ import annotations
 
 import html
+import io
 import json
 from pathlib import Path
 from typing import Any
 
 from bench_env.env.base import Observation
+from bench_env.hybrid_agent.xml_protocol import _extract_thought
 from bench_env.hybrid_agent.types import (
     FunctionCall,
     HybridRunResult,
     HybridStepRecord,
     StepFeedback,
 )
+
+_APP_ZH = {
+    "taobao": "淘宝",
+    "wechat": "微信",
+    "kapi": "卡皮记账",
+    "jingdong": "京东",
+    "ctrip": "携程",
+    "dianping": "点评",
+    "launcher": "桌面",
+}
+_GUI_ZH = {
+    "click": "点击",
+    "double_tap": "双击",
+    "long_press": "长按",
+    "type": "输入",
+    "swipe": "滑动",
+    "drag": "拖动",
+    "wait": "等待",
+    "terminate": "结束任务",
+    "answer": "作答",
+}
+
+
+def format_live_action(call: dict[str, Any] | FunctionCall | None, spoken: str = "") -> str:
+    """Human-readable left-console line for one GUI or App Tool call."""
+    if call is None:
+        return spoken.strip()
+    if isinstance(call, FunctionCall):
+        name = call.name
+        args = call.arguments
+    else:
+        name = str(call.get("name") or "")
+        args = call.get("arguments") or {}
+    if name and name != "mobile_use":
+        return f"{name}({json.dumps(args, ensure_ascii=False)})"
+    act = str(args.get("action") or "").lower()
+    if act == "open_app":
+        return f"GUI 打开应用（捷径）{args.get('app') or ''}".strip()
+    if act == "system_button":
+        button = str(args.get("button") or "")
+        labels = {"Home": "回桌面", "Back": "返回", "Recent": "多任务", "Enter": "回车"}
+        return f"GUI {labels.get(button, button)}"
+    spoken = spoken.strip()
+    if spoken:
+        return f"GUI {spoken}"
+    return f"GUI {_GUI_ZH.get(act, act or '操作')}"
+
+
+def format_live_cli(call: dict[str, Any] | FunctionCall | None) -> str:
+    """Shell-like line for the live console terminal drawer."""
+    if call is None:
+        return ""
+    if isinstance(call, FunctionCall):
+        name = call.name
+        args = call.arguments
+    else:
+        name = str(call.get("name") or "")
+        args = call.get("arguments") or {}
+    if not name or name == "mobile_use":
+        return ""
+    flags: list[str] = []
+    for key, value in (args or {}).items():
+        if isinstance(value, (dict, list)):
+            rendered = json.dumps(value, ensure_ascii=False)
+        else:
+            rendered = str(value)
+        if " " in rendered or rendered.startswith("{") or rendered.startswith("["):
+            rendered = json.dumps(rendered, ensure_ascii=False)
+        flags.append(f"--{key} {rendered}")
+    if flags:
+        return f"$ {name} \\\n    " + " \\\n    ".join(flags)
+    return f"$ {name}"
+
+
+def _thought_from_record(record: HybridStepRecord) -> str:
+    return _extract_thought(record.response or "")
+
+
+def format_screen(route: dict[str, Any] | None) -> str:
+    route = route or {}
+    app_id = str(route.get("app") or "")
+    app = _APP_ZH.get(app_id, app_id or "桌面")
+    path = str(route.get("path") or "/")
+    if not app_id:
+        return "现在在桌面"
+    if path in {"", "/"}:
+        return f"现在在{app}首页"
+    if "/chat/" in path:
+        return f"现在在{app}聊天页"
+    if "/item/" in path:
+        return f"现在在{app}商品页"
+    if "/shop/" in path:
+        return f"现在在{app}店铺页"
+    if "/hotel/" in path and "/booking" in path:
+        return f"现在在{app}填单页"
+    if "/hotel/" in path:
+        return f"现在在{app}酒店详情"
+    return f"现在在{app} {path}"
 
 
 class HybridArtifactRecorder:
@@ -23,6 +123,33 @@ class HybridArtifactRecorder:
         self.output_dir = output_dir
         self.output_dir.mkdir(parents=True, exist_ok=True)
         self._screenshots: dict[int, tuple[str, str]] = {}
+        self._live_history: list[dict[str, Any]] = []
+        self._live_current: dict[str, Any] = {}
+
+    def publish_live(self, payload: dict[str, Any]) -> None:
+        """Write the current thinking/acting frame so a side console can animate."""
+        task = {}
+        task_path = self.output_dir / "task.json"
+        if task_path.exists():
+            try:
+                task = json.loads(task_path.read_text(encoding="utf-8"))
+            except json.JSONDecodeError:
+                task = {}
+        if payload.get("step") != self._live_current.get("step"):
+            self._live_current = {}
+        self._live_current.update({k: v for k, v in payload.items() if v or k == "phase"})
+        body = {
+            "running": True,
+            "title": str(task.get("task_id") or self.output_dir.name),
+            "instruction": str(task.get("instruction") or ""),
+            "meta": f"{len(self._live_history)} 步已完成 · 正在第 {self._live_current.get('step')} 步",
+            "history": list(self._live_history),
+            "current": self._live_current,
+        }
+        (self.output_dir / "live.json").write_text(
+            json.dumps(body, ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )
 
     def record_step(
         self,
@@ -35,6 +162,8 @@ class HybridArtifactRecorder:
         before_name = self._write_screenshot(f"{prefix}_before", before)
         after_name = self._write_screenshot(f"{prefix}_after", after)
         self._screenshots[record.step] = (before_name, after_name)
+        # Official qwen35_session dumps also expect screenshot_step{N}.png.
+        _write_session_screenshot(self.output_dir, record.step - 1, before)
         prompt = _replace_image_data(messages, before_name)
 
         (self.output_dir / f"{prefix}_prompt.json").write_text(
@@ -52,6 +181,33 @@ class HybridArtifactRecorder:
             json.dumps(step_payload, ensure_ascii=False, indent=2),
             encoding="utf-8",
         )
+        call = step_payload.get("call") or {}
+        name = str(call.get("name") or "")
+        is_tool = bool(name) and name != "mobile_use"
+        one = format_live_action(call)
+        self._live_history.append({
+            "step": record.step,
+            "kind": "tool" if is_tool else "gui",
+            "kind_label": "App Tool" if is_tool else "GUI",
+            "summary": one,
+        })
+        feedback = step_payload.get("feedback") or {}
+        self.publish_live({
+            "step": record.step,
+            "phase": "returned",
+            "kind": "tool" if is_tool else "gui",
+            "kind_label": "App Tool" if is_tool else "GUI",
+            "app": record.current_app or "launcher",
+            "thought": _thought_from_record(record),
+            "action": one,
+            "cli": format_live_cli(call),
+            "screenshot": after_name,
+            "tool_return": (
+                json.dumps(feedback.get("output", feedback.get("error")), ensure_ascii=False, indent=2)
+                if is_tool
+                else format_screen(record.route_after)
+            ),
+        })
 
     def finish(self, result: HybridRunResult) -> None:
         payload = result.to_dict()
@@ -70,6 +226,32 @@ class HybridArtifactRecorder:
         name = stem + suffix
         (self.output_dir / name).write_bytes(image)
         return name
+
+
+def _observation_bytes(obs: Any) -> bytes:
+    if obs is None:
+        return b""
+    getter = getattr(obs, "get_screenshot_bytes", None)
+    if callable(getter):
+        return getter() or b""
+    return getattr(obs, "screenshot_bytes", b"") or b""
+
+
+def _write_session_screenshot(output_dir: Path, index: int, obs: Any) -> str:
+    """Match official session dumps: screenshot_step{N}.png next to session.json."""
+
+    data = _observation_bytes(obs)
+    if not data:
+        return ""
+    name = f"screenshot_step{index}.png"
+    path = output_dir / name
+    try:
+        from PIL import Image
+
+        Image.open(io.BytesIO(data)).convert("RGB").save(path, format="PNG")
+    except Exception:
+        path.write_bytes(data)
+    return name
 
 
 def _replace_image_data(value: Any, screenshot_name: str) -> Any:

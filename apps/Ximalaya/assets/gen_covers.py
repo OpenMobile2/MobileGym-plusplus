@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
 """批量生成 100 张专辑封面(§5.3)。纯画面无文字无水印无 logo。
-key/endpoint 运行时从仓库根 test_api_imggen.py **文本解析**读取(不 import)。
+key/endpoint 从仓库共享生图配置读取。
 纯 stdlib(urllib),幂等(>8KB 跳过),并发 6。"""
-import os, re, json, base64, urllib.request, concurrent.futures as cf
+import os, json, base64, sys, urllib.request, concurrent.futures as cf
+from pathlib import Path
 
-REPO_ROOT = "D:/NJU/agent/mobilegym-mock"
-_src = open(os.path.join(REPO_ROOT, "test_api_imggen.py"), encoding="utf-8").read()
-def _pick(name, default=None):
-    m = re.search(rf'^{name}\s*=\s*"([^"]+)"', _src, re.M)
-    return m.group(1) if m else default
-API_KEY = _pick("API_KEY")
-BASE_URL = _pick("BASE_URL", "http://15.204.107.114:3009").rstrip("/")
-MODEL = _pick("MODEL", "gpt-image-2")
+_REPO_ROOT = Path(__file__).resolve().parents[5]
+sys.path.insert(0, str(_REPO_ROOT / "tools"))
+from image_gen_client import image_gen_api_key, image_gen_base_url, image_gen_model  # noqa: E402
+
+API_KEY = image_gen_api_key()
+BASE_URL = image_gen_base_url().rstrip("/")
+MODEL = image_gen_model()
 URL = BASE_URL + ("/images/generations" if BASE_URL.endswith("/v1") else "/v1/images/generations")
 
 OUT = os.path.join(os.path.dirname(__file__), "covers")

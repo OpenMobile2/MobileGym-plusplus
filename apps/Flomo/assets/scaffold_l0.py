@@ -13,8 +13,15 @@ SPEC = APP.parents[3] / "docs" / "flomo-replication" / "spec.json"
 spec = json.loads(SPEC.read_text(encoding="utf-8"))
 
 allnodes = list(spec.get("chrome", [])) + list(spec.get("nodes", []))
-# 面板节点:不作为独立路由,而是主页 '/' 上的 searchParam 浮层(背后主页可见)。
-PANEL_NODES = {"home.titleMenu": "titleMenu"}
+# 面板节点:不作为独立路由,而是宿主列表页上的 searchParam 浮层(背后列表可见)。
+PANEL_NODES = {
+    "home.titleMenu": "titleMenu",
+    "memo.cardMenu": "cardMenu",
+}
+PANEL_HOSTS = {
+    "home.titleMenu": {"/"},
+    "memo.cardMenu": {"/", "/tag/filter", "/filter/byType", "/search/results"},
+}
 def comp_name(nid): return "".join(w.capitalize() for w in re.split(r"[.\-]", nid)) + "Page"
 def route_of(nid):
     if nid in PANEL_NODES: return "/"
@@ -68,9 +75,20 @@ for n in allnodes:
 # 跨页复用的全局触发点:from 必须列出实际触发它们的页面路由(consistency checker 做字面匹配,不展开 '*')。
 FROM_OVERRIDE = {
     "tag.drawer.open": ["/", "/tag/filter", "/filter/byType"],
-    "tag.filter.open": ["/", "/memo/detail", "/review/daily", "/review/random"],
+    "tag.filter.open": [
+        "/", "/memo/detail", "/review/daily", "/review/random",
+        "/tag/filter", "/filter/byType", "/search/results",
+    ],
+    "memo.detail.fromLink": ["/", "/tag/filter", "/filter/byType", "/search/results"],
     # 日期筛选页点日期 → 进热力图/日历详情页
-    "stats.heatmap.open": ["/", "/filter/byType"],
+    "stats.heatmap.open": ["/", "/filter/byType", "/tag/filter"],
+}
+
+# 购买弹层与会员页互相替换,避免“取消 → 会员页 → 关闭”又退回购买弹层。
+MODE_OVERRIDE = {
+    "pay.sheet.monthly": "replace",
+    "pay.sheet.yearly": "replace",
+    "pay.sheet.close": "replace",
 }
 
 # ---- transitions(effect == nav 且 transitionId != system.back),按 id 去重合并 from ----
@@ -87,13 +105,19 @@ for n in allnodes:
         tgt = it.get("target")
         sp = {}
         if tgt in PANEL_NODES:
-            to = "/"; sp = {PANEL_NODES[tgt]: "open"}
+            to = src if src in PANEL_HOSTS[tgt] else "/"
+            sp = {PANEL_NODES[tgt]: "open"}
         else:
             to = route_of(tgt) if tgt in nmap else "/"
         t = trans.get(tid)
         if t is None:
+            gesture = {
+                "double-tap": "doubleTap",
+                "long-press": "longPress",
+            }.get(it.get("gesture"), "tap")
             trans[tid] = {"id": tid, "from": {src}, "to": to, "sp": sp,
-                          "panel": tgt in PANEL_NODES, "label": it.get("element", tid)}
+                          "panel": tgt in PANEL_NODES, "label": it.get("element", tid),
+                          "gesture": gesture}
         else:
             t["from"].add(src)
             # to 取首个;若冲突,保留首个(spec 内同 id 应一致)
@@ -116,15 +140,19 @@ for r in routes:
     entry = "home" if nid == "home.feed" else "none"
     scroll = ("[{ name: 'feed', direction: 'vertical', description: '主滚动区' }]" if nid == "home.feed"
               else "[{ name: 'main', direction: 'vertical', description: '主滚动区' }]")
-    # 主页 '/' 是面板宿主:追加 panel uiStates + queryParams
+    # 列表页是面板宿主:追加该路由支持的 panel uiStates。
     extra_states = ""; qp = "{}"
-    if path == "/":
+    hosted_panels = [(pid, key) for pid, key in PANEL_NODES.items() if path in PANEL_HOSTS[pid]]
+    if hosted_panels:
         ps_blocks = []
-        for pid, key in PANEL_NODES.items():
+        for pid, key in hosted_panels:
             pn = nmap[pid]
+            panel_state_id = f"flomo.{pid}.open" if path == "/" else f"flomo.{nid}.{key}.open"
+            # Action id 是全局唯一合同;共享卡片菜单动作只在主宿主声明一次。
+            panel_state_actions = panel_actions.get(pid, []) if path == "/" else []
             ps_blocks.append(
-                f"        {{ id: 'flomo.{pid}.open', search: {{ {key}: 'open' }}, "
-                f"description: '{js(pn.get('title', pid))}',{actions_ts(panel_actions.get(pid, []))} }},")
+                f"        {{ id: '{panel_state_id}', search: {{ {key}: 'open' }}, "
+                f"description: '{js(pn.get('title', pid))}',{actions_ts(panel_state_actions)} }},")
         if ps_blocks:
             extra_states = "\n" + "\n".join(ps_blocks)
         # 离散面板键(titleMenu)只声明在 uiState.search 里,不能进 queryParams
@@ -155,14 +183,17 @@ def from_ts(froms):
 
 trans_blocks = []
 for tid, t in trans.items():
-    mode = "push" if t.get("panel") else ("replace" if t["to"] == "/" else "push")
+    mode = MODE_OVERRIDE.get(
+        tid,
+        "push" if t.get("panel") else ("replace" if t["to"] == "/" else "push"),
+    )
     froms = set(FROM_OVERRIDE[tid]) if tid in FROM_OVERRIDE else t["from"]
     sp = t.get("sp") or {}
     sp_ts = "{ " + ", ".join(f"{k}: '{v}'" for k, v in sp.items()) + " }" if sp else "{}"
     trans_blocks.append(
         f"    {{ id: '{js(tid)}', from: {from_ts(froms)}, to: '{t['to']}', "
         f"search: {sp_ts}, searchParams: {{}}, mode: '{mode}', params: {{}}, "
-        f"label: '{js(t['label'])}', ui: {{ placement: 'content', icon: 'arrow', gesture: 'tap' }} }},")
+        f"label: '{js(t['label'])}', ui: {{ placement: 'content', icon: 'arrow', gesture: '{t['gesture']}' }} }},")
 
 out = f"""// AUTO-GENERATED from docs/flomo-replication/spec.json (frozen v1.0) by assets/scaffold_l0.py
 // 不要手改;改 spec 后重跑生成器(spec-first 纪律)。

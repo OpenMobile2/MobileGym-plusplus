@@ -63,7 +63,7 @@ class ParallelRunner(BaseRunner):
 
         verbose = not config.quiet
         env_pool = EnvPool(
-            url=config.env_url, n=config.parallel, isolation=config.isolation,
+            url=factory.configured_env_url(config), n=config.parallel, isolation=config.isolation,
             num_browsers=config.num_browsers,
             headless=config.headless, proxy=config.proxy, coord_space=config.coord_space,
             delay_after_action=config.delay_after_action,

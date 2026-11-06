@@ -20,6 +20,7 @@ def build_system_prompt(
     interaction_mode: str = HYBRID_MODE,
     coord_space: str = "norm_0_1000",
     physical_size: tuple[int, int] = (1080, 2400),
+    extra_policy: str = "",
 ) -> tuple[str, dict[str, dict[str, Any]]]:
     """Build the dynamic prompt and parser schema table for one turn."""
 
@@ -65,6 +66,10 @@ def build_system_prompt(
         )
         example_coordinate = [163, 718]
 
+    app_switch_policy = (
+        'When a task names an app, prefer `mobile_use(action="open_app")` with its display name or id (case and spaces are ignored). If you get APP_NOT_FOUND, retry with another installed name or tap the launcher icon.'
+    )
+
     prompt = f"""{opening}
 
 # Runtime tool policy
@@ -72,10 +77,11 @@ def build_system_prompt(
 {runtime_policy}
 - Execute exactly one function call per turn. Never emit parallel calls.
 - {coordinate_policy}
-- When a task names an app, prefer `mobile_use(action="open_app")` with its exact name or id instead of guessing a launcher icon.
+- {app_switch_policy}
 - In MobileGym benchmark instructions, “笔记” or “Notes” means the system Notes app (`notes`), never Flomo unless Flomo is named explicitly.
 - `mobile_use` action `answer` records an answer but does not terminate. After all task requirements are satisfied, call `mobile_use` with action `terminate` and status `success`.
 - Use terminate/failure only when the task genuinely cannot be completed, not for a recoverable tool or formatting error.
+{extra_policy}
 
 # Tools
 

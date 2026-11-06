@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
+import * as TimeService from '@/os/TimeService';
 import { Card, EmptyState, Page, PrimaryButton, Row, TopBar, UnavailableButton, UnavailableRow } from '../components/ui';
 import { useLuckinGestures } from '../hooks/useLuckinGestures';
 import { useLuckinAddresses, useLuckinStores } from '../hooks/useLuckinData';
@@ -38,37 +40,55 @@ export function AddressListPage() {
   const { bindTap } = useLuckinGestures();
   const addresses = useLuckinAddresses();
   const setSelection = useLuckinStore((state) => state.setSelection);
+  const source = new URLSearchParams(useLocation().search).get('source');
+  const selectTransition = source === 'menu'
+    ? 'address.select-menu'
+    : source === 'profile'
+      ? 'address.select-profile'
+      : 'address.select-order';
   return (
     <Page className="pb-20">
       <TopBar title={s.address_manage} />
       <div className="h-11 bg-white flex justify-center gap-5 text-xs"><button className="text-[#1C2E9C] border-b-2 border-[#1C2E9C]">{s.mode_delivery}</button><UnavailableButton>{s.mode_pickup}</UnavailableButton></div>
-      <div className="p-3">{addresses.map((address) => <Card key={address.id} className="mb-2 p-4 flex min-w-0"><button {...bindTap('address.select-back', { beforeTrigger: () => setSelection('addressId', address.id) })} className="flex-1 min-w-0 text-left"><div className="min-w-0 flex items-center gap-2 whitespace-nowrap"><b className="shrink-0 text-sm">{address.name}</b><span className="min-w-0 text-xs truncate">{address.phone}</span>{address.isDefault && <span className="shrink-0 text-[9px] rounded bg-[#EAEEFB] text-[#1C2E9C] px-1">{s.set_default}</span>}</div><p className="mt-2 text-xs text-[#555] truncate whitespace-nowrap"><span className="text-[#1C2E9C] mr-1">{address.tag}</span>{address.region} {address.detail}</p></button><button {...bindTap('address.edit-open')} className="shrink-0 px-2 text-[#777] text-sm whitespace-nowrap">{s.edit}</button></Card>)}</div>
-      <div className="absolute bottom-0 left-0 right-0 bg-white p-3"><PrimaryButton props={bindTap('address.new-open')}><span className="px-20">＋ {s.add_address}</span></PrimaryButton></div>
+      <div className="p-3">{addresses.map((address) => <Card key={address.id} className="mb-2 p-4 flex min-w-0"><button {...bindTap(selectTransition, { beforeTrigger: () => setSelection('addressId', address.id) })} className="flex-1 min-w-0 text-left"><div className="min-w-0 flex items-center gap-2 whitespace-nowrap"><b className="shrink-0 text-sm">{address.name}{address.gender ? (address.gender === 'female' ? ' 女士' : ' 先生') : ''}</b><span className="min-w-0 text-xs truncate">{address.phone}</span>{address.isDefault && <span className="shrink-0 text-[9px] rounded bg-[#EAEEFB] text-[#1C2E9C] px-1">{s.set_default}</span>}</div><p className="mt-2 text-xs text-[#555] truncate whitespace-nowrap"><span className="text-[#1C2E9C] mr-1">{address.tag}</span>{address.region} {address.detail}</p></button><button {...bindTap('address.edit-open', { beforeTrigger: () => setSelection('addressEditId', address.id) })} className="shrink-0 px-2 text-[#777] text-sm whitespace-nowrap">{s.edit}</button></Card>)}</div>
+      <div className="absolute bottom-0 left-0 right-0 bg-white p-3"><PrimaryButton props={bindTap('address.new-open', { beforeTrigger: () => setSelection('addressEditId', '') })}><span className="px-20">＋ {s.add_address}</span></PrimaryButton></div>
     </Page>
   );
 }
 
+const BLANK_ADDRESS: Address = { id: 'a-local', name: '', gender: 'female', phone: '', region: '', detail: '', tag: '', isDefault: false };
+
 export function AddressEditPage() {
   const s = useLuckinStrings();
   const { bindAction, back } = useLuckinGestures();
-  const first = useLuckinAddresses()[0];
+  const addresses = useLuckinAddresses();
+  // "" (set by the ＋新增 button) means a brand-new address; any other id means
+  // editing that existing address. Falls back to "new" if nothing was set (e.g.
+  // deep-link/replay), since defaulting to silently editing addresses[0] is the
+  // bug this distinction exists to fix.
+  const editId = useLuckinStore((state) => state.selections.addressEditId as string | undefined);
+  const editing = editId ? addresses.find((item) => item.id === editId) : undefined;
   const saveAddress = useLuckinStore((state) => state.saveAddress);
   const deleteAddress = useLuckinStore((state) => state.deleteAddress);
   const showToast = useLuckinStore((state) => state.showToast);
-  const [form, setForm] = useState<Address>({ ...first, id: 'a-local' });
+  const [form, setForm] = useState<Address>(() =>
+    editing ? { ...editing, phone: editing.phone.includes('*') ? '13856780000' : editing.phone } : { ...BLANK_ADDRESS },
+  );
+  const [regionOpen, setRegionOpen] = useState(false);
   const field = (key: keyof Address, value: string | boolean) => setForm((current) => ({ ...current, [key]: value }));
   return (
-    <Page className="pb-24"><TopBar title={s.address_edit} /><div className="mt-2 bg-white px-4">
+    <Page className="pb-24"><TopBar title={editing ? s.address_edit : s.add_address} /><div className="mt-2 bg-white px-4">
       <label className="h-14 min-w-0 flex items-center border-b"><span className="w-20 shrink-0 text-sm">{s.profile_username}</span><input data-action="addressEdit.name.input" value={form.name} onChange={(event) => field('name', event.target.value)} className="flex-1 min-w-0 outline-none text-sm" /></label>
-      <div className="h-14 flex items-center border-b"><span className="w-20 text-sm">{s.profile_gender}</span><button {...bindAction('addressEdit.gender.select.target', () => field('tag', s.tag_home), { target: 'male' })} className="px-4 py-1.5 rounded-full border text-xs">{s.tag_home}</button><button {...bindAction('addressEdit.gender.select.target', () => field('tag', s.gender_female), { target: 'female' })} className="ml-2 px-4 py-1.5 rounded-full bg-[#F4F6FF] text-[#1C2E9C] text-xs">{s.gender_female}</button></div>
+      <div className="h-14 flex items-center border-b"><span className="w-20 text-sm">{s.profile_gender}</span><button {...bindAction('addressEdit.gender.select.target', () => field('gender', 'male'), { target: 'male' })} className={`px-4 py-1.5 rounded-full border text-xs ${form.gender === 'male' ? 'bg-[#F4F6FF] text-[#1C2E9C]' : ''}`}>先生</button><button {...bindAction('addressEdit.gender.select.target', () => field('gender', 'female'), { target: 'female' })} className={`ml-2 px-4 py-1.5 rounded-full border text-xs ${form.gender !== 'male' ? 'bg-[#F4F6FF] text-[#1C2E9C]' : ''}`}>{s.gender_female}</button></div>
       <label className="h-14 min-w-0 flex items-center border-b"><span className="w-20 shrink-0 text-sm">{s.phone}</span><input data-action="addressEdit.phone.input" value={form.phone} onChange={(event) => field('phone', event.target.value)} className="flex-1 min-w-0 outline-none text-sm" /></label>
-      <button {...bindAction('addressEdit.region.open', () => showToast(s.saved_success))} className="w-full h-14 flex items-center border-b text-sm"><span className="w-20 text-left">{s.region}</span><span className="flex-1 text-left">{form.region}</span><span>›</span></button>
+      <button {...bindAction('addressEdit.region.open', () => setRegionOpen((open) => !open))} className="w-full h-14 flex items-center border-b text-sm"><span className="w-20 text-left">{s.region}</span><span className="flex-1 text-left">{form.region}</span><span>›</span></button>
+      {regionOpen && <div className="grid grid-cols-3 gap-2 py-3 border-b">{['海蓝市 新城区', '海蓝市 高新区', '海蓝市 湖滨区'].map((region) => <button key={region} {...bindAction('addressEdit.region.select.target', () => { field('region', region); setRegionOpen(false); }, { target: region })} className={`rounded-lg px-2 py-2 text-[11px] ${form.region === region ? 'bg-[#F4F6FF] text-[#1C2E9C]' : 'bg-[#F5F5F5]'}`}>{region}</button>)}</div>}
       <label className="h-14 min-w-0 flex items-center border-b"><span className="w-20 shrink-0 text-sm">{s.detail_address}</span><input data-action="addressEdit.detail.input" value={form.detail} onChange={(event) => field('detail', event.target.value)} className="flex-1 min-w-0 outline-none text-sm" /></label>
       <div className="py-4 border-b"><span className="text-sm">{s.address_tag}</span><div className="flex gap-2 mt-3">{[s.tag_home,s.tag_company,s.tag_school].map((tag) => <button key={tag} {...bindAction('addressEdit.tag.select.target', () => field('tag', tag), { target: tag })} className={`px-4 py-1.5 rounded-full text-xs ${form.tag === tag ? 'bg-[#F2F4FA] text-[#1C2E9C]' : 'bg-[#F5F5F5]'}`}>{tag}</button>)}</div></div>
       <button {...bindAction('addressEdit.default.toggle', () => field('isDefault', !form.isDefault))} className="w-full h-14 flex items-center text-sm"><span className="flex-1 text-left">{s.set_default}</span><span className={`w-10 h-6 rounded-full p-0.5 ${form.isDefault ? 'bg-[#1C2E9C]' : 'bg-[#DDD]'}`}><span className={`block w-5 h-5 rounded-full bg-white transition-transform ${form.isDefault ? 'translate-x-4' : ''}`} /></span></button>
     </div>
-    <button {...bindAction('addressEdit.form.delete', () => { deleteAddress(first.id); showToast(s.saved_success); back(); })} className="mt-3 w-full h-12 bg-white text-[#E34A3A] text-sm">{s.delete}</button>
-    <div className="absolute bottom-0 left-0 right-0 p-3 bg-white"><PrimaryButton props={bindAction('addressEdit.form.save', () => { saveAddress(form); showToast(s.saved_success); back(); })}><span className="px-24">{s.save}</span></PrimaryButton></div>
+    {editing && <button {...bindAction('addressEdit.form.delete', () => { deleteAddress(editing.id); showToast(s.saved_success); back(); })} className="mt-3 w-full h-12 bg-white text-[#E34A3A] text-sm">{s.delete}</button>}
+    <div className="absolute bottom-0 left-0 right-0 p-3 bg-white"><PrimaryButton props={bindAction('addressEdit.form.save', () => { saveAddress(editing ? form : { ...form, id: `a-local-${TimeService.now()}` }); showToast(s.saved_success); back(); })}><span className="px-24">{s.save}</span></PrimaryButton></div>
     </Page>
   );
 }
@@ -114,13 +134,15 @@ export function MineProfilePage() {
   const s = useLuckinStrings();
   const { bindAction, bindTap } = useLuckinGestures();
   const showToast = useLuckinStore((state) => state.showToast);
+  const [nickname, setNickname] = useState(s.nickname);
+  const [gender, setGender] = useState(s.gender_female);
   return (
     <Page className="pb-6">
       <TopBar title={s.profile} />
       <div className="mt-2">
         <button {...bindAction('profile.avatar.open', () => showToast(s.saved_success))} className="w-full h-20 bg-white px-4 flex items-center border-b"><span className="flex-1 text-left">{s.avatar}</span><span className="w-12 h-12 rounded-full bg-[#EDF2FF] flex items-center justify-center text-[#1C2E9C]"><IcDeer /></span><span className="ml-2">›</span></button>
-        <UnavailableRow title={s.profile_username} trailing={<span className="text-xs text-[#888]">{s.nickname} ›</span>} />
-        <UnavailableRow title={s.profile_gender} trailing={<span className="text-xs text-[#888]">{s.gender_female} ›</span>} />
+        <Row title={s.profile_username} onClickProps={bindAction('profile.username.edit', () => { const next = nickname === s.nickname ? '林晓' : s.nickname; setNickname(next); showToast(s.saved_success); })} trailing={<span className="text-xs text-[#888]">{nickname} ›</span>} />
+        <Row title={s.profile_gender} onClickProps={bindAction('profile.gender.toggle', () => { setGender((value) => value === s.gender_female ? '男' : s.gender_female); showToast(s.saved_success); })} trailing={<span className="text-xs text-[#888]">{gender} ›</span>} />
         <UnavailableRow title={s.profile_lucky_day} trailing={<span className="text-xs text-[#1C2E9C]">{s.more} ›</span>} />
         <UnavailableRow title={s.profile_mobile} trailing={<span className="text-xs text-[#888]">+86 180****9152 ›</span>} />
         <Row title={s.address_manage} onClickProps={bindTap('profile.address-open')} />

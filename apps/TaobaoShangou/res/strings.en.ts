@@ -86,6 +86,7 @@ export const stringsEn: Partial<Record<keyof typeof strings, string>> = {
   groupTitle: 'Group Order',
   groupCancel: 'Cancel Group',
   groupInvite: 'Invite Friends',
+  groupShareSuccess: 'Shared successfully',
   groupShopping: 'Picking',
   groupInitiate: 'Host',
   groupInitiatorMe: 'Host No.1',

@@ -78,6 +78,37 @@ for tid in sorted(declared - code_ids):
         continue
     warns.append(f"声明了但代码未绑定: {tid}")
 
+# 最终交互审查回归:共享 MemoCard 不能再把筛选/搜索页绑到主页专属菜单。
+regression_markers = {
+    "components/MemoCard.tsx": [
+        "menuTid = 'memo.cardMenu.open'",
+        "bindTap(menuTid",
+        "bindTap(tagTid",
+        "bindTap(sourceTid",
+    ],
+    "pages/TagFilterPage.tsx": [
+        'menuTid="tag.filter.cardMenu.open"',
+        "showCardMenu && <MemoCardmenuPage />",
+    ],
+    "pages/FilterBytypePage.tsx": [
+        'menuTid="filter.byType.cardMenu.open"',
+        'longPressTid="filter.byType.longpress"',
+        "showCardMenu && <MemoCardmenuPage />",
+    ],
+    "pages/SearchResultsPage.tsx": [
+        'menuTid="search.results.cardMenu.open"',
+        'longPressTid="search.results.longpress"',
+        "cycleResultFilter",
+        "showCardMenu && <MemoCardmenuPage />",
+    ],
+    "pages/ComposeEditorPage.tsx": ["toast('请输入笔记内容')"],
+}
+for rel, markers in regression_markers.items():
+    text = (APP / rel).read_text(encoding="utf-8")
+    for marker in markers:
+        if marker not in text:
+            errors.append(f"交互回归保护缺失: {rel} -> {marker}")
+
 total = len([p for p in spec_ids.values() if p != 'wontfix'])
 covered = len([t for t, p in spec_ids.items() if p != 'wontfix' and t in code_ids and t in declared])
 print(f"spec 可执行交互: {total} | 已覆盖: {covered} | coverage = {covered}/{total} = {covered/total*100:.1f}%")

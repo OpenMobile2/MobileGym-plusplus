@@ -27,5 +27,19 @@ export const manifest: AppManifest = {
       statusBarForeground: 'dark',
       navigationBarForeground: 'dark',
     },
+    colorsDark: {
+      primary: '#C9A0F0',
+      primaryDark: '#A56AD9',
+      background: '#000000',
+      surface: '#1C1C1E',
+      textPrimary: '#F2F2F7',
+      textSecondary: '#98989F',
+      border: '#38383A',
+      statusBarForeground: 'light',
+      navigationBarForeground: 'light',
+    },
   },
+  queries: [
+    { action: 'ACTION_SEND', type: 'text/plain' },
+  ],
 };

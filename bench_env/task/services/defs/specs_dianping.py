@@ -1,4 +1,4 @@
-"""Dianping (大众点评) hybrid GUI+Tools tasks -- tool-boundary probe (services).
+"""Dianping (大众点评) hybrid GUI+Tools tasks -- tool-boundary probe (selfbuilt-v4).
 
 Every fact/number below was read directly out of ``apps/Dianping/data/defaults.json``
 (8 seeded shops) and cross-checked against ``app_tools/apps/dianping/index.ts`` (the

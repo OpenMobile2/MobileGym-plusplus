@@ -4,17 +4,19 @@ import * as TimeService from '@/os/TimeService';
 import { useTaobaoStore } from '../state';
 import { REFUND_TYPES } from '../constants';
 import { useTaobaoGestures } from '../hooks/useTaobaoGestures';
+import { useStrings } from '../hooks/useStrings';
 import { TopBar, Img, Price, ShopBadge, BottomSheet, usePanel, useToast } from '../components/ui';
 import { PayPanel } from '../components/PayPanel';
-import { formatCountdown, formatDateTime, formatRemain } from '../utils/format';
+import { formatCountdown, formatDateTime, formatRemain, fmt } from '../utils/format';
+import type { TaobaoStringKey } from '../res/strings';
 
-const SERVICE_ITEMS = [
-  { name: '退货宝', desc: '服务已生效,退换货运费保障' },
-  { name: '7天价保', desc: '买贵了可申请退差价' },
-  { name: '过敏包退', desc: '使用后过敏可退货退款' },
-  { name: '假一赔四', desc: '判定假货可获四倍赔付' },
-  { name: '极速退款', desc: '满足条件秒到账' },
-  { name: '7天无理由退换', desc: '商品完好不影响二次销售可申请' },
+const SERVICE_ITEM_KEYS: { nameKey: TaobaoStringKey; descKey: TaobaoStringKey }[] = [
+  { nameKey: 'serviceReturnGuaranteeName', descKey: 'serviceReturnGuaranteeDesc' },
+  { nameKey: 'servicePriceGuardName', descKey: 'servicePriceGuardDesc' },
+  { nameKey: 'serviceAllergyReturnName', descKey: 'serviceAllergyReturnDesc' },
+  { nameKey: 'serviceFakeCompensationName', descKey: 'serviceFakeCompensationDesc' },
+  { nameKey: 'serviceFastRefundName', descKey: 'serviceFastRefundDesc' },
+  { nameKey: 'serviceNoReasonReturnName', descKey: 'serviceNoReasonReturnDesc' },
 ];
 
 /** 订单详情(spec: orders.detail + refundType/service/pay 弹层) */
@@ -22,15 +24,16 @@ export default function OrderDetailPage() {
   const { orderId = '' } = useParams();
   const { value: panel, open: openPanel } = usePanel();
   const { bindTap, back, go } = useTaobaoGestures();
+  const s = useStrings();
   const [toast, showToast] = useToast();
 
-  const order = useTaobaoStore((s) => s.orders.find((o) => o.id === orderId));
-  const markOrderPaid = useTaobaoStore((s) => s.markOrderPaid);
-  const confirmReceipt = useTaobaoStore((s) => s.confirmReceipt);
-  const extendReceipt = useTaobaoStore((s) => s.extendReceipt);
-  const buyAgain = useTaobaoStore((s) => s.buyAgain);
+  const order = useTaobaoStore((st) => st.orders.find((o) => o.id === orderId));
+  const markOrderPaid = useTaobaoStore((st) => st.markOrderPaid);
+  const confirmReceipt = useTaobaoStore((st) => st.confirmReceipt);
+  const extendReceipt = useTaobaoStore((st) => st.extendReceipt);
+  const buyAgain = useTaobaoStore((st) => st.buyAgain);
 
-  const [refundType, setRefundType] = useState('退货/退款');
+  const [refundType, setRefundType] = useState(REFUND_TYPES[0].label);
   const [tick, setTick] = useState(0);
 
   // 倒计时刷新(模拟时间)
@@ -42,9 +45,9 @@ export default function OrderDetailPage() {
 
   if (!order) {
     return (
-      <div className="flex flex-col h-full bg-[#F5F6F7]">
-        <TopBar title="订单详情" />
-        <div className="flex-1 flex items-center justify-center text-[#999999]">订单不存在</div>
+      <div className="flex flex-col h-full bg-app-bg">
+        <TopBar title={s.orderDetailTitle} />
+        <div className="flex-1 flex items-center justify-center text-app-text-muted">{s.orderNotFound}</div>
       </div>
     );
   }
@@ -52,18 +55,18 @@ export default function OrderDetailPage() {
   const now = TimeService.now();
   const statusHead =
     order.status === 'pendingPayment'
-      ? { title: '待付款', sub: order.payDeadline ? `剩余 ${formatCountdown(order.payDeadline - now)} 自动关闭` : '' }
+      ? { title: s.orderStatusPendingPayment, sub: order.payDeadline ? fmt(s.autoCloseCountdownFmt, { time: formatCountdown(order.payDeadline - now) }) : '' }
       : order.status === 'pendingShip'
-        ? { title: '待发货', sub: '48小时内发货' }
+        ? { title: s.orderStatusPendingShip, sub: s.itemDetailGuarantee48h }
         : order.status === 'shipped'
-          ? { title: '已发货', sub: order.autoConfirmAt ? `还剩${formatRemain(order.autoConfirmAt - now)}自动确认` : '' }
+          ? { title: s.orderStatusShipped, sub: order.autoConfirmAt ? fmt(s.autoConfirmCountdownFmt, { time: formatRemain(order.autoConfirmAt - now) }) : '' }
           : order.status === 'completed'
-            ? { title: '交易成功', sub: '' }
-            : { title: '退款成功', sub: '' };
+            ? { title: s.orderStatusCompleted, sub: '' }
+            : { title: s.orderStatusRefunded, sub: '' };
 
   return (
-    <div className="flex flex-col h-full bg-[#F5F6F7]">
-      <TopBar title="订单详情" />
+    <div className="flex flex-col h-full bg-app-bg">
+      <TopBar title={s.orderDetailTitle} />
 
       <div className="flex-1 overflow-y-auto px-2.5" data-scroll-container="order-detail" data-scroll-direction="vertical">
         {/* 状态头 */}
@@ -73,51 +76,54 @@ export default function OrderDetailPage() {
         </div>
 
         {/* 物流摘要 + 地址 */}
-        <div className="bg-white px-3 py-2.5">
+        <div className="bg-app-surface px-3 py-2.5">
           {order.status === 'shipped' || order.status === 'completed' ? (
             <div
               {...bindTap('orders.logistics-open', { params: { orderId: order.id } })}
               className="text-[13px] cursor-pointer pb-2 border-b border-[#F5F5F5]"
             >
               <span className="text-[#FF5000] font-semibold">
-                {order.logistics.noLogistics ? '商家选择无需物流发货,暂无物流信息' : (order.logistics.nodes[0]?.status ?? '已发货')}
+                {order.logistics.noLogistics ? s.noLogisticsShippedText : (order.logistics.nodes[0]?.status ?? s.orderStatusShipped)}
               </span>
               {!order.logistics.noLogistics && order.logistics.nodes[0] && (
-                <span className="text-[#999999] ml-2">{order.logistics.nodes[0].desc}</span>
+                <span className="text-app-text-muted ml-2">{order.logistics.nodes[0].desc}</span>
               )}
-              <span className="text-[#999999] float-right">›</span>
+              <span className="text-app-text-muted float-right">›</span>
             </div>
           ) : null}
           <div className="flex gap-2 pt-2">
             <span>📍</span>
             <div className="flex-1 text-[13px]">
               <div>{order.addressSnapshot.full}</div>
-              <div className="text-[#999999] text-[12px] mt-0.5">
+              <div className="text-app-text-muted text-[12px] mt-0.5">
                 {order.addressSnapshot.name} {order.addressSnapshot.phone}
-                <span className="ml-1 text-[10px] border border-[#CCCCCC] rounded px-0.5">号码保护中</span>
+                <span className="ml-1 text-[10px] border border-[#CCCCCC] rounded px-0.5">{s.numberProtectedLabel}</span>
               </div>
             </div>
           </div>
         </div>
 
         {/* 商品 */}
-        <div className="bg-white rounded-b-xl px-3 py-2.5 mt-px">
+        <div className="bg-app-surface rounded-b-xl px-3 py-2.5 mt-px">
           <div className="flex items-center text-[13px] mb-1">
             <ShopBadge badge={order.shopBadge} />
             <span className="font-semibold">{order.shopName}</span>
-            <span className="text-[#999999] ml-0.5">›</span>
           </div>
           {order.lines.map((l) => (
-            <div key={l.itemId} className="flex gap-2.5 py-2">
+            <div
+              key={l.itemId}
+              {...bindTap('orderDetail.item-open', { params: { itemId: l.itemId } })}
+              className="flex gap-2.5 py-2 cursor-pointer"
+            >
               <Img src={l.image} className="w-18 h-18 w-20 h-20 rounded-lg object-cover shrink-0" />
               <div className="flex-1 min-w-0">
                 <div className="text-[13px] line-clamp-2 leading-snug">{l.title}</div>
-                <div className="text-[11px] text-[#999999] mt-0.5">{l.skuDesc}</div>
-                <div className="text-[11px] text-[#FF5000] mt-0.5">不支持7天无理由</div>
+                <div className="text-[11px] text-app-text-muted mt-0.5">{l.skuDesc}</div>
+                <div className="text-[11px] text-[#FF5000] mt-0.5">{s.noReasonReturnUnsupported}</div>
               </div>
               <div className="text-right shrink-0">
                 <Price value={l.price} size="s" />
-                <div className="text-[11px] text-[#999999]">x{l.qty}</div>
+                <div className="text-[11px] text-app-text-muted">x{l.qty}</div>
               </div>
             </div>
           ))}
@@ -125,95 +131,95 @@ export default function OrderDetailPage() {
             <button
               {...bindTap({ kind: 'action', id: 'orderDetail.order.buyAgain' }, {
                 params: { orderId: order.id },
-                onTrigger: () => { buyAgain(order.id); showToast('已加入购物车'); },
+                onTrigger: () => { buyAgain(order.id); showToast(s.addedToCartToast); },
               })}
-              className="text-[12px] rounded-full border border-[#DDDDDD] bg-white px-3 py-1.5 cursor-pointer"
+              className="text-[12px] rounded-full border border-[#DDDDDD] bg-app-surface px-3 py-1.5 cursor-pointer"
             >
-              加入购物车
+              {s.addToCart}
             </button>
-            {(order.status === 'shipped' || order.status === 'completed') && (
+            {(order.status === 'pendingShip' || order.status === 'shipped' || order.status === 'completed') && (
               <button
                 {...bindTap({ kind: 'action', id: 'orderDetail.refund.open' }, {
                   params: { orderId: order.id },
                   onTrigger: () => openPanel('refundType'),
                 })}
-                className="text-[12px] rounded-full border border-[#DDDDDD] bg-white px-3 py-1.5 cursor-pointer"
+                className="text-[12px] rounded-full border border-[#DDDDDD] bg-app-surface px-3 py-1.5 cursor-pointer"
               >
-                申请售后
+                {s.applyAfterSalesLabel}
               </button>
             )}
           </div>
           {order.gift && (
-            <div className="flex justify-between text-[12px] text-[#666666] border-t border-[#F8F8F8] pt-2 mt-2">
-              <span>赠品 {order.gift}</span><span>1件</span>
+            <div className="flex justify-between text-[12px] text-app-text-muted border-t border-[#F8F8F8] pt-2 mt-2">
+              <span>{fmt(s.giftLabelFmt, { name: order.gift })}</span><span>{s.oneItemLabel}</span>
             </div>
           )}
         </div>
 
         {/* 金额 */}
-        <div className="bg-white rounded-xl mt-2 px-3 py-1">
-          <KV k={`商品总价 共${order.lines.length}件`} v={`¥${order.itemTotal}`} />
-          {order.shopDiscount > 0 && <KV k="店铺优惠 含官方立减" v={`-¥${order.shopDiscount}`} red />}
-          <KV k="运费(快递)" v={`¥${order.shippingFee}`} />
+        <div className="bg-app-surface rounded-xl mt-2 px-3 py-1">
+          <KV k={fmt(s.itemTotalFmt, { count: order.lines.length })} v={`¥${order.itemTotal}`} />
+          {order.shopDiscount > 0 && <KV k={s.shopDiscountLabel} v={`-¥${order.shopDiscount}`} red />}
+          <KV k={s.shippingFeeLabel} v={`¥${order.shippingFee}`} />
           <div className="flex justify-between py-2.5 text-[13px]">
-            <span className="font-semibold">{order.status === 'pendingPayment' ? '需付款' : '实付款'}</span>
+            <span className="font-semibold">{order.status === 'pendingPayment' ? s.needToPayLabel : s.paidAmountLabel}</span>
             <Price value={order.paidAmount} size="m" />
           </div>
         </div>
 
         {/* 订单信息 */}
-        <div className="bg-white rounded-xl mt-2 px-3 py-1">
+        <div className="bg-app-surface rounded-xl mt-2 px-3 py-1">
           <div className="flex justify-between items-center py-2.5 text-[13px]">
-            <span className="text-[#666666]">订单编号 {order.orderNo}</span>
+            <span className="text-app-text-muted">{fmt(s.orderNoFmt, { no: order.orderNo })}</span>
             <button
               {...bindTap({ kind: 'action', id: 'orderDetail.orderNo.copy' }, {
                 onTrigger: () => {
                   window.__OS__?.clipboard?.copyText?.(order.orderNo);
-                  showToast('已复制');
+                  showToast(s.copiedToast);
                 },
               })}
-              className="text-[12px] text-[#333333] border border-[#DDDDDD] rounded-full px-2 py-0.5 bg-white cursor-pointer"
+              className="text-[12px] text-app-text border border-[#DDDDDD] rounded-full px-2 py-0.5 bg-app-surface cursor-pointer"
             >
-              复制
+              {s.copyLabel}
             </button>
           </div>
-          {order.payMethod && <KV k="支付方式" v={order.payMethod} />}
-          <KV k="交易快照" v="发生交易争议时,可作为判断依据 ›" />
-          <KV k="创建时间" v={formatDateTime(order.createdAt)} />
-          {order.paidAt && <KV k="付款时间" v={formatDateTime(order.paidAt)} />}
-          {order.shippedAt && <KV k="发货时间" v={formatDateTime(order.shippedAt)} />}
-          {order.completedAt && <KV k="成交时间" v={formatDateTime(order.completedAt)} />}
+          {order.payMethod && <KV k={s.payMethodLabel} v={order.payMethod} />}
+          <KV k={s.transactionSnapshotLabel} v={s.transactionSnapshotDesc} />
+          <KV k={s.createdAtLabel} v={formatDateTime(order.createdAt)} />
+          {order.paidAt && <KV k={s.paidAtLabel} v={formatDateTime(order.paidAt)} />}
+          {order.shippedAt && <KV k={s.shippedAtLabel} v={formatDateTime(order.shippedAt)} />}
+          {order.completedAt && <KV k={s.completedAtLabel} v={formatDateTime(order.completedAt)} />}
         </div>
 
         {/* 服务保障 */}
-        <div className="bg-white rounded-xl mt-2 px-3 py-2.5 mb-3">
+        <div className="bg-app-surface rounded-xl mt-2 px-3 py-2.5 mb-3">
           <div className="flex justify-between items-center">
-            <span className="text-[14px] font-semibold">服务保障</span>
+            <span className="text-[14px] font-semibold">{s.serviceGuaranteeLabel}</span>
             <button
               {...bindTap({ kind: 'action', id: 'orderDetail.service.open' }, {
                 onTrigger: () => openPanel('service'),
               })}
-              className="text-[12px] text-[#999999] bg-transparent border-none cursor-pointer"
+              className="text-[12px] text-app-text-muted bg-transparent border-none cursor-pointer"
             >
-              查看更多 ›
+              {s.moreArrow}
             </button>
           </div>
-          <div className="flex gap-3 mt-1.5 text-[12px] text-[#666666]">
-            <span>🛡️ 退货宝</span><span>7天价保</span><span>假一赔四</span><span>极速退款</span>
+          <div className="flex gap-3 mt-1.5 text-[12px] text-app-text-muted">
+            <span>🛡️ {s.serviceReturnGuaranteeName}</span><span>{s.servicePriceGuardName}</span><span>{s.serviceFakeCompensationName}</span><span>{s.serviceFastRefundName}</span>
           </div>
         </div>
       </div>
 
       {/* 底部操作栏 */}
-      <div className="shrink-0 bg-white border-t border-[#EEEEEE] flex items-center justify-end px-3 py-2 gap-2">
+      <div className="shrink-0 bg-app-surface border-t border-app-border flex items-center justify-end px-3 py-2 gap-2">
         {order.status === 'pendingPayment' && (
           <>
-            <span className="mr-auto text-[13px]">合计: <Price value={order.paidAmount} size="m" /></span>
+            <span className="mr-auto text-[13px]">{s.cartTotalLabel} <Price value={order.paidAmount} size="m" /></span>
             <button
               {...bindTap({ kind: 'action', id: 'orderDetail.pay.open' }, { onTrigger: () => openPanel('pay') })}
               className="rounded-full bg-gradient-to-r from-[#FF7A00] to-[#FF2000] text-white text-[14px] px-5 py-2.5 border-none cursor-pointer"
             >
-              继续付款 {order.payDeadline ? `剩余${formatCountdown(order.payDeadline - now)}` : ''}
+              {s.continuePaymentLabel} {order.payDeadline ? fmt(s.remainingTimeFmt, { time: formatCountdown(order.payDeadline - now) }) : ''}
             </button>
           </>
         )}
@@ -222,17 +228,17 @@ export default function OrderDetailPage() {
             <button
               {...bindTap({ kind: 'action', id: 'orders.receipt.extend' }, {
                 params: { orderId: order.id },
-                onTrigger: () => { extendReceipt(order.id); showToast('已延长收货3天'); },
+                onTrigger: () => { extendReceipt(order.id); showToast(s.extendedReceiptToast); },
               })}
-              className="text-[13px] rounded-full border border-[#DDDDDD] bg-white px-3.5 py-2 cursor-pointer"
+              className="text-[13px] rounded-full border border-[#DDDDDD] bg-app-surface px-3.5 py-2 cursor-pointer"
             >
-              延长收货
+              {s.extendReceiptLabel}
             </button>
             <button
               {...bindTap('orders.logistics-open', { params: { orderId: order.id } })}
-              className="text-[13px] rounded-full border border-[#DDDDDD] bg-white px-3.5 py-2 cursor-pointer"
+              className="text-[13px] rounded-full border border-[#DDDDDD] bg-app-surface px-3.5 py-2 cursor-pointer"
             >
-              查看物流
+              {s.viewLogisticsLabel}
             </button>
             <button
               {...bindTap({ kind: 'action', id: 'orderDetail.receipt.confirm' }, {
@@ -241,7 +247,7 @@ export default function OrderDetailPage() {
               })}
               className="text-[13px] rounded-full bg-gradient-to-r from-[#FF9402] to-[#FF5000] text-white px-3.5 py-2 border-none cursor-pointer"
             >
-              确认收货
+              {s.confirmReceiptLabel}
             </button>
           </>
         )}
@@ -249,18 +255,18 @@ export default function OrderDetailPage() {
           <>
             <button
               {...bindTap('orders.logistics-open', { params: { orderId: order.id } })}
-              className="text-[13px] rounded-full border border-[#DDDDDD] bg-white px-3.5 py-2 cursor-pointer"
+              className="text-[13px] rounded-full border border-[#DDDDDD] bg-app-surface px-3.5 py-2 cursor-pointer"
             >
-              查看物流
+              {s.viewLogisticsLabel}
             </button>
             <button
               {...bindTap({ kind: 'action', id: 'orderDetail.order.buyAgain' }, {
                 params: { orderId: order.id },
-                onTrigger: () => { buyAgain(order.id); showToast('已加入购物车'); },
+                onTrigger: () => { buyAgain(order.id); showToast(s.addedToCartToast); },
               })}
               className="text-[13px] rounded-full bg-gradient-to-r from-[#FF9402] to-[#FF5000] text-white px-3.5 py-2 border-none cursor-pointer"
             >
-              再买一单
+              {s.buyAgainLabel}
             </button>
           </>
         )}
@@ -268,16 +274,16 @@ export default function OrderDetailPage() {
 
       {/* 售后类型弹层 */}
       {panel === 'refundType' && (
-        <BottomSheet onClose={() => back()} title="选择售后类型">
+        <BottomSheet onClose={() => back()} title={s.selectAfterSalesTypeTitle}>
           <div className="px-4 pb-2">
           <div className="flex gap-2 items-center mb-1">
             <Img src={order.lines[0].image} className="w-12 h-12 rounded-lg" />
             <div className="flex-1 min-w-0">
               <div className="text-[13px] line-clamp-1">{order.lines[0].title}</div>
-              <div className="text-[11px] text-[#999999]">{order.lines[0].skuDesc}</div>
+              <div className="text-[11px] text-app-text-muted">{order.lines[0].skuDesc}</div>
             </div>
           </div>
-          <div className="text-[11px] text-[#C2410C] bg-[#FFF7EC] rounded px-2 py-1 mb-1">🛡️ 本单享退货宝 免首重运费</div>
+          <div className="text-[11px] text-[#C2410C] bg-[#FFF7EC] rounded px-2 py-1 mb-1">{s.returnGuaranteeBannerText}</div>
           {REFUND_TYPES.map((t) => (
             <button
               key={t.id}
@@ -289,7 +295,7 @@ export default function OrderDetailPage() {
             >
               <span className="text-left">
                 <span className="text-[14px]">{t.label}</span>
-                <span className="block text-[11px] text-[#999999] mt-0.5">{t.desc}</span>
+                <span className="block text-[11px] text-app-text-muted mt-0.5">{t.desc}</span>
               </span>
               <span className={`w-5 h-5 rounded-full border text-[12px] leading-4 ${
                 refundType === t.label ? 'bg-[#FF5000] border-[#FF5000] text-white' : 'border-[#CCCCCC] text-transparent'
@@ -300,7 +306,7 @@ export default function OrderDetailPage() {
             {...bindTap('refund.form-open', { params: { orderId: order.id, type: refundType } })}
             className="w-full h-11 rounded-full bg-gradient-to-r from-[#FF7A00] to-[#FF2000] text-white text-[15px] border-none cursor-pointer mt-3 mb-2"
           >
-            下一步
+            {s.nextStepLabel}
           </button>
           </div>
         </BottomSheet>
@@ -308,12 +314,12 @@ export default function OrderDetailPage() {
 
       {/* 服务保障弹层 */}
       {panel === 'service' && (
-        <BottomSheet onClose={() => back()} title="服务保障">
+        <BottomSheet onClose={() => back()} title={s.serviceGuaranteeLabel}>
           <div className="px-4 pb-3 grid grid-cols-2 gap-2">
-            {SERVICE_ITEMS.map((sItem) => (
-              <div key={sItem.name} className="bg-[#FAFAFA] rounded-xl p-3">
-                <div className="text-[13px] font-semibold">{sItem.name} <span className="text-[#00B578]">✓</span></div>
-                <div className="text-[11px] text-[#999999] mt-1 leading-relaxed">{sItem.desc}</div>
+            {SERVICE_ITEM_KEYS.map((item) => (
+              <div key={item.nameKey} className="bg-[#FAFAFA] rounded-xl p-3">
+                <div className="text-[13px] font-semibold">{s[item.nameKey]} <span className="text-[#00B578]">✓</span></div>
+                <div className="text-[11px] text-app-text-muted mt-1 leading-relaxed">{s[item.descKey]}</div>
               </div>
             ))}
           </div>
@@ -334,17 +340,17 @@ export default function OrderDetailPage() {
 
       {/* 确认收货弹层(复用 orders.list 的 actionId) */}
       {panel === 'confirmReceipt' && (
-        <BottomSheet onClose={() => back()} title="确认收到货了吗">
+        <BottomSheet onClose={() => back()} title={s.confirmReceiptTitle}>
           <div className="px-4 pb-2">
-            <div className="text-[12px] text-[#999999] mb-2">请收到商品确认无误后再确认收货</div>
+            <div className="text-[12px] text-app-text-muted mb-2">{s.confirmReceiptHint}</div>
             <button
               {...bindTap({ kind: 'action', id: 'orders.confirmReceipt.confirm' }, {
                 params: { orderId: order.id },
-                onTrigger: () => { confirmReceipt(order.id); back(); showToast('确认收货成功'); },
+                onTrigger: () => { confirmReceipt(order.id); back(); showToast(s.confirmReceiptSuccessToast); },
               })}
               className="w-full h-11 rounded-full bg-gradient-to-r from-[#FF7A00] to-[#FF2000] text-white text-[15px] border-none cursor-pointer mb-2"
             >
-              确认收货
+              {s.confirmReceiptLabel}
             </button>
           </div>
         </BottomSheet>
@@ -357,8 +363,8 @@ export default function OrderDetailPage() {
 function KV({ k, v, red }: { k: string; v: string; red?: boolean }) {
   return (
     <div className="flex justify-between py-2.5 border-b border-[#F8F8F8] text-[13px] last:border-0">
-      <span className="text-[#666666]">{k}</span>
-      <span className={red ? 'text-[#FF0036]' : 'text-[#111111]'}>{v}</span>
+      <span className="text-app-text-muted">{k}</span>
+      <span className={red ? 'text-[#FF0036]' : 'text-app-text'}>{v}</span>
     </div>
   );
 }

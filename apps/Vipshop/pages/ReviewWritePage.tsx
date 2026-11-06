@@ -4,8 +4,9 @@ import { useVipshopStore } from '../state';
 import { useVipshopGestures } from '../hooks/useVipshopGestures';
 import { TopBar, Img, useToast, EmptyState, VIP } from '../components/ui';
 import { IcStar, IcCamera } from '../res/icons';
+import { reviewTagsOf } from '../constants';
+import { pickImages } from '@/os/albumBridge';
 
-const REVIEW_TAGS = ['质量很好', '尺码标准', '物流快', '颜色正', '性价比高', '包装精美'];
 const RATING_TEXT = ['', '很差', '一般', '还行', '满意', '非常好'];
 
 export default function ReviewWritePage() {
@@ -14,12 +15,18 @@ export default function ReviewWritePage() {
   const [toast, showToast] = useToast();
 
   const order = useVipshopStore((s) => s.orders.find((o) => o.id === id));
+  const items = useVipshopStore((s) => s.items);
   const submitReview = useVipshopStore((s) => s.submitReview);
 
   const [rating, setRating] = useState(5);
   const [tags, setTags] = useState<string[]>([]);
   const [text, setText] = useState('');
+  const [images, setImages] = useState<string[]>([]);
   const line = order?.lines[0];
+  // 可选标签必须和详情页的评价筛选同源,否则发出去的评价按标签筛不出来;
+  //「买家秀」由是否带图决定,不放进手选列表。
+  const reviewedItem = items.find((it) => it.id === line?.itemId);
+  const tagOptions = reviewTagsOf(reviewedItem?.category ?? '').filter((t) => t !== '买家秀');
 
   if (!order) {
     return (
@@ -78,7 +85,7 @@ export default function ReviewWritePage() {
         <div className="bg-white mt-2 px-3 py-3">
           <div className="text-[13px] text-[#222222] mb-2">大家都在说</div>
           <div className="flex flex-wrap gap-2">
-            {REVIEW_TAGS.map((t) => {
+            {tagOptions.map((t) => {
               const on = tags.includes(t);
               return (
                 <button
@@ -105,11 +112,27 @@ export default function ReviewWritePage() {
             placeholder="宝贝满足你的期待吗?说说你的使用心得吧~"
             className="w-full h-24 text-[13px] text-[#222222] border-none outline-none resize-none placeholder:text-[#BBBBBB]"
           />
-          <div className="flex gap-2 mt-2">
-            <div className="w-16 h-16 rounded-lg border border-dashed border-[#DDDDDD] flex flex-col items-center justify-center text-[#BBBBBB]">
-              <IcCamera size={18} />
-              <span className="text-[10px] mt-0.5">添加图片</span>
-            </div>
+          <div className="flex gap-2 mt-2 flex-wrap">
+            {images.map((src) => (
+              <Img key={src} src={src} className="w-16 h-16 rounded-lg object-cover" alt="" />
+            ))}
+            {images.length < 9 && (
+              <button
+                type="button"
+                {...bindTap({ kind: 'action', id: 'reviewWrite.media.pick' }, {
+                  onTrigger: () => {
+                    void pickImages({ multiple: true, maxSelect: 9 - images.length }).then((r) => {
+                      if (r.cancelled || !r.selected.length) return;
+                      setImages((prev) => [...prev, ...r.selected.map((x) => x.uri)].slice(0, 9));
+                    });
+                  },
+                })}
+                className="w-16 h-16 rounded-lg border border-dashed border-[#DDDDDD] flex flex-col items-center justify-center text-[#BBBBBB]"
+              >
+                <IcCamera size={18} />
+                <span className="text-[10px] mt-0.5">添加图片</span>
+              </button>
+            )}
           </div>
         </div>
       </div>
@@ -118,7 +141,7 @@ export default function ReviewWritePage() {
       <div data-hide-on-keyboard className="shrink-0 bg-white border-t border-[#EEEEEE] flex items-center justify-center px-3 h-14">
         <button
           {...bindTap({ kind: 'action', id: 'reviewWrite.publish.submit' }, {
-            onTrigger: () => { submitReview(order.id); showToast('评价发布成功'); back(); },
+            onTrigger: () => { submitReview(order.id, { rating, content: text, tag: tags[0] ?? '', images }); showToast('评价发布成功'); back(); },
           })}
           className="w-full h-10 rounded-full border-none cursor-pointer text-white text-[15px] font-semibold"
           style={{ background: VIP.ctaBlack }}

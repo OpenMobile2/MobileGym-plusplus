@@ -26,10 +26,18 @@ export default function MemoCard({
   memo,
   openTid = 'compose.editor.editFromCard',
   longPressTid = 'memo.longPressMenu.open',
+  menuTid = 'memo.cardMenu.open',
+  tagTid = 'tag.filter.open',
+  sourceTid = 'memo.detail.fromLink',
+  forceExpanded = false,
 }: {
   memo: FlomoMemo;
   openTid?: TransitionId;
   longPressTid?: TransitionId;
+  menuTid?: TransitionId;
+  tagTid?: TransitionId;
+  sourceTid?: TransitionId;
+  forceExpanded?: boolean;
 }) {
   const { bindTap, bindDoubleTap, bindLongPress } = useFlomoGestures();
   const tags = useFlomoStore((s) => s.tags);
@@ -42,10 +50,10 @@ export default function MemoCard({
   const fontSize = useFlomoStore((s) => s.settings.fontSize);
   const [expanded, setExpanded] = React.useState(false);
   // 偏好「内容过长折叠」:长文默认折叠,显示「展开」
-  const foldable = foldLong && (memo.content.length > 120 || memo.content.split('\n').length > 6);
+  const foldable = !forceExpanded && foldLong && (memo.content.length > 120 || memo.content.split('\n').length > 6);
 
   const tagProps = (name: string) =>
-    bindTap('tag.filter.open', {
+    bindTap(tagTid, {
       stopPropagation: true,
       beforeTrigger: () => {
         const t = tags.find((x) => x.name === name);
@@ -73,7 +81,7 @@ export default function MemoCard({
           {memo.pinned && <span className="ml-2" style={{ color: C.green }}>· 置顶</span>}
         </span>
         <button
-          {...bindTap('memo.cardMenu.open', { stopPropagation: true, beforeTrigger: () => setCurrentMemo(memo.id) })}
+          {...bindTap(menuTid, { stopPropagation: true, beforeTrigger: () => setCurrentMemo(memo.id) })}
           className="px-1 -mr-1 bg-transparent border-none cursor-pointer"
           style={{ color: C.sub }}
           aria-label="更多"
@@ -84,7 +92,7 @@ export default function MemoCard({
 
       {src && (
         <button
-          {...bindTap('memo.detail.fromLink', { stopPropagation: true, beforeTrigger: () => setCurrentMemo(src.id) })}
+          {...bindTap(sourceTid, { stopPropagation: true, beforeTrigger: () => setCurrentMemo(src.id) })}
           className="block text-left mb-1 bg-transparent border-none cursor-pointer"
           style={{ color: C.linkBlue, fontSize: 14 }}
         >

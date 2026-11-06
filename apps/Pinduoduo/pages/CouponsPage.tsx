@@ -50,10 +50,11 @@ export function CouponsPage() {
   const { bindTap } = usePinduoduoGestures();
   const s = usePinduoduoStrings();
   const coupons = usePinduoduoStore((st) => st.coupons);
+  const recordTaskAudit = usePinduoduoStore((st) => st.recordTaskAudit);
   const [tab, setTab] = useState<'platform' | 'expiring' | 'all'>('all');
 
   const list = coupons.filter((c) => {
-    if (tab === 'expiring') return c.expire.includes('即将');
+    if (tab === 'expiring') return c.expire.includes('即将') || c.expire.includes('限今日');
     return true;
   });
 
@@ -76,7 +77,7 @@ export function CouponsPage() {
           return (
             <button
               key={t.key}
-              {...bindTap({ kind: 'action', id: 'coupon.tab.select.type' }, { params: { tab: t.key }, onTrigger: () => setTab(t.key) })}
+              {...bindTap({ kind: 'action', id: 'coupon.tab.select.type' }, { params: { tab: t.key }, onTrigger: () => { setTab(t.key); recordTaskAudit({ couponTab: t.key }); } })}
               className="relative py-2.5 mr-6 text-[14px]"
             >
               <span className={active ? 'text-[#E22E1F] font-medium' : 'text-[#666]'}>{t.label}</span>

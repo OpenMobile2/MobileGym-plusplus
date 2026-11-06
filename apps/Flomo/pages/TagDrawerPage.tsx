@@ -2,7 +2,7 @@ import React, { useMemo, useState } from 'react';
 import { useFlomoStore } from '../state';
 import { useFlomoGestures } from '../hooks/useFlomoGestures';
 import type { TransitionId } from '../navigation.declaration';
-import { dayKey } from '../utils/format';
+import { dayKey, shiftDay } from '../utils/format';
 import { C } from '../components/ui';
 import {
   IcInbox, IcFilterImage, IcFilterLink, IcFilterAudio, IcFilterTag, IcMic,
@@ -53,8 +53,7 @@ export default function TagDrawerPage() {
     if (refTs === 0) refTs = 1782000000000;
     const N = 91;
     return Array.from({ length: N }, (_, i) => {
-      const ts = refTs - (N - 1 - i) * 86400000;
-      const k = dayKey(ts);
+      const k = dayKey(shiftDay(refTs, -(N - 1 - i)));
       return { date: k, count: countByDay.get(k) ?? 0 };
     });
   }, [memos]);
@@ -70,8 +69,12 @@ export default function TagDrawerPage() {
         {/* 顶部资料区 */}
         <div className="px-4 pt-6 pb-3">
           <div className="flex items-center gap-3">
-            <button {...bindTap('tag.drawer.avatarClose')} className="border-none bg-transparent cursor-pointer p-0">
-              <img src={user.avatar} alt="" className="w-12 h-12 rounded-2xl object-cover" />
+            <button {...bindTap('tag.drawer.avatarAccount')} className="border-none bg-transparent cursor-pointer p-0" aria-label="账号资料">
+              {user.avatar ? (
+                <img src={user.avatar} alt="" className="w-12 h-12 rounded-2xl object-cover" />
+              ) : (
+                <span className="block w-12 h-12 rounded-2xl" style={{ background: C.tagBg }} />
+              )}
             </button>
             <div className="flex-1">
               <div className="flex items-center gap-1.5">
@@ -100,10 +103,10 @@ export default function TagDrawerPage() {
               className="grid gap-1"
               style={{ gridTemplateColumns: 'repeat(13, 1fr)', animation: shaking ? 'flomoHeatShake 0.45s' : undefined }}
             >
-              {cells.map((c) =>
+              {cells.map((c, i) =>
                 c.count > 0 ? (
                   <button
-                    key={c.date}
+                    key={`${c.date}-${i}`}
                     {...bindTap('tag.drawer.heatmapDay', {
                       beforeTrigger: () => {
                         setCurrentFilter('byDate');
@@ -116,7 +119,7 @@ export default function TagDrawerPage() {
                   />
                 ) : (
                   <button
-                    key={c.date}
+                    key={`${c.date}-${i}`}
                     {...bindTap({ kind: 'action', id: 'tag.drawer.heatmapEmpty' }, { onTrigger: shake })}
                     className="rounded-sm border-none cursor-pointer p-0"
                     style={{ aspectRatio: '1 / 1', background: '#EAEFEC' }}

@@ -10,6 +10,7 @@ from bench_env.hybrid_agent.kimi_k2_6 import (
     KimiK26AgentConfig,
 )
 from bench_env.hybrid_agent.modes import GUI_ONLY_MODE, HYBRID_MODE, INTERACTION_MODES
+from bench_env.hybrid_agent.qwen35_session import Qwen35SessionAgent
 from bench_env.hybrid_agent.runtime import HybridAgentRuntime
 from bench_env.hybrid_agent.setups import CALENDAR_DEMO_EVENT, setup_calendar_demo
 from bench_env.hybrid_agent.types import HybridRunResult
@@ -30,6 +31,7 @@ __all__ = [
     "KIMI_K2_6_PROTOCOL",
     "KimiK26Agent",
     "KimiK26AgentConfig",
+    "Qwen35SessionAgent",
     "rerender_trace",
     "setup_calendar_demo",
 ]

@@ -1,10 +1,18 @@
 import React from 'react';
 import { useParams, useSearchParams } from 'react-router-dom';
+import * as TimeService from '@/os/TimeService';
 import { usePinduoduoGestures } from '../hooks/usePinduoduoGestures';
 import { usePinduoduoStore } from '../state';
 import { Img, TopBar, PriceYuan, FufeiTag, showToast } from '../components/ui';
-import { IcMapPin } from '../res/icons';
+import { IcMapPin, IcChevronRight } from '../res/icons';
 import type { OrderStatus } from '../types';
+
+// 订单时间戳 → 「YYYY-MM-DD HH:mm:ss」(经 TimeService,不用 new Date)
+function fmtTime(ts: number): string {
+  const d = TimeService.fromTimestamp(ts);
+  const p = (n: number) => String(n).padStart(2, '0');
+  return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())} ${p(d.getHours())}:${p(d.getMinutes())}:${p(d.getSeconds())}`;
+}
 
 const STATUS_TEXT: Record<OrderStatus, string> = {
   pendingPayment: '等待付款',
@@ -95,8 +103,19 @@ export function OrderDetailPage() {
         {/* 订单信息 */}
         <div className="mx-3 mt-3 bg-white rounded-xl px-3 py-1">
           <Row label="订单编号" value={<span className="text-[13px] text-[#666]">{order.orderNo}</span>} />
-          <Row label="下单时间" value={<span className="text-[13px] text-[#666]">已下单</span>} />
+          {/* 商品快照:购买时冻结的商品详情,可作为交易争议判定依据 */}
+          <button
+            {...bindTap('orderdetail.snapshot-open', { params: { orderId: order.id } })}
+            className="w-full flex items-center justify-between py-2.5 text-left"
+          >
+            <span className="text-[13px] text-[#999]">商品快照</span>
+            <span className="flex items-center text-[13px] text-[#666]">
+              发生交易争议时,可作为判断依据
+              <IcChevronRight size={15} className="text-[#999] ml-0.5" />
+            </span>
+          </button>
           <Row label="支付方式" value={<span className="text-[13px] text-[#666]">{order.payMethod || '未支付'}</span>} />
+          <Row label="下单时间" value={<span className="text-[13px] text-[#666]">{fmtTime(order.createdAt)}</span>} />
         </div>
         <div className="h-4" />
       </div>

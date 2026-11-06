@@ -1,4 +1,4 @@
-"""Taobao hybrid GUI+Tools tasks (tasklib).
+"""Taobao hybrid GUI+Tools tasks (selfbuilt-v1).
 
 Tools already exist (app_tools/apps/taobao). Verification follows the
 newapps_v1 pattern: every task's primary artifact is a Notes entry

@@ -266,6 +266,12 @@ export const NAVIGATION_DECLARATION = {
               label: "弹幕输入弹窗",
               behavior: "open",
             },
+            {
+              id: "player.danmaku.send",
+              label: "发送弹幕",
+              behavior: "submit",
+              paramsSchema: { content: "string" },
+            },
           ],
         },
         {

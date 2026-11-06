@@ -23,6 +23,7 @@ export function ReviewListPage() {
   const { itemId } = useParams();
   const { bindTap } = usePinduoduoGestures();
   const reviews = usePinduoduoStore((s) => s.reviews);
+  const recordTaskAudit = usePinduoduoStore((s) => s.recordTaskAudit);
 
   const itemReviews = reviews.filter((r) => r.itemId === itemId);
   const [tag, setTag] = useState<string>('全部');
@@ -46,7 +47,7 @@ export function ReviewListPage() {
                 key={t}
                 {...bindTap(
                   { kind: 'action', id: 'reviews.filter.select.tag' },
-                  { params: { tag: t }, onTrigger: () => setTag(t) },
+                  { params: { tag: t }, onTrigger: () => { setTag(t); recordTaskAudit({ reviewFilter: { itemId: itemId ?? '', tag: t } }); } },
                 )}
                 className={`px-3 py-1 rounded-full text-[12px] ${
                   on ? 'bg-[#FFF0E8] text-[#E22E1F]' : 'bg-[#F5F5F5] text-[#666]'

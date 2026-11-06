@@ -2,14 +2,24 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useCtripStore } from '../state';
 import { useCtripGestures } from '../hooks/useCtripGestures';
+import { useCtripStrings } from '../hooks/useCtripStrings';
 import { TopBar, Img, Price, PrimaryBtn } from '../components/ui';
 
 /** 车型详情(spec car.detail)。相册/配置/积分抵扣/取还车/无忧租/评价;订→booking。 */
 export default function CarDetailPage() {
+  const s = useCtripStrings();
   const { id = '' } = useParams();
   const { bindTap } = useCtripGestures();
   const cars = useCtripStore((s) => s.carModels);
-  const c = cars.find((x) => x.id === id) ?? cars[0];
+  const c = cars.find((x) => x.id === id);
+  if (!c) {
+    return (
+      <div className="flex flex-col h-full bg-[#F5F6F8]">
+        <TopBar title="车型" />
+        <div className="flex-1 flex items-center justify-center text-[14px] text-[#999999]">未找到该车型</div>
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col h-full bg-[#F5F6F8]">
@@ -26,29 +36,29 @@ export default function CarDetailPage() {
         </div>
 
         <div className="bg-white px-4 py-3 mt-2">
-          <div className="text-[15px] font-semibold mb-2">配置信息</div>
+          <div className="text-[15px] font-semibold mb-2">{s.t('配置信息')}</div>
           <div className="grid grid-cols-3 gap-y-2 text-[12px] text-[#666666]">
-            {[['座位', c.seats], ['能源', c.energy], ['续航', c.range], ['变速', '自动'], ['天窗', '有'], ['ETC', '含']].map(([k, v]) => (
+            {[[s.t('座位'), c.seats], [s.t('能源'), c.energy], [s.t('续航'), c.range], [s.t('变速'), s.t('自动')], [s.t('天窗'), '有'], ['ETC', '含']].map(([k, v]) => (
               <div key={k as string}><span className="text-[#999999]">{k}:</span>{v}</div>
             ))}
           </div>
         </div>
 
-        <div className="bg-[#FFF7E0] mx-4 mt-2 rounded-lg px-3 py-2 text-[12px] text-[#B8860B]">积分抵扣:铂金会员本单可用积分抵 ¥50</div>
+        <div className="bg-[#FFF7E0] mx-4 mt-2 rounded-lg px-3 py-2 text-[12px] text-[#B8860B]">{s.t('积分抵扣:铂金会员本单可用积分抵 ¥50')}</div>
 
         <div className="bg-white px-4 py-3 mt-2">
-          <div className="text-[15px] font-semibold mb-1">无忧租保障</div>
-          <div className="text-[13px] text-[#666666]">含基础保障,可升级尊享服务,免除事故自付。</div>
+          <div className="text-[15px] font-semibold mb-1">{s.t('无忧租保障')}</div>
+          <div className="text-[13px] text-[#666666]">{s.t('含基础保障,可升级尊享服务,免除事故自付。')}</div>
         </div>
 
         <div className="bg-white px-4 py-3 mt-2">
-          <div className="text-[15px] font-semibold mb-1">用户评价</div>
-          <div className="text-[13px] text-[#666666]">4.9分 · 「车况新,取还方便」「客服响应快」</div>
+          <div className="text-[15px] font-semibold mb-1">{s.t('用户评价')}</div>
+          <div className="text-[13px] text-[#666666]">{s.t('4.9分 · 「车况新,取还方便」「客服响应快」')}</div>
         </div>
       </div>
 
       <div className="shrink-0 bg-white border-t border-[#EEEEEE] flex items-center px-3 py-2">
-        <div className="mr-auto"><Price value={c.totalPrice} size="l" /><div className="text-[11px] text-[#999999]">2天总价</div></div>
+        <div className="mr-auto"><Price value={c.totalPrice} size="l" /><div className="text-[11px] text-[#999999]">{s.t('2天总价')}</div></div>
         <PrimaryBtn binding={bindTap('carDetail.toBooking', { params: { id: c.id } })} variant="orange" className="px-10">订</PrimaryBtn>
       </div>
     </div>

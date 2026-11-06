@@ -139,6 +139,7 @@ export default function ChannelFoodPage() {
   const coupons = useTbsgStore((st) => st.coupons);
   const claimNightCoupons = useTbsgStore((st) => st.claimNightCoupons);
   const claimCoupon = useTbsgStore((st) => st.claimCoupon);
+  const recordTaskAudit = useTbsgStore((st) => st.recordTaskAudit);
 
   const [cat, setCat] = useState('夜宵精选');
   const [sort, setSort] = useState('default');
@@ -356,7 +357,11 @@ export default function ChannelFoodPage() {
                 key={o.key}
                 {...bindTap<HTMLButtonElement>({ kind: 'action', id: 'channel.sort.select' }, {
                   params: { sort: o.key },
-                  onTrigger: () => { setSort(o.key); back(); },
+                  onTrigger: () => {
+                    setSort(o.key);
+                    recordTaskAudit({ foodChannel: { sort: o.key, perCapitaRange: appliedRange } });
+                    back();
+                  },
                 })}
                 className={`w-full flex items-center h-11 text-[14px] bg-transparent border-none cursor-pointer text-left ${sort === o.key ? 'text-[#ED6C2C] font-semibold' : 'text-[#1A1A1A]'}`}
               >
@@ -446,6 +451,7 @@ export default function ChannelFoodPage() {
                   onTrigger: () => {
                     setAppliedOpts(draftOpts);
                     setAppliedRange(draftRange);
+                    recordTaskAudit({ foodChannel: { sort, perCapitaRange: draftRange } });
                     back();
                   },
                 })}

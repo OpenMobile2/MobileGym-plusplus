@@ -6,7 +6,6 @@ flomo 装饰位图批量生图(pipeline v3 §5.3)。
 - 幂等:已存在的 PNG 跳过;失败可重跑只补缺失。4 并发。
 - 安全:prompt 只描述合成主体,绝不上传真机截图。
 运行(由 AI 配好环境变量后执行):
-  IMAGE_GEN_API_KEY=... IMAGE_GEN_BASE_URL=... IMAGE_GEN_MODEL=gpt-image-2 \
   python apps/Flomo/assets/gen_images.py
 """
 import base64, os, sys, time
@@ -14,13 +13,17 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 import requests
 
+_REPO_ROOT = Path(__file__).resolve().parents[5]
+sys.path.insert(0, str(_REPO_ROOT / "tools"))
+from image_gen_client import image_gen_api_key, image_gen_base_url, image_gen_model  # noqa: E402
+
 APP = Path(__file__).parent.parent
-KEY = os.environ.get("IMAGE_GEN_API_KEY") or os.environ.get("TOKENHUB_API_KEY")
-BASE = (os.environ.get("IMAGE_GEN_BASE_URL") or "").rstrip("/")
-MODEL = os.environ.get("IMAGE_GEN_MODEL") or "gpt-image-2"
+KEY = image_gen_api_key()
+BASE = image_gen_base_url().rstrip("/")
+MODEL = image_gen_model()
 SIZE = os.environ.get("IMAGE_GEN_SIZE") or "1024x1024"
-if not KEY or not BASE:
-    sys.exit("缺少 IMAGE_GEN_API_KEY / IMAGE_GEN_BASE_URL 环境变量;未配置则跳过生图(用 SVG 占位)。")
+if not KEY:
+    sys.exit("缺少 IMAGE_GEN_API_KEY / OPENAI_API_KEY 环境变量;未配置则跳过生图(用 SVG 占位)。")
 
 URL = f"{BASE}/images/generations" if BASE.endswith("/v1") else f"{BASE}/v1/images/generations"
 SUFFIX = ",扁平极简插画/生活方式摄影风格,柔和自然光,干净留白背景,无任何文字、无水印、无logo"

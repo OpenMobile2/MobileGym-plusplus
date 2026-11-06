@@ -22,12 +22,15 @@ export interface Todo {
   /** 习惯:今日已累计分钟 / 目标分钟(每天) */
   habitTodayMin?: number;
   habitTargetMin?: number;
+  frequency?: 'daily' | 'weekly' | 'monthly';
   /** 定目标:目标日期(绝对 ms)/ 目标总量(小时) */
   goalDate?: number;
   goalHours?: number;
   /** 高级设置 */
   note?: string;
   hideNextDay?: boolean;
+  loops?: number;
+  restTimeMin?: number;
 }
 
 export interface FocusRecord {
@@ -65,6 +68,8 @@ export interface Settings {
   lockCountStats: boolean;
   /** 主题色 key */
   themeColor: string;
+  /** 自定义番茄格言 */
+  motto: string;
 }
 
 export interface UserInfo {
@@ -90,7 +95,12 @@ export interface AppState {
   user: UserInfo;
   settings: Settings;
   stats: Stats;
+  taskAudit: {
+    weekSummary?: { offset: number; start: number; end: number };
+  };
   _dataVersion: number;
+  /** 种子指纹,用于检测跨月种子是否已加载 */
+  _seedTag: string;
   _temp: {
     toast: string;
     toastSeq: number;
@@ -114,6 +124,7 @@ export interface AppActions {
   addRecordNote: (recordId: string, reflection: string) => void;
   updateRecord: (recordId: string, patch: Partial<FocusRecord>) => void;
   deleteRecord: (id: string) => void;
+  addManualRecord: (input: { todoId: string; startTs: number; durationMin: number }) => string;
   addFuture: (f: Partial<FutureCountdown>) => string;
   deleteFuture: (id: string) => void;
   toggleSetting: (key: keyof Settings) => void;
@@ -121,6 +132,7 @@ export interface AppActions {
   setUser: (patch: Partial<UserInfo>) => void;
   incMonthlyLockExit: () => void;
   setDraft: (patch: Partial<Todo> | null) => void;
+  recordTaskAudit: (patch: Partial<AppState['taskAudit']>) => void;
 }
 
 export type FullState = AppState & AppActions;

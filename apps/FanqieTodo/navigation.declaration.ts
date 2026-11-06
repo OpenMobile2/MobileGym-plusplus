@@ -383,11 +383,10 @@ export const NAVIGATION_DECLARATION = {
           actions: [
             { id: 'timeline.date.select.action', label: '日历某日', behavior: 'select' },
             { id: 'timeline.today.action', label: '工具·今(回到今天)', behavior: 'other' },
-            { id: 'timeline.grid.wontfixToast', label: '工具·九宫格 (暂未开放)', behavior: 'other' },
-            { id: 'timeline.add.wontfixToast', label: '工具·＋ (暂未开放)', behavior: 'other' },
-            { id: 'timeline.kanban.wontfixToast', label: '工具·看板 (暂未开放)', behavior: 'other' },
-            { id: 'timeline.share.wontfixToast', label: '工具·分享 (暂未开放)', behavior: 'other' },
-            { id: 'timeline.sort.wontfixToast', label: '工具·排序 (暂未开放)', behavior: 'other' }
+            { id: 'timeline.grid.wontfixToast', label: '工具·点阵时间轴 (暂未开放)', behavior: 'other' },
+            { id: 'timeline.sort.toggle.action', label: '工具·排序(正序/倒序)', behavior: 'other' },
+            { id: 'timeline.month.prev.action', label: '顶栏·上一月', behavior: 'other' },
+            { id: 'timeline.month.next.action', label: '顶栏·下一月', behavior: 'other' }
           ]
         },
         {
@@ -412,10 +411,58 @@ export const NAVIGATION_DECLARATION = {
             },
             { id: 'timeline.note.commit.action', label: '✓ 保存', behavior: 'other' }
           ]
+        },
+        {
+          id: 'fanqietodo.timeline.addrecord.dialog',
+          search: { sheet: 'addrecord' },
+          description: '补记专注记录',
+          actions: [
+            { id: 'timeline.add.startTime.action', label: '专注开始时间', behavior: 'other' },
+            { id: 'timeline.add.duration.action', label: '专注时长', behavior: 'other' },
+            { id: 'timeline.add.todo.action', label: '选择待办', behavior: 'other' },
+            { id: 'timeline.add.submit.commit', label: '添加记录', behavior: 'submit' },
+            { id: 'timeline.add.time.cancel.action', label: '时间选择·取消', behavior: 'other' },
+            { id: 'timeline.add.time.confirm.action', label: '时间选择·确定', behavior: 'other' },
+            { id: 'timeline.add.duration.cancel.action', label: '时长·取消', behavior: 'other' },
+            { id: 'timeline.add.duration.confirm.action', label: '时长·确定', behavior: 'other' },
+            { id: 'timeline.add.todo.cancel.action', label: '待办选择·取消', behavior: 'other' },
+            { id: 'timeline.add.todo.select.action', label: '待办选择·选中', behavior: 'select' }
+          ]
+        },
+        {
+          id: 'fanqietodo.timeline.monthpick.dialog',
+          search: { sheet: 'monthpick' },
+          description: '选择月份',
+          actions: [
+            { id: 'timeline.month.cancel.action', label: '取消', behavior: 'other' },
+            { id: 'timeline.month.confirm.action', label: '确定', behavior: 'other' }
+          ]
         }
       ],
       queryParams: { recordId: 'string' },
       description: '时间轴'
+    },
+    {
+      path: '/timeline/week',
+      component: 'WeekSummaryPage',
+      params: {},
+      entryPoint: 'none',
+      scrollContainers: [
+        { name: 'main', direction: 'vertical', description: '主滚动区' }
+      ],
+      uiStates: [
+        {
+          id: 'fanqietodo.timeline.week.base',
+          search: {},
+          description: '一周总结',
+          actions: [
+            { id: 'timeline.week.prev.action', label: '上一周', behavior: 'other' },
+            { id: 'timeline.week.next.action', label: '下一周', behavior: 'other' }
+          ]
+        }
+      ],
+      queryParams: {},
+      description: '一周总结'
     },
     {
       path: '/profile',
@@ -1011,6 +1058,61 @@ export const NAVIGATION_DECLARATION = {
       mode: 'push',
       params: {},
       label: '点击填写心得',
+      ui: { placement: 'none', icon: 'chevronRight', gesture: 'tap' }
+    },
+    {
+      id: 'timeline.week.open',
+      from: '/timeline',
+      to: '/timeline/week',
+      search: {},
+      searchParams: {},
+      mode: 'push',
+      params: {},
+      label: '工具·一周总结',
+      ui: { placement: 'none', icon: 'chevronRight', gesture: 'tap' }
+    },
+    {
+      id: 'timeline.add.open',
+      from: '/timeline',
+      to: '/timeline',
+      search: { sheet: 'addrecord' },
+      searchParams: {},
+      mode: 'push',
+      params: {},
+      label: '工具·补记',
+      ui: { placement: 'none', icon: 'chevronRight', gesture: 'tap' }
+    },
+    {
+      id: 'timeline.share.open',
+      from: '/timeline',
+      to: '/checkin',
+      search: {},
+      searchParams: {},
+      mode: 'push',
+      params: {},
+      label: '工具·分享',
+      ui: { placement: 'none', icon: 'chevronRight', gesture: 'tap' }
+    },
+    {
+      id: 'timeline.week.share.open',
+      from: '/timeline/week',
+      to: '/checkin',
+      search: {},
+      searchParams: {},
+      mode: 'push',
+      params: {},
+      label: '一周总结·分享',
+      ui: { placement: 'none', icon: 'chevronRight', gesture: 'tap' }
+    },
+    {
+      id: 'timeline.month.open',
+      from: '/timeline',
+      to: '/timeline',
+      search: { sheet: 'monthpick' },
+      searchParams: {},
+      mode: 'push',
+      params: {},
+      label: '顶栏年月·选择月份',
       ui: { placement: 'none', icon: 'chevronRight', gesture: 'tap' }
     },
     {

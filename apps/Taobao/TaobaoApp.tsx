@@ -1,16 +1,22 @@
-import React, { useCallback, useContext, useEffect, useRef } from 'react';
+import React, { useCallback, useContext, useEffect, useMemo, useRef } from 'react';
 import {
   MemoryRouter, Routes, Route, useLocation, UNSAFE_NavigationContext,
 } from 'react-router-dom';
 import { useAppNavigationHandler } from '@/os/hooks/useAppNavigationHandler';
+import { useDarkMode } from '@/os/hooks/useDarkMode';
+import { themeToCssVars, dimensToCssVars } from '@/os/utils/themeToCssVars';
+import { applySkinToThemeColors } from '@/os/SkinService';
 import { manifest } from './manifest';
 import { MAIN_TABS } from './constants';
 import { useTaobaoStore } from './state';
 import { useTaobaoGestures } from './hooks/useTaobaoGestures';
+import { useStrings } from './hooks/useStrings';
+import { colors, colorsDark } from './res/colors';
+import { dimens } from './res/dimens';
 import {
   IcTabHome, IcTabVideo, IcTabMessage, IcTabCart, IcTabMine,
 } from './res/icons';
-
+import type { TaobaoStringKey } from './res/strings';
 import HomePage from './pages/HomePage';
 import HeyboxPage from './pages/HeyboxPage';
 import VideoStubPage from './pages/VideoStubPage';
@@ -82,8 +88,9 @@ function TaobaoNavigationHandler() {
 function TabBar() {
   const location = useLocation();
   const { bindTap } = useTaobaoGestures();
-  const unread = useTaobaoStore((s) => s.chats.reduce((n, c) => n + c.unread, 0));
-  const cartCount = useTaobaoStore((s) => s.cart.length);
+  const s = useStrings();
+  const unread = useTaobaoStore((st) => st.chats.reduce((n, c) => n + c.unread, 0));
+  const cartCount = useTaobaoStore((st) => st.cart.length);
 
   if (!TAB_PATHS.includes(location.pathname)) return null;
 
@@ -97,11 +104,12 @@ function TabBar() {
   };
 
   return (
-    <div data-hide-on-keyboard className="shrink-0 bg-white border-t border-[#EEEEEE] flex">
+    <div data-hide-on-keyboard className="shrink-0 bg-app-surface border-t border-app-border flex">
       {MAIN_TABS.map((tab) => {
         const Icon = TAB_ICONS[tab.id as keyof typeof TAB_ICONS];
         const active = location.pathname === tab.path;
         const badge = tab.id === 'message' ? unread : tab.id === 'cart' ? cartCount : 0;
+        const label = s[tab.labelKey as TaobaoStringKey];
         return (
           <button
             key={tab.id}
@@ -109,15 +117,15 @@ function TabBar() {
             className="flex-1 flex flex-col items-center pt-1.5 pb-1 gap-0.5 bg-transparent border-none cursor-pointer relative"
           >
             <span className="relative">
-              <Icon size={22} className={active ? 'text-[#FF5000]' : 'text-[#999999]'} />
+              <Icon size={22} className={active ? 'text-[#FF5000]' : 'text-app-text-muted'} />
               {badge > 0 && (
                 <span className="absolute -top-1.5 -right-2 min-w-4 h-4 px-0.5 rounded-full bg-[#FF0036] text-white text-[10px] leading-4 text-center">
                   {badge > 99 ? '99+' : badge}
                 </span>
               )}
             </span>
-            <span className={`text-[10px] ${active ? 'text-[#FF5000] font-semibold' : 'text-[#999999]'}`}>
-              {tab.label}
+            <span className={`text-[10px] ${active ? 'text-[#FF5000] font-semibold' : 'text-app-text-muted'}`}>
+              {label}
             </span>
           </button>
         );
@@ -127,8 +135,27 @@ function TabBar() {
 }
 
 function AppShell() {
+  const { isDark } = useDarkMode();
+  const themeColors = isDark
+    ? { ...manifest.theme.colors, ...(manifest.theme.colorsDark ?? {}) }
+    : manifest.theme.colors;
+  const appColors = isDark ? { ...colors, ...colorsDark } : colors;
+  const cssVars = useMemo(
+    () => ({
+      ...themeToCssVars(applySkinToThemeColors(themeColors)),
+      ...dimensToCssVars(appColors, { prefix: '--app-c-' }),
+      ...dimensToCssVars(dimens),
+    }),
+    [themeColors, appColors],
+  );
+  const statusFg = themeColors.statusBarForeground ?? (isDark ? 'light' : 'dark');
+
   return (
-    <div className="flex flex-col h-full bg-[#F5F6F7]" data-status-bar-foreground="dark">
+    <div
+      className="flex flex-col h-full bg-app-bg text-app-text"
+      style={cssVars as React.CSSProperties}
+      data-status-bar-foreground={statusFg}
+    >
       {/* OS 状态栏安全区 */}
       <div className="h-10 shrink-0" />
       <div className="flex-1 overflow-hidden relative">

@@ -17,8 +17,8 @@ export function OrderConfirmPage() {
 
   const handleSubmit = () => {
     if (!restaurant) return;
-    placeOrder(restaurant.id, restaurant.name, deliveryFee);
-    go('meituan.submit-order');
+    const orderId = placeOrder(restaurant.id, restaurant.name, deliveryFee);
+    if (orderId) go('meituan.submit-order');
   };
 
   return (

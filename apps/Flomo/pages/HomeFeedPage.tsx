@@ -2,9 +2,11 @@ import React, { useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useFlomoStore } from '../state';
 import { useFlomoGestures } from '../hooks/useFlomoGestures';
+import { useFlomoStrings } from '../hooks/useFlomoStrings';
 import { C } from '../components/ui';
 import MemoCard from '../components/MemoCard';
 import TitleMenuOverlay from '../components/TitleMenuOverlay';
+import MemoCardmenuPage from './MemoCardmenuPage';
 import {
   IcMenu, IcSearch, IcArrowDown, IcAi, IcReview, IcDice, IcStats, IcPlus,
 } from '../res/icons';
@@ -24,11 +26,14 @@ function HotEntry({ icon, label, bind }: { icon: React.ReactNode; label: string;
 
 export default function HomeFeedPage() {
   const { bindTap } = useFlomoGestures();
+  const s = useFlomoStrings();
   const location = useLocation();
   const memos = useFlomoStore((s) => s.memos);
   const setCompose = useFlomoStore((s) => s.setCompose);
   const composeDraft = useFlomoStore((s) => s.composeDraft);
-  const showTitleMenu = new URLSearchParams(location.search).get('titleMenu') === 'open';
+  const searchParams = new URLSearchParams(location.search);
+  const showTitleMenu = searchParams.get('titleMenu') === 'open';
+  const showCardMenu = searchParams.get('cardMenu') === 'open';
   const hasDraft = composeDraft.trim().length > 0;
 
   const sortBy = useFlomoStore((s) => s.sortBy);
@@ -46,14 +51,14 @@ export default function HomeFeedPage() {
   const liveCount = useMemo(() => memos.filter((m) => !m.deleted).length, [memos]);
 
   return (
-    <div className="flex flex-col h-full relative" style={{ background: C.bg }} data-status-bar-foreground="dark">
+    <div className="flex flex-col h-full relative" style={{ background: C.bg }}>
       {/* 顶栏 */}
       <div className="flex items-center h-12 px-3 shrink-0">
         <button
           {...bindTap('tag.drawer.open')}
           className="w-9 h-9 rounded-full flex items-center justify-center bg-black/5 border-none cursor-pointer"
           style={{ color: C.text }}
-          aria-label="菜单"
+          aria-label={s.menu}
         >
           <IcMenu size={18} />
         </button>
@@ -62,14 +67,14 @@ export default function HomeFeedPage() {
           className="flex-1 flex items-center justify-center gap-1 bg-transparent border-none cursor-pointer"
           style={{ color: C.text }}
         >
-          <span className="font-bold text-lg lowercase">flomo</span>
+          <span className="font-bold text-lg lowercase">{s.appName}</span>
           <IcArrowDown size={16} />
         </button>
         <button
           {...bindTap('search.page.open')}
           className="w-9 h-9 rounded-full flex items-center justify-center bg-black/5 border-none cursor-pointer"
           style={{ color: C.text }}
-          aria-label="搜索"
+          aria-label={s.search}
         >
           <IcSearch size={18} />
         </button>
@@ -83,9 +88,9 @@ export default function HomeFeedPage() {
       >
         {/* 热门入口 */}
         <div className="flex gap-2 overflow-x-auto py-1 mb-1">
-          <HotEntry icon={<IcAi size={15} style={{ color: C.green }} />} label="AI 洞察" bind={bindTap('ai.insight.open')} />
-          <HotEntry icon={<IcReview size={15} style={{ color: C.green }} />} label="每日回顾" bind={bindTap('review.daily.open')} />
-          <HotEntry icon={<IcDice size={15} style={{ color: C.green }} />} label="随机漫步" bind={bindTap('review.random.open')} />
+          <HotEntry icon={<IcAi size={15} style={{ color: C.green }} />} label={s.aiInsight} bind={bindTap('ai.insight.open')} />
+          <HotEntry icon={<IcReview size={15} style={{ color: C.green }} />} label={s.dailyReview} bind={bindTap('review.daily.open')} />
+          <HotEntry icon={<IcDice size={15} style={{ color: C.green }} />} label={s.randomWalk} bind={bindTap('review.random.open')} />
         </div>
 
         {/* 统计入口 */}
@@ -95,7 +100,7 @@ export default function HomeFeedPage() {
           style={{ background: C.surface, color: C.linkBlue, fontSize: 13 }}
         >
           <IcStats size={15} />
-          查看记录统计（{liveCount}）
+          {s.viewStats}（{liveCount}）
         </button>
 
         {/* 笔记流 */}
@@ -111,7 +116,7 @@ export default function HomeFeedPage() {
         {...bindTap('compose.editor.openFab', { beforeTrigger: () => setCompose('new', null) })}
         className="absolute left-1/2 -translate-x-1/2 bottom-6 w-14 h-14 rounded-2xl flex flex-col items-center justify-center border-none cursor-pointer shadow-lg"
         style={{ background: C.green, color: '#fff' }}
-        aria-label="写笔记"
+        aria-label={s.writeMemo}
       >
         <IcPlus size={28} />
         {hasDraft && (
@@ -119,12 +124,13 @@ export default function HomeFeedPage() {
             className="absolute -top-2 -right-1 px-1.5 py-0.5 rounded-full text-[10px] font-medium shadow"
             style={{ background: '#fff', color: C.green }}
           >
-            草稿
+            {s.draft}
           </span>
         )}
       </button>
 
       {showTitleMenu && <TitleMenuOverlay />}
+      {showCardMenu && <MemoCardmenuPage />}
     </div>
   );
 }

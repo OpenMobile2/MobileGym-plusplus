@@ -1,6 +1,8 @@
-import React, { useCallback, useContext, useEffect, useRef } from 'react';
+import React, { useCallback, useContext, useEffect, useMemo, useRef } from 'react';
 import { MemoryRouter, Route, Routes, UNSAFE_NavigationContext, useLocation } from 'react-router-dom';
 import { useAppNavigationHandler } from '@/os/hooks/useAppNavigationHandler';
+import { useDarkMode } from '@/os/hooks/useDarkMode';
+import { themeToCssVars } from '@/os/utils/themeToCssVars';
 import { manifest } from './manifest';
 import { useLuckinStore } from './state';
 import { TabBar, ToastHost } from './components/ui';
@@ -34,9 +36,21 @@ function LuckinNavigationHandler() {
 }
 
 function AppShell() {
+  const { isDark } = useDarkMode();
+  const themeColors = isDark
+    ? { ...manifest.theme.colors, ...(manifest.theme.colorsDark ?? {}) }
+    : manifest.theme.colors;
+  const cssVars = useMemo(() => themeToCssVars(themeColors), [themeColors]);
+  const statusFg = themeColors.statusBarForeground ?? (isDark ? 'light' : 'dark');
+
   return (
-    <div data-app-root="luckin" data-status-bar-foreground="dark" className="h-full w-full flex flex-col overflow-hidden bg-[#F4F5F7] font-sans">
-      <div className="h-10 shrink-0 bg-[#F4F5F7]" />
+    <div
+      data-app-root="luckin"
+      data-status-bar-foreground={statusFg}
+      className="h-full w-full flex flex-col overflow-hidden bg-app-bg text-app-text font-sans"
+      style={cssVars as React.CSSProperties}
+    >
+      <div className="h-10 shrink-0 bg-app-surface" />
       <div className="flex-1 min-h-0 relative overflow-hidden">
         <Routes>
           <Route path="/" element={<MenuMainPage />} />
@@ -75,7 +89,7 @@ function AppShell() {
         <ToastHost />
       </div>
       <TabBar />
-      <div className="h-4 shrink-0 bg-white" />
+      <div className="h-4 shrink-0 bg-app-surface" />
     </div>
   );
 }

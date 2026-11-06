@@ -1,28 +1,35 @@
 import React from 'react';
 import { useCtripStore } from '../state';
 import { useCtripGestures } from '../hooks/useCtripGestures';
+import { useCtripStrings } from '../hooks/useCtripStrings';
 import { TopBar, Img, useToast } from '../components/ui';
 import { IcSettings, IconRenderer } from '../res/icons';
 import { WONTFIX_TOAST } from '../constants';
 
 /** 我的 Tab(spec mine.main)。会员卡/订单宫格/功能宫格,入口全可点(Q15,完整还原)。 */
-const ORDER_GRID = [
-  { id: 'unpaid', label: '待付款', icon: 'IcTicket' },
-  { id: 'upcoming', label: '未出行', icon: 'IcTrain' },
-  { id: 'refund', label: '退款/售后', icon: 'IcService' },
-  { id: 'toReview', label: '待点评', icon: 'IcCheck' },
-];
 const MISC_ICONS = ['IcTicket', 'IcGuide', 'IcHeart', 'IcTabTrip', 'IcCar', 'IcService', 'IcSearch', 'IcCheck'];
 
 export default function MineMainPage() {
+  const s = useCtripStrings();
+  const ORDER_GRID = [
+    { id: 'unpaid', label: s.t('待付款'), icon: 'IcTicket', state: 'unpaid' },
+    { id: 'upcoming', label: s.t('未出行'), icon: 'IcTrain', state: 'upcoming' },
+    { id: 'refund', label: s.t('退款/售后'), icon: 'IcService', state: 'refund' },
+    { id: 'toReview', label: s.t('待点评'), icon: 'IcCheck', state: 'toReview' },
+  ];
   const { bindTap } = useCtripGestures();
   const [toast, showToast] = useToast();
   const user = useCtripStore((s) => s.user);
+  const favHotels = useCtripStore((s) => s.favoriteHotels);
+  const favAttrs = useCtripStore((s) => s.favoriteAttractions);
+  const browseHistory = useCtripStore((s) => s.browseHistory);
+  const favCount = (favHotels?.length ?? 0) + (favAttrs?.length ?? 0);
+  const browseCount = browseHistory?.length ?? user.footprints;
 
   return (
     <div className="flex flex-col h-full bg-[#F5F6F8]">
       <TopBar
-        title="我的"
+        title={s.tabMine}
         showBack={false}
         transparent
         rightContent={<button {...bindTap('mine.toSettings')} className="bg-transparent border-none cursor-pointer p-0"><IcSettings size={20} className="text-[#333333]" /></button>}
@@ -36,27 +43,39 @@ export default function MineMainPage() {
               <div className="text-[16px] font-semibold">{user.name}</div>
               <div className="text-[12px] text-[#FFD98A] mt-0.5">◇ {user.memberLevel}</div>
             </div>
-            <button {...bindTap('mine.toMember')} className="text-[12px] text-[#2B3A55] bg-[#FFD98A] rounded-full px-3 py-1 border-none cursor-pointer">会员中心</button>
+            <button {...bindTap('mine.toMember')} className="text-[12px] text-[#2B3A55] bg-[#FFD98A] rounded-full px-3 py-1 border-none cursor-pointer">{s.t('会员中心')}</button>
           </div>
           <div className="flex mt-4 text-center">
-            {[['收藏', user.favorites], ['浏览', user.footprints], ['积分', user.points], ['优惠券', user.coupons]].map(([k, v]) => (
-              <div key={k as string} className="flex-1">
-                <div className="text-[16px] font-semibold">{v}</div>
-                <div className="text-[11px] text-white/70">{k}</div>
-              </div>
+            {[
+              { label: s.t('收藏'), value: favCount, mode: 'fav' },
+              { label: s.t('浏览'), value: browseCount, mode: 'browse' },
+              { label: s.t('积分'), value: user.points, mode: null },
+              { label: s.t('优惠券'), value: user.coupons, mode: null },
+            ].map((item) => (
+              <button
+                key={item.label}
+                type="button"
+                {...(item.mode
+                  ? bindTap('mine.toFavorites', { params: { mode: item.mode } })
+                  : bindTap(item.label === s.t('优惠券') ? 'mine.toWallet' : 'mine.toMember'))}
+                className="flex-1 bg-transparent border-none cursor-pointer text-white p-0"
+              >
+                <div className="text-[16px] font-semibold">{item.value}</div>
+                <div className="text-[11px] text-white/70">{item.label}</div>
+              </button>
             ))}
           </div>
         </div>
 
         {/* 订单宫格 */}
         <div className="bg-white mx-2 mt-2 rounded-xl p-3">
-          <button {...bindTap('mine.toOrders')} className="w-full flex items-center justify-between mb-2 bg-transparent border-none cursor-pointer">
-            <span className="text-[15px] font-semibold text-[#111111]">我的订单</span>
-            <span className="text-[12px] text-[#999999]">全部订单 ›</span>
+          <button {...bindTap('mine.toOrders', { params: { state: 'all' } })} className="w-full flex items-center justify-between mb-2 bg-transparent border-none cursor-pointer">
+            <span className="text-[15px] font-semibold text-[#111111]">{s.t('我的订单')}</span>
+            <span className="text-[12px] text-[#999999]">{s.t('全部订单 ›')}</span>
           </button>
           <div className="grid grid-cols-4">
             {ORDER_GRID.map((o) => (
-              <button key={o.id} {...bindTap('mine.toOrders')} className="flex flex-col items-center gap-1 py-1 bg-transparent border-none cursor-pointer">
+              <button key={o.id} {...bindTap('mine.toOrders', { params: { state: o.state } })} className="flex flex-col items-center gap-1 py-1 bg-transparent border-none cursor-pointer">
                 <span className="w-9 h-9 rounded-full bg-[#EAF4FF] text-[#0086F6] flex items-center justify-center">
                   <IconRenderer name={o.icon} size={18} />
                 </span>
@@ -68,17 +87,17 @@ export default function MineMainPage() {
 
         {/* 钱包 */}
         <button {...bindTap('mine.toWallet')} className="bg-white mx-2 mt-2 w-[calc(100%-1rem)] rounded-xl px-4 py-3 flex items-center justify-between border-none cursor-pointer">
-          <span className="text-[15px] font-semibold text-[#111111]">我的钱包</span>
-          <span className="text-[12px] text-[#999999]">优惠券 {user.coupons} 张 ›</span>
+          <span className="text-[15px] font-semibold text-[#111111]">{s.t('我的钱包')}</span>
+          <span className="text-[12px] text-[#999999]">{s.t('优惠券 {n} 张 ›').replace('{n}', String(user.coupons))}</span>
         </button>
 
         {/* 功能宫格 */}
         <div className="bg-white mx-2 mt-2 rounded-xl p-3">
-          <div className="text-[15px] font-semibold text-[#111111] mb-2">常用功能</div>
+          <div className="text-[15px] font-semibold text-[#111111] mb-2">{s.t('常用功能')}</div>
           <div className="grid grid-cols-4 gap-y-3">
-            <GridItem label="常用信息" icon={MISC_ICONS[0]} binding={bindTap('mine.toTravelers')} />
-            <GridItem label="报销凭证" icon={MISC_ICONS[1]} binding={bindTap('mine.toInvoice')} />
-            {['礼品卡', '出行清单', '购物车', '客服', '扫一扫', '签到'].map((m, index) => (
+            <GridItem label={s.t('常用信息')} icon={MISC_ICONS[0]} binding={bindTap('mine.toTravelers')} />
+            <GridItem label={s.t('报销凭证')} icon={MISC_ICONS[1]} binding={bindTap('mine.toInvoice')} />
+            {[s.t('礼品卡'), s.t('出行清单'), s.t('购物车'), s.t('客服'), s.t('扫一扫'), s.t('签到')].map((m, index) => (
               <GridItem key={m} label={m} icon={MISC_ICONS[index + 2]} binding={bindTap({ kind: 'action', id: 'mine.misc.wontfix' }, { params: { m }, onTrigger: () => showToast(WONTFIX_TOAST) })} />
             ))}
           </div>
@@ -86,7 +105,7 @@ export default function MineMainPage() {
 
         {/* 旅行足迹 */}
         <div className="bg-white mx-2 mt-2 rounded-xl px-4 py-3 text-[13px] text-[#666666]">
-          ◉ 旅行足迹:已飞行 37445 公里,打卡 18 个城市
+          {s.t('◉ 旅行足迹:已飞行 37445 公里,打卡 18 个城市')}
         </div>
       </div>
       {toast}

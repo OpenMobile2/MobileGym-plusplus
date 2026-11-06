@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useAppStrings } from '@/os/useAppStrings';
+import { sharePlainText } from '@/os/shareBridge';
 import { useTbsgGestures } from '../hooks/useTbsgGestures';
 import { useTbsgStore } from '../state';
 import { fmt } from '../utils';
@@ -29,6 +30,13 @@ export default function GroupOrderPage() {
   }
 
   const sellPoints = [s.groupSell1, s.groupSell2, s.groupSell3];
+  const inviteFriend = () => {
+    const launched = sharePlainText(
+      `我正在淘宝闪购的「${shop.name}」发起好友拼单，快来一起点单吧！`,
+      { onResult: (result) => result.resultCode === 'OK' && showToast(s.groupShareSuccess) },
+    );
+    if (!launched) showToast(s.notOpen);
+  };
 
   return (
     <div className="flex flex-col h-full bg-[#F3F6F8]">
@@ -68,7 +76,7 @@ export default function GroupOrderPage() {
 
           {/* 邀请好友 */}
           <button
-            {...bindTap<HTMLButtonElement>({ kind: 'action', id: 'group.invite.stub' }, { onTrigger: () => showToast(s.notOpen) })}
+            {...bindTap<HTMLButtonElement>({ kind: 'action', id: 'group.invite.share' }, { onTrigger: inviteFriend })}
             className="w-full h-12 mt-7 rounded-lg bg-[#ED6C2C] text-white text-[18px] font-bold border-none cursor-pointer"
           >
             {s.groupInvite}

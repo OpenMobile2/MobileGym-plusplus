@@ -1,4 +1,4 @@
-"""Ctrip hybrid GUI+Tools tasks (tasklib).
+"""Ctrip hybrid GUI+Tools tasks (selfbuilt-v1).
 
 Ctrip's tool surface is query/navigation only (no writes), so most tasks here
 naturally skew toward the "no dedicated write tool, GUI still required to

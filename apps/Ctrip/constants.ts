@@ -11,32 +11,39 @@ export const OS = {
 } as const;
 
 /** 改 defaults.json 必须递增;persistName = `ctrip_v${DATA_VERSION}` */
-export const DATA_VERSION = 1;
+export const DATA_VERSION = 10;
 
 /** 底部 4 Tab(spec chrome.tabbar;真实App有「社区」,本复刻按用户决定砍掉)。path 与 navigation.declaration 对齐 */
 export const MAIN_TABS = [
-  { id: 'home', path: '/', label: '首页' },
-  { id: 'message', path: '/message', label: '消息' },
-  { id: 'trip', path: '/trip', label: '行程' },
-  { id: 'mine', path: '/mine', label: '我的' },
+  { id: 'home', path: '/', labelKey: 'tabHome' as const },
+  { id: 'message', path: '/message', labelKey: 'tabMessage' as const },
+  { id: 'trip', path: '/trip', labelKey: 'tabTrip' as const },
+  { id: 'mine', path: '/mine', labelKey: 'tabMine' as const },
 ] as const;
 
 /** 首页金刚区(spec home.main)。kind: page=进真页, toast=暂未开放 */
 export const KINGKONG = [
-  { id: 'hotel', label: '酒店', icon: 'IcHotel', color: '#FF7A45', kind: 'page', transitionId: 'home.hotel-open' },
-  { id: 'guide', label: '攻略/景点', icon: 'IcGuide', color: '#FF9F45', kind: 'page', transitionId: 'home.dest-open' },
-  { id: 'flight', label: '机票', icon: 'IcFlight', color: '#3B9BFF', kind: 'page', transitionId: 'home.flight-open' },
-  { id: 'train', label: '火车票', icon: 'IcTrain', color: '#7B7BFF', kind: 'page', transitionId: 'home.train-open' },
-  { id: 'tour', label: '旅游/定制', icon: 'IcTour', color: '#37C7A0', kind: 'toast' },
-  { id: 'homestay', label: '民宿/客栈', icon: 'IcHomestay', color: '#FF7A45', kind: 'page', transitionId: 'home.hotel-open' },
-  { id: 'ticket', label: '门票/玩乐', icon: 'IcTicket', color: '#FF9F45', kind: 'page', transitionId: 'home.ticket2-open' },
-  { id: 'pickup', label: '接送机/包车', icon: 'IcPickup', color: '#3B9BFF', kind: 'page', transitionId: 'home.carpickup-open' },
-  { id: 'car', label: '租车自驾', icon: 'IcCar', color: '#7B7BFF', kind: 'page', transitionId: 'home.car-open' },
-  { id: 'group', label: '跟团游', icon: 'IcGroup', color: '#37C7A0', kind: 'toast' },
+  { id: 'hotel', labelKey: 'kingkongHotel' as const, icon: 'IcHotel', color: '#FF7A45', kind: 'page', transitionId: 'home.hotel-open' },
+  { id: 'guide', labelKey: 'kingkongGuide' as const, icon: 'IcGuide', color: '#FF9F45', kind: 'page', transitionId: 'home.dest-open' },
+  { id: 'flight', labelKey: 'kingkongFlight' as const, icon: 'IcFlight', color: '#3B9BFF', kind: 'page', transitionId: 'home.flight-open' },
+  { id: 'train', labelKey: 'kingkongTrain' as const, icon: 'IcTrain', color: '#7B7BFF', kind: 'page', transitionId: 'home.train-open' },
+  { id: 'tour', labelKey: 'kingkongTour' as const, icon: 'IcTour', color: '#37C7A0', kind: 'toast' },
+  { id: 'homestay', labelKey: 'kingkongHomestay' as const, icon: 'IcHomestay', color: '#FF7A45', kind: 'page', transitionId: 'home.homestay-open' },
+  { id: 'ticket', labelKey: 'kingkongTicket' as const, icon: 'IcTicket', color: '#FF9F45', kind: 'page', transitionId: 'home.ticket2-open' },
+  { id: 'pickup', labelKey: 'kingkongPickup' as const, icon: 'IcPickup', color: '#3B9BFF', kind: 'page', transitionId: 'home.carpickup-open' },
+  { id: 'car', labelKey: 'kingkongCar' as const, icon: 'IcCar', color: '#7B7BFF', kind: 'page', transitionId: 'home.car-open' },
+  { id: 'group', labelKey: 'kingkongGroup' as const, icon: 'IcGroup', color: '#37C7A0', kind: 'toast' },
 ] as const;
 
-/** 首页本地 feed 子 tab */
-export const HOME_FEED_TABS = ['全世界', '上海', '附近', '景点', '住宿', '美食'] as const;
+/** 首页本地 feed 子 tab — id 稳定，展示走 strings */
+export const HOME_FEED_TABS = [
+  { id: 'worldwide', labelKey: 'feedWorldwide' as const },
+  { id: 'shanghai', labelKey: 'feedShanghai' as const },
+  { id: 'nearby', labelKey: 'feedNearby' as const },
+  { id: 'attraction', labelKey: 'feedAttraction' as const },
+  { id: 'stay', labelKey: 'feedStay' as const },
+  { id: 'food', labelKey: 'feedFood' as const },
+] as const;
 
 /** 酒店搜索住宿类型 tab(spec hotel.search uiStates) */
 export const HOTEL_TABS = [
@@ -93,8 +100,10 @@ export const ORDER_TABS = [
 
 /** 支付方式(spec cashier.main) */
 export const PAY_METHODS = [
-  { id: 'bankcard', label: '招商银行储蓄卡(8969)', sub: '程支付', recommend: true },
-  { id: 'alipay', label: '支付宝支付', sub: '' },
+  { id: 'bankcard', labelKey: 'payBankcard' as const, subKey: 'payBankcardSub' as const, recommend: true },
+  { id: 'alipay', labelKey: 'payAlipay' as const, subKey: '' as const, recommend: false },
 ] as const;
 
+export const WONTFIX_TOAST_KEY = 'wontfix' as const;
+/** @deprecated use strings via useCtripStrings().wontfix */
 export const WONTFIX_TOAST = '该功能暂未开放';

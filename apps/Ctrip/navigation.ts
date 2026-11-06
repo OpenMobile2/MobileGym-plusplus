@@ -73,7 +73,37 @@ export function useAppNavigate() {
     [navigate],
   );
 
-  return { go, back };
+  const backOr = useCallback(
+    (fallback: string) => {
+      const mem = navigator as { index?: number };
+      const intent = getCtripBackIntent(mem.index, fallback);
+      if (intent.type === 'history-back') {
+        navigate(-1);
+        return;
+      }
+      navigate(intent.to, { replace: true });
+    },
+    [navigate, navigator],
+  );
+
+  return { go, back, backOr };
+}
+
+export type CtripBackIntent =
+  | { type: 'history-back' }
+  | { type: 'fallback'; to: string };
+
+/**
+ * 页面从正常 GUI 链路进入时必须弹出真实历史项，不能用写死的上级页替换当前项；
+ * 只有 Tool/deep-link 直接落在栈底时，才使用业务上级作为兜底。
+ */
+export function getCtripBackIntent(
+  historyIndex: number | undefined,
+  fallback: string,
+): CtripBackIntent {
+  return typeof historyIndex === 'number' && historyIndex > 0
+    ? { type: 'history-back' }
+    : { type: 'fallback', to: fallback };
 }
 
 function matchFrom(

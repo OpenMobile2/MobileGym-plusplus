@@ -77,6 +77,7 @@ const handlers: Record<string, ToolHandler> = {
     const matches = state().items.filter((item) => (!shopId || item.shopId === shopId)
       && [item.name, item.desc, item.brand, item.drugCat, item.drugSub, ...(item.tags ?? []), ...(item.funcs ?? [])]
         .filter(Boolean).join(' ').toLowerCase().includes(query));
+    if (shopId) state().recordTaskAudit({ shopSearch: { shopId, query } });
     return { items: matches.slice(0, limit).map(itemSummary), total: matches.length, truncated: matches.length > limit };
   },
   [TBSG_TOOL_NAMES.getShopMenu]: (input) => {

@@ -5,27 +5,41 @@
     "points": 6287,
     "avatar": "/@app-assets/Ctrip/gen/avatar_2.png",
     "phone": "180****9152",
-    "favorites": 12,
-    "footprints": 18,
+    "favorites": 4,
+    "footprints": 6,
     "coupons": 12
   },
   "searchHistory": [
-    "上海",
+    "长春",
     "长春·吉林大学(前卫南区)",
+    "上海",
     "成都·九眼桥",
     "杭州东站"
   ],
-  "favoriteHotels": [],
+  "favoriteHotels": [
+    "h_atour",
+    "h_seaview",
+    "h_quanji",
+    "h_hanting"
+  ],
   "settings": {
     "network": true,
     "notifyOrder": true,
     "notifyPromo": false,
-    "careMode": false
+    "careMode": false,
+    "csTop": false,
+    "csPush": true,
+    "csBlock": false,
+    "payFingerprint": false,
+    "payDefaultWx": false,
+    "subRealname": false,
+    "subLocation": false,
+    "subPersonalized": false
   },
   "hotels": [
     {
       "id": "h_atour",
-      "name": "杭州西湖湖滨中山北路亚朵酒店",
+      "name": "杭州西湖湖滨中山北路云栖酒店",
       "image": "/@app-assets/Ctrip/gen/hotel_atour.png",
       "gallery": [
         "/@app-assets/Ctrip/gen/hotel_atour.png",
@@ -38,10 +52,11 @@
       "city": "杭州",
       "district": "西湖湖滨商圈",
       "tags": [
-        "免费停车场",
-        "免费洗衣服务",
+        "家庭房",
+        "含早",
         "拍照出片",
-        "家庭房"
+        "免费停车场",
+        "免费洗衣服务"
       ],
       "price": 412,
       "oldPrice": 0,
@@ -96,6 +111,30 @@
           "price": 508,
           "cancelPolicy": "入住当天12:00前可免费取消",
           "remaining": 2
+        },
+        {
+          "id": "r_atour_twin",
+          "name": "雅致双床房-智能客控",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "2张1.2米床",
+          "area": "28㎡",
+          "occupancy": "2人入住",
+          "breakfast": "无早餐",
+          "price": 428,
+          "cancelPolicy": "入住当天12:00前可免费取消",
+          "remaining": 4
+        },
+        {
+          "id": "r_atour_family",
+          "name": "家庭亲子房-含双早",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_lobby.png",
+          "bed": "1张1.8米大床+1张1.2米床",
+          "area": "35㎡",
+          "occupancy": "3人入住",
+          "breakfast": "2份早餐",
+          "price": 568,
+          "cancelPolicy": "入住当天12:00前可免费取消",
+          "remaining": 1
         }
       ]
     },
@@ -104,7 +143,9 @@
       "name": "Sea·观海栖宿海景民宿",
       "image": "/@app-assets/Ctrip/gen/hotel_seaview.png",
       "gallery": [
-        "/@app-assets/Ctrip/gen/hotel_seaview.png"
+        "/@app-assets/Ctrip/gen/hotel_seaview.png",
+        "/@app-assets/Ctrip/gen/hotel_atour_lobby.png",
+        "/@app-assets/Ctrip/gen/hotel_quanji_room.png"
       ],
       "star": 3,
       "score": 5.0,
@@ -113,8 +154,8 @@
       "district": "近连云港市连岛景区",
       "tags": [
         "提前入住",
-        "亲子主题房",
         "迷人海景",
+        "亲子主题房",
         "供氧设施"
       ],
       "price": 111,
@@ -128,22 +169,70 @@
       ],
       "rooms": [
         {
-          "id": "r_sea_1",
-          "name": "海景双床房",
-          "image": "/@app-assets/Ctrip/gen/hotel_seaview.png",
-          "bed": "2张1.2米床",
-          "area": "30㎡",
+          "id": "r_62255037",
+          "name": "雅致大床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
+          "area": "22㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 111,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_64751853",
+          "name": "舒适双床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "2张1.2米单人床",
+          "area": "22㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 151,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_89314567",
+          "name": "家庭亲子房-亲子",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床+1张1.2米床",
+          "area": "28㎡",
+          "occupancy": "3人入住",
+          "breakfast": "2份早餐",
+          "price": 261,
+          "cancelPolicy": "入住当天12:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_77241051",
+          "name": "无早特惠大床",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
+          "area": "22㎡",
           "occupancy": "2人入住",
           "breakfast": "无早餐",
-          "price": 111,
-          "cancelPolicy": "提前1天18:00前可免费取消",
+          "price": 99,
+          "cancelPolicy": "不可取消",
           "remaining": 3
+        },
+        {
+          "id": "h_seaview_extra0",
+          "name": "豪华套房-含双早",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张2.0米大床",
+          "area": "45㎡",
+          "occupancy": "2人入住",
+          "breakfast": "2份早餐",
+          "price": 191,
+          "cancelPolicy": "入住当天12:00前可免费取消",
+          "remaining": 2
         }
       ]
     },
     {
       "id": "h_quanji",
-      "name": "全季酒店(杭州西湖湖滨解放路店)",
+      "name": "青禾酒店(杭州西湖湖滨解放路店)",
       "image": "/@app-assets/Ctrip/gen/hotel_quanji.png",
       "gallery": [
         "/@app-assets/Ctrip/gen/hotel_quanji.png",
@@ -155,10 +244,10 @@
       "city": "杭州",
       "district": "西湖湖滨商圈",
       "tags": [
-        "免费升房",
         "充电桩",
-        "免费停车场",
-        "免费洗衣服务"
+        "免费升房",
+        "免费洗衣服务",
+        "免费停车场"
       ],
       "price": 310,
       "oldPrice": 340,
@@ -171,22 +260,666 @@
       ],
       "rooms": [
         {
-          "id": "r_quanji_1",
-          "name": "高级大床房",
-          "image": "/@app-assets/Ctrip/gen/hotel_quanji_room.png",
-          "bed": "1张1.5米大床",
+          "id": "r_32106985",
+          "name": "雅致大床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
+          "area": "22㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 310,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_38651620",
+          "name": "舒适双床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "2张1.2米单人床",
+          "area": "22㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 350,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_74661621",
+          "name": "家庭亲子房-亲子",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床+1张1.2米床",
+          "area": "28㎡",
+          "occupancy": "3人入住",
+          "breakfast": "2份早餐",
+          "price": 460,
+          "cancelPolicy": "入住当天12:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_71221083",
+          "name": "无早特惠大床",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
           "area": "22㎡",
           "occupancy": "2人入住",
           "breakfast": "无早餐",
+          "price": 270,
+          "cancelPolicy": "不可取消",
+          "remaining": 3
+        },
+        {
+          "id": "h_quanji_extra0",
+          "name": "豪华套房-含双早",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张2.0米大床",
+          "area": "45㎡",
+          "occupancy": "2人入住",
+          "breakfast": "2份早餐",
+          "price": 390,
+          "cancelPolicy": "入住当天12:00前可免费取消",
+          "remaining": 2
+        }
+      ]
+    },
+    {
+      "id": "h_icc_junlan",
+      "name": "君澜度假酒店(杭州西湖国际会议中心店)",
+      "image": "/@app-assets/Ctrip/gen/hotel_atour.png",
+      "gallery": [
+        "/@app-assets/Ctrip/gen/hotel_atour.png",
+        "/@app-assets/Ctrip/gen/hotel_atour_room.png"
+      ],
+      "star": 5,
+      "score": 4.9,
+      "reviewCount": 2100,
+      "city": "杭州",
+      "district": "西湖国际会议中心",
+      "tags": [
+        "会议中心",
+        "含早",
+        "免费停车场"
+      ],
+      "price": 798,
+      "oldPrice": 880,
+      "rankLabel": "西湖国际会议中心豪华酒店热卖 No.1",
+      "openYear": "2022年开业",
+      "facilities": [
+        "免费停车场",
+        "会议室",
+        "含早"
+      ],
+      "rooms": [
+        {
+          "id": "h_icc_junlan_deluxe",
+          "name": "豪华湖景大床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
+          "area": "24㎡",
+          "occupancy": "2人入住",
+          "breakfast": "2份早餐",
+          "price": 798,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "h_icc_junlan_suite",
+          "name": "行政套房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
+          "area": "24㎡",
+          "occupancy": "2人入住",
+          "breakfast": "2份早餐",
+          "price": 980,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        }
+      ]
+    },
+    {
+      "id": "h_icc_marriott",
+      "name": "万怡酒店(杭州西湖国际会议中心店)",
+      "image": "/@app-assets/Ctrip/gen/hotel_atour.png",
+      "gallery": [
+        "/@app-assets/Ctrip/gen/hotel_atour.png",
+        "/@app-assets/Ctrip/gen/hotel_atour_room.png"
+      ],
+      "star": 4,
+      "score": 4.8,
+      "reviewCount": 1680,
+      "city": "杭州",
+      "district": "西湖国际会议中心",
+      "tags": [
+        "会议中心",
+        "含早",
+        "免费停车场"
+      ],
+      "price": 568,
+      "oldPrice": 620,
+      "rankLabel": "西湖国际会议中心高档酒店热卖 No.2",
+      "openYear": "2022年开业",
+      "facilities": [
+        "免费停车场",
+        "会议室",
+        "含早"
+      ],
+      "rooms": [
+        {
+          "id": "h_icc_marriott_deluxe",
+          "name": "豪华大床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
+          "area": "24㎡",
+          "occupancy": "2人入住",
+          "breakfast": "2份早餐",
+          "price": 568,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "h_icc_marriott_twin",
+          "name": "豪华双床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "2张1.2米单人床",
+          "area": "24㎡",
+          "occupancy": "2人入住",
+          "breakfast": "2份早餐",
+          "price": 598,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        }
+      ]
+    },
+    {
+      "id": "h_icc_hilton",
+      "name": "希尔顿酒店(杭州西湖国际会议中心店)",
+      "image": "/@app-assets/Ctrip/gen/hotel_atour.png",
+      "gallery": [
+        "/@app-assets/Ctrip/gen/hotel_atour.png",
+        "/@app-assets/Ctrip/gen/hotel_atour_room.png"
+      ],
+      "star": 5,
+      "score": 4.8,
+      "reviewCount": 940,
+      "city": "杭州",
+      "district": "西湖国际会议中心",
+      "tags": [
+        "会议中心",
+        "含早",
+        "免费停车场"
+      ],
+      "price": 688,
+      "oldPrice": 760,
+      "rankLabel": "西湖国际会议中心豪华酒店热卖 No.3",
+      "openYear": "2022年开业",
+      "facilities": [
+        "免费停车场",
+        "会议室",
+        "含早"
+      ],
+      "rooms": [
+        {
+          "id": "h_icc_hilton_deluxe",
+          "name": "豪华大床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
+          "area": "24㎡",
+          "occupancy": "2人入住",
+          "breakfast": "2份早餐",
+          "price": 688,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "h_icc_hilton_suite",
+          "name": "行政套房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
+          "area": "24㎡",
+          "occupancy": "2人入住",
+          "breakfast": "2份早餐",
+          "price": 860,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        }
+      ]
+    },
+    {
+      "id": "h_icc_yunqi_east",
+      "name": "云栖酒店(杭州西湖国际会议中心东门店)",
+      "image": "/@app-assets/Ctrip/gen/hotel_atour.png",
+      "gallery": [
+        "/@app-assets/Ctrip/gen/hotel_atour.png",
+        "/@app-assets/Ctrip/gen/hotel_atour_room.png"
+      ],
+      "star": 4,
+      "score": 4.7,
+      "reviewCount": 1120,
+      "city": "杭州",
+      "district": "西湖国际会议中心",
+      "tags": [
+        "会议中心",
+        "含早",
+        "免费停车场"
+      ],
+      "price": 458,
+      "oldPrice": 520,
+      "rankLabel": "西湖国际会议中心高档酒店热卖 No.4",
+      "openYear": "2022年开业",
+      "facilities": [
+        "免费停车场",
+        "会议室",
+        "含早"
+      ],
+      "rooms": [
+        {
+          "id": "h_icc_yunqi_east_deluxe",
+          "name": "雅致大床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
+          "area": "24㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 458,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "h_icc_yunqi_east_twin",
+          "name": "舒适双床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "2张1.2米单人床",
+          "area": "24㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 498,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        }
+      ]
+    },
+    {
+      "id": "h_icc_qinghe_north",
+      "name": "青禾酒店(杭州西湖国际会议中心北门店)",
+      "image": "/@app-assets/Ctrip/gen/hotel_quanji.png",
+      "gallery": [
+        "/@app-assets/Ctrip/gen/hotel_quanji.png",
+        "/@app-assets/Ctrip/gen/hotel_atour_room.png"
+      ],
+      "star": 3,
+      "score": 4.6,
+      "reviewCount": 880,
+      "city": "杭州",
+      "district": "西湖国际会议中心",
+      "tags": [
+        "会议中心",
+        "含早",
+        "免费停车场"
+      ],
+      "price": 398,
+      "oldPrice": 430,
+      "rankLabel": "西湖国际会议中心舒适型酒店热卖 No.5",
+      "openYear": "2022年开业",
+      "facilities": [
+        "免费停车场",
+        "会议室",
+        "含早"
+      ],
+      "rooms": [
+        {
+          "id": "h_icc_qinghe_north_deluxe",
+          "name": "雅致大床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
+          "area": "24㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 398,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "h_icc_qinghe_north_twin",
+          "name": "舒适双床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "2张1.2米单人床",
+          "area": "24㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 428,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        }
+      ]
+    },
+    {
+      "id": "h_icc_homeinn",
+      "name": "如家酒店(杭州西湖国际会议中心店)",
+      "image": "/@app-assets/Ctrip/gen/hotel_hanting.png",
+      "gallery": [
+        "/@app-assets/Ctrip/gen/hotel_hanting.png",
+        "/@app-assets/Ctrip/gen/hotel_atour_room.png"
+      ],
+      "star": 2,
+      "score": 4.4,
+      "reviewCount": 2100,
+      "city": "杭州",
+      "district": "西湖国际会议中心",
+      "tags": [
+        "会议中心",
+        "含早",
+        "免费停车场"
+      ],
+      "price": 398,
+      "oldPrice": 428,
+      "rankLabel": "西湖国际会议中心经济型热卖 No.6",
+      "openYear": "2022年开业",
+      "facilities": [
+        "免费停车场",
+        "会议室",
+        "含早"
+      ],
+      "rooms": [
+        {
+          "id": "h_icc_homeinn_deluxe",
+          "name": "大床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
+          "area": "24㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 398,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "h_icc_homeinn_twin",
+          "name": "双床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "2张1.2米单人床",
+          "area": "24㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 418,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        }
+      ]
+    },
+    {
+      "id": "h_icc_hanting",
+      "name": "汉庭酒店(杭州西湖国际会议中心店)",
+      "image": "/@app-assets/Ctrip/gen/hotel_hanting.png",
+      "gallery": [
+        "/@app-assets/Ctrip/gen/hotel_hanting.png",
+        "/@app-assets/Ctrip/gen/hotel_atour_room.png"
+      ],
+      "star": 2,
+      "score": 4.3,
+      "reviewCount": 1540,
+      "city": "杭州",
+      "district": "西湖国际会议中心",
+      "tags": [
+        "会议中心",
+        "含早",
+        "免费停车场"
+      ],
+      "price": 428,
+      "oldPrice": 458,
+      "rankLabel": "西湖国际会议中心经济型热卖 No.7",
+      "openYear": "2022年开业",
+      "facilities": [
+        "免费停车场",
+        "会议室",
+        "含早"
+      ],
+      "rooms": [
+        {
+          "id": "h_icc_hanting_deluxe",
+          "name": "大床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
+          "area": "24㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 428,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "h_icc_hanting_twin",
+          "name": "双床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "2张1.2米单人床",
+          "area": "24㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 448,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        }
+      ]
+    },
+    {
+      "id": "h_qinghe_icc",
+      "name": "青禾酒店(杭州西湖国际会议中心店)",
+      "image": "/@app-assets/Ctrip/gen/hotel_quanji.png",
+      "gallery": [
+        "/@app-assets/Ctrip/gen/hotel_quanji.png",
+        "/@app-assets/Ctrip/gen/hotel_quanji_room.png"
+      ],
+      "star": 3,
+      "score": 4.7,
+      "reviewCount": 1260,
+      "city": "杭州",
+      "district": "西湖国际会议中心",
+      "tags": [
+        "会议中心",
+        "含早",
+        "免费停车场"
+      ],
+      "price": 310,
+      "oldPrice": 348,
+      "rankLabel": "西湖国际会议中心舒适型酒店热卖 No.2",
+      "openYear": "2023年开业",
+      "facilities": [
+        "免费停车场",
+        "会议室",
+        "含早"
+      ],
+      "rooms": [
+        {
+          "id": "r_qinghe_icc_deluxe",
+          "name": "雅致大床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
+          "area": "24㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
           "price": 310,
           "cancelPolicy": "入住当天18:00前可免费取消",
-          "remaining": 5
+          "remaining": 4
+        },
+        {
+          "id": "r_qinghe_icc_twin",
+          "name": "舒适双床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "2张1.2米单人床",
+          "area": "24㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 350,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        }
+      ]
+    },
+    {
+      "id": "h_yunqi_icc",
+      "name": "云栖酒店(杭州西湖国际会议中心店)",
+      "image": "/@app-assets/Ctrip/gen/hotel_atour.png",
+      "gallery": [
+        "/@app-assets/Ctrip/gen/hotel_atour.png",
+        "/@app-assets/Ctrip/gen/hotel_atour_lobby.png",
+        "/@app-assets/Ctrip/gen/hotel_atour_room.png"
+      ],
+      "star": 4,
+      "score": 4.8,
+      "reviewCount": 860,
+      "city": "杭州",
+      "district": "西湖国际会议中心",
+      "tags": [
+        "会议中心",
+        "含早",
+        "豪华"
+      ],
+      "price": 498,
+      "oldPrice": 568,
+      "rankLabel": "西湖国际会议中心高档酒店热卖 No.1",
+      "openYear": "2021年开业",
+      "facilities": [
+        "免费停车场",
+        "会议室",
+        "含早",
+        "健身中心"
+      ],
+      "rooms": [
+        {
+          "id": "r_yunqi_icc_deluxe",
+          "name": "豪华大床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
+          "area": "32㎡",
+          "occupancy": "2人入住",
+          "breakfast": "2份早餐",
+          "price": 498,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 2
+        },
+        {
+          "id": "r_yunqi_icc_suite",
+          "name": "行政套房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_lobby.png",
+          "bed": "1张1.8米大床",
+          "area": "48㎡",
+          "occupancy": "2人入住",
+          "breakfast": "2份早餐",
+          "price": 688,
+          "cancelPolicy": "入住当天12:00前可免费取消",
+          "remaining": 1
+        }
+      ]
+    },
+    {
+      "id": "h_icc_quanji",
+      "name": "全季酒店(杭州西湖国际会议中心店)",
+      "image": "/@app-assets/Ctrip/gen/hotel_quanji.png",
+      "gallery": [
+        "/@app-assets/Ctrip/gen/hotel_quanji.png",
+        "/@app-assets/Ctrip/gen/hotel_atour_room.png"
+      ],
+      "star": 3,
+      "score": 4.5,
+      "reviewCount": 990,
+      "city": "杭州",
+      "district": "西湖国际会议中心",
+      "tags": [
+        "会议中心",
+        "含早",
+        "免费停车场"
+      ],
+      "price": 438,
+      "oldPrice": 468,
+      "rankLabel": "西湖国际会议中心舒适型酒店热卖 No.8",
+      "openYear": "2022年开业",
+      "facilities": [
+        "免费停车场",
+        "会议室",
+        "含早"
+      ],
+      "rooms": [
+        {
+          "id": "h_icc_quanji_deluxe",
+          "name": "雅致大床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
+          "area": "24㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 438,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "h_icc_quanji_twin",
+          "name": "舒适双床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "2张1.2米单人床",
+          "area": "24㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 468,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        }
+      ]
+    },
+    {
+      "id": "h_icc_garden",
+      "name": "花园酒店(杭州西湖国际会议中心店)",
+      "image": "/@app-assets/Ctrip/gen/hotel_atour.png",
+      "gallery": [
+        "/@app-assets/Ctrip/gen/hotel_atour.png",
+        "/@app-assets/Ctrip/gen/hotel_atour_room.png"
+      ],
+      "star": 4,
+      "score": 4.6,
+      "reviewCount": 760,
+      "city": "杭州",
+      "district": "西湖国际会议中心",
+      "tags": [
+        "会议中心",
+        "含早",
+        "免费停车场"
+      ],
+      "price": 528,
+      "oldPrice": 580,
+      "rankLabel": "西湖国际会议中心高档酒店热卖 No.9",
+      "openYear": "2022年开业",
+      "facilities": [
+        "免费停车场",
+        "会议室",
+        "含早"
+      ],
+      "rooms": [
+        {
+          "id": "h_icc_garden_deluxe",
+          "name": "豪华大床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
+          "area": "24㎡",
+          "occupancy": "2人入住",
+          "breakfast": "2份早餐",
+          "price": 528,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "h_icc_garden_suite",
+          "name": "行政套房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
+          "area": "24㎡",
+          "occupancy": "2人入住",
+          "breakfast": "2份早餐",
+          "price": 628,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
         }
       ]
     },
     {
       "id": "h_hanting",
-      "name": "汉庭酒店(成都九眼桥牛王庙地铁站店)",
+      "name": "逸途酒店(成都九眼桥牛王庙地铁站店)",
       "image": "/@app-assets/Ctrip/gen/hotel_hanting.png",
       "gallery": [
         "/@app-assets/Ctrip/gen/hotel_hanting.png",
@@ -198,11 +931,11 @@
       "city": "成都",
       "district": "锦江区·近九眼桥",
       "tags": [
-        "充电桩",
-        "免费停车场",
         "家庭房",
-        "免费洗衣服务",
-        "机器人服务"
+        "免费停车场",
+        "机器人服务",
+        "充电桩",
+        "免费洗衣服务"
       ],
       "price": 246,
       "oldPrice": 0,
@@ -216,25 +949,75 @@
       ],
       "rooms": [
         {
-          "id": "r_hanting_1",
-          "name": "大床房【零压记忆枕+金可儿床垫+智能电视投屏】",
-          "image": "/@app-assets/Ctrip/gen/hotel_hanting_room.png",
-          "bed": "1张1.5米大床",
-          "area": "20㎡",
+          "id": "r_82197607",
+          "name": "雅致大床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
+          "area": "22㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 246,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_95969234",
+          "name": "舒适双床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "2张1.2米单人床",
+          "area": "22㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 286,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_13017716",
+          "name": "家庭亲子房-亲子",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床+1张1.2米床",
+          "area": "28㎡",
+          "occupancy": "3人入住",
+          "breakfast": "2份早餐",
+          "price": 396,
+          "cancelPolicy": "入住当天12:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_95639746",
+          "name": "无早特惠大床",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
+          "area": "22㎡",
           "occupancy": "2人入住",
           "breakfast": "无早餐",
-          "price": 246,
-          "cancelPolicy": "入住当天14:00前可免费取消",
-          "remaining": 4
+          "price": 206,
+          "cancelPolicy": "不可取消",
+          "remaining": 3
+        },
+        {
+          "id": "h_hanting_extra0",
+          "name": "豪华套房-含双早",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张2.0米大床",
+          "area": "45㎡",
+          "occupancy": "2人入住",
+          "breakfast": "2份早餐",
+          "price": 326,
+          "cancelPolicy": "入住当天12:00前可免费取消",
+          "remaining": 2
         }
       ]
     },
     {
       "id": "h_dahua",
-      "name": "杭州西湖大华饭店",
+      "name": "杭州西湖湖光饭店",
       "image": "/@app-assets/Ctrip/gen/hotel_dahua.png",
       "gallery": [
-        "/@app-assets/Ctrip/gen/hotel_dahua.png"
+        "/@app-assets/Ctrip/gen/hotel_dahua.png",
+        "/@app-assets/Ctrip/gen/hotel_atour_lobby.png",
+        "/@app-assets/Ctrip/gen/hotel_quanji_room.png"
       ],
       "star": 5,
       "score": 4.7,
@@ -242,10 +1025,11 @@
       "city": "杭州",
       "district": "西湖湖滨商圈",
       "tags": [
+        "含早",
         "窗外好景",
         "园林建筑",
-        "专属旅拍",
-        "室内恒温泳池"
+        "室内恒温泳池",
+        "专属旅拍"
       ],
       "price": 888,
       "oldPrice": 1058,
@@ -259,25 +1043,75 @@
       ],
       "rooms": [
         {
-          "id": "r_dahua_1",
-          "name": "湖景大床房",
-          "image": "/@app-assets/Ctrip/gen/hotel_dahua.png",
+          "id": "r_36136891",
+          "name": "雅致大床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
           "bed": "1张1.8米大床",
-          "area": "40㎡",
+          "area": "22㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 888,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_85648155",
+          "name": "舒适双床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "2张1.2米单人床",
+          "area": "22㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 928,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_55617939",
+          "name": "家庭亲子房-亲子",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床+1张1.2米床",
+          "area": "28㎡",
+          "occupancy": "3人入住",
+          "breakfast": "2份早餐",
+          "price": 1038,
+          "cancelPolicy": "入住当天12:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_44889284",
+          "name": "无早特惠大床",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
+          "area": "22㎡",
+          "occupancy": "2人入住",
+          "breakfast": "无早餐",
+          "price": 848,
+          "cancelPolicy": "不可取消",
+          "remaining": 3
+        },
+        {
+          "id": "h_dahua_extra0",
+          "name": "豪华套房-含双早",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张2.0米大床",
+          "area": "45㎡",
           "occupancy": "2人入住",
           "breakfast": "2份早餐",
-          "price": 888,
-          "cancelPolicy": "提前1天12:00前可免费取消",
+          "price": 968,
+          "cancelPolicy": "入住当天12:00前可免费取消",
           "remaining": 2
         }
       ]
     },
     {
       "id": "h_homestay",
-      "name": "《泉汐》复旦儿科医院600米精品民宿",
+      "name": "《泉汐》儿科医院附近600米精品民宿",
       "image": "/@app-assets/Ctrip/gen/hotel_homestay.png",
       "gallery": [
-        "/@app-assets/Ctrip/gen/hotel_homestay.png"
+        "/@app-assets/Ctrip/gen/hotel_homestay.png",
+        "/@app-assets/Ctrip/gen/hotel_atour_lobby.png",
+        "/@app-assets/Ctrip/gen/hotel_quanji_room.png"
       ],
       "star": 3,
       "score": 4.6,
@@ -285,9 +1119,9 @@
       "city": "上海",
       "district": "闵行区古美一村",
       "tags": [
-        "12号线顾戴路地铁",
+        "温馨一居",
         "近医院",
-        "温馨一居"
+        "12号线顾戴路地铁"
       ],
       "price": 370,
       "oldPrice": 0,
@@ -298,16 +1132,1388 @@
       ],
       "rooms": [
         {
-          "id": "r_home_1",
-          "name": "一居室大床",
-          "image": "/@app-assets/Ctrip/gen/hotel_homestay.png",
+          "id": "r_89255646",
+          "name": "雅致大床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
           "bed": "1张1.8米大床",
-          "area": "35㎡",
+          "area": "22㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 370,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_69587434",
+          "name": "舒适双床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "2张1.2米单人床",
+          "area": "22㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 410,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_43292733",
+          "name": "家庭亲子房-亲子",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床+1张1.2米床",
+          "area": "28㎡",
+          "occupancy": "3人入住",
+          "breakfast": "2份早餐",
+          "price": 520,
+          "cancelPolicy": "入住当天12:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_51270682",
+          "name": "无早特惠大床",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
+          "area": "22㎡",
           "occupancy": "2人入住",
           "breakfast": "无早餐",
-          "price": 370,
-          "cancelPolicy": "支付成功前可免费取消",
-          "remaining": 1
+          "price": 330,
+          "cancelPolicy": "不可取消",
+          "remaining": 3
+        },
+        {
+          "id": "h_homestay_extra0",
+          "name": "豪华套房-含双早",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张2.0米大床",
+          "area": "45㎡",
+          "occupancy": "2人入住",
+          "breakfast": "2份早餐",
+          "price": 450,
+          "cancelPolicy": "入住当天12:00前可免费取消",
+          "remaining": 2
+        }
+      ]
+    },
+    {
+      "id": "h_chongqing",
+      "name": "重庆解放碑云栖酒店",
+      "image": "/@app-assets/Ctrip/gen/hotel_atour.png",
+      "gallery": [
+        "/@app-assets/Ctrip/gen/hotel_atour.png",
+        "/@app-assets/Ctrip/gen/hotel_atour_lobby.png",
+        "/@app-assets/Ctrip/gen/hotel_atour_room.png"
+      ],
+      "star": 4,
+      "score": 4.7,
+      "reviewCount": 2103,
+      "city": "重庆",
+      "district": "渝中区·解放碑",
+      "tags": [
+        "江景",
+        "含早",
+        "免费停车场",
+        "近洪崖洞"
+      ],
+      "price": 389,
+      "oldPrice": 420,
+      "rankLabel": "解放碑高档酒店榜 No.6",
+      "openYear": "2021年开业",
+      "lat": 29.56,
+      "lng": 106.57,
+      "facilities": [
+        "私人停车场",
+        "叫车服务",
+        "大堂吧",
+        "行李寄存"
+      ],
+      "rooms": [
+        {
+          "id": "r_cq_1",
+          "name": "城景大床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
+          "area": "26㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 389,
+          "cancelPolicy": "入住当天12:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_cq_2",
+          "name": "江景双床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_quanji_room.png",
+          "bed": "2张1.2米床",
+          "area": "28㎡",
+          "occupancy": "2人入住",
+          "breakfast": "无早餐",
+          "price": 409,
+          "cancelPolicy": "入住当天12:00前可免费取消",
+          "remaining": 2
+        },
+        {
+          "id": "h_chongqing_extra0",
+          "name": "豪华套房-含双早",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张2.0米大床",
+          "area": "45㎡",
+          "occupancy": "2人入住",
+          "breakfast": "2份早餐",
+          "price": 469,
+          "cancelPolicy": "入住当天12:00前可免费取消",
+          "remaining": 2
+        },
+        {
+          "id": "h_chongqing_extra1",
+          "name": "行政双床房-含单早",
+          "image": "/@app-assets/Ctrip/gen/hotel_quanji_room.png",
+          "bed": "2张1.2米单人床",
+          "area": "32㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 509,
+          "cancelPolicy": "不可取消",
+          "remaining": 5
+        },
+        {
+          "id": "h_chongqing_extra2",
+          "name": "无窗特惠大床",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.5米大床",
+          "area": "18㎡",
+          "occupancy": "2人入住",
+          "breakfast": "无早餐",
+          "price": 549,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 8
+        }
+      ]
+    },
+    {
+      "id": "h_sanya",
+      "name": "三亚湾海景度假酒店",
+      "image": "/@app-assets/Ctrip/gen/hotel_seaview.png",
+      "gallery": [
+        "/@app-assets/Ctrip/gen/hotel_seaview.png",
+        "/@app-assets/Ctrip/gen/city_sanya.png",
+        "/@app-assets/Ctrip/gen/hotel_homestay.png"
+      ],
+      "star": 4,
+      "score": 4.6,
+      "reviewCount": 882,
+      "city": "三亚",
+      "district": "三亚湾",
+      "tags": [
+        "海景",
+        "亲子",
+        "含早"
+      ],
+      "price": 520,
+      "oldPrice": 680,
+      "rankLabel": "三亚湾度假酒店榜 No.12",
+      "openYear": "2019年开业",
+      "facilities": [
+        "私人海滩",
+        "泳池",
+        "儿童乐园"
+      ],
+      "rooms": [
+        {
+          "id": "r_58836047",
+          "name": "雅致大床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
+          "area": "22㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 520,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_54190699",
+          "name": "舒适双床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "2张1.2米单人床",
+          "area": "22㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 560,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_7110455",
+          "name": "家庭亲子房-亲子",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床+1张1.2米床",
+          "area": "28㎡",
+          "occupancy": "3人入住",
+          "breakfast": "2份早餐",
+          "price": 670,
+          "cancelPolicy": "入住当天12:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_28179993",
+          "name": "无早特惠大床",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
+          "area": "22㎡",
+          "occupancy": "2人入住",
+          "breakfast": "无早餐",
+          "price": 480,
+          "cancelPolicy": "不可取消",
+          "remaining": 3
+        },
+        {
+          "id": "h_sanya_extra0",
+          "name": "豪华套房-含双早",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张2.0米大床",
+          "area": "45㎡",
+          "occupancy": "2人入住",
+          "breakfast": "2份早餐",
+          "price": 600,
+          "cancelPolicy": "入住当天12:00前可免费取消",
+          "remaining": 2
+        }
+      ]
+    },
+    {
+      "id": "h_sh_hyatt",
+      "name": "上海外滩望江大酒店",
+      "image": "/@app-assets/Ctrip/gen/hotel_atour.png",
+      "gallery": [
+        "/@app-assets/Ctrip/gen/hotel_atour.png",
+        "/@app-assets/Ctrip/gen/hotel_atour_lobby.png",
+        "/@app-assets/Ctrip/gen/hotel_atour_room.png"
+      ],
+      "star": 5,
+      "score": 4.7,
+      "reviewCount": 3201,
+      "city": "上海",
+      "district": "外滩商圈",
+      "tags": [
+        "地铁周边",
+        "含早",
+        "外滩景观"
+      ],
+      "price": 880,
+      "oldPrice": 1080,
+      "rankLabel": "外滩高档酒店热卖榜第3名",
+      "facilities": [
+        "停车场",
+        "健身房",
+        "洗衣"
+      ],
+      "rooms": [
+        {
+          "id": "r_96575985",
+          "name": "雅致大床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
+          "area": "22㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 880,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_22716780",
+          "name": "舒适双床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "2张1.2米单人床",
+          "area": "22㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 920,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_4692924",
+          "name": "家庭亲子房-亲子",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床+1张1.2米床",
+          "area": "28㎡",
+          "occupancy": "3人入住",
+          "breakfast": "2份早餐",
+          "price": 1030,
+          "cancelPolicy": "入住当天12:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_48361041",
+          "name": "无早特惠大床",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
+          "area": "22㎡",
+          "occupancy": "2人入住",
+          "breakfast": "无早餐",
+          "price": 840,
+          "cancelPolicy": "不可取消",
+          "remaining": 3
+        },
+        {
+          "id": "h_sh_hyatt_extra0",
+          "name": "豪华套房-含双早",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张2.0米大床",
+          "area": "45㎡",
+          "occupancy": "2人入住",
+          "breakfast": "2份早餐",
+          "price": 960,
+          "cancelPolicy": "入住当天12:00前可免费取消",
+          "remaining": 2
+        }
+      ]
+    },
+    {
+      "id": "h_sh_ji",
+      "name": "青禾酒店(上海虹桥枢纽店)",
+      "image": "/@app-assets/Ctrip/gen/hotel_atour.png",
+      "gallery": [
+        "/@app-assets/Ctrip/gen/hotel_atour.png"
+      ],
+      "star": 3,
+      "score": 4.5,
+      "reviewCount": 2100,
+      "city": "上海",
+      "district": "虹桥枢纽",
+      "tags": [
+        "地铁周边",
+        "新开业",
+        "含早"
+      ],
+      "price": 368,
+      "oldPrice": 0,
+      "rankLabel": "",
+      "facilities": [
+        "停车场",
+        "洗衣"
+      ],
+      "rooms": [
+        {
+          "id": "r_98116759",
+          "name": "雅致大床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
+          "area": "22㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 368,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_34391538",
+          "name": "舒适双床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "2张1.2米单人床",
+          "area": "22㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 408,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_56434327",
+          "name": "家庭亲子房-亲子",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床+1张1.2米床",
+          "area": "28㎡",
+          "occupancy": "3人入住",
+          "breakfast": "2份早餐",
+          "price": 518,
+          "cancelPolicy": "入住当天12:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_76318437",
+          "name": "无早特惠大床",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
+          "area": "22㎡",
+          "occupancy": "2人入住",
+          "breakfast": "无早餐",
+          "price": 328,
+          "cancelPolicy": "不可取消",
+          "remaining": 3
+        },
+        {
+          "id": "h_sh_ji_extra0",
+          "name": "豪华套房-含双早",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张2.0米大床",
+          "area": "45㎡",
+          "occupancy": "2人入住",
+          "breakfast": "2份早餐",
+          "price": 448,
+          "cancelPolicy": "入住当天12:00前可免费取消",
+          "remaining": 2
+        }
+      ]
+    },
+    {
+      "id": "h_cd_ifs",
+      "name": "成都IFS国际金融中心云栖精选酒店",
+      "image": "/@app-assets/Ctrip/gen/hotel_atour.png",
+      "gallery": [
+        "/@app-assets/Ctrip/gen/hotel_atour.png",
+        "/@app-assets/Ctrip/gen/hotel_atour_room.png"
+      ],
+      "star": 4,
+      "score": 4.8,
+      "reviewCount": 1560,
+      "city": "成都",
+      "district": "春熙路商圈",
+      "tags": [
+        "地铁周边",
+        "亲子",
+        "拍照出片",
+        "含早"
+      ],
+      "price": 498,
+      "oldPrice": 560,
+      "rankLabel": "春熙路人气酒店",
+      "facilities": [
+        "停车场",
+        "充电桩"
+      ],
+      "rooms": [
+        {
+          "id": "r_82586441",
+          "name": "雅致大床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
+          "area": "22㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 498,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_17348555",
+          "name": "舒适双床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "2张1.2米单人床",
+          "area": "22㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 538,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_97851062",
+          "name": "家庭亲子房-亲子",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床+1张1.2米床",
+          "area": "28㎡",
+          "occupancy": "3人入住",
+          "breakfast": "2份早餐",
+          "price": 648,
+          "cancelPolicy": "入住当天12:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_23965154",
+          "name": "无早特惠大床",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
+          "area": "22㎡",
+          "occupancy": "2人入住",
+          "breakfast": "无早餐",
+          "price": 458,
+          "cancelPolicy": "不可取消",
+          "remaining": 3
+        },
+        {
+          "id": "h_cd_ifs_extra0",
+          "name": "豪华套房-含双早",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张2.0米大床",
+          "area": "45㎡",
+          "occupancy": "2人入住",
+          "breakfast": "2份早餐",
+          "price": 578,
+          "cancelPolicy": "入住当天12:00前可免费取消",
+          "remaining": 2
+        }
+      ]
+    },
+    {
+      "id": "h_cd_jinjiang",
+      "name": "锦程客栈(成都宽窄巷子店)",
+      "image": "/@app-assets/Ctrip/gen/hotel_atour.png",
+      "gallery": [
+        "/@app-assets/Ctrip/gen/hotel_atour.png"
+      ],
+      "star": 2,
+      "score": 4.3,
+      "reviewCount": 980,
+      "city": "成都",
+      "district": "宽窄巷子",
+      "tags": [
+        "徒步",
+        "经济"
+      ],
+      "price": 198,
+      "oldPrice": 0,
+      "rankLabel": "",
+      "facilities": [
+        "洗衣"
+      ],
+      "rooms": [
+        {
+          "id": "r_31823210",
+          "name": "雅致大床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
+          "area": "22㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 198,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_46634936",
+          "name": "舒适双床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "2张1.2米单人床",
+          "area": "22㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 238,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_18544158",
+          "name": "家庭亲子房-亲子",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床+1张1.2米床",
+          "area": "28㎡",
+          "occupancy": "3人入住",
+          "breakfast": "2份早餐",
+          "price": 348,
+          "cancelPolicy": "入住当天12:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_96057984",
+          "name": "无早特惠大床",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
+          "area": "22㎡",
+          "occupancy": "2人入住",
+          "breakfast": "无早餐",
+          "price": 158,
+          "cancelPolicy": "不可取消",
+          "remaining": 3
+        },
+        {
+          "id": "h_cd_jinjiang_extra0",
+          "name": "豪华套房-含双早",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张2.0米大床",
+          "area": "45㎡",
+          "occupancy": "2人入住",
+          "breakfast": "2份早餐",
+          "price": 278,
+          "cancelPolicy": "入住当天12:00前可免费取消",
+          "remaining": 2
+        }
+      ]
+    },
+    {
+      "id": "h_cq_jiefangbei",
+      "name": "重庆解放碑威斯汀酒店",
+      "image": "/@app-assets/Ctrip/gen/hotel_atour.png",
+      "gallery": [
+        "/@app-assets/Ctrip/gen/hotel_atour.png",
+        "/@app-assets/Ctrip/gen/hotel_atour_lobby.png"
+      ],
+      "star": 5,
+      "score": 4.9,
+      "reviewCount": 2400,
+      "city": "重庆",
+      "district": "解放碑商圈",
+      "tags": [
+        "拍照出片",
+        "豪华",
+        "含早"
+      ],
+      "price": 960,
+      "oldPrice": 1200,
+      "rankLabel": "解放碑豪华酒店榜",
+      "facilities": [
+        "停车场",
+        "健身房",
+        "泳池"
+      ],
+      "rooms": [
+        {
+          "id": "r_19949847",
+          "name": "雅致大床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
+          "area": "22㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 960,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_8517458",
+          "name": "舒适双床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "2张1.2米单人床",
+          "area": "22㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 1000,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_35385585",
+          "name": "家庭亲子房-亲子",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床+1张1.2米床",
+          "area": "28㎡",
+          "occupancy": "3人入住",
+          "breakfast": "2份早餐",
+          "price": 1110,
+          "cancelPolicy": "入住当天12:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_53461355",
+          "name": "无早特惠大床",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
+          "area": "22㎡",
+          "occupancy": "2人入住",
+          "breakfast": "无早餐",
+          "price": 920,
+          "cancelPolicy": "不可取消",
+          "remaining": 3
+        },
+        {
+          "id": "h_cq_jiefangbei_extra0",
+          "name": "豪华套房-含双早",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张2.0米大床",
+          "area": "45㎡",
+          "occupancy": "2人入住",
+          "breakfast": "2份早餐",
+          "price": 1040,
+          "cancelPolicy": "入住当天12:00前可免费取消",
+          "remaining": 2
+        }
+      ]
+    },
+    {
+      "id": "h_cq_homeinn",
+      "name": "如家酒店(重庆洪崖洞店)",
+      "image": "/@app-assets/Ctrip/gen/hotel_atour.png",
+      "gallery": [
+        "/@app-assets/Ctrip/gen/hotel_atour.png"
+      ],
+      "star": 2,
+      "score": 4.2,
+      "reviewCount": 1100,
+      "city": "重庆",
+      "district": "洪崖洞",
+      "tags": [
+        "地铁周边",
+        "经济"
+      ],
+      "price": 228,
+      "oldPrice": 0,
+      "rankLabel": "",
+      "facilities": [
+        "停车场"
+      ],
+      "rooms": [
+        {
+          "id": "r_24343194",
+          "name": "雅致大床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
+          "area": "22㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 228,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_59092661",
+          "name": "舒适双床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "2张1.2米单人床",
+          "area": "22㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 268,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_52215589",
+          "name": "家庭亲子房-亲子",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床+1张1.2米床",
+          "area": "28㎡",
+          "occupancy": "3人入住",
+          "breakfast": "2份早餐",
+          "price": 378,
+          "cancelPolicy": "入住当天12:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_85787185",
+          "name": "无早特惠大床",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
+          "area": "22㎡",
+          "occupancy": "2人入住",
+          "breakfast": "无早餐",
+          "price": 188,
+          "cancelPolicy": "不可取消",
+          "remaining": 3
+        },
+        {
+          "id": "h_cq_homeinn_extra0",
+          "name": "豪华套房-含双早",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张2.0米大床",
+          "area": "45㎡",
+          "occupancy": "2人入住",
+          "breakfast": "2份早餐",
+          "price": 308,
+          "cancelPolicy": "入住当天12:00前可免费取消",
+          "remaining": 2
+        }
+      ]
+    },
+    {
+      "id": "h_sy_haitang",
+      "name": "三亚海棠湾开维假日酒店",
+      "image": "/@app-assets/Ctrip/gen/hotel_atour.png",
+      "gallery": [
+        "/@app-assets/Ctrip/gen/hotel_atour.png",
+        "/@app-assets/Ctrip/gen/hotel_atour_room.png"
+      ],
+      "star": 4,
+      "score": 4.6,
+      "reviewCount": 1800,
+      "city": "三亚",
+      "district": "海棠湾",
+      "tags": [
+        "海景",
+        "亲子",
+        "含早"
+      ],
+      "price": 720,
+      "oldPrice": 860,
+      "rankLabel": "海棠湾度假酒店",
+      "facilities": [
+        "泳池",
+        "停车场"
+      ],
+      "rooms": [
+        {
+          "id": "r_31313441",
+          "name": "雅致大床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
+          "area": "22㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 720,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_57765970",
+          "name": "舒适双床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "2张1.2米单人床",
+          "area": "22㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 760,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_42628454",
+          "name": "家庭亲子房-亲子",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床+1张1.2米床",
+          "area": "28㎡",
+          "occupancy": "3人入住",
+          "breakfast": "2份早餐",
+          "price": 870,
+          "cancelPolicy": "入住当天12:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_96033022",
+          "name": "无早特惠大床",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
+          "area": "22㎡",
+          "occupancy": "2人入住",
+          "breakfast": "无早餐",
+          "price": 680,
+          "cancelPolicy": "不可取消",
+          "remaining": 3
+        },
+        {
+          "id": "h_sy_haitang_extra0",
+          "name": "豪华套房-含双早",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张2.0米大床",
+          "area": "45㎡",
+          "occupancy": "2人入住",
+          "breakfast": "2份早餐",
+          "price": 800,
+          "cancelPolicy": "入住当天12:00前可免费取消",
+          "remaining": 2
+        }
+      ]
+    },
+    {
+      "id": "h_sy_budget",
+      "name": "三亚天涯海角快捷酒店",
+      "image": "/@app-assets/Ctrip/gen/hotel_atour.png",
+      "gallery": [
+        "/@app-assets/Ctrip/gen/hotel_atour.png"
+      ],
+      "star": 2,
+      "score": 4.1,
+      "reviewCount": 640,
+      "city": "三亚",
+      "district": "天涯区",
+      "tags": [
+        "徒步",
+        "经济"
+      ],
+      "price": 268,
+      "oldPrice": 0,
+      "rankLabel": "",
+      "facilities": [
+        "停车场"
+      ],
+      "rooms": [
+        {
+          "id": "r_81049145",
+          "name": "雅致大床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
+          "area": "22㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 268,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_22949768",
+          "name": "舒适双床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "2张1.2米单人床",
+          "area": "22㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 308,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_51937033",
+          "name": "家庭亲子房-亲子",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床+1张1.2米床",
+          "area": "28㎡",
+          "occupancy": "3人入住",
+          "breakfast": "2份早餐",
+          "price": 418,
+          "cancelPolicy": "入住当天12:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_84050912",
+          "name": "无早特惠大床",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
+          "area": "22㎡",
+          "occupancy": "2人入住",
+          "breakfast": "无早餐",
+          "price": 228,
+          "cancelPolicy": "不可取消",
+          "remaining": 3
+        },
+        {
+          "id": "h_sy_budget_extra0",
+          "name": "豪华套房-含双早",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张2.0米大床",
+          "area": "45㎡",
+          "occupancy": "2人入住",
+          "breakfast": "2份早餐",
+          "price": 348,
+          "cancelPolicy": "入住当天12:00前可免费取消",
+          "remaining": 2
+        }
+      ]
+    },
+    {
+      "id": "h_bj_wangfujing",
+      "name": "北京王府井希尔顿酒店",
+      "image": "/@app-assets/Ctrip/gen/hotel_atour.png",
+      "gallery": [
+        "/@app-assets/Ctrip/gen/hotel_atour.png",
+        "/@app-assets/Ctrip/gen/hotel_atour_lobby.png"
+      ],
+      "star": 5,
+      "score": 4.8,
+      "reviewCount": 4100,
+      "city": "北京",
+      "district": "王府井",
+      "tags": [
+        "地铁周边",
+        "豪华",
+        "含早"
+      ],
+      "price": 1100,
+      "oldPrice": 1380,
+      "rankLabel": "王府井高档酒店",
+      "facilities": [
+        "停车场",
+        "健身房",
+        "洗衣"
+      ],
+      "rooms": [
+        {
+          "id": "r_52571146",
+          "name": "雅致大床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
+          "area": "22㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 1100,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_93435539",
+          "name": "舒适双床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "2张1.2米单人床",
+          "area": "22㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 1140,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_93499000",
+          "name": "家庭亲子房-亲子",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床+1张1.2米床",
+          "area": "28㎡",
+          "occupancy": "3人入住",
+          "breakfast": "2份早餐",
+          "price": 1250,
+          "cancelPolicy": "入住当天12:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_12904238",
+          "name": "无早特惠大床",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
+          "area": "22㎡",
+          "occupancy": "2人入住",
+          "breakfast": "无早餐",
+          "price": 1060,
+          "cancelPolicy": "不可取消",
+          "remaining": 3
+        },
+        {
+          "id": "h_bj_wangfujing_extra0",
+          "name": "豪华套房-含双早",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张2.0米大床",
+          "area": "45㎡",
+          "occupancy": "2人入住",
+          "breakfast": "2份早餐",
+          "price": 1180,
+          "cancelPolicy": "入住当天12:00前可免费取消",
+          "remaining": 2
+        }
+      ]
+    },
+    {
+      "id": "h_bj_homeinn",
+      "name": "如家酒店(北京南锣鼓巷店)",
+      "image": "/@app-assets/Ctrip/gen/hotel_atour.png",
+      "gallery": [
+        "/@app-assets/Ctrip/gen/hotel_atour.png"
+      ],
+      "star": 2,
+      "score": 4.3,
+      "reviewCount": 1500,
+      "city": "北京",
+      "district": "南锣鼓巷",
+      "tags": [
+        "地铁周边",
+        "徒步",
+        "经济"
+      ],
+      "price": 289,
+      "oldPrice": 0,
+      "rankLabel": "",
+      "facilities": [
+        "洗衣"
+      ],
+      "rooms": [
+        {
+          "id": "r_30247369",
+          "name": "雅致大床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
+          "area": "22㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 289,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_88193429",
+          "name": "舒适双床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "2张1.2米单人床",
+          "area": "22㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 329,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_85939290",
+          "name": "家庭亲子房-亲子",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床+1张1.2米床",
+          "area": "28㎡",
+          "occupancy": "3人入住",
+          "breakfast": "2份早餐",
+          "price": 439,
+          "cancelPolicy": "入住当天12:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_85409895",
+          "name": "无早特惠大床",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
+          "area": "22㎡",
+          "occupancy": "2人入住",
+          "breakfast": "无早餐",
+          "price": 249,
+          "cancelPolicy": "不可取消",
+          "remaining": 3
+        },
+        {
+          "id": "h_bj_homeinn_extra0",
+          "name": "豪华套房-含双早",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张2.0米大床",
+          "area": "45㎡",
+          "occupancy": "2人入住",
+          "breakfast": "2份早餐",
+          "price": 369,
+          "cancelPolicy": "入住当天12:00前可免费取消",
+          "remaining": 2
+        }
+      ]
+    },
+    {
+      "id": "h_cc_atour_jlu",
+      "name": "云栖酒店(长春吉林大学前卫南区店)",
+      "image": "/@app-assets/Ctrip/gen/hotel_atour.png",
+      "gallery": [
+        "/@app-assets/Ctrip/gen/hotel_atour.png",
+        "/@app-assets/Ctrip/gen/hotel_atour_lobby.png"
+      ],
+      "star": 4,
+      "score": 4.7,
+      "reviewCount": 2680,
+      "city": "长春",
+      "district": "前卫南区",
+      "tags": [
+        "近吉林大学",
+        "地铁周边",
+        "含早"
+      ],
+      "price": 328,
+      "oldPrice": 398,
+      "rankLabel": "南关区高档酒店",
+      "facilities": [
+        "停车场",
+        "洗衣",
+        "健身房"
+      ],
+      "rooms": [
+        {
+          "id": "r_cc_328_1",
+          "name": "雅致大床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
+          "area": "22㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 328,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_cc_328_2",
+          "name": "舒适双床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "2张1.2米单人床",
+          "area": "24㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 368,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 2
+        },
+        {
+          "id": "r_cc_328_3",
+          "name": "家庭亲子房-亲子",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床+1张1.2米床",
+          "area": "30㎡",
+          "occupancy": "3人入住",
+          "breakfast": "2份早餐",
+          "price": 448,
+          "cancelPolicy": "入住当天12:00前可免费取消",
+          "remaining": 2
+        },
+        {
+          "id": "r_cc_328_4",
+          "name": "无早特惠大床",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
+          "area": "20㎡",
+          "occupancy": "2人入住",
+          "breakfast": "无早餐",
+          "price": 278,
+          "cancelPolicy": "不可取消",
+          "remaining": 4
+        },
+        {
+          "id": "h_cc_atour_jlu_extra0",
+          "name": "豪华套房-含双早",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张2.0米大床",
+          "area": "45㎡",
+          "occupancy": "2人入住",
+          "breakfast": "2份早餐",
+          "price": 408,
+          "cancelPolicy": "入住当天12:00前可免费取消",
+          "remaining": 2
+        }
+      ]
+    },
+    {
+      "id": "h_cc_quanji",
+      "name": "青禾酒店(长春净月潭店)",
+      "image": "/@app-assets/Ctrip/gen/hotel_atour.png",
+      "gallery": [
+        "/@app-assets/Ctrip/gen/hotel_atour.png"
+      ],
+      "star": 3,
+      "score": 4.5,
+      "reviewCount": 1520,
+      "city": "长春",
+      "district": "净月",
+      "tags": [
+        "亲子",
+        "含早",
+        "地铁周边"
+      ],
+      "price": 268,
+      "oldPrice": 320,
+      "rankLabel": "净月口碑酒店",
+      "facilities": [
+        "停车场",
+        "充电桩"
+      ],
+      "rooms": [
+        {
+          "id": "r_cc_268_1",
+          "name": "雅致大床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
+          "area": "22㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 268,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_cc_268_2",
+          "name": "舒适双床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "2张1.2米单人床",
+          "area": "24㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 308,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 2
+        },
+        {
+          "id": "r_cc_268_3",
+          "name": "家庭亲子房-亲子",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床+1张1.2米床",
+          "area": "30㎡",
+          "occupancy": "3人入住",
+          "breakfast": "2份早餐",
+          "price": 388,
+          "cancelPolicy": "入住当天12:00前可免费取消",
+          "remaining": 2
+        },
+        {
+          "id": "r_cc_268_4",
+          "name": "无早特惠大床",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
+          "area": "20㎡",
+          "occupancy": "2人入住",
+          "breakfast": "无早餐",
+          "price": 218,
+          "cancelPolicy": "不可取消",
+          "remaining": 4
+        },
+        {
+          "id": "h_cc_quanji_extra0",
+          "name": "豪华套房-含双早",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张2.0米大床",
+          "area": "45㎡",
+          "occupancy": "2人入住",
+          "breakfast": "2份早餐",
+          "price": 348,
+          "cancelPolicy": "入住当天12:00前可免费取消",
+          "remaining": 2
+        }
+      ]
+    },
+    {
+      "id": "h_cc_shangri",
+      "name": "长春香麓大酒店",
+      "image": "/@app-assets/Ctrip/gen/hotel_atour.png",
+      "gallery": [
+        "/@app-assets/Ctrip/gen/hotel_atour.png",
+        "/@app-assets/Ctrip/gen/hotel_atour_lobby.png"
+      ],
+      "star": 5,
+      "score": 4.8,
+      "reviewCount": 4100,
+      "city": "长春",
+      "district": "西安大路",
+      "tags": [
+        "豪华",
+        "含早",
+        "拍照出片"
+      ],
+      "price": 780,
+      "oldPrice": 980,
+      "rankLabel": "长春豪华酒店榜",
+      "facilities": [
+        "停车场",
+        "健身房",
+        "洗衣"
+      ],
+      "rooms": [
+        {
+          "id": "r_cc_780_1",
+          "name": "雅致大床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
+          "area": "22㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 780,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 3
+        },
+        {
+          "id": "r_cc_780_2",
+          "name": "舒适双床房",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "2张1.2米单人床",
+          "area": "24㎡",
+          "occupancy": "2人入住",
+          "breakfast": "1份早餐",
+          "price": 820,
+          "cancelPolicy": "入住当天18:00前可免费取消",
+          "remaining": 2
+        },
+        {
+          "id": "r_cc_780_3",
+          "name": "家庭亲子房-亲子",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床+1张1.2米床",
+          "area": "30㎡",
+          "occupancy": "3人入住",
+          "breakfast": "2份早餐",
+          "price": 900,
+          "cancelPolicy": "入住当天12:00前可免费取消",
+          "remaining": 2
+        },
+        {
+          "id": "r_cc_780_4",
+          "name": "无早特惠大床",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张1.8米大床",
+          "area": "20㎡",
+          "occupancy": "2人入住",
+          "breakfast": "无早餐",
+          "price": 730,
+          "cancelPolicy": "不可取消",
+          "remaining": 4
+        },
+        {
+          "id": "h_cc_shangri_extra0",
+          "name": "豪华套房-含双早",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
+          "bed": "1张2.0米大床",
+          "area": "45㎡",
+          "occupancy": "2人入住",
+          "breakfast": "2份早餐",
+          "price": 860,
+          "cancelPolicy": "入住当天12:00前可免费取消",
+          "remaining": 2
         }
       ]
     }
@@ -337,6 +2543,751 @@
         "date": "2026年05月入住",
         "roomType": "雅致大床房",
         "content": "地理位置优越,闹中取静,去西湖步行可达。前台热情,环境优雅。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png"
+        ]
+      }
+    ],
+    "h_seaview": [
+      {
+        "id": "h_seaview_r0",
+        "user": "林晓雯",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_1.png",
+        "level": "黄金贵宾",
+        "score": 4.7,
+        "date": "2026年06月入住",
+        "roomType": "几木大床房-亚朵星球深睡枕Pro",
+        "content": "位置在近连云港市连岛景区附近，交通方便，房间干净，下次还会住。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png",
+          "/@app-assets/Ctrip/gen/review_breakfast.png"
+        ]
+      },
+      {
+        "id": "h_seaview_r1",
+        "user": "周子安",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_2.png",
+        "level": "铂金贵宾",
+        "score": 4.8,
+        "date": "2026年05月入住",
+        "roomType": "雅致大床房",
+        "content": "地理位置优越,闹中取静,去西湖步行可达。前台热情,环境优雅。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png"
+        ]
+      }
+    ],
+    "h_quanji": [
+      {
+        "id": "h_quanji_r0",
+        "user": "林晓雯",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_1.png",
+        "level": "黄金贵宾",
+        "score": 4.5,
+        "date": "2026年06月入住",
+        "roomType": "几木大床房-亚朵星球深睡枕Pro",
+        "content": "位置在西湖湖滨商圈附近，交通方便，房间干净，下次还会住。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png",
+          "/@app-assets/Ctrip/gen/review_breakfast.png"
+        ]
+      },
+      {
+        "id": "h_quanji_r1",
+        "user": "周子安",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_2.png",
+        "level": "铂金贵宾",
+        "score": 4.6,
+        "date": "2026年05月入住",
+        "roomType": "雅致大床房",
+        "content": "地理位置优越,闹中取静,去西湖步行可达。前台热情,环境优雅。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png"
+        ]
+      }
+    ],
+    "h_qinghe_icc": [
+      {
+        "id": "h_qinghe_icc_r0",
+        "user": "陈可",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_1.png",
+        "level": "铂金贵宾",
+        "score": 4.7,
+        "date": "2026年06月入住",
+        "roomType": "雅致大床房",
+        "content": "就在西湖国际会议中心旁边，开会走路就到，房间干净有早餐。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png"
+        ]
+      }
+    ],
+    "h_yunqi_icc": [
+      {
+        "id": "h_yunqi_icc_r0",
+        "user": "赵宁",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_1.png",
+        "level": "铂金贵宾",
+        "score": 4.8,
+        "date": "2026年05月入住",
+        "roomType": "豪华大床房",
+        "content": "就在西湖国际会议中心门口，房间很大，房价也贵一截。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png"
+        ]
+      }
+    ],
+    "h_hanting": [
+      {
+        "id": "h_hanting_r0",
+        "user": "林晓雯",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_1.png",
+        "level": "黄金贵宾",
+        "score": 4.4,
+        "date": "2026年06月入住",
+        "roomType": "几木大床房-亚朵星球深睡枕Pro",
+        "content": "位置在锦江区·近九眼桥附近，交通方便，房间干净，下次还会住。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png",
+          "/@app-assets/Ctrip/gen/review_breakfast.png"
+        ]
+      },
+      {
+        "id": "h_hanting_r1",
+        "user": "周子安",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_2.png",
+        "level": "铂金贵宾",
+        "score": 4.5,
+        "date": "2026年05月入住",
+        "roomType": "雅致大床房",
+        "content": "地理位置优越,闹中取静,去西湖步行可达。前台热情,环境优雅。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png"
+        ]
+      }
+    ],
+    "h_dahua": [
+      {
+        "id": "h_dahua_r0",
+        "user": "林晓雯",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_1.png",
+        "level": "黄金贵宾",
+        "score": 4.4,
+        "date": "2026年06月入住",
+        "roomType": "几木大床房-亚朵星球深睡枕Pro",
+        "content": "位置在西湖湖滨商圈附近，交通方便，房间干净，下次还会住。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png",
+          "/@app-assets/Ctrip/gen/review_breakfast.png"
+        ]
+      },
+      {
+        "id": "h_dahua_r1",
+        "user": "周子安",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_2.png",
+        "level": "铂金贵宾",
+        "score": 4.5,
+        "date": "2026年05月入住",
+        "roomType": "雅致大床房",
+        "content": "地理位置优越,闹中取静,去西湖步行可达。前台热情,环境优雅。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png"
+        ]
+      }
+    ],
+    "h_homestay": [
+      {
+        "id": "h_homestay_r0",
+        "user": "林晓雯",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_1.png",
+        "level": "黄金贵宾",
+        "score": 4.3,
+        "date": "2026年06月入住",
+        "roomType": "几木大床房-亚朵星球深睡枕Pro",
+        "content": "位置在闵行区古美一村附近，交通方便，房间干净，下次还会住。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png",
+          "/@app-assets/Ctrip/gen/review_breakfast.png"
+        ]
+      },
+      {
+        "id": "h_homestay_r1",
+        "user": "周子安",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_2.png",
+        "level": "铂金贵宾",
+        "score": 4.4,
+        "date": "2026年05月入住",
+        "roomType": "雅致大床房",
+        "content": "地理位置优越,闹中取静,去西湖步行可达。前台热情,环境优雅。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png"
+        ]
+      }
+    ],
+    "h_chongqing": [
+      {
+        "id": "h_chongqing_r0",
+        "user": "林晓雯",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_1.png",
+        "level": "黄金贵宾",
+        "score": 4.4,
+        "date": "2026年06月入住",
+        "roomType": "几木大床房-亚朵星球深睡枕Pro",
+        "content": "位置在渝中区·解放碑附近，交通方便，房间干净，下次还会住。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png",
+          "/@app-assets/Ctrip/gen/review_breakfast.png"
+        ]
+      },
+      {
+        "id": "h_chongqing_r1",
+        "user": "周子安",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_2.png",
+        "level": "铂金贵宾",
+        "score": 4.5,
+        "date": "2026年05月入住",
+        "roomType": "雅致大床房",
+        "content": "地理位置优越,闹中取静,去西湖步行可达。前台热情,环境优雅。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png"
+        ]
+      }
+    ],
+    "h_sanya": [
+      {
+        "id": "h_sanya_r0",
+        "user": "林晓雯",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_1.png",
+        "level": "黄金贵宾",
+        "score": 4.3,
+        "date": "2026年06月入住",
+        "roomType": "几木大床房-亚朵星球深睡枕Pro",
+        "content": "位置在三亚湾附近，交通方便，房间干净，下次还会住。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png",
+          "/@app-assets/Ctrip/gen/review_breakfast.png"
+        ]
+      },
+      {
+        "id": "h_sanya_r1",
+        "user": "周子安",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_2.png",
+        "level": "铂金贵宾",
+        "score": 4.4,
+        "date": "2026年05月入住",
+        "roomType": "雅致大床房",
+        "content": "地理位置优越,闹中取静,去西湖步行可达。前台热情,环境优雅。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png"
+        ]
+      }
+    ],
+    "h_sh_hyatt": [
+      {
+        "id": "h_sh_hyatt_r0",
+        "user": "林晓雯",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_1.png",
+        "level": "黄金贵宾",
+        "score": 4.4,
+        "date": "2026年06月入住",
+        "roomType": "几木大床房-亚朵星球深睡枕Pro",
+        "content": "位置在外滩商圈附近，交通方便，房间干净，下次还会住。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png",
+          "/@app-assets/Ctrip/gen/review_breakfast.png"
+        ]
+      },
+      {
+        "id": "h_sh_hyatt_r1",
+        "user": "周子安",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_2.png",
+        "level": "铂金贵宾",
+        "score": 4.5,
+        "date": "2026年05月入住",
+        "roomType": "雅致大床房",
+        "content": "地理位置优越,闹中取静,去西湖步行可达。前台热情,环境优雅。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png"
+        ]
+      }
+    ],
+    "h_sh_ji": [
+      {
+        "id": "h_sh_ji_r0",
+        "user": "林晓雯",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_1.png",
+        "level": "黄金贵宾",
+        "score": 4.2,
+        "date": "2026年06月入住",
+        "roomType": "几木大床房-亚朵星球深睡枕Pro",
+        "content": "位置在虹桥枢纽附近，交通方便，房间干净，下次还会住。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png",
+          "/@app-assets/Ctrip/gen/review_breakfast.png"
+        ]
+      },
+      {
+        "id": "h_sh_ji_r1",
+        "user": "周子安",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_2.png",
+        "level": "铂金贵宾",
+        "score": 4.3,
+        "date": "2026年05月入住",
+        "roomType": "雅致大床房",
+        "content": "地理位置优越,闹中取静,去西湖步行可达。前台热情,环境优雅。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png"
+        ]
+      }
+    ],
+    "h_cd_ifs": [
+      {
+        "id": "h_cd_ifs_r0",
+        "user": "林晓雯",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_1.png",
+        "level": "黄金贵宾",
+        "score": 4.5,
+        "date": "2026年06月入住",
+        "roomType": "几木大床房-亚朵星球深睡枕Pro",
+        "content": "位置在春熙路商圈附近，交通方便，房间干净，下次还会住。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png",
+          "/@app-assets/Ctrip/gen/review_breakfast.png"
+        ]
+      },
+      {
+        "id": "h_cd_ifs_r1",
+        "user": "周子安",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_2.png",
+        "level": "铂金贵宾",
+        "score": 4.6,
+        "date": "2026年05月入住",
+        "roomType": "雅致大床房",
+        "content": "地理位置优越,闹中取静,去西湖步行可达。前台热情,环境优雅。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png"
+        ]
+      }
+    ],
+    "h_cd_jinjiang": [
+      {
+        "id": "h_cd_jinjiang_r0",
+        "user": "林晓雯",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_1.png",
+        "level": "黄金贵宾",
+        "score": 4.0,
+        "date": "2026年06月入住",
+        "roomType": "几木大床房-亚朵星球深睡枕Pro",
+        "content": "位置在宽窄巷子附近，交通方便，房间干净，下次还会住。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png",
+          "/@app-assets/Ctrip/gen/review_breakfast.png"
+        ]
+      },
+      {
+        "id": "h_cd_jinjiang_r1",
+        "user": "周子安",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_2.png",
+        "level": "铂金贵宾",
+        "score": 4.1,
+        "date": "2026年05月入住",
+        "roomType": "雅致大床房",
+        "content": "地理位置优越,闹中取静,去西湖步行可达。前台热情,环境优雅。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png"
+        ]
+      }
+    ],
+    "h_cq_jiefangbei": [
+      {
+        "id": "h_cq_jiefangbei_r0",
+        "user": "林晓雯",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_1.png",
+        "level": "黄金贵宾",
+        "score": 4.6,
+        "date": "2026年06月入住",
+        "roomType": "几木大床房-亚朵星球深睡枕Pro",
+        "content": "位置在解放碑商圈附近，交通方便，房间干净，下次还会住。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png",
+          "/@app-assets/Ctrip/gen/review_breakfast.png"
+        ]
+      },
+      {
+        "id": "h_cq_jiefangbei_r1",
+        "user": "周子安",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_2.png",
+        "level": "铂金贵宾",
+        "score": 4.7,
+        "date": "2026年05月入住",
+        "roomType": "雅致大床房",
+        "content": "地理位置优越,闹中取静,去西湖步行可达。前台热情,环境优雅。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png"
+        ]
+      }
+    ],
+    "h_cq_homeinn": [
+      {
+        "id": "h_cq_homeinn_r0",
+        "user": "林晓雯",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_1.png",
+        "level": "黄金贵宾",
+        "score": 3.9,
+        "date": "2026年06月入住",
+        "roomType": "几木大床房-亚朵星球深睡枕Pro",
+        "content": "位置在洪崖洞附近，交通方便，房间干净，下次还会住。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png",
+          "/@app-assets/Ctrip/gen/review_breakfast.png"
+        ]
+      },
+      {
+        "id": "h_cq_homeinn_r1",
+        "user": "周子安",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_2.png",
+        "level": "铂金贵宾",
+        "score": 4.0,
+        "date": "2026年05月入住",
+        "roomType": "雅致大床房",
+        "content": "地理位置优越,闹中取静,去西湖步行可达。前台热情,环境优雅。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png"
+        ]
+      }
+    ],
+    "h_sy_haitang": [
+      {
+        "id": "h_sy_haitang_r0",
+        "user": "林晓雯",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_1.png",
+        "level": "黄金贵宾",
+        "score": 4.3,
+        "date": "2026年06月入住",
+        "roomType": "几木大床房-亚朵星球深睡枕Pro",
+        "content": "位置在海棠湾附近，交通方便，房间干净，下次还会住。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png",
+          "/@app-assets/Ctrip/gen/review_breakfast.png"
+        ]
+      },
+      {
+        "id": "h_sy_haitang_r1",
+        "user": "周子安",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_2.png",
+        "level": "铂金贵宾",
+        "score": 4.4,
+        "date": "2026年05月入住",
+        "roomType": "雅致大床房",
+        "content": "地理位置优越,闹中取静,去西湖步行可达。前台热情,环境优雅。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png"
+        ]
+      }
+    ],
+    "h_sy_budget": [
+      {
+        "id": "h_sy_budget_r0",
+        "user": "林晓雯",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_1.png",
+        "level": "黄金贵宾",
+        "score": 3.8,
+        "date": "2026年06月入住",
+        "roomType": "几木大床房-亚朵星球深睡枕Pro",
+        "content": "位置在天涯区附近，交通方便，房间干净，下次还会住。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png",
+          "/@app-assets/Ctrip/gen/review_breakfast.png"
+        ]
+      },
+      {
+        "id": "h_sy_budget_r1",
+        "user": "周子安",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_2.png",
+        "level": "铂金贵宾",
+        "score": 3.9,
+        "date": "2026年05月入住",
+        "roomType": "雅致大床房",
+        "content": "地理位置优越,闹中取静,去西湖步行可达。前台热情,环境优雅。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png"
+        ]
+      }
+    ],
+    "h_bj_wangfujing": [
+      {
+        "id": "h_bj_wangfujing_r0",
+        "user": "林晓雯",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_1.png",
+        "level": "黄金贵宾",
+        "score": 4.5,
+        "date": "2026年06月入住",
+        "roomType": "几木大床房-亚朵星球深睡枕Pro",
+        "content": "位置在王府井附近，交通方便，房间干净，下次还会住。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png",
+          "/@app-assets/Ctrip/gen/review_breakfast.png"
+        ]
+      },
+      {
+        "id": "h_bj_wangfujing_r1",
+        "user": "周子安",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_2.png",
+        "level": "铂金贵宾",
+        "score": 4.6,
+        "date": "2026年05月入住",
+        "roomType": "雅致大床房",
+        "content": "地理位置优越,闹中取静,去西湖步行可达。前台热情,环境优雅。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png"
+        ]
+      }
+    ],
+    "h_bj_homeinn": [
+      {
+        "id": "h_bj_homeinn_r0",
+        "user": "林晓雯",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_1.png",
+        "level": "黄金贵宾",
+        "score": 4.0,
+        "date": "2026年06月入住",
+        "roomType": "几木大床房-亚朵星球深睡枕Pro",
+        "content": "位置在南锣鼓巷附近，交通方便，房间干净，下次还会住。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png",
+          "/@app-assets/Ctrip/gen/review_breakfast.png"
+        ]
+      },
+      {
+        "id": "h_bj_homeinn_r1",
+        "user": "周子安",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_2.png",
+        "level": "铂金贵宾",
+        "score": 4.1,
+        "date": "2026年05月入住",
+        "roomType": "雅致大床房",
+        "content": "地理位置优越,闹中取静,去西湖步行可达。前台热情,环境优雅。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png"
+        ]
+      }
+    ],
+    "h_cc_atour_jlu": [
+      {
+        "id": "h_cc_atour_jlu_r0",
+        "user": "林晓雯",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_1.png",
+        "level": "黄金贵宾",
+        "score": 4.4,
+        "date": "2026年06月入住",
+        "roomType": "几木大床房-亚朵星球深睡枕Pro",
+        "content": "位置在前卫南区附近，交通方便，房间干净，下次还会住。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png",
+          "/@app-assets/Ctrip/gen/review_breakfast.png"
+        ]
+      },
+      {
+        "id": "h_cc_atour_jlu_r1",
+        "user": "周子安",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_2.png",
+        "level": "铂金贵宾",
+        "score": 4.5,
+        "date": "2026年05月入住",
+        "roomType": "雅致大床房",
+        "content": "地理位置优越,闹中取静,去西湖步行可达。前台热情,环境优雅。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png"
+        ]
+      }
+    ],
+    "h_cc_quanji": [
+      {
+        "id": "h_cc_quanji_r0",
+        "user": "林晓雯",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_1.png",
+        "level": "黄金贵宾",
+        "score": 4.2,
+        "date": "2026年06月入住",
+        "roomType": "几木大床房-亚朵星球深睡枕Pro",
+        "content": "位置在净月附近，交通方便，房间干净，下次还会住。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png",
+          "/@app-assets/Ctrip/gen/review_breakfast.png"
+        ]
+      },
+      {
+        "id": "h_cc_quanji_r1",
+        "user": "周子安",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_2.png",
+        "level": "铂金贵宾",
+        "score": 4.3,
+        "date": "2026年05月入住",
+        "roomType": "雅致大床房",
+        "content": "地理位置优越,闹中取静,去西湖步行可达。前台热情,环境优雅。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png"
+        ]
+      }
+    ],
+    "h_cc_shangri": [
+      {
+        "id": "h_cc_shangri_r0",
+        "user": "林晓雯",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_1.png",
+        "level": "黄金贵宾",
+        "score": 4.5,
+        "date": "2026年06月入住",
+        "roomType": "几木大床房-亚朵星球深睡枕Pro",
+        "content": "位置在西安大路附近，交通方便，房间干净，下次还会住。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png",
+          "/@app-assets/Ctrip/gen/review_breakfast.png"
+        ]
+      },
+      {
+        "id": "h_cc_shangri_r1",
+        "user": "周子安",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_2.png",
+        "level": "铂金贵宾",
+        "score": 4.6,
+        "date": "2026年05月入住",
+        "roomType": "雅致大床房",
+        "content": "地理位置优越,闹中取静,去西湖步行可达。前台热情,环境优雅。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png"
+        ]
+      }
+    ],
+    "h_icc_junlan": [
+      {
+        "id": "h_icc_junlan_r0",
+        "user": "林可",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_1.png",
+        "level": "铂金贵宾",
+        "score": 4.6,
+        "date": "2026年06月入住",
+        "roomType": "大床房",
+        "content": "就在西湖国际会议中心附近，开会方便，房价要看清楚。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png"
+        ]
+      }
+    ],
+    "h_icc_marriott": [
+      {
+        "id": "h_icc_marriott_r0",
+        "user": "林可",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_1.png",
+        "level": "铂金贵宾",
+        "score": 4.6,
+        "date": "2026年06月入住",
+        "roomType": "大床房",
+        "content": "就在西湖国际会议中心附近，开会方便，房价要看清楚。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png"
+        ]
+      }
+    ],
+    "h_icc_hilton": [
+      {
+        "id": "h_icc_hilton_r0",
+        "user": "林可",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_1.png",
+        "level": "铂金贵宾",
+        "score": 4.6,
+        "date": "2026年06月入住",
+        "roomType": "大床房",
+        "content": "就在西湖国际会议中心附近，开会方便，房价要看清楚。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png"
+        ]
+      }
+    ],
+    "h_icc_yunqi_east": [
+      {
+        "id": "h_icc_yunqi_east_r0",
+        "user": "林可",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_1.png",
+        "level": "铂金贵宾",
+        "score": 4.6,
+        "date": "2026年06月入住",
+        "roomType": "大床房",
+        "content": "就在西湖国际会议中心附近，开会方便，房价要看清楚。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png"
+        ]
+      }
+    ],
+    "h_icc_qinghe_north": [
+      {
+        "id": "h_icc_qinghe_north_r0",
+        "user": "林可",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_1.png",
+        "level": "铂金贵宾",
+        "score": 4.6,
+        "date": "2026年06月入住",
+        "roomType": "大床房",
+        "content": "就在西湖国际会议中心附近，开会方便，房价要看清楚。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png"
+        ]
+      }
+    ],
+    "h_icc_homeinn": [
+      {
+        "id": "h_icc_homeinn_r0",
+        "user": "林可",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_1.png",
+        "level": "铂金贵宾",
+        "score": 4.6,
+        "date": "2026年06月入住",
+        "roomType": "大床房",
+        "content": "就在西湖国际会议中心附近，开会方便，房价要看清楚。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png"
+        ]
+      }
+    ],
+    "h_icc_hanting": [
+      {
+        "id": "h_icc_hanting_r0",
+        "user": "林可",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_1.png",
+        "level": "铂金贵宾",
+        "score": 4.6,
+        "date": "2026年06月入住",
+        "roomType": "大床房",
+        "content": "就在西湖国际会议中心附近，开会方便，房价要看清楚。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png"
+        ]
+      }
+    ],
+    "h_icc_quanji": [
+      {
+        "id": "h_icc_quanji_r0",
+        "user": "林可",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_1.png",
+        "level": "铂金贵宾",
+        "score": 4.6,
+        "date": "2026年06月入住",
+        "roomType": "大床房",
+        "content": "就在西湖国际会议中心附近，开会方便，房价要看清楚。",
+        "images": [
+          "/@app-assets/Ctrip/gen/review_room.png"
+        ]
+      }
+    ],
+    "h_icc_garden": [
+      {
+        "id": "h_icc_garden_r0",
+        "user": "林可",
+        "avatar": "/@app-assets/Ctrip/gen/avatar_1.png",
+        "level": "铂金贵宾",
+        "score": 4.6,
+        "date": "2026年06月入住",
+        "roomType": "大床房",
+        "content": "就在西湖国际会议中心附近，开会方便，房价要看清楚。",
         "images": [
           "/@app-assets/Ctrip/gen/review_room.png"
         ]
@@ -486,6 +3437,2630 @@
         }
       ],
       "stops": []
+    },
+    {
+      "id": "t_g1",
+      "trainNo": "G1",
+      "from": "北京",
+      "to": "上海",
+      "depart": "09:00",
+      "arrive": "13:28",
+      "duration": "4时28分",
+      "type": "复兴号",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 530,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 871,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 1830,
+          "status": "1张"
+        },
+        {
+          "name": "无座",
+          "price": 530,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海",
+          "arrive": "--",
+          "depart": "07:05",
+          "stay": "--"
+        },
+        {
+          "station": "苏州北",
+          "arrive": "07:34",
+          "depart": "07:36",
+          "stay": "2分"
+        },
+        {
+          "station": "南京南",
+          "arrive": "08:26",
+          "depart": "08:28",
+          "stay": "2分"
+        },
+        {
+          "station": "徐州东",
+          "arrive": "09:42",
+          "depart": "09:44",
+          "stay": "2分"
+        },
+        {
+          "station": "济南",
+          "arrive": "10:54",
+          "depart": "11:01",
+          "stay": "7分"
+        },
+        {
+          "station": "淄博",
+          "arrive": "11:43",
+          "depart": "11:46",
+          "stay": "3分"
+        },
+        {
+          "station": "潍坊",
+          "arrive": "12:21",
+          "depart": "12:23",
+          "stay": "2分"
+        },
+        {
+          "station": "青岛北",
+          "arrive": "13:31",
+          "depart": "--",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_g7",
+      "trainNo": "G7",
+      "from": "北京南",
+      "to": "上海虹桥",
+      "depart": "10:00",
+      "arrive": "14:28",
+      "duration": "4时28分",
+      "type": "高铁",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 530,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 871,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 1830,
+          "status": "1张"
+        },
+        {
+          "name": "无座",
+          "price": 530,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海",
+          "arrive": "--",
+          "depart": "07:05",
+          "stay": "--"
+        },
+        {
+          "station": "苏州北",
+          "arrive": "07:34",
+          "depart": "07:36",
+          "stay": "2分"
+        },
+        {
+          "station": "南京南",
+          "arrive": "08:26",
+          "depart": "08:28",
+          "stay": "2分"
+        },
+        {
+          "station": "徐州东",
+          "arrive": "09:42",
+          "depart": "09:44",
+          "stay": "2分"
+        },
+        {
+          "station": "济南",
+          "arrive": "10:54",
+          "depart": "11:01",
+          "stay": "7分"
+        },
+        {
+          "station": "淄博",
+          "arrive": "11:43",
+          "depart": "11:46",
+          "stay": "3分"
+        },
+        {
+          "station": "潍坊",
+          "arrive": "12:21",
+          "depart": "12:23",
+          "stay": "2分"
+        },
+        {
+          "station": "青岛北",
+          "arrive": "13:31",
+          "depart": "--",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_g7501",
+      "trainNo": "G7501",
+      "from": "杭州东",
+      "to": "上海虹桥",
+      "depart": "08:12",
+      "arrive": "09:05",
+      "duration": "53分",
+      "type": "高铁",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 530,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 871,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 1830,
+          "status": "1张"
+        },
+        {
+          "name": "无座",
+          "price": 530,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海",
+          "arrive": "--",
+          "depart": "07:05",
+          "stay": "--"
+        },
+        {
+          "station": "苏州北",
+          "arrive": "07:34",
+          "depart": "07:36",
+          "stay": "2分"
+        },
+        {
+          "station": "南京南",
+          "arrive": "08:26",
+          "depart": "08:28",
+          "stay": "2分"
+        },
+        {
+          "station": "徐州东",
+          "arrive": "09:42",
+          "depart": "09:44",
+          "stay": "2分"
+        },
+        {
+          "station": "济南",
+          "arrive": "10:54",
+          "depart": "11:01",
+          "stay": "7分"
+        },
+        {
+          "station": "淄博",
+          "arrive": "11:43",
+          "depart": "11:46",
+          "stay": "3分"
+        },
+        {
+          "station": "潍坊",
+          "arrive": "12:21",
+          "depart": "12:23",
+          "stay": "2分"
+        },
+        {
+          "station": "青岛北",
+          "arrive": "13:31",
+          "depart": "--",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_g8601",
+      "trainNo": "G8601",
+      "from": "成都东",
+      "to": "重庆北",
+      "depart": "07:40",
+      "arrive": "09:28",
+      "duration": "1时48分",
+      "type": "高铁",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 530,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 871,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 1830,
+          "status": "1张"
+        },
+        {
+          "name": "无座",
+          "price": 530,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海",
+          "arrive": "--",
+          "depart": "07:05",
+          "stay": "--"
+        },
+        {
+          "station": "苏州北",
+          "arrive": "07:34",
+          "depart": "07:36",
+          "stay": "2分"
+        },
+        {
+          "station": "南京南",
+          "arrive": "08:26",
+          "depart": "08:28",
+          "stay": "2分"
+        },
+        {
+          "station": "徐州东",
+          "arrive": "09:42",
+          "depart": "09:44",
+          "stay": "2分"
+        },
+        {
+          "station": "济南",
+          "arrive": "10:54",
+          "depart": "11:01",
+          "stay": "7分"
+        },
+        {
+          "station": "淄博",
+          "arrive": "11:43",
+          "depart": "11:46",
+          "stay": "3分"
+        },
+        {
+          "station": "潍坊",
+          "arrive": "12:21",
+          "depart": "12:23",
+          "stay": "2分"
+        },
+        {
+          "station": "青岛北",
+          "arrive": "13:31",
+          "depart": "--",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_g1234",
+      "trainNo": "G1234",
+      "from": "上海",
+      "to": "南京",
+      "depart": "11:20",
+      "arrive": "12:35",
+      "duration": "1时15分",
+      "type": "高铁",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 530,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 871,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 1830,
+          "status": "1张"
+        },
+        {
+          "name": "无座",
+          "price": 530,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海",
+          "arrive": "--",
+          "depart": "07:05",
+          "stay": "--"
+        },
+        {
+          "station": "苏州北",
+          "arrive": "07:34",
+          "depart": "07:36",
+          "stay": "2分"
+        },
+        {
+          "station": "南京南",
+          "arrive": "08:26",
+          "depart": "08:28",
+          "stay": "2分"
+        },
+        {
+          "station": "徐州东",
+          "arrive": "09:42",
+          "depart": "09:44",
+          "stay": "2分"
+        },
+        {
+          "station": "济南",
+          "arrive": "10:54",
+          "depart": "11:01",
+          "stay": "7分"
+        },
+        {
+          "station": "淄博",
+          "arrive": "11:43",
+          "depart": "11:46",
+          "stay": "3分"
+        },
+        {
+          "station": "潍坊",
+          "arrive": "12:21",
+          "depart": "12:23",
+          "stay": "2分"
+        },
+        {
+          "station": "青岛北",
+          "arrive": "13:31",
+          "depart": "--",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_g123",
+      "trainNo": "G123",
+      "from": "上海",
+      "to": "徐州",
+      "depart": "08:10",
+      "arrive": "11:05",
+      "duration": "2时55分",
+      "type": "高铁",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 279,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 446,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 892,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海",
+          "arrive": "--",
+          "depart": "08:10",
+          "stay": "--"
+        },
+        {
+          "station": "徐州",
+          "arrive": "11:05",
+          "depart": "11:05",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_g125",
+      "trainNo": "G125",
+      "from": "上海",
+      "to": "徐州",
+      "depart": "09:40",
+      "arrive": "12:28",
+      "duration": "2时48分",
+      "type": "高铁",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 279,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 446,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 892,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海",
+          "arrive": "--",
+          "depart": "09:40",
+          "stay": "--"
+        },
+        {
+          "station": "徐州",
+          "arrive": "12:28",
+          "depart": "12:28",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_g127",
+      "trainNo": "G127",
+      "from": "上海虹桥",
+      "to": "徐州东",
+      "depart": "13:15",
+      "arrive": "16:02",
+      "duration": "2时47分",
+      "type": "高铁",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 289,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 462,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 924,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海虹桥",
+          "arrive": "--",
+          "depart": "13:15",
+          "stay": "--"
+        },
+        {
+          "station": "徐州东",
+          "arrive": "16:02",
+          "depart": "16:02",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_k808_shhz",
+      "trainNo": "K808",
+      "from": "上海",
+      "to": "杭州",
+      "depart": "04:52",
+      "arrive": "09:40",
+      "duration": "4时48分",
+      "type": "普速",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 118,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 188,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 377,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海",
+          "arrive": "--",
+          "depart": "04:52",
+          "stay": "--"
+        },
+        {
+          "station": "杭州",
+          "arrive": "09:40",
+          "depart": "09:40",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_k1234_shhz",
+      "trainNo": "K1234",
+      "from": "上海",
+      "to": "杭州",
+      "depart": "05:08",
+      "arrive": "10:15",
+      "duration": "5时7分",
+      "type": "普速",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 118,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 188,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 377,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海",
+          "arrive": "--",
+          "depart": "05:08",
+          "stay": "--"
+        },
+        {
+          "station": "杭州",
+          "arrive": "10:15",
+          "depart": "10:15",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_t109_shhz",
+      "trainNo": "T109",
+      "from": "上海",
+      "to": "杭州",
+      "depart": "05:20",
+      "arrive": "09:05",
+      "duration": "3时45分",
+      "type": "普速",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 128,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 204,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 409,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海",
+          "arrive": "--",
+          "depart": "05:20",
+          "stay": "--"
+        },
+        {
+          "station": "杭州",
+          "arrive": "09:05",
+          "depart": "09:05",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_g7303_shhz",
+      "trainNo": "G7303",
+      "from": "上海",
+      "to": "杭州",
+      "depart": "05:15",
+      "arrive": "06:12",
+      "duration": "57分",
+      "type": "高铁",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 128,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 204,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 409,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海",
+          "arrive": "--",
+          "depart": "05:15",
+          "stay": "--"
+        },
+        {
+          "station": "杭州",
+          "arrive": "06:12",
+          "depart": "06:12",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_g7321_shhz",
+      "trainNo": "G7321",
+      "from": "上海虹桥",
+      "to": "杭州东",
+      "depart": "05:40",
+      "arrive": "06:38",
+      "duration": "58分",
+      "type": "高铁",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 128,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 204,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 409,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海虹桥",
+          "arrive": "--",
+          "depart": "05:40",
+          "stay": "--"
+        },
+        {
+          "station": "杭州东",
+          "arrive": "06:38",
+          "depart": "06:38",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_k5678_shhz",
+      "trainNo": "K5678",
+      "from": "上海",
+      "to": "杭州",
+      "depart": "05:36",
+      "arrive": "10:48",
+      "duration": "5时12分",
+      "type": "普速",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 118,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 188,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 377,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海",
+          "arrive": "--",
+          "depart": "05:36",
+          "stay": "--"
+        },
+        {
+          "station": "杭州",
+          "arrive": "10:48",
+          "depart": "10:48",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_g7335_shhz",
+      "trainNo": "G7335",
+      "from": "上海",
+      "to": "杭州",
+      "depart": "06:02",
+      "arrive": "06:58",
+      "duration": "56分",
+      "type": "高铁",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 136,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 217,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 435,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海",
+          "arrive": "--",
+          "depart": "06:02",
+          "stay": "--"
+        },
+        {
+          "station": "杭州",
+          "arrive": "06:58",
+          "depart": "06:58",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_g7349_shhz",
+      "trainNo": "G7349",
+      "from": "上海虹桥",
+      "to": "杭州东",
+      "depart": "06:18",
+      "arrive": "07:16",
+      "duration": "58分",
+      "type": "高铁",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 136,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 217,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 435,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海虹桥",
+          "arrive": "--",
+          "depart": "06:18",
+          "stay": "--"
+        },
+        {
+          "station": "杭州东",
+          "arrive": "07:16",
+          "depart": "07:16",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_g7361_shhz",
+      "trainNo": "G7361",
+      "from": "上海",
+      "to": "杭州",
+      "depart": "06:35",
+      "arrive": "07:32",
+      "duration": "57分",
+      "type": "高铁",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 148,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 236,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 473,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海",
+          "arrive": "--",
+          "depart": "06:35",
+          "stay": "--"
+        },
+        {
+          "station": "杭州",
+          "arrive": "07:32",
+          "depart": "07:32",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_g7377_shhz",
+      "trainNo": "G7377",
+      "from": "上海虹桥",
+      "to": "杭州东",
+      "depart": "06:52",
+      "arrive": "07:50",
+      "duration": "58分",
+      "type": "高铁",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 148,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 236,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 473,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海虹桥",
+          "arrive": "--",
+          "depart": "06:52",
+          "stay": "--"
+        },
+        {
+          "station": "杭州东",
+          "arrive": "07:50",
+          "depart": "07:50",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_g7389_shhz",
+      "trainNo": "G7389",
+      "from": "上海",
+      "to": "杭州",
+      "depart": "07:05",
+      "arrive": "08:02",
+      "duration": "57分",
+      "type": "高铁",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 166,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 265,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 531,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海",
+          "arrive": "--",
+          "depart": "07:05",
+          "stay": "--"
+        },
+        {
+          "station": "杭州",
+          "arrive": "08:02",
+          "depart": "08:02",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_g7393_shhz",
+      "trainNo": "G7393",
+      "from": "上海",
+      "to": "杭州",
+      "depart": "07:38",
+      "arrive": "08:36",
+      "duration": "58分",
+      "type": "高铁",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 118,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 188,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 377,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海",
+          "arrive": "--",
+          "depart": "07:38",
+          "stay": "--"
+        },
+        {
+          "station": "杭州",
+          "arrive": "08:36",
+          "depart": "08:36",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_g7311_shhz",
+      "trainNo": "G7311",
+      "from": "上海虹桥",
+      "to": "杭州东",
+      "depart": "07:55",
+      "arrive": "08:52",
+      "duration": "57分",
+      "type": "高铁",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 128,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 204,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 409,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海虹桥",
+          "arrive": "--",
+          "depart": "07:55",
+          "stay": "--"
+        },
+        {
+          "station": "杭州东",
+          "arrive": "08:52",
+          "depart": "08:52",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_g7317_shhz",
+      "trainNo": "G7317",
+      "from": "上海",
+      "to": "杭州",
+      "depart": "08:12",
+      "arrive": "09:08",
+      "duration": "56分",
+      "type": "高铁",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 128,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 204,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 409,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海",
+          "arrive": "--",
+          "depart": "08:12",
+          "stay": "--"
+        },
+        {
+          "station": "杭州",
+          "arrive": "09:08",
+          "depart": "09:08",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_g7325_shhz",
+      "trainNo": "G7325",
+      "from": "上海",
+      "to": "杭州",
+      "depart": "08:40",
+      "arrive": "09:38",
+      "duration": "58分",
+      "type": "高铁",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 136,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 217,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 435,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海",
+          "arrive": "--",
+          "depart": "08:40",
+          "stay": "--"
+        },
+        {
+          "station": "杭州",
+          "arrive": "09:38",
+          "depart": "09:38",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_g7355_shhz",
+      "trainNo": "G7355",
+      "from": "上海虹桥",
+      "to": "杭州东",
+      "depart": "10:28",
+      "arrive": "11:22",
+      "duration": "54分",
+      "type": "高铁",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 136,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 217,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 435,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海虹桥",
+          "arrive": "--",
+          "depart": "10:28",
+          "stay": "--"
+        },
+        {
+          "station": "杭州东",
+          "arrive": "11:22",
+          "depart": "11:22",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_g7367_shhz",
+      "trainNo": "G7367",
+      "from": "上海",
+      "to": "杭州",
+      "depart": "11:10",
+      "arrive": "12:05",
+      "duration": "55分",
+      "type": "高铁",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 148,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 236,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 473,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海",
+          "arrive": "--",
+          "depart": "11:10",
+          "stay": "--"
+        },
+        {
+          "station": "杭州",
+          "arrive": "12:05",
+          "depart": "12:05",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_d2288_shhz",
+      "trainNo": "D2288",
+      "from": "上海",
+      "to": "杭州",
+      "depart": "13:15",
+      "arrive": "15:40",
+      "duration": "2时25分",
+      "type": "动车",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 118,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 188,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 377,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海",
+          "arrive": "--",
+          "depart": "13:15",
+          "stay": "--"
+        },
+        {
+          "station": "杭州",
+          "arrive": "15:40",
+          "depart": "15:40",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_g7403_shhz",
+      "trainNo": "G7403",
+      "from": "上海虹桥",
+      "to": "杭州东",
+      "depart": "14:22",
+      "arrive": "15:18",
+      "duration": "56分",
+      "type": "高铁",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 148,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 236,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 473,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海虹桥",
+          "arrive": "--",
+          "depart": "14:22",
+          "stay": "--"
+        },
+        {
+          "station": "杭州东",
+          "arrive": "15:18",
+          "depart": "15:18",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_g7419_shhz",
+      "trainNo": "G7419",
+      "from": "上海",
+      "to": "杭州",
+      "depart": "16:05",
+      "arrive": "17:02",
+      "duration": "57分",
+      "type": "高铁",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 166,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 265,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 531,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海",
+          "arrive": "--",
+          "depart": "16:05",
+          "stay": "--"
+        },
+        {
+          "station": "杭州",
+          "arrive": "17:02",
+          "depart": "17:02",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_g7433_shhz",
+      "trainNo": "G7433",
+      "from": "上海虹桥",
+      "to": "杭州东",
+      "depart": "17:48",
+      "arrive": "18:45",
+      "duration": "57分",
+      "type": "高铁",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 136,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 217,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 435,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海虹桥",
+          "arrive": "--",
+          "depart": "17:48",
+          "stay": "--"
+        },
+        {
+          "station": "杭州东",
+          "arrive": "18:45",
+          "depart": "18:45",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_g7451_shhz",
+      "trainNo": "G7451",
+      "from": "上海",
+      "to": "杭州",
+      "depart": "19:10",
+      "arrive": "20:08",
+      "duration": "58分",
+      "type": "高铁",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 148,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 236,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 473,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海",
+          "arrive": "--",
+          "depart": "19:10",
+          "stay": "--"
+        },
+        {
+          "station": "杭州",
+          "arrive": "20:08",
+          "depart": "20:08",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_g7469_shhz",
+      "trainNo": "G7469",
+      "from": "上海虹桥",
+      "to": "杭州东",
+      "depart": "20:35",
+      "arrive": "21:32",
+      "duration": "57分",
+      "type": "高铁",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 166,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 265,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 531,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海虹桥",
+          "arrive": "--",
+          "depart": "20:35",
+          "stay": "--"
+        },
+        {
+          "station": "杭州东",
+          "arrive": "21:32",
+          "depart": "21:32",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_k902_shhz",
+      "trainNo": "K902",
+      "from": "上海",
+      "to": "杭州",
+      "depart": "21:18",
+      "arrive": "02:10",
+      "duration": "4时52分",
+      "type": "普速",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 118,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 188,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 377,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海",
+          "arrive": "--",
+          "depart": "21:18",
+          "stay": "--"
+        },
+        {
+          "station": "杭州",
+          "arrive": "02:10",
+          "depart": "02:10",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_k810_shhz",
+      "trainNo": "K810",
+      "from": "上海",
+      "to": "杭州",
+      "depart": "04:10",
+      "arrive": "09:02",
+      "duration": "4时52分",
+      "type": "普速",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 118,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 188,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 377,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海",
+          "arrive": "--",
+          "depart": "04:10",
+          "stay": "--"
+        },
+        {
+          "station": "杭州",
+          "arrive": "09:02",
+          "depart": "09:02",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_k812_shhz",
+      "trainNo": "K812",
+      "from": "上海",
+      "to": "杭州",
+      "depart": "04:22",
+      "arrive": "09:18",
+      "duration": "4时56分",
+      "type": "普速",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 118,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 188,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 377,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海",
+          "arrive": "--",
+          "depart": "04:22",
+          "stay": "--"
+        },
+        {
+          "station": "杭州",
+          "arrive": "09:18",
+          "depart": "09:18",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_t111_shhz",
+      "trainNo": "T111",
+      "from": "上海",
+      "to": "杭州",
+      "depart": "04:35",
+      "arrive": "08:22",
+      "duration": "3时47分",
+      "type": "普速",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 128,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 204,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 409,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海",
+          "arrive": "--",
+          "depart": "04:35",
+          "stay": "--"
+        },
+        {
+          "station": "杭州",
+          "arrive": "08:22",
+          "depart": "08:22",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_k814_shhz",
+      "trainNo": "K814",
+      "from": "上海",
+      "to": "杭州",
+      "depart": "04:42",
+      "arrive": "09:55",
+      "duration": "5时13分",
+      "type": "普速",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 118,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 188,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 377,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海",
+          "arrive": "--",
+          "depart": "04:42",
+          "stay": "--"
+        },
+        {
+          "station": "杭州",
+          "arrive": "09:55",
+          "depart": "09:55",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_k1236_shhz",
+      "trainNo": "K1236",
+      "from": "上海",
+      "to": "杭州",
+      "depart": "05:00",
+      "arrive": "10:08",
+      "duration": "5时8分",
+      "type": "普速",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 118,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 188,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 377,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海",
+          "arrive": "--",
+          "depart": "05:00",
+          "stay": "--"
+        },
+        {
+          "station": "杭州",
+          "arrive": "10:08",
+          "depart": "10:08",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_k5680_shhz",
+      "trainNo": "K5680",
+      "from": "上海",
+      "to": "杭州",
+      "depart": "05:28",
+      "arrive": "10:40",
+      "duration": "5时12分",
+      "type": "普速",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 118,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 188,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 377,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海",
+          "arrive": "--",
+          "depart": "05:28",
+          "stay": "--"
+        },
+        {
+          "station": "杭州",
+          "arrive": "10:40",
+          "depart": "10:40",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_t113_shhz",
+      "trainNo": "T113",
+      "from": "上海",
+      "to": "杭州",
+      "depart": "05:48",
+      "arrive": "09:35",
+      "duration": "3时47分",
+      "type": "普速",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 128,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 204,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 409,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海",
+          "arrive": "--",
+          "depart": "05:48",
+          "stay": "--"
+        },
+        {
+          "station": "杭州",
+          "arrive": "09:35",
+          "depart": "09:35",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_k820_shhz",
+      "trainNo": "K820",
+      "from": "上海",
+      "to": "杭州",
+      "depart": "06:08",
+      "arrive": "11:15",
+      "duration": "5时7分",
+      "type": "普速",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 118,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 188,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 377,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海",
+          "arrive": "--",
+          "depart": "06:08",
+          "stay": "--"
+        },
+        {
+          "station": "杭州",
+          "arrive": "11:15",
+          "depart": "11:15",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_k822_shhz",
+      "trainNo": "K822",
+      "from": "上海",
+      "to": "杭州",
+      "depart": "06:22",
+      "arrive": "11:40",
+      "duration": "5时18分",
+      "type": "普速",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 118,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 188,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 377,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海",
+          "arrive": "--",
+          "depart": "06:22",
+          "stay": "--"
+        },
+        {
+          "station": "杭州",
+          "arrive": "11:40",
+          "depart": "11:40",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_t115_shhz",
+      "trainNo": "T115",
+      "from": "上海",
+      "to": "杭州",
+      "depart": "06:42",
+      "arrive": "10:20",
+      "duration": "3时38分",
+      "type": "普速",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 128,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 204,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 409,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海",
+          "arrive": "--",
+          "depart": "06:42",
+          "stay": "--"
+        },
+        {
+          "station": "杭州",
+          "arrive": "10:20",
+          "depart": "10:20",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_k824_shhz",
+      "trainNo": "K824",
+      "from": "上海",
+      "to": "杭州",
+      "depart": "07:12",
+      "arrive": "12:05",
+      "duration": "4时53分",
+      "type": "普速",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 118,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 188,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 377,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海",
+          "arrive": "--",
+          "depart": "07:12",
+          "stay": "--"
+        },
+        {
+          "station": "杭州",
+          "arrive": "12:05",
+          "depart": "12:05",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_k826_shhz",
+      "trainNo": "K826",
+      "from": "上海",
+      "to": "杭州",
+      "depart": "07:42",
+      "arrive": "12:38",
+      "duration": "4时56分",
+      "type": "普速",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 118,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 188,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 377,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海",
+          "arrive": "--",
+          "depart": "07:42",
+          "stay": "--"
+        },
+        {
+          "station": "杭州",
+          "arrive": "12:38",
+          "depart": "12:38",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_t117_shhz",
+      "trainNo": "T117",
+      "from": "上海",
+      "to": "杭州",
+      "depart": "08:05",
+      "arrive": "11:50",
+      "duration": "3时45分",
+      "type": "普速",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 128,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 204,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 409,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海",
+          "arrive": "--",
+          "depart": "08:05",
+          "stay": "--"
+        },
+        {
+          "station": "杭州",
+          "arrive": "11:50",
+          "depart": "11:50",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_k828_shhz",
+      "trainNo": "K828",
+      "from": "上海",
+      "to": "杭州",
+      "depart": "08:28",
+      "arrive": "13:10",
+      "duration": "4时42分",
+      "type": "普速",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 118,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 188,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 377,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海",
+          "arrive": "--",
+          "depart": "08:28",
+          "stay": "--"
+        },
+        {
+          "station": "杭州",
+          "arrive": "13:10",
+          "depart": "13:10",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_g7371_shhz",
+      "trainNo": "G7371",
+      "from": "上海虹桥",
+      "to": "杭州东",
+      "depart": "11:32",
+      "arrive": "12:29",
+      "duration": "57分",
+      "type": "高铁",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 136,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 217,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 435,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海虹桥",
+          "arrive": "--",
+          "depart": "11:32",
+          "stay": "--"
+        },
+        {
+          "station": "杭州东",
+          "arrive": "12:29",
+          "depart": "12:29",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_g7381_shhz",
+      "trainNo": "G7381",
+      "from": "上海",
+      "to": "杭州",
+      "depart": "11:48",
+      "arrive": "12:45",
+      "duration": "57分",
+      "type": "高铁",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 148,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 236,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 473,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海",
+          "arrive": "--",
+          "depart": "11:48",
+          "stay": "--"
+        },
+        {
+          "station": "杭州",
+          "arrive": "12:45",
+          "depart": "12:45",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_g7399_shhz",
+      "trainNo": "G7399",
+      "from": "上海虹桥",
+      "to": "杭州东",
+      "depart": "12:06",
+      "arrive": "13:03",
+      "duration": "57分",
+      "type": "高铁",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 136,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 217,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 435,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海虹桥",
+          "arrive": "--",
+          "depart": "12:06",
+          "stay": "--"
+        },
+        {
+          "station": "杭州东",
+          "arrive": "13:03",
+          "depart": "13:03",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_g7401_shhz",
+      "trainNo": "G7401",
+      "from": "上海",
+      "to": "杭州",
+      "depart": "12:22",
+      "arrive": "13:19",
+      "duration": "57分",
+      "type": "高铁",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 148,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 236,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 473,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海",
+          "arrive": "--",
+          "depart": "12:22",
+          "stay": "--"
+        },
+        {
+          "station": "杭州",
+          "arrive": "13:19",
+          "depart": "13:19",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_g7301",
+      "trainNo": "G7301",
+      "from": "上海",
+      "to": "杭州",
+      "depart": "07:20",
+      "arrive": "08:15",
+      "duration": "55分",
+      "type": "高铁",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 73,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 116,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 233,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海",
+          "arrive": "--",
+          "depart": "07:20",
+          "stay": "--"
+        },
+        {
+          "station": "杭州",
+          "arrive": "08:15",
+          "depart": "08:15",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_g7305",
+      "trainNo": "G7305",
+      "from": "上海虹桥",
+      "to": "杭州东",
+      "depart": "10:05",
+      "arrive": "11:00",
+      "duration": "55分",
+      "type": "高铁",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 73,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 116,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 233,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海虹桥",
+          "arrive": "--",
+          "depart": "10:05",
+          "stay": "--"
+        },
+        {
+          "station": "杭州东",
+          "arrive": "11:00",
+          "depart": "11:00",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_g7501_b",
+      "trainNo": "G7501",
+      "from": "上海",
+      "to": "苏州",
+      "depart": "08:00",
+      "arrive": "08:28",
+      "duration": "28分",
+      "type": "高铁",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 39,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 62,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 124,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海",
+          "arrive": "--",
+          "depart": "08:00",
+          "stay": "--"
+        },
+        {
+          "station": "苏州",
+          "arrive": "08:28",
+          "depart": "08:28",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_g2",
+      "trainNo": "G2",
+      "from": "上海",
+      "to": "北京",
+      "depart": "07:00",
+      "arrive": "11:36",
+      "duration": "4时36分",
+      "type": "高铁",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 553,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 884,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 1769,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海",
+          "arrive": "--",
+          "depart": "07:00",
+          "stay": "--"
+        },
+        {
+          "station": "北京",
+          "arrive": "11:36",
+          "depart": "11:36",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_g4",
+      "trainNo": "G4",
+      "from": "上海虹桥",
+      "to": "北京南",
+      "depart": "09:00",
+      "arrive": "13:28",
+      "duration": "4时28分",
+      "type": "高铁",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 553,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 884,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 1769,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海虹桥",
+          "arrive": "--",
+          "depart": "09:00",
+          "stay": "--"
+        },
+        {
+          "station": "北京南",
+          "arrive": "13:28",
+          "depart": "13:28",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_d3125",
+      "trainNo": "D3125",
+      "from": "上海",
+      "to": "南京",
+      "depart": "06:45",
+      "arrive": "09:10",
+      "duration": "2时25分",
+      "type": "高铁",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 144,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 230,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 460,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "上海",
+          "arrive": "--",
+          "depart": "06:45",
+          "stay": "--"
+        },
+        {
+          "station": "南京",
+          "arrive": "09:10",
+          "depart": "09:10",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_g7065",
+      "trainNo": "G7065",
+      "from": "杭州",
+      "to": "上海",
+      "depart": "15:20",
+      "arrive": "16:18",
+      "duration": "58分",
+      "type": "高铁",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 73,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 116,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 233,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "杭州",
+          "arrive": "--",
+          "depart": "15:20",
+          "stay": "--"
+        },
+        {
+          "station": "上海",
+          "arrive": "16:18",
+          "depart": "16:18",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_g137",
+      "trainNo": "G137",
+      "from": "北京",
+      "to": "徐州",
+      "depart": "08:30",
+      "arrive": "11:40",
+      "duration": "3时10分",
+      "type": "高铁",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 309,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 494,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 988,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "北京",
+          "arrive": "--",
+          "depart": "08:30",
+          "stay": "--"
+        },
+        {
+          "station": "徐州",
+          "arrive": "11:40",
+          "depart": "11:40",
+          "stay": "--"
+        }
+      ]
+    },
+    {
+      "id": "t_g411",
+      "trainNo": "G411",
+      "from": "成都",
+      "to": "重庆",
+      "depart": "09:10",
+      "arrive": "10:40",
+      "duration": "1时30分",
+      "type": "高铁",
+      "seats": [
+        {
+          "name": "二等座",
+          "price": 154,
+          "status": "有票"
+        },
+        {
+          "name": "一等座",
+          "price": 246,
+          "status": "有票"
+        },
+        {
+          "name": "商务座",
+          "price": 492,
+          "status": "有票"
+        }
+      ],
+      "stops": [
+        {
+          "station": "成都",
+          "arrive": "--",
+          "depart": "09:10",
+          "stay": "--"
+        },
+        {
+          "station": "重庆",
+          "arrive": "10:40",
+          "depart": "10:40",
+          "stay": "--"
+        }
+      ]
     }
   ],
   "flights": [
@@ -529,13 +6104,365 @@
       "to": "潍坊",
       "fromAirport": "浦东T1",
       "toAirport": "潍坊",
-      "depart": "23:30",
+      "depart": "19:10",
       "arrive": "21:20",
-      "duration": "直飞",
+      "duration": "2时10分",
       "transfer": "",
       "price": 610,
       "cabin": "经济舱",
       "petFriendly": false
+    },
+    {
+      "id": "f_ca1501",
+      "flightNo": "CA1501",
+      "airline": "中国国航",
+      "from": "北京",
+      "to": "上海",
+      "fromAirport": "首都T3",
+      "toAirport": "虹桥T2",
+      "depart": "08:30",
+      "arrive": "10:45",
+      "duration": "2时15分",
+      "transfer": null,
+      "price": 680,
+      "cabin": "经济舱",
+      "petFriendly": false
+    },
+    {
+      "id": "f_a67148",
+      "flightNo": "A67148",
+      "airline": "长龙航空",
+      "from": "长春",
+      "to": "无锡",
+      "fromAirport": "龙嘉T2",
+      "toAirport": "苏南硕放T2",
+      "depart": "15:40",
+      "arrive": "18:10",
+      "duration": "2时30分",
+      "transfer": null,
+      "price": 480,
+      "cabin": "经济舱",
+      "petFriendly": false
+    },
+    {
+      "id": "f_ho1876",
+      "flightNo": "HO1876",
+      "airline": "吉祥航空",
+      "from": "长春",
+      "to": "无锡",
+      "fromAirport": "龙嘉T2",
+      "toAirport": "苏南硕放T2",
+      "depart": "09:20",
+      "arrive": "11:55",
+      "duration": "2时35分",
+      "transfer": null,
+      "price": 520,
+      "cabin": "经济舱",
+      "petFriendly": true
+    },
+    {
+      "id": "f_cz6452",
+      "flightNo": "CZ6452",
+      "airline": "南方航空",
+      "from": "长春",
+      "to": "无锡",
+      "fromAirport": "龙嘉T2",
+      "toAirport": "苏南硕放T2",
+      "depart": "07:30",
+      "arrive": "12:45",
+      "duration": "5时15分",
+      "transfer": "青岛",
+      "price": 430,
+      "cabin": "经济舱",
+      "petFriendly": false
+    },
+    {
+      "id": "f_mu5101",
+      "flightNo": "MU5101",
+      "airline": "东方航空",
+      "from": "上海",
+      "to": "北京",
+      "fromAirport": "虹桥T2",
+      "toAirport": "大兴",
+      "depart": "14:10",
+      "arrive": "16:30",
+      "duration": "2时20分",
+      "transfer": null,
+      "price": 720,
+      "cabin": "经济舱",
+      "petFriendly": false
+    },
+    {
+      "id": "f_3u8899",
+      "flightNo": "3U8899",
+      "airline": "四川航空",
+      "from": "成都",
+      "to": "重庆",
+      "fromAirport": "天府T2",
+      "toAirport": "江北T3",
+      "depart": "09:15",
+      "arrive": "10:20",
+      "duration": "1时05分",
+      "transfer": null,
+      "price": 390,
+      "cabin": "经济舱",
+      "petFriendly": false
+    },
+    {
+      "id": "f_hu7605",
+      "flightNo": "HU7605",
+      "airline": "海南航空",
+      "from": "杭州",
+      "to": "深圳",
+      "fromAirport": "萧山T3",
+      "toAirport": "宝安T3",
+      "depart": "12:40",
+      "arrive": "15:05",
+      "duration": "2时25分",
+      "transfer": null,
+      "price": 560,
+      "cabin": "经济舱",
+      "petFriendly": false
+    },
+    {
+      "id": "f_ca1702",
+      "flightNo": "CA1702",
+      "airline": "中国国航",
+      "from": "北京",
+      "to": "杭州",
+      "fromAirport": "首都T3",
+      "toAirport": "萧山T4",
+      "depart": "07:30",
+      "arrive": "09:45",
+      "duration": "2时15分",
+      "transfer": null,
+      "price": 650,
+      "cabin": "经济舱",
+      "petFriendly": false
+    },
+    {
+      "id": "f_hu7277",
+      "flightNo": "HU7277",
+      "airline": "海南航空",
+      "from": "北京",
+      "to": "杭州",
+      "fromAirport": "首都T2",
+      "toAirport": "萧山T3",
+      "depart": "13:20",
+      "arrive": "15:35",
+      "duration": "2时15分",
+      "transfer": null,
+      "price": 720,
+      "cabin": "经济舱",
+      "petFriendly": true
+    },
+    {
+      "id": "f_mf8124",
+      "flightNo": "MF8124",
+      "airline": "厦门航空",
+      "from": "杭州",
+      "to": "北京",
+      "fromAirport": "萧山T3",
+      "toAirport": "大兴",
+      "depart": "17:10",
+      "arrive": "19:25",
+      "duration": "2时15分",
+      "transfer": null,
+      "price": 690,
+      "cabin": "经济舱",
+      "petFriendly": false
+    },
+    {
+      "id": "f_ca1351",
+      "flightNo": "CA1351",
+      "airline": "中国国航",
+      "from": "北京",
+      "to": "广州",
+      "fromAirport": "首都T3",
+      "toAirport": "白云T1",
+      "depart": "09:00",
+      "arrive": "12:20",
+      "duration": "3时20分",
+      "transfer": null,
+      "price": 880,
+      "cabin": "经济舱",
+      "petFriendly": false
+    },
+    {
+      "id": "f_cz3156",
+      "flightNo": "CZ3156",
+      "airline": "南方航空",
+      "from": "北京",
+      "to": "深圳",
+      "fromAirport": "大兴",
+      "toAirport": "宝安T3",
+      "depart": "11:10",
+      "arrive": "14:35",
+      "duration": "3时25分",
+      "transfer": null,
+      "price": 920,
+      "cabin": "经济舱",
+      "petFriendly": false
+    },
+    {
+      "id": "f_3u8882",
+      "flightNo": "3U8882",
+      "airline": "四川航空",
+      "from": "北京",
+      "to": "成都",
+      "fromAirport": "首都T2",
+      "toAirport": "天府T2",
+      "depart": "16:00",
+      "arrive": "19:05",
+      "duration": "3时05分",
+      "transfer": null,
+      "price": 790,
+      "cabin": "经济舱",
+      "petFriendly": true
+    },
+    {
+      "id": "f_mu5315",
+      "flightNo": "MU5315",
+      "airline": "东方航空",
+      "from": "上海",
+      "to": "广州",
+      "fromAirport": "虹桥T2",
+      "toAirport": "白云T1",
+      "depart": "10:25",
+      "arrive": "12:55",
+      "duration": "2时30分",
+      "transfer": null,
+      "price": 640,
+      "cabin": "经济舱",
+      "petFriendly": false
+    },
+    {
+      "id": "f_zh9518",
+      "flightNo": "ZH9518",
+      "airline": "深圳航空",
+      "from": "上海",
+      "to": "深圳",
+      "fromAirport": "虹桥T2",
+      "toAirport": "宝安T3",
+      "depart": "18:15",
+      "arrive": "20:50",
+      "duration": "2时35分",
+      "transfer": null,
+      "price": 710,
+      "cabin": "经济舱",
+      "petFriendly": false
+    },
+    {
+      "id": "f_gj8691",
+      "flightNo": "GJ8691",
+      "airline": "长龙航空",
+      "from": "杭州",
+      "to": "广州",
+      "fromAirport": "萧山T3",
+      "toAirport": "白云T2",
+      "depart": "08:40",
+      "arrive": "10:55",
+      "duration": "2时15分",
+      "transfer": null,
+      "price": 520,
+      "cabin": "经济舱",
+      "petFriendly": false
+    },
+    {
+      "id": "f_mu5137",
+      "flightNo": "MU5137",
+      "airline": "东方航空",
+      "from": "上海",
+      "to": "杭州",
+      "fromAirport": "浦东T1",
+      "toAirport": "萧山T3",
+      "depart": "08:10",
+      "arrive": "09:15",
+      "duration": "1时05分",
+      "transfer": null,
+      "price": 420,
+      "cabin": "经济舱",
+      "petFriendly": false
+    },
+    {
+      "id": "f_gj8212",
+      "flightNo": "GJ8212",
+      "airline": "长龙航空",
+      "from": "上海",
+      "to": "杭州",
+      "fromAirport": "浦东T2",
+      "toAirport": "萧山T3",
+      "depart": "18:25",
+      "arrive": "19:30",
+      "duration": "1时05分",
+      "transfer": null,
+      "price": 360,
+      "cabin": "经济舱",
+      "petFriendly": true
+    },
+    {
+      "id": "f_mu5138",
+      "flightNo": "MU5138",
+      "airline": "东方航空",
+      "from": "杭州",
+      "to": "上海",
+      "fromAirport": "萧山T3",
+      "toAirport": "浦东T1",
+      "depart": "10:30",
+      "arrive": "11:35",
+      "duration": "1时05分",
+      "transfer": null,
+      "price": 390,
+      "cabin": "经济舱",
+      "petFriendly": false
+    },
+    {
+      "id": "f_cz3524",
+      "flightNo": "CZ3524",
+      "airline": "南方航空",
+      "from": "广州",
+      "to": "上海",
+      "fromAirport": "白云T2",
+      "toAirport": "虹桥T2",
+      "depart": "15:20",
+      "arrive": "17:45",
+      "duration": "2时25分",
+      "transfer": null,
+      "price": 670,
+      "cabin": "经济舱",
+      "petFriendly": false
+    },
+    {
+      "id": "f_zh9517",
+      "flightNo": "ZH9517",
+      "airline": "深圳航空",
+      "from": "深圳",
+      "to": "上海",
+      "fromAirport": "宝安T3",
+      "toAirport": "虹桥T2",
+      "depart": "07:55",
+      "arrive": "10:20",
+      "duration": "2时25分",
+      "transfer": null,
+      "price": 690,
+      "cabin": "经济舱",
+      "petFriendly": false
+    },
+    {
+      "id": "f_ca1721",
+      "flightNo": "CA1721",
+      "airline": "中国国航",
+      "from": "杭州",
+      "to": "成都",
+      "fromAirport": "萧山T4",
+      "toAirport": "天府T2",
+      "depart": "12:15",
+      "arrive": "15:10",
+      "duration": "2时55分",
+      "transfer": null,
+      "price": 740,
+      "cabin": "经济舱",
+      "petFriendly": true
     }
   ],
   "attractions": [
@@ -578,7 +6505,8 @@
           "price": 579,
           "desc": "官方|可订明日|不可退|无需取票"
         }
-      ]
+      ],
+      "city": "上海"
     },
     {
       "id": "a_haichang",
@@ -612,7 +6540,8 @@
           "price": 230,
           "desc": "已减¥49"
         }
-      ]
+      ],
+      "city": "上海"
     },
     {
       "id": "a_pearl",
@@ -641,7 +6570,8 @@
           "price": 199,
           "desc": "随买随用|随时退"
         }
-      ]
+      ],
+      "city": "上海"
     },
     {
       "id": "a_yuyuan",
@@ -669,7 +6599,50 @@
           "price": 30,
           "desc": "随买随用|随时退"
         }
-      ]
+      ],
+      "city": "上海"
+    },
+    {
+      "id": "a_cc_jingyue",
+      "name": "净月潭国家森林公园",
+      "image": "/@app-assets/Ctrip/gen/scene_disney.png",
+      "gallery": [
+        "/@app-assets/Ctrip/gen/scene_disney.png",
+        "/@app-assets/Ctrip/gen/scene_disney_toy.png"
+      ],
+      "score": 4.7,
+      "reviewCount": "30.5万条点评",
+      "hot": 10,
+      "district": "净月",
+      "distance": "距您25.1km",
+      "tags": [
+        "积分可抵¥50",
+        "随买随用",
+        "可订今日"
+      ],
+      "openTime": "08:30-21:30开放",
+      "intro": "长春净月潭，森林与湖景。",
+      "ticketTypes": [
+        {
+          "id": "tk_adult",
+          "name": "成人票",
+          "price": 579,
+          "desc": "随买随用|无需取票|30天低价"
+        },
+        {
+          "id": "tk_child",
+          "name": "儿童票",
+          "price": 429,
+          "desc": "随买随用|无需取票|积分可抵¥50"
+        },
+        {
+          "id": "tk_teen",
+          "name": "青少年票",
+          "price": 579,
+          "desc": "官方|可订明日|不可退|无需取票"
+        }
+      ],
+      "city": "长春"
     }
   ],
   "carModels": [
@@ -743,7 +6716,7 @@
     {
       "id": "o3",
       "category": "hotel",
-      "title": "卡斯顿大酒店(长春吉大前卫南校店)",
+      "title": "云栖酒店(长春吉林大学前卫南区店)",
       "subtitle": "06-17 入住 · 1晚",
       "date": "2026-06-17",
       "status": "completed",
@@ -754,7 +6727,7 @@
     {
       "id": "o4",
       "category": "hotel",
-      "title": "维也纳国际酒店(南京南站中心店)",
+      "title": "维纳国际酒店(南京南站中心店)",
       "subtitle": "02-23 至 02-24 · 1晚1间 · 高级大床房",
       "date": "2026-02-23",
       "status": "refunded",
@@ -766,7 +6739,7 @@
     {
       "id": "o5",
       "category": "hotel",
-      "title": "《泉汐》复旦儿科医院600米精品民宿",
+      "title": "《泉汐》儿科医院附近600米精品民宿",
       "subtitle": "06-30 入住 · 1晚",
       "date": "2026-06-30",
       "status": "unpaid",
@@ -805,28 +6778,54 @@
       "group": "订单出行",
       "title": "机票出票成功",
       "time": "06-19 22:07",
-      "content": "订单1128148825309119,湖南航空A67148经济舱 长春T2-苏南硕放国际机场T2 6月20日15:40-18:30",
-      "detail": "建议您提前2小时到达机场办理相关手续;票号:李明 389-2149067946;机票有效期至2027-06-19 23:59。"
+      "content": "订单************,湖南航空A67148经济舱 长春T2-苏南硕放国际机场T2 6月20日15:40-18:30",
+      "detail": "建议您提前2小时到达机场办理相关手续;票号:旅客 ***-**********;机票有效期至2027-06-19 23:59。"
     }
   ],
   "travelers": [
     {
       "id": "p1",
-      "name": "李明",
-      "idCard": "320203**********21",
-      "phone": "180****9152"
+      "name": "陈一诺",
+      "idCard": "110101************01",
+      "phone": "138****0001"
     },
     {
       "id": "p2",
-      "name": "朱静颖",
-      "idCard": "320201**********22",
-      "phone": "132****1008"
+      "name": "李思远",
+      "idCard": "110101************02",
+      "phone": "139****0002"
     },
     {
       "id": "p3",
-      "name": "杨璐",
-      "idCard": "320204**********25",
-      "phone": "182****0526"
+      "name": "王晓彤",
+      "idCard": "110101************03",
+      "phone": "137****0003"
     }
-  ]
+  ],
+  "hotelCity": "上海",
+  "contacts": [
+    {
+      "id": "c1",
+      "name": "赵明轩",
+      "phone": "136****2218",
+      "relation": "同事"
+    },
+    {
+      "id": "c2",
+      "name": "周雨桐",
+      "phone": "151****6630",
+      "relation": "朋友"
+    }
+  ],
+  "invoiceJobs": [],
+  "browseHistory": [
+    "h_quanji",
+    "h_hanting",
+    "h_dahua",
+    "h_homestay",
+    "h_chongqing",
+    "h_sanya"
+  ],
+  "favoriteAttractions": [],
+  "pinnedChats": []
 }

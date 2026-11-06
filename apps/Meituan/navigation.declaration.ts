@@ -16,7 +16,10 @@ export const NAVIGATION_DECLARATION = {
       scrollContainers: MAIN_SCROLL,
       uiStates: [
         { id: 'home.base', search: {}, description: '首页-附近餐厅列表' },
-        { id: 'home.search', search: { mode: 'search' }, description: '首页-搜索状态' },
+        { id: 'home.search', search: { mode: 'search' }, description: '首页-搜索状态', actions: [
+          { id: 'home.search.input', label: '输入餐厅或菜品关键词', behavior: 'input', paramsSchema: { value: 'string' } },
+          { id: 'home.search.cancel', label: '取消搜索', behavior: 'other' },
+        ] },
       ],
       queryParams: {},
       description: '美团外卖首页',

@@ -11,6 +11,17 @@ import type {
 } from './navigation.types';
 import { memoryHistoryPopTo } from '../../os/utils/memoryHistoryPopTo';
 
+const HOME_ROOTED_TRANSITIONS = new Set<TransitionId>([
+  'tag.drawer.allNotes',
+  'tag.drawer.heatmapDay',
+  'tag.filter.fromDrawer',
+  'filter.byType.images',
+  'filter.byType.audio',
+  'filter.byType.links',
+  'filter.byType.untagged',
+  'filter.byType.wechat',
+]);
+
 export function useAppNavigate() {
   const navigate = useNavigate();
   const location = useLocation();
@@ -54,8 +65,9 @@ export function useAppNavigate() {
     const searchStr = newParams.toString();
     const targetUrl = searchStr ? `${targetPathname}?${searchStr}` : targetPathname;
 
-    if (options?.popTo) {
-      memoryHistoryPopTo(navigator, options.popTo, { inclusive: options.popToInclusive });
+    const popTo = options?.popTo ?? (HOME_ROOTED_TRANSITIONS.has(id) ? '/' : undefined);
+    if (popTo) {
+      memoryHistoryPopTo(navigator, popTo, { inclusive: options?.popToInclusive });
     }
     const mode = options?.mode ?? t.mode;
     const navOptions: { replace?: boolean; state?: unknown } = {};

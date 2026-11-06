@@ -1,7 +1,7 @@
 import { searchCities, WEATHER_CITY_BY_ID } from '@/apps/Weather/data';
 import { useWeatherStore } from '@/apps/Weather/state';
 import { getWeatherBundle } from '@/apps/Weather/services/weatherService';
-import { setSelectedCityId } from '@/apps/Weather/utils/weatherStore';
+import { setLastAccess, setSelectedCityId, setStoredBundle } from '@/apps/Weather/utils/weatherStore';
 import { materializeBundle } from '@/apps/Weather/utils/weatherLibrary';
 import { addSavedCityWithBundle } from '@/apps/Weather/utils/savedCityState';
 import { assertAllowedKeys, optionalInteger } from '../../core/errors';
@@ -40,8 +40,17 @@ const handlers: Record<string, ToolHandler> = {
     return { city_id: c.id, city: c.name, observed_at: b.now.obsTime, temperature_c: Number(b.now.temp), feels_like_c: Number(b.now.feelsLike), condition: b.now.text, humidity_percent: Number(b.now.humidity), precipitation_mm: Number(b.now.precip), wind: `${b.now.windDir}${b.now.windScale}` };
   },
   weather__get_daily_forecast: async (input) => {
-    assertAllowedKeys(input, ['city_id', 'days']); const id = getQuery(input, 'city_id'); const days = optionalInteger(input, 'days', { min: 1, max: 15, defaultValue: 7 });
-    return { city_id: id, days: (await bundle(id)).daily.slice(0, days).map((d, index) => daySummary(d, index)) };
+    assertAllowedKeys(input, ['city_id', 'days']);
+    const id = getQuery(input, 'city_id');
+    const days = optionalInteger(input, 'days', { min: 1, max: 15, defaultValue: 7 });
+    const c = city(id);
+    const b = await bundle(c.id);
+    useWeatherStore.setState((s) => setLastAccess(setStoredBundle(s, c.id, {
+      lonLat: `${c.lon},${c.lat}`,
+      bundle: b,
+      locationName: c.name,
+    }), c.id), true);
+    return { city_id: c.id, days: b.daily.slice(0, days).map((d, index) => daySummary(d, index)) };
   },
   weather__find_days_by_condition: async (input) => {
     assertAllowedKeys(input, ['city_id', 'condition', 'days']); const id = getQuery(input, 'city_id'); const condition = normalized(getQuery(input, 'condition')); const days = optionalInteger(input, 'days', { min: 1, max: 15, defaultValue: 15 });

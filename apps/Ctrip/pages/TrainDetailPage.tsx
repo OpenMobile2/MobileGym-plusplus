@@ -1,16 +1,30 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useSearchParams } from 'react-router-dom';
 import { useCtripStore } from '../state';
 import { useCtripGestures } from '../hooks/useCtripGestures';
+import { useCtripStrings } from '../hooks/useCtripStrings';
 import { TopBar, Price, BottomSheet, usePanel } from '../components/ui';
+import { systemMonthDay } from '../utils/travelDate';
 
 /** 车次详情(spec train.detail)。席别方案「订」→booking;经停信息弹层。 */
 export default function TrainDetailPage() {
+  const s = useCtripStrings();
   const { no = '' } = useParams();
+  const [sp] = useSearchParams();
+  const date = sp.get('date') || systemMonthDay();
   const { bindTap } = useCtripGestures();
   const { value: panel, open, close } = usePanel();
   const trains = useCtripStore((s) => s.trains);
-  const train = trains.find((t) => t.id === no) ?? trains[0];
+  const recordTaskAudit = useCtripStore((s) => s.recordTaskAudit);
+  const train = trains.find((t) => t.id === no);
+  if (!train) {
+    return (
+      <div className="flex flex-col h-full bg-[#F5F6F8]">
+        <TopBar title="车次" />
+        <div className="flex-1 flex items-center justify-center text-[14px] text-[#999999]">未找到该车次</div>
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col h-full bg-[#F5F6F8]">
@@ -22,8 +36,11 @@ export default function TrainDetailPage() {
             <div><div className="text-[24px] font-bold">{train.depart}</div><div className="text-[12px] text-[#999999]">{train.from}</div></div>
             <div className="flex-1 text-center px-3">
               <div className="text-[12px] text-[#0086F6]">{train.trainNo} · {train.type}</div>
-              <div className="text-[11px] text-[#999999] mt-1">{train.duration}</div>
-              <button {...bindTap({ kind: 'action', id: 'trainDetail.stops.open' }, { onTrigger: () => open('stops') })} className="text-[11px] text-[#0086F6] mt-1 bg-transparent border-none cursor-pointer">经停 {train.stops.length || 6} 站 ›</button>
+              <div className="text-[11px] text-[#999999] mt-1">{date} · {train.duration}</div>
+              <button {...bindTap({ kind: 'action', id: 'trainDetail.stops.open' }, { onTrigger: () => {
+                recordTaskAudit(`trainStopsViewed:${train.id}`, true);
+                open('stops');
+              } })} className="text-[11px] text-[#0086F6] mt-1 bg-transparent border-none cursor-pointer">经停 {train.stops.length || 6} 站 ›</button>
             </div>
             <div className="text-right"><div className="text-[24px] font-bold">{train.arrive}</div><div className="text-[12px] text-[#999999]">{train.to}</div></div>
           </div>
@@ -34,7 +51,7 @@ export default function TrainDetailPage() {
 
         {/* 席别方案 */}
         <div className="bg-white mt-2">
-          <div className="px-4 py-2 text-[15px] font-semibold text-[#111111]">选择席别</div>
+          <div className="px-4 py-2 text-[15px] font-semibold text-[#111111]">{s.t('选择席别')}</div>
           {train.seats.map((s) => (
             <div key={s.name} className="flex items-center justify-between px-4 py-3 border-t border-[#F5F5F5]">
               <div>
@@ -50,11 +67,11 @@ export default function TrainDetailPage() {
         </div>
 
         {/* 保障 */}
-        <div className="mx-3 mt-2 text-[12px] text-[#666666] bg-white rounded-lg px-3 py-2">✓ 携程全能保障:抢票不加价,出行有保障,退改无忧</div>
+        <div className="mx-3 mt-2 text-[12px] text-[#666666] bg-white rounded-lg px-3 py-2">{s.t('✓ 携程全能保障:抢票不加价,出行有保障,退改无忧')}</div>
       </div>
 
       {panel === 'stops' && (
-        <BottomSheet title="经停信息" onClose={close}>
+        <BottomSheet title={s.t('经停信息')} onClose={close}>
           <div className="p-4">
             {(train.stops.length ? train.stops : [{ station: train.from, arrive: '--', depart: train.depart, stay: '--' }, { station: train.to, arrive: train.arrive, depart: '--', stay: '--' }]).map((st, i) => (
               <div key={i} className="flex items-center py-2.5 border-b border-[#F5F5F5]">

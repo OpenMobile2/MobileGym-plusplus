@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 import { ChevronLeft, Image as ImageIcon, Share, Archive, EyeOff, Flag, Download, Plus } from 'lucide-react';
 import { useDaysmatterStore } from '../state';
@@ -8,6 +8,9 @@ import { bgUrl } from '../assets';
 import { NOTEBOOK_COVERS } from '../constants';
 import EventRow from '../components/EventRow';
 import { useI18n } from '../i18n';
+import { makeTextPosterDataUrl, saveImageToAlbum } from '@/os/albumBridge';
+import { sharePlainText } from '@/os/shareBridge';
+import * as TimeService from '@/os/TimeService';
 
 export default function EventDetailPage() {
   const { t, locale } = useI18n();
@@ -23,7 +26,9 @@ export default function EventDetailPage() {
   const setArchived = useDaysmatterStore((s) => s.setArchived);
   const showToast = useDaysmatterStore((s) => s.showToast);
   const clearDraft = useDaysmatterStore((s) => s.clearDraft);
-  const [ymdMode, setYmdMode] = useState(false);
+  const displayMode = useDaysmatterStore((s) => s.detailDisplayModes[id] ?? 'days');
+  const setDetailDisplayMode = useDaysmatterStore((s) => s.setDetailDisplayMode);
+  const ymdMode = displayMode === 'date';
   const wood = bgUrl('bg_wood_light');
 
   if (!event) {
@@ -37,6 +42,21 @@ export default function EventDetailPage() {
 
   const info = dayInfo(event);
   const headerColor = NOTEBOOK_COVERS.find((c) => c.id === notebook?.cover)?.color ?? '#3E7CB1';
+
+  const saveEventImage = () => {
+    void (async () => {
+      const dataUrl = makeTextPosterDataUrl(
+        [event.title, phrase(info, locale), dateLabel(event.targetDate, event.calendar, locale)],
+        { title: t('eventDetail.saveImage') },
+      );
+      const saved = await saveImageToAlbum(dataUrl, {
+        album: 'Saved',
+        fileName: `daysmatter_${event.id}_${TimeService.now()}.svg`,
+        mimeType: 'image/svg+xml',
+      });
+      showToast(saved ? '已保存到系统相册' : t('toast.saveImageUnavailable'));
+    })();
+  };
 
   return (
     <div
@@ -61,7 +81,7 @@ export default function EventDetailPage() {
               {event.title}
             </div>
             <button
-              {...action<HTMLButtonElement>('detail.display.cycle', () => setYmdMode((v) => !v))}
+              {...action<HTMLButtonElement>('detail.display.cycle', () => setDetailDisplayMode(event.id, ymdMode ? 'days' : 'date'))}
               className="flex w-full flex-col items-center justify-center px-4 py-7 active:bg-[#FAF9F6]"
             >
               {info.state === 'today' ? (
@@ -87,7 +107,7 @@ export default function EventDetailPage() {
 
         <div className="flex items-center justify-center gap-2 px-3 pb-3">
           <OrangePill icon={<Share size={18} />} label={t('common.share')} {...bindTap<HTMLButtonElement>('detail.share-open', { params: { id: event.id } })} />
-          <OrangePill icon={<Download size={18} />} label={t('eventDetail.saveImage')} {...action<HTMLButtonElement>('share.saveImage.tap', () => showToast(t('toast.saveImageUnavailable')))} />
+          <OrangePill icon={<Download size={18} />} label={t('eventDetail.saveImage')} {...action<HTMLButtonElement>('share.saveImage.tap', saveEventImage)} />
           <OrangeCircle {...bindTap<HTMLButtonElement>('detail.album-open')} aria-label="album"><ImageIcon size={20} /></OrangeCircle>
           <OrangeCircle {...action<HTMLButtonElement>('detail.bigday.tap', () => showToast(t('toast.bigDayUnavailable')))} aria-label="big day"><Flag size={20} /></OrangeCircle>
           <OrangeCircle solid {...bindTap<HTMLButtonElement>('detail.subadd-open', { params: { parent: event.id }, beforeTrigger: () => clearDraft() })} aria-label="add sub"><Plus size={22} /></OrangeCircle>
@@ -108,9 +128,9 @@ export default function EventDetailPage() {
           <div className="relative z-10 rounded-t-2xl bg-white pb-6 pt-4">
             <div className="mb-3 text-center text-sm text-[#9A9A9A]">{t('eventDetail.shareSheet')}</div>
             <div className="grid grid-cols-4 gap-2 px-4">
-              <ShareIcon emoji="🖼️" label={t('eventDetail.saveImage')} {...action<HTMLButtonElement>('share.saveImage.tap', () => showToast(t('toast.saveImageUnavailable')))} />
-              <ShareIcon emoji="💬" label={t('eventDetail.wechat')} {...action<HTMLButtonElement>('share.thirdparty.tap', () => showToast(t('toast.thirdPartyShare')))} />
-              <ShareIcon emoji="📷" label={t('eventDetail.moments')} {...action<HTMLButtonElement>('share.thirdparty.tap', () => showToast(t('toast.thirdPartyShare')))} />
+              <ShareIcon emoji="🖼️" label={t('eventDetail.saveImage')} {...action<HTMLButtonElement>('share.saveImage.tap', saveEventImage)} />
+              <ShareIcon emoji="💬" label={t('eventDetail.wechat')} {...action<HTMLButtonElement>('share.thirdparty.tap', () => { const launched = sharePlainText(`【倒数日】${event.title}`, { onResult: (r) => { if (r.resultCode === 'OK') showToast(locale === 'zh' ? '分享成功' : 'Shared'); } }); if (!launched) showToast(t('toast.thirdPartyShare')); })} />
+              <ShareIcon emoji="📷" label={t('eventDetail.moments')} {...action<HTMLButtonElement>('share.thirdparty.tap', () => { const launched = sharePlainText(`【倒数日】${event.title}`, { onResult: (r) => { if (r.resultCode === 'OK') showToast(locale === 'zh' ? '分享成功' : 'Shared'); } }); if (!launched) showToast(t('toast.thirdPartyShare')); })} />
               <ShareIcon emoji="🔗" label={t('eventDetail.copyLink')} {...action<HTMLButtonElement>('share.thirdparty.tap', () => showToast(t('toast.thirdPartyShare')))} />
             </div>
             <div className="mt-3 border-t border-[#F2F1EC] pt-2">

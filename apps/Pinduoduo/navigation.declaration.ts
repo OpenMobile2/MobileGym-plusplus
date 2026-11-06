@@ -124,6 +124,8 @@ export const NAVIGATION_DECLARATION = {
           id: 'pdd.item.base', search: {}, description: '商品详情',
           actions: [
             { id: 'detail.favorite.toggle', label: '收藏/取消收藏', behavior: 'toggle' },
+            { id: 'detail.discover.wontfix', label: '发现同款(暂未开放)', behavior: 'other' },
+            { id: 'detail.explain.wontfix', label: '听讲解(暂未开放)', behavior: 'other' },
             { id: 'detail.report.wontfix', label: '举报(暂未开放)', behavior: 'other' },
           ],
         },
@@ -219,6 +221,9 @@ export const NAVIGATION_DECLARATION = {
           id: 'pdd.orders.base', search: {}, description: '我的订单',
           actions: [
             { id: 'orders.tab.select.status', label: '切换订单状态Tab', behavior: 'select', paramsSchema: { status: 'string' } },
+            { id: 'orders.search.wontfix', label: '搜索订单(暂未开放)', behavior: 'other' },
+            { id: 'orders.share.wontfix', label: '分享订单(暂未开放)', behavior: 'other' },
+            { id: 'orders.coupon.wontfix', label: '领取订单优惠券(暂未开放)', behavior: 'other' },
             { id: 'orders.remind.ship', label: '催发货', behavior: 'other' },
             { id: 'orders.pay.now', label: '立即付款', behavior: 'submit' },
             { id: 'orders.cancel.confirm', label: '取消订单', behavior: 'other' },
@@ -253,6 +258,14 @@ export const NAVIGATION_DECLARATION = {
       queryParams: {}, description: '订单详情',
     },
     {
+      path: '/orders/:orderId/snapshot', component: 'OrderSnapshotPage', params: { orderId: 'string' }, entryPoint: 'none',
+      scrollContainers: [sc('snapshot-scroll', '商品快照')],
+      uiStates: [
+        { id: 'pdd.snapshot.base', search: {}, description: '商品快照' },
+      ],
+      queryParams: {}, description: '商品快照',
+    },
+    {
       path: '/orders/:orderId/logistics', component: 'LogisticsPage', params: { orderId: 'string' }, entryPoint: 'none',
       scrollContainers: [sc('logi-scroll', '物流轨迹')],
       uiStates: [
@@ -285,6 +298,7 @@ export const NAVIGATION_DECLARATION = {
           id: 'pdd.writereview.base', search: {}, description: '写评价',
           actions: [
             { id: 'writereview.rating.set', label: '设定星级', behavior: 'modify', paramsSchema: { rating: 'number' } },
+            { id: 'writereview.media.pick', label: '从系统相册选择评价图片', behavior: 'other' },
             { id: 'writereview.form.submit', label: '提交评价', behavior: 'submit' },
           ],
         },
@@ -517,8 +531,9 @@ export const NAVIGATION_DECLARATION = {
 
     // —— 搜索 ——
     { id: 'subsidy.search-open', from: '/subsidy', to: '/search', search: {}, searchParams: {}, mode: 'push', params: {}, label: '补贴页搜索框', ui: { placement: 'topbar', icon: 'search', gesture: 'tap' } },
-    { id: 'search.submit', from: ['/search', '/search-result'], to: '/search-result', search: {}, searchParams: { q: 'string' }, mode: 'push', params: {}, label: '提交搜索', ui: { placement: 'topbar', icon: 'search', gesture: 'tap' } },
+    { id: 'search.submit', from: '/search', to: '/search-result', search: {}, searchParams: { q: 'string' }, mode: 'push', params: {}, label: '提交搜索', ui: { placement: 'topbar', icon: 'search', gesture: 'tap' } },
     { id: 'search.suggest-open', from: '/search', to: '/search-result', search: {}, searchParams: { q: 'string' }, mode: 'push', params: {}, label: '联想词/历史词', ui: { placement: 'content', icon: 'search', gesture: 'tap' } },
+    { id: 'result.search-open', from: '/search-result', to: '/search', search: {}, searchParams: { q: 'string' }, mode: 'push', params: {}, label: '结果页搜索框(回搜索页改词)', ui: { placement: 'topbar', icon: 'search', gesture: 'tap' } },
     { id: 'result.item-open', from: '/search-result', to: '/item/:itemId', search: {}, searchParams: {}, mode: 'push', params: { itemId: 'string' }, label: '结果商品卡', ui: { placement: 'content', icon: 'card', gesture: 'tap' }, dataSource: { ref: 'items', paramMapping: { itemId: 'id' }, labelField: 'title' } },
     { id: 'result.filter.show', from: '/search-result', to: '/search-result', search: { drawer: 'filter' }, searchParams: {}, mode: 'push', params: {}, label: '打开筛选抽屉', ui: { placement: 'topbar', icon: 'filter', gesture: 'tap' } },
 
@@ -564,6 +579,8 @@ export const NAVIGATION_DECLARATION = {
     { id: 'mine.aftersale-open', from: '/me', to: '/aftersale', search: {}, searchParams: {}, mode: 'push', params: {}, label: '退款售后', ui: { placement: 'content', icon: 'refresh', gesture: 'tap' } },
     { id: 'mine.address-open', from: '/me', to: '/address', search: {}, searchParams: {}, mode: 'push', params: {}, label: '收货地址', ui: { placement: 'content', icon: 'pin', gesture: 'tap' } },
     { id: 'mine.settings-open', from: '/me', to: '/settings', search: {}, searchParams: {}, mode: 'push', params: {}, label: '设置', ui: { placement: 'topbar', icon: 'settings', gesture: 'tap' } },
+    { id: 'mine.item-open', from: '/me', to: '/item/:itemId', search: {}, searchParams: {}, mode: 'push', params: { itemId: 'string' }, label: '个人中心推荐商品', ui: { placement: 'content', icon: 'card', gesture: 'tap' }, dataSource: { ref: 'items', paramMapping: { itemId: 'id' }, labelField: 'title' } },
+    { id: 'mine.item-quickbuy', from: '/me', to: '/item/:itemId', search: { panel: 'sku' }, searchParams: { mode: 'string' }, mode: 'push', params: { itemId: 'string' }, label: '个人中心推荐商品快速购买', ui: { placement: 'content', icon: 'plus', gesture: 'tap' }, dataSource: { ref: 'items', paramMapping: { itemId: 'id' }, labelField: 'title' } },
 
     // —— 订单 ——
     { id: 'orders.detail-open', from: '/orders', to: '/orders/:orderId', search: {}, searchParams: {}, mode: 'push', params: { orderId: 'string' }, label: '订单卡', ui: { placement: 'content', icon: 'card', gesture: 'tap' }, dataSource: { ref: 'orders', paramMapping: { orderId: 'id' }, labelField: 'orderNo' } },
@@ -572,6 +589,7 @@ export const NAVIGATION_DECLARATION = {
     { id: 'writereview.orders-open', from: '/orders/:orderId/review', to: '/orders', search: {}, searchParams: {}, mode: 'replace', params: {}, label: '评价完成回全部订单(默认全部Tab)', ui: { placement: 'content', icon: 'card', gesture: 'tap' } },
     { id: 'orderdetail.item-open', from: '/orders/:orderId', to: '/item/:itemId', search: {}, searchParams: {}, mode: 'push', params: { itemId: 'string' }, label: '订单商品进详情', ui: { placement: 'content', icon: 'card', gesture: 'tap' } },
     { id: 'orders.refund.show', from: '/orders', to: '/orders', search: { refund: 'quick' }, searchParams: {}, mode: 'push', params: {}, label: '极速退款弹层', ui: { placement: 'content', icon: 'refresh', gesture: 'tap' } },
+    { id: 'orderdetail.snapshot-open', from: '/orders/:orderId', to: '/orders/:orderId/snapshot', search: {}, searchParams: {}, mode: 'push', params: { orderId: 'string' }, label: '商品快照', ui: { placement: 'content', icon: 'card', gesture: 'tap' } },
     { id: 'orderdetail.logistics-open', from: '/orders/:orderId', to: '/orders/:orderId/logistics', search: {}, searchParams: {}, mode: 'push', params: { orderId: 'string' }, label: '查看物流', ui: { placement: 'content', icon: 'truck', gesture: 'tap' } },
     { id: 'orderdetail.invoice-open', from: '/orders/:orderId', to: '/orders/:orderId/invoice', search: {}, searchParams: {}, mode: 'push', params: { orderId: 'string' }, label: '开发票', ui: { placement: 'content', icon: 'invoice', gesture: 'tap' } },
     { id: 'orderdetail.review-open', from: '/orders/:orderId', to: '/orders/:orderId/review', search: {}, searchParams: {}, mode: 'push', params: { orderId: 'string' }, label: '去评价', ui: { placement: 'content', icon: 'star', gesture: 'tap' } },

@@ -31,7 +31,20 @@ const handlers: Record<string, ToolHandler> = {
   file_manager__open_containing_folder: async (input) => { assertAllowedKeys(input, ['path']); const n = node(canonicalPath(getQuery(input, 'path'))); const path = n.type === 'directory' ? n.path : parent(n.path); const route = `/folder?path=${encodeURIComponent(path)}`; await openAppRoute('file_manager', route); return { route, path, target_name: n.name }; },
   file_manager__create_folder: async (input) => { assertAllowedKeys(input, ['path']); const path = canonicalPath(getQuery(input, 'path')); if (FileSystem.exists(path)) requireFound(undefined, 'PATH_EXISTS', `Path already exists: ${path}`); return { ...meta(await FileSystem.createDirectory(path)), created: true }; },
   file_manager__copy_file: async (input) => { assertAllowedKeys(input, ['source_path', 'destination_path']); const source = canonicalPath(getQuery(input, 'source_path')); const destination = canonicalPath(getQuery(input, 'destination_path')); if (node(source).type !== 'file') requireFound(undefined, 'NOT_A_FILE', `${source} is not a file.`); if (FileSystem.exists(destination)) requireFound(undefined, 'PATH_EXISTS', `Destination already exists: ${destination}`); return { ...meta(requireFound(await FileSystem.copyFile(source, destination), 'COPY_FAILED', `Could not copy ${source}.`)), copied_from: source }; },
-  file_manager__move_file: async (input) => { assertAllowedKeys(input, ['source_path', 'destination_path']); const source = canonicalPath(getQuery(input, 'source_path')); const destination = canonicalPath(getQuery(input, 'destination_path')); if (node(source).type !== 'file') requireFound(undefined, 'NOT_A_FILE', `${source} is not a file.`); if (FileSystem.exists(destination)) requireFound(undefined, 'PATH_EXISTS', `Destination already exists: ${destination}`); const moved = requireFound(await FileSystem.moveNode(source, destination), 'MOVE_FAILED', `Could not move ${source}.`); return { ...meta(moved), moved_from: source, source_exists: FileSystem.exists(source), destination_exists: FileSystem.exists(destination) }; },
+  file_manager__move_file: async (input) => {
+    assertAllowedKeys(input, ['source_path', 'destination_path']);
+    const source = canonicalPath(getQuery(input, 'source_path'));
+    const destination = canonicalPath(getQuery(input, 'destination_path'));
+    if (node(source).type !== 'file') requireFound(undefined, 'NOT_A_FILE', `${source} is not a file.`);
+    if (FileSystem.exists(destination)) requireFound(undefined, 'PATH_EXISTS', `Destination already exists: ${destination}`);
+    const moved = requireFound(await FileSystem.moveNode(source, destination), 'MOVE_FAILED', `Could not move ${source}.`);
+    return {
+      ...meta(moved),
+      moved_from: source,
+      source_exists: FileSystem.exists(source),
+      destination_exists: FileSystem.exists(destination),
+    };
+  },
 };
 
 export function executeFileManagerTool(name: string, input: JsonObject) { return requireFound(handlers[name], 'TOOL_NOT_FOUND', `Unknown File Manager tool: ${name}`)(input); }

@@ -91,6 +91,7 @@ export interface Attraction {
   score: number;
   reviewCount: string;      // 30.5万条点评
   hot: number;              // 热度 10
+  city?: string;
   district: string;
   distance: string;         // 距您25.1km
   tags: string[];           // 随买随用/可订今日
@@ -129,6 +130,8 @@ export interface CtripOrder {
   price: number;
   image?: string;
   refundInfo?: string;
+  reviewed?: boolean;       // 酒店已点评
+  payMethod?: 'alipay' | 'bankcard';
 }
 
 export interface CtripNotification {
@@ -149,6 +152,31 @@ export interface Traveler {
   phone: string;
 }
 
+export interface Contact {
+  id: string;
+  name: string;
+  phone: string;
+  relation: string;
+}
+
+export interface InvoiceJob {
+  id: string;
+  orderIds: string[];
+  titleType: string;
+  status: 'doing' | 'done';
+  createdAt: string;
+}
+
+export interface FlightPriceAlert {
+  id: string;
+  from: string;
+  to: string;
+  threshold: number;
+  smart: boolean;
+  trip: string;
+  createdAt: string;
+}
+
 export interface CtripState {
   user: CtripUser;
   hotels: Hotel[];
@@ -160,8 +188,17 @@ export interface CtripState {
   orders: CtripOrder[];
   notifications: CtripNotification[];
   travelers: Traveler[];
+  contacts: Contact[];
+  invoiceJobs: InvoiceJob[];
+  flightPriceAlerts: FlightPriceAlert[];
+  /** 只读/填单链路的结构化验收记录，避免仅凭最终截图判定。 */
+  taskAudit: Record<string, unknown>;
+  browseHistory: string[];         // 浏览过的酒店/景点 id
   searchHistory: string[];
   favoriteHotels: string[];        // 收藏的酒店 id
+  favoriteAttractions: string[];    // 收藏的景点 id
+  pinnedChats: string[];           // 置顶会话酒店 id
+  hotelCity: string;               // 酒店频道当前选中城市
   settings: Record<string, boolean>;  // 开关类设置
   // 临时下单态(收银台用,不持久化)
   _pendingOrder?: { category: CtripOrder['category']; title: string; subtitle: string; amount: number; image?: string };
@@ -172,12 +209,22 @@ export interface CtripActions {
   submitSearch: (q: string) => void;
   removeSearchHistory: (w: string) => void;
   toggleHotelFavorite: (id: string) => void;
+  toggleAttractionFavorite: (id: string) => void;
+  recordBrowse: (id: string) => void;
+  togglePinnedChat: (id: string) => void;
+  setHotelCity: (city: string) => void;
   toggleSetting: (key: string) => void;
   startBooking: (o: NonNullable<CtripState['_pendingOrder']>) => void;
-  payPending: () => string;        // 返回新订单 id
+  payPending: (method?: CtripOrder['payMethod']) => string;        // 返回新订单 id
   cancelOrder: (id: string) => void;
+  rebookOrder: (id: string, newDate: string) => void;
+  submitHotelReview: (hotelId: string, content: string, score: number, orderId?: string) => void;
   addTraveler: (name: string, idCard: string, phone: string) => void;
+  updateTraveler: (id: string, name: string, idCard: string, phone: string) => void;
   removeTraveler: (id: string) => void;
+  submitInvoice: (orderIds: string[], titleType: string) => void;
+  saveFlightPriceAlert: (input: Omit<FlightPriceAlert, 'id' | 'createdAt'>) => void;
+  recordTaskAudit: (key: string, value: unknown) => void;
   csAsk: (text: string) => void;   // 客服模拟问答
   resetCs: () => void;
 }

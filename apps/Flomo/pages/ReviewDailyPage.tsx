@@ -4,6 +4,7 @@ import { useFlomoGestures } from '../hooks/useFlomoGestures';
 import { C, MemoImages, renderContent } from '../components/ui';
 import { memoTime } from '../utils/format';
 import { IcClose, IcAi } from '../res/icons';
+import * as TimeService from '@/os/TimeService';
 
 /** 每日回顾:整页 overlay,顶部 关闭/标题/设置(文字),中间单条回顾笔记(左右横滑翻页,双击进详情),底部分页 + AI洞察。 */
 export default function ReviewDailyPage() {
@@ -12,19 +13,22 @@ export default function ReviewDailyPage() {
   const setCurrentMemo = useFlomoStore((s) => s.setCurrentMemo);
   const setCurrentTag = useFlomoStore((s) => s.setCurrentTag);
   const tags = useFlomoStore((s) => s.tags);
+  const settings = useFlomoStore((s) => s.settings);
+  const recordDailyReviewNext = useFlomoStore((s) => s.recordDailyReviewNext);
 
   const reviewList = useMemo(() => {
-    const live = memos.filter((m) => !m.deleted);
+    const cutoff = TimeService.now() - 366 * 86_400_000;
+    const live = memos.filter((m) => !m.deleted && (settings.dailyReviewRange === 'all' || m.createdAt >= cutoff));
     const withImg = live.filter((m) => m.images?.length);
     const rest = live.filter((m) => !m.images?.length);
-    return [...withImg, ...rest];
-  }, [memos]);
+    return [...withImg, ...rest].slice(0, settings.dailyReviewCount);
+  }, [memos, settings.dailyReviewCount, settings.dailyReviewRange]);
 
   const total = reviewList.length;
   const [idx, setIdx] = useState(0);
   const current = reviewList[Math.min(idx, Math.max(total - 1, 0))];
 
-  const next = () => { if (total > 1) setIdx((i) => (i + 1) % total); };
+  const next = () => { if (total > 1) { setIdx((i) => (i + 1) % total); recordDailyReviewNext(); } };
   const prev = () => { if (total > 1) setIdx((i) => (i - 1 + total) % total); };
 
   // 左右横滑翻页

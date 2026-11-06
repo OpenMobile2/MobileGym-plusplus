@@ -34,22 +34,22 @@ const PRODUCT_IMAGES: Record<string, string> = {
 const PRODUCT_IMAGE_FALLBACK = 'data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 120 120%22%3E%3Cdefs%3E%3ClinearGradient id=%22g%22 x2=%221%22 y2=%221%22%3E%3Cstop stop-color=%22%23e8efff%22/%3E%3Cstop offset=%221%22 stop-color=%22%23fff7e8%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%22120%22 height=%22120%22 rx=%2216%22 fill=%22url(%23g)%22/%3E%3Cpath d=%22M39 42h36v42H39zM75 51h8a10 10 0 010 20h-8%22 fill=%22none%22 stroke=%22%231c2e9c%22 stroke-width=%225%22 stroke-linejoin=%22round%22/%3E%3Cpath d=%22M45 35c0-6 7-6 7-12M60 35c0-6 7-6 7-12%22 fill=%22none%22 stroke=%22%231c2e9c%22 stroke-width=%224%22 stroke-linecap=%22round%22/%3E%3C/svg%3E';
 
 export function Page({ children, className = '' }: { children: React.ReactNode; className?: string }) {
-  return <div data-scroll-container="main" data-scroll-direction="vertical" className={`h-full overflow-y-auto bg-[#F4F5F7] text-[#1A1A1A] ${className}`}>{children}</div>;
+  return <div data-scroll-container="main" data-scroll-direction="vertical" className={`h-full overflow-y-auto bg-app-bg text-app-text ${className}`}>{children}</div>;
 }
 
 export function TopBar({ title, right, transparent = false }: { title: string; right?: React.ReactNode; transparent?: boolean }) {
   const { bindBack } = useLuckinGestures();
   return (
-    <div className={`h-12 px-3 flex items-center shrink-0 ${transparent ? 'bg-transparent' : 'bg-white'} sticky top-0 z-20`}>
+    <div className={`h-12 px-3 flex items-center shrink-0 ${transparent ? 'bg-transparent' : 'bg-app-surface'} sticky top-0 z-20`}>
       <button {...bindBack()} aria-label="back" className="w-10 h-10 shrink-0 flex items-center justify-center -ml-2"><IcBack size={23} /></button>
-      <h1 className="flex-1 min-w-0 text-center text-[17px] leading-6 font-semibold truncate whitespace-nowrap">{title}</h1>
+      <h1 className="flex-1 min-w-0 text-center text-[17px] leading-6 font-semibold truncate whitespace-nowrap text-app-text">{title}</h1>
       <div className="w-10 shrink-0 flex justify-end">{right}</div>
     </div>
   );
 }
 
 export function Card({ children, className = '' }: { children: React.ReactNode; className?: string }) {
-  return <section className={`bg-white rounded-xl ${className}`}>{children}</section>;
+  return <section className={`bg-app-surface rounded-xl ${className}`}>{children}</section>;
 }
 
 export function Segmented({ options, value, onSelect, actionId }: { options: Array<{ id: string; label: string }>; value: string; onSelect: (id: string) => void; actionId: string }) {
@@ -162,9 +162,9 @@ export function TabBar() {
   ];
   if (!tabs.some((tab) => tab.path === location.pathname)) return null;
   return (
-    <div data-hide-on-keyboard className="h-14 shrink-0 bg-white border-t border-[#EEE] flex">
+    <div data-hide-on-keyboard className="h-14 shrink-0 bg-app-surface border-t border-app-border flex">
       {tabs.map((tab) => { const active = location.pathname === tab.path; const Icon = tab.icon; return (
-        <button key={tab.path} {...tab.props} className={`flex-1 min-w-0 bg-white flex flex-col items-center justify-center gap-0.5 text-[10px] leading-3 ${active ? 'text-[#1C2E9C] font-semibold' : 'text-[#8D949C]'}`}>
+        <button key={tab.path} {...tab.props} className={`flex-1 min-w-0 bg-app-surface flex flex-col items-center justify-center gap-0.5 text-[10px] leading-3 ${active ? 'text-app-primary font-semibold' : 'text-app-text-muted'}`}>
           <Icon size={22} className="shrink-0" /><span className="block max-w-full truncate whitespace-nowrap">{tab.label}</span>
         </button>
       ); })}

@@ -43,7 +43,8 @@ APP_TOOLS: dict[str, tuple[str, ...]] = {
     "file_manager": (
         "file_manager__copy_file", "file_manager__create_folder",
         "file_manager__get_metadata", "file_manager__list_directory",
-        "file_manager__list_recent", "file_manager__open_containing_folder",
+        "file_manager__list_recent", "file_manager__move_file",
+        "file_manager__open_containing_folder",
         "file_manager__open_path", "file_manager__open_recent",
         "file_manager__read_text", "file_manager__search",
         "file_manager__summarize_storage",

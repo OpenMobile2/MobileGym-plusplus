@@ -3,8 +3,8 @@ const AI_MODEL = import.meta.env.VITE_AI_MODEL || 'qwen-flash';
 const AI_API_KEY = import.meta.env.VITE_AI_API_KEY || '';
 
 const readTimeBootstrap = () => {
-  if (typeof window === 'undefined') return null;
-  const params = new URLSearchParams(window.location.search);
+  if (typeof window === 'undefined' || !window.location) return null;
+  const params = new URLSearchParams(window.location.search ?? '');
   const simulatedTime = params.get('mobilegym_simulated_time')?.trim();
   if (!simulatedTime) return null;
 

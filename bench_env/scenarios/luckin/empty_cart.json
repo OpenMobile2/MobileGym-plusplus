@@ -1,0 +1,12 @@
+{
+  "_meta": {
+    "id": "luckin.empty_cart",
+    "description": "Empty cart while catalog remains: AddToCart judges via store cart[+1].",
+    "apply": "env.set_state(patch, deep=True)"
+  },
+  "apps": {
+    "luckin": {
+      "cart": []
+    }
+  }
+}

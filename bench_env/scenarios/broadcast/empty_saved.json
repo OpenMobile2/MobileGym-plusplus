@@ -1,0 +1,12 @@
+{
+  "_meta": {
+    "id": "broadcast.empty_saved",
+    "description": "Clear saved episodes so SaveEpisode task can judge +1 unambiguously.",
+    "apply": "env.set_state(patch, deep=True)"
+  },
+  "apps": {
+    "broadcast": {
+      "savedEpisodeIds": []
+    }
+  }
+}

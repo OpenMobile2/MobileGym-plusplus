@@ -2,6 +2,8 @@ import { useAlipayStrings } from '../hooks/useAlipayStrings';
 import React, { useEffect, useRef, useState } from 'react';
 import { IcDelete, IcClose } from '../res/icons';
 import { useAlipayGestures } from '../hooks/useAlipayGestures';
+import { isPayPinComplete } from '../payPin';
+import { PayPinCapture } from '@/os/components/PayPinCapture';
 interface SimplePaymentPasswordModalProps {
   visible: boolean;
   expectedPassword?: string;
@@ -10,7 +12,7 @@ interface SimplePaymentPasswordModalProps {
 
 export const SimplePaymentPasswordModal: React.FC<SimplePaymentPasswordModalProps> = ({
   visible,
-  expectedPassword = '000000',
+  expectedPassword: _expectedPassword = '000000',
   onSuccess,
 }) => {
   const s = useAlipayStrings();
@@ -30,19 +32,16 @@ export const SimplePaymentPasswordModal: React.FC<SimplePaymentPasswordModalProp
   useEffect(() => {
     if (password.length === 6) {
       if (calledRef.current) return;
-      if (password === expectedPassword) {
+      if (isPayPinComplete(password)) {
         calledRef.current = true;
         setTimeout(() => {
           onSuccess();
         }, 200);
-      } else {
-        setError(true);
-        setPassword('');
       }
     } else {
       if (error && password.length > 0) setError(false);
     }
-  }, [password, expectedPassword, error, onSuccess]);
+  }, [password, error, onSuccess]);
 
   const handleNumberClick = (num: string) => {
     if (password.length < 6) setPassword((prev) => prev + num);
@@ -56,6 +55,7 @@ export const SimplePaymentPasswordModal: React.FC<SimplePaymentPasswordModalProp
 
   return (
     <div className="fixed inset-0 z-[120] bg-black/60 flex flex-col justify-end">
+      <PayPinCapture value={password} onChange={setPassword} />
       <div className="flex-1 flex items-center justify-center px-6">
         <div className="w-full max-w-[380px] bg-app-surface rounded-2xl shadow-xl relative">
           <button {...bindBack<HTMLButtonElement>({ stopPropagation: true })} className="absolute left-4 top-4 text-gray-300">

@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 import json
+import os
 import random
 import time
 from typing import Any
@@ -86,6 +87,10 @@ class GptResponsesAgent:
         }
         if self._previous_response_id:
             request["previous_response_id"] = self._previous_response_id
+        # TokenHub routing: keep one cache key across this benchmark session.
+        cache_key = os.environ.get("PROMPT_CACHE_KEY")
+        if cache_key:
+            request["prompt_cache_key"] = cache_key
 
         self.last_messages = [
             {"role": "system", "content": instructions},
@@ -251,7 +256,7 @@ class GptResponsesAgent:
         return f"""You are operating the MobileGym mobile simulator to complete the user's task.
 The current foreground app is {current_app or 'the launcher/system UI'}. {mode}
 Use the computer tool for visible interaction. Its coordinates are original 1080x2400 screenshot pixels.
-Use open_app instead of searching launcher pages when the task names an app.
+Use open_app with an installed display name or id when the task names an app. Unknown names return APP_NOT_FOUND; retry or tap the launcher.
 In benchmark instructions, 笔记 or Notes means the system Notes app, not Flomo unless named.
 After every action, inspect the returned screenshot and verify that the UI changed as expected.
 Do not merely describe an action. Keep working until every requirement is satisfied.

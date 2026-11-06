@@ -6,6 +6,7 @@ import { useSearchParams } from 'react-router-dom';
 import { IcNavBack } from '../res/icons';
 import { splitPrice } from '../utils/format';
 import { useTaobaoGestures } from '../hooks/useTaobaoGestures';
+import { useStrings } from '../hooks/useStrings';
 
 /* ---------------- TopBar ---------------- */
 export function TopBar({
@@ -16,23 +17,24 @@ export function TopBar({
   transparent?: boolean;
 }) {
   const { bindBack } = useTaobaoGestures();
+  const s = useStrings();
   return (
     <div
       className={`flex items-center h-11 shrink-0 px-1 ${
-        transparent ? '' : 'bg-white border-b border-[#EEEEEE]'
+        transparent ? '' : 'bg-app-surface border-b border-app-border'
       }`}
     >
       <button
         {...bindBack()}
         className="w-10 h-10 flex items-center justify-center bg-transparent border-none cursor-pointer"
-        aria-label="返回"
+        aria-label={s.navBack}
       >
-        <IcNavBack size={24} className="text-[#111111]" />
+        <IcNavBack size={24} className="text-app-text" />
       </button>
-      <div className="flex-1 text-center font-semibold text-[17px] text-[#111111] truncate">
+      <div className="flex-1 text-center font-semibold text-[17px] text-app-text truncate">
         {title}
       </div>
-      <div className="w-10 flex justify-end items-center pr-1">{rightContent}</div>
+      <div className="min-w-10 flex justify-end items-center pr-1">{rightContent}</div>
     </div>
   );
 }
@@ -58,10 +60,11 @@ export function Price({
 
 /* ---------------- 店铺角标 ---------------- */
 export function ShopBadge({ badge }: { badge: 'tmall' | 'taobao' }) {
+  const s = useStrings();
   return badge === 'tmall' ? (
-    <span className="inline-block text-[10px] text-white bg-[#FF0036] rounded px-1 leading-4 mr-1 shrink-0">天猫</span>
+    <span className="inline-block text-[10px] text-white bg-[#FF0036] rounded px-1 leading-4 mr-1 shrink-0">{s.tmallBadgeLabel}</span>
   ) : (
-    <span className="inline-block text-[10px] text-white bg-[#FF5000] rounded px-1 leading-4 mr-1 shrink-0">淘宝</span>
+    <span className="inline-block text-[10px] text-white bg-[#FF5000] rounded px-1 leading-4 mr-1 shrink-0">{s.appName}</span>
   );
 }
 
@@ -112,14 +115,14 @@ export function BottomSheet({
   return (
     <div className="absolute inset-0 z-40">
       <div className="absolute inset-0 bg-black/50" onClick={onClose} />
-      <div className="absolute left-0 right-0 bottom-0 bg-white rounded-t-2xl max-h-[82%] flex flex-col">
+      <div className="absolute left-0 right-0 bottom-0 bg-app-surface rounded-t-2xl max-h-[82%] flex flex-col">
         {title !== undefined && (
           <div className="flex items-center justify-center relative h-12 shrink-0">
             <span className="font-semibold text-[15px]">{title}</span>
             <button
               {...(closeBinding ?? {})}
               onClick={onClose}
-              className="absolute right-3 top-2.5 w-7 h-7 rounded-full bg-[#F5F5F5] text-[#999999] border-none cursor-pointer text-[14px]"
+              className="absolute right-3 top-2.5 w-7 h-7 rounded-full bg-[#F5F5F5] text-app-text-muted border-none cursor-pointer text-[14px]"
             >
               ✕
             </button>
@@ -156,8 +159,8 @@ export function EmptyState({ text, hint }: { text: string; hint?: string }) {
   return (
     <div className="flex flex-col items-center justify-center py-16 gap-2">
       <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#FFD9C7] to-[#FF8A4C] opacity-60" />
-      <div className="text-[14px] text-[#666666]">{text}</div>
-      {hint && <div className="text-[12px] text-[#999999]">{hint}</div>}
+      <div className="text-[14px] text-app-text-muted">{text}</div>
+      {hint && <div className="text-[12px] text-app-text-muted">{hint}</div>}
     </div>
   );
 }
@@ -173,17 +176,17 @@ export function Stepper({
   binding?: object;
 }) {
   return (
-    <span {...(binding ?? {})} className="inline-flex items-center border border-[#EEEEEE] rounded">
+    <span {...(binding ?? {})} className="inline-flex items-center border border-app-border rounded">
       <button
-        className="w-6 h-6 text-[14px] text-[#666666] bg-[#FAFAFA] border-none cursor-pointer disabled:text-[#CCCCCC]"
+        className="w-6 h-6 text-[14px] text-app-text-muted bg-[#FAFAFA] border-none cursor-pointer disabled:text-[#CCCCCC]"
         disabled={value <= 1}
         onClick={(e) => { e.stopPropagation(); onChange(-1); }}
       >
         −
       </button>
-      <span className="w-8 text-center text-[13px] border-x border-[#EEEEEE]">{value}</span>
+      <span className="w-8 text-center text-[13px] border-x border-app-border">{value}</span>
       <button
-        className="w-6 h-6 text-[14px] text-[#666666] bg-[#FAFAFA] border-none cursor-pointer disabled:text-[#CCCCCC]"
+        className="w-6 h-6 text-[14px] text-app-text-muted bg-[#FAFAFA] border-none cursor-pointer disabled:text-[#CCCCCC]"
         disabled={max !== undefined && value >= max}
         onClick={(e) => { e.stopPropagation(); onChange(1); }}
       >
@@ -216,7 +219,7 @@ export function SwipeRow({
         {actions}
       </div>
       <div
-        className="relative bg-white"
+        className="relative bg-app-surface"
         style={{ transform: `translateX(${offset}px)`, transition: dragging.current ? 'none' : 'transform .18s' }}
         onPointerDown={(e) => {
           // 不能在这里就 setPointerCapture:立即捕获会把行内子控件
@@ -271,7 +274,7 @@ export function PrimaryBtn({
       ? 'text-white bg-gradient-to-r from-[#FF7A00] to-[#FF4800]'
       : variant === 'orange'
         ? 'text-white bg-gradient-to-r from-[#FFB800] to-[#FF8C00]'
-        : 'text-[#333333] bg-white border border-[#DDDDDD]';
+        : 'text-app-text bg-app-surface border border-[#DDDDDD]';
   return (
     <button
       {...(binding ?? {})}

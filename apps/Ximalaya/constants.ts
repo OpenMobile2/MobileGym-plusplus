@@ -1,8 +1,8 @@
 // 结构性常量(非用户数据)。用户数据放 data/defaults.json。
 
 // 改动 defaults.json 时 +1,重置本地 localStorage。
-// v2: 100 专辑 / 718 集 / 60 主播(原 10/60/10)
-export const DATA_VERSION = 3;
+// v9: 为任务涉及的页面局部操作补充可验证审计态。
+export const DATA_VERSION = 9;
 
 // 品牌色(取自真机像素采样,见 docs/ximalaya-replication/design-tokens.md)
 export const XMLY_RED = '#FE4543';

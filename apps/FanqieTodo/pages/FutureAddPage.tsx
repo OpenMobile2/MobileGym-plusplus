@@ -2,7 +2,7 @@ import React from 'react';
 import * as TimeService from '../../../os/TimeService';
 import { useFanqieTodoStore } from '../state';
 import { useFanqieTodoGestures } from '../hooks/useFanqieTodoGestures';
-import { APP_TODAY_MS } from '../utils/appTime';
+import { getAppTodayMs } from '../utils/appTime';
 
 const pad = (n: number) => String(n).padStart(2, '0');
 // 人类月份 m(1-12)的天数:fromLocalParts 的 monthIndex=m、day=0 => 上一个月索引的最后一天 = 人类第 m 月最后一天
@@ -14,7 +14,7 @@ export default function FutureAddPage() {
   const [name, setName] = React.useState('');
   const [remark, setRemark] = React.useState('');
   // 目标日期默认取叙事今天的一年后
-  const base = TimeService.fromTimestamp(APP_TODAY_MS);
+  const base = TimeService.fromTimestamp(getAppTodayMs());
   const [y, setY] = React.useState(base.getFullYear() + 1);
   const [m, setM] = React.useState(base.getMonth() + 1); // 1-12
   const [d, setD] = React.useState(base.getDate());

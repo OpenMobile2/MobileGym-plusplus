@@ -1,4 +1,4 @@
-"""Luckin Coffee hybrid GUI+Tools tasks (tasklib)."""
+"""Luckin Coffee hybrid GUI+Tools tasks (selfbuilt-v1)."""
 
 from __future__ import annotations
 

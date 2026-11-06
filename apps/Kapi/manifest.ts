@@ -25,6 +25,21 @@ export const manifest: AppManifest = {
       statusBarForeground: 'dark',
       navigationBarForeground: 'dark',
     },
+    colorsDark: {
+      primary: '#6B8AFF',
+      background: '#12141A',
+      surface: '#1C1F2A',
+      textPrimary: '#F2F4F8',
+      textSecondary: '#9AA3B5',
+      border: '#2A3040',
+      statusBarForeground: 'light',
+      navigationBarForeground: 'light',
+    },
   },
   intentFilters: [],
+  queries: [
+    { action: 'ACTION_SEND', type: 'text/plain' },
+    { action: 'ACTION_SEND', type: 'image/*' },
+    { action: 'ACTION_PICK', type: 'image/*' },
+  ],
 };

@@ -4,6 +4,8 @@ import { useAlipayGestures } from '../hooks/useAlipayGestures';
 import { useAlipayStrings } from '../hooks/useAlipayStrings';
 import { useLocale } from '@/apps/Alipay/locale';
 import { localizeBankName } from '../utils/localizeBankName';
+import { isPayPinComplete } from '../payPin';
+import { PayPinCapture } from '@/os/components/PayPinCapture';
 
 interface BankCardInfo {
   id: string;
@@ -33,7 +35,7 @@ export const PaymentPasswordModal: React.FC<PaymentPasswordModalProps> = ({
   variant = 'transfer',
   amount,
   payeeName,
-  expectedPassword = '000000',
+  expectedPassword: _expectedPassword = '000000',
   onSuccess,
   bankCards = [],
   balance,
@@ -72,21 +74,18 @@ export const PaymentPasswordModal: React.FC<PaymentPasswordModalProps> = ({
     if (!visible) return;
     if (password.length === 6) {
       if (calledRef.current) return;
-      if (password === expectedPassword) {
+      if (isPayPinComplete(password)) {
         calledRef.current = true;
         setTimeout(() => {
           onSuccess(selectedMethodId);
         }, 200);
-      } else {
-        setError(true);
-        setPassword('');
       }
     } else {
       if (error && password.length > 0) {
         setError(false);
       }
     }
-  }, [visible, password, expectedPassword, onSuccess, selectedMethodId, error]);
+  }, [visible, password, onSuccess, selectedMethodId, error]);
 
   const handleNumberClick = (num: string) => {
     if (password.length < 6) {
@@ -176,7 +175,9 @@ export const PaymentPasswordModal: React.FC<PaymentPasswordModalProps> = ({
       <div
         className="w-full max-w-[430px] bg-app-bg rounded-t-xl overflow-hidden animate-in slide-in-from-bottom duration-300 flex flex-col max-h-[92%]"
         style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
+        data-keep-keyboard
       >
+        <PayPinCapture value={password} onChange={setPassword} />
         {/* Header */}
         <div className="relative bg-app-surface border-b border-gray-100 p-4 text-center flex-shrink-0">
           <button {...bindBack<HTMLButtonElement>({ stopPropagation: true })} className="absolute left-4 top-4 text-gray-400">

@@ -2,28 +2,47 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useCtripStore } from '../state';
 import { useCtripGestures } from '../hooks/useCtripGestures';
+import { useCtripStrings } from '../hooks/useCtripStrings';
 import { TopBar, Price, Stepper, BottomSheet, usePanel } from '../components/ui';
+import { daysInMonth, startOfSystemDay, systemMonthDay } from '../utils/travelDate';
 
 /** 门票填单(spec ticket.booking)。日期条/优惠日历;票数步进;游客选择;去支付→cashier(startBooking)。 */
 export default function TicketBookingPage() {
+  const s = useCtripStrings();
   const { id = '' } = useParams();
   const { bindTap } = useCtripGestures();
   const { value: panel, open, close } = usePanel();
   const attractions = useCtripStore((s) => s.attractions);
   const travelers = useCtripStore((s) => s.travelers);
   const startBooking = useCtripStore((s) => s.startBooking);
-  const a = attractions.find((x) => x.id === id) ?? attractions[0];
-  const tk = a.ticketTypes[0];
+  const recordTaskAudit = useCtripStore((s) => s.recordTaskAudit);
+  const a = attractions.find((x) => x.id === id);
   const [qty, setQty] = React.useState(1);
-  const [date, setDate] = React.useState('07-05');
+  const [date, setDate] = React.useState(() => systemMonthDay());
+  const today = React.useMemo(() => startOfSystemDay(), []);
   const [visitor, setVisitor] = React.useState(travelers[0]?.id ?? '');
+  React.useEffect(() => {
+    if (!a) return;
+    recordTaskAudit('ticketBookingDraft', {
+      attractionId: a.id, ticketId: a.ticketTypes[0]?.id, visitorId: visitor, qty, date,
+    });
+  }, [a, visitor, qty, date, recordTaskAudit]);
+  if (!a) {
+    return (
+      <div className="flex flex-col h-full bg-[#F5F6F8]">
+        <TopBar title="景点" />
+        <div className="flex-1 flex items-center justify-center text-[14px] text-[#999999]">未找到该景点</div>
+      </div>
+    );
+  }
+  const tk = a.ticketTypes[0];
 
   const amount = tk.price * qty;
-  const visitorName = travelers.find((t) => t.id === visitor)?.name ?? '待选择';
+  const visitorName = travelers.find((t) => t.id === visitor)?.name ?? s.t('待选择');
 
   return (
     <div className="flex flex-col h-full bg-[#F5F6F8]">
-      <TopBar title="门票预订" />
+      <TopBar title={s.t('门票预订')} />
       <div className="flex-1 overflow-y-auto pb-16" data-scroll-container="main" data-scroll-direction="vertical">
         <div className="bg-white px-4 py-3">
           <div className="text-[15px] font-semibold">{a.name}</div>
@@ -33,8 +52,8 @@ export default function TicketBookingPage() {
         {/* 日期 */}
         <div className="bg-white mt-2 px-4">
           <button {...bindTap({ kind: 'action', id: 'ticketBooking.date.open' }, { onTrigger: () => open('date') })} className="w-full flex items-center justify-between py-3.5 bg-transparent border-none cursor-pointer">
-            <span className="text-[14px] text-[#333333]">游玩日期</span>
-            <span className="text-[14px] text-[#0086F6]">{date} 周六 ›</span>
+            <span className="text-[14px] text-[#333333]">{s.t('游玩日期')}</span>
+            <span className="text-[14px] text-[#0086F6]">{date} ›</span>
           </button>
         </div>
 
@@ -49,11 +68,11 @@ export default function TicketBookingPage() {
         {/* 游客 */}
         <div className="bg-white mt-2 px-4">
           <button {...bindTap({ kind: 'action', id: 'ticketBooking.visitor.open' }, { onTrigger: () => open('visitor') })} className="w-full flex items-center justify-between py-3.5 border-b border-[#F5F5F5] bg-transparent border-x-0 border-t-0 cursor-pointer">
-            <span className="text-[14px] text-[#333333]">出游人</span>
+            <span className="text-[14px] text-[#333333]">{s.t('出游人')}</span>
             <span className="text-[14px] text-[#0086F6]">{visitorName} ›</span>
           </button>
           <div className="flex items-center justify-between py-3.5">
-            <span className="text-[14px] text-[#333333]">联系手机</span>
+            <span className="text-[14px] text-[#333333]">{s.t('联系手机')}</span>
             <span className="text-[14px]">180****9152</span>
           </div>
         </div>
@@ -64,20 +83,20 @@ export default function TicketBookingPage() {
         <button
           {...bindTap('ticketBooking.toCashier', { beforeTrigger: () => startBooking({ category: 'ticket', title: a.name, subtitle: `${tk.name} · ${qty}张 · ${date}`, amount, image: a.image }) })}
           className="rounded-full bg-gradient-to-r from-[#FF9F45] to-[#FF6A2C] text-white text-[15px] font-medium px-8 py-2.5 border-none cursor-pointer"
-        >去支付</button>
+        >{s.t('去支付')}</button>
       </div>
 
       {panel === 'date' && (
-        <BottomSheet title="选择游玩日期" onClose={close}>
+        <BottomSheet title={s.t('选择游玩日期')} onClose={close}>
           <div className="p-4 grid grid-cols-7 gap-1 text-center text-[13px]">
-            {Array.from({ length: 31 }, (_, i) => i + 1).map((d) => (
-              <button key={d} onClick={() => { setDate(`07-${String(d).padStart(2, '0')}`); close(); }} className={`py-2 rounded border-none cursor-pointer ${d === 5 ? 'bg-[#0086F6] text-white' : 'bg-[#F7F8FA] text-[#333333]'}`}>{d}</button>
+            {Array.from({ length: daysInMonth(today) }, (_, i) => i + 1).map((d) => (
+              <button key={d} onClick={() => { setDate(`${String(today.getMonth() + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`); close(); }} className={`py-2 rounded border-none cursor-pointer ${d === today.getDate() ? 'bg-[#0086F6] text-white' : 'bg-[#F7F8FA] text-[#333333]'}`}>{d}</button>
             ))}
           </div>
         </BottomSheet>
       )}
       {panel === 'visitor' && (
-        <BottomSheet title="选择出游人" onClose={close}>
+        <BottomSheet title={s.t('选择出游人')} onClose={close}>
           <div className="p-2">
             {travelers.map((t) => (
               <button key={t.id} onClick={() => { setVisitor(t.id); close(); }} className="w-full flex items-center justify-between px-3 py-3 border-b border-[#F5F5F5] bg-transparent border-x-0 border-t-0 cursor-pointer text-left">

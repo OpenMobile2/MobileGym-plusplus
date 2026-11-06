@@ -3,12 +3,16 @@ import {
   MemoryRouter, Routes, Route, useLocation, UNSAFE_NavigationContext,
 } from 'react-router-dom';
 import { useAppNavigationHandler } from '@/os/hooks/useAppNavigationHandler';
+import { useDarkMode } from '@/os/hooks/useDarkMode';
+import { themeToCssVars, dimensToCssVars } from '@/os/utils/themeToCssVars';
+import { applySkinToThemeColors } from '@/os/SkinService';
 import { manifest } from './manifest';
 import { ROUTES } from './pages/routes.generated';
 import HomeFeedPage from './pages/HomeFeedPage';
 import { Toast, UndoBar, ImageLightbox } from './components/Sheet';
 import { THEME_VARS } from './components/ui';
 import { useFlomoStore } from './state';
+import { colors, colorsDark } from './res/colors';
 
 /** 注册 OS 返回键 + navigator(back-stack:从抽屉打开的页返回回抽屉)。 */
 function FlomoNavigationHandler() {
@@ -44,7 +48,10 @@ function FlomoNavigationHandler() {
 }
 
 function AppShell() {
-  const theme = useFlomoStore((s) => s.settings.theme);
+  const { isDark } = useDarkMode();
+  // 跟随 OS 深色；应用内 theme=dark 仍可作为额外开关
+  const settingsTheme = useFlomoStore((s) => s.settings.theme);
+  const theme = isDark || settingsTheme === 'dark' ? 'dark' : 'light';
   const vars = THEME_VARS[theme] ?? THEME_VARS.light;
   return (
     <div
@@ -73,10 +80,21 @@ function AppShell() {
 }
 
 export default function FlomoApp() {
+  const { isDark } = useDarkMode();
+  const themeColors = isDark
+    ? { ...manifest.theme.colors, ...(manifest.theme.colorsDark ?? {}) }
+    : manifest.theme.colors;
+  const appColors = isDark ? { ...colors, ...colorsDark } : colors;
+  const cssVars = {
+    ...themeToCssVars(applySkinToThemeColors(themeColors)),
+    ...dimensToCssVars(appColors, { prefix: '--app-c-' }),
+  };
   return (
-    <MemoryRouter initialEntries={['/']}>
-      <FlomoNavigationHandler />
-      <AppShell />
-    </MemoryRouter>
+    <div className="h-full w-full" style={cssVars as React.CSSProperties}>
+      <MemoryRouter initialEntries={['/']}>
+        <FlomoNavigationHandler />
+        <AppShell />
+      </MemoryRouter>
+    </div>
   );
 }

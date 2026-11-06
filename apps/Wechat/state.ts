@@ -255,6 +255,10 @@ const triggerAIReply = async (
   const systemDefaults = AIService.getSystemDefaults();
 
   try {
+    if (aiConfig.cannedReply) {
+      addAIMessage(targetWxid, aiConfig.cannedReply);
+      return;
+    }
     const chat = currentChats.find(c => c.id === targetWxid);
     const maxMessages = aiConfig.maxContextMessages || systemDefaults.maxContextMessages || 15;
     const history = (chat?.messages || [])

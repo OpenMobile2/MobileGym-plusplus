@@ -12,7 +12,7 @@ type GestureId = TransitionId | SystemTriggerId;
  *  - { kind:'action', id } 对象   -> 触发 data-action(状态变更,配 onTrigger 跑 store)。
  */
 export function useCtripGestures() {
-  const { go, back } = useAppNavigate();
+  const { go, back, backOr } = useAppNavigate();
   const { bindTap, bindLongPress, bindDoubleTap } = useTriggerGestures<GestureId>({
     execute: (id, params) => {
       if (id === 'system.back') return;
@@ -43,5 +43,5 @@ export function useCtripGestures() {
     return { ...binding, 'data-trigger-type': 'back' as const };
   };
 
-  return { bindTap, bindLongPress, bindDoubleTap, bindBack, go, back };
+  return { bindTap, bindLongPress, bindDoubleTap, bindBack, go, back, backOr };
 }

@@ -1,16 +1,19 @@
-import React, { useCallback, useContext, useEffect, useRef } from 'react';
-import {
-  MemoryRouter, Routes, Route, useLocation, UNSAFE_NavigationContext,
-} from 'react-router-dom';
+import React, { useCallback, useContext, useEffect, useMemo, useRef } from 'react';
+import { MemoryRouter, Routes, Route, useLocation, UNSAFE_NavigationContext } from 'react-router-dom';
 import { useAppNavigationHandler } from '@/os/hooks/useAppNavigationHandler';
+import { useDarkMode } from '@/os/hooks/useDarkMode';
+import { themeToCssVars } from '@/os/utils/themeToCssVars';
 import { manifest } from './manifest';
 import { MAIN_TABS } from './constants';
 import { useCtripStore } from './state';
 import { useCtripGestures } from './hooks/useCtripGestures';
+import { useCtripStrings } from './hooks/useCtripStrings';
+import type { CtripStringKey } from './res/strings';
 import { IcTabHome, IcTabMessage, IcTabTrip, IcTabMine } from './res/icons';
 
 import HomeMainPage from './pages/HomeMainPage';
 import SearchResultPage from './pages/SearchResultPage';
+import GuideHomePage from './pages/GuideHomePage';
 import DestCityPage from './pages/DestCityPage';
 import HotelSearchPage from './pages/HotelSearchPage';
 import HotelCityPickerPage from './pages/HotelCityPickerPage';
@@ -57,6 +60,7 @@ import OrdersInvoicePage from './pages/OrdersInvoicePage';
 import MineMainPage from './pages/MineMainPage';
 import MineWalletPage from './pages/MineWalletPage';
 import MineTravelersPage from './pages/MineTravelersPage';
+import MineFavoritesPage from './pages/MineFavoritesPage';
 import MemberBenefitsPage from './pages/MemberBenefitsPage';
 import SettingsMainPage from './pages/SettingsMainPage';
 import SettingsSubPage from './pages/SettingsSubPage';
@@ -101,6 +105,7 @@ function CtripNavigationHandler() {
 function TabBar() {
   const location = useLocation();
   const { bindTap } = useCtripGestures();
+  const s = useCtripStrings();
   if (!TAB_PATHS.includes(location.pathname)) return null;
 
   // 绑定点用字符串字面量(DOM Tagging 规则),不用变量
@@ -112,7 +117,7 @@ function TabBar() {
   };
 
   return (
-    <div data-hide-on-keyboard className="shrink-0 bg-white border-t border-[#EEEEEE] flex">
+    <div data-hide-on-keyboard className="shrink-0 bg-app-surface border-t border-app-border flex">
       {MAIN_TABS.map((tab) => {
         const Icon = TAB_ICONS[tab.id as keyof typeof TAB_ICONS];
         const active = location.pathname === tab.path;
@@ -122,9 +127,9 @@ function TabBar() {
             {...BINDINGS[tab.id]}
             className="flex-1 flex flex-col items-center pt-1.5 pb-1 gap-0.5 bg-transparent border-none cursor-pointer"
           >
-            <Icon size={22} className={active ? 'text-[#0086F6]' : 'text-[#999999]'} />
-            <span className={`text-[10px] ${active ? 'text-[#0086F6] font-semibold' : 'text-[#999999]'}`}>
-              {tab.label}
+            <Icon size={22} className={active ? 'text-app-primary' : 'text-app-text-muted'} />
+            <span className={`text-[10px] ${active ? 'text-app-primary font-semibold' : 'text-app-text-muted'}`}>
+              {s[tab.labelKey as CtripStringKey]}
             </span>
           </button>
         );
@@ -134,18 +139,29 @@ function TabBar() {
 }
 
 function AppShell() {
+  const location = useLocation();
+  const { isDark } = useDarkMode();
+  const themeColors = isDark
+    ? { ...manifest.theme.colors, ...(manifest.theme.colorsDark ?? {}) }
+    : manifest.theme.colors;
+  const cssVars = useMemo(() => themeToCssVars(themeColors), [themeColors]);
+  const homeStatus = location.pathname === '/';
+  const statusFg = homeStatus ? 'light' : (themeColors.statusBarForeground ?? (isDark ? 'light' : 'dark'));
+
   return (
     <div
-      className="flex flex-col h-full bg-[#F5F6F8]"
+      className="flex flex-col h-full bg-app-bg text-app-text"
+      style={cssVars as React.CSSProperties}
       data-app-root="ctrip"
-      data-status-bar-foreground="dark"
+      data-status-bar-foreground={statusFg}
     >
-      {/* OS 状态栏安全区 */}
-      <div className="h-10 shrink-0" />
+      {/* 状态栏占位与 App 背景连续，避免额外分割线。 */}
+      <div className={`h-10 shrink-0 ${homeStatus ? 'bg-app-primary' : 'bg-app-bg'}`} />
       <div className="flex-1 overflow-hidden relative">
         <Routes>
           <Route path="/" element={<HomeMainPage />} />
           <Route path="/search" element={<SearchResultPage />} />
+          <Route path="/guide" element={<GuideHomePage />} />
           <Route path="/dest/:city" element={<DestCityPage />} />
           <Route path="/hotel/search" element={<HotelSearchPage />} />
           <Route path="/hotel/city" element={<HotelCityPickerPage />} />
@@ -192,6 +208,7 @@ function AppShell() {
           <Route path="/mine" element={<MineMainPage />} />
           <Route path="/mine/wallet" element={<MineWalletPage />} />
           <Route path="/mine/travelers" element={<MineTravelersPage />} />
+          <Route path="/mine/favorites" element={<MineFavoritesPage />} />
           <Route path="/member" element={<MemberBenefitsPage />} />
           <Route path="/settings" element={<SettingsMainPage />} />
           <Route path="/settings/sub" element={<SettingsSubPage />} />

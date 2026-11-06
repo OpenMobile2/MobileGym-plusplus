@@ -4,7 +4,7 @@ import { useFanqieTodoStore } from '../state';
 import { useFanqieTodoGestures } from '../hooks/useFanqieTodoGestures';
 import { useI18n } from '../i18n';
 import { LOCK_QUICK_MINUTES } from '../constants';
-import { IcClock } from '../res/icons';
+import { IcClock, IcLeaf } from '../res/icons';
 
 export default function LockPage() {
   const { search } = useLocation();
@@ -15,11 +15,11 @@ export default function LockPage() {
   const toast = () => showToast(t('toast.unavailable'));
 
   return (
-    <div className="relative flex h-full flex-col bg-[#F4F6F8]" data-status-bar-foreground="dark">
+    <div className="relative flex h-full flex-col bg-[var(--app-bg)]" data-status-bar-foreground="dark">
       {/* 顶栏 */}
       <div className="flex items-center justify-between px-4 pb-2 pt-10">
-        <span className="text-lg font-bold text-[#222]">{t('lock.title')}</span>
-        <div className="flex items-center gap-3 text-[#8A8F99]">
+        <span className="text-lg font-bold text-[var(--app-text)]">{t('lock.title')}</span>
+        <div className="flex items-center gap-3 text-[var(--app-text-muted)]">
           <button {...action('lock.studyroom.wontfixToast', () => showToast(t('toast.studyroom')))} aria-label="自习室">
             <span className="inline-flex items-end gap-[2px]">
               <i className="inline-block h-2 w-[3px] rounded-sm bg-[#8A8F99]" />
@@ -34,7 +34,7 @@ export default function LockPage() {
       <div className="flex-1 overflow-y-auto px-4 pb-4" data-scroll-container="main" data-scroll-direction="vertical">
         {/* 小憩 */}
         <button {...bindTap('lock.breath.open')} className="mb-3 block w-full rounded-2xl bg-[#26B99A] p-4 text-left text-white">
-          <div className="text-lg font-semibold">🍃 {t('lock.rest')}</div>
+          <div className="flex items-center gap-1.5 text-lg font-semibold"><IcLeaf size={18} />{t('lock.rest')}</div>
           <div className="mt-1 text-xs text-white/90">{t('lock.restDesc')}</div>
         </button>
 

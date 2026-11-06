@@ -31,6 +31,7 @@ export function AlbumPage() {
   const subscribedAlbumIds = useXimalayaStore((st) => st.subscribedAlbumIds);
   const toggleSubscribe = useXimalayaStore((st) => st.toggleSubscribe);
   const playTrack = useXimalayaStore((st) => st.playTrack);
+  const recordTaskAudit = useXimalayaStore((st) => st.recordTaskAudit);
 
   const [tab, setTab] = useState<'episodes' | 'reviews'>('episodes');
   const [asc, setAsc] = useState(true);
@@ -154,7 +155,11 @@ export function AlbumPage() {
               {/* 正倒序 / 搜索 / 下载 */}
               <div className="flex items-center justify-between px-4 h-10 text-[13px] text-[#666]">
                 <button
-                  {...bindTap({ kind: 'action', id: 'album.sort.toggle' }, { onTrigger: () => setAsc((v) => !v) })}
+                  {...bindTap({ kind: 'action', id: 'album.sort.toggle' }, { onTrigger: () => setAsc((v) => {
+                    const next = !v;
+                    recordTaskAudit({ albumSort: { albumId: album.id, sort: next ? 'asc' : 'desc' } });
+                    return next;
+                  }) })}
                   className="flex items-center gap-1"
                 >
                   <IcSort size={15} />{asc ? '正序' : '倒序'}

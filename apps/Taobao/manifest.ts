@@ -25,6 +25,21 @@ export const manifest: AppManifest = {
       statusBarForeground: 'dark',
       navigationBarForeground: 'dark',
     },
+    colorsDark: {
+      primary: '#FF6A26',
+      background: '#121212',
+      surface: '#1E1E1E',
+      textPrimary: '#F5F5F5',
+      textSecondary: '#A3A3A3',
+      border: '#2A2A2A',
+      statusBarForeground: 'light',
+      navigationBarForeground: 'light',
+    },
   },
   intentFilters: [],
+  queries: [
+    { action: 'ACTION_PAY', scheme: 'alipays' },
+    { action: 'ACTION_SEND', type: 'text/plain' },
+    { action: 'ACTION_SEND', type: 'image/*' },
+  ],
 };

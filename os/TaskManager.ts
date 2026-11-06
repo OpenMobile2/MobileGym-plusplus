@@ -13,6 +13,7 @@ export type OSAction =
   | { type: 'MARK_EXTERNAL_ROUTE'; appId: AppId }
   | { type: 'SET_ACTIVITY_INTENT'; taskId: string; activityId: string; intent: IntentPayload }
   | { type: 'CONSUME_LAUNCHED_BY'; taskId: string }
+  | { type: 'SET_LAUNCHED_BY'; taskId: string; launchedByTaskId: string | undefined }
   | { type: 'RESET'; state?: OSState | any };
 
 function createInitialState(): OSState {
@@ -202,6 +203,18 @@ function osReducer(state: OSState, action: OSAction): OSState {
       };
     }
 
+    case 'SET_LAUNCHED_BY': {
+      // singleTask 热启动重投递 intent 时刷新来源指针，使 finishActivity / 根返回能回到本次调用方。
+      const target = state.tasks.find((t) => t.taskId === action.taskId);
+      if (!target) return state;
+      if (target.launchedByTaskId === action.launchedByTaskId) return state;
+      return {
+        ...state,
+        tasks: state.tasks.map((t) =>
+          t.taskId === action.taskId ? { ...t, launchedByTaskId: action.launchedByTaskId } : t),
+      };
+    }
+
     case 'RESET':
       return action.state ? coerceResetState(action.state) : createInitialState();
 
@@ -299,6 +312,10 @@ export const TaskManager = {
 
   consumeLaunchedBy(taskId: string): void {
     TaskManager.dispatch({ type: 'CONSUME_LAUNCHED_BY', taskId });
+  },
+
+  setLaunchedBy(taskId: string, launchedByTaskId: string | undefined): void {
+    TaskManager.dispatch({ type: 'SET_LAUNCHED_BY', taskId, launchedByTaskId });
   },
 
   setActivityIntent(taskId: string, activityId: string, intent: IntentPayload): void {

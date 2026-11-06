@@ -58,7 +58,7 @@ ExtraCheckFn = Callable[[JudgeInput], list[dict[str, Any]]]
 
 
 class SelfbuiltTask(BaseTask):
-    """Shared BaseTask for every generated tasklib task class.
+    """Shared BaseTask for every generated selfbuilt-v1 task class.
 
     ``spec`` and ``extra_check`` are injected per-class by ``build_task_classes``.
     """

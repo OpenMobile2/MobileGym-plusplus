@@ -4,6 +4,7 @@ import { createT } from './i18n';
 import { DAYSMATTER_CONFIG } from './data';
 import { DATA_VERSION } from './constants';
 import type { DMState, DMActions, DMEvent, DMNotebook, HomeFilter } from './types';
+import { setSelectedIconId } from './res/appIcon';
 
 interface PersistMeta {
   _dataVersion: number;
@@ -19,6 +20,10 @@ const initialState: FullState = {
   settings: { ...DAYSMATTER_CONFIG.settings },
   filter: DAYSMATTER_CONFIG.filter,
   widgetEventId: DAYSMATTER_CONFIG.widgetEventId,
+  selectedIconId: DAYSMATTER_CONFIG.selectedIconId,
+  feedbackSubmissions: DAYSMATTER_CONFIG.feedbackSubmissions.map((row) => ({ ...row })),
+  lastDateCalculation: DAYSMATTER_CONFIG.lastDateCalculation ? { ...DAYSMATTER_CONFIG.lastDateCalculation } : null,
+  detailDisplayModes: { ...DAYSMATTER_CONFIG.detailDisplayModes },
   _temp: { toast: null, toastSeq: 0, draft: null },
 };
 
@@ -166,6 +171,24 @@ export const useDaysmatterStore = createAppStoreWithActions<FullState, DMActions
 
     setWidgetEvent: (eventId) => set(() => ({ widgetEventId: eventId })),
 
+    setSelectedIcon: (iconId) => {
+      setSelectedIconId(iconId);
+      set(() => ({ selectedIconId: iconId }));
+    },
+
+    submitFeedback: ({ email, type, text }) =>
+      set((s) => ({
+        feedbackSubmissions: [
+          ...s.feedbackSubmissions,
+          { id: genId('feedback'), email: email.trim(), type, text: text.trim(), createdAt: TimeService.now() },
+        ],
+      })),
+
+    setLastDateCalculation: (value) => set(() => ({ lastDateCalculation: value })),
+
+    setDetailDisplayMode: (eventId, mode) =>
+      set((s) => ({ detailDisplayModes: { ...s.detailDisplayModes, [eventId]: mode } })),
+
     login: (name?: string) =>
       set((s) => ({ user: { loggedIn: true, name: name && name.trim() ? name.trim() : s.user.name } })),
 
@@ -179,6 +202,9 @@ export const useDaysmatterStore = createAppStoreWithActions<FullState, DMActions
         const s = useDaysmatterStore.getState();
         if (s._dataVersion !== DATA_VERSION) {
           useDaysmatterStore.setState({ ...initialState });
+          setSelectedIconId(initialState.selectedIconId);
+        } else {
+          setSelectedIconId(s.selectedIconId);
         }
       });
     },

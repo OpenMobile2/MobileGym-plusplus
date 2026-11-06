@@ -13,7 +13,7 @@ export const OS = {
 /**
  * DATA_VERSION —— 每次修改 defaults.json 必须递增,变化会清空 localStorage 重载。
  */
-export const DATA_VERSION = 2;
+export const DATA_VERSION = 4;
 
 /** 底部 Tab 定义(分离 pathname 路由) */
 export const TABS = [

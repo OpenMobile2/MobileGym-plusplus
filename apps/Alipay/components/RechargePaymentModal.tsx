@@ -4,6 +4,8 @@ import { IcDelete, IcClose } from '../res/icons';
 import { useAlipayGestures } from '../hooks/useAlipayGestures';
 import { AlipayBankCard } from '../types';
 import { useLocale } from '@/apps/Alipay/locale';
+import { isPayPinComplete } from '../payPin';
+import { PayPinCapture } from '@/os/components/PayPinCapture';
 
 interface RechargePaymentModalProps {
   visible: boolean;
@@ -17,7 +19,7 @@ interface RechargePaymentModalProps {
 
 export const RechargePaymentModal: React.FC<RechargePaymentModalProps> = ({
   visible,
-  expectedPassword,
+  expectedPassword: _expectedPassword,
   actionVariant = 'single',
   onSuccess,
   onClose,
@@ -42,19 +44,16 @@ export const RechargePaymentModal: React.FC<RechargePaymentModalProps> = ({
   useEffect(() => {
     if (password.length === 6) {
       if (calledRef.current) return;
-      if (password === expectedPassword) {
+      if (isPayPinComplete(password)) {
         calledRef.current = true;
         setTimeout(() => {
           onSuccess();
         }, 200);
-      } else {
-        setError(true);
-        setPassword('');
       }
     } else {
       if (error && password.length > 0) setError(false);
     }
-  }, [password, expectedPassword, onSuccess, error]);
+  }, [password, onSuccess, error]);
 
   const handleNumberClick = (num: string) => {
     if (password.length < 6) setPassword((prev) => prev + num);
@@ -92,6 +91,7 @@ export const RechargePaymentModal: React.FC<RechargePaymentModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-[120] bg-black/60 flex flex-col justify-end">
+      <PayPinCapture value={password} onChange={setPassword} />
       <div className="flex-1 flex items-center justify-center px-6" onClick={onClose}>
         <div className="w-full max-w-[380px] bg-app-surface rounded-2xl shadow-xl relative overflow-hidden" onClick={e => e.stopPropagation()}>
           <div className="relative border-b border-gray-100 p-4 text-center bg-white">

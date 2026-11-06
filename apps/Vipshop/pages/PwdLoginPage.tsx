@@ -4,7 +4,7 @@ import { useVipshopGestures } from '../hooks/useVipshopGestures';
 import { TopBar, VIP } from '../components/ui';
 
 export default function PwdLoginPage() {
-  const { bindTap } = useVipshopGestures();
+  const { bindTap, go } = useVipshopGestures();
   const login = useVipshopStore((s) => s.login);
   const [account, setAccount] = useState('');
   const [pwd, setPwd] = useState('');
@@ -30,7 +30,10 @@ export default function PwdLoginPage() {
           className="w-full border-b border-[#EEE] py-3 mt-3 text-[16px] text-[#222222] outline-none placeholder:text-[#BBB]"
         />
         <button
-          {...bindTap('pwd.login-open', { beforeTrigger: () => login(account) })}
+          {...bindTap('pwd.login-open', {
+            beforeTrigger: () => login(account),
+            onTrigger: () => go('pwd.login-open', {}, { popTo: '/login', popToInclusive: true }),
+          })}
           disabled={!can}
           className="w-full h-12 rounded-full mt-8 text-[16px] font-semibold border-none cursor-pointer"
           style={can ? { background: VIP.primary, color: '#fff' } : { background: '#E5D3DE', color: '#fff' }}

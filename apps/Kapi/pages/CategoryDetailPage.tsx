@@ -7,19 +7,30 @@ import { toast } from '../components/toast';
 import { money, fmtTime, todayTs } from '../components/format';
 import { monthBills } from '../components/derive';
 import { IcNavBack, IcArrowRight, IcSwap } from '../res/icons';
+import { useStrings } from '../hooks/useStrings';
 
 export default function CategoryDetailPage() {
   const { id = '' } = useParams();
   const { bindBack, bindTap, bindAction } = useKapiGestures();
-  const bills = useKapiStore((s) => s.bills);
-  const currentLedgerId = useKapiStore((s) => s.currentLedgerId);
-  const categories = useKapiStore((s) => s.categories);
-  const cat = [...categories.expense, ...categories.income].find((c) => c.id === id);
+  const s = useStrings();
+  const bills = useKapiStore((st) => st.bills);
+  const currentLedgerId = useKapiStore((st) => st.currentLedgerId);
+  const categories = useKapiStore((st) => st.categories);
+  const allCats = [...categories.expense, ...categories.income];
+  const parent = allCats.find((c) => c.id === id || c.subs?.some((sub) => sub.id === id));
+  const sub = parent?.subs?.find((row) => row.id === id);
+  const cat = parent;
 
   const now = todayTs();
   const catBills = useMemo(
-    () => monthBills(bills, currentLedgerId, now).filter((b) => b.categoryId === id).sort((a, b) => b.date - a.date),
-    [bills, currentLedgerId, now, id],
+    () => monthBills(bills, currentLedgerId, now)
+      .filter((b) => {
+        if (!parent) return false;
+        if (!sub) return b.categoryId === parent.id;
+        return b.categoryId === parent.id && (b.note.includes(sub.name) || b.tags.includes(sub.name));
+      })
+      .sort((a, b) => b.date - a.date),
+    [bills, currentLedgerId, now, parent, sub],
   );
   const total = catBills.reduce((a, b) => a + b.amount, 0);
 
@@ -27,55 +38,55 @@ export default function CategoryDetailPage() {
     <div className="flex flex-col h-full">
       <TopBar
         title={
-          <button {...bindAction('categoryDetail.category.select.switch', () => toast('可切换查看的分类'), { value: id })} className="flex items-center gap-1 bg-transparent border-none cursor-pointer text-[17px] font-semibold text-[#1A1D26]">
-            {cat?.name ?? '分类'} <IcSwap size={15} className="text-[#8A92A6]" />
+          <button {...bindAction('categoryDetail.category.select.switch', () => toast(s.switchCategoryHint), { value: id })} className="flex items-center gap-1 bg-transparent border-none cursor-pointer text-[17px] font-semibold text-app-text">
+            {sub?.name ?? cat?.name ?? s.categoryLabel} <IcSwap size={15} className="text-app-text-muted" />
           </button>
         }
         backBind={bindBack()}
       />
       <div className="flex items-center justify-center gap-6 py-2 shrink-0">
-        <button {...bindAction('categoryDetail.month.select.period', () => toast('上一月'), { value: 'prev' })} className="bg-transparent border-none cursor-pointer"><IcNavBack size={18} className="text-[#8A92A6]" /></button>
-        <span className="text-[14px] text-[#1A1D26]">6/2026</span>
-        <button {...bindAction('categoryDetail.month.select.period', () => toast('下一月'), { value: 'next' })} className="bg-transparent border-none cursor-pointer"><IcArrowRight size={18} className="text-[#8A92A6]" /></button>
+        <button {...bindAction('categoryDetail.month.select.period', () => toast(s.prevMonthToast), { value: 'prev' })} className="bg-transparent border-none cursor-pointer"><IcNavBack size={18} className="text-app-text-muted" /></button>
+        <span className="text-[14px] text-app-text">6/2026</span>
+        <button {...bindAction('categoryDetail.month.select.period', () => toast(s.nextMonthToast), { value: 'next' })} className="bg-transparent border-none cursor-pointer"><IcArrowRight size={18} className="text-app-text-muted" /></button>
       </div>
 
       <div className="flex-1 overflow-y-auto px-3 pb-6" data-scroll-container="category-detail" data-scroll-direction="vertical">
         <Card className="p-4 flex items-center gap-3">
           {cat && <CategoryIcon icon={cat.icon} color={cat.color} size={48} />}
           <div>
-            <div className="text-[12px] text-[#8A92A6]">本月合计</div>
+            <div className="text-[12px] text-app-text-muted">{s.monthTotalLabel}</div>
             <div className="text-[22px] font-bold text-[#3D6CF0]">¥{money(total)}</div>
-            <div className="text-[12px] text-[#8A92A6]">共 {catBills.length} 笔</div>
+            <div className="text-[12px] text-app-text-muted">{s.billCountPrefix}{catBills.length}{s.billCountSuffix}</div>
           </div>
         </Card>
 
-        {cat?.subs && cat.subs.length > 0 && (
+        {!sub && cat?.subs && cat.subs.length > 0 && (
           <Card className="mt-3">
             {cat.subs.map((sub) => (
-              <button key={sub.id} {...bindTap('categoryDetail.sub.open', { params: { id: sub.id } })} className="w-full flex items-center px-4 py-3 border-b border-[#EDEFF4] last:border-0 bg-transparent cursor-pointer text-left">
-                <span className="flex-1 text-[15px] text-[#1A1D26]">{sub.name}</span>
+              <button key={sub.id} {...bindTap('categoryDetail.sub.open', { params: { id: sub.id } })} className="w-full flex items-center px-4 py-3 border-b border-app-border last:border-0 bg-transparent cursor-pointer text-left">
+                <span className="flex-1 text-[15px] text-app-text">{sub.name}</span>
                 <IcArrowRight size={16} className="text-[#C5CAD4]" />
               </button>
             ))}
           </Card>
         )}
 
-        <div className="text-[14px] font-semibold text-[#1A1D26] mt-4 mb-2 px-1">账单明细</div>
+        <div className="text-[14px] font-semibold text-app-text mt-4 mb-2 px-1">{s.billDetailListTitle}</div>
         {catBills.map((b) => (
           <Card key={b.id} className="mb-2">
             <button {...bindTap('categoryDetail.bill.open', { params: { id: b.id } })} className="w-full flex items-center gap-3 px-4 py-3 bg-transparent border-none cursor-pointer text-left">
               <CategoryIcon icon={b.icon} color={b.color} size={38} />
               <div className="flex-1 min-w-0">
-                <div className="text-[15px] text-[#1A1D26] truncate">{b.note || b.categoryName}</div>
-                <div className="text-[12px] text-[#B3B9C6]">{fmtTime(b.date)}</div>
+                <div className="text-[15px] text-app-text truncate">{b.note || b.categoryName}</div>
+                <div className="text-[12px] text-app-text-muted">{fmtTime(b.date)}</div>
               </div>
               <span className="text-[15px] text-[#3D6CF0]">-¥{money(b.amount)}</span>
             </button>
           </Card>
         ))}
 
-        <button {...bindAction('categoryDetail.coupon.noop', () => toast('该功能暂未开放'))} className="w-full mt-2 rounded-2xl bg-gradient-to-r from-[#FFF1E6] to-[#FFE8F0] p-4 text-left border-none cursor-pointer">
-          <div className="text-[13px] text-[#B0743A]">🎟 相关优惠 · 点击领取</div>
+        <button {...bindAction('categoryDetail.coupon.noop', () => toast(s.featureNotAvailable))} className="w-full mt-2 rounded-2xl bg-gradient-to-r from-[#FFF1E6] to-[#FFE8F0] p-4 text-left border-none cursor-pointer">
+          <div className="text-[13px] text-[#B0743A]">{s.couponPromoText}</div>
         </button>
       </div>
     </div>

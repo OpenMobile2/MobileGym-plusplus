@@ -8,10 +8,10 @@ import { Img, Price } from './ui';
  */
 export function ItemCard({ item, binding }: { item: TbItem; binding: object }) {
   return (
-    <div {...binding} className="bg-white rounded-xl overflow-hidden cursor-pointer">
+    <div {...binding} className="bg-app-surface rounded-xl overflow-hidden cursor-pointer">
       <Img src={item.image} className="w-full aspect-square object-cover" alt={item.title} />
       <div className="p-2">
-        <div className="text-[14px] text-[#111111] leading-snug line-clamp-2">{item.title}</div>
+        <div className="text-[14px] text-app-text leading-snug line-clamp-2">{item.title}</div>
         <div className="flex flex-wrap gap-1 mt-1">
           {item.tags.slice(0, 2).map((t) => (
             <span key={t} className="text-[10px] text-[#FF5000] bg-[#FFF1E8] rounded px-1 leading-4">
@@ -21,7 +21,7 @@ export function ItemCard({ item, binding }: { item: TbItem; binding: object }) {
         </div>
         <div className="flex items-baseline justify-between mt-1.5">
           <Price value={item.price} size="m" />
-          <span className="text-[11px] text-[#999999]">{item.sold}</span>
+          <span className="text-[11px] text-app-text-muted">{item.sold}</span>
         </div>
       </div>
     </div>

@@ -5,7 +5,11 @@ import { DATA_VERSION } from './constants';
 import { PDD_CONFIG } from './data';
 import type { PddState, PddActions, Order } from './types';
 
-const initialState: PddState = JSON.parse(JSON.stringify(PDD_CONFIG));
+const initialState: PddState = {
+  ...(JSON.parse(JSON.stringify(PDD_CONFIG)) as Omit<PddState, 'loggedIn' | 'taskAudit'>),
+  loggedIn: true,
+  taskAudit: {},
+};
 
 let seq = 0;
 const genId = (p: string) => `${p}_${TimeService.now()}_${seq++}`;
@@ -58,7 +62,11 @@ export const usePinduoduoStore = createAppStoreWithActions<PddState, PddActions>
       const item = s.items.find((i) => i.id === input.itemId);
       if (!item) return '';
       const shop = s.shops.find((sh) => sh.id === item.shopId);
-      const addr = s.addresses.find((a) => a.id === s.selectedAddressId) || s.addresses[0];
+      // 取址:选中 > 默认 > 首个(与 SKU 弹层展示一致)
+      const addr =
+        s.addresses.find((a) => a.id === s.selectedAddressId) ||
+        s.addresses.find((a) => a.isDefault) ||
+        s.addresses[0];
       const unit = input.mode === 'single' ? item.singlePrice : item.pinPrice;
       const total = Math.round(unit * input.qty * 100) / 100;
       const grouping = input.mode === 'group';
@@ -230,10 +238,32 @@ export const usePinduoduoStore = createAppStoreWithActions<PddState, PddActions>
     markChatRead: (chatId) =>
       set((s) => ({ chats: s.chats.map((c) => (c.id === chatId ? { ...c, unread: 0 } : c)) })),
 
-    submitReview: (orderId, _rating) =>
-      set((s) => ({
-        orders: s.orders.map((o) => (o.id === orderId ? { ...o, reviewed: true } : o)),
-      })),
+    submitReview: (orderId, rating, content, images = []) =>
+      set((s) => {
+        const order = s.orders.find((o) => o.id === orderId);
+        if (!order) return {};
+        const text = (content || '').trim() || '商品已收到,质量不错,包装完好,下次还会回购~';
+        const tags = rating >= 4 ? ['质量不错', '值得回购'] : rating >= 3 ? ['一般般'] : ['不太满意'];
+        const newReviews = order.lines.map((ln) => ({
+          id: genId('rv'),
+          itemId: ln.itemId,
+          user: s.user.nick,
+          avatar: s.user.avatar,
+          rating,
+          content: text,
+          images: [...images],
+          tags,
+        }));
+        const reviewedItemIds = new Set(order.lines.map((ln) => ln.itemId));
+        return {
+          orders: s.orders.map((o) => (o.id === orderId ? { ...o, reviewed: true } : o)),
+          reviews: [...newReviews, ...s.reviews],
+          items: s.items.map((it) =>
+            reviewedItemIds.has(it.id) ? { ...it, reviewCount: it.reviewCount + 1 } : it,
+          ),
+          taskAudit: { ...s.taskAudit, reviewSubmission: { orderId, rating, imageCount: images.length } },
+        };
+      }),
 
     addSearchHistory: (word) =>
       set((s) => {
@@ -247,6 +277,11 @@ export const usePinduoduoStore = createAppStoreWithActions<PddState, PddActions>
     setFufeiEnabled: (on) => set((s) => ({ settings: { ...s.settings, fufeiEnabled: on } })),
     setDarkMode: (on) => set((s) => ({ settings: { ...s.settings, darkMode: on } })),
     setFontScale: (scale) => set((s) => ({ settings: { ...s.settings, fontScale: scale } })),
+    logout: () => set({ loggedIn: false }),
+    markLogisticsViewed: (orderId) => set((s) => ({
+      orders: s.orders.map((order) => order.id === orderId ? { ...order, logisticsViewed: true } : order),
+    })),
+    recordTaskAudit: (patch) => set((s) => ({ taskAudit: { ...s.taskAudit, ...patch } })),
   }),
   {
     persistName: `${manifest.id}_v${DATA_VERSION}`,

@@ -29,12 +29,18 @@ export default function MemoDetailPage() {
   return (
     <div className="flex flex-col h-full" style={{ background: C.bg }} data-status-bar-foreground="dark">
       <div className="flex items-center h-11 px-2 shrink-0">
-        <button {...bindBack()} className="w-10 flex items-center justify-center bg-transparent border-none cursor-pointer" style={{ color: C.text }}>
+        <button
+          {...bindBack()}
+          aria-label="收起详情"
+          className="w-10 flex items-center justify-center bg-transparent border-none cursor-pointer"
+          style={{ color: C.text }}
+        >
           <IcArrowDown size={22} />
         </button>
         <div className="flex-1 text-center font-semibold" style={{ color: C.text }}>笔记详情</div>
         <button
           {...bindTap('memo.detailMenu.open', { beforeTrigger: () => memo && setCurrentMemo(memo.id) })}
+          aria-label="更多操作"
           className="w-10 flex items-center justify-center bg-transparent border-none cursor-pointer"
           style={{ color: C.text }}
         >

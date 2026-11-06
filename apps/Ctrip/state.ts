@@ -4,10 +4,14 @@ import { manifest } from './manifest';
 import { DATA_VERSION } from './constants';
 import { CTRIP_CONFIG } from './data';
 import type {
-  CtripState, CtripActions, CtripOrder, Traveler, CsMessage,
+  CtripState, CtripActions, CtripOrder, Traveler, InvoiceJob, CsMessage, HotelReview,
 } from './types';
 
-const initialState: CtripState = JSON.parse(JSON.stringify(CTRIP_CONFIG));
+const initialState: CtripState = {
+  ...JSON.parse(JSON.stringify(CTRIP_CONFIG)),
+  flightPriceAlerts: [],
+  taskAudit: {},
+};
 
 let seq = 0;
 const genId = (prefix: string) => `${prefix}_${TimeService.now()}_${seq++}`;
@@ -67,6 +71,33 @@ export const useCtripStore = createAppStoreWithActions<CtripState, CtripActions>
           : [id, ...s.favoriteHotels],
       }));
     },
+    toggleAttractionFavorite: (id) => {
+      set((s) => ({
+        favoriteAttractions: (s.favoriteAttractions ?? []).includes(id)
+          ? (s.favoriteAttractions ?? []).filter((x) => x !== id)
+          : [id, ...(s.favoriteAttractions ?? [])],
+      }));
+    },
+    recordBrowse: (id) => {
+      if (!id) return;
+      set((s) => ({
+        browseHistory: [id, ...(s.browseHistory ?? []).filter((x) => x !== id)].slice(0, 30),
+      }));
+    },
+    togglePinnedChat: (id) => {
+      set((s) => ({
+        pinnedChats: (s.pinnedChats ?? []).includes(id)
+          ? (s.pinnedChats ?? []).filter((x) => x !== id)
+          : [id, ...(s.pinnedChats ?? [])],
+      }));
+    },
+
+    // ---------- 酒店频道城市 ----------
+    setHotelCity: (city) => {
+      const c = city.trim();
+      if (!c) return;
+      set(() => ({ hotelCity: c }));
+    },
 
     // ---------- 设置开关(Q16:通知/网络/关怀模式等可切换) ----------
     toggleSetting: (key) => {
@@ -77,8 +108,8 @@ export const useCtripStore = createAppStoreWithActions<CtripState, CtripActions>
     startBooking: (o) => {
       set(() => ({ _pendingOrder: o }));
     },
-    /** 收银台「支付」:Q2=A 直接成功。生成 upcoming 订单,清挂起态,返回新订单 id。 */
-    payPending: () => {
+    /** 收银台「支付」:支付宝回 OK 或本地银行卡确认。生成 upcoming 订单,清挂起态,返回新订单 id。 */
+    payPending: (method) => {
       const pending = get()._pendingOrder;
       if (!pending) return '';
       const orderId = genId('o');
@@ -94,6 +125,7 @@ export const useCtripStore = createAppStoreWithActions<CtripState, CtripActions>
           : '待使用',
         price: pending.amount,
         image: pending.image,
+        payMethod: method,
       };
       set((s) => ({
         orders: [order, ...s.orders],
@@ -119,6 +151,47 @@ export const useCtripStore = createAppStoreWithActions<CtripState, CtripActions>
       }));
     },
 
+    rebookOrder: (id, newDate) => {
+      const d = newDate.trim();
+      if (!d) return;
+      set((s) => ({
+        orders: s.orders.map((o) => {
+          if (o.id !== id) return o;
+          return {
+            ...o,
+            date: d,
+            subtitle: `${o.subtitle} · 已改签至 ${d}`,
+            statusText: o.category === 'hotel' ? '待入住' : '已改签',
+          };
+        }),
+      }));
+    },
+
+    submitHotelReview: (hotelId, content, score, orderId) => {
+      const text = content.trim();
+      if (!hotelId || !text) return;
+      const review: HotelReview = {
+        id: genId('rv'),
+        user: get().user.name || '我',
+        avatar: get().user.avatar,
+        level: get().user.memberLevel,
+        date: TimeService.getDate().toISOString().slice(0, 10),
+        score: Math.min(5, Math.max(1, score)),
+        content: text,
+        images: [],
+        roomType: '本次入住',
+      };
+      set((s) => ({
+        hotelReviews: {
+          ...s.hotelReviews,
+          [hotelId]: [review, ...(s.hotelReviews[hotelId] ?? [])],
+        },
+        orders: orderId
+          ? s.orders.map((o) => (o.id === orderId ? { ...o, reviewed: true, statusText: '已点评' } : o))
+          : s.orders,
+      }));
+    },
+
     // ---------- 常用出行人(Q15:可本地增删) ----------
     addTraveler: (name, idCard, phone) => {
       const nm = name.trim();
@@ -131,8 +204,47 @@ export const useCtripStore = createAppStoreWithActions<CtripState, CtripActions>
       };
       set((s) => ({ travelers: [...s.travelers, t] }));
     },
+    updateTraveler: (id, name, idCard, phone) => {
+      const nm = name.trim();
+      if (!nm) return;
+      set((s) => ({
+        travelers: s.travelers.map((t) => (t.id === id ? {
+          ...t,
+          name: nm,
+          idCard: idCard.includes('*') ? idCard : maskIdCard(idCard),
+          phone: phone.trim(),
+        } : t)),
+      }));
+    },
     removeTraveler: (id) => {
       set((s) => ({ travelers: s.travelers.filter((t) => t.id !== id) }));
+    },
+    submitInvoice: (orderIds, titleType) => {
+      if (!orderIds.length) return;
+      const job: InvoiceJob = {
+        id: genId('inv'),
+        orderIds: [...orderIds],
+        titleType,
+        status: 'doing',
+        createdAt: TimeService.getDate().toISOString().slice(0, 10),
+      };
+      set((s) => ({ invoiceJobs: [job, ...(s.invoiceJobs ?? [])] }));
+    },
+    saveFlightPriceAlert: (input) => {
+      const alert = {
+        ...input,
+        id: genId('alert'),
+        createdAt: TimeService.getDate().toISOString(),
+      };
+      set((s) => ({
+        flightPriceAlerts: [
+          alert,
+          ...(s.flightPriceAlerts ?? []).filter((row) => !(row.from === input.from && row.to === input.to)),
+        ],
+      }));
+    },
+    recordTaskAudit: (key, value) => {
+      set((s) => ({ taskAudit: { ...(s.taskAudit ?? {}), [key]: value } }));
     },
 
     // ---------- 客服模拟问答(volatile,_csLog 不持久化是约定,但此处放 state 简化) ----------

@@ -6,23 +6,27 @@
 import React, { useCallback, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useCtripGestures } from '../hooks/useCtripGestures';
+import { useCtripStrings } from '../hooks/useCtripStrings';
 import { IcBack } from '../res/icons';
 
 export const BLUE = '#0086F6';
 
 /* ---------------- TopBar ---------------- */
 export function TopBar({
-  title, rightContent, transparent = false, onBack, showBack = true,
+  title, rightContent, transparent = false, onBack, backTo, showBack = true,
 }: {
   title?: React.ReactNode;
   rightContent?: React.ReactNode;
   transparent?: boolean;
   /** 自定义返回(默认 system.back) */
   onBack?: () => void;
+  /** 业务层级明确时使用，避免 deep link/Tool 入口返回到无关历史页。 */
+  backTo?: string;
   /** tab 根页设 false 隐藏返回箭头 */
   showBack?: boolean;
 }) {
-  const { bindBack } = useCtripGestures();
+  const { bindBack, backOr } = useCtripGestures();
+  const s = useCtripStrings();
   return (
     <div
       data-status-bar-foreground="dark"
@@ -32,9 +36,11 @@ export function TopBar({
     >
       {showBack ? (
         <button
-          {...(onBack ? { onClick: onBack, 'data-trigger-type': 'back' } : bindBack())}
+          {...(onBack || backTo
+            ? { onClick: onBack ?? (() => backOr(backTo!)), 'data-trigger-type': 'back' }
+            : bindBack())}
           className="w-10 h-10 flex items-center justify-center bg-transparent border-none cursor-pointer"
-          aria-label="返回"
+          aria-label={s.t('返回')}
         >
           <IcBack size={24} className="text-[#111111]" />
         </button>
@@ -53,6 +59,7 @@ export function TopBar({
 export function Price({
   value, size = 'm', className = '', symbol = true,
 }: { value: number; size?: 's' | 'm' | 'l'; className?: string; symbol?: boolean }) {
+  const s = useCtripStrings();
   const dims = size === 'l'
     ? { sym: 'text-[13px]', int: 'text-[22px]' }
     : size === 'm'
@@ -107,9 +114,12 @@ export function useUiState(fallback = '') {
   const [searchParams, setSearchParams] = useSearchParams();
   const state = searchParams.get('state') ?? fallback;
   const setState = useCallback((v: string) => {
+    // 必须返回新 URLSearchParams：原地 mutate 同一引用时 RR 可能不触发重渲染
     setSearchParams((p) => {
-      if (!v || v === fallback) p.delete('state'); else p.set('state', v);
-      return p;
+      const next = new URLSearchParams(p);
+      if (!v || v === fallback) next.delete('state');
+      else next.set('state', v);
+      return next;
     }, { replace: true });
   }, [fallback, setSearchParams]);
   return [state, setState] as const;

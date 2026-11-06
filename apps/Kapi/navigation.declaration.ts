@@ -105,6 +105,7 @@ export const NAVIGATION_DECLARATION = {
           search: { sheet: 'datePick' },
           description: '选择日期',
           actions: [
+            { id: 'datePick.month.select.shift', label: '翻月', behavior: 'select' },
             { id: 'datePick.value.input.datetime', label: '选择日期时间', behavior: 'input', paramsSchema: { value: 'string' } },
             { id: 'datePick.submit.confirm.done', label: '确定回填日期', behavior: 'submit' },
           ],
@@ -257,7 +258,7 @@ export const NAVIGATION_DECLARATION = {
             { id: 'billDetail.excludeBudget.toggle.flag', label: '不计预算', behavior: 'toggle' },
             { id: 'billDetail.tag.input.value', label: '编辑标签', behavior: 'input', paramsSchema: { value: 'string' } },
             { id: 'billDetail.note.input.value', label: '编辑备注', behavior: 'input', paramsSchema: { value: 'string' } },
-            { id: 'billDetail.image.noop', label: '添加图片(wontfix)', behavior: 'other' },
+            { id: 'billDetail.image.noop', label: '从系统相册添加图片', behavior: 'other' },
           ],
         },
         {
@@ -306,7 +307,8 @@ export const NAVIGATION_DECLARATION = {
           description: '账单分享海报',
           actions: [
             { id: 'share.date.select.period', label: '切换海报统计日期', behavior: 'select' },
-            { id: 'share.save.noop', label: '保存图片(mock)', behavior: 'other' },
+            { id: 'share.save.noop', label: '保存图片到相册', behavior: 'other' },
+            { id: 'share.wechat.send', label: '分享到微信(跨app ACTION_SEND)', behavior: 'other' },
           ],
         },
       ],

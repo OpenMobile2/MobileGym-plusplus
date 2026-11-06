@@ -38,6 +38,7 @@ export interface FlomoSettings {
   aiRelated: boolean;         // AI设置:相关笔记开关
   aiInsight: boolean;         // AI设置:AI洞察开关
   dailyReviewCount: number;
+  dailyReviewRange: 'all' | 'year';
   dailyNotify: boolean;
 }
 
@@ -78,6 +79,9 @@ export interface FlomoState {
   previewImage: string | null;      // 全屏图片预览
   payPlan: 'monthly' | 'yearly';    // Pro 购买选中的档位
   lastToast: string | null;
+  interactionAudit: {
+    dailyReviewNextCount: number;
+  };
 }
 
 export interface FlomoActions {
@@ -92,6 +96,7 @@ export interface FlomoActions {
   togglePin: (id: string) => void;
   addTagToMemos: (memoIds: string[], tagName: string) => void;
   renameTag: (id: string, name: string) => void;
+  moveTagToFront: (id: string) => void;
   deleteTag: (id: string, alsoDeleteMemos: boolean) => void;
   setTheme: (theme: 'light' | 'dark') => void;
   setSetting: <K extends keyof FlomoSettings>(key: K, value: FlomoSettings[K]) => void;
@@ -108,11 +113,13 @@ export interface FlomoActions {
   removeDraftImage: (src: string) => void;
   setSearchQuery: (q: string) => void;
   toggleSearchFilter: (id: string) => void;
+  setSearchFilters: (ids: string[]) => void;
   setSort: (by: 'created' | 'edited', order: 'newest' | 'oldest') => void;
   setPreviewImage: (src: string | null) => void;
   setPayPlan: (p: 'monthly' | 'yearly') => void;
-  paySuccess: () => void;                    // 模拟支付成功:延长 proExpire
+  paySuccess: () => void;                    // 系统支付成功回调后延长 proExpire
   toggleSelectMemo: (id: string) => void;
   clearSelection: () => void;
-  toast: (msg: string) => void;
+  toast: (msg: string | null) => void;
+  recordDailyReviewNext: () => void;
 }

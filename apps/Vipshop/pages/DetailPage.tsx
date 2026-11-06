@@ -2,8 +2,9 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useVipshopStore } from '../state';
 import { useVipshopGestures } from '../hooks/useVipshopGestures';
-import { TopBar, Img, Price, DiscountTag, BottomSheet, Stepper, usePanel, useToast, VIP } from '../components/ui';
+import { TopBar, Img, Price, DiscountTag, BottomSheet, Stepper, usePanel, useToast, Stars5, ReviewTag, VIP } from '../components/ui';
 import { IcHeart, IcShop, IcService, IcRuler, IcSearch, IcShield } from '../res/icons';
+import { reviewTagsOf } from '../constants';
 
 const SIZE_TABLE = [
   { size: 'S', bust: '84', waist: '66', rec: '80-95斤' },
@@ -15,7 +16,7 @@ const SIZE_TABLE = [
 export default function DetailPage() {
   const { id = '' } = useParams();
   const { bindTap, back, go } = useVipshopGestures();
-  const { value: panel, open: openPanel, searchParams } = usePanel();
+  const { value: panel, searchParams } = usePanel();
   const skuMode = searchParams.get('mode') === 'buy' ? 'buy' : 'cart';
 
   const item = useVipshopStore((s) => s.items.find((i) => i.id === id));
@@ -27,8 +28,16 @@ export default function DetailPage() {
   const recordFootprint = useVipshopStore((s) => s.recordFootprint);
   const addToCart = useVipshopStore((s) => s.addToCart);
   const beginCheckout = useVipshopStore((s) => s.beginCheckout);
+  const recordReviewMediaViewed = useVipshopStore((s) => s.recordReviewMediaViewed);
 
   const reviews = useMemo(() => allReviews.filter((r) => r.itemId === id), [allReviews, id]);
+  // 评价筛选项按品类给,且只保留本商品确实有评价的那些
+  // ——写死「尺码偏大/偏小」会让面膜、零食这类也冒出尺码筛选。
+  // 必须放在 !item 的提前 return 之前,否则 Hook 调用顺序会变。
+  const reviewTags = useMemo(() => {
+    const present = new Set(reviews.map((r) => r.tag));
+    return ['全部', ...reviewTagsOf(item?.category ?? '').filter((t) => present.has(t))];
+  }, [reviews, item?.category]);
   const [selected, setSelected] = useState<Record<string, string>>({});
   const [qty, setQty] = useState(1);
   const [reviewTag, setReviewTag] = useState('全部');
@@ -41,6 +50,7 @@ export default function DetailPage() {
   };
   const [sizeUnit, setSizeUnit] = useState<'cm' | 'in'>('cm');
   const [toast, showToast] = useToast();
+  const [reviewImage, setReviewImage] = useState<string | null>(null);
 
   useEffect(() => {
     if (id) recordFootprint(id);
@@ -66,8 +76,9 @@ export default function DetailPage() {
     showToast('已加入购物车');
   };
 
-  const reviewTags = ['全部', '买家秀', '尺码偏大', '尺码偏小'];
-  const shownReviews = reviewTag === '全部' ? reviews : reviews.filter((r) => r.tag === reviewTag);
+  const filteredReviews = reviewTag === '全部' ? reviews : reviews.filter((r) => r.tag === reviewTag);
+  // 用户本人发布的评价置顶,方便"看到自己写的评价"
+  const shownReviews = [...filteredReviews].sort((a, b) => (a.mine === b.mine ? 0 : a.mine ? -1 : 1));
 
   return (
     <div className="flex flex-col h-full bg-[#F5F5F5]">
@@ -135,7 +146,7 @@ export default function DetailPage() {
 
         {/* 选规格入口 */}
         <button
-          {...bindTap({ kind: 'action', id: 'detail.sku.openForCart' }, { onTrigger: () => openPanel('sku', { mode: 'cart' }) })}
+          {...bindTap('detail.sku.openForCart', { params: { id } })}
           className="w-full bg-white mt-2 px-3 py-3 flex items-center justify-between border-none cursor-pointer text-left"
         >
           <span className="text-[13px] text-[#888888]">已选</span>
@@ -145,7 +156,7 @@ export default function DetailPage() {
 
         {/* 尺码信息入口 */}
         <button
-          {...bindTap({ kind: 'action', id: 'detail.sizeInfo.open' }, { onTrigger: () => openPanel('size') })}
+          {...bindTap('detail.sizeInfo.open', { params: { id } })}
           className="w-full bg-white mt-px px-3 py-3 flex items-center justify-between border-none cursor-pointer text-left"
         >
           <span className="flex items-center gap-1.5 text-[13px] text-[#222222]"><IcRuler size={15} />尺码信息 · 尺码对照表</span>
@@ -154,7 +165,7 @@ export default function DetailPage() {
 
         {/* 评价入口 */}
         <button
-          {...bindTap({ kind: 'action', id: 'detail.reviews.open' }, { onTrigger: () => openPanel('reviews') })}
+          {...bindTap('detail.reviews.open', { params: { id } })}
           className="w-full bg-white mt-2 px-3 py-3 border-none cursor-pointer text-left"
         >
           <div className="flex justify-between items-center">
@@ -219,14 +230,14 @@ export default function DetailPage() {
           <span className="text-[10px]" style={{ color: isFav ? VIP.primary : '#666666' }}>{isFav ? '已收藏' : '收藏'}</span>
         </button>
         <button
-          {...bindTap({ kind: 'action', id: 'detail.sku.openForCart' }, { onTrigger: () => openPanel('sku', { mode: 'cart' }) })}
+          {...bindTap('detail.sku.openForCart', { params: { id } })}
           className="flex-1 h-10 rounded-l-full text-[14px] font-semibold border-none cursor-pointer"
           style={{ background: VIP.ctaYellow, color: '#222' }}
         >
           加入购物车
         </button>
         <button
-          {...bindTap({ kind: 'action', id: 'detail.sku.openForBuy' }, { onTrigger: () => openPanel('sku', { mode: 'buy' }) })}
+          {...bindTap('detail.sku.openForBuy', { params: { id } })}
           className="flex-1 h-10 rounded-r-full text-[14px] font-semibold border-none cursor-pointer text-white"
           style={{ background: VIP.ctaBlack }}
         >
@@ -279,7 +290,7 @@ export default function DetailPage() {
               );
             })}
             <button
-              {...bindTap({ kind: 'action', id: 'sku.sizeInfo.open' }, { onTrigger: () => openPanel('size') })}
+              {...bindTap('sku.sizeInfo.open', { params: { id } })}
               className="mt-3 flex items-center gap-1 text-[12px] bg-transparent border-none cursor-pointer p-0"
               style={{ color: VIP.primary }}
             >
@@ -290,7 +301,18 @@ export default function DetailPage() {
               <Stepper
                 value={qty}
                 onChange={(d) => setQty((v) => Math.max(1, v + d))}
-                binding={bindTap({ kind: 'action', id: 'sku.qty.change' }, { onTrigger: () => {} })}
+                decrementBinding={qty > 1
+                  ? bindTap({ kind: 'action', id: 'sku.qty.change' }, {
+                      params: { delta: -1 },
+                      stopPropagation: true,
+                      onTrigger: () => setQty((v) => Math.max(1, v - 1)),
+                    })
+                  : undefined}
+                incrementBinding={bindTap({ kind: 'action', id: 'sku.qty.change' }, {
+                  params: { delta: 1 },
+                  stopPropagation: true,
+                  onTrigger: () => setQty((v) => v + 1),
+                })}
               />
             </div>
           </div>
@@ -370,12 +392,24 @@ export default function DetailPage() {
                   {t}
                 </button>
               ))}
+              <span className="flex-1" />
+              <button
+                {...bindTap('reviews.mineAll-open')}
+                className="text-[12px] bg-transparent border-none cursor-pointer flex items-center"
+                style={{ color: VIP.primary }}
+              >
+                我的全部评价 ›
+              </button>
             </div>
             {shownReviews.map((r) => (
               <div key={r.id} className="py-3 border-b border-[#F5F5F5]">
                 <div className="flex items-center gap-2">
                   <Img src={r.userAvatar} className="w-7 h-7 rounded-full" />
                   <span className="text-[13px] font-medium text-[#222222]">{r.userNick}</span>
+                  {r.mine && (
+                    <span className="text-[10px] text-white rounded-sm px-1 leading-4" style={{ background: VIP.primary }}>我的</span>
+                  )}
+                  {r.rating ? <Stars5 value={r.rating} /> : null}
                   <span className="text-[10px] text-[#888888]">{r.skuDesc}</span>
                 </div>
                 <div className="text-[13px] mt-1 leading-relaxed text-[#222222]">{r.content}</div>
@@ -384,7 +418,10 @@ export default function DetailPage() {
                     {r.images.map((img) => (
                       <button
                         key={img}
-                        {...bindTap({ kind: 'action', id: 'reviews.media.open' }, { params: { reviewId: r.id }, onTrigger: () => showToast('查看大图') })}
+                        {...bindTap(
+                          { kind: 'action', id: 'reviews.media.open' },
+                          { params: { reviewId: r.id }, onTrigger: () => { setReviewImage(img); recordReviewMediaViewed(item.id); } },
+                        )}
                         className="border-none p-0 bg-transparent cursor-pointer"
                       >
                         <Img src={img} className="w-16 h-16 rounded-lg object-cover" />
@@ -392,6 +429,8 @@ export default function DetailPage() {
                     ))}
                   </div>
                 )}
+                {/* 标签与「我的评价」页保持同一套展示字段 */}
+                <div className="mt-1.5"><ReviewTag text={r.tag} /></div>
               </div>
             ))}
             {shownReviews.length === 0 && <div className="text-[13px] text-[#888888] text-center py-8">该分类下暂无评价</div>}
@@ -399,6 +438,12 @@ export default function DetailPage() {
         </BottomSheet>
       )}
       {toast}
+      {reviewImage && (
+        <button type="button" onClick={() => setReviewImage(null)} aria-label="关闭评价大图"
+          className="absolute inset-0 z-50 flex items-center justify-center border-none bg-black/90 p-4">
+          <Img src={reviewImage} className="max-h-full max-w-full object-contain" />
+        </button>
+      )}
     </div>
   );
 }

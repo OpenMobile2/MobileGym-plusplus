@@ -4,6 +4,7 @@ import { useFlomoGestures } from '../hooks/useFlomoGestures';
 import { C, renderContent } from '../components/ui';
 import { memoTime } from '../utils/format';
 import { IcCheck, IcTag, IcCopy, IcDelete } from '../res/icons';
+import { copyToClipboard } from '../capabilities';
 
 export default function HomeMultiselectPage() {
   const { bindTap } = useFlomoGestures();
@@ -31,6 +32,21 @@ export default function HomeMultiselectPage() {
   }, [memos]);
 
   const count = selectedMemoIds.length;
+  const copySelectedMemos = () => {
+    const text = visible
+      .filter((m) => selectedMemoIds.includes(m.id))
+      .map((m) => m.content)
+      .join('\n\n');
+    if (!text) {
+      toast('请先选择笔记');
+      return;
+    }
+    if (!copyToClipboard(text)) {
+      toast('无法访问剪切板');
+      return;
+    }
+    toast(`已复制 ${count} 条笔记`);
+  };
 
   return (
     <div className="flex flex-col h-full" style={{ background: C.bg }} data-status-bar-foreground="dark">
@@ -131,7 +147,7 @@ export default function HomeMultiselectPage() {
         <ActionBtn
           icon={<IcCopy size={18} />}
           label="复制"
-          bind={bindTap({ kind: 'action', id: 'home.multiSelect.copy.do' }, { onTrigger: () => toast('已复制') })}
+          bind={bindTap({ kind: 'action', id: 'home.multiSelect.copy.do' }, { onTrigger: copySelectedMemos })}
         />
         <ActionBtn
           icon={<IcDelete size={18} />}

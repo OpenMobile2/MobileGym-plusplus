@@ -76,6 +76,7 @@ const handlers: Record<string, ToolHandler> = {
     const startText = requireString(input, 'start_date'); const endText = requireString(input, 'end_date');
     const start = parseDate(startText); const end = parseDate(endText); const includeStart = optionalBoolean(input, 'include_start', false);
     const raw = Math.round((end - start) / DAY); const days = raw === 0 ? 0 : raw + (includeStart ? Math.sign(raw) : 0);
+    state().setLastDateCalculation({ rangeStart: start, rangeEnd: end, includeStart, resultDays: Math.abs(days) });
     return { start_date: startText, end_date: endText, days, direction: days === 0 ? 'same_day' : days > 0 ? 'forward' : 'backward' };
   },
   [DAYSMATTER_TOOL_NAMES.prepareEventDraft]: async (input) => {

@@ -19,6 +19,15 @@ def _contains_all(value: Any, tokens: list[Any]) -> bool:
     return all(_norm(token) in text for token in tokens)
 
 
+def _contains_none(value: Any, tokens: list[Any]) -> bool:
+    """True iff none of ``tokens`` appear in ``value``. Used for negative/anti-hallucination
+    assertions (e.g. a decoy entity's name must NOT show up in the recorded answer) — without
+    this, ``contains``-only matching can be "over-permissive": an answer that smuggles in extra
+    wrong content alongside the required substrings would still pass."""
+    text = _norm(value)
+    return all(_norm(token) not in text for token in tokens)
+
+
 def _items(apps: dict[str, Any], app: str, field: str) -> list[dict[str, Any]]:
     value = (apps.get(app) or {}).get(field) or []
     return [item for item in value if isinstance(item, dict)]
@@ -175,7 +184,12 @@ def _check(goal: GoalSpec, input: JudgeInput) -> tuple[Any, Any, bool]:
         else:
             item = next((row for row in _new_items(input, "notes", "notes") if _norm(row.get("title")) == _norm(v["title"])), None)
         fields = dict(v.get("fields") or {})
-        passed = _fields_match(item, fields) and _contains_all(f"{(item or {}).get('title', '')}\n{(item or {}).get('content', '')}", v.get("contains", []))
+        full_text = f"{(item or {}).get('title', '')}\n{(item or {}).get('content', '')}"
+        passed = (
+            _fields_match(item, fields)
+            and _contains_all(full_text, v.get("contains", []))
+            and _contains_none(full_text, v.get("not_contains", []))
+        )
         return v, item, passed
 
     if kind == "notes_todo":

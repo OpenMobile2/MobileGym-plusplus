@@ -43,7 +43,10 @@ export default function ChannelMedicinePage() {
   const shops = useTbsgStore((st) => st.shops);
 
   const pharmacies = useMemo(
-    () => shops.filter((x) => x.type === 'retail' && x.category === 'pharmacy'),
+    () => shops
+      .filter((x) => x.type === 'retail' && x.category === 'pharmacy')
+      .slice()
+      .sort((a, b) => a.distanceKm - b.distanceKm),
     [shops],
   );
 

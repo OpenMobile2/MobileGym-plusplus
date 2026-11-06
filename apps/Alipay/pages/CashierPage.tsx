@@ -11,6 +11,8 @@ import { useAlipayStrings } from '../hooks/useAlipayStrings';
 import { localizeBankName } from '../utils/localizeBankName';
 import { DefaultAvatar } from '../components/DefaultAvatar';
 import type { AlipayUserInfo } from '../types';
+import { isPayPinComplete } from '../payPin';
+import { PayPinCapture } from '@/os/components/PayPinCapture';
 
 export function getCashierExpectedPassword(userInfo: Pick<AlipayUserInfo, 'paymentPassword'> | null | undefined): string {
   return String(userInfo?.paymentPassword ?? '');
@@ -37,7 +39,6 @@ export const CashierPage: React.FC = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState(false);
   const calledRef = useRef(false);
-  const expectedPassword = getCashierExpectedPassword(userInfo);
 
   const os = window.__OS__;
   const intentPayload =
@@ -133,21 +134,16 @@ export const CashierPage: React.FC = () => {
   useEffect(() => {
     if (password.length === 6) {
       if (calledRef.current) return;
-      if (password === expectedPassword) {
+      if (isPayPinComplete(password)) {
         calledRef.current = true;
         setTimeout(() => {
           handlePaymentSuccess(selectedMethodId);
         }, 200);
-      } else {
-        setError(true);
-        setPassword('');
       }
-    } else {
-      if (error && password.length > 0) {
-        setError(false);
-      }
+    } else if (error && password.length > 0) {
+      setError(false);
     }
-  }, [password, expectedPassword, selectedMethodId, error]);
+  }, [password, selectedMethodId, error]);
 
   const handleNumberClick = (num: string) => {
     if (password.length < 6) {
@@ -315,7 +311,8 @@ export const CashierPage: React.FC = () => {
 
           {/* Password dots (only visible when modal is open) */}
           {isPasswordModalVisible && (
-            <div className="mt-5">
+            <div className="mt-5" data-keep-keyboard>
+              <PayPinCapture value={password} onChange={setPassword} />
               <div className="flex gap-2 justify-center px-1">
                 {[0, 1, 2, 3, 4, 5].map((index) => (
                   <div

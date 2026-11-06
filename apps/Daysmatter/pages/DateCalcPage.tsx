@@ -5,6 +5,7 @@ import { todayMidnight, parts, fromParts, DAY, dateLabel } from '../utils/dayMat
 import TopBar from '../components/TopBar';
 import DateWheel from '../components/DateWheel';
 import { useI18n } from '../i18n';
+import { useDaysmatterStore } from '../state';
 
 type PickTarget = 'start' | 'rangeStart' | 'rangeEnd';
 
@@ -18,6 +19,7 @@ export default function DateCalcPage() {
   const [rangeEnd, setRangeEnd] = useState(todayMidnight());
   const [includeStart, setIncludeStart] = useState(false);
   const [pick, setPick] = useState<PickTarget | null>(null);
+  const setLastDateCalculation = useDaysmatterStore((s) => s.setLastDateCalculation);
 
   const fmt = useMemo(() => (ms: number) => dateLabel(ms, 'solar', locale), [locale]);
 
@@ -30,8 +32,13 @@ export default function DateCalcPage() {
   const pickAction = pick === 'start' ? 'datecalc.startDate.set' : pick === 'rangeStart' ? 'datecalc.rangeStart.set' : 'datecalc.rangeEnd.set';
   const applyPick = (ms: number) => {
     if (pick === 'start') setStart(ms);
-    else if (pick === 'rangeStart') setRangeStart(ms);
-    else setRangeEnd(ms);
+    else if (pick === 'rangeStart') {
+      setRangeStart(ms);
+      setLastDateCalculation({ rangeStart: ms, rangeEnd, includeStart, resultDays: Math.abs(Math.round((rangeEnd - ms) / DAY) + (includeStart ? 1 : 0)) });
+    } else {
+      setRangeEnd(ms);
+      setLastDateCalculation({ rangeStart, rangeEnd: ms, includeStart, resultDays: Math.abs(Math.round((ms - rangeStart) / DAY) + (includeStart ? 1 : 0)) });
+    }
   };
 
   const adPrefix = t('dateCalc.ad');
@@ -73,7 +80,7 @@ export default function DateCalcPage() {
             {locale === 'zh' ? '共' : ''} <span className="text-[22px] font-bold text-[#3E7CB1]">{Math.abs(diff)}</span>
             <span className="rounded bg-[#C4C4C4] px-2 py-0.5 text-[12px] text-white">Day</span>
           </div>
-          <button {...action<HTMLButtonElement>('datecalc.includeStart.toggle', () => setIncludeStart((v) => !v))}
+          <button {...action<HTMLButtonElement>('datecalc.includeStart.toggle', () => { const next = !includeStart; setIncludeStart(next); setLastDateCalculation({ rangeStart, rangeEnd, includeStart: next, resultDays: Math.abs(Math.round((rangeEnd - rangeStart) / DAY) + (next ? 1 : 0)) }); })}
             className="flex w-full items-center justify-center gap-2 border-t border-[#F2F1EC] py-3 text-[14px] text-[#6B6B6B] active:bg-[#F2F1EC]">
             <span className={`flex h-4 w-4 items-center justify-center rounded-full border ${includeStart ? 'border-[#3E7CB1] bg-[#3E7CB1]' : 'border-[#C4C4C4]'}`}>
               {includeStart && <span className="h-1.5 w-1.5 rounded-full bg-white" />}

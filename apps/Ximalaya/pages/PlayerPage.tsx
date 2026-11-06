@@ -43,6 +43,7 @@ export function PlayerPage() {
   const collectedTrackIds = useXimalayaStore((st) => st.collectedTrackIds);
   const togglePlay = useXimalayaStore((st) => st.togglePlay);
   const toggleLikeTrack = useXimalayaStore((st) => st.toggleLikeTrack);
+  const addDanmaku = useXimalayaStore((st) => st.addDanmaku);
   const toggleCollect = useXimalayaStore((st) => st.toggleCollect);
   const setSpeed = useXimalayaStore((st) => st.setSpeed);
   const setQuality = useXimalayaStore((st) => st.setQuality);
@@ -340,10 +341,18 @@ export function PlayerPage() {
           <div className="relative bg-white p-3 flex items-center gap-2" data-keep-keyboard="true">
             <input
               autoFocus value={danmaku} onChange={(e) => setDanmaku(e.target.value)}
+              aria-label="弹幕内容"
               placeholder="发条弹幕…" className="flex-1 h-9 bg-[#F2F2F2] rounded-full px-3 text-[14px] text-[#333]"
               data-keep-keyboard="true"
             />
-            <button onClick={() => { showToast(danmaku.trim() ? '弹幕已发送' : '弹幕已发送'); setDanmaku(null); }} className="px-4 h-9 rounded-full bg-[#FE4543] text-white text-[14px]">发送</button>
+            <button {...bindTap({ kind: 'action', id: 'player.danmaku.send' }, { params: { content: danmaku }, onTrigger: () => {
+                const content = danmaku.trim();
+                if (!content || !track) return;
+                addDanmaku(track.id, content);
+                showToast('弹幕已发送');
+                setDanmaku(null);
+              } })}
+              className="px-4 h-9 rounded-full bg-[#FE4543] text-white text-[14px]">发送</button>
           </div>
         </div>
       )}

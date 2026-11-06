@@ -18,7 +18,6 @@ import {
   recordMatchesBillFilters,
   type BillFilterValues,
 } from '../utils/bills';
-import { wheelScrollTop, wheelValueAtScroll } from '../utils/wheelPicker';
 
 const MONTH_LABELS_EN = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
@@ -199,17 +198,17 @@ export const BillsPage: React.FC = () => {
     return map;
   }, [currentYear, groups, isEnglish, s.month_suffix]);
 
-  const pickerInitializedRef = React.useRef(false);
+  const pickerJustOpened = React.useRef(false);
   React.useEffect(() => {
     if (!isMonthPickerOpen) {
-      pickerInitializedRef.current = false;
+      pickerJustOpened.current = false;
       return;
     }
-    if (pickerInitializedRef.current) return;
-    pickerInitializedRef.current = true;
+    pickerJustOpened.current = true;
     requestAnimationFrame(() => {
-      yearRef.current?.scrollTo({ top: wheelScrollTop(yearOptions, selectedYear), behavior: 'instant' });
-      monthRef.current?.scrollTo({ top: wheelScrollTop(monthOptions, selectedMonth), behavior: 'instant' });
+      yearRef.current?.scrollTo({ top: Math.max(0, yearOptions.indexOf(selectedYear)) * 36, behavior: 'instant' });
+      monthRef.current?.scrollTo({ top: Math.max(0, monthOptions.indexOf(selectedMonth)) * 36, behavior: 'instant' });
+      setTimeout(() => { pickerJustOpened.current = false; }, 350);
     });
   }, [isMonthPickerOpen, monthOptions, selectedMonth, selectedYear, yearOptions]);
 
@@ -277,6 +276,7 @@ export const BillsPage: React.FC = () => {
   };
 
   const openMonthPickerFor = (year: number, month: number) => {
+    pickerJustOpened.current = true;
     setSelectedYear(year);
     setSelectedMonth(month);
     setIsMonthPickerOpen(true);
@@ -284,6 +284,15 @@ export const BillsPage: React.FC = () => {
 
   const openMonthPicker = () => {
     openMonthPickerFor(currentYear, currentMonth);
+  };
+
+  const confirmMonthPicker = () => {
+    const yearIndex = Math.max(0, Math.min(yearOptions.length - 1, Math.round((yearRef.current?.scrollTop ?? 0) / 36)));
+    const monthIndex = Math.max(0, Math.min(monthOptions.length - 1, Math.round((monthRef.current?.scrollTop ?? 0) / 36)));
+    setSelectedYear(yearOptions[yearIndex]);
+    setSelectedMonth(monthOptions[monthIndex]);
+    setSingleMonthMode(true);
+    setIsMonthPickerOpen(false);
   };
 
   const renderMonthCard = (monthKey: string, records: AlipayTransferRecord[], label: string, isPrimary: boolean) => {
@@ -355,17 +364,21 @@ export const BillsPage: React.FC = () => {
                   className="w-24 overflow-y-auto no-scrollbar"
                   style={{ paddingTop: 70, paddingBottom: 70, scrollSnapType: 'y mandatory' }}
                   onScroll={event => {
-                    setSelectedYear(wheelValueAtScroll(yearOptions, event.currentTarget.scrollTop, selectedYear));
+                    if (pickerJustOpened.current) return;
+                    const index = Math.max(0, Math.min(yearOptions.length - 1, Math.round(event.currentTarget.scrollTop / 36)));
+                    setSelectedYear(yearOptions[index]);
                   }}
                 >
-                  {yearOptions.map((year) => (
+                  {yearOptions.map((year, index) => (
                     <div
                       key={year}
                       className={selectedYear === year ? 'font-medium text-black' : 'text-gray-300'}
                       style={{ height: 36, lineHeight: '36px', scrollSnapAlign: 'center' }}
                       onClick={() => {
-                        yearRef.current?.scrollTo({ top: wheelScrollTop(yearOptions, year), behavior: 'smooth' });
+                        pickerJustOpened.current = true;
+                        yearRef.current?.scrollTo({ top: index * 36, behavior: 'smooth' });
                         setSelectedYear(year);
+                        setTimeout(() => { pickerJustOpened.current = false; }, 350);
                       }}
                     >
                       {year}
@@ -378,17 +391,21 @@ export const BillsPage: React.FC = () => {
                   className="w-24 overflow-y-auto no-scrollbar"
                   style={{ paddingTop: 70, paddingBottom: 70, scrollSnapType: 'y mandatory' }}
                   onScroll={event => {
-                    setSelectedMonth(wheelValueAtScroll(monthOptions, event.currentTarget.scrollTop, selectedMonth));
+                    if (pickerJustOpened.current) return;
+                    const index = Math.max(0, Math.min(monthOptions.length - 1, Math.round(event.currentTarget.scrollTop / 36)));
+                    setSelectedMonth(monthOptions[index]);
                   }}
                 >
-                  {monthOptions.map((month) => (
+                  {monthOptions.map((month, index) => (
                     <div
                       key={month}
                       className={selectedMonth === month ? 'font-medium text-black' : 'text-gray-300'}
                       style={{ height: 36, lineHeight: '36px', scrollSnapAlign: 'center' }}
                       onClick={() => {
-                        monthRef.current?.scrollTo({ top: wheelScrollTop(monthOptions, month), behavior: 'smooth' });
+                        pickerJustOpened.current = true;
+                        monthRef.current?.scrollTo({ top: index * 36, behavior: 'smooth' });
                         setSelectedMonth(month);
+                        setTimeout(() => { pickerJustOpened.current = false; }, 350);
                       }}
                     >
                       {isEnglish ? MONTH_LABELS_EN[month - 1] : month}
@@ -400,12 +417,7 @@ export const BillsPage: React.FC = () => {
 
             <button
               className="mb-2 w-full rounded-lg bg-app-primary py-3 text-lg font-medium text-white"
-              onClick={() => {
-                setSelectedYear(wheelValueAtScroll(yearOptions, yearRef.current?.scrollTop ?? 0, selectedYear));
-                setSelectedMonth(wheelValueAtScroll(monthOptions, monthRef.current?.scrollTop ?? 0, selectedMonth));
-                setSingleMonthMode(true);
-                setIsMonthPickerOpen(false);
-              }}
+              onClick={confirmMonthPicker}
             >
               {s.confirm_2}
             </button>

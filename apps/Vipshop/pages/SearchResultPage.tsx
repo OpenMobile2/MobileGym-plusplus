@@ -2,15 +2,18 @@ import React, { useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useVipshopStore } from '../state';
 import { useVipshopGestures } from '../hooks/useVipshopGestures';
-import { useToast, VIP } from '../components/ui';
+import { useToast, usePanel, VIP } from '../components/ui';
 import { ItemGrid } from '../components/ItemCard';
-import { RESULT_SORTS, RESULT_CHIPS, catLabel } from '../constants';
+import { FilterSheet } from '../components/FilterSheet';
+import { RESULT_SORTS } from '../constants';
+import { matchItems, lockPrimaryCategory, applyFilters, soldCount } from '../utils/search';
 import { IcNavBack, IcSearch, IcFilter, IcHeart } from '../res/icons';
 
 export default function SearchResultPage() {
-  const { bindTap, bindBack } = useVipshopGestures();
+  const { bindTap, bindBack, back } = useVipshopGestures();
   const [searchParams] = useSearchParams();
   const [toast, showToast] = useToast();
+  const { value: panel } = usePanel('filter');
 
   const q = searchParams.get('q') || '';
   const items = useVipshopStore((s) => s.items);
@@ -19,33 +22,38 @@ export default function SearchResultPage() {
 
   const [sort, setSort] = useState<string>(RESULT_SORTS[0].id);
   const [chips, setChips] = useState<string[]>([]);
+  // filters=已生效条件;draft=筛选弹层里改到一半的条件,点确认才落地
+  const [filters, setFilters] = useState<string[]>([]);
+  const [draft, setDraft] = useState<string[]>([]);
 
-  const baseResults = useMemo(() => {
-    if (!q) return items;
-    const hay = (it: (typeof items)[number]) =>
-      `${it.title} ${it.subCategory} ${it.brandName} ${it.tags.join('')} ${catLabel(it.category)}`;
-    // 1) 关键词直接命中,或查询词包含某商品二级分类(如"平底凉鞋" → 凉鞋)
-    let f = items.filter((it) => hay(it).includes(q) || (it.subCategory && q.includes(it.subCategory)));
-    // 2) 兜底:查询词的二字子串命中(容错"平底凉鞋"→"凉鞋")
-    if (f.length === 0 && q.length >= 2) {
-      const grams: string[] = [];
-      for (let i = 0; i < q.length - 1; i++) grams.push(q.slice(i, i + 2));
-      f = items.filter((it) => grams.some((g) => hay(it).includes(g)));
-    }
-    return f.length > 0 ? f : items;
-  }, [items, q]);
+  // 关键词命中集合。匹配不到时为空数组(显示空态),不再回落成全部商品——
+  // 那正是"搜裙子再按价格排序却跳出保温杯/袜子"的根因。
+  const scopedResults = useMemo(() => lockPrimaryCategory(matchItems(items, q)), [items, q]);
 
+  // 动态筛选词:从当前结果的二级分类/标签按出现频次取前 8(男士休闲裤不会再出现"碎花/收腰")
+  const dynamicChips = useMemo(() => {
+    const freq = new Map<string, number>();
+    scopedResults.forEach((it) => {
+      [it.subCategory, ...it.tags].forEach((t) => { if (t) freq.set(t, (freq.get(t) ?? 0) + 1); });
+    });
+    return Array.from(freq.entries()).sort((a, b) => b[1] - a[1]).map((e) => e[0]).slice(0, 8);
+  }, [scopedResults]);
+
+  // 排序和筛选一律在 scopedResults 内部进行,不会引入集合外的商品
   const results = useMemo(() => {
-    let arr = [...baseResults];
-    if (sort === 'price') arr.sort((a, b) => a.price - b.price);
-    else if (sort === 'sales') arr.sort((a, b) => b.reviewCount - a.reviewCount);
-    else if (sort === 'rank') arr.sort((a, b) => a.price / a.originPrice - b.price / b.originPrice);
+    let arr = [...scopedResults];
+    // 次序键兜到 id:比较值并列时 sort 保持原序,看上去像"没排"
+    if (sort === 'price') arr.sort((a, b) => (a.price - b.price) || a.id.localeCompare(b.id));
+    else if (sort === 'sales') arr.sort((a, b) => (soldCount(b.sold) - soldCount(a.sold)) || a.id.localeCompare(b.id));
+    else if (sort === 'rank') arr.sort((a, b) => (a.price / a.originPrice - b.price / b.originPrice) || a.id.localeCompare(b.id));
     if (chips.length > 0) {
-      // 严格筛选:命中所选 chips 的商品(标签/二级分类/标题),无命中则显示空态(可见变化)
       arr = arr.filter((it) => it.tags.some((t) => chips.includes(t)) || chips.some((c) => it.subCategory.includes(c) || it.title.includes(c)));
     }
-    return arr;
-  }, [baseResults, sort, chips]);
+    return applyFilters(arr, filters);
+  }, [scopedResults, sort, chips, filters]);
+
+  const openFilter = () => setDraft(filters);
+  const confirmFilter = () => { setFilters(draft); back(); };
 
   return (
     <div className="flex flex-col h-full bg-[#F5F5F5]">
@@ -84,16 +92,17 @@ export default function SearchResultPage() {
           })}
         </div>
         <button
-          {...bindTap('searchResult.filter-open')}
-          className="flex items-center gap-1 text-[13px] text-[#666666] bg-transparent border-none cursor-pointer"
+          {...bindTap('searchResult.filter-open', { beforeTrigger: openFilter })}
+          className="flex items-center gap-1 text-[13px] bg-transparent border-none cursor-pointer"
+          style={filters.length > 0 ? { color: VIP.primary, fontWeight: 600 } : { color: '#666666' }}
         >
-          <IcFilter size={15} />筛选
+          <IcFilter size={15} />筛选{filters.length > 0 ? `(${filters.length})` : ''}
         </button>
       </div>
 
       {/* chips 行 */}
       <div className="shrink-0 bg-white flex gap-2 px-3 py-2 overflow-x-auto no-scrollbar border-b border-[#F5F5F5]">
-        {RESULT_CHIPS.map((chip) => {
+        {dynamicChips.map((chip) => {
           const on = chips.includes(chip);
           return (
             <button
@@ -134,11 +143,26 @@ export default function SearchResultPage() {
             }}
           />
           {results.length === 0 && (
-            <div className="text-center text-[13px] text-[#888888] py-10">未找到相关商品</div>
+            <div className="text-center text-[13px] text-[#888888] py-10">
+              {scopedResults.length === 0 ? `没有找到与「${q}」相关的商品` : '当前筛选条件下没有商品,换个条件试试'}
+            </div>
           )}
         </div>
         <div className="h-3" />
       </div>
+
+      {panel === 'open' && (
+        <FilterSheet
+          candidates={scopedResults}
+          draft={draft}
+          onToggle={(token) => setDraft((prev) => (prev.includes(token) ? prev.filter((t) => t !== token) : [...prev, token]))}
+          onClose={() => back()}
+          optionBindingOf={(token, onTrigger) =>
+            bindTap({ kind: 'action', id: 'searchFilter.option.toggle' }, { params: { option: token }, onTrigger })}
+          resetBinding={bindTap({ kind: 'action', id: 'searchFilter.reset.submit' }, { onTrigger: () => setDraft([]) })}
+          confirmBinding={bindTap({ kind: 'action', id: 'searchFilter.confirm.submit' }, { onTrigger: confirmFilter })}
+        />
+      )}
       {toast}
     </div>
   );

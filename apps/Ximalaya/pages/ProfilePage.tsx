@@ -56,15 +56,35 @@ export function ProfilePage() {
         </div>
       </div>
 
-      {/* 相册(上传照片)wontfix */}
-      <div className="shrink-0 bg-white px-4 py-2.5 flex items-center justify-between border-b border-[#F5F5F5]">
-        <span className="text-[13px] text-[#666]">相册</span>
-        <button
-          {...bindTap({ kind: 'action', id: 'profile.upload.wontfix' }, { onTrigger: () => showToast('该功能暂未开放') })}
-          className="text-[13px] text-[#999] flex items-center gap-0.5"
-        >
-          上传照片<IcChevronRight size={14} />
-        </button>
+      {/* 相册：系统相册选图写入 user.photos */}
+      <div className="shrink-0 bg-white px-4 py-2.5 border-b border-[#F5F5F5]">
+        <div className="flex items-center justify-between">
+          <span className="text-[13px] text-[#666]">相册{(user.photos?.length ?? 0) > 0 ? ` · ${user.photos!.length}` : ''}</span>
+          <button
+            {...bindTap({ kind: 'action', id: 'profile.upload.pick' }, {
+              onTrigger: () => {
+                void import('@/os/albumBridge').then(({ pickImages }) =>
+                  pickImages({ multiple: true, maxSelect: 9 }).then((r) => {
+                    if (r.cancelled || !r.selected.length) return;
+                    const next = [...(useXimalayaStore.getState().user.photos ?? []), ...r.selected.map((x) => x.uri)].slice(0, 18);
+                    useXimalayaStore.getState().updateUser({ photos: next });
+                    showToast(`已从系统相册选择 ${r.selected.length} 张`);
+                  }),
+                );
+              },
+            })}
+            className="text-[13px] text-[#999] flex items-center gap-0.5"
+          >
+            上传照片<IcChevronRight size={14} />
+          </button>
+        </div>
+        {(user.photos?.length ?? 0) > 0 && (
+          <div className="mt-2 flex gap-1.5 overflow-x-auto" data-scroll-container data-scroll-direction="horizontal">
+            {user.photos!.map((uri) => (
+              <Img key={uri} src={uri} className="w-14 h-14 rounded-md object-cover shrink-0" />
+            ))}
+          </div>
+        )}
       </div>
 
       {/* 作品/动态 Tab */}

@@ -10,16 +10,24 @@ import { toast } from './toast';
 import { money, dateKey } from './format';
 import * as TimeService from '@/os/TimeService';
 import {
-  RECORD_MODES, RECORD_TYPES, CATEGORY_EDIT_SECTIONS, DISCOUNT_TYPES,
+  RECORD_MODES, RECORD_TYPES, CATEGORY_EDIT_SECTIONS, DISCOUNT_TYPES, GENDER_OPTIONS, PAYEE_SUGGESTIONS,
 } from '../constants';
 import {
   IcCalendar, IcLedger, IcCard, IcCash, IcCheck, IcSwap, IcImage, IcCamera, IcVoice, IcPlus,
   IcNavBack, IcArrowRight,
 } from '../res/icons';
+import { useStrings } from '../hooks/useStrings';
+import { useLocale } from '@/os/locale';
 
 function useClose() {
   const { back } = useKapiGestures();
   return () => back();
+}
+
+/** Sheet calendar heading, formatted per locale (slash form for en, CJK form for zh). */
+function useMonthYearHeading(year: number, month0: number): string {
+  const locale = useLocale();
+  return locale === 'en' ? `${month0 + 1}/${year}` : `${year}年${month0 + 1}月`;
 }
 
 function billIdFromPath(pathname: string): string | null {
@@ -31,24 +39,25 @@ function billIdFromPath(pathname: string): string | null {
 function RecordSheet() {
   const close = useClose();
   const { bindTap, bindAction } = useKapiGestures();
-  const draft = useKapiStore((s) => s._draft);
-  const ledgers = useKapiStore((s) => s.ledgers);
-  const draftReset = useKapiStore((s) => s.draftReset);
-  const draftPatch = useKapiStore((s) => s.draftPatch);
-  const draftAmountKey = useKapiStore((s) => s.draftAmountKey);
-  const draftCommit = useKapiStore((s) => s.draftCommit);
-  const setEditContext = useKapiStore((s) => s.setEditContext);
-  const setCategoryTarget = useKapiStore((s) => s.setCategoryTarget);
+  const s = useStrings();
+  const draft = useKapiStore((st) => st._draft);
+  const ledgers = useKapiStore((st) => st.ledgers);
+  const draftReset = useKapiStore((st) => st.draftReset);
+  const draftPatch = useKapiStore((st) => st.draftPatch);
+  const draftAmountKey = useKapiStore((st) => st.draftAmountKey);
+  const draftCommit = useKapiStore((st) => st.draftCommit);
+  const setEditContext = useKapiStore((st) => st.setEditContext);
+  const setCategoryTarget = useKapiStore((st) => st.setCategoryTarget);
   const [mode, setMode] = useState<'manual' | 'ai'>('manual');
   const [aiText, setAiText] = useState('');
-  const ledgerName = ledgers.find((l) => l.id === draft.ledgerId)?.name ?? '总账本';
+  const ledgerName = ledgers.find((l) => l.id === draft.ledgerId)?.name ?? s.defaultLedgerName;
 
   useEffect(() => {
     setEditContext('draft');
     setCategoryTarget('record');
   }, [setEditContext, setCategoryTarget]);
 
-  const cap = 'flex items-center gap-1 px-2.5 py-1 rounded-lg border border-[#E3E6EE] text-[13px] text-[#5A6172] bg-white cursor-pointer whitespace-nowrap shrink-0';
+  const cap = 'flex items-center gap-1 px-2.5 py-1 rounded-lg border border-[#E3E6EE] text-[13px] text-[#5A6172] bg-app-surface cursor-pointer whitespace-nowrap shrink-0';
 
   return (
     <SheetShell close={close} variant="bottom" closeIcon>
@@ -59,10 +68,10 @@ function RecordSheet() {
             key={m.id}
             {...bindAction('record.mode.select.tab', () => setMode(m.id), { value: m.id })}
             className={`text-[17px] border-none bg-transparent cursor-pointer ${
-              mode === m.id ? 'text-[#1A1D26] font-semibold' : 'text-[#B3B9C6]'
+              mode === m.id ? 'text-app-text font-semibold' : 'text-app-text-muted'
             }`}
           >
-            {m.label}
+            {s[m.labelKey]}
           </button>
         ))}
       </div>
@@ -76,10 +85,10 @@ function RecordSheet() {
                 key={t.id}
                 {...bindAction('record.type.select.tab', () => draftReset(t.id), { value: t.id })}
                 className={`text-[14px] border-none bg-transparent cursor-pointer ${
-                  draft.type === t.id ? 'text-[#4B6EF5] font-semibold' : 'text-[#8A92A6]'
+                  draft.type === t.id ? 'text-[#4B6EF5] font-semibold' : 'text-app-text-muted'
                 }`}
               >
-                {t.label}
+                {s[t.labelKey]}
               </button>
             ))}
           </div>
@@ -87,11 +96,11 @@ function RecordSheet() {
           {draft.type === 'transfer' ? (
             <div className="flex items-center justify-center gap-3 py-4">
               <button {...bindTap('record.transferAccount.open')} className={cap}>
-                <IcCard size={16} /> 扣款账户
+                <IcCard size={16} /> {s.payFromAccountLabel}
               </button>
               <IcSwap size={18} className="text-[#4B6EF5]" />
               <button {...bindTap('record.transferAccount.open')} className={cap}>
-                <IcCard size={16} /> 入款账户
+                <IcCard size={16} /> {s.payToAccountLabel}
               </button>
             </div>
           ) : (
@@ -100,9 +109,9 @@ function RecordSheet() {
                 <CategoryIcon icon={draft.icon} color={draft.color} selected />
                 <span className="text-[12px] text-[#4B6EF5]">{draft.categoryName}</span>
               </button>
-              <button {...bindTap('record.category.open')} className="flex flex-col items-center justify-center gap-1 shrink-0 bg-transparent border-none cursor-pointer text-[#8A92A6]">
+              <button {...bindTap('record.category.open')} className="flex flex-col items-center justify-center gap-1 shrink-0 bg-transparent border-none cursor-pointer text-app-text-muted">
                 <span className="w-12 h-12 rounded-full bg-[#F4F6FA] flex items-center justify-center text-[20px]">⋯</span>
-                <span className="text-[12px]">更多分类</span>
+                <span className="text-[12px]">{s.moreCategoriesLabel}</span>
               </button>
             </div>
           )}
@@ -111,8 +120,8 @@ function RecordSheet() {
           <div className="flex gap-2 px-4 py-2 overflow-x-auto" data-scroll-container="record-caps" data-scroll-direction="horizontal">
             <button {...bindTap('record.date.open')} className={cap}><IcCalendar size={15} /> {dateKey(draft.date).slice(5)}</button>
             <button {...bindTap('record.ledger.open')} className={cap}><IcLedger size={15} /> {ledgerName}</button>
-            <button {...bindTap('record.account.open')} className={cap}><IcCard size={15} /> {draft.accountId ? '已选账户' : '无账户'}</button>
-            <button {...bindTap('record.discount.open')} className={cap}>优惠 {draft.discount ? `¥${money(draft.discount.amount)}` : '无'}</button>
+            <button {...bindTap('record.account.open')} className={cap}><IcCard size={15} /> {draft.accountId ? s.accountSelectedLabel : s.noAccountLabel}</button>
+            <button {...bindTap('record.discount.open')} className={cap}>{s.discountCapPrefix} {draft.discount ? `¥${money(draft.discount.amount)}` : s.noneLabel}</button>
           </div>
 
           {/* 金额 + 备注 */}
@@ -124,32 +133,31 @@ function RecordSheet() {
                 data-action-type="input"
                 value={draft.note}
                 onChange={(e) => draftPatch({ note: e.target.value })}
-                placeholder="点击填写备注信息"
-                className="flex-1 bg-transparent border-none outline-none text-[14px] text-[#1A1D26] placeholder:text-[#B3B9C6]"
+                placeholder={s.noteInputPlaceholder}
+                className="flex-1 bg-transparent border-none outline-none text-[14px] text-app-text placeholder:text-app-text-muted"
               />
-              <button {...bindAction('record.attach.noop', () => toast('该功能暂未开放'))} className="bg-transparent border-none cursor-pointer"><IcImage size={20} className="text-[#B3B9C6]" /></button>
-              <button {...bindAction('record.attach.noop', () => toast('该功能暂未开放'))} className="bg-transparent border-none cursor-pointer"><IcCamera size={20} className="text-[#B3B9C6]" /></button>
+              <button {...bindAction('record.attach.noop', () => toast(s.featureNotAvailable))} className="bg-transparent border-none cursor-pointer"><IcImage size={20} className="text-app-text-muted" /></button>
+              <button {...bindAction('record.attach.noop', () => toast(s.featureNotAvailable))} className="bg-transparent border-none cursor-pointer"><IcCamera size={20} className="text-app-text-muted" /></button>
             </div>
           </div>
 
           <Keypad
             inputActionId="record.amount.input.value"
             onInput={draftAmountKey}
-            primaryLabel="完成"
             primaryActionId="record.submit.confirm.done"
             onPrimary={() => {
               const id = draftCommit();
-              if (!id) { toast('请输入金额'); return; }
-              toast('已记一笔');
+              if (!id) { toast(s.enterAmountToast); return; }
+              toast(s.billRecordedToast);
               draftReset();
               close();
             }}
-            secondaryLabel="再记"
+            secondaryLabel={s.recordAgainBtn}
             secondaryActionId="record.submit.confirm.again"
             onSecondary={() => {
               const id = draftCommit();
-              if (!id) { toast('请输入金额'); return; }
-              toast('已记一笔');
+              if (!id) { toast(s.enterAmountToast); return; }
+              toast(s.billRecordedToast);
               draftPatch({ amountExpr: '', note: '' });
             }}
           />
@@ -162,17 +170,17 @@ function RecordSheet() {
               data-action-type="input"
               value={aiText}
               onChange={(e) => setAiText(e.target.value)}
-              placeholder="用一句话记录,例如「午饭黄焖鸡 25」"
-              className="w-full h-24 bg-transparent border-none outline-none resize-none text-[15px] text-[#1A1D26] placeholder:text-[#B3B9C6]"
+              placeholder={s.aiRecordPlaceholder}
+              className="w-full h-24 bg-transparent border-none outline-none resize-none text-[15px] text-app-text placeholder:text-app-text-muted"
             />
             <div className="flex items-center gap-3 mt-2">
-              <button {...bindAction('record.attach.noop', () => toast('该功能暂未开放'))} className="bg-transparent border-none cursor-pointer"><IcImage size={20} className="text-[#B3B9C6]" /></button>
-              <button {...bindAction('record.attach.noop', () => toast('该功能暂未开放'))} className="bg-transparent border-none cursor-pointer"><IcCamera size={20} className="text-[#B3B9C6]" /></button>
+              <button {...bindAction('record.attach.noop', () => toast(s.featureNotAvailable))} className="bg-transparent border-none cursor-pointer"><IcImage size={20} className="text-app-text-muted" /></button>
+              <button {...bindAction('record.attach.noop', () => toast(s.featureNotAvailable))} className="bg-transparent border-none cursor-pointer"><IcCamera size={20} className="text-app-text-muted" /></button>
               <span className="flex-1" />
               <button
                 {...bindAction('record.ai.submit.send', () => {
                   const m = aiText.match(/(\d+(?:\.\d+)?)/);
-                  if (!m) { toast('没识别到金额,换种说法试试'); return; }
+                  if (!m) { toast(s.amountNotRecognizedToast); return; }
                   useKapiStore.getState().addBill({
                     type: 'expense', categoryId: draft.categoryId, categoryName: draft.categoryName,
                     icon: draft.icon, color: draft.color, amount: parseFloat(m[1]), note: aiText,
@@ -180,11 +188,11 @@ function RecordSheet() {
                     payee: '', tags: [], discount: null, refund: null,
                     reimburse: false, excludeFlow: false, excludeBudget: false,
                   });
-                  toast('已记一笔'); setAiText(''); close();
+                  toast(s.billRecordedToast); setAiText(''); close();
                 })}
                 className="px-4 py-2 rounded-full bg-[#4B6EF5] text-white text-[14px] border-none cursor-pointer"
               >
-                识别记账
+                {s.aiRecognizeBtn}
               </button>
             </div>
           </div>
@@ -198,26 +206,27 @@ function RecordSheet() {
 function VoiceSheet() {
   const close = useClose();
   const { bindActionLong } = useKapiGestures();
-  const draft = useKapiStore((s) => s._draft);
+  const s = useStrings();
+  const draft = useKapiStore((st) => st._draft);
   return (
     <SheetShell close={close} variant="bottom" closeIcon>
       <div className="flex flex-col items-center justify-between min-h-[360px] py-10 px-6">
-        <p className="text-[14px] text-[#B3B9C6] text-center">用一句话,记录账单、心情或待办</p>
+        <p className="text-[14px] text-app-text-muted text-center">{s.voiceHintText}</p>
         <button
           {...bindActionLong('voice.record.input.speech', () => {
             useKapiStore.getState().addBill({
               type: 'expense', categoryId: draft.categoryId, categoryName: draft.categoryName,
-              icon: draft.icon, color: draft.color, amount: 18, note: '语音记账(mock)',
+              icon: draft.icon, color: draft.color, amount: 18, note: s.voiceRecordNote,
               date: TimeService.now(), ledgerId: draft.ledgerId, accountId: null,
               payee: '', tags: [], discount: null, refund: null,
               reimburse: false, excludeFlow: false, excludeBudget: false,
             });
-            toast('已记一笔');
+            toast(s.billRecordedToast);
             close();
           })}
           className="w-full py-4 rounded-full bg-[#4B6EF5] text-white text-[16px] border-none cursor-pointer flex items-center justify-center gap-2 select-none"
         >
-          <IcVoice size={20} /> 按住 说话
+          <IcVoice size={20} /> {s.pressHoldToTalkBtn}
         </button>
       </div>
     </SheetShell>
@@ -227,8 +236,9 @@ function VoiceSheet() {
 /* ============================= 分类选择(全屏) ============================= */
 function CategorySheet() {
   const close = useClose();
+  const s = useStrings();
   return (
-    <SheetShell close={close} variant="full" title="默认分类" closeIcon>
+    <SheetShell close={close} variant="full" title={s.defaultCategorySheetTitle} closeIcon>
       <CategoryGrid onPicked={close} />
     </SheetShell>
   );
@@ -238,22 +248,23 @@ function CategorySheet() {
 function CategoryEditSheet() {
   const close = useClose();
   const { bindTap, bindAction } = useKapiGestures();
-  const expense = useKapiStore((s) => s.categories.expense);
-  const rules = useKapiStore((s) => s.rules);
+  const s = useStrings();
+  const expense = useKapiStore((st) => st.categories.expense);
+  const rules = useKapiStore((st) => st.rules);
   const [section, setSection] = useState<'edit' | 'payeeRule' | 'contentRule'>('edit');
   const ruleKind = section === 'payeeRule' ? 'payee' : 'content';
   return (
-    <SheetShell close={close} variant="full" title="分类方案管理" closeIcon>
-      <div className="flex justify-center gap-6 py-2 border-b border-[#EDEFF4]">
-        {CATEGORY_EDIT_SECTIONS.map((s) => (
+    <SheetShell close={close} variant="full" title={s.categorySchemeManageTitle} closeIcon>
+      <div className="flex justify-center gap-6 py-2 border-b border-app-border">
+        {CATEGORY_EDIT_SECTIONS.map((sec) => (
           <button
-            key={s.id}
-            {...bindAction('categoryEdit.tab.select.section', () => setSection(s.id), { value: s.id })}
+            key={sec.id}
+            {...bindAction('categoryEdit.tab.select.section', () => setSection(sec.id), { value: sec.id })}
             className={`text-[14px] pb-1 border-none bg-transparent cursor-pointer ${
-              section === s.id ? 'text-[#4B6EF5] font-semibold border-b-2 border-[#4B6EF5]' : 'text-[#8A92A6]'
+              section === sec.id ? 'text-[#4B6EF5] font-semibold border-b-2 border-[#4B6EF5]' : 'text-app-text-muted'
             }`}
           >
-            {s.label}
+            {s[sec.labelKey]}
           </button>
         ))}
       </div>
@@ -265,21 +276,21 @@ function CategoryEditSheet() {
               <span className="text-[12px] text-[#5A6172]">{c.name}</span>
             </div>
           ))}
-          <button {...bindAction('categoryEdit.addCategory.noop', () => toast('该功能暂未开放'))} className="flex flex-col items-center gap-1 bg-transparent border-none cursor-pointer text-[#8A92A6]">
+          <button {...bindAction('categoryEdit.addCategory.noop', () => toast(s.featureNotAvailable))} className="flex flex-col items-center gap-1 bg-transparent border-none cursor-pointer text-app-text-muted">
             <span className="w-12 h-12 rounded-full border border-dashed border-[#C5CAD4] flex items-center justify-center"><IcPlus size={20} /></span>
-            <span className="text-[12px]">添加</span>
+            <span className="text-[12px]">{s.addLabel}</span>
           </button>
         </div>
       ) : (
         <div className="p-4">
           {rules.filter((r) => r.kind === ruleKind).map((r) => (
-            <div key={r.id} className="flex items-center justify-between py-3 border-b border-[#EDEFF4]">
-              <span className="text-[15px] text-[#1A1D26]">{r.keyword}</span>
-              <span className="text-[13px] text-[#8A92A6]">→ {r.categoryName}</span>
+            <div key={r.id} className="flex items-center justify-between py-3 border-b border-app-border">
+              <span className="text-[15px] text-app-text">{r.keyword}</span>
+              <span className="text-[13px] text-app-text-muted">→ {r.categoryName}</span>
             </div>
           ))}
           <button {...bindTap('categoryEdit.addRule.open')} className="mt-4 w-full py-3 rounded-xl border border-dashed border-[#C5CAD4] text-[#4B6EF5] text-[14px] bg-transparent cursor-pointer">
-            + 添加识别规则
+            + {s.addRuleTitle}
           </button>
         </div>
       )}
@@ -291,37 +302,38 @@ function CategoryEditSheet() {
 function AddRuleSheet() {
   const close = useClose();
   const { bindTap, bindAction } = useKapiGestures();
-  const setCategoryTarget = useKapiStore((s) => s.setCategoryTarget);
-  const pickedId = useKapiStore((s) => s._pickedCategoryId);
-  const cats = useKapiStore((s) => s.categories.expense);
-  const addRule = useKapiStore((s) => s.addRule);
+  const s = useStrings();
+  const setCategoryTarget = useKapiStore((st) => st.setCategoryTarget);
+  const pickedId = useKapiStore((st) => st._pickedCategoryId);
+  const cats = useKapiStore((st) => st.categories.expense);
+  const addRule = useKapiStore((st) => st.addRule);
   const [keyword, setKeyword] = useState('');
   const picked = cats.find((c) => c.id === pickedId);
   useEffect(() => { setCategoryTarget('rule'); }, [setCategoryTarget]);
   return (
-    <SheetShell close={close} variant="bottom" title="添加识别规则" closeIcon>
+    <SheetShell close={close} variant="bottom" title={s.addRuleTitle} closeIcon>
       <div className="p-4 flex flex-col gap-3">
         <input
           data-action="addRule.trigger.input.value"
           data-action-type="input"
           value={keyword}
           onChange={(e) => setKeyword(e.target.value)}
-          placeholder="交易方/关键词,例如 肯德基"
+          placeholder={s.ruleKeywordPlaceholder}
           className="w-full px-3 py-3 rounded-xl bg-[#F4F6FA] border-none outline-none text-[15px]"
         />
         <button {...bindTap('addRule.category.open')} className="flex items-center justify-between px-3 py-3 rounded-xl bg-[#F4F6FA] border-none cursor-pointer">
-          <span className="text-[15px] text-[#1A1D26]">目标分类</span>
-          <span className="text-[14px] text-[#8A92A6]">{picked ? picked.name : '请选择 ›'}</span>
+          <span className="text-[15px] text-app-text">{s.targetCategoryLabel}</span>
+          <span className="text-[14px] text-app-text-muted">{picked ? picked.name : s.selectPlaceholder}</span>
         </button>
         <button
           {...bindAction('addRule.submit.confirm.save', () => {
-            if (!keyword.trim() || !picked) { toast('请填写关键词并选择分类'); return; }
+            if (!keyword.trim() || !picked) { toast(s.fillKeywordAndCategoryToast); return; }
             addRule('content', keyword.trim(), picked.id, picked.name);
-            toast('规则已保存'); close();
+            toast(s.ruleSavedToast); close();
           })}
           className="mt-2 w-full py-3 rounded-xl bg-[#4B6EF5] text-white text-[16px] border-none cursor-pointer"
         >
-          确认
+          {s.confirmBtn}
         </button>
       </div>
     </SheetShell>
@@ -332,28 +344,28 @@ function AddRuleSheet() {
 function PayeeSheet() {
   const close = useClose();
   const { bindAction } = useKapiGestures();
+  const s = useStrings();
   const [q, setQ] = useState('');
-  const SUGGEST = ['老乡鸡', '喜茶', '盒马', '滴滴出行', '海底捞'];
-  const results = SUGGEST.filter((s) => s.includes(q));
+  const results = PAYEE_SUGGESTIONS.filter((name) => name.includes(q));
   return (
-    <SheetShell close={close} variant="bottom" title="交易方" closeIcon>
+    <SheetShell close={close} variant="bottom" title={s.payeeLabel} closeIcon>
       <div className="p-4">
         <input
           data-action="payee.search.input.value"
           data-action-type="input"
           value={q}
           onChange={(e) => setQ(e.target.value)}
-          placeholder="搜索交易方"
+          placeholder={s.searchPayeePlaceholder}
           className="w-full px-3 py-3 rounded-xl bg-[#F4F6FA] border-none outline-none text-[15px]"
         />
         <div className="mt-2">
-          {(q ? results : SUGGEST).map((s) => (
+          {(q ? results : PAYEE_SUGGESTIONS).map((name) => (
             <button
-              key={s}
-              {...bindAction('payee.pick.confirm.select', () => { toast(`已选择 ${s}`); close(); }, { value: s })}
-              className="w-full text-left py-3 border-b border-[#EDEFF4] text-[15px] text-[#1A1D26] bg-transparent border-x-0 border-t-0 cursor-pointer"
+              key={name}
+              {...bindAction('payee.pick.confirm.select', () => { toast(`${s.payeeSelectedPrefix}${name}`); close(); }, { value: name })}
+              className="w-full text-left py-3 border-b border-app-border text-[15px] text-app-text bg-transparent border-x-0 border-t-0 cursor-pointer"
             >
-              {s}
+              {name}
             </button>
           ))}
         </div>
@@ -366,21 +378,22 @@ function PayeeSheet() {
 function DiscountSheet() {
   const close = useClose();
   const { bindAction } = useKapiGestures();
-  const applyAttr = useKapiStore((s) => s.applyAttr);
-  const [type, setType] = useState(DISCOUNT_TYPES[0] as string);
+  const s = useStrings();
+  const applyAttr = useKapiStore((st) => st.applyAttr);
+  const [type, setType] = useState(DISCOUNT_TYPES[0].id as string);
   const [expr, setExpr] = useState('');
   return (
-    <SheetShell close={close} variant="bottom" title="优惠金额" closeIcon>
+    <SheetShell close={close} variant="bottom" title={s.discountAmountLabel} closeIcon>
       <div className="flex flex-wrap gap-2 p-4">
         {DISCOUNT_TYPES.map((t) => (
           <button
-            key={t}
-            {...bindAction('discount.type.select.tag', () => setType(t), { value: t })}
+            key={t.id}
+            {...bindAction('discount.type.select.tag', () => setType(t.id), { value: t.id })}
             className={`px-3 py-1.5 rounded-full text-[13px] border cursor-pointer ${
-              type === t ? 'border-[#4B6EF5] text-[#4B6EF5] bg-[#EAF0FE]' : 'border-[#E3E6EE] text-[#8A92A6] bg-white'
+              type === t.id ? 'border-[#4B6EF5] text-[#4B6EF5] bg-[#EAF0FE]' : 'border-[#E3E6EE] text-app-text-muted bg-app-surface'
             }`}
           >
-            {t}
+            {s[t.labelKey]}
           </button>
         ))}
       </div>
@@ -388,7 +401,6 @@ function DiscountSheet() {
       <Keypad
         inputActionId="discount.amount.input.value"
         onInput={(k) => setExpr((e) => (k === 'del' ? e.slice(0, -1) : k === '+' || k === '-' ? e : e + k))}
-        primaryLabel="完成"
         primaryActionId="discount.amount.input.value"
         onPrimary={() => {
           const amt = parseFloat(expr) || 0;
@@ -404,33 +416,34 @@ function DiscountSheet() {
 function RefundSheet({ billId }: { billId: string | null }) {
   const close = useClose();
   const { bindTap, bindAction } = useKapiGestures();
-  const updateBill = useKapiStore((s) => s.updateBill);
+  const s = useStrings();
+  const updateBill = useKapiStore((st) => st.updateBill);
   const [amt, setAmt] = useState('');
   return (
-    <SheetShell close={close} variant="bottom" title="退款详情" closeIcon>
+    <SheetShell close={close} variant="bottom" title={s.refundDetailTitle} closeIcon>
       <div className="p-4 flex flex-col gap-3">
         <input
           inputMode="decimal"
           value={amt}
           onChange={(e) => setAmt(e.target.value)}
-          placeholder="退款金额"
+          placeholder={s.refundAmountPlaceholder}
           className="w-full px-3 py-3 rounded-xl bg-[#F4F6FA] border-none outline-none text-[15px]"
         />
         <button {...bindTap('refund.account.open', { params: { id: billId ?? '' } })} className="flex items-center justify-between px-3 py-3 rounded-xl bg-[#F4F6FA] border-none cursor-pointer">
-          <span className="text-[15px]">退款账户</span><span className="text-[#8A92A6]">›</span>
+          <span className="text-[15px]">{s.refundAccountLabel}</span><span className="text-app-text-muted">›</span>
         </button>
         <button {...bindTap('refund.date.open', { params: { id: billId ?? '' } })} className="flex items-center justify-between px-3 py-3 rounded-xl bg-[#F4F6FA] border-none cursor-pointer">
-          <span className="text-[15px]">退款时间</span><span className="text-[#8A92A6]">›</span>
+          <span className="text-[15px]">{s.refundTimeLabel}</span><span className="text-app-text-muted">›</span>
         </button>
         <button
           {...bindAction('refund.submit.confirm.save', () => {
             const v = parseFloat(amt) || 0;
             if (billId && v > 0) updateBill(billId, { refund: { amount: v, accountId: null, date: TimeService.now() } });
-            toast('退款已记录'); close();
+            toast(s.refundRecordedToast); close();
           })}
           className="mt-2 w-full py-3 rounded-xl bg-[#4B6EF5] text-white text-[16px] border-none cursor-pointer"
         >
-          确认
+          {s.confirmBtn}
         </button>
       </div>
     </SheetShell>
@@ -441,10 +454,11 @@ function RefundSheet({ billId }: { billId: string | null }) {
 function LedgerPickSheet() {
   const close = useClose();
   const { bindAction } = useKapiGestures();
-  const ledgers = useKapiStore((s) => s.ledgers);
-  const applyAttr = useKapiStore((s) => s.applyAttr);
+  const s = useStrings();
+  const ledgers = useKapiStore((st) => st.ledgers);
+  const applyAttr = useKapiStore((st) => st.applyAttr);
   return (
-    <SheetShell close={close} variant="bottom" title="选择账本" closeIcon>
+    <SheetShell close={close} variant="bottom" title={s.selectLedgerTitle} closeIcon>
       <div className="p-4 flex flex-col gap-2">
         {ledgers.map((l) => (
           <button
@@ -453,7 +467,7 @@ function LedgerPickSheet() {
             className="flex items-center gap-3 px-4 py-3 rounded-xl bg-[#F4F6FA] border-none cursor-pointer text-left"
           >
             <span className="text-[22px]">{l.cover}</span>
-            <span className="text-[15px] text-[#1A1D26]">{l.name}</span>
+            <span className="text-[15px] text-app-text">{l.name}</span>
           </button>
         ))}
       </div>
@@ -465,25 +479,33 @@ function LedgerPickSheet() {
 function DatePickSheet() {
   const close = useClose();
   const { bindAction } = useKapiGestures();
-  const draft = useKapiStore((s) => s._draft);
-  const editContext = useKapiStore((s) => s._editContext);
-  const activeBillId = useKapiStore((s) => s._activeBillId);
-  const bills = useKapiStore((s) => s.bills);
-  const applyAttr = useKapiStore((s) => s.applyAttr);
+  const s = useStrings();
+  const draft = useKapiStore((st) => st._draft);
+  const editContext = useKapiStore((st) => st._editContext);
+  const activeBillId = useKapiStore((st) => st._activeBillId);
+  const bills = useKapiStore((st) => st.bills);
+  const applyAttr = useKapiStore((st) => st.applyAttr);
   const baseTs = editContext === 'bill' ? bills.find((b) => b.id === activeBillId)?.date ?? draft.date : draft.date;
   const [sel, setSel] = useState(baseTs);
-  const base = TimeService.fromTimestamp(sel);
+  const [viewTs, setViewTs] = useState(baseTs);
+  const base = TimeService.fromTimestamp(viewTs);
   const year = base.getFullYear();
   const month = base.getMonth();
   const firstDay = TimeService.fromLocalParts(year, month, 1).getDay();
   const daysInMonth = TimeService.fromLocalParts(year, month + 1, 0).getDate();
   const selKey = dateKey(sel);
+  const heading = useMonthYearHeading(year, month);
+  const shiftMonth = (d: number) => setViewTs(TimeService.fromLocalParts(year, month + d, 1, 12, 0).getTime());
   return (
-    <SheetShell close={close} variant="bottom" title="选择日期" closeIcon>
+    <SheetShell close={close} variant="bottom" title={s.selectDateTitle} closeIcon>
       <div className="p-4">
-        <div className="text-center text-[15px] font-semibold mb-2">{year}年{month + 1}月</div>
-        <div className="grid grid-cols-7 text-center text-[12px] text-[#B3B9C6] mb-1">
-          {['日', '一', '二', '三', '四', '五', '六'].map((w) => <span key={w}>{w}</span>)}
+        <div className="flex items-center justify-center gap-6 mb-2">
+          <button {...bindAction('datePick.month.select.shift', () => shiftMonth(-1), { value: 'prev' })} className="bg-transparent border-none cursor-pointer p-1" aria-label={s.prevMonthAria}><IcNavBack size={18} className="text-app-text-muted" /></button>
+          <span className="text-[15px] font-semibold">{heading}</span>
+          <button {...bindAction('datePick.month.select.shift', () => shiftMonth(1), { value: 'next' })} className="bg-transparent border-none cursor-pointer p-1" aria-label={s.nextMonthAria}><IcArrowRight size={18} className="text-app-text-muted" /></button>
+        </div>
+        <div className="grid grid-cols-7 text-center text-[12px] text-app-text-muted mb-1">
+          {[s.weekdaySun, s.weekdayMon, s.weekdayTue, s.weekdayWed, s.weekdayThu, s.weekdayFri, s.weekdaySat].map((w, i) => <span key={i}>{w}</span>)}
         </div>
         <div className="grid grid-cols-7 gap-y-1">
           {Array.from({ length: firstDay }).map((_, i) => <span key={`e${i}`} />)}
@@ -496,7 +518,7 @@ function DatePickSheet() {
               <button
                 key={day}
                 {...bindAction('datePick.value.input.datetime', () => setSel(ts), { value: k })}
-                className={`h-9 mx-auto w-9 rounded-full text-[14px] border-none cursor-pointer ${on ? 'bg-[#4B6EF5] text-white' : 'bg-transparent text-[#1A1D26]'}`}
+                className={`h-9 mx-auto w-9 rounded-full text-[14px] border-none cursor-pointer ${on ? 'bg-[#4B6EF5] text-white' : 'bg-transparent text-app-text'}`}
               >
                 {day}
               </button>
@@ -507,7 +529,7 @@ function DatePickSheet() {
           {...bindAction('datePick.submit.confirm.done', () => { applyAttr({ date: sel }); close(); })}
           className="mt-4 w-full py-3 rounded-xl bg-[#4B6EF5] text-white text-[16px] border-none cursor-pointer"
         >
-          确定
+          {s.okBtn}
         </button>
       </div>
     </SheetShell>
@@ -518,17 +540,18 @@ function DatePickSheet() {
 function AccountPickSheet() {
   const close = useClose();
   const { bindTap, bindAction } = useKapiGestures();
-  const accounts = useKapiStore((s) => s.accounts);
-  const applyAttr = useKapiStore((s) => s.applyAttr);
+  const s = useStrings();
+  const accounts = useKapiStore((st) => st.accounts);
+  const applyAttr = useKapiStore((st) => st.applyAttr);
   return (
-    <SheetShell close={close} variant="bottom" title="选择账户" closeIcon>
+    <SheetShell close={close} variant="bottom" title={s.selectAccountTitle} closeIcon>
       <div className="p-4 flex flex-col gap-2">
         <button
           {...bindAction('accountPick.none.select.option', () => { applyAttr({ accountId: null }); close(); }, { value: 'none' })}
           className="flex items-center gap-3 px-4 py-3 rounded-xl bg-[#F4F6FA] border-none cursor-pointer text-left"
         >
-          <IcCash size={20} className="text-[#8A92A6]" />
-          <span className="text-[15px]">不关联已有账户(仅计入账单)</span>
+          <IcCash size={20} className="text-app-text-muted" />
+          <span className="text-[15px]">{s.noAccountAssociatedLabel}</span>
         </button>
         {accounts.map((a) => (
           <button
@@ -541,7 +564,7 @@ function AccountPickSheet() {
           </button>
         ))}
         <button {...bindTap('accountPick.addAccount.open')} className="flex items-center gap-2 px-4 py-3 text-[#4B6EF5] text-[15px] bg-transparent border-none cursor-pointer">
-          <IcPlus size={18} /> 添加账户
+          <IcPlus size={18} /> {s.addAccountBtn}
         </button>
       </div>
     </SheetShell>
@@ -552,19 +575,20 @@ function AccountPickSheet() {
 function BudgetAddCatSheet() {
   const close = useClose();
   const { bindTap, bindAction } = useKapiGestures();
-  const setCategoryTarget = useKapiStore((s) => s.setCategoryTarget);
-  const pickedId = useKapiStore((s) => s._pickedCategoryId);
-  const cats = useKapiStore((s) => s.categories.expense);
-  const addCategoryBudget = useKapiStore((s) => s.addCategoryBudget);
+  const s = useStrings();
+  const setCategoryTarget = useKapiStore((st) => st.setCategoryTarget);
+  const pickedId = useKapiStore((st) => st._pickedCategoryId);
+  const cats = useKapiStore((st) => st.categories.expense);
+  const addCategoryBudget = useKapiStore((st) => st.addCategoryBudget);
   const [amt, setAmt] = useState('');
   const picked = cats.find((c) => c.id === pickedId);
   useEffect(() => { setCategoryTarget('budget'); }, [setCategoryTarget]);
   return (
-    <SheetShell close={close} variant="bottom" title="添加分类预算" closeIcon>
+    <SheetShell close={close} variant="bottom" title={s.addCategoryBudgetBtn} closeIcon>
       <div className="p-4 flex flex-col gap-3">
         <button {...bindTap('budgetAdd.category.open')} className="flex items-center justify-between px-3 py-3 rounded-xl bg-[#F4F6FA] border-none cursor-pointer">
-          <span className="text-[15px]">选择分类</span>
-          <span className="text-[14px] text-[#8A92A6]">{picked ? picked.name : '请选择 ›'}</span>
+          <span className="text-[15px]">{s.selectCategoryLabel}</span>
+          <span className="text-[14px] text-app-text-muted">{picked ? picked.name : s.selectPlaceholder}</span>
         </button>
         <input
           data-action="budgetAdd.amount.input.value"
@@ -572,18 +596,18 @@ function BudgetAddCatSheet() {
           inputMode="decimal"
           value={amt}
           onChange={(e) => setAmt(e.target.value)}
-          placeholder="预算金额"
+          placeholder={s.budgetAmountPlaceholder}
           className="w-full px-3 py-3 rounded-xl bg-[#F4F6FA] border-none outline-none text-[15px]"
         />
         <button
           {...bindAction('budgetAdd.amount.input.value', () => {
             const v = parseFloat(amt) || 0;
-            if (!picked || v <= 0) { toast('请选择分类并输入金额'); return; }
-            addCategoryBudget(picked.id, v); toast('已设置分类预算'); close();
+            if (!picked || v <= 0) { toast(s.selectCategoryAndAmountToast); return; }
+            addCategoryBudget(picked.id, v); toast(s.categoryBudgetSetToast); close();
           }, { value: amt })}
           className="mt-2 w-full py-3 rounded-xl bg-[#4B6EF5] text-white text-[16px] border-none cursor-pointer"
         >
-          确认
+          {s.confirmBtn}
         </button>
       </div>
     </SheetShell>
@@ -594,10 +618,11 @@ function BudgetAddCatSheet() {
 function EditDaySheet() {
   const close = useClose();
   const { bindAction } = useKapiGestures();
-  const setDailyBudget = useKapiStore((s) => s.setDailyBudget);
+  const s = useStrings();
+  const setDailyBudget = useKapiStore((st) => st.setDailyBudget);
   const [amt, setAmt] = useState('');
   return (
-    <SheetShell close={close} variant="bottom" title="编辑日预算" closeIcon>
+    <SheetShell close={close} variant="bottom" title={s.editDayBudgetTitle} closeIcon>
       <div className="p-4 flex flex-col gap-3">
         <input
           data-action="editDay.amount.input.value"
@@ -605,18 +630,18 @@ function EditDaySheet() {
           inputMode="decimal"
           value={amt}
           onChange={(e) => setAmt(e.target.value)}
-          placeholder="今日预算金额"
+          placeholder={s.todayBudgetAmountPlaceholder}
           className="w-full px-3 py-3 rounded-xl bg-[#F4F6FA] border-none outline-none text-[15px]"
         />
         <button
           {...bindAction('editDay.amount.input.value', () => {
             const v = parseFloat(amt) || 0;
-            if (v <= 0) { toast('请输入金额'); return; }
-            setDailyBudget(dateKey(TimeService.now()), v); toast('日预算已更新'); close();
+            if (v <= 0) { toast(s.enterAmountToast); return; }
+            setDailyBudget(dateKey(TimeService.now()), v); toast(s.dailyBudgetUpdatedToast); close();
           }, { value: amt })}
           className="w-full py-3 rounded-xl bg-[#4B6EF5] text-white text-[16px] border-none cursor-pointer"
         >
-          确认
+          {s.confirmBtn}
         </button>
       </div>
     </SheetShell>
@@ -627,25 +652,26 @@ function EditDaySheet() {
 function LedgerSwitchSheet() {
   const close = useClose();
   const { bindTap, bindAction } = useKapiGestures();
-  const ledgers = useKapiStore((s) => s.ledgers);
-  const currentId = useKapiStore((s) => s.currentLedgerId);
-  const setCurrentLedger = useKapiStore((s) => s.setCurrentLedger);
+  const s = useStrings();
+  const ledgers = useKapiStore((st) => st.ledgers);
+  const currentId = useKapiStore((st) => st.currentLedgerId);
+  const setCurrentLedger = useKapiStore((st) => st.setCurrentLedger);
   return (
-    <SheetShell close={close} variant="bottom" title="账本管理" closeIcon>
+    <SheetShell close={close} variant="bottom" title={s.ledgerManageTitle} closeIcon>
       <div className="p-4 flex flex-col gap-2">
         {ledgers.map((l) => (
           <button
             key={l.id}
-            {...bindAction('ledger.item.select.ledger', () => { setCurrentLedger(l.id); toast(`已切换到 ${l.name}`); close(); }, { ledgerId: l.id })}
+            {...bindAction('ledger.item.select.ledger', () => { setCurrentLedger(l.id); toast(`${s.switchedToLedgerPrefix}${l.name}`); close(); }, { ledgerId: l.id })}
             className="flex items-center gap-3 px-4 py-3 rounded-xl bg-[#F4F6FA] border-none cursor-pointer text-left"
           >
             <span className="text-[22px]">{l.cover}</span>
-            <span className="flex-1 text-[15px] text-[#1A1D26]">{l.name}</span>
+            <span className="flex-1 text-[15px] text-app-text">{l.name}</span>
             {l.id === currentId && <IcCheck size={18} className="text-[#4B6EF5]" />}
           </button>
         ))}
         <button {...bindTap('ledger.create.open')} className="flex items-center gap-2 px-4 py-3 text-[#4B6EF5] text-[15px] bg-transparent border-none cursor-pointer">
-          <IcPlus size={18} /> 添加账本
+          <IcPlus size={18} /> {s.addLedgerBtn}
         </button>
       </div>
     </SheetShell>
@@ -656,20 +682,21 @@ function LedgerSwitchSheet() {
 function LedgerCreateSheet() {
   const close = useClose();
   const { bindAction } = useKapiGestures();
-  const addLedger = useKapiStore((s) => s.addLedger);
+  const s = useStrings();
+  const addLedger = useKapiStore((st) => st.addLedger);
   const [type, setType] = useState<'personal' | 'shared'>('personal');
   const [name, setName] = useState('');
   return (
-    <SheetShell close={close} variant="bottom" title="新建账本" closeIcon>
+    <SheetShell close={close} variant="bottom" title={s.newLedgerTitle} closeIcon>
       <div className="p-4 flex flex-col gap-3">
         <div className="flex bg-[#F0F2F8] rounded-full p-1 self-center">
           {(['personal', 'shared'] as const).map((t) => (
             <button
               key={t}
               {...bindAction('ledgerCreate.type.select.tab', () => setType(t), { value: t })}
-              className={`px-6 py-1.5 rounded-full text-[14px] border-none cursor-pointer ${type === t ? 'bg-white text-[#4B6EF5] font-semibold' : 'bg-transparent text-[#8A92A6]'}`}
+              className={`px-6 py-1.5 rounded-full text-[14px] border-none cursor-pointer ${type === t ? 'bg-app-surface text-[#4B6EF5] font-semibold' : 'bg-transparent text-app-text-muted'}`}
             >
-              {t === 'personal' ? '个人账本' : '共享账本'}
+              {t === 'personal' ? s.personalLedgerLabel : s.sharedLedgerLabel}
             </button>
           ))}
         </div>
@@ -678,23 +705,23 @@ function LedgerCreateSheet() {
           data-action-type="input"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          placeholder="账本名称"
+          placeholder={s.ledgerNamePlaceholder}
           className="w-full px-3 py-3 rounded-xl bg-[#F4F6FA] border-none outline-none text-[15px]"
         />
         {type === 'shared' && (
-          <button {...bindAction('ledgerCreate.member.noop', () => toast('该功能暂未开放'))} className="px-3 py-3 rounded-xl bg-[#F4F6FA] text-left text-[15px] text-[#8A92A6] border-none cursor-pointer">
-            添加账本成员 ›
+          <button {...bindAction('ledgerCreate.member.noop', () => toast(s.featureNotAvailable))} className="px-3 py-3 rounded-xl bg-[#F4F6FA] text-left text-[15px] text-app-text-muted border-none cursor-pointer">
+            {s.addLedgerMemberLabel}
           </button>
         )}
         <button
           {...bindAction('ledgerCreate.submit.confirm.create', () => {
-            if (!name.trim()) { toast('请输入账本名称'); return; }
+            if (!name.trim()) { toast(s.enterLedgerNameToast); return; }
             addLedger({ name: name.trim(), type, cover: type === 'shared' ? '👥' : '📓', includeInTotal: true });
-            toast('账本已创建'); close();
+            toast(s.ledgerCreatedToast); close();
           })}
           className="mt-2 w-full py-3 rounded-xl bg-[#4B6EF5] text-white text-[16px] border-none cursor-pointer"
         >
-          确认
+          {s.confirmBtn}
         </button>
       </div>
     </SheetShell>
@@ -714,43 +741,46 @@ function DrawerFunc({ bind, label }: { bind: React.HTMLAttributes<HTMLElement>; 
 function DrawerSheet() {
   const close = useClose();
   const { bindTap } = useKapiGestures();
-  const user = useKapiStore((s) => s.user);
+  const s = useStrings();
+  const user = useKapiStore((st) => st.user);
+  const now = TimeService.fromTimestamp(TimeService.now());
+  const currentMonthHeading = useMonthYearHeading(now.getFullYear(), now.getMonth());
   return (
     <SheetShell close={close} variant="left">
       <div className="flex flex-col h-full overflow-y-auto pt-12 px-4 pb-6 gap-4" data-scroll-container="drawer" data-scroll-direction="vertical">
         <button {...bindTap('drawer.profile.open')} className="flex items-center gap-3 bg-transparent border-none cursor-pointer">
           <Avatar src={user.avatar} size={48} />
-          <span className="text-[17px] font-semibold text-[#1A1D26]">{user.nick}</span>
-          <span className="text-[#B3B9C6]">›</span>
+          <span className="text-[17px] font-semibold text-app-text">{user.nick}</span>
+          <span className="text-app-text-muted">›</span>
         </button>
 
-        <div {...bindTap('drawer.checkin.open')} className="bg-white rounded-2xl p-4 cursor-pointer">
-          <div className="text-[13px] text-[#8A92A6] mb-2">June 2026</div>
+        <div {...bindTap('drawer.checkin.open')} className="bg-app-surface rounded-2xl p-4 cursor-pointer">
+          <div className="text-[13px] text-app-text-muted mb-2">{currentMonthHeading}</div>
           <div className="flex gap-1 mb-3">
             {Array.from({ length: 14 }).map((_, i) => (
               <span key={i} className="w-4 h-4 rounded-[3px]" style={{ background: i < 8 ? '#4B6EF5' : '#E3E6EE' }} />
             ))}
           </div>
           <div className="flex justify-around text-center">
-            <div><div className="text-[18px] font-bold text-[#1A1D26]">{user.recordDays}</div><div className="text-[12px] text-[#8A92A6]">记录天数</div></div>
-            <div><div className="text-[18px] font-bold text-[#1A1D26]">{user.totalRecords}</div><div className="text-[12px] text-[#8A92A6]">总记录</div></div>
-            <div><div className="text-[18px] font-bold text-[#1A1D26]">{user.streakDays}</div><div className="text-[12px] text-[#8A92A6]">连续天数</div></div>
+            <div><div className="text-[18px] font-bold text-app-text">{user.recordDays}</div><div className="text-[12px] text-app-text-muted">{s.recordDaysLabel}</div></div>
+            <div><div className="text-[18px] font-bold text-app-text">{user.totalRecords}</div><div className="text-[12px] text-app-text-muted">{s.totalRecordsLabel}</div></div>
+            <div><div className="text-[18px] font-bold text-app-text">{user.streakDays}</div><div className="text-[12px] text-app-text-muted">{s.streakDaysLabel}</div></div>
           </div>
         </div>
 
-        <div className="bg-white rounded-2xl p-2">
-          <div className="text-[14px] font-semibold text-[#1A1D26] px-2 py-2">更多功能</div>
+        <div className="bg-app-surface rounded-2xl p-2">
+          <div className="text-[14px] font-semibold text-app-text px-2 py-2">{s.moreFunctionsLabel}</div>
           <div className="grid grid-cols-3 gap-y-4 py-2">
-            <DrawerFunc bind={bindTap('drawer.stats.open')} label="图表统计" />
-            <DrawerFunc bind={bindTap('drawer.asset.open')} label="资产管理" />
-            <DrawerFunc bind={bindTap('drawer.ledger.open')} label="账本管理" />
-            <DrawerFunc bind={bindTap('drawer.budget.open')} label="预算管理" />
-            <DrawerFunc bind={bindTap('drawer.category.open')} label="分类管理" />
+            <DrawerFunc bind={bindTap('drawer.stats.open')} label={s.chartStatsLabel} />
+            <DrawerFunc bind={bindTap('drawer.asset.open')} label={s.assetManageLabel} />
+            <DrawerFunc bind={bindTap('drawer.ledger.open')} label={s.ledgerManageTitle} />
+            <DrawerFunc bind={bindTap('drawer.budget.open')} label={s.budgetManageTitle} />
+            <DrawerFunc bind={bindTap('drawer.category.open')} label={s.categoryManageLabel} />
           </div>
         </div>
 
-        <button {...bindTap('drawer.settings.open')} className="bg-white rounded-2xl px-4 py-3 flex items-center text-[15px] text-[#1A1D26] border-none cursor-pointer">
-          设置 <span className="flex-1" /> <span className="text-[#B3B9C6]">›</span>
+        <button {...bindTap('drawer.settings.open')} className="bg-app-surface rounded-2xl px-4 py-3 flex items-center text-[15px] text-app-text border-none cursor-pointer">
+          {s.settingsTitle} <span className="flex-1" /> <span className="text-app-text-muted">›</span>
         </button>
       </div>
     </SheetShell>
@@ -760,24 +790,24 @@ function DrawerSheet() {
 /* ============================= 修改实付金额(gate4:F3) ============================= */
 function AmountEditSheet() {
   const close = useClose();
-  const activeBillId = useKapiStore((s) => s._activeBillId);
-  const bills = useKapiStore((s) => s.bills);
-  const updateBill = useKapiStore((s) => s.updateBill);
+  const s = useStrings();
+  const activeBillId = useKapiStore((st) => st._activeBillId);
+  const bills = useKapiStore((st) => st.bills);
+  const updateBill = useKapiStore((st) => st.updateBill);
   const bill = bills.find((b) => b.id === activeBillId);
   const [expr, setExpr] = useState(bill ? String(bill.amount) : '');
   return (
-    <SheetShell close={close} variant="bottom" title="修改实付金额" closeIcon>
+    <SheetShell close={close} variant="bottom" title={s.editPaidAmountTitle} closeIcon>
       <div className="px-4 pt-2 pb-1 text-[28px] font-bold text-[#4B6EF5]">¥ {expr || '0.00'}</div>
       <Keypad
         inputActionId="amountEdit.amount.input.value"
         onInput={(k) => setExpr((e) => (k === 'del' ? e.slice(0, -1) : k === '+' || k === '-' ? e : e + k))}
-        primaryLabel="完成"
         primaryActionId="amountEdit.submit.confirm.done"
         onPrimary={() => {
           const amt = parseFloat(expr) || 0;
-          if (amt <= 0) { toast('请输入金额'); return; }
+          if (amt <= 0) { toast(s.enterAmountToast); return; }
           if (activeBillId) updateBill(activeBillId, { amount: Math.round(amt * 100) / 100 });
-          toast('金额已更新');
+          toast(s.amountUpdatedToast);
           close();
         }}
       />
@@ -789,8 +819,9 @@ function AmountEditSheet() {
 function StatsRangeSheet() {
   const close = useClose();
   const { bindAction } = useKapiGestures();
-  const existing = useKapiStore((s) => s._statsRange);
-  const setStatsRange = useKapiStore((s) => s.setStatsRange);
+  const s = useStrings();
+  const existing = useKapiStore((st) => st._statsRange);
+  const setStatsRange = useKapiStore((st) => st.setStatsRange);
   const [view, setView] = useState(TimeService.now());
   const [start, setStart] = useState<number | null>(existing?.start ?? null);
   const [end, setEnd] = useState<number | null>(existing?.end ?? null);
@@ -800,6 +831,7 @@ function StatsRangeSheet() {
   const month = vd.getMonth();
   const firstDay = TimeService.fromLocalParts(year, month, 1).getDay();
   const daysInMonth = TimeService.fromLocalParts(year, month + 1, 0).getDate();
+  const heading = useMonthYearHeading(year, month);
 
   const pick = (ts: number) => {
     if (start === null || end !== null) { setStart(ts); setEnd(null); }
@@ -809,18 +841,18 @@ function StatsRangeSheet() {
   const shiftMonth = (delta: number) => setView(TimeService.fromLocalParts(year, month + delta, 1).getTime());
 
   return (
-    <SheetShell close={close} variant="bottom" title="选择统计区间" closeIcon>
+    <SheetShell close={close} variant="bottom" title={s.selectStatsRangeTitle} closeIcon>
       <div className="p-4">
         <div className="flex items-center justify-between mb-2">
-          <button onClick={() => shiftMonth(-1)} className="bg-transparent border-none cursor-pointer p-1" aria-label="上个月"><IcNavBack size={18} className="text-[#8A92A6]" /></button>
-          <span className="text-[15px] font-semibold">{year}年{month + 1}月</span>
-          <button onClick={() => shiftMonth(1)} className="bg-transparent border-none cursor-pointer p-1" aria-label="下个月"><IcArrowRight size={18} className="text-[#8A92A6]" /></button>
+          <button onClick={() => shiftMonth(-1)} className="bg-transparent border-none cursor-pointer p-1" aria-label={s.prevMonthAria}><IcNavBack size={18} className="text-app-text-muted" /></button>
+          <span className="text-[15px] font-semibold">{heading}</span>
+          <button onClick={() => shiftMonth(1)} className="bg-transparent border-none cursor-pointer p-1" aria-label={s.nextMonthAria}><IcArrowRight size={18} className="text-app-text-muted" /></button>
         </div>
-        <div className="text-center text-[12px] text-[#8A92A6] mb-2">
-          {start ? `${dateKey(start).slice(5)}` : '起'} ~ {end ? `${dateKey(end).slice(5)}` : '止'}
+        <div className="text-center text-[12px] text-app-text-muted mb-2">
+          {start ? `${dateKey(start).slice(5)}` : s.rangeStartPlaceholder} ~ {end ? `${dateKey(end).slice(5)}` : s.rangeEndPlaceholder}
         </div>
-        <div className="grid grid-cols-7 text-center text-[12px] text-[#B3B9C6] mb-1">
-          {['日', '一', '二', '三', '四', '五', '六'].map((w) => <span key={w}>{w}</span>)}
+        <div className="grid grid-cols-7 text-center text-[12px] text-app-text-muted mb-1">
+          {[s.weekdaySun, s.weekdayMon, s.weekdayTue, s.weekdayWed, s.weekdayThu, s.weekdayFri, s.weekdaySat].map((w, i) => <span key={i}>{w}</span>)}
         </div>
         <div className="grid grid-cols-7 gap-y-1">
           {Array.from({ length: firstDay }).map((_, i) => <span key={`e${i}`} />)}
@@ -833,7 +865,7 @@ function StatsRangeSheet() {
               <button
                 key={day}
                 {...bindAction('statsRange.value.input.datetime', () => pick(ts), { value: dateKey(ts) })}
-                className={`h-9 mx-auto w-9 rounded-full text-[14px] border-none cursor-pointer ${isEdge ? 'bg-[#4B6EF5] text-white' : isEnd ? 'bg-[#EAF0FE] text-[#4B6EF5]' : 'bg-transparent text-[#1A1D26]'}`}
+                className={`h-9 mx-auto w-9 rounded-full text-[14px] border-none cursor-pointer ${isEdge ? 'bg-[#4B6EF5] text-white' : isEnd ? 'bg-[#EAF0FE] text-[#4B6EF5]' : 'bg-transparent text-app-text'}`}
               >
                 {day}
               </button>
@@ -842,14 +874,14 @@ function StatsRangeSheet() {
         </div>
         <button
           {...bindAction('statsRange.submit.confirm.done', () => {
-            if (start === null) { toast('请选择起始日期'); return; }
+            if (start === null) { toast(s.enterStartDateToast); return; }
             setStatsRange({ start, end: end ?? start });
-            toast('区间已更新');
+            toast(s.rangeUpdatedToast);
             close();
           })}
           className="mt-4 w-full py-3 rounded-xl bg-[#4B6EF5] text-white text-[16px] border-none cursor-pointer"
         >
-          确定
+          {s.okBtn}
         </button>
       </div>
     </SheetShell>
@@ -860,20 +892,20 @@ function StatsRangeSheet() {
 function GenderPickSheet() {
   const close = useClose();
   const { bindAction } = useKapiGestures();
-  const updateProfile = useKapiStore((s) => s.updateProfile);
-  const cur = useKapiStore((s) => s.user.gender);
-  const OPTIONS = ['男', '女', '保密'];
+  const s = useStrings();
+  const updateProfile = useKapiStore((st) => st.updateProfile);
+  const cur = useKapiStore((st) => st.user.gender);
   return (
-    <SheetShell close={close} variant="bottom" title="选择性别" closeIcon>
+    <SheetShell close={close} variant="bottom" title={s.selectGenderTitle} closeIcon>
       <div className="p-4 flex flex-col gap-2 pb-6">
-        {OPTIONS.map((g) => (
+        {GENDER_OPTIONS.map((g) => (
           <button
-            key={g}
-            {...bindAction('profile.gender.select.option', () => { updateProfile('gender', g); toast(`已设为${g}`); close(); }, { value: g })}
-            className="flex items-center justify-between px-4 py-3 rounded-xl bg-[#F4F6FA] border-none cursor-pointer text-[15px] text-[#1A1D26]"
+            key={g.id}
+            {...bindAction('profile.gender.select.option', () => { updateProfile('gender', g.id); toast(`${s.genderSetPrefix}${s[g.labelKey]}`); close(); }, { value: g.id })}
+            className="flex items-center justify-between px-4 py-3 rounded-xl bg-[#F4F6FA] border-none cursor-pointer text-[15px] text-app-text"
           >
-            {g}
-            {cur === g && <IcCheck size={18} className="text-[#4B6EF5]" />}
+            {s[g.labelKey]}
+            {cur === g.id && <IcCheck size={18} className="text-[#4B6EF5]" />}
           </button>
         ))}
       </div>

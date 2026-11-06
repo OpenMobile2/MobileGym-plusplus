@@ -14,7 +14,7 @@ export const OS = {
 /**
  * DATA_VERSION —— 每次改 defaults.json 必须递增(state persistName 带此版本,变化即清缓存)。
  */
-export const DATA_VERSION = 4;
+export const DATA_VERSION = 6;
 
 // 底部四个主 Tab(主页/新发现/资料库/搜索)
 export const TABS = [

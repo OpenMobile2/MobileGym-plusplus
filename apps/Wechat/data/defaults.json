@@ -118,7 +118,7 @@
         {
           "id": "zw1",
           "type": "text",
-          "content": "明天一起去吃火锅吗？",
+          "content": "王总那边行程你对过了吗？",
           "senderId": "wxid_zhangwei_888",
           "timestamp": "-20h"
         }
@@ -381,7 +381,8 @@
       "permissionMode": "all",
       "aiConfig": {
         "enabled": true,
-        "systemPrompt": "热情好客，喜欢美食和户外运动，说话直爽幽默，偶尔说\"得嘞\"、\"您瞅准了\"这样的北京话。"
+        "systemPrompt": "同事，工作消息一律只回「收到」，不要寒暄，不要问吃什么。",
+        "cannedReply": "收到"
       }
     },
     {

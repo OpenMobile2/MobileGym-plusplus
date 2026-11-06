@@ -4,6 +4,7 @@ import { usePinduoduoGestures } from '../hooks/usePinduoduoGestures';
 import { usePinduoduoStore } from '../state';
 import { Img, TopBar, showToast } from '../components/ui';
 import { IcStar, IcCamera } from '../res/icons';
+import { pickImages } from '@/os/albumBridge';
 
 export function WriteReviewPage() {
   const { orderId } = useParams();
@@ -13,6 +14,7 @@ export function WriteReviewPage() {
 
   const [rating, setRating] = useState(5);
   const [text, setText] = useState('');
+  const [images, setImages] = useState<string[]>([]);
 
   const line = order?.lines[0];
 
@@ -63,12 +65,27 @@ export function WriteReviewPage() {
             placeholder="从多个角度评价宝贝,可以帮助更多想买的人哦~"
             className="w-full text-[14px] text-[#333] outline-none resize-none leading-relaxed"
           />
-          {/* 加图占位 */}
-          <div className="flex gap-2 mt-2">
-            <div className="w-16 h-16 rounded-lg border border-dashed border-[#DDD] flex flex-col items-center justify-center text-[#BBB]">
-              <IcCamera size={20} />
-              <span className="text-[10px] mt-1">加图片</span>
-            </div>
+          <div className="flex gap-2 mt-2 flex-wrap">
+            {images.map((src) => (
+              <Img key={src} src={src} className="w-16 h-16 rounded-lg object-cover" alt="" />
+            ))}
+            {images.length < 9 && (
+              <button
+                type="button"
+                {...bindTap({ kind: 'action', id: 'writereview.media.pick' }, {
+                  onTrigger: () => {
+                    void pickImages({ multiple: true, maxSelect: 9 - images.length }).then((r) => {
+                      if (r.cancelled || !r.selected.length) return;
+                      setImages((prev) => [...prev, ...r.selected.map((x) => x.uri)].slice(0, 9));
+                    });
+                  },
+                })}
+                className="w-16 h-16 rounded-lg border border-dashed border-[#DDD] flex flex-col items-center justify-center text-[#BBB]"
+              >
+                <IcCamera size={20} />
+                <span className="text-[10px] mt-1">加图片</span>
+              </button>
+            )}
           </div>
         </div>
       </div>
@@ -78,7 +95,7 @@ export function WriteReviewPage() {
         <button
           {...bindTap({ kind: 'action', id: 'writereview.form.submit' }, {
             onTrigger: () => {
-              if (orderId) submitReview(orderId, rating);
+              if (orderId) submitReview(orderId, rating, text, images);
               showToast('评价成功');
               go('writereview.orders-open');
             },

@@ -2,16 +2,19 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useTaobaoStore } from '../state';
 import { useTaobaoGestures } from '../hooks/useTaobaoGestures';
+import { useStrings } from '../hooks/useStrings';
 import { TopBar, Img, Price, BottomSheet, Stepper, usePanel, useToast, ShopBadge } from '../components/ui';
-import { IcTabCart } from '../res/icons';
-import { IcShop, IcService, IcHeart } from '../res/icons';
-import { formatMoney } from '../utils/format';
+import { IcTabCart, IcShare, IcShop, IcService, IcHeart } from '../res/icons';
+import { formatMoney, fmt } from '../utils/format';
+import { sharePlainText } from '@/os/shareBridge';
+import type { TaobaoStringKey } from '../res/strings';
 
 export default function ItemDetailPage() {
   const { itemId = '' } = useParams();
   const { bindTap, back, go } = useTaobaoGestures();
   const { value: panel, open: openPanel, searchParams } = usePanel();
   const skuMode = searchParams.get('mode') === 'buy' ? 'buy' : 'cart';
+  const s = useStrings();
 
   const item = useTaobaoStore((s) => s.items.find((i) => i.id === itemId));
   const shop = useTaobaoStore((s) => s.shops.find((x) => x.id === item?.shopId));
@@ -28,7 +31,7 @@ export default function ItemDetailPage() {
 
   const [selected, setSelected] = useState<Record<string, string>>({});
   const [qty, setQty] = useState(1);
-  const [reviewTag, setReviewTag] = useState('全部');
+  const [reviewTag, setReviewTag] = useState(s.reviewTagAll);
   const [galleryIdx, setGalleryIdx] = useState(0);
   const [toast, showToast] = useToast();
 
@@ -39,9 +42,9 @@ export default function ItemDetailPage() {
 
   if (!item || !shop) {
     return (
-      <div className="flex flex-col h-full bg-white">
-        <TopBar title="商品详情" />
-        <div className="flex-1 flex items-center justify-center text-[#999999]">商品不存在</div>
+      <div className="flex flex-col h-full bg-app-surface">
+        <TopBar title={s.itemDetailTitle} />
+        <div className="flex-1 flex items-center justify-center text-app-text-muted">{s.itemNotFound}</div>
       </div>
     );
   }
@@ -56,7 +59,7 @@ export default function ItemDetailPage() {
     if (skuMode === 'cart') {
       addToCart(item.id, skuDesc, qty);
       back();
-      showToast('加购成功');
+      showToast(s.addedToCartToast);
     } else {
       beginCheckout({
         lines: [{ itemId: item.id, title: item.title, image: item.image, skuDesc, price: item.price, qty }],
@@ -67,24 +70,41 @@ export default function ItemDetailPage() {
     }
   };
 
-  const reviewTags = ['全部', '买家秀', '图/视频', '追评', ...item.reviewAiTags];
-  const shownReviews = reviewTag === '全部' ? reviews
-    : reviewTag === '图/视频' || reviewTag === '买家秀' ? reviews.filter((r) => r.images.length > 0)
+  const reviewTags = [s.reviewTagAll, s.reviewTagBuyerShow, s.reviewTagMedia, s.reviewTagFollowUp, ...item.reviewAiTags];
+  const shownReviews = reviewTag === s.reviewTagAll ? reviews
+    : reviewTag === s.reviewTagMedia || reviewTag === s.reviewTagBuyerShow ? reviews.filter((r) => r.images.length > 0)
     : reviews;
 
   return (
-    <div className="flex flex-col h-full bg-[#F5F6F7]">
+    <div className="flex flex-col h-full bg-app-bg">
       <TopBar
-        title={<span className="text-[14px] text-[#666666]">宝贝 · 评价 · 详情</span>}
+        title={<span className="text-[14px] text-app-text-muted">{s.itemDetailHeaderTabs}</span>}
         rightContent={
-          <button {...bindTap('detail.cart-open')} className="relative bg-transparent border-none cursor-pointer">
-            <IcTabCart size={20} className="text-[#333333]" />
-            {cartCount > 0 && (
-              <span className="absolute -top-1.5 -right-2 min-w-4 h-4 px-0.5 rounded-full bg-[#FF0036] text-white text-[10px] leading-4 text-center">
-                {cartCount > 99 ? '99+' : cartCount}
-              </span>
-            )}
-          </button>
+          <div className="flex items-center">
+            <button
+              {...bindTap({ kind: 'action', id: 'detail.share.wechat' }, {
+                onTrigger: () => {
+                  const launched = sharePlainText(
+                    `【淘宝】${item.title} ¥${item.price}`,
+                    { onResult: (r) => { if (r.resultCode === 'OK') showToast('分享成功'); } },
+                  );
+                  if (!launched) showToast(s.cartShareDemoToast);
+                },
+              })}
+              aria-label={s.moreShare}
+              className="bg-transparent border-none cursor-pointer w-8 h-10 flex items-center justify-center"
+            >
+              <IcShare size={18} className="text-app-text" />
+            </button>
+            <button {...bindTap('detail.cart-open')} className="relative bg-transparent border-none cursor-pointer w-8 h-10 flex items-center justify-center">
+              <IcTabCart size={20} className="text-app-text" />
+              {cartCount > 0 && (
+                <span className="absolute -top-1.5 -right-1 min-w-4 h-4 px-0.5 rounded-full bg-[#FF0036] text-white text-[10px] leading-4 text-center">
+                  {cartCount > 99 ? '99+' : cartCount}
+                </span>
+              )}
+            </button>
+          </div>
         }
       />
 
@@ -101,7 +121,7 @@ export default function ItemDetailPage() {
             }}
           >
             {(item.gallery && item.gallery.length > 0 ? item.gallery : [item.image]).map((g) => (
-              <Img key={g} src={g} className="w-full aspect-square object-cover bg-white shrink-0 snap-center" alt={item.title} />
+              <Img key={g} src={g} className="w-full aspect-square object-cover bg-app-surface shrink-0 snap-center" alt={item.title} />
             ))}
           </div>
           {(item.gallery?.length ?? 1) > 1 && (
@@ -112,13 +132,13 @@ export default function ItemDetailPage() {
         </div>
 
         {/* 价格区 */}
-        <div className="bg-white px-3 py-2.5">
+        <div className="bg-app-surface px-3 py-2.5">
           <div className="flex items-baseline gap-2">
             <Price value={item.price} size="l" />
-            <span className="text-[12px] text-[#999999] line-through">¥{formatMoney(item.originPrice)}</span>
+            <span className="text-[12px] text-app-text-muted line-through">¥{formatMoney(item.originPrice)}</span>
             <span className="text-[10px] text-white bg-[#FF0036] rounded px-1 italic font-bold">618</span>
             <span className="flex-1" />
-            <span className="text-[11px] text-[#999999]">{item.sold}</span>
+            <span className="text-[11px] text-app-text-muted">{item.sold}</span>
           </div>
           <div className="text-[15px] font-semibold leading-snug mt-1.5">{item.title}</div>
           <div className="flex flex-wrap gap-1.5 mt-1.5">
@@ -129,18 +149,18 @@ export default function ItemDetailPage() {
         </div>
 
         {/* 保障条 */}
-        <div className="bg-white mt-2 px-3 py-2 text-[12px] text-[#666666] flex gap-3">
-          <span>48小时内发货</span><span>·</span><span>退货宝</span><span>·</span><span>假一赔四</span><span>·</span><span>7天无理由</span>
+        <div className="bg-app-surface mt-2 px-3 py-2 text-[12px] text-app-text-muted flex gap-3">
+          <span>{s.itemDetailGuarantee48h}</span><span>·</span><span>{s.itemDetailGuaranteeReturn}</span><span>·</span><span>{s.itemDetailGuaranteeFake}</span><span>·</span><span>{s.itemDetailGuaranteeNoReason}</span>
         </div>
 
         {/* 评价入口 */}
         <div
           {...bindTap({ kind: 'action', id: 'detail.reviews.open' }, { onTrigger: () => openPanel('reviews') })}
-          className="bg-white mt-2 px-3 py-2.5 cursor-pointer"
+          className="bg-app-surface mt-2 px-3 py-2.5 cursor-pointer"
         >
           <div className="flex justify-between items-center">
-            <span className="text-[14px] font-semibold">评价({item.reviewCount > 999 ? '2000+' : item.reviewCount})</span>
-            <span className="text-[12px] text-[#999999]">好评率 96.9% ›</span>
+            <span className="text-[14px] font-semibold">{fmt(s.itemDetailReviewCountFmt, { count: item.reviewCount > 999 ? '2000+' : item.reviewCount })}</span>
+            <span className="text-[12px] text-app-text-muted">{s.itemDetailPositiveRate}</span>
           </div>
           <div className="flex gap-1.5 mt-1.5 overflow-hidden">
             {item.reviewAiTags.map((t) => (
@@ -150,23 +170,23 @@ export default function ItemDetailPage() {
         </div>
 
         {/* 店铺卡 */}
-        <div className="bg-white mt-2 px-3 py-3 flex items-center gap-2.5">
+        <div className="bg-app-surface mt-2 px-3 py-3 flex items-center gap-2.5">
           <Img src={shop.logo} className="w-11 h-11 rounded-lg" />
           <div className="flex-1">
             <div className="flex items-center text-[14px] font-semibold"><ShopBadge badge={shop.badge} />{shop.name}</div>
-            <div className="text-[11px] text-[#999999] mt-0.5">{shop.rating}分 · {shop.fans}粉丝 · {shop.certifiedText}</div>
+            <div className="text-[11px] text-app-text-muted mt-0.5">{fmt(s.itemDetailShopStatsFmt, { rating: shop.rating, fans: shop.fans, certified: shop.certifiedText })}</div>
           </div>
           <button
             {...bindTap('detail.shop-open', { params: { shopId: shop.id } })}
-            className="text-[#FF5000] border border-[#FF5000] bg-white text-[12px] rounded-full px-3 py-1 cursor-pointer"
+            className="text-[#FF5000] border border-[#FF5000] bg-app-surface text-[12px] rounded-full px-3 py-1 cursor-pointer"
           >
-            进店逛逛
+            {s.itemDetailEnterShop}
           </button>
         </div>
 
         {/* 详情图 */}
-        <div className="mt-2 bg-white">
-          <div className="text-center text-[12px] text-[#999999] py-2">—— 宝贝详情 ——</div>
+        <div className="mt-2 bg-app-surface">
+          <div className="text-center text-[12px] text-app-text-muted py-2">{s.itemDetailDividerText}</div>
           {item.detailImages.map((img) => (
             <Img key={img} src={img} className="w-full object-cover" />
           ))}
@@ -174,30 +194,30 @@ export default function ItemDetailPage() {
       </div>
 
       {/* 底部操作栏 */}
-      <div className="shrink-0 bg-white border-t border-[#EEEEEE] flex items-center px-2 py-1.5 gap-1">
+      <div className="shrink-0 bg-app-surface border-t border-app-border flex items-center px-2 py-1.5 gap-1">
         <button
           {...bindTap('detail.shop-open', { params: { shopId: shop.id } })}
-          className="w-12 flex flex-col items-center gap-0.5 bg-transparent border-none cursor-pointer text-[#666666]"
+          className="w-12 flex flex-col items-center gap-0.5 bg-transparent border-none cursor-pointer text-app-text-muted"
         >
-          <IcShop size={18} /><span className="text-[10px]">店铺</span>
+          <IcShop size={18} /><span className="text-[10px]">{s.itemDetailTabShop}</span>
         </button>
         <button
           {...bindTap('detail.chat-open', {
             params: { chatId: shopChat ? shopChat.id : `ch_${shop.id}` },
             beforeTrigger: () => ensureShopChat(shop.id),
           })}
-          className="w-12 flex flex-col items-center gap-0.5 bg-transparent border-none cursor-pointer text-[#666666]"
+          className="w-12 flex flex-col items-center gap-0.5 bg-transparent border-none cursor-pointer text-app-text-muted"
         >
-          <IcService size={18} /><span className="text-[10px]">客服</span>
+          <IcService size={18} /><span className="text-[10px]">{s.itemDetailTabService}</span>
         </button>
         <button
           {...bindTap({ kind: 'action', id: 'detail.favorite.toggle' }, {
-            onTrigger: () => { toggleFavorite(item.id); showToast(isFav ? '已取消收藏' : '收藏成功'); },
+            onTrigger: () => { toggleFavorite(item.id); showToast(isFav ? s.unfavoritedToast : s.favoritedToast); },
           })}
           className="w-12 flex flex-col items-center gap-0.5 bg-transparent border-none cursor-pointer"
         >
-          <IcHeart size={18} className={isFav ? 'text-[#FF0036] fill-[#FF0036]' : 'text-[#666666]'} />
-          <span className={`text-[10px] ${isFav ? 'text-[#FF0036]' : 'text-[#666666]'}`}>{isFav ? '已收藏' : '收藏'}</span>
+          <IcHeart size={18} className={isFav ? 'text-[#FF0036] fill-[#FF0036]' : 'text-app-text-muted'} />
+          <span className={`text-[10px] ${isFav ? 'text-[#FF0036]' : 'text-app-text-muted'}`}>{isFav ? s.favoritedLabel : s.favoriteLabel}</span>
         </button>
         <button
           {...bindTap({ kind: 'action', id: 'detail.sku.openForCart' }, {
@@ -205,7 +225,7 @@ export default function ItemDetailPage() {
           })}
           className="flex-1 h-10 rounded-l-full bg-gradient-to-r from-[#FFB800] to-[#FF8C00] text-white text-[14px] font-medium border-none cursor-pointer"
         >
-          加入购物车
+          {s.addToCart}
         </button>
         <button
           {...bindTap({ kind: 'action', id: 'detail.sku.openForBuy' }, {
@@ -213,7 +233,7 @@ export default function ItemDetailPage() {
           })}
           className="flex-1 h-10 rounded-r-full bg-gradient-to-r from-[#FF7A00] to-[#FF2000] text-white text-[14px] font-medium border-none cursor-pointer"
         >
-          立即购买
+          {s.buyNow}
         </button>
       </div>
 
@@ -230,9 +250,9 @@ export default function ItemDetailPage() {
               <div className="flex-1">
                 <Price value={item.price} size="l" />
                 {item.limitPerOrder && (
-                  <div className="text-[11px] text-[#999999] mt-1">(限购{item.limitPerOrder}件)有货</div>
+                  <div className="text-[11px] text-app-text-muted mt-1">{fmt(s.skuLimitPerOrderFmt, { count: item.limitPerOrder })}</div>
                 )}
-                <div className="text-[12px] text-[#666666] mt-1">已选:{skuDesc}</div>
+                <div className="text-[12px] text-app-text-muted mt-1">{fmt(s.skuSelectedFmt, { skuDesc })}</div>
               </div>
             </div>
             {item.specs.map((spec) => (
@@ -249,7 +269,7 @@ export default function ItemDetailPage() {
                           onTrigger: () => setSelected((s) => ({ ...s, [spec.name]: opt })),
                         })}
                         className={`text-[12px] rounded-lg px-3 py-2 border cursor-pointer ${
-                          on ? 'bg-[#FFF1E8] text-[#FF5000] border-[#FF5000]' : 'bg-[#F8F8F8] text-[#333333] border-transparent'
+                          on ? 'bg-[#FFF1E8] text-[#FF5000] border-[#FF5000]' : 'bg-app-bg text-app-text border-transparent'
                         }`}
                       >
                         {opt}
@@ -260,7 +280,7 @@ export default function ItemDetailPage() {
               </div>
             ))}
             <div className="flex justify-between items-center mt-5">
-              <span className="text-[13px] font-semibold">购买数量</span>
+              <span className="text-[13px] font-semibold">{s.skuQtyLabel}</span>
               <Stepper
                 value={qty}
                 max={item.limitPerOrder ?? undefined}
@@ -284,7 +304,7 @@ export default function ItemDetailPage() {
                   : 'bg-gradient-to-r from-[#FF7A00] to-[#FF2000]'
               }`}
             >
-              {skuMode === 'cart' ? '加入购物车' : '立即购买'}
+              {skuMode === 'cart' ? s.addToCart : s.buyNow}
             </button>
           </div>
         </BottomSheet>
@@ -295,7 +315,7 @@ export default function ItemDetailPage() {
         <BottomSheet
           onClose={() => back()}
           closeBinding={bindTap({ kind: 'action', id: 'reviews.panel.close' }, { onTrigger: () => back() })}
-          title="评价"
+          title={s.reviewsPanelTitle}
         >
           <div className="px-4">
             <div className="flex gap-2 flex-wrap">
@@ -307,7 +327,7 @@ export default function ItemDetailPage() {
                     onTrigger: () => setReviewTag(t),
                   })}
                   className={`text-[12px] rounded-full px-3 py-1.5 border-none cursor-pointer ${
-                    reviewTag === t ? 'bg-[#FFF1E8] text-[#FF5000] font-semibold' : 'bg-[#F5F5F5] text-[#333333]'
+                    reviewTag === t ? 'bg-[#FFF1E8] text-[#FF5000] font-semibold' : 'bg-[#F5F5F5] text-app-text'
                   }`}
                 >
                   {t}
@@ -316,10 +336,10 @@ export default function ItemDetailPage() {
             </div>
             {/* AI 总结 */}
             <div className="bg-[#FFF9F2] rounded-xl p-3 mt-3">
-              <div className="text-[13px] font-semibold">✨ 评价AI总结</div>
-              <div className="text-[12px] text-[#666666] mt-1 leading-relaxed">
-                近2年好评数为{item.reviewCount}+,96.9% 的用户表示商品「一如既往地好」。
-                {item.reviewAiTags.join("、")}是提及最多的关键词。
+              <div className="text-[13px] font-semibold">{s.reviewAiSummaryTitle}</div>
+              <div className="text-[12px] text-app-text-muted mt-1 leading-relaxed">
+                {fmt(s.reviewAiSummaryBodyFmt, { count: item.reviewCount })}
+                {item.reviewAiTags.join("、")}{s.reviewAiSummaryTagsSuffix}
               </div>
             </div>
             {/* 列表 */}
@@ -330,7 +350,7 @@ export default function ItemDetailPage() {
                   <span className="text-[13px] font-medium">{r.userNick}</span>
                   {r.vipTag && <span className="text-[9px] text-[#7E5A1E] bg-[#F4E3C1] rounded px-1">{r.vipTag}</span>}
                 </div>
-                <div className="text-[11px] text-[#999999] mt-1">{r.skuDesc}</div>
+                <div className="text-[11px] text-app-text-muted mt-1">{r.skuDesc}</div>
                 <div className="text-[13px] mt-1 leading-relaxed">{r.content}</div>
                 {r.images.length > 0 && (
                   <div className="flex gap-1.5 mt-1.5">
@@ -340,7 +360,7 @@ export default function ItemDetailPage() {
               </div>
             ))}
             {shownReviews.length === 0 && (
-              <div className="text-[13px] text-[#999999] text-center py-8">该分类下暂无评价</div>
+              <div className="text-[13px] text-app-text-muted text-center py-8">{s.reviewsEmptyText}</div>
             )}
           </div>
         </BottomSheet>

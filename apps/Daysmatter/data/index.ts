@@ -12,4 +12,8 @@ export const DAYSMATTER_CONFIG = {
   settings: defaults.settings as DMSettings,
   filter: defaults.filter as HomeFilter,
   widgetEventId: defaults.widgetEventId as string | null,
+  selectedIconId: defaults.selectedIconId as string,
+  feedbackSubmissions: defaults.feedbackSubmissions as Array<{ id: string; email: string; type: string; text: string; createdAt: number }>,
+  lastDateCalculation: defaults.lastDateCalculation as { rangeStart: number; rangeEnd: number; includeStart: boolean; resultDays: number } | null,
+  detailDisplayModes: defaults.detailDisplayModes as Record<string, 'days' | 'date'>,
 };

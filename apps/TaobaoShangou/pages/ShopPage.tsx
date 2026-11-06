@@ -44,6 +44,7 @@ export default function ShopPage() {
   const changeCartQty = useTbsgStore((st) => st.changeCartQty);
   const reorder = useTbsgStore((st) => st.reorder);
   const beginCheckout = useTbsgStore((st) => st.beginCheckout);
+  const recordTaskAudit = useTbsgStore((st) => st.recordTaskAudit);
 
   const shop = shops.find((x) => x.id === shopId);
 
@@ -57,7 +58,7 @@ export default function ShopPage() {
   useStatusBarBg(collapsed ? '#ffffff' : (shop?.brandColor ?? '#ffffff'));
   const [activeCat, setActiveCat] = useState<string | null>(null);
   const [revTag, setRevTag] = useState('全部');
-  const [contentOnly, setContentOnly] = useState(true);
+  const [contentOnly, setContentOnly] = useState(false);
   const [expandedReplies, setExpandedReplies] = useState<string[]>([]);
   const sectionRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
@@ -243,7 +244,11 @@ export default function ShopPage() {
       <button
         {...bindTap<HTMLButtonElement>(
           { kind: 'action', id: 'shop.reviews.contentOnly.toggle' },
-          { onTrigger: () => setContentOnly((v) => !v) },
+          { onTrigger: () => setContentOnly((v) => {
+            const next = !v;
+            recordTaskAudit({ shopReview: { shopId: shop.id, contentOnly: next } });
+            return next;
+          }) },
         )}
         className="flex items-center gap-1.5 px-4 pb-2 bg-transparent border-none cursor-pointer"
       >
@@ -294,7 +299,10 @@ export default function ShopPage() {
                 <button
                   {...bindTap<HTMLButtonElement>(
                     { kind: 'action', id: 'shop.reviews.reply.expand' },
-                    { onTrigger: () => setExpandedReplies((prev) => [...prev, r.id]) },
+                    { onTrigger: () => {
+                      setExpandedReplies((prev) => [...prev, r.id]);
+                      recordTaskAudit({ shopReview: { shopId: shop.id, contentOnly, expandedReplyId: r.id } });
+                    } },
                   )}
                   className="text-[12px] text-[#999999] bg-transparent border-none cursor-pointer ml-1"
                 >
@@ -626,7 +634,10 @@ export default function ShopPage() {
               <input
                 {...bindTap<HTMLInputElement>({ kind: 'action', id: 'shop.search.input' }, { onTrigger: () => {} })}
                 value={searchQ}
-                onChange={(e) => setSearchQ(e.target.value)}
+                onChange={(e) => {
+                  setSearchQ(e.target.value);
+                  recordTaskAudit({ shopSearch: { shopId: shop.id, query: e.target.value } });
+                }}
                 placeholder={`搜索${shop.name}的商品`}
                 className="flex-1 min-w-0 bg-transparent outline-none border-none text-[14px] text-[#1A1A1A] placeholder:text-[#999999]"
               />

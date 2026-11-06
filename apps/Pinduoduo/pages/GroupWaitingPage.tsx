@@ -5,7 +5,7 @@ import { showToast } from '../components/ui';
 import { IcCheck, IcUsers, IcNavBack } from '../res/icons';
 
 export function GroupWaitingPage() {
-  const { bindTap, bindBack } = usePinduoduoGestures();
+  const { bindTap, bindBack, back } = usePinduoduoGestures();
   const orders = usePinduoduoStore((s) => s.orders);
   const soloFinishGroup = usePinduoduoStore((s) => s.soloFinishGroup);
 
@@ -69,7 +69,7 @@ export function GroupWaitingPage() {
           <button
             {...bindTap(
               { kind: 'action', id: 'group.solo.finish' },
-              { onTrigger: () => { soloFinishGroup(order.id); showToast('拼单成功'); } },
+              { onTrigger: () => { soloFinishGroup(order.id); showToast('购买成功'); back(); } },
             )}
             className="w-full h-12 rounded-full border border-[#E22E1F] text-[#E22E1F] text-[16px] font-medium"
           >

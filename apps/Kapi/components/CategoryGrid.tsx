@@ -3,17 +3,19 @@ import { useKapiStore } from '../state';
 import { useKapiGestures } from '../hooks/useKapiGestures';
 import { CategoryIcon } from './ui';
 import { RECORD_TYPES } from '../constants';
+import { useStrings } from '../hooks/useStrings';
 
 /**
  * 分类选择网格(record.category 弹层)。支出/收入分段 + 网格 + 分类编辑入口。
  * onPicked:选中后回调(通常关闭弹层)。
  */
 export function CategoryGrid({ onPicked }: { onPicked: () => void }) {
-  const expense = useKapiStore((s) => s.categories.expense);
-  const income = useKapiStore((s) => s.categories.income);
-  const selectedId = useKapiStore((s) => s._draft.categoryId);
-  const pickCategory = useKapiStore((s) => s.pickCategory);
+  const expense = useKapiStore((st) => st.categories.expense);
+  const income = useKapiStore((st) => st.categories.income);
+  const selectedId = useKapiStore((st) => st._draft.categoryId);
+  const pickCategory = useKapiStore((st) => st.pickCategory);
   const { bindAction, bindTap } = useKapiGestures();
+  const s = useStrings();
   const [tab, setTab] = useState<'expense' | 'income'>('expense');
   const list = tab === 'income' ? income : expense;
 
@@ -26,10 +28,10 @@ export function CategoryGrid({ onPicked }: { onPicked: () => void }) {
               key={t}
               {...bindAction('category.type.select.tab', () => setTab(t), { value: t })}
               className={`px-5 py-1.5 rounded-full text-[14px] border-none cursor-pointer ${
-                tab === t ? 'bg-white text-[#4B6EF5] font-semibold' : 'bg-transparent text-[#8A92A6]'
+                tab === t ? 'bg-app-surface text-[#4B6EF5] font-semibold' : 'bg-transparent text-app-text-muted'
               }`}
             >
-              {RECORD_TYPES.find((r) => r.id === t)?.label}
+              {s[RECORD_TYPES.find((r) => r.id === t)!.labelKey]}
             </button>
           ))}
         </div>
@@ -37,7 +39,7 @@ export function CategoryGrid({ onPicked }: { onPicked: () => void }) {
           {...bindTap('category.edit.open')}
           className="text-[14px] text-[#4B6EF5] bg-transparent border-none cursor-pointer"
         >
-          分类编辑
+          {s.categoryEditBtn}
         </button>
       </div>
 

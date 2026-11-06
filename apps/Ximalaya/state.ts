@@ -32,15 +32,28 @@ export const useXimalayaStore = createAppStoreWithActions<XmlyState, XmlyActions
     toggleLikeComment: (commentId) =>
       set((s) => ({ likedCommentIds: toggle(s.likedCommentIds, commentId) })),
 
+    addDanmaku: (trackId, content) =>
+      set((s) => ({
+        danmakuMessages: [
+          ...s.danmakuMessages,
+          { trackId, content, createdAt: TimeService.now() },
+        ],
+      })),
+
     playTrack: (albumId, trackId) =>
       set((s) => {
+        const previous = s.history.find((h) => h.trackId === trackId);
+        const durationSec = s.tracks.find((t) => t.id === trackId)?.durationSec ?? 0;
+        const progressSec = previous?.remainSec
+          ? Math.max(0, durationSec - previous.remainSec)
+          : 0;
         const rest = s.history.filter((h) => h.trackId !== trackId);
         const next = [
-          { albumId, trackId, remainSec: 0, listenedAt: TimeService.now(), kind: 'play' as const },
+          { albumId, trackId, remainSec: previous?.remainSec ?? durationSec, listenedAt: TimeService.now(), kind: 'play' as const },
           ...rest,
         ];
         return {
-          player: { ...s.player, currentAlbumId: albumId, currentTrackId: trackId, playing: true, progressSec: 0 },
+          player: { ...s.player, currentAlbumId: albumId, currentTrackId: trackId, playing: true, progressSec },
           history: next.slice(0, 50),
         };
       }),
@@ -62,6 +75,8 @@ export const useXimalayaStore = createAppStoreWithActions<XmlyState, XmlyActions
 
     openVip: () =>
       set((s) => ({ user: { ...s.user, isVip: true, vipExpireAt: TimeService.now() + 365 * 86400000 } })),
+
+    updateUser: (patch) => set((s) => ({ user: { ...s.user, ...patch } })),
 
     removeHistory: (trackId) =>
       set((s) => ({ history: s.history.filter((h) => h.trackId !== trackId) })),
@@ -86,6 +101,9 @@ export const useXimalayaStore = createAppStoreWithActions<XmlyState, XmlyActions
       set((s) => ({
         messages: s.messages.map((m) => ({ ...m, unread: 0 })),
       })),
+
+    recordTaskAudit: (patch) =>
+      set((s) => ({ taskAudit: { ...s.taskAudit, ...patch } })),
   }),
   { persistName: `${manifest.id}_v${DATA_VERSION}` },
 );

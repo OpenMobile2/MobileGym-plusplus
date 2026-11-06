@@ -136,6 +136,7 @@ export interface ChatSession {
 export interface AIConfig {
   enabled: boolean;                    // 是否启用AI回复
   systemPrompt?: string;               // 人格/角色设定（系统提示词）
+  cannedReply?: string;                // 固定自动回复，有则不再走模型
   // 以下为可选覆盖项，不设置则使用 SIMULATOR_CONFIG.ai 中的系统默认值
   model?: string;                      // 覆盖模型名称
   apiEndpoint?: string;                // 覆盖API端点

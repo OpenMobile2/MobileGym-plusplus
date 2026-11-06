@@ -14,7 +14,7 @@ export const OS = {
  * DATA_VERSION —— 每次修改 defaults.json 必须递增。
  * state.ts 的 persistName = `flomo_v${DATA_VERSION}`,版本变化清空 localStorage。
  */
-export const DATA_VERSION = 3;
+export const DATA_VERSION = 4;
 
 /**
  * flomo 没有底部多 Tab。主体 = 笔记流主页 + 左侧标签抽屉 + 绿色 + FAB。

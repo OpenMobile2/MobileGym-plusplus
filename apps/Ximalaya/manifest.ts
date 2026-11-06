@@ -28,4 +28,9 @@ export const manifest: AppManifest = {
     },
   },
   intentFilters: [],
+  queries: [
+    { action: 'ACTION_PAY', scheme: 'alipays' },
+    { action: 'ACTION_PAY', scheme: 'weixin' },
+    { action: 'ACTION_SEND', type: 'text/plain' },
+  ],
 };

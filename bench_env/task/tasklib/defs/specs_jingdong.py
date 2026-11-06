@@ -1,4 +1,4 @@
-"""Jingdong hybrid GUI+Tools tasks (tasklib).
+"""Jingdong hybrid GUI+Tools tasks (selfbuilt-v1).
 
 Tools already exist (app_tools/apps/jingdong). Verification follows the
 newapps_v1 pattern: every task's primary artifact is a Notes entry

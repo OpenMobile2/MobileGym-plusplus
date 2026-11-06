@@ -1,10 +1,10 @@
 {
   "user": { "nick": "拼小圈用户", "avatar": "/@app-assets/Pinduoduo/avatars/u_me.svg", "pddId": "8698****669" },
   "selectedAddressId": "addr_home",
-  "homeFeedTabs": ["推荐", "百亿补贴", "食品", "男装", "数码", "母婴", "百货"],
+  "homeFeedTabs": ["推荐", "百亿补贴", "食品", "男装", "女装", "数码", "母婴", "家电", "家居", "个护", "美妆", "玩乐", "运动", "出行", "百货"],
   "subsidyTabs": ["精选", "奢品馆", "极速达", "天天折扣"],
   "settings": { "fufeiEnabled": true, "darkMode": false, "fontScale": 1 },
-  "followedShops": ["s_huile"],
+  "followedShops": [],
   "favorites": ["i_earbuds", "i_catplush", "i_titanbowl"],
   "searchHistory": ["卫生纸", "玩具车", "蓝牙耳机", "格瓦斯"],
   "hotSearch": ["百亿补贴手机", "夏装T恤", "纸巾整箱", "运动鞋", "蓝牙耳机", "水果礼盒"],

@@ -5,6 +5,7 @@ import { useDaysmatterGestures } from '../hooks/useDaysmatterGestures';
 import { bgUrl } from '../assets';
 import { todayMidnight, DAY } from '../utils/dayMath';
 import { useI18n } from '../i18n';
+import { pickImages } from '@/os/albumBridge';
 
 const START = Date.UTC(2025, 5, 7);
 
@@ -13,8 +14,17 @@ export default function AlbumPage() {
   const { action, bindBack } = useDaysmatterGestures();
   const showToast = useDaysmatterStore((s) => s.showToast);
   const [tab, setTab] = useState('all');
+  const [photos, setPhotos] = useState<string[]>([]);
   const wood = bgUrl('bg_wood_light');
   const days = Math.max(1, Math.round((todayMidnight() - START) / DAY));
+
+  const addPhoto = () => {
+    void pickImages({ multiple: true, maxSelect: 9 }).then((r) => {
+      if (r.cancelled || !r.selected.length) return;
+      setPhotos((prev) => [...prev, ...r.selected.map((x) => x.uri)]);
+      showToast(`已添加 ${r.selected.length} 张`);
+    });
+  };
 
   const tabs = [
     { id: 'all', label: t('album.tabAll'), icon: LayoutGrid },
@@ -60,18 +70,25 @@ export default function AlbumPage() {
         </div>
 
         <div data-scroll-container="main" data-scroll-direction="vertical" className="flex-1 overflow-y-auto p-4 no-scrollbar">
-          <button {...action<HTMLButtonElement>('album.addPhoto.tap', () => showToast(t('toast.addPhotoUnavailable')))}
-            className="flex aspect-square w-[31%] flex-col items-center justify-center rounded-lg border-2 border-dashed border-[#D8D6D0] text-[#C4C4C4] active:bg-[#F7F6F2]">
-            <Plus size={28} />
-          </button>
-          <div className="mt-16 flex flex-col items-center">
-            <p className="text-[16px] text-[#9A9A9A]">{t('album.addImportant')}</p>
-            <p className="mt-1 text-[16px] text-[#9A9A9A]">{t('album.dontForget')}</p>
-            <button {...action<HTMLButtonElement>('album.addPhoto.tap', () => showToast(t('toast.addPhotoUnavailable')))}
-              className="mt-7 flex items-center gap-1.5 rounded-full bg-[#E89A4C] px-6 py-3 text-[16px] font-medium text-white shadow-md active:bg-[#D98A3C]">
-              <Plus size={20} /> {t('album.addFirstPhoto')}
+          <div className="flex flex-wrap gap-2">
+            {photos.map((src) => (
+              <img key={src} src={src} alt="" className="aspect-square w-[31%] rounded-lg object-cover" />
+            ))}
+            <button {...action<HTMLButtonElement>('album.addPhoto.tap', addPhoto)}
+              className="flex aspect-square w-[31%] flex-col items-center justify-center rounded-lg border-2 border-dashed border-[#D8D6D0] text-[#C4C4C4] active:bg-[#F7F6F2]">
+              <Plus size={28} />
             </button>
           </div>
+          {photos.length === 0 && (
+            <div className="mt-16 flex flex-col items-center">
+              <p className="text-[16px] text-[#9A9A9A]">{t('album.addImportant')}</p>
+              <p className="mt-1 text-[16px] text-[#9A9A9A]">{t('album.dontForget')}</p>
+              <button {...action<HTMLButtonElement>('album.addPhoto.tap', addPhoto)}
+                className="mt-7 flex items-center gap-1.5 rounded-full bg-[#E89A4C] px-6 py-3 text-[16px] font-medium text-white shadow-md active:bg-[#D98A3C]">
+                <Plus size={20} /> {t('album.addFirstPhoto')}
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </div>

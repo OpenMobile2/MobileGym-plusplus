@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import type { ActivityResult } from '@/os/types/manifest';
 import { useXimalayaGestures } from '../hooks/useXimalayaGestures';
 import { useXimalayaStrings } from '../hooks/useXimalayaStrings';
 import { useXimalayaStore } from '../state';
@@ -17,7 +18,7 @@ const PAY_METHODS = [
 ];
 
 export function MemberPurchasePage() {
-  const { bindTap } = useXimalayaGestures();
+  const { bindTap, go } = useXimalayaGestures();
   const s = useXimalayaStrings();
   const user = useXimalayaStore((st) => st.user);
   const plans = useXimalayaStore((st) => st.memberPlans);
@@ -125,7 +126,38 @@ export function MemberPurchasePage() {
           <div className="text-[11px] text-[#999]">已选:{selected?.name ?? '—'}</div>
         </div>
         <button
-          {...bindTap('purchase.confirm')}
+          {...bindTap('purchase.confirm', {
+            onTrigger: () => {
+              if (!selected) { showToast('请选择套餐'); return; }
+              const amount = selected.price;
+              const finish = () => go('purchase.confirm');
+              if (method === 'alipay') {
+                const launched = window.__OS__?.startActivityForResult?.(
+                  'alipay',
+                  {
+                    action: 'ACTION_PAY',
+                    scheme: 'alipays',
+                    data: { amount, orderId: `xmly-${selected.id}`, merchantName: '喜马拉雅', subject: selected.name ?? '会员', source: 'ximalaya' },
+                  },
+                  (result: ActivityResult) => { if (result.resultCode === 'OK') finish(); },
+                );
+                if (launched) return;
+              }
+              if (method === 'wechat') {
+                const launched = window.__OS__?.startActivityForResult?.(
+                  'wechat',
+                  {
+                    action: 'ACTION_PAY',
+                    scheme: 'weixin',
+                    data: { amount, orderId: `xmly-${selected.id}`, merchantName: '喜马拉雅', subject: selected.name ?? '会员', source: 'ximalaya' },
+                  },
+                  (result: ActivityResult) => { if (result.resultCode === 'OK') finish(); },
+                );
+                if (launched) return;
+              }
+              finish();
+            },
+          })}
           className="h-11 px-8 rounded-full bg-gradient-to-r from-[#FE4543] to-[#F5352E] text-white text-[15px] font-semibold"
         >
           {s.member_confirm}

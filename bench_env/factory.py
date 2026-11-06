@@ -16,6 +16,49 @@ if TYPE_CHECKING:
 
 ConfigType = Union[argparse.Namespace, "RunnerConfig"]
 
+
+def configured_env_url(config: ConfigType) -> str | None:
+    """Apply suite-owned deterministic clock parameters to simulator URLs."""
+    config = _as_runner_config(config)
+    url = getattr(config, "env_url", None)
+    suite = getattr(config, "suite", None)
+    if not url or suite not in {
+        "clocked",
+        "prior",
+        "native",
+        "services",
+        "workflows",
+        "crossapp",
+        "flow",
+        "compose",
+        "additional",
+        "social",
+        "continued",
+    }:
+        return url
+    from bench_env.task.clocked.time_control import simulated_time_bootstrap_url
+    if suite == "workflows":
+        from bench_env.task.workflows import SIMULATED_TIME
+    elif suite == "native":
+        from bench_env.task.native.specs import SIMULATED_TIME
+    elif suite == "prior":
+        from bench_env.task.prior.specs import SIMULATED_TIME
+    elif suite == "crossapp":
+        from bench_env.task.crossapp import SIMULATED_TIME
+    elif suite == "flow":
+        from bench_env.task.flow import SIMULATED_TIME
+    elif suite == "compose":
+        from bench_env.task.compose import SIMULATED_TIME
+    elif suite == "additional":
+        from bench_env.task.additional import SIMULATED_TIME
+    elif suite == "social":
+        from bench_env.task.social import SIMULATED_TIME
+    elif suite == "continued":
+        from bench_env.task.continued import SIMULATED_TIME
+    else:
+        from bench_env.task.clocked.specs import SIMULATED_TIME
+    return simulated_time_bootstrap_url(url, SIMULATED_TIME)
+
 def _as_runner_config(config: ConfigType) -> "RunnerConfig":
     """Normalize CLI args to RunnerConfig (internal-only helper)."""
     from bench_env.config import RunnerConfig
@@ -116,7 +159,7 @@ async def create_env(config: ConfigType) -> Any:
         # Simulator via Playwright
         from bench_env.env import MobileGymEnv
         
-        env_url = getattr(config, "env_url", None)
+        env_url = configured_env_url(config)
         headless = getattr(config, "headless", False)
         proxy = getattr(config, "proxy", None)
 

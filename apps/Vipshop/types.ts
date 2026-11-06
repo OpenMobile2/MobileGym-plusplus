@@ -49,7 +49,9 @@ export interface VipReview {
   skuDesc: string;
   content: string;
   images: string[];
-  tag: string;            // 买家秀 / 尺码偏大 / 尺码偏小 / 全部
+  tag: string;            // 该品类的合法评价标签(见 constants.reviewTagsOf)
+  rating?: number;        // 1-5 星;老数据没有该字段
+  mine?: boolean;         // 用户本人发布的评价
 }
 
 export interface VipCartItem {
@@ -151,6 +153,17 @@ export interface VipSession {
   avatar: string;
   isSuperV: boolean;
   vipcoin: number;
+  lastCheckIn: string;   // 上次签到日期 key(YYYY-M-D);当天已签到则不再加币
+}
+
+/** 设置项开关(账号安全/支付/推送) */
+export interface VipAppSettings {
+  fingerprintLogin: boolean;   // 指纹/面容登录
+  noPwdPay: boolean;           // 小额免密支付
+  orderNotify: boolean;        // 订单通知
+  promoNotify: boolean;        // 优惠促销推送
+  logisticsNotify: boolean;    // 物流提醒
+  priceDropNotify: boolean;    // 降价提醒
 }
 
 export interface VipshopState {
@@ -162,6 +175,7 @@ export interface VipshopState {
   favorites: string[];       // itemIds
   favoriteBrands: string[];  // brandIds
   subscribedBrands: string[];
+  favoriteOutfits: string[]; // 穿搭收藏(itemIds);管理态可勾选删除
   footprints: VipFootprint[];
   coupons: VipCoupon[];
   orders: VipOrder[];
@@ -171,6 +185,9 @@ export interface VipshopState {
   hotSearches: string[];
   chatMessages: VipChatMessage[];
   priceAlerts: string[];
+  flashReminders: string[];
+  taskAudit: { viewedReviewMediaItemId?: string; brandSort?: { brandId: string; sort: string }; viewedLogisticsOrderId?: string };
+  appSettings: VipAppSettings;
   // 结算上下文
   checkout: {
     lines: VipOrderLine[];
@@ -194,8 +211,12 @@ export interface VipshopActions {
   toggleFavorite: (itemId: string) => void;
   toggleFavoriteBrand: (brandId: string) => void;
   toggleSubscribe: (brandId: string) => void;
+  /** 管理态批量取消:同时清掉订阅与品牌收藏,避免卡片删了又从另一个列表冒出来 */
+  removeBrandFavorites: (brandIds: string[]) => void;
+  removeFavoriteOutfits: (itemIds: string[]) => void;
   recordFootprint: (itemId: string) => void;
   setPriceAlert: (itemId: string) => void;
+  setFlashReminder: (itemId: string) => void;
   // 购物车
   addToCart: (itemId: string, skuDesc: string, qty: number) => void;
   toggleCartSelect: (cartItemId: string) => void;
@@ -211,11 +232,14 @@ export interface VipshopActions {
   toggleCheckoutSvip: () => void;
   createOrder: () => string;
   // 订单
+  /** 收银台确认支付:待付款 → 待收货,并落定支付方式 */
+  payOrder: (orderId: string, payMethod: string) => void;
+  cancelOrder: (orderId: string) => void;
   confirmReceipt: (orderId: string) => void;
   buyAgainToCart: (orderId: string) => void;
   submitRefund: (orderId: string, refundType: string) => void;
   cancelRefund: (refundId: string) => void;
-  submitReview: (orderId: string) => void;
+  submitReview: (orderId: string, review?: { rating: number; content: string; tag: string; images?: string[] }) => void;
   // 地址
   saveAddress: (addr: Partial<VipAddress> & { name: string; phone: string; region: string; detail: string }) => void;
   deleteAddress: (id: string) => void;
@@ -225,6 +249,12 @@ export interface VipshopActions {
   // 客服
   sendChatMessage: (content: string) => void;
   botReply: (question: string) => void;
+  // 签到
+  checkIn: () => number;   // 返回本次获得的唯品币(当天重复签到返回 0)
   // 设置
   clearCache: () => void;
+  toggleSetting: (key: keyof VipAppSettings) => void;
+  recordReviewMediaViewed: (itemId: string) => void;
+  recordBrandSort: (brandId: string, sort: string) => void;
+  recordLogisticsViewed: (orderId: string) => void;
 }

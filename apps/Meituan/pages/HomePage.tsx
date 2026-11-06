@@ -16,11 +16,20 @@ export function HomePage() {
   const cartTotal = cartItems.reduce((sum, i) => sum + i.price * i.count, 0);
   const cartCount = cartItems.reduce((sum, i) => sum + i.count, 0);
 
-  const filteredRestaurants = activeCategory === 'c1'
+  const categoryRestaurants = activeCategory === 'c1'
     ? MEITUAN_CONFIG.restaurants
     : MEITUAN_CONFIG.restaurants.filter(r =>
         MEITUAN_CONFIG.categories.find(c => c.id === activeCategory)?.name === r.category
       );
+  const searchMode = searchParams.get('mode') === 'search';
+  const keyword = searchText.trim().toLowerCase();
+  const filteredRestaurants = keyword
+    ? categoryRestaurants.filter(r =>
+        `${r.name} ${r.category} ${r.dishes.map(d => `${d.name} ${d.category}`).join(' ')}`
+          .toLowerCase()
+          .includes(keyword),
+      )
+    : categoryRestaurants;
 
   return (
     <div className="flex flex-col h-full bg-[#F5F5F5]" data-status-bar-foreground="dark">
@@ -36,14 +45,40 @@ export function HomePage() {
           </span>
           <IcChevronRight size={14} className="text-white opacity-80" />
         </div>
-        <div
-          className="flex items-center bg-white rounded-full px-4 py-2.5 gap-2"
-          onClick={() => setSearchParams({ mode: 'search' })}
-          data-trigger="meituan.home-search"
-        >
-          <IcSearch size={16} className="text-gray-400" />
-          <span className="text-gray-400 text-sm">搜索餐厅、菜品</span>
-        </div>
+        {searchMode ? (
+          <div className="flex items-center gap-2">
+            <div className="flex flex-1 items-center bg-white rounded-full px-4 py-2.5 gap-2">
+              <IcSearch size={16} className="text-gray-400" />
+              <input
+                autoFocus
+                aria-label="搜索餐厅、菜品"
+                data-action="home.search.input"
+                data-action-type="input"
+                value={searchText}
+                onChange={event => setSearchText(event.target.value)}
+                className="min-w-0 flex-1 bg-transparent text-sm text-gray-800 outline-none"
+                placeholder="搜索餐厅、菜品"
+              />
+            </div>
+            <button
+              onClick={() => { setSearchText(''); setSearchParams({}); }}
+              className="text-sm text-white"
+              data-action="home.search.cancel"
+              data-action-type="tap"
+            >
+              取消
+            </button>
+          </div>
+        ) : (
+          <button
+            className="flex w-full items-center bg-white rounded-full px-4 py-2.5 gap-2 text-left"
+            onClick={() => setSearchParams({ mode: 'search' })}
+            data-trigger="meituan.home-search"
+          >
+            <IcSearch size={16} className="text-gray-400" />
+            <span className="text-gray-400 text-sm">搜索餐厅、菜品</span>
+          </button>
+        )}
       </div>
 
       {/* 分类导航 */}
@@ -148,6 +183,9 @@ export function HomePage() {
               </div>
             </div>
           ))}
+          {filteredRestaurants.length === 0 && (
+            <div className="py-16 text-center text-sm text-gray-400">未找到相关餐厅或菜品</div>
+          )}
         </div>
       </div>
 

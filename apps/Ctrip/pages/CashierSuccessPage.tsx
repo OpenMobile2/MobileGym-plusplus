@@ -1,12 +1,14 @@
 import React from 'react';
 import { useCtripStore } from '../state';
 import { useCtripGestures } from '../hooks/useCtripGestures';
+import { useCtripStrings } from '../hooks/useCtripStrings';
 import { Price } from '../components/ui';
 import { IcCheck } from '../res/icons';
 
 /** 支付成功(spec cashier.success,inferred)。展示最近订单;查看订单→orders,返回首页→home。 */
 export default function CashierSuccessPage() {
-  const { bindTap } = useCtripGestures();
+  const s = useCtripStrings();
+  const { bindTap, go } = useCtripGestures();
   const orders = useCtripStore((s) => s.orders);
   const latest = orders[0];
 
@@ -17,7 +19,7 @@ export default function CashierSuccessPage() {
         <div className="w-16 h-16 rounded-full bg-[#38A169] flex items-center justify-center">
           <IcCheck size={36} className="text-white" />
         </div>
-        <div className="text-[20px] font-semibold text-[#111111] mt-4">支付成功</div>
+        <div className="text-[20px] font-semibold text-[#111111] mt-4">{s.t('支付成功')}</div>
         {latest && (
           <>
             <div className="mt-2"><Price value={latest.price} size="l" className="text-[26px]" /></div>
@@ -27,8 +29,18 @@ export default function CashierSuccessPage() {
         )}
 
         <div className="w-full mt-10 flex gap-3">
-          <button {...bindTap('paySuccess.toHome')} className="flex-1 py-2.5 rounded-full border border-[#DDDDDD] bg-white text-[15px] text-[#333333] cursor-pointer">返回首页</button>
-          <button {...bindTap('paySuccess.toOrders')} className="flex-1 py-2.5 rounded-full bg-gradient-to-r from-[#33A5FF] to-[#0086F6] text-white text-[15px] border-none cursor-pointer">查看订单</button>
+          <button
+            {...bindTap({ kind: 'action', id: 'paySuccess.toHome' }, {
+              onTrigger: () => go('paySuccess.toHome', {}, { popTo: '/', mode: 'replace' }),
+            })}
+            className="flex-1 py-2.5 rounded-full border border-[#DDDDDD] bg-white text-[15px] text-[#333333] cursor-pointer"
+          >{s.t('返回首页')}</button>
+          <button
+            {...bindTap({ kind: 'action', id: 'paySuccess.toOrders' }, {
+              onTrigger: () => go('paySuccess.toOrders', {}, { popTo: '/', mode: 'push' }),
+            })}
+            className="flex-1 py-2.5 rounded-full bg-gradient-to-r from-[#33A5FF] to-[#0086F6] text-white text-[15px] border-none cursor-pointer"
+          >{s.t('查看订单')}</button>
         </div>
       </div>
       <div className="h-4 shrink-0" />

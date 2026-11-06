@@ -3,6 +3,7 @@
 const cardBg = import.meta.glob('./cardbg/*.png', { eager: true, query: '?url', import: 'default' }) as Record<string, string>;
 const checkinBg = import.meta.glob('./checkinbg/*.png', { eager: true, query: '?url', import: 'default' }) as Record<string, string>;
 const avatars = import.meta.glob('./avatars/*.png', { eager: true, query: '?url', import: 'default' }) as Record<string, string>;
+const weekDeco = import.meta.glob('./weekdeco/*.png', { eager: true, query: '?url', import: 'default' }) as Record<string, string>;
 
 function pick(map: Record<string, string>, dir: string, key: string): string | undefined {
   return map[`./${dir}/${key}.png`];
@@ -11,3 +12,4 @@ function pick(map: Record<string, string>, dir: string, key: string): string | u
 export const cardBgUrl = (key: string): string | undefined => pick(cardBg, 'cardbg', key);
 export const checkinBgUrl = (key: string): string | undefined => pick(checkinBg, 'checkinbg', key);
 export const avatarUrl = (key: string): string | undefined => pick(avatars, 'avatars', key);
+export const weekDecoUrl = (key: string): string | undefined => pick(weekDeco, 'weekdeco', key);

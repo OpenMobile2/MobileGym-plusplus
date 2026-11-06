@@ -30,6 +30,8 @@ export interface StartActivityPlainDeps {
   launchApp: (appId: AppId) => void;
   markExternalRoute: (appId: AppId) => void;
   setActivityIntent: (taskId: string, activityId: string, intent: IntentPayload) => void;
+  /** singleTask 热启动时刷新 Task.launchedByTaskId，指向本次调用方 */
+  setLaunchedBy: (taskId: string, launchedByTaskId: string | undefined) => void;
 }
 
 const chooserListeners = new Set<ChooserListener>();
@@ -250,6 +252,12 @@ function launchResolvedIntent(
 
       // 把 wechat Task 切到前台。LAUNCH_APP 不会动其它 task — Gallery Task 仍保留在后台。
       deps.launchApp(appId);
+
+      // LAUNCH_APP 热启动故意不改 launchedByTaskId；分享等外部重入需要刷新来源，
+      // 否则 finishActivity / 根返回会停在微信或回桌面，而不是回到本次调用方（如 Slack）。
+      if (callerTaskId && callerTaskId !== refreshedTask.taskId) {
+        deps.setLaunchedBy(refreshedTask.taskId, callerTaskId);
+      }
 
       // 重置 MemoryRouter 历史到 ['/', baseRoute]：先 popToRoot 退回 '/'，再 push baseRoute。
       requestAnimationFrame(() => {

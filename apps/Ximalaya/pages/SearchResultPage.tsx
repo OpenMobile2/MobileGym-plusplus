@@ -28,6 +28,7 @@ export function SearchResultPage() {
   const followedAnchorIds = useXimalayaStore((st) => st.followedAnchorIds);
   const toggleFollow = useXimalayaStore((st) => st.toggleFollow);
   const playTrack = useXimalayaStore((st) => st.playTrack);
+  const recordTaskAudit = useXimalayaStore((st) => st.recordTaskAudit);
 
   const keyword = sp.get('q') || searchHistory[0] || '相声';
   const kw = keyword.trim();
@@ -102,7 +103,7 @@ export function SearchResultPage() {
               key={t}
               {...(isBroadcast
                 ? bindTap({ kind: 'action', id: 'result.broadcast.select.opt' }, { onTrigger: () => setTab(t) })
-                : bindTap({ kind: 'action', id: 'result.tab.select.opt' }, { params: { tab: t }, onTrigger: () => setTab(t) }))}
+                : bindTap({ kind: 'action', id: 'result.tab.select.opt' }, { params: { tab: t }, onTrigger: () => { setTab(t); recordTaskAudit({ search: { query: kw, tab: t, sort } }); } }))}
               className={'shrink-0 py-2.5 text-[14px] flex items-center gap-1 ' + (on ? 'text-[#FE4543] font-semibold border-b-2 border-[#FE4543]' : 'text-[#666]')}
             >
               {t}
@@ -119,7 +120,7 @@ export function SearchResultPage() {
             {SORTS.map((so) => (
               <button
                 key={so}
-                {...bindTap({ kind: 'action', id: 'result.sort.select.opt' }, { params: { sort: so }, onTrigger: () => setSort(so) })}
+                {...bindTap({ kind: 'action', id: 'result.sort.select.opt' }, { params: { sort: so }, onTrigger: () => { setSort(so); recordTaskAudit({ search: { query: kw, tab, sort: so } }); } })}
                 className={'text-[13px] ' + (sort === so ? 'text-[#FE4543] font-medium' : 'text-[#666]')}
               >
                 {so}

@@ -27,4 +27,10 @@ export const manifest: AppManifest = {
     },
   },
   intentFilters: [],
+  queries: [
+    { action: 'ACTION_PAY', scheme: 'weixin' },
+    { action: 'ACTION_SEND', type: 'text/plain' },
+    // 评价选图、图片搜索选图、购物车海报存相册(albumBridge)
+    { action: 'ACTION_PICK', type: 'image/*' },
+  ],
 };

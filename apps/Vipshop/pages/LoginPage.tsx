@@ -5,16 +5,15 @@ import { usePanel, VIP } from '../components/ui';
 import { IcClose } from '../res/icons';
 
 export default function LoginPage() {
-  const { bindTap, bindBack, back } = useVipshopGestures();
-  const { value: privacy, open: openPanel } = usePanel('privacy');
+  const { bindTap, bindBack } = useVipshopGestures();
+  const { value: privacy } = usePanel('privacy');
   const login = useVipshopStore((s) => s.login);
   const [phone, setPhone] = useState('');
   const [agreed, setAgreed] = useState(false);
   const canSubmit = phone.replace(/\D/g, '').length >= 11;
 
-  const AgreeCheck = ({ onToggle, checked }: { onToggle: () => void; checked: boolean }) => (
+  const AgreeCheck = ({ checked }: { checked: boolean }) => (
     <span
-      onClick={onToggle}
       className="w-4 h-4 rounded-full border flex items-center justify-center shrink-0 cursor-pointer"
       style={checked ? { background: VIP.primary, borderColor: VIP.primary } : { borderColor: '#BBB' }}
     >
@@ -58,9 +57,7 @@ export default function LoginPage() {
             新用户注册成功可享专属福利
           </span>
           <button
-            {...bindTap({ kind: 'action', id: 'login.sms.open' }, {
-              onTrigger: () => openPanel('open'),
-            })}
+            {...bindTap('login.sms.open')}
             disabled={!canSubmit}
             className="w-full h-12 rounded-full text-[16px] font-semibold border-none cursor-pointer disabled:opacity-100"
             style={canSubmit ? { background: VIP.primary, color: '#fff' } : { background: '#E5D3DE', color: '#fff' }}
@@ -75,7 +72,7 @@ export default function LoginPage() {
             {...bindTap({ kind: 'action', id: 'login.agreement.toggle' }, { onTrigger: () => setAgreed((a) => !a) })}
             className="bg-transparent border-none cursor-pointer p-0 mt-0.5"
           >
-            <AgreeCheck checked={agreed} onToggle={() => setAgreed((a) => !a)} />
+            <AgreeCheck checked={agreed} />
           </button>
           <span>
             已阅读并同意
@@ -89,7 +86,10 @@ export default function LoginPage() {
       {/* 底部三方登录 */}
       <div className="mt-auto pb-8">
         <div className="flex justify-center gap-10 mb-6">
-          <button {...bindTap('login.oneClick-open', { beforeTrigger: () => login('') })} className="flex flex-col items-center gap-1 bg-transparent border-none cursor-pointer">
+          <button
+            {...bindTap('login.oneClick-open', { beforeTrigger: () => login('') })}
+            className="flex flex-col items-center gap-1 bg-transparent border-none cursor-pointer"
+          >
             <span className="w-11 h-11 rounded-full bg-white flex items-center justify-center text-[18px]">📱</span>
             <span className="text-[11px] text-[#666666]">本机号登录</span>
           </button>
@@ -113,7 +113,11 @@ export default function LoginPage() {
       {/* 隐私协议弹窗 */}
       {privacy === 'open' && (
         <div className="absolute inset-0 z-40">
-          <div className="absolute inset-0 bg-black/50" onClick={() => back()} />
+          <button
+            {...bindBack()}
+            aria-label="关闭服务条款弹窗"
+            className="absolute inset-0 w-full h-full border-none bg-black/50 cursor-default"
+          />
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] bg-white rounded-2xl p-5">
             <div className="text-center text-[16px] font-semibold text-[#222222]">服务条款和隐私政策</div>
             <div className="text-[12px] text-[#666666] leading-relaxed mt-3">

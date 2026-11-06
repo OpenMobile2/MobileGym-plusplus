@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import { ClipboardService } from '@/os/ClipboardService';
 import { useVipshopStore } from '../state';
 import { useVipshopGestures } from '../hooks/useVipshopGestures';
 import { TopBar, Img, useToast, NOT_OPEN, EmptyState, VIP } from '../components/ui';
@@ -11,6 +12,8 @@ export default function LogisticsPage() {
   const [toast, showToast] = useToast();
 
   const order = useVipshopStore((s) => s.orders.find((o) => o.id === id));
+  const recordLogisticsViewed = useVipshopStore((s) => s.recordLogisticsViewed);
+  React.useEffect(() => { if (id) recordLogisticsViewed(id); }, [id, recordLogisticsViewed]);
 
   if (!order) {
     return (
@@ -40,7 +43,9 @@ export default function LogisticsPage() {
             <div className="text-[12px] text-[#666666] mt-1">运单号:{order.trackingNo}</div>
             <div className="flex gap-2 mt-1.5">
               <button
-                {...bindTap({ kind: 'action', id: 'logistics.copyNo.submit' }, { onTrigger: () => showToast('已复制') })}
+                {...bindTap({ kind: 'action', id: 'logistics.copyNo.submit' }, {
+                  onTrigger: () => { ClipboardService.copyText(order.trackingNo, 'vipshop'); showToast('运单号已复制'); },
+                })}
                 className="flex items-center gap-0.5 text-[11px] rounded-full px-2.5 py-0.5 border cursor-pointer bg-white"
                 style={{ color: VIP.primary, borderColor: VIP.primary }}
               >
@@ -79,6 +84,15 @@ export default function LogisticsPage() {
             );
           })}
         </div>
+      </div>
+      <div className="shrink-0 bg-white border-t border-[#EEEEEE] p-3">
+        <button
+          {...bindTap('logistics.orderDetail-open', { params: { id: order.id } })}
+          className="w-full h-10 rounded-full border-none cursor-pointer text-white text-[14px] font-semibold"
+          style={{ background: VIP.ctaBlack }}
+        >
+          查看订单详情
+        </button>
       </div>
       {toast}
     </div>

@@ -1,13 +1,14 @@
 import { createAppStoreWithActions } from '@/os/createAppStore';
 import * as TimeService from '@/os/TimeService';
 import { manifest } from './manifest';
-import { DATA_VERSION } from './constants';
+import { DATA_VERSION, PAY_DEADLINE_MINUTES, reviewTagsOf } from './constants';
 import { VIPSHOP_CONFIG } from './data';
 import type {
   VipshopState, VipshopActions, VipCartItem, VipOrder, VipOrderLine,
 } from './types';
 
 const initialState: VipshopState = JSON.parse(JSON.stringify(VIPSHOP_CONFIG));
+initialState.taskAudit ??= {};
 // 专场/秒杀倒计时:按当前 sim 时间 + endsInHours 计算,避免固定过去时间导致 00:00:00
 initialState.brands = initialState.brands.map((b) => ({
   ...b,
@@ -74,6 +75,15 @@ export const useVipshopStore = createAppStoreWithActions<VipshopState, VipshopAc
           : [brandId, ...s.subscribedBrands],
       }));
     },
+    removeBrandFavorites: (brandIds) => {
+      set((s) => ({
+        subscribedBrands: s.subscribedBrands.filter((b) => !brandIds.includes(b)),
+        favoriteBrands: s.favoriteBrands.filter((b) => !brandIds.includes(b)),
+      }));
+    },
+    removeFavoriteOutfits: (itemIds) => {
+      set((s) => ({ favoriteOutfits: s.favoriteOutfits.filter((i) => !itemIds.includes(i)) }));
+    },
     recordFootprint: (itemId) => {
       const today = TimeService.now();
       set((s) => ({
@@ -88,6 +98,14 @@ export const useVipshopStore = createAppStoreWithActions<VipshopState, VipshopAc
         priceAlerts: s.priceAlerts.includes(itemId) ? s.priceAlerts : [...s.priceAlerts, itemId],
       }));
     },
+    setFlashReminder: (itemId) => {
+      set((s) => ({
+        flashReminders: s.flashReminders.includes(itemId) ? s.flashReminders : [...s.flashReminders, itemId],
+      }));
+    },
+    recordReviewMediaViewed: (itemId) => set((s) => ({ taskAudit: { ...s.taskAudit, viewedReviewMediaItemId: itemId } })),
+    recordBrandSort: (brandId, sort) => set((s) => ({ taskAudit: { ...s.taskAudit, brandSort: { brandId, sort } } })),
+    recordLogisticsViewed: (orderId) => set((s) => ({ taskAudit: { ...s.taskAudit, viewedLogisticsOrderId: orderId } })),
 
     // ---------- 购物车 ----------
     addToCart: (itemId, skuDesc, qty) => {
@@ -165,16 +183,18 @@ export const useVipshopStore = createAppStoreWithActions<VipshopState, VipshopAc
         brandName: ck.brandName,
         lines: ck.lines,
         itemTotal, shippingFee: 0, paidAmount,
-        status: 'pendingReceipt',
+        // 提交订单只生成待付款单;真机唯品会是提交后再弹收银台选支付方式
+        status: 'pendingPayment',
         addressSnapshot: addr
           ? { name: addr.name, phone: addr.phone.slice(0, 3) + '****' + addr.phone.slice(-4), full: addr.region.replace(/ /g, '') + addr.detail }
           : { name: '', phone: '', full: '' },
-        payMethod: ck.payMethod,
+        // 支付方式在收银台才确定,提交时还没有
+        payMethod: null,
         createdAt: TimeService.now(),
-        payDeadline: null,
+        payDeadline: TimeService.now() + PAY_DEADLINE_MINUTES * 60_000,
         trackingNo: 'SF' + String(TimeService.now()).slice(-12),
         courier: '顺丰速运',
-        logistics: [{ time: '刚刚', text: '您的订单已提交,商家正在备货中' }],
+        logistics: [],
         reviewed: false, isInternational: false,
       };
       const boughtCartIds =
@@ -189,6 +209,31 @@ export const useVipshopStore = createAppStoreWithActions<VipshopState, VipshopAc
     },
 
     // ---------- 订单 ----------
+    payOrder: (orderId, payMethod) => {
+      set((s) => ({
+        orders: s.orders.map((o) =>
+          o.id === orderId && o.status === 'pendingPayment'
+            ? {
+              ...o,
+              status: 'pendingReceipt' as const,
+              payMethod,
+              payDeadline: null,
+              logistics: [{ time: '刚刚', text: '您的订单已提交,商家正在备货中' }],
+            }
+            : o,
+        ),
+      }));
+    },
+    cancelOrder: (orderId) => {
+      set((s) => ({
+        orders: s.orders.map((o) =>
+          // 只有待付款可取消:已发货的走售后退款,不能直接置为已取消
+          o.id === orderId && o.status === 'pendingPayment'
+            ? { ...o, status: 'canceled' as const, payDeadline: null }
+            : o,
+        ),
+      }));
+    },
     confirmReceipt: (orderId) => {
       set((s) => ({
         orders: s.orders.map((o) => (o.id === orderId ? { ...o, status: 'completed' as const } : o)),
@@ -224,10 +269,44 @@ export const useVipshopStore = createAppStoreWithActions<VipshopState, VipshopAc
         refunds: s.refunds.map((r) => (r.id === refundId ? { ...r, status: 'canceled' as const } : r)),
       }));
     },
-    submitReview: (orderId) => {
-      set((s) => ({
-        orders: s.orders.map((o) => (o.id === orderId ? { ...o, reviewed: true } : o)),
-      }));
+    submitReview: (orderId, review) => {
+      set((s) => {
+        const order = s.orders.find((o) => o.id === orderId);
+        if (!order) return {} as Partial<VipshopState>;
+        const content = (review?.content || '').trim() || '宝贝收到了，质量不错，物流也很快，好评~';
+        const images = review?.images ?? [];
+        const reviewedItemIds = order.lines.map((l: VipOrderLine) => l.itemId);
+        const newReviews = order.lines.map((l: VipOrderLine) => {
+          const item = s.items.find((i) => i.id === l.itemId);
+          // 标签必须落在该品类的合法取值里,否则详情页按标签筛就永远找不到自己这条;
+          // 带图一律归「买家秀」,与列表的带图筛选保持一致。
+          const allowed = item ? reviewTagsOf(item.category) : ['买家秀'];
+          const tag = images.length > 0
+            ? '买家秀'
+            : (review?.tag && allowed.includes(review.tag) ? review.tag : allowed[1] ?? '买家秀');
+          return {
+            id: genId('rv'),
+            itemId: l.itemId,
+            userNick: s.session.nick || '唯品会会员',
+            userAvatar: s.session.avatar || '',
+            skuDesc: l.skuDesc,
+            content,
+            images,
+            tag,
+            // 星级此前只在写评价页用来显示"非常好",提交时被丢掉,两个展示页都看不到
+            rating: review?.rating ?? 5,
+            mine: true,
+          };
+        });
+        return {
+          orders: s.orders.map((o) => (o.id === orderId ? { ...o, reviewed: true } : o)),
+          reviews: [...newReviews, ...s.reviews],
+          // 评价数跟着涨,否则详情页标题「评价(N)」纹丝不动,像是没发出去
+          items: s.items.map((i) =>
+            reviewedItemIds.includes(i.id) ? { ...i, reviewCount: i.reviewCount + 1 } : i,
+          ),
+        };
+      });
     },
 
     // ---------- 地址 ----------
@@ -285,10 +364,25 @@ export const useVipshopStore = createAppStoreWithActions<VipshopState, VipshopAc
       }));
     },
 
+    // ---------- 签到 ----------
+    checkIn: () => {
+      const d = TimeService.getDate();
+      const today = `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
+      if (get().session.lastCheckIn === today) return 0;
+      const earned = 12;
+      set((s) => ({
+        session: { ...s.session, lastCheckIn: today, vipcoin: s.session.vipcoin + earned },
+      }));
+      return earned;
+    },
+
     // ---------- 设置 ----------
     clearCache: () => {
       // 模拟清缓存:不动业务数据
       set(() => ({}));
+    },
+    toggleSetting: (key) => {
+      set((s) => ({ appSettings: { ...s.appSettings, [key]: !s.appSettings[key] } }));
     },
   }),
   {

@@ -3,7 +3,7 @@ import * as TimeService from '../../../os/TimeService';
 import { useFanqieTodoStore } from '../state';
 import { useFanqieTodoGestures } from '../hooks/useFanqieTodoGestures';
 import { useI18n } from '../i18n';
-import { IcBack, IcPlus } from '../res/icons';
+import { IcBack, IcPlus, IcShirt } from '../res/icons';
 
 function daysLeft(ts: number) {
   return Math.ceil((ts - TimeService.now()) / 86400000);
@@ -22,7 +22,7 @@ export default function FuturePage() {
         <span className="text-base font-semibold text-[#333]">{t('future.title')}</span>
         <div className="flex items-center gap-3">
           <button {...bindTap('future.add.open')} aria-label="添加"><IcPlus size={22} /></button>
-          <button {...action('future.appearance.wontfixToast', () => showToast(t('toast.unavailable')))} aria-label="外观">👕</button>
+          <button {...action('future.appearance.wontfixToast', () => showToast(t('toast.unavailable')))} aria-label="外观" className="text-[#8A8F99]"><IcShirt size={20} /></button>
         </div>
       </div>
 

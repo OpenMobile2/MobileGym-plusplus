@@ -1,4 +1,5 @@
 import type React from 'react';
+import { useLocation } from 'react-router-dom';
 import { useTriggerGestures } from '../../../os/hooks/useTriggerGestures';
 import type { TransitionId } from '../navigation.declaration';
 import { useAppNavigate } from '../navigation';
@@ -8,10 +9,16 @@ type GestureId = TransitionId | SystemTriggerId;
 
 export function useFlomoGestures() {
   const { go, back } = useAppNavigate();
+  const location = useLocation();
   const { bindTap, bindLongPress, bindDoubleTap } = useTriggerGestures<GestureId>({
     execute: (id, params) => {
       if (id === 'system.back') return;
-      go(id, params);
+      const cardMenuOpen = new URLSearchParams(location.search).get('cardMenu') === 'open';
+      go(
+        id as TransitionId,
+        params,
+        cardMenuOpen ? { popTo: location.pathname, popToInclusive: true } : undefined,
+      );
     },
   });
 
