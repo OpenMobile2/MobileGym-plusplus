@@ -7,11 +7,11 @@
   &nbsp;·&nbsp;
   <a href="https://github.com/OpenMobile2/OpenMobile2-Code"><b>智能体代码</b></a>
   &nbsp;·&nbsp;
-  <a href="https://huggingface.co/datasets/OpenMobile-2/OpenMobile-Data"><b>数据集</b></a>
+  <a href="https://huggingface.co/datasets/OpenMobile-2/OpenMobile-Data-v2"><b>数据集</b></a>
   &nbsp;·&nbsp;
-  <a href="https://huggingface.co/OpenMobile-2/OpenMobile-27B"><b>模型</b></a>
+  <a href="https://huggingface.co/OpenMobile-2/OpenMobile-2-27B"><b>模型</b></a>
   &nbsp;·&nbsp;
-  <a href="https://mobilegym-mock-production.up.railway.app"><b>打开手机</b></a>
+  <a href="https://os-copilot.github.io/OpenMobile2-Sim/"><b>打开手机</b></a>
 </p>
 
 <p align="center">

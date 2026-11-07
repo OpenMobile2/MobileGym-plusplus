@@ -7,11 +7,11 @@
   &nbsp;·&nbsp;
   <a href="https://github.com/OpenMobile2/OpenMobile2-Code"><b>Agent code</b></a>
   &nbsp;·&nbsp;
-  <a href="https://huggingface.co/datasets/OpenMobile-2/OpenMobile-Data"><b>Dataset</b></a>
+  <a href="https://huggingface.co/datasets/OpenMobile-2/OpenMobile-Data-v2"><b>Dataset</b></a>
   &nbsp;·&nbsp;
-  <a href="https://huggingface.co/OpenMobile-2/OpenMobile-27B"><b>Model</b></a>
+  <a href="https://huggingface.co/OpenMobile-2/OpenMobile-2-27B"><b>Model</b></a>
   &nbsp;·&nbsp;
-  <a href="https://mobilegym-mock-production.up.railway.app"><b>Try the phone</b></a>
+  <a href="https://os-copilot.github.io/OpenMobile2-Sim/"><b>Try the phone</b></a>
 </p>
 
 <p align="center">
