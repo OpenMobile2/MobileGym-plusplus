@@ -14,7 +14,7 @@ import instantDripCoffeeImage from '../assets/generated/instant-03.png';
 import instantCoconutDrinkImage from '../assets/generated/instant-04.png';
 import instantCoffeeBeansImage from '../assets/generated/instant-05.png';
 import lemonTeaImage from '../assets/generated/lemon-tea.png';
-import orangeCHeroImage from '../assets/generated/orange-c-hero.png';
+import orangeCHeroImage from '../assets/generated/orange-c-hero.jpg';
 import velvetCImage from '../assets/generated/velvet-c.png';
 
 const PRODUCT_IMAGES: Record<string, string> = {

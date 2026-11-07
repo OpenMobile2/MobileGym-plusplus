@@ -20,7 +20,7 @@ import { setImageViewerPayload } from './MediaImageviewerPage';
 
 // 节点: broadcast.detail —— 广播详情(5子tab详情模板 broadcast 实例)。
 // evidence: IMG_0214-0226 / frame:53ee31 / frame:944a47
-const SEED_IMG = '/@app-assets/Douban/images/bc_photo1.png';
+const SEED_IMG = '/@app-assets/Douban/images/bc_photo1.jpg';
 
 export default function BroadcastDetailPage() {
   const { bindBack, bindTap, back } = useDoubanGestures();

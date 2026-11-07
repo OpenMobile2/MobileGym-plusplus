@@ -44,7 +44,7 @@ export default function TrainSearchPage() {
     <div className="flex flex-col h-full bg-[#F5F6F8]">
       <div className="flex-1 overflow-y-auto" data-scroll-container="main" data-scroll-direction="vertical">
         <div className="relative h-[176px] overflow-hidden bg-[#087DCF]">
-          <Img src="/@app-assets/Ctrip/gen/banner_train.png" className="h-full w-full object-cover" />
+          <Img src="/@app-assets/Ctrip/gen/banner_train.jpg" className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0074C8]/70 via-transparent to-transparent" />
           <button {...bindBack()} className="absolute left-3 top-4 h-9 w-9 rounded-full border-none bg-black/20 text-[28px] text-white">‹</button>
           <div className="absolute left-7 top-[52px] text-white drop-shadow">

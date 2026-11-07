@@ -33,7 +33,7 @@ export default function DestCityPage() {
       <div className="flex-1 overflow-y-auto" data-scroll-container="main" data-scroll-direction="vertical">
         {/* 城市封面 */}
         <div className="relative h-40">
-          <Img src="/@app-assets/Ctrip/gen/scene_bund.png" className="w-full h-full object-cover" />
+          <Img src="/@app-assets/Ctrip/gen/scene_bund.jpg" className="w-full h-full object-cover" />
           <div className="absolute left-3 bottom-3 text-white">
             <div className="text-[22px] font-bold drop-shadow">{city}</div>
             <div className="text-[12px] opacity-90">{city === '上海' ? '魔都 · 必看精选 · 玩转上海' : `必看精选 · 玩转${city}`}</div>

@@ -7,8 +7,8 @@ import { useLuckinStrings } from '../hooks/useLuckinStrings';
 import { IcBag, IcChevron, IcCoffee, IcDeer, IcPin, IcPlus, IcSearch } from '../res/icons';
 import { useLuckinStore } from '../state';
 import type { Product } from '../types';
-import homeCampaignImage from '../assets/generated/home-football-campaign.png';
-import orangeCHeroImage from '../assets/generated/orange-c-hero.png';
+import homeCampaignImage from '../assets/generated/home-football-campaign.jpg';
+import orangeCHeroImage from '../assets/generated/orange-c-hero.jpg';
 
 function ProductCard({ product }: { product: Product }) {
   const s = useLuckinStrings();

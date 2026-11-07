@@ -14,8 +14,8 @@ This guide walks you from a fresh clone to a fully evaluated task in about 10 mi
 ## Install
 
 ```bash
-git clone https://github.com/OpenMobile2/MobileGym-plusplus.git
-cd MobileGym-plusplus
+# Download this repository as a ZIP and unzip it, then:
+cd <unzipped-folder>
 
 # Front-end / simulator
 npm install
@@ -166,7 +166,7 @@ This flag only affects the Playwright browser's outbound requests; the agent pro
 If you just want every command in one block:
 
 ```bash
-git clone https://github.com/OpenMobile2/MobileGym-plusplus.git && cd MobileGym-plusplus
+cd <unzipped-folder>
 npm install
 pip install -r bench_env/requirements.txt && playwright install chromium
 

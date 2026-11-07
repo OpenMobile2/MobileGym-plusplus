@@ -36,26 +36,26 @@ const asset = (name: string) => `/@app-assets/Youku/promo/${name}`;
 const SPORTS_BANNER = {
   title: '网球巡回赛·雅典站 今晚22:30 巅峰对决 冲击四强',
   subSuffix: '雅典站赛事直播',
-  cover: asset('sports_banner.png'),
+  cover: asset('sports_banner.jpg'),
 };
 const SPORTS_SCHEDULE = [
   {
     league: '网球巡回·格城站',
     time: '今天 16:30',
     desc: '格城站 第五比赛日全景播出',
-    cover: asset('sports_schedule_1.png'),
+    cover: asset('sports_schedule_1.jpg'),
   },
   {
     league: '网球巡回·巴城站',
     time: '今天 17:00',
     desc: '巴城站 第五比赛日全景播出',
-    cover: asset('sports_schedule_2.png'),
+    cover: asset('sports_schedule_2.jpg'),
   },
   {
     league: '羽毛球公开赛',
     time: '今天 19:30',
     desc: '混双半决赛焦点对决',
-    cover: asset('sports_schedule_3.png'),
+    cover: asset('sports_schedule_3.jpg'),
   },
 ] as const;
 const SPORTS_LIVE_CARDS = [
@@ -63,19 +63,19 @@ const SPORTS_LIVE_CARDS = [
     title: '女子巡回赛·雅典站 焦点战',
     live: false,
     gradient: 'from-[#4A2E7A] to-[#221540]',
-    cover: asset('sports_live_1.png'),
+    cover: asset('sports_live_1.jpg'),
   },
   {
     title: '男子大师赛·决胜盘对决',
     live: true,
     gradient: 'from-[#7A3A16] to-[#3A1C0A]',
-    cover: asset('sports_live_2.png'),
+    cover: asset('sports_live_2.jpg'),
   },
 ] as const;
 const GAME_BANNER = {
   title: '大师赛专属票根 现已上架',
   sub: '本命卡司 近在咫尺 欢迎选购',
-  tickets: [asset('game_ticket_1.png'), asset('game_ticket_2.png'), asset('game_ticket_3.png')],
+  tickets: [asset('game_ticket_1.jpg'), asset('game_ticket_2.jpg'), asset('game_ticket_3.jpg')],
 };
 
 /**

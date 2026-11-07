@@ -20,7 +20,7 @@ import { Sheet } from '../components/Sheet';
 
 // 节点: discussion.detail —— 条目讨论详情(5子tab详情模板 discussion 实例)。
 // evidence: frame:f60ef9@t0046/t0048/t0050/t0055
-const SEED_IMG = '/@app-assets/Douban/images/bc_photo1.png';
+const SEED_IMG = '/@app-assets/Douban/images/bc_photo1.jpg';
 
 function relTime(ts: number, now: number): string {
   const diff = Math.max(0, now - ts);

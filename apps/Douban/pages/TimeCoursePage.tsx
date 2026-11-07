@@ -21,7 +21,7 @@ interface Episode {
 
 const STATIC_COMMENTS = [
   { name: '陈丹青', avatar: '/@app-assets/Douban/avatars/av_chendanqi.png', text: '讲得深入浅出,反复听了三遍,收获很大。', likes: 128 },
-  { name: '金色梦乡', avatar: '/@app-assets/Douban/avatars/av_jinse.png', text: '第七讲关于叙事节奏的部分真是点睛之笔。', likes: 64 },
+  { name: '金色梦乡', avatar: '/@app-assets/Douban/avatars/av_jinse.jpg', text: '第七讲关于叙事节奏的部分真是点睛之笔。', likes: 64 },
   { name: '桔梗', avatar: '/@app-assets/Douban/avatars/av_jiegeng.png', text: '主讲人声音很有磁性,通勤路上听刚刚好。', likes: 31 },
 ];
 

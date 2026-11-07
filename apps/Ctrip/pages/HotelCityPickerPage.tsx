@@ -7,10 +7,10 @@ import { IcSearch } from '../res/icons';
 
 /** 城市选择(spec hotel.cityPicker):搜索/历史/热门网格/字母索引。选择→list?city=。 */
 const HOT_CITIES = [
-  { name: '上海', img: '/@app-assets/Ctrip/gen/city_shanghai.png' },
-  { name: '成都', img: '/@app-assets/Ctrip/gen/city_chengdu.png' },
-  { name: '重庆', img: '/@app-assets/Ctrip/gen/city_chongqing.png' },
-  { name: '三亚', img: '/@app-assets/Ctrip/gen/city_sanya.png' },
+  { name: '上海', img: '/@app-assets/Ctrip/gen/city_shanghai.jpg' },
+  { name: '成都', img: '/@app-assets/Ctrip/gen/city_chengdu.jpg' },
+  { name: '重庆', img: '/@app-assets/Ctrip/gen/city_chongqing.jpg' },
+  { name: '三亚', img: '/@app-assets/Ctrip/gen/city_sanya.jpg' },
 ];
 
 const CITIES_BY_LETTER: Record<string, string[]> = {

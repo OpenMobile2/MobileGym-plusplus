@@ -56,10 +56,10 @@
       "image": "/@app-assets/Jingdong/items/i_thinkbook.png",
       "gallery": [
         "/@app-assets/Jingdong/items/i_thinkbook.png",
-        "/@app-assets/Jingdong/items/i_thinkbook_d.png"
+        "/@app-assets/Jingdong/items/i_thinkbook_d.jpg"
       ],
       "detailImages": [
-        "/@app-assets/Jingdong/items/i_thinkbook_d.png",
+        "/@app-assets/Jingdong/items/i_thinkbook_d.jpg",
         "/@app-assets/Jingdong/items/i_thinkbook.png"
       ],
       "price": 6629.15,
@@ -112,10 +112,10 @@
       "image": "/@app-assets/Jingdong/items/i_phone_v.png",
       "gallery": [
         "/@app-assets/Jingdong/items/i_phone_v.png",
-        "/@app-assets/Jingdong/items/i_phone_v_d.png"
+        "/@app-assets/Jingdong/items/i_phone_v_d.jpg"
       ],
       "detailImages": [
-        "/@app-assets/Jingdong/items/i_phone_v_d.png",
+        "/@app-assets/Jingdong/items/i_phone_v_d.jpg",
         "/@app-assets/Jingdong/items/i_phone_v.png"
       ],
       "price": 4099,
@@ -167,10 +167,10 @@
       "image": "/@app-assets/Jingdong/items/i_phone_honor.png",
       "gallery": [
         "/@app-assets/Jingdong/items/i_phone_honor.png",
-        "/@app-assets/Jingdong/items/i_phone_honor_d.png"
+        "/@app-assets/Jingdong/items/i_phone_honor_d.jpg"
       ],
       "detailImages": [
-        "/@app-assets/Jingdong/items/i_phone_honor_d.png",
+        "/@app-assets/Jingdong/items/i_phone_honor_d.jpg",
         "/@app-assets/Jingdong/items/i_phone_honor.png"
       ],
       "price": 3138.88,
@@ -259,10 +259,10 @@
       "image": "/@app-assets/Jingdong/items/i_keyboard.png",
       "gallery": [
         "/@app-assets/Jingdong/items/i_keyboard.png",
-        "/@app-assets/Jingdong/items/i_keyboard_d.png"
+        "/@app-assets/Jingdong/items/i_keyboard_d.jpg"
       ],
       "detailImages": [
-        "/@app-assets/Jingdong/items/i_keyboard_d.png",
+        "/@app-assets/Jingdong/items/i_keyboard_d.jpg",
         "/@app-assets/Jingdong/items/i_keyboard.png"
       ],
       "price": 159,
@@ -304,10 +304,10 @@
       "image": "/@app-assets/Jingdong/items/i_mouse.png",
       "gallery": [
         "/@app-assets/Jingdong/items/i_mouse.png",
-        "/@app-assets/Jingdong/items/i_mouse_d.png"
+        "/@app-assets/Jingdong/items/i_mouse_d.jpg"
       ],
       "detailImages": [
-        "/@app-assets/Jingdong/items/i_mouse_d.png",
+        "/@app-assets/Jingdong/items/i_mouse_d.jpg",
         "/@app-assets/Jingdong/items/i_mouse.png"
       ],
       "price": 249,
@@ -348,10 +348,10 @@
       "image": "/@app-assets/Jingdong/items/i_monitor.png",
       "gallery": [
         "/@app-assets/Jingdong/items/i_monitor.png",
-        "/@app-assets/Jingdong/items/i_monitor_d.png"
+        "/@app-assets/Jingdong/items/i_monitor_d.jpg"
       ],
       "detailImages": [
-        "/@app-assets/Jingdong/items/i_monitor_d.png",
+        "/@app-assets/Jingdong/items/i_monitor_d.jpg",
         "/@app-assets/Jingdong/items/i_monitor.png"
       ],
       "price": 899,
@@ -396,10 +396,10 @@
       "image": "/@app-assets/Jingdong/items/i_powerbank.png",
       "gallery": [
         "/@app-assets/Jingdong/items/i_powerbank.png",
-        "/@app-assets/Jingdong/items/i_powerbank_d.png"
+        "/@app-assets/Jingdong/items/i_powerbank_d.jpg"
       ],
       "detailImages": [
-        "/@app-assets/Jingdong/items/i_powerbank_d.png",
+        "/@app-assets/Jingdong/items/i_powerbank_d.jpg",
         "/@app-assets/Jingdong/items/i_powerbank.png"
       ],
       "price": 89,
@@ -440,10 +440,10 @@
       "image": "/@app-assets/Jingdong/items/i_watch.png",
       "gallery": [
         "/@app-assets/Jingdong/items/i_watch.png",
-        "/@app-assets/Jingdong/items/i_watch_d.png"
+        "/@app-assets/Jingdong/items/i_watch_d.jpg"
       ],
       "detailImages": [
-        "/@app-assets/Jingdong/items/i_watch_d.png",
+        "/@app-assets/Jingdong/items/i_watch_d.jpg",
         "/@app-assets/Jingdong/items/i_watch.png"
       ],
       "price": 248,
@@ -483,10 +483,10 @@
       "image": "/@app-assets/Jingdong/items/i_hairdryer.png",
       "gallery": [
         "/@app-assets/Jingdong/items/i_hairdryer.png",
-        "/@app-assets/Jingdong/items/i_hairdryer_d.png"
+        "/@app-assets/Jingdong/items/i_hairdryer_d.jpg"
       ],
       "detailImages": [
-        "/@app-assets/Jingdong/items/i_hairdryer_d.png",
+        "/@app-assets/Jingdong/items/i_hairdryer_d.jpg",
         "/@app-assets/Jingdong/items/i_hairdryer.png"
       ],
       "price": 329,
@@ -566,10 +566,10 @@
       "image": "/@app-assets/Jingdong/items/i_fridge.png",
       "gallery": [
         "/@app-assets/Jingdong/items/i_fridge.png",
-        "/@app-assets/Jingdong/items/i_fridge_d.png"
+        "/@app-assets/Jingdong/items/i_fridge_d.jpg"
       ],
       "detailImages": [
-        "/@app-assets/Jingdong/items/i_fridge_d.png",
+        "/@app-assets/Jingdong/items/i_fridge_d.jpg",
         "/@app-assets/Jingdong/items/i_fridge.png"
       ],
       "price": 2879,
@@ -614,10 +614,10 @@
       "image": "/@app-assets/Jingdong/items/i_wangzai.png",
       "gallery": [
         "/@app-assets/Jingdong/items/i_wangzai.png",
-        "/@app-assets/Jingdong/items/i_wangzai_d.png"
+        "/@app-assets/Jingdong/items/i_wangzai_d.jpg"
       ],
       "detailImages": [
-        "/@app-assets/Jingdong/items/i_wangzai_d.png",
+        "/@app-assets/Jingdong/items/i_wangzai_d.jpg",
         "/@app-assets/Jingdong/items/i_wangzai.png"
       ],
       "price": 46.24,
@@ -650,14 +650,14 @@
       "id": "i_watermelon",
       "shopId": "shop_self",
       "title": "【爆品】麒麟西瓜 8424大西瓜 新鲜水果 单个装",
-      "image": "/@app-assets/Jingdong/items/i_watermelon.png",
+      "image": "/@app-assets/Jingdong/items/i_watermelon.jpg",
       "gallery": [
-        "/@app-assets/Jingdong/items/i_watermelon.png",
-        "/@app-assets/Jingdong/items/i_watermelon_d.png"
+        "/@app-assets/Jingdong/items/i_watermelon.jpg",
+        "/@app-assets/Jingdong/items/i_watermelon_d.jpg"
       ],
       "detailImages": [
-        "/@app-assets/Jingdong/items/i_watermelon_d.png",
-        "/@app-assets/Jingdong/items/i_watermelon.png"
+        "/@app-assets/Jingdong/items/i_watermelon_d.jpg",
+        "/@app-assets/Jingdong/items/i_watermelon.jpg"
       ],
       "price": 29.9,
       "originPrice": 45,
@@ -692,10 +692,10 @@
       "image": "/@app-assets/Jingdong/items/i_dumpling.png",
       "gallery": [
         "/@app-assets/Jingdong/items/i_dumpling.png",
-        "/@app-assets/Jingdong/items/i_dumpling_d.png"
+        "/@app-assets/Jingdong/items/i_dumpling_d.jpg"
       ],
       "detailImages": [
-        "/@app-assets/Jingdong/items/i_dumpling_d.png",
+        "/@app-assets/Jingdong/items/i_dumpling_d.jpg",
         "/@app-assets/Jingdong/items/i_dumpling.png"
       ],
       "price": 29.8,
@@ -734,14 +734,14 @@
       "id": "i_coffee",
       "shopId": "shop_self",
       "title": "瑞幸 冰美式咖啡 挂耳现磨 提神醒脑",
-      "image": "/@app-assets/Jingdong/items/i_coffee.png",
+      "image": "/@app-assets/Jingdong/items/i_coffee.jpg",
       "gallery": [
-        "/@app-assets/Jingdong/items/i_coffee.png",
-        "/@app-assets/Jingdong/items/i_coffee_d.png"
+        "/@app-assets/Jingdong/items/i_coffee.jpg",
+        "/@app-assets/Jingdong/items/i_coffee_d.jpg"
       ],
       "detailImages": [
-        "/@app-assets/Jingdong/items/i_coffee_d.png",
-        "/@app-assets/Jingdong/items/i_coffee.png"
+        "/@app-assets/Jingdong/items/i_coffee_d.jpg",
+        "/@app-assets/Jingdong/items/i_coffee.jpg"
       ],
       "price": 39.9,
       "originPrice": 59,
@@ -772,14 +772,14 @@
       "id": "i_zhacai",
       "shopId": "shop_self",
       "title": "乌江 榨菜 脆口榨菜丝组合装 佐餐开胃",
-      "image": "/@app-assets/Jingdong/items/i_zhacai.png",
+      "image": "/@app-assets/Jingdong/items/i_zhacai.jpg",
       "gallery": [
-        "/@app-assets/Jingdong/items/i_zhacai.png",
-        "/@app-assets/Jingdong/items/i_zhacai_d.png"
+        "/@app-assets/Jingdong/items/i_zhacai.jpg",
+        "/@app-assets/Jingdong/items/i_zhacai_d.jpg"
       ],
       "detailImages": [
-        "/@app-assets/Jingdong/items/i_zhacai_d.png",
-        "/@app-assets/Jingdong/items/i_zhacai.png"
+        "/@app-assets/Jingdong/items/i_zhacai_d.jpg",
+        "/@app-assets/Jingdong/items/i_zhacai.jpg"
       ],
       "price": 9.9,
       "originPrice": 19.9,
@@ -811,10 +811,10 @@
       "image": "/@app-assets/Jingdong/items/i_water.png",
       "gallery": [
         "/@app-assets/Jingdong/items/i_water.png",
-        "/@app-assets/Jingdong/items/i_water_d.png"
+        "/@app-assets/Jingdong/items/i_water_d.jpg"
       ],
       "detailImages": [
-        "/@app-assets/Jingdong/items/i_water_d.png",
+        "/@app-assets/Jingdong/items/i_water_d.jpg",
         "/@app-assets/Jingdong/items/i_water.png"
       ],
       "price": 23.9,
@@ -883,10 +883,10 @@
       "image": "/@app-assets/Jingdong/items/i_slippers.png",
       "gallery": [
         "/@app-assets/Jingdong/items/i_slippers.png",
-        "/@app-assets/Jingdong/items/i_slippers_d.png"
+        "/@app-assets/Jingdong/items/i_slippers_d.jpg"
       ],
       "detailImages": [
-        "/@app-assets/Jingdong/items/i_slippers_d.png",
+        "/@app-assets/Jingdong/items/i_slippers_d.jpg",
         "/@app-assets/Jingdong/items/i_slippers.png"
       ],
       "price": 39,
@@ -931,14 +931,14 @@
       "id": "i_backpack",
       "shopId": "shop_self",
       "title": "回力 大容量双肩旅行背包 学生书包 多隔层",
-      "image": "/@app-assets/Jingdong/items/i_backpack.png",
+      "image": "/@app-assets/Jingdong/items/i_backpack.jpg",
       "gallery": [
-        "/@app-assets/Jingdong/items/i_backpack.png",
-        "/@app-assets/Jingdong/items/i_backpack_d.png"
+        "/@app-assets/Jingdong/items/i_backpack.jpg",
+        "/@app-assets/Jingdong/items/i_backpack_d.jpg"
       ],
       "detailImages": [
-        "/@app-assets/Jingdong/items/i_backpack_d.png",
-        "/@app-assets/Jingdong/items/i_backpack.png"
+        "/@app-assets/Jingdong/items/i_backpack_d.jpg",
+        "/@app-assets/Jingdong/items/i_backpack.jpg"
       ],
       "price": 69.1,
       "originPrice": 109,
@@ -977,10 +977,10 @@
       "image": "/@app-assets/Jingdong/items/i_cup.png",
       "gallery": [
         "/@app-assets/Jingdong/items/i_cup.png",
-        "/@app-assets/Jingdong/items/i_cup_d.png"
+        "/@app-assets/Jingdong/items/i_cup_d.jpg"
       ],
       "detailImages": [
-        "/@app-assets/Jingdong/items/i_cup_d.png",
+        "/@app-assets/Jingdong/items/i_cup_d.jpg",
         "/@app-assets/Jingdong/items/i_cup.png"
       ],
       "price": 14.78,
@@ -1020,10 +1020,10 @@
       "image": "/@app-assets/Jingdong/items/i_hairoil.png",
       "gallery": [
         "/@app-assets/Jingdong/items/i_hairoil.png",
-        "/@app-assets/Jingdong/items/i_hairoil_d.png"
+        "/@app-assets/Jingdong/items/i_hairoil_d.jpg"
       ],
       "detailImages": [
-        "/@app-assets/Jingdong/items/i_hairoil_d.png",
+        "/@app-assets/Jingdong/items/i_hairoil_d.jpg",
         "/@app-assets/Jingdong/items/i_hairoil.png"
       ],
       "price": 29.9,
@@ -1132,13 +1132,13 @@
       "id": "i_shuiguo",
       "shopId": "shop_hema",
       "title": "混合水果罐头 黄桃橘子梨组合装 即食甜品",
-      "image": "/@app-assets/Jingdong/items/i_watermelon.png",
+      "image": "/@app-assets/Jingdong/items/i_watermelon.jpg",
       "gallery": [
-        "/@app-assets/Jingdong/items/i_watermelon.png",
-        "/@app-assets/Jingdong/items/i_watermelon_d.png"
+        "/@app-assets/Jingdong/items/i_watermelon.jpg",
+        "/@app-assets/Jingdong/items/i_watermelon_d.jpg"
       ],
       "detailImages": [
-        "/@app-assets/Jingdong/items/i_watermelon.png"
+        "/@app-assets/Jingdong/items/i_watermelon.jpg"
       ],
       "price": 45.8,
       "originPrice": 79,
@@ -1175,13 +1175,13 @@
       "id": "i_snack",
       "shopId": "shop_wang",
       "title": "先用后付零食大礼包 薯片坚果肉干组合装",
-      "image": "/@app-assets/Jingdong/items/i_zhacai.png",
+      "image": "/@app-assets/Jingdong/items/i_zhacai.jpg",
       "gallery": [
-        "/@app-assets/Jingdong/items/i_zhacai.png",
-        "/@app-assets/Jingdong/items/i_zhacai_d.png"
+        "/@app-assets/Jingdong/items/i_zhacai.jpg",
+        "/@app-assets/Jingdong/items/i_zhacai_d.jpg"
       ],
       "detailImages": [
-        "/@app-assets/Jingdong/items/i_zhacai.png"
+        "/@app-assets/Jingdong/items/i_zhacai.jpg"
       ],
       "price": 59.9,
       "originPrice": 99,
@@ -1218,13 +1218,13 @@
       "id": "i_apple_set",
       "shopId": "shop_hema",
       "title": "苹果全家桶套装 新鲜水果礼盒 富士红富士组合",
-      "image": "/@app-assets/Jingdong/items/i_watermelon.png",
+      "image": "/@app-assets/Jingdong/items/i_watermelon.jpg",
       "gallery": [
-        "/@app-assets/Jingdong/items/i_watermelon.png",
-        "/@app-assets/Jingdong/items/i_watermelon_d.png"
+        "/@app-assets/Jingdong/items/i_watermelon.jpg",
+        "/@app-assets/Jingdong/items/i_watermelon_d.jpg"
       ],
       "detailImages": [
-        "/@app-assets/Jingdong/items/i_watermelon.png"
+        "/@app-assets/Jingdong/items/i_watermelon.jpg"
       ],
       "price": 89.9,
       "originPrice": 129,
@@ -1264,7 +1264,7 @@
       "image": "/@app-assets/Jingdong/items/i_dumpling.png",
       "gallery": [
         "/@app-assets/Jingdong/items/i_dumpling.png",
-        "/@app-assets/Jingdong/items/i_dumpling_d.png"
+        "/@app-assets/Jingdong/items/i_dumpling_d.jpg"
       ],
       "detailImages": [
         "/@app-assets/Jingdong/items/i_dumpling.png"
@@ -1307,10 +1307,10 @@
       "image": "/@app-assets/Jingdong/items/i_hairoil.png",
       "gallery": [
         "/@app-assets/Jingdong/items/i_hairoil.png",
-        "/@app-assets/Jingdong/items/i_hairoil_d.png"
+        "/@app-assets/Jingdong/items/i_hairoil_d.jpg"
       ],
       "detailImages": [
-        "/@app-assets/Jingdong/items/i_hairoil_d.png",
+        "/@app-assets/Jingdong/items/i_hairoil_d.jpg",
         "/@app-assets/Jingdong/items/i_hairoil.png"
       ],
       "price": 129,
@@ -1362,10 +1362,10 @@
       "image": "/@app-assets/Jingdong/items/i_hairoil.png",
       "gallery": [
         "/@app-assets/Jingdong/items/i_hairoil.png",
-        "/@app-assets/Jingdong/items/i_hairoil_d.png"
+        "/@app-assets/Jingdong/items/i_hairoil_d.jpg"
       ],
       "detailImages": [
-        "/@app-assets/Jingdong/items/i_hairoil_d.png",
+        "/@app-assets/Jingdong/items/i_hairoil_d.jpg",
         "/@app-assets/Jingdong/items/i_hairoil.png"
       ],
       "price": 219,
@@ -1451,10 +1451,10 @@
       "image": "/@app-assets/Jingdong/items/i_water.png",
       "gallery": [
         "/@app-assets/Jingdong/items/i_water.png",
-        "/@app-assets/Jingdong/items/i_water_d.png"
+        "/@app-assets/Jingdong/items/i_water_d.jpg"
       ],
       "detailImages": [
-        "/@app-assets/Jingdong/items/i_water_d.png",
+        "/@app-assets/Jingdong/items/i_water_d.jpg",
         "/@app-assets/Jingdong/items/i_water.png"
       ],
       "price": 31.9,
@@ -1577,7 +1577,7 @@
       "rating": 5,
       "content": "电脑收到,整体非常满意!外观简约大气,金属机身质感很好,日常通勤携带无压力。",
       "images": [
-        "/@app-assets/Jingdong/items/i_thinkbook_d.png"
+        "/@app-assets/Jingdong/items/i_thinkbook_d.jpg"
       ],
       "tags": [
         "开机飞快"
@@ -2319,7 +2319,7 @@
         },
         {
           "name": "咖啡",
-          "icon": "/@app-assets/Jingdong/items/i_coffee.png"
+          "icon": "/@app-assets/Jingdong/items/i_coffee.jpg"
         },
         {
           "name": "纯净水",
@@ -2327,7 +2327,7 @@
         },
         {
           "name": "榨菜",
-          "icon": "/@app-assets/Jingdong/items/i_zhacai.png"
+          "icon": "/@app-assets/Jingdong/items/i_zhacai.jpg"
         },
         {
           "name": "抽纸",
@@ -2341,7 +2341,7 @@
       "children": [
         {
           "name": "西瓜",
-          "icon": "/@app-assets/Jingdong/items/i_watermelon.png"
+          "icon": "/@app-assets/Jingdong/items/i_watermelon.jpg"
         },
         {
           "name": "水饺",
@@ -2359,7 +2359,7 @@
         },
         {
           "name": "背包",
-          "icon": "/@app-assets/Jingdong/items/i_backpack.png"
+          "icon": "/@app-assets/Jingdong/items/i_backpack.jpg"
         }
       ]
     },
@@ -2410,7 +2410,7 @@
       "kind": "restaurant",
       "name": "百尖山饺子馆(示范路店)",
       "logo": "/@app-assets/Jingdong/items/i_dumpling.png",
-      "cover": "/@app-assets/Jingdong/items/i_dumpling_d.png",
+      "cover": "/@app-assets/Jingdong/items/i_dumpling_d.jpg",
       "rating": 4.9,
       "sold": "已售1万+",
       "eta": "31分钟达",
@@ -2485,7 +2485,7 @@
         {
           "id": "d5",
           "name": "招牌牛肉汤 1份",
-          "image": "/@app-assets/Jingdong/items/i_coffee.png",
+          "image": "/@app-assets/Jingdong/items/i_coffee.jpg",
           "price": 12.5,
           "originPrice": 20,
           "sold": "已售800+",
@@ -2498,7 +2498,7 @@
       "kind": "super",
       "name": "盒马鲜生(示范广场店)",
       "logo": "/@app-assets/Jingdong/logos/l_hema.png",
-      "cover": "/@app-assets/Jingdong/items/i_watermelon_d.png",
+      "cover": "/@app-assets/Jingdong/items/i_watermelon_d.jpg",
       "rating": 4.8,
       "sold": "已售100万+",
       "eta": "33分钟达",
@@ -2524,7 +2524,7 @@
         {
           "id": "h2",
           "name": "乌江 脆口榨菜丝 佐餐开胃组合装",
-          "image": "/@app-assets/Jingdong/items/i_zhacai.png",
+          "image": "/@app-assets/Jingdong/items/i_zhacai.jpg",
           "price": 7.9,
           "originPrice": 12.9,
           "sold": "已售1000+",
@@ -2533,7 +2533,7 @@
         {
           "id": "h3",
           "name": "瑞幸 挂耳现磨咖啡 冰美式",
-          "image": "/@app-assets/Jingdong/items/i_coffee.png",
+          "image": "/@app-assets/Jingdong/items/i_coffee.jpg",
           "price": 8.9,
           "originPrice": 14.71,
           "sold": "已售3000+",
@@ -2560,7 +2560,7 @@
         {
           "id": "h6",
           "name": "麒麟西瓜 8424 单个装",
-          "image": "/@app-assets/Jingdong/items/i_watermelon.png",
+          "image": "/@app-assets/Jingdong/items/i_watermelon.jpg",
           "price": 29.9,
           "originPrice": 45,
           "sold": "已售2万+",
@@ -2569,7 +2569,7 @@
         {
           "id": "h2b",
           "name": "乌江 加量装",
-          "image": "/@app-assets/Jingdong/items/i_zhacai.png",
+          "image": "/@app-assets/Jingdong/items/i_zhacai.jpg",
           "price": 9.18,
           "originPrice": 11.93,
           "sold": "已售274",
@@ -2578,7 +2578,7 @@
         {
           "id": "h6b",
           "name": "麒麟西瓜 精选装",
-          "image": "/@app-assets/Jingdong/items/i_watermelon.png",
+          "image": "/@app-assets/Jingdong/items/i_watermelon.jpg",
           "price": 34.48,
           "originPrice": 44.82,
           "sold": "已售274",
@@ -2596,7 +2596,7 @@
         {
           "id": "h3b",
           "name": "瑞幸 整箱装",
-          "image": "/@app-assets/Jingdong/items/i_coffee.png",
+          "image": "/@app-assets/Jingdong/items/i_coffee.jpg",
           "price": 10.33,
           "originPrice": 13.43,
           "sold": "已售274",
@@ -2618,7 +2618,7 @@
       "kind": "super",
       "name": "京东七鲜(示范科技园店)",
       "logo": "/@app-assets/Jingdong/logos/l_qixian.png",
-      "cover": "/@app-assets/Jingdong/items/i_watermelon_d.png",
+      "cover": "/@app-assets/Jingdong/items/i_watermelon_d.jpg",
       "rating": 4.9,
       "sold": "已售50万+",
       "eta": "29分钟达",
@@ -2634,7 +2634,7 @@
         {
           "id": "q1",
           "name": "麒麟西瓜 8424 单个装 约5斤",
-          "image": "/@app-assets/Jingdong/items/i_watermelon.png",
+          "image": "/@app-assets/Jingdong/items/i_watermelon.jpg",
           "price": 26.9,
           "originPrice": 42,
           "sold": "已售1万+",
@@ -2661,7 +2661,7 @@
         {
           "id": "q4",
           "name": "瑞幸 挂耳现磨咖啡 冰美式",
-          "image": "/@app-assets/Jingdong/items/i_coffee.png",
+          "image": "/@app-assets/Jingdong/items/i_coffee.jpg",
           "price": 9.9,
           "originPrice": 19.9,
           "sold": "已售2万+",
@@ -2679,7 +2679,7 @@
         {
           "id": "q6",
           "name": "乌江 脆口榨菜丝 组合装",
-          "image": "/@app-assets/Jingdong/items/i_zhacai.png",
+          "image": "/@app-assets/Jingdong/items/i_zhacai.jpg",
           "price": 6.9,
           "originPrice": 12.9,
           "sold": "已售4000+",
@@ -2688,7 +2688,7 @@
         {
           "id": "q6b",
           "name": "乌江 热销款",
-          "image": "/@app-assets/Jingdong/items/i_zhacai.png",
+          "image": "/@app-assets/Jingdong/items/i_zhacai.jpg",
           "price": 8.04,
           "originPrice": 10.45,
           "sold": "已售274",
@@ -2697,7 +2697,7 @@
         {
           "id": "q1b",
           "name": "麒麟西瓜 精选装",
-          "image": "/@app-assets/Jingdong/items/i_watermelon.png",
+          "image": "/@app-assets/Jingdong/items/i_watermelon.jpg",
           "price": 31.03,
           "originPrice": 40.34,
           "sold": "已售274",
@@ -2762,7 +2762,7 @@
         {
           "id": "y2",
           "name": "乌江 榨菜 佐餐开胃 组合装",
-          "image": "/@app-assets/Jingdong/items/i_zhacai.png",
+          "image": "/@app-assets/Jingdong/items/i_zhacai.jpg",
           "price": 7.5,
           "originPrice": 12.9,
           "sold": "已售6000+",
@@ -2789,7 +2789,7 @@
         {
           "id": "y5",
           "name": "麒麟西瓜 8424 单个装",
-          "image": "/@app-assets/Jingdong/items/i_watermelon.png",
+          "image": "/@app-assets/Jingdong/items/i_watermelon.jpg",
           "price": 31.9,
           "originPrice": 45,
           "sold": "已售5000+",
@@ -2807,7 +2807,7 @@
         {
           "id": "y2b",
           "name": "乌江 特惠装",
-          "image": "/@app-assets/Jingdong/items/i_zhacai.png",
+          "image": "/@app-assets/Jingdong/items/i_zhacai.jpg",
           "price": 8.72,
           "originPrice": 11.34,
           "sold": "已售274",
@@ -2843,7 +2843,7 @@
         {
           "id": "y5b",
           "name": "麒麟西瓜 精选装",
-          "image": "/@app-assets/Jingdong/items/i_watermelon.png",
+          "image": "/@app-assets/Jingdong/items/i_watermelon.jpg",
           "price": 36.78,
           "originPrice": 47.81,
           "sold": "已售274",
@@ -2856,7 +2856,7 @@
       "kind": "super",
       "name": "全家便利店(示范路店)",
       "logo": "/@app-assets/Jingdong/logos/l_family.png",
-      "cover": "/@app-assets/Jingdong/items/i_coffee_d.png",
+      "cover": "/@app-assets/Jingdong/items/i_coffee_d.jpg",
       "rating": 4.7,
       "sold": "已售20万+",
       "eta": "15分钟达",
@@ -2872,7 +2872,7 @@
         {
           "id": "f1",
           "name": "瑞幸 冰美式咖啡 大杯",
-          "image": "/@app-assets/Jingdong/items/i_coffee.png",
+          "image": "/@app-assets/Jingdong/items/i_coffee.jpg",
           "price": 9.9,
           "originPrice": 16,
           "sold": "已售3万+",
@@ -2917,7 +2917,7 @@
         {
           "id": "f1b",
           "name": "瑞幸 双份",
-          "image": "/@app-assets/Jingdong/items/i_coffee.png",
+          "image": "/@app-assets/Jingdong/items/i_coffee.jpg",
           "price": 11.48,
           "originPrice": 14.92,
           "sold": "已售274",
@@ -2957,7 +2957,7 @@
       "kind": "super",
       "name": "屈臣氏(示范广场店)",
       "logo": "/@app-assets/Jingdong/logos/l_watsons.png",
-      "cover": "/@app-assets/Jingdong/items/i_hairoil_d.png",
+      "cover": "/@app-assets/Jingdong/items/i_hairoil_d.jpg",
       "rating": 4.5,
       "sold": "已售10万+",
       "eta": "40分钟达",

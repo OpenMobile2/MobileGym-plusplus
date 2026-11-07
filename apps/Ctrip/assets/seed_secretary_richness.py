@@ -13,8 +13,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1] / "data" / "defaults.json"
 
 IMGS = {
-    "atour": "/@app-assets/Ctrip/gen/hotel_atour.png",
-    "atour_lobby": "/@app-assets/Ctrip/gen/hotel_atour_lobby.png",
+    "atour": "/@app-assets/Ctrip/gen/hotel_atour.jpg",
+    "atour_lobby": "/@app-assets/Ctrip/gen/hotel_atour_lobby.jpg",
     "atour_room": "/@app-assets/Ctrip/gen/hotel_atour_room.png",
     "quanji": "/@app-assets/Ctrip/gen/hotel_quanji.png",
     "quanji_room": "/@app-assets/Ctrip/gen/hotel_quanji_room.png",
@@ -80,7 +80,7 @@ def review(hid: str, user: str, content: str) -> list[dict]:
         "date": "2026年06月入住",
         "roomType": "大床房",
         "content": content,
-        "images": ["/@app-assets/Ctrip/gen/review_room.png"],
+        "images": ["/@app-assets/Ctrip/gen/review_room.jpg"],
     }]
 
 

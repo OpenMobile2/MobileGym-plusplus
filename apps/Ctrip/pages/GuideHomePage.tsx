@@ -5,11 +5,11 @@ import { useCtripStrings } from '../hooks/useCtripStrings';
 import { Img, Price, TopBar } from '../components/ui';
 
 const CITY_GUIDES = [
-  { city: '上海', image: '/@app-assets/Ctrip/gen/city_shanghai.png', subtitleKey: 'guideShanghai' as const },
-  { city: '杭州', image: '/@app-assets/Ctrip/gen/scene_westlake.png', subtitleKey: 'guideHangzhou' as const },
-  { city: '成都', image: '/@app-assets/Ctrip/gen/city_chengdu.png', subtitleKey: 'guideChengdu' as const },
-  { city: '重庆', image: '/@app-assets/Ctrip/gen/city_chongqing.png', subtitleKey: 'guideChongqing' as const },
-  { city: '三亚', image: '/@app-assets/Ctrip/gen/city_sanya.png', subtitleKey: 'guideSanya' as const },
+  { city: '上海', image: '/@app-assets/Ctrip/gen/city_shanghai.jpg', subtitleKey: 'guideShanghai' as const },
+  { city: '杭州', image: '/@app-assets/Ctrip/gen/scene_westlake.jpg', subtitleKey: 'guideHangzhou' as const },
+  { city: '成都', image: '/@app-assets/Ctrip/gen/city_chengdu.jpg', subtitleKey: 'guideChengdu' as const },
+  { city: '重庆', image: '/@app-assets/Ctrip/gen/city_chongqing.jpg', subtitleKey: 'guideChongqing' as const },
+  { city: '三亚', image: '/@app-assets/Ctrip/gen/city_sanya.jpg', subtitleKey: 'guideSanya' as const },
 ] as const;
 
 export default function GuideHomePage() {
@@ -22,7 +22,7 @@ export default function GuideHomePage() {
       <TopBar title={s.guideTitle} />
       <div className="flex-1 overflow-y-auto pb-4" data-scroll-container="main" data-scroll-direction="vertical">
         <div className="relative mx-2 mt-2 h-40 overflow-hidden rounded-2xl">
-          <Img src="/@app-assets/Ctrip/gen/scene_huangshan.png" alt={s.guideHeroTitle} className="h-full w-full object-cover" />
+          <Img src="/@app-assets/Ctrip/gen/scene_huangshan.jpg" alt={s.guideHeroTitle} className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
           <div className="absolute bottom-4 left-4 text-white">
             <div className="text-[22px] font-bold">{s.guideHeroTitle}</div>

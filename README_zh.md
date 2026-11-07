@@ -3,15 +3,7 @@
 <p align="center">
   <a href="README.md"><b>English</b></a>
   &nbsp;·&nbsp;
-  <a href="https://os-copilot.github.io/OpenMobile2-Home"><b>主页</b></a>
-  &nbsp;·&nbsp;
-  <a href="https://github.com/OpenMobile2/OpenMobile2-Code"><b>智能体代码</b></a>
-  &nbsp;·&nbsp;
-  <a href="https://huggingface.co/datasets/OpenMobile-2/OpenMobile-Data"><b>数据集</b></a>
-  &nbsp;·&nbsp;
-  <a href="https://huggingface.co/OpenMobile-2/OpenMobile-27B"><b>模型</b></a>
-  &nbsp;·&nbsp;
-  <a href="https://mobilegym-mock-production.up.railway.app"><b>打开手机</b></a>
+  <a href="#演示"><b>演示</b></a>
 </p>
 
 <p align="center">
@@ -19,6 +11,14 @@
   <a href="bench_env/benchmark/official.json"><img alt="215 题" src="https://img.shields.io/badge/bench-215%20tasks-111111.svg"></a>
   <a href="#这部手机"><img alt="63 个客户端" src="https://img.shields.io/badge/clients-63-111111.svg"></a>
 </p>
+
+## 演示
+
+<p align="center">
+  <video src="docs/demo/demo.mp4" controls muted width="780"></video>
+</p>
+
+如果播放器没有加载，直接打开 [`docs/demo/demo.mp4`](docs/demo/demo.mp4)（42 秒）。前半段是这部手机本身，后半段是一个智能体用点击和应用自带工具完成一道题。
 
 ## 排行榜
 
@@ -124,7 +124,7 @@
 
 **MobileGym++** 是一部在浏览器里运行的手机，因此这些流程可以重置、重放，也可以并行跑很多部。它在 [MobileGym](https://arxiv.org/abs/2605.26114) 上继续做了 35 个新的商业风格应用，补上了明确的跨应用机制，并试验了一种新的用法：应用在图形界面旁边，把自己的一部分功能暴露成工具。智能体看到的是屏幕像素，没有无障碍树，也不能直接读取业务状态。整机状态可以完整序列化，所以每一次训练或评测都能从同一份快照开始。
 
-这个仓库就是这部手机，加上在它上面的 **MobileGym++ Bench**：215 道题，每题由程序检查应用状态。训练轨迹、安卓模拟器里的应用，以及发布的模型，在 [OpenMobile2](https://github.com/OpenMobile2/OpenMobile2-Code)。
+这个仓库就是这部手机，加上在它上面的 **MobileGym++ Bench**：215 道题，每题由程序检查应用状态。训练轨迹、安卓模拟器里的应用，以及模型，随论文另行发布。
 
 ## 两条路，一份状态
 
@@ -146,7 +146,7 @@
   <img src="docs/images/app-coverage.png" alt="应用覆盖。上面的模拟器手机是 63 个应用，就是这个仓库。下面的安卓模拟器是 62 个应用，不在这个仓库里。每一格代表两个应用。圆点表示该应用暴露了自带工具。" width="720">
 </p>
 
-上面那部是这个仓库。下面那部是随 OpenMobile2 发布的安卓模拟器，那些应用不在这次克隆里。每一格代表两个应用。圆点表示该应用暴露了自带工具。
+上面那部是这个仓库。下面那部是随论文发布的安卓模拟器，那些应用不在这个仓库里。每一格代表两个应用。圆点表示该应用暴露了自带工具。
 
 每个客户端保管自己的业务对象，例如订单、账单、行程、消息，并随着操作变化。剪贴板、应用间分享、支付跳转和媒体选择把它们连起来，所以一条流程可以离开一个应用，写进另一个应用。整机可以做成快照再恢复，训练回合和评测因此从同一处出发。
 
@@ -216,12 +216,12 @@
 需要 Node.js 22 或更新版本。手机只需要这一条命令。终端不要关，浏览器打开 <http://127.0.0.1:3000>。
 
 ```bash
-git clone https://github.com/OpenMobile2/MobileGym-plusplus.git
-cd MobileGym-plusplus
+# 在本页下载仓库 ZIP 并解压，然后：
+cd <解压后的目录>
 zsh scripts/start_phone.sh
 ```
 
-脚本第一次会安装 Node 依赖，并从 `https://cdn.mobilegym.dev` 加载壁纸，和线上那部手机是同一处。215 道题不需要地图、天气或助手的密钥。
+脚本第一次会安装 Node 依赖，恢复几个以压缩形式存放的大数据文件，并从 `https://cdn.mobilegym.dev` 加载壁纸和主题。215 道题不需要地图、天气或助手的密钥。
 
 ## 2. 用你的模型打分
 
@@ -246,7 +246,7 @@ zsh bench_env/benchmark/run.sh \
 
 `--mode gui_only` 仍是这 215 题和同一套检查器，只是关掉应用自带工具。默认协议是 `qwen35_session`：系统提示和题目只发一次，`tools` 保持 `mobile_use`，只留最近 3 张截图。模型名字会选适配：Qwen、Gemini、Kimi K3、DeepSeek 或 GLM。跑完会写下 `results.jsonl` 和 `summary.json`。
 
-OpenMobile2-Code 也可以评这部手机。本仓库的 `scripts/start_phone.sh` 不要关，再到 `MobileGymPP/` 里跑 `eval_bench215.py`，`--mock-root` 指到本仓库，`--env-url http://127.0.0.1:3000`。它读的题单是 `bench215/official.json`。协议用 `--runtime qwen35_session`。并行很多路时，用 `scripts/server/start_nginx_gateway.sh`，做法在 [`docs/getting-started.md`](docs/getting-started.md)。上面的 Vite 是单进程。
+随论文发布的智能体代码也可以评这部手机。本仓库的 `scripts/start_phone.sh` 不要关，再到 `MobileGymPP/` 里跑 `eval_bench215.py`，`--mock-root` 指到本仓库，`--env-url http://127.0.0.1:3000`。它读的题单是 `bench215/official.json`。协议用 `--runtime qwen35_session`。并行很多路时，用 `scripts/server/start_nginx_gateway.sh`，做法在 [`docs/getting-started.md`](docs/getting-started.md)。上面的 Vite 是单进程。
 
 ## 许可
 

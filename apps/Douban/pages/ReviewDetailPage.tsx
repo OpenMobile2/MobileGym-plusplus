@@ -19,7 +19,7 @@ import { Sheet } from '../components/Sheet';
 
 // 节点: review.detail —— 影评/书评/乐评详情(5子tab详情模板 review 实例 + 有用/没用互斥气泡)。
 // evidence: frame:f60ef9@t0085/t0087/t0088/t0090
-const SEED_IMG = '/@app-assets/Douban/images/bc_photo1.png';
+const SEED_IMG = '/@app-assets/Douban/images/bc_photo1.jpg';
 
 export default function ReviewDetailPage() {
   const { bindBack, bindTap, back } = useDoubanGestures();

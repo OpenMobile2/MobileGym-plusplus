@@ -6,6 +6,8 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
 
+zsh scripts/unpack_large_files.sh
+
 if [[ ! -d node_modules ]]; then
   npm install
 fi

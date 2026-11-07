@@ -43,18 +43,18 @@ STYLE_ILLO = "扁平风矢量插画,圆润可爱,蓝白主色调,干净纯色背
 # 输出相对路径 → prompt
 ASSETS = {
     # 商品图(包裹/购物订单/瀑布流/购物券)
-    "products/doupi_roll.png": f"四包彩色包装的即食鸡胸肉豆皮卷代餐零食组合平铺,{STYLE_PRODUCT}",
+    "products/doupi_roll.jpg": f"四包彩色包装的即食鸡胸肉豆皮卷代餐零食组合平铺,{STYLE_PRODUCT}",
     "products/chili_sauce.png": f"一瓶玻璃罐装红油辣椒酱,金属旋盖,酱色浓郁,{STYLE_PRODUCT}",
     "products/corn_sausage.png": f"一排玉米味火腿肠,金黄色包装,整齐排列,{STYLE_PRODUCT}",
     "products/berry_cake.png": f"盒装蓝莓夹心小蛋糕,巧克力涂层,独立小包装散落,{STYLE_PRODUCT}",
     "products/magic_cube.png": f"一个炫彩三阶魔方,45度角拍摄,{STYLE_PRODUCT}",
-    "products/veg_snack.png": f"一袋手撕素肉豆干零食,棕红色透明包装,{STYLE_PRODUCT}",
+    "products/veg_snack.jpg": f"一袋手撕素肉豆干零食,棕红色透明包装,{STYLE_PRODUCT}",
     "products/hand_fan.png": f"一台星云白色手持小风扇,便携圆柱形,{STYLE_PRODUCT}",
     "products/plant_lucky.png": f"迷你富贵竹盆栽,青绿色陶瓷圆盆,桌面绿植,{STYLE_PRODUCT}",
     "products/plant_persimmon.png": f"柿柿如意小盆栽,橙色陶盆,圆叶绿植,{STYLE_PRODUCT}",
     "products/plant_fortune.png": f"发财树水培小盆栽,透明玻璃瓶,室内绿植,{STYLE_PRODUCT}",
     "products/hdd.png": f"一块黑色移动硬盘,磨砂质感,斜角拍摄,{STYLE_PRODUCT}",
-    "products/ear_cushion.png": f"多彩头戴式耳机海绵替换套配件,几只不同颜色排列,{STYLE_PRODUCT}",
+    "products/ear_cushion.jpg": f"多彩头戴式耳机海绵替换套配件,几只不同颜色排列,{STYLE_PRODUCT}",
     # 地图占位
     "maps/map_station.png": "简化城市街区地图插画,浅灰底色白色道路,几处浅蓝水系和浅绿绿地,一条绿色虚线路径连接两个地点,扁平风格,无任何文字无水印无图钉",
     "maps/map_route.png": "中国区域简化地图插画,浅灰蓝配色,一条蓝色曲线路线从西南延伸到东部沿海,扁平地图风格,无任何文字无水印",

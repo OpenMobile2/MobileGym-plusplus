@@ -5,6 +5,7 @@ HERE="$(cd "$(dirname "$0")" && pwd)"
 ROOT="$(cd "$HERE/../.." && pwd)"
 MANIFEST="$HERE/official.json"
 cd "$ROOT"
+zsh scripts/unpack_large_files.sh
 
 PY="${PY:-python3}"
 MODE="hybrid"

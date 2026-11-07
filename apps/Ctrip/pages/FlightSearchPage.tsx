@@ -54,7 +54,7 @@ export default function FlightSearchPage() {
     <div className="flex flex-col h-full bg-[#F5F6F8]">
       <div className="flex-1 overflow-y-auto" data-scroll-container="main" data-scroll-direction="vertical">
         <div className="relative h-[160px] overflow-hidden bg-[#F4472E]">
-          <Img src="/@app-assets/Ctrip/gen/banner_flight.png" className="h-full w-full object-cover" />
+          <Img src="/@app-assets/Ctrip/gen/banner_flight.jpg" className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#C92820]/75 to-transparent" />
           <button {...bindBack({ onTrigger: () => go('tabbar.home-open') })} className="absolute left-3 top-4 h-9 w-9 rounded-full border-none bg-black/20 text-[28px] text-white">‹</button>
           <div className="absolute left-7 top-12 text-white drop-shadow">

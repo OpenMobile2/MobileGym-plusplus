@@ -732,7 +732,7 @@
       "gallery": [
         "/@app-assets/Suning/products/fan-fd30l501.png",
         "/@app-assets/Suning/products/fan-fd30l501_g2.png",
-        "/@app-assets/Suning/products/fan-fd30l501_g3.png"
+        "/@app-assets/Suning/products/fan-fd30l501_g3.jpg"
       ],
       "detailTemplate": "fan",
       "sku": {
@@ -3207,9 +3207,9 @@
           "24小时发货"
         ]
       },
-      "image": "/@app-assets/Suning/products/tissue-jierou-youhua.png",
+      "image": "/@app-assets/Suning/products/tissue-jierou-youhua.jpg",
       "gallery": [
-        "/@app-assets/Suning/products/tissue-jierou-youhua.png"
+        "/@app-assets/Suning/products/tissue-jierou-youhua.jpg"
       ],
       "detailTemplate": "list",
       "sku": {
@@ -3641,11 +3641,11 @@
           "24小时发货"
         ]
       },
-      "image": "/@app-assets/Suning/products/pepsi-mix300.png",
+      "image": "/@app-assets/Suning/products/pepsi-mix300.jpg",
       "gallery": [
-        "/@app-assets/Suning/products/pepsi-mix300.png",
-        "/@app-assets/Suning/products/pepsi-mix300_g2.png",
-        "/@app-assets/Suning/products/pepsi-mix300_g3.png"
+        "/@app-assets/Suning/products/pepsi-mix300.jpg",
+        "/@app-assets/Suning/products/pepsi-mix300_g2.jpg",
+        "/@app-assets/Suning/products/pepsi-mix300_g3.jpg"
       ],
       "detailTemplate": "cola",
       "sku": {
@@ -3708,9 +3708,9 @@
           "24小时发货"
         ]
       },
-      "image": "/@app-assets/Suning/products/food-panpan-bread.png",
+      "image": "/@app-assets/Suning/products/food-panpan-bread.jpg",
       "gallery": [
-        "/@app-assets/Suning/products/food-panpan-bread.png"
+        "/@app-assets/Suning/products/food-panpan-bread.jpg"
       ],
       "detailTemplate": "list",
       "sku": {
@@ -3769,9 +3769,9 @@
           "24小时发货"
         ]
       },
-      "image": "/@app-assets/Suning/products/food-panpan-shousi.png",
+      "image": "/@app-assets/Suning/products/food-panpan-shousi.jpg",
       "gallery": [
-        "/@app-assets/Suning/products/food-panpan-shousi.png"
+        "/@app-assets/Suning/products/food-panpan-shousi.jpg"
       ],
       "detailTemplate": "list",
       "sku": {
@@ -3830,9 +3830,9 @@
           "24小时发货"
         ]
       },
-      "image": "/@app-assets/Suning/products/food-panpan-meiniye.png",
+      "image": "/@app-assets/Suning/products/food-panpan-meiniye.jpg",
       "gallery": [
-        "/@app-assets/Suning/products/food-panpan-meiniye.png"
+        "/@app-assets/Suning/products/food-panpan-meiniye.jpg"
       ],
       "detailTemplate": "list",
       "sku": {
@@ -3953,11 +3953,11 @@
           "48小时内发货"
         ]
       },
-      "image": "/@app-assets/Suning/products/durian-jinzhen.png",
+      "image": "/@app-assets/Suning/products/durian-jinzhen.jpg",
       "gallery": [
-        "/@app-assets/Suning/products/durian-jinzhen.png",
-        "/@app-assets/Suning/products/durian-jinzhen_g2.png",
-        "/@app-assets/Suning/products/durian-jinzhen_g3.png"
+        "/@app-assets/Suning/products/durian-jinzhen.jpg",
+        "/@app-assets/Suning/products/durian-jinzhen_g2.jpg",
+        "/@app-assets/Suning/products/durian-jinzhen_g3.jpg"
       ],
       "detailTemplate": "fresh",
       "sku": {
@@ -5000,7 +5000,7 @@
             "hm": "11:28"
           },
           "images": [
-            "/@app-assets/Suning/products/fan-fd30l501_g3.png"
+            "/@app-assets/Suning/products/fan-fd30l501_g3.jpg"
           ]
         }
       ]
@@ -5138,7 +5138,7 @@
             "hm": "12:20"
           },
           "images": [
-            "/@app-assets/Suning/products/durian-jinzhen_g2.png"
+            "/@app-assets/Suning/products/durian-jinzhen_g2.jpg"
           ]
         },
         {
@@ -5171,7 +5171,7 @@
             "hm": "20:08"
           },
           "images": [
-            "/@app-assets/Suning/products/durian-jinzhen_g3.png"
+            "/@app-assets/Suning/products/durian-jinzhen_g3.jpg"
           ]
         },
         {
@@ -5231,7 +5231,7 @@
             "hm": "13:18"
           },
           "images": [
-            "/@app-assets/Suning/products/pepsi-mix300_g2.png"
+            "/@app-assets/Suning/products/pepsi-mix300_g2.jpg"
           ]
         },
         {
@@ -5540,25 +5540,25 @@
           "id": "np-kitchen",
           "title": "好用不贵的厨具清单,人手一套",
           "views": 97554,
-          "cover": "/@app-assets/Suning/creators/np-kitchen.png"
+          "cover": "/@app-assets/Suning/creators/np-kitchen.jpg"
         },
         {
           "id": "np-sunscreen",
           "title": "夏日防晒好物合集,通勤党必备",
           "views": 76174,
-          "cover": "/@app-assets/Suning/creators/np-sunscreen.png"
+          "cover": "/@app-assets/Suning/creators/np-sunscreen.jpg"
         },
         {
           "id": "np-wok",
           "title": "这口炒锅用了半年,不粘不糊",
           "views": 127378,
-          "cover": "/@app-assets/Suning/creators/np-wok.png"
+          "cover": "/@app-assets/Suning/creators/np-wok.jpg"
         },
         {
           "id": "np-bpm",
           "title": "给爸妈买的血压仪,操作简单读数大",
           "views": 172244,
-          "cover": "/@app-assets/Suning/creators/np-bpm.png"
+          "cover": "/@app-assets/Suning/creators/np-bpm.jpg"
         }
       ]
     },
@@ -5701,7 +5701,7 @@
       "type": "video",
       "title": "65英寸大屏电视怎么选?实测新款画质天花板",
       "creatorId": "creator-yanjiuyuan",
-      "cover": "/@app-assets/Suning/content/cc-changhong-tv.png",
+      "cover": "/@app-assets/Suning/content/cc-changhong-tv.jpg",
       "viewsText": "2.3万次播放",
       "channel": "trend",
       "badge": "03:12",
@@ -5722,7 +5722,7 @@
       "type": "post",
       "title": "加长数据线实测:2米快充不减速",
       "creatorId": "creator-zhenxuanguan",
-      "cover": "/@app-assets/Suning/content/cc-cable.png",
+      "cover": "/@app-assets/Suning/content/cc-cable.jpg",
       "viewsText": "8642阅读",
       "channel": "daily",
       "badge": "9图"
@@ -5743,7 +5743,7 @@
       "type": "video",
       "title": "305升冰柜开箱:一家五口囤货刚好",
       "creatorId": "creator-yanjiuyuan",
-      "cover": "/@app-assets/Suning/content/cc-freezer.png",
+      "cover": "/@app-assets/Suning/content/cc-freezer.jpg",
       "viewsText": "9531次播放",
       "channel": "daily",
       "badge": "04:05",
@@ -5764,7 +5764,7 @@
       "type": "video",
       "title": "保鲜膜怎么选?三款实测对比",
       "creatorId": "creator-xixi",
-      "cover": "/@app-assets/Suning/content/cc-wrap1.png",
+      "cover": "/@app-assets/Suning/content/cc-wrap1.jpg",
       "viewsText": "5104次播放",
       "channel": "food",
       "badge": "03:30"
@@ -5774,7 +5774,7 @@
       "type": "video",
       "title": "一卷保鲜膜的10种收纳妙用",
       "creatorId": "creator-xixi",
-      "cover": "/@app-assets/Suning/content/cc-wrap2.png",
+      "cover": "/@app-assets/Suning/content/cc-wrap2.jpg",
       "viewsText": "4386次播放",
       "channel": "food",
       "badge": "02:10"
@@ -6535,7 +6535,7 @@
         "hm": "08:22"
       },
       "orderId": "order-pepsi-shipping",
-      "image": "/@app-assets/Suning/products/pepsi-mix300.png"
+      "image": "/@app-assets/Suning/products/pepsi-mix300.jpg"
     },
     {
       "id": "msg-await-jierou",
@@ -6559,7 +6559,7 @@
         "hm": "09:31"
       },
       "orderId": "order-jierou-supplier",
-      "image": "/@app-assets/Suning/products/tissue-jierou-youhua.png"
+      "image": "/@app-assets/Suning/products/tissue-jierou-youhua.jpg"
     },
     {
       "id": "msg-refund-prog",
@@ -6571,7 +6571,7 @@
         "hm": "09:29"
       },
       "orderId": "order-jierou-supplier",
-      "image": "/@app-assets/Suning/products/tissue-jierou-youhua.png"
+      "image": "/@app-assets/Suning/products/tissue-jierou-youhua.jpg"
     }
   ],
   "baibuChannel": [

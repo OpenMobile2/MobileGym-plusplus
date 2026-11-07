@@ -6974,12 +6974,12 @@
       "brandName": "暖居生活",
       "category": "home",
       "subCategory": "毛巾浴巾",
-      "image": "/@app-assets/Vipshop/gen/towel_set.png",
+      "image": "/@app-assets/Vipshop/gen/towel_set.jpg",
       "gallery": [
-        "/@app-assets/Vipshop/gen/towel_set.png"
+        "/@app-assets/Vipshop/gen/towel_set.jpg"
       ],
       "detailImages": [
-        "/@app-assets/Vipshop/gen/towel_set.png"
+        "/@app-assets/Vipshop/gen/towel_set.jpg"
       ],
       "price": 79,
       "originPrice": 229,
@@ -7414,12 +7414,12 @@
       "brandName": "眠趣家纺",
       "category": "home",
       "subCategory": "收纳",
-      "image": "/@app-assets/Vipshop/gen/g_home_130.png",
+      "image": "/@app-assets/Vipshop/gen/g_home_130.jpg",
       "gallery": [
-        "/@app-assets/Vipshop/gen/g_home_130.png"
+        "/@app-assets/Vipshop/gen/g_home_130.jpg"
       ],
       "detailImages": [
-        "/@app-assets/Vipshop/gen/g_home_130.png"
+        "/@app-assets/Vipshop/gen/g_home_130.jpg"
       ],
       "price": 59,
       "originPrice": 179,
@@ -7494,12 +7494,12 @@
       "brandName": "眠趣家纺",
       "category": "home",
       "subCategory": "收纳",
-      "image": "/@app-assets/Vipshop/gen/g_home_132.png",
+      "image": "/@app-assets/Vipshop/gen/g_home_132.jpg",
       "gallery": [
-        "/@app-assets/Vipshop/gen/g_home_132.png"
+        "/@app-assets/Vipshop/gen/g_home_132.jpg"
       ],
       "detailImages": [
-        "/@app-assets/Vipshop/gen/g_home_132.png"
+        "/@app-assets/Vipshop/gen/g_home_132.jpg"
       ],
       "price": 79,
       "originPrice": 219,
@@ -48614,7 +48614,7 @@
       "skuDesc": "标准款",
       "content": "和描述一致,正品无疑,物流快。",
       "images": [
-        "/@app-assets/Vipshop/gen/towel_set.png"
+        "/@app-assets/Vipshop/gen/towel_set.jpg"
       ],
       "tag": "买家秀"
     },
@@ -48856,7 +48856,7 @@
       "skuDesc": "标准款",
       "content": "性价比超高,已推荐闺蜜~",
       "images": [
-        "/@app-assets/Vipshop/gen/g_home_130.png"
+        "/@app-assets/Vipshop/gen/g_home_130.jpg"
       ],
       "tag": "买家秀"
     },
@@ -48900,7 +48900,7 @@
       "skuDesc": "标准款",
       "content": "材质厚实,做工细致,很实用。",
       "images": [
-        "/@app-assets/Vipshop/gen/g_home_132.png"
+        "/@app-assets/Vipshop/gen/g_home_132.jpg"
       ],
       "tag": "买家秀"
     },

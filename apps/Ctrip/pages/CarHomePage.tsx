@@ -86,7 +86,7 @@ export default function CarHomePage() {
         )}
 
         <div className="mx-2 mt-2 rounded-xl overflow-hidden relative h-24">
-          <Img src="/@app-assets/Ctrip/gen/banner_car.png" className="w-full h-full object-cover" />
+          <Img src="/@app-assets/Ctrip/gen/banner_car.jpg" className="w-full h-full object-cover" />
           <span className="absolute left-3 top-3 text-white text-[14px] font-semibold drop-shadow">{s.t('新客专享 · 首租立减')}</span>
         </div>
       </div>

@@ -12,7 +12,7 @@ type Tab = 'columns' | 'lecturers' | 'academy';
 const LECTURERS = [
   { name: '叶嘉莹', title: '南开大学中华古典文化研究所所长', avatar: '/@app-assets/Douban/avatars/av_chendanqi.png' },
   { name: '梁永安', title: '复旦大学中文系教授', avatar: '/@app-assets/Douban/avatars/av_god.png' },
-  { name: '赖声川', title: '戏剧导演 · 表演工作坊创始人', avatar: '/@app-assets/Douban/avatars/av_jinse.png' },
+  { name: '赖声川', title: '戏剧导演 · 表演工作坊创始人', avatar: '/@app-assets/Douban/avatars/av_jinse.jpg' },
   { name: '杨立华', title: '北京大学哲学系教授', avatar: '/@app-assets/Douban/avatars/av_jiegeng.png' },
 ];
 

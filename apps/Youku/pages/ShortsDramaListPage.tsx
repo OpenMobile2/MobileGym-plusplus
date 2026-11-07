@@ -26,10 +26,10 @@ function clampPos(p: Pos): Pos {
 }
 
 const PLAY_BY_DRAMA: Record<string, string> = {
-  sd_nixi: '/@app-assets/Youku/shorts/sd_nixi.png',
-  sd_guanjia: '/@app-assets/Youku/shorts/sd_play_a.png',
-  sd_chuanshu: '/@app-assets/Youku/shorts/sd_play_b.png',
-  sd_yinlong: '/@app-assets/Youku/shorts/sd_yinlong.png',
+  sd_nixi: '/@app-assets/Youku/shorts/sd_nixi.jpg',
+  sd_guanjia: '/@app-assets/Youku/shorts/sd_play_a.jpg',
+  sd_chuanshu: '/@app-assets/Youku/shorts/sd_play_b.jpg',
+  sd_yinlong: '/@app-assets/Youku/shorts/sd_yinlong.jpg',
 };
 
 export default function ShortsDramaListPage() {

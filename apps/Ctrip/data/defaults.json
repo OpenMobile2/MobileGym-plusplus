@@ -40,10 +40,10 @@
     {
       "id": "h_atour",
       "name": "杭州西湖湖滨中山北路云栖酒店",
-      "image": "/@app-assets/Ctrip/gen/hotel_atour.png",
+      "image": "/@app-assets/Ctrip/gen/hotel_atour.jpg",
       "gallery": [
-        "/@app-assets/Ctrip/gen/hotel_atour.png",
-        "/@app-assets/Ctrip/gen/hotel_atour_lobby.png",
+        "/@app-assets/Ctrip/gen/hotel_atour.jpg",
+        "/@app-assets/Ctrip/gen/hotel_atour_lobby.jpg",
         "/@app-assets/Ctrip/gen/hotel_atour_room.png"
       ],
       "star": 4,
@@ -127,7 +127,7 @@
         {
           "id": "r_atour_family",
           "name": "家庭亲子房-含双早",
-          "image": "/@app-assets/Ctrip/gen/hotel_atour_lobby.png",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_lobby.jpg",
           "bed": "1张1.8米大床+1张1.2米床",
           "area": "35㎡",
           "occupancy": "3人入住",
@@ -144,7 +144,7 @@
       "image": "/@app-assets/Ctrip/gen/hotel_seaview.png",
       "gallery": [
         "/@app-assets/Ctrip/gen/hotel_seaview.png",
-        "/@app-assets/Ctrip/gen/hotel_atour_lobby.png",
+        "/@app-assets/Ctrip/gen/hotel_atour_lobby.jpg",
         "/@app-assets/Ctrip/gen/hotel_quanji_room.png"
       ],
       "star": 3,
@@ -324,9 +324,9 @@
     {
       "id": "h_icc_junlan",
       "name": "君澜度假酒店(杭州西湖国际会议中心店)",
-      "image": "/@app-assets/Ctrip/gen/hotel_atour.png",
+      "image": "/@app-assets/Ctrip/gen/hotel_atour.jpg",
       "gallery": [
-        "/@app-assets/Ctrip/gen/hotel_atour.png",
+        "/@app-assets/Ctrip/gen/hotel_atour.jpg",
         "/@app-assets/Ctrip/gen/hotel_atour_room.png"
       ],
       "star": 5,
@@ -378,9 +378,9 @@
     {
       "id": "h_icc_marriott",
       "name": "万怡酒店(杭州西湖国际会议中心店)",
-      "image": "/@app-assets/Ctrip/gen/hotel_atour.png",
+      "image": "/@app-assets/Ctrip/gen/hotel_atour.jpg",
       "gallery": [
-        "/@app-assets/Ctrip/gen/hotel_atour.png",
+        "/@app-assets/Ctrip/gen/hotel_atour.jpg",
         "/@app-assets/Ctrip/gen/hotel_atour_room.png"
       ],
       "star": 4,
@@ -432,9 +432,9 @@
     {
       "id": "h_icc_hilton",
       "name": "希尔顿酒店(杭州西湖国际会议中心店)",
-      "image": "/@app-assets/Ctrip/gen/hotel_atour.png",
+      "image": "/@app-assets/Ctrip/gen/hotel_atour.jpg",
       "gallery": [
-        "/@app-assets/Ctrip/gen/hotel_atour.png",
+        "/@app-assets/Ctrip/gen/hotel_atour.jpg",
         "/@app-assets/Ctrip/gen/hotel_atour_room.png"
       ],
       "star": 5,
@@ -486,9 +486,9 @@
     {
       "id": "h_icc_yunqi_east",
       "name": "云栖酒店(杭州西湖国际会议中心东门店)",
-      "image": "/@app-assets/Ctrip/gen/hotel_atour.png",
+      "image": "/@app-assets/Ctrip/gen/hotel_atour.jpg",
       "gallery": [
-        "/@app-assets/Ctrip/gen/hotel_atour.png",
+        "/@app-assets/Ctrip/gen/hotel_atour.jpg",
         "/@app-assets/Ctrip/gen/hotel_atour_room.png"
       ],
       "star": 4,
@@ -756,10 +756,10 @@
     {
       "id": "h_yunqi_icc",
       "name": "云栖酒店(杭州西湖国际会议中心店)",
-      "image": "/@app-assets/Ctrip/gen/hotel_atour.png",
+      "image": "/@app-assets/Ctrip/gen/hotel_atour.jpg",
       "gallery": [
-        "/@app-assets/Ctrip/gen/hotel_atour.png",
-        "/@app-assets/Ctrip/gen/hotel_atour_lobby.png",
+        "/@app-assets/Ctrip/gen/hotel_atour.jpg",
+        "/@app-assets/Ctrip/gen/hotel_atour_lobby.jpg",
         "/@app-assets/Ctrip/gen/hotel_atour_room.png"
       ],
       "star": 4,
@@ -798,7 +798,7 @@
         {
           "id": "r_yunqi_icc_suite",
           "name": "行政套房",
-          "image": "/@app-assets/Ctrip/gen/hotel_atour_lobby.png",
+          "image": "/@app-assets/Ctrip/gen/hotel_atour_lobby.jpg",
           "bed": "1张1.8米大床",
           "area": "48㎡",
           "occupancy": "2人入住",
@@ -866,9 +866,9 @@
     {
       "id": "h_icc_garden",
       "name": "花园酒店(杭州西湖国际会议中心店)",
-      "image": "/@app-assets/Ctrip/gen/hotel_atour.png",
+      "image": "/@app-assets/Ctrip/gen/hotel_atour.jpg",
       "gallery": [
-        "/@app-assets/Ctrip/gen/hotel_atour.png",
+        "/@app-assets/Ctrip/gen/hotel_atour.jpg",
         "/@app-assets/Ctrip/gen/hotel_atour_room.png"
       ],
       "star": 4,
@@ -1013,10 +1013,10 @@
     {
       "id": "h_dahua",
       "name": "杭州西湖湖光饭店",
-      "image": "/@app-assets/Ctrip/gen/hotel_dahua.png",
+      "image": "/@app-assets/Ctrip/gen/hotel_dahua.jpg",
       "gallery": [
-        "/@app-assets/Ctrip/gen/hotel_dahua.png",
-        "/@app-assets/Ctrip/gen/hotel_atour_lobby.png",
+        "/@app-assets/Ctrip/gen/hotel_dahua.jpg",
+        "/@app-assets/Ctrip/gen/hotel_atour_lobby.jpg",
         "/@app-assets/Ctrip/gen/hotel_quanji_room.png"
       ],
       "star": 5,
@@ -1107,10 +1107,10 @@
     {
       "id": "h_homestay",
       "name": "《泉汐》儿科医院附近600米精品民宿",
-      "image": "/@app-assets/Ctrip/gen/hotel_homestay.png",
+      "image": "/@app-assets/Ctrip/gen/hotel_homestay.jpg",
       "gallery": [
-        "/@app-assets/Ctrip/gen/hotel_homestay.png",
-        "/@app-assets/Ctrip/gen/hotel_atour_lobby.png",
+        "/@app-assets/Ctrip/gen/hotel_homestay.jpg",
+        "/@app-assets/Ctrip/gen/hotel_atour_lobby.jpg",
         "/@app-assets/Ctrip/gen/hotel_quanji_room.png"
       ],
       "star": 3,
@@ -1196,10 +1196,10 @@
     {
       "id": "h_chongqing",
       "name": "重庆解放碑云栖酒店",
-      "image": "/@app-assets/Ctrip/gen/hotel_atour.png",
+      "image": "/@app-assets/Ctrip/gen/hotel_atour.jpg",
       "gallery": [
-        "/@app-assets/Ctrip/gen/hotel_atour.png",
-        "/@app-assets/Ctrip/gen/hotel_atour_lobby.png",
+        "/@app-assets/Ctrip/gen/hotel_atour.jpg",
+        "/@app-assets/Ctrip/gen/hotel_atour_lobby.jpg",
         "/@app-assets/Ctrip/gen/hotel_atour_room.png"
       ],
       "star": 4,
@@ -1294,8 +1294,8 @@
       "image": "/@app-assets/Ctrip/gen/hotel_seaview.png",
       "gallery": [
         "/@app-assets/Ctrip/gen/hotel_seaview.png",
-        "/@app-assets/Ctrip/gen/city_sanya.png",
-        "/@app-assets/Ctrip/gen/hotel_homestay.png"
+        "/@app-assets/Ctrip/gen/city_sanya.jpg",
+        "/@app-assets/Ctrip/gen/hotel_homestay.jpg"
       ],
       "star": 4,
       "score": 4.6,
@@ -1382,10 +1382,10 @@
     {
       "id": "h_sh_hyatt",
       "name": "上海外滩望江大酒店",
-      "image": "/@app-assets/Ctrip/gen/hotel_atour.png",
+      "image": "/@app-assets/Ctrip/gen/hotel_atour.jpg",
       "gallery": [
-        "/@app-assets/Ctrip/gen/hotel_atour.png",
-        "/@app-assets/Ctrip/gen/hotel_atour_lobby.png",
+        "/@app-assets/Ctrip/gen/hotel_atour.jpg",
+        "/@app-assets/Ctrip/gen/hotel_atour_lobby.jpg",
         "/@app-assets/Ctrip/gen/hotel_atour_room.png"
       ],
       "star": 5,
@@ -1472,9 +1472,9 @@
     {
       "id": "h_sh_ji",
       "name": "青禾酒店(上海虹桥枢纽店)",
-      "image": "/@app-assets/Ctrip/gen/hotel_atour.png",
+      "image": "/@app-assets/Ctrip/gen/hotel_atour.jpg",
       "gallery": [
-        "/@app-assets/Ctrip/gen/hotel_atour.png"
+        "/@app-assets/Ctrip/gen/hotel_atour.jpg"
       ],
       "star": 3,
       "score": 4.5,
@@ -1559,9 +1559,9 @@
     {
       "id": "h_cd_ifs",
       "name": "成都IFS国际金融中心云栖精选酒店",
-      "image": "/@app-assets/Ctrip/gen/hotel_atour.png",
+      "image": "/@app-assets/Ctrip/gen/hotel_atour.jpg",
       "gallery": [
-        "/@app-assets/Ctrip/gen/hotel_atour.png",
+        "/@app-assets/Ctrip/gen/hotel_atour.jpg",
         "/@app-assets/Ctrip/gen/hotel_atour_room.png"
       ],
       "star": 4,
@@ -1648,9 +1648,9 @@
     {
       "id": "h_cd_jinjiang",
       "name": "锦程客栈(成都宽窄巷子店)",
-      "image": "/@app-assets/Ctrip/gen/hotel_atour.png",
+      "image": "/@app-assets/Ctrip/gen/hotel_atour.jpg",
       "gallery": [
-        "/@app-assets/Ctrip/gen/hotel_atour.png"
+        "/@app-assets/Ctrip/gen/hotel_atour.jpg"
       ],
       "star": 2,
       "score": 4.3,
@@ -1733,10 +1733,10 @@
     {
       "id": "h_cq_jiefangbei",
       "name": "重庆解放碑威斯汀酒店",
-      "image": "/@app-assets/Ctrip/gen/hotel_atour.png",
+      "image": "/@app-assets/Ctrip/gen/hotel_atour.jpg",
       "gallery": [
-        "/@app-assets/Ctrip/gen/hotel_atour.png",
-        "/@app-assets/Ctrip/gen/hotel_atour_lobby.png"
+        "/@app-assets/Ctrip/gen/hotel_atour.jpg",
+        "/@app-assets/Ctrip/gen/hotel_atour_lobby.jpg"
       ],
       "star": 5,
       "score": 4.9,
@@ -1822,9 +1822,9 @@
     {
       "id": "h_cq_homeinn",
       "name": "如家酒店(重庆洪崖洞店)",
-      "image": "/@app-assets/Ctrip/gen/hotel_atour.png",
+      "image": "/@app-assets/Ctrip/gen/hotel_atour.jpg",
       "gallery": [
-        "/@app-assets/Ctrip/gen/hotel_atour.png"
+        "/@app-assets/Ctrip/gen/hotel_atour.jpg"
       ],
       "star": 2,
       "score": 4.2,
@@ -1907,9 +1907,9 @@
     {
       "id": "h_sy_haitang",
       "name": "三亚海棠湾开维假日酒店",
-      "image": "/@app-assets/Ctrip/gen/hotel_atour.png",
+      "image": "/@app-assets/Ctrip/gen/hotel_atour.jpg",
       "gallery": [
-        "/@app-assets/Ctrip/gen/hotel_atour.png",
+        "/@app-assets/Ctrip/gen/hotel_atour.jpg",
         "/@app-assets/Ctrip/gen/hotel_atour_room.png"
       ],
       "star": 4,
@@ -1995,9 +1995,9 @@
     {
       "id": "h_sy_budget",
       "name": "三亚天涯海角快捷酒店",
-      "image": "/@app-assets/Ctrip/gen/hotel_atour.png",
+      "image": "/@app-assets/Ctrip/gen/hotel_atour.jpg",
       "gallery": [
-        "/@app-assets/Ctrip/gen/hotel_atour.png"
+        "/@app-assets/Ctrip/gen/hotel_atour.jpg"
       ],
       "star": 2,
       "score": 4.1,
@@ -2080,10 +2080,10 @@
     {
       "id": "h_bj_wangfujing",
       "name": "北京王府井希尔顿酒店",
-      "image": "/@app-assets/Ctrip/gen/hotel_atour.png",
+      "image": "/@app-assets/Ctrip/gen/hotel_atour.jpg",
       "gallery": [
-        "/@app-assets/Ctrip/gen/hotel_atour.png",
-        "/@app-assets/Ctrip/gen/hotel_atour_lobby.png"
+        "/@app-assets/Ctrip/gen/hotel_atour.jpg",
+        "/@app-assets/Ctrip/gen/hotel_atour_lobby.jpg"
       ],
       "star": 5,
       "score": 4.8,
@@ -2169,9 +2169,9 @@
     {
       "id": "h_bj_homeinn",
       "name": "如家酒店(北京南锣鼓巷店)",
-      "image": "/@app-assets/Ctrip/gen/hotel_atour.png",
+      "image": "/@app-assets/Ctrip/gen/hotel_atour.jpg",
       "gallery": [
-        "/@app-assets/Ctrip/gen/hotel_atour.png"
+        "/@app-assets/Ctrip/gen/hotel_atour.jpg"
       ],
       "star": 2,
       "score": 4.3,
@@ -2255,10 +2255,10 @@
     {
       "id": "h_cc_atour_jlu",
       "name": "云栖酒店(长春吉林大学前卫南区店)",
-      "image": "/@app-assets/Ctrip/gen/hotel_atour.png",
+      "image": "/@app-assets/Ctrip/gen/hotel_atour.jpg",
       "gallery": [
-        "/@app-assets/Ctrip/gen/hotel_atour.png",
-        "/@app-assets/Ctrip/gen/hotel_atour_lobby.png"
+        "/@app-assets/Ctrip/gen/hotel_atour.jpg",
+        "/@app-assets/Ctrip/gen/hotel_atour_lobby.jpg"
       ],
       "star": 4,
       "score": 4.7,
@@ -2344,9 +2344,9 @@
     {
       "id": "h_cc_quanji",
       "name": "青禾酒店(长春净月潭店)",
-      "image": "/@app-assets/Ctrip/gen/hotel_atour.png",
+      "image": "/@app-assets/Ctrip/gen/hotel_atour.jpg",
       "gallery": [
-        "/@app-assets/Ctrip/gen/hotel_atour.png"
+        "/@app-assets/Ctrip/gen/hotel_atour.jpg"
       ],
       "star": 3,
       "score": 4.5,
@@ -2431,10 +2431,10 @@
     {
       "id": "h_cc_shangri",
       "name": "长春香麓大酒店",
-      "image": "/@app-assets/Ctrip/gen/hotel_atour.png",
+      "image": "/@app-assets/Ctrip/gen/hotel_atour.jpg",
       "gallery": [
-        "/@app-assets/Ctrip/gen/hotel_atour.png",
-        "/@app-assets/Ctrip/gen/hotel_atour_lobby.png"
+        "/@app-assets/Ctrip/gen/hotel_atour.jpg",
+        "/@app-assets/Ctrip/gen/hotel_atour_lobby.jpg"
       ],
       "star": 5,
       "score": 4.8,
@@ -2530,8 +2530,8 @@
         "roomType": "几木大床房-亚朵星球深睡枕Pro",
         "content": "这次来杭州旅行,选的亚朵酒店。离西湖很近,酒店工作人员服务态度也很好,早餐也好吃。房间里的面巾浴巾都是独立包装,用得也放心。下次出门还是会选亚朵。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png",
-          "/@app-assets/Ctrip/gen/review_breakfast.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg",
+          "/@app-assets/Ctrip/gen/review_breakfast.jpg"
         ]
       },
       {
@@ -2544,7 +2544,7 @@
         "roomType": "雅致大床房",
         "content": "地理位置优越,闹中取静,去西湖步行可达。前台热情,环境优雅。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg"
         ]
       }
     ],
@@ -2559,8 +2559,8 @@
         "roomType": "几木大床房-亚朵星球深睡枕Pro",
         "content": "位置在近连云港市连岛景区附近，交通方便，房间干净，下次还会住。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png",
-          "/@app-assets/Ctrip/gen/review_breakfast.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg",
+          "/@app-assets/Ctrip/gen/review_breakfast.jpg"
         ]
       },
       {
@@ -2573,7 +2573,7 @@
         "roomType": "雅致大床房",
         "content": "地理位置优越,闹中取静,去西湖步行可达。前台热情,环境优雅。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg"
         ]
       }
     ],
@@ -2588,8 +2588,8 @@
         "roomType": "几木大床房-亚朵星球深睡枕Pro",
         "content": "位置在西湖湖滨商圈附近，交通方便，房间干净，下次还会住。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png",
-          "/@app-assets/Ctrip/gen/review_breakfast.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg",
+          "/@app-assets/Ctrip/gen/review_breakfast.jpg"
         ]
       },
       {
@@ -2602,7 +2602,7 @@
         "roomType": "雅致大床房",
         "content": "地理位置优越,闹中取静,去西湖步行可达。前台热情,环境优雅。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg"
         ]
       }
     ],
@@ -2617,7 +2617,7 @@
         "roomType": "雅致大床房",
         "content": "就在西湖国际会议中心旁边，开会走路就到，房间干净有早餐。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg"
         ]
       }
     ],
@@ -2632,7 +2632,7 @@
         "roomType": "豪华大床房",
         "content": "就在西湖国际会议中心门口，房间很大，房价也贵一截。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg"
         ]
       }
     ],
@@ -2647,8 +2647,8 @@
         "roomType": "几木大床房-亚朵星球深睡枕Pro",
         "content": "位置在锦江区·近九眼桥附近，交通方便，房间干净，下次还会住。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png",
-          "/@app-assets/Ctrip/gen/review_breakfast.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg",
+          "/@app-assets/Ctrip/gen/review_breakfast.jpg"
         ]
       },
       {
@@ -2661,7 +2661,7 @@
         "roomType": "雅致大床房",
         "content": "地理位置优越,闹中取静,去西湖步行可达。前台热情,环境优雅。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg"
         ]
       }
     ],
@@ -2676,8 +2676,8 @@
         "roomType": "几木大床房-亚朵星球深睡枕Pro",
         "content": "位置在西湖湖滨商圈附近，交通方便，房间干净，下次还会住。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png",
-          "/@app-assets/Ctrip/gen/review_breakfast.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg",
+          "/@app-assets/Ctrip/gen/review_breakfast.jpg"
         ]
       },
       {
@@ -2690,7 +2690,7 @@
         "roomType": "雅致大床房",
         "content": "地理位置优越,闹中取静,去西湖步行可达。前台热情,环境优雅。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg"
         ]
       }
     ],
@@ -2705,8 +2705,8 @@
         "roomType": "几木大床房-亚朵星球深睡枕Pro",
         "content": "位置在闵行区古美一村附近，交通方便，房间干净，下次还会住。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png",
-          "/@app-assets/Ctrip/gen/review_breakfast.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg",
+          "/@app-assets/Ctrip/gen/review_breakfast.jpg"
         ]
       },
       {
@@ -2719,7 +2719,7 @@
         "roomType": "雅致大床房",
         "content": "地理位置优越,闹中取静,去西湖步行可达。前台热情,环境优雅。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg"
         ]
       }
     ],
@@ -2734,8 +2734,8 @@
         "roomType": "几木大床房-亚朵星球深睡枕Pro",
         "content": "位置在渝中区·解放碑附近，交通方便，房间干净，下次还会住。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png",
-          "/@app-assets/Ctrip/gen/review_breakfast.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg",
+          "/@app-assets/Ctrip/gen/review_breakfast.jpg"
         ]
       },
       {
@@ -2748,7 +2748,7 @@
         "roomType": "雅致大床房",
         "content": "地理位置优越,闹中取静,去西湖步行可达。前台热情,环境优雅。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg"
         ]
       }
     ],
@@ -2763,8 +2763,8 @@
         "roomType": "几木大床房-亚朵星球深睡枕Pro",
         "content": "位置在三亚湾附近，交通方便，房间干净，下次还会住。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png",
-          "/@app-assets/Ctrip/gen/review_breakfast.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg",
+          "/@app-assets/Ctrip/gen/review_breakfast.jpg"
         ]
       },
       {
@@ -2777,7 +2777,7 @@
         "roomType": "雅致大床房",
         "content": "地理位置优越,闹中取静,去西湖步行可达。前台热情,环境优雅。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg"
         ]
       }
     ],
@@ -2792,8 +2792,8 @@
         "roomType": "几木大床房-亚朵星球深睡枕Pro",
         "content": "位置在外滩商圈附近，交通方便，房间干净，下次还会住。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png",
-          "/@app-assets/Ctrip/gen/review_breakfast.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg",
+          "/@app-assets/Ctrip/gen/review_breakfast.jpg"
         ]
       },
       {
@@ -2806,7 +2806,7 @@
         "roomType": "雅致大床房",
         "content": "地理位置优越,闹中取静,去西湖步行可达。前台热情,环境优雅。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg"
         ]
       }
     ],
@@ -2821,8 +2821,8 @@
         "roomType": "几木大床房-亚朵星球深睡枕Pro",
         "content": "位置在虹桥枢纽附近，交通方便，房间干净，下次还会住。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png",
-          "/@app-assets/Ctrip/gen/review_breakfast.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg",
+          "/@app-assets/Ctrip/gen/review_breakfast.jpg"
         ]
       },
       {
@@ -2835,7 +2835,7 @@
         "roomType": "雅致大床房",
         "content": "地理位置优越,闹中取静,去西湖步行可达。前台热情,环境优雅。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg"
         ]
       }
     ],
@@ -2850,8 +2850,8 @@
         "roomType": "几木大床房-亚朵星球深睡枕Pro",
         "content": "位置在春熙路商圈附近，交通方便，房间干净，下次还会住。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png",
-          "/@app-assets/Ctrip/gen/review_breakfast.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg",
+          "/@app-assets/Ctrip/gen/review_breakfast.jpg"
         ]
       },
       {
@@ -2864,7 +2864,7 @@
         "roomType": "雅致大床房",
         "content": "地理位置优越,闹中取静,去西湖步行可达。前台热情,环境优雅。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg"
         ]
       }
     ],
@@ -2879,8 +2879,8 @@
         "roomType": "几木大床房-亚朵星球深睡枕Pro",
         "content": "位置在宽窄巷子附近，交通方便，房间干净，下次还会住。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png",
-          "/@app-assets/Ctrip/gen/review_breakfast.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg",
+          "/@app-assets/Ctrip/gen/review_breakfast.jpg"
         ]
       },
       {
@@ -2893,7 +2893,7 @@
         "roomType": "雅致大床房",
         "content": "地理位置优越,闹中取静,去西湖步行可达。前台热情,环境优雅。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg"
         ]
       }
     ],
@@ -2908,8 +2908,8 @@
         "roomType": "几木大床房-亚朵星球深睡枕Pro",
         "content": "位置在解放碑商圈附近，交通方便，房间干净，下次还会住。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png",
-          "/@app-assets/Ctrip/gen/review_breakfast.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg",
+          "/@app-assets/Ctrip/gen/review_breakfast.jpg"
         ]
       },
       {
@@ -2922,7 +2922,7 @@
         "roomType": "雅致大床房",
         "content": "地理位置优越,闹中取静,去西湖步行可达。前台热情,环境优雅。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg"
         ]
       }
     ],
@@ -2937,8 +2937,8 @@
         "roomType": "几木大床房-亚朵星球深睡枕Pro",
         "content": "位置在洪崖洞附近，交通方便，房间干净，下次还会住。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png",
-          "/@app-assets/Ctrip/gen/review_breakfast.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg",
+          "/@app-assets/Ctrip/gen/review_breakfast.jpg"
         ]
       },
       {
@@ -2951,7 +2951,7 @@
         "roomType": "雅致大床房",
         "content": "地理位置优越,闹中取静,去西湖步行可达。前台热情,环境优雅。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg"
         ]
       }
     ],
@@ -2966,8 +2966,8 @@
         "roomType": "几木大床房-亚朵星球深睡枕Pro",
         "content": "位置在海棠湾附近，交通方便，房间干净，下次还会住。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png",
-          "/@app-assets/Ctrip/gen/review_breakfast.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg",
+          "/@app-assets/Ctrip/gen/review_breakfast.jpg"
         ]
       },
       {
@@ -2980,7 +2980,7 @@
         "roomType": "雅致大床房",
         "content": "地理位置优越,闹中取静,去西湖步行可达。前台热情,环境优雅。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg"
         ]
       }
     ],
@@ -2995,8 +2995,8 @@
         "roomType": "几木大床房-亚朵星球深睡枕Pro",
         "content": "位置在天涯区附近，交通方便，房间干净，下次还会住。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png",
-          "/@app-assets/Ctrip/gen/review_breakfast.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg",
+          "/@app-assets/Ctrip/gen/review_breakfast.jpg"
         ]
       },
       {
@@ -3009,7 +3009,7 @@
         "roomType": "雅致大床房",
         "content": "地理位置优越,闹中取静,去西湖步行可达。前台热情,环境优雅。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg"
         ]
       }
     ],
@@ -3024,8 +3024,8 @@
         "roomType": "几木大床房-亚朵星球深睡枕Pro",
         "content": "位置在王府井附近，交通方便，房间干净，下次还会住。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png",
-          "/@app-assets/Ctrip/gen/review_breakfast.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg",
+          "/@app-assets/Ctrip/gen/review_breakfast.jpg"
         ]
       },
       {
@@ -3038,7 +3038,7 @@
         "roomType": "雅致大床房",
         "content": "地理位置优越,闹中取静,去西湖步行可达。前台热情,环境优雅。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg"
         ]
       }
     ],
@@ -3053,8 +3053,8 @@
         "roomType": "几木大床房-亚朵星球深睡枕Pro",
         "content": "位置在南锣鼓巷附近，交通方便，房间干净，下次还会住。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png",
-          "/@app-assets/Ctrip/gen/review_breakfast.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg",
+          "/@app-assets/Ctrip/gen/review_breakfast.jpg"
         ]
       },
       {
@@ -3067,7 +3067,7 @@
         "roomType": "雅致大床房",
         "content": "地理位置优越,闹中取静,去西湖步行可达。前台热情,环境优雅。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg"
         ]
       }
     ],
@@ -3082,8 +3082,8 @@
         "roomType": "几木大床房-亚朵星球深睡枕Pro",
         "content": "位置在前卫南区附近，交通方便，房间干净，下次还会住。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png",
-          "/@app-assets/Ctrip/gen/review_breakfast.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg",
+          "/@app-assets/Ctrip/gen/review_breakfast.jpg"
         ]
       },
       {
@@ -3096,7 +3096,7 @@
         "roomType": "雅致大床房",
         "content": "地理位置优越,闹中取静,去西湖步行可达。前台热情,环境优雅。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg"
         ]
       }
     ],
@@ -3111,8 +3111,8 @@
         "roomType": "几木大床房-亚朵星球深睡枕Pro",
         "content": "位置在净月附近，交通方便，房间干净，下次还会住。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png",
-          "/@app-assets/Ctrip/gen/review_breakfast.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg",
+          "/@app-assets/Ctrip/gen/review_breakfast.jpg"
         ]
       },
       {
@@ -3125,7 +3125,7 @@
         "roomType": "雅致大床房",
         "content": "地理位置优越,闹中取静,去西湖步行可达。前台热情,环境优雅。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg"
         ]
       }
     ],
@@ -3140,8 +3140,8 @@
         "roomType": "几木大床房-亚朵星球深睡枕Pro",
         "content": "位置在西安大路附近，交通方便，房间干净，下次还会住。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png",
-          "/@app-assets/Ctrip/gen/review_breakfast.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg",
+          "/@app-assets/Ctrip/gen/review_breakfast.jpg"
         ]
       },
       {
@@ -3154,7 +3154,7 @@
         "roomType": "雅致大床房",
         "content": "地理位置优越,闹中取静,去西湖步行可达。前台热情,环境优雅。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg"
         ]
       }
     ],
@@ -3169,7 +3169,7 @@
         "roomType": "大床房",
         "content": "就在西湖国际会议中心附近，开会方便，房价要看清楚。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg"
         ]
       }
     ],
@@ -3184,7 +3184,7 @@
         "roomType": "大床房",
         "content": "就在西湖国际会议中心附近，开会方便，房价要看清楚。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg"
         ]
       }
     ],
@@ -3199,7 +3199,7 @@
         "roomType": "大床房",
         "content": "就在西湖国际会议中心附近，开会方便，房价要看清楚。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg"
         ]
       }
     ],
@@ -3214,7 +3214,7 @@
         "roomType": "大床房",
         "content": "就在西湖国际会议中心附近，开会方便，房价要看清楚。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg"
         ]
       }
     ],
@@ -3229,7 +3229,7 @@
         "roomType": "大床房",
         "content": "就在西湖国际会议中心附近，开会方便，房价要看清楚。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg"
         ]
       }
     ],
@@ -3244,7 +3244,7 @@
         "roomType": "大床房",
         "content": "就在西湖国际会议中心附近，开会方便，房价要看清楚。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg"
         ]
       }
     ],
@@ -3259,7 +3259,7 @@
         "roomType": "大床房",
         "content": "就在西湖国际会议中心附近，开会方便，房价要看清楚。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg"
         ]
       }
     ],
@@ -3274,7 +3274,7 @@
         "roomType": "大床房",
         "content": "就在西湖国际会议中心附近，开会方便，房价要看清楚。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg"
         ]
       }
     ],
@@ -3289,7 +3289,7 @@
         "roomType": "大床房",
         "content": "就在西湖国际会议中心附近，开会方便，房价要看清楚。",
         "images": [
-          "/@app-assets/Ctrip/gen/review_room.png"
+          "/@app-assets/Ctrip/gen/review_room.jpg"
         ]
       }
     ]
@@ -6469,10 +6469,10 @@
     {
       "id": "a_disney",
       "name": "上海迪士尼度假区",
-      "image": "/@app-assets/Ctrip/gen/scene_disney.png",
+      "image": "/@app-assets/Ctrip/gen/scene_disney.jpg",
       "gallery": [
-        "/@app-assets/Ctrip/gen/scene_disney.png",
-        "/@app-assets/Ctrip/gen/scene_disney_toy.png"
+        "/@app-assets/Ctrip/gen/scene_disney.jpg",
+        "/@app-assets/Ctrip/gen/scene_disney_toy.jpg"
       ],
       "score": 4.7,
       "reviewCount": "30.5万条点评",
@@ -6511,9 +6511,9 @@
     {
       "id": "a_haichang",
       "name": "上海海昌海洋公园",
-      "image": "/@app-assets/Ctrip/gen/scene_haichang.png",
+      "image": "/@app-assets/Ctrip/gen/scene_haichang.jpg",
       "gallery": [
-        "/@app-assets/Ctrip/gen/scene_haichang.png"
+        "/@app-assets/Ctrip/gen/scene_haichang.jpg"
       ],
       "score": 4.6,
       "reviewCount": "5.5万条点评",
@@ -6546,10 +6546,10 @@
     {
       "id": "a_pearl",
       "name": "东方明珠",
-      "image": "/@app-assets/Ctrip/gen/scene_pearl.png",
+      "image": "/@app-assets/Ctrip/gen/scene_pearl.jpg",
       "gallery": [
-        "/@app-assets/Ctrip/gen/scene_pearl.png",
-        "/@app-assets/Ctrip/gen/scene_bund.png"
+        "/@app-assets/Ctrip/gen/scene_pearl.jpg",
+        "/@app-assets/Ctrip/gen/scene_bund.jpg"
       ],
       "score": 4.7,
       "reviewCount": "17.7万条点评",
@@ -6576,9 +6576,9 @@
     {
       "id": "a_yuyuan",
       "name": "豫园",
-      "image": "/@app-assets/Ctrip/gen/scene_yuyuan.png",
+      "image": "/@app-assets/Ctrip/gen/scene_yuyuan.jpg",
       "gallery": [
-        "/@app-assets/Ctrip/gen/scene_yuyuan.png"
+        "/@app-assets/Ctrip/gen/scene_yuyuan.jpg"
       ],
       "score": 4.7,
       "reviewCount": "5.4万条点评",
@@ -6605,10 +6605,10 @@
     {
       "id": "a_cc_jingyue",
       "name": "净月潭国家森林公园",
-      "image": "/@app-assets/Ctrip/gen/scene_disney.png",
+      "image": "/@app-assets/Ctrip/gen/scene_disney.jpg",
       "gallery": [
-        "/@app-assets/Ctrip/gen/scene_disney.png",
-        "/@app-assets/Ctrip/gen/scene_disney_toy.png"
+        "/@app-assets/Ctrip/gen/scene_disney.jpg",
+        "/@app-assets/Ctrip/gen/scene_disney_toy.jpg"
       ],
       "score": 4.7,
       "reviewCount": "30.5万条点评",
@@ -6745,7 +6745,7 @@
       "status": "unpaid",
       "statusText": "待支付",
       "price": 370,
-      "image": "/@app-assets/Ctrip/gen/hotel_homestay.png"
+      "image": "/@app-assets/Ctrip/gen/hotel_homestay.jpg"
     }
   ],
   "notifications": [

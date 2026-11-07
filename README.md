@@ -3,15 +3,7 @@
 <p align="center">
   <a href="README_zh.md"><b>中文</b></a>
   &nbsp;·&nbsp;
-  <a href="https://os-copilot.github.io/OpenMobile2-Home"><b>Homepage</b></a>
-  &nbsp;·&nbsp;
-  <a href="https://github.com/OpenMobile2/OpenMobile2-Code"><b>Agent code</b></a>
-  &nbsp;·&nbsp;
-  <a href="https://huggingface.co/datasets/OpenMobile-2/OpenMobile-Data"><b>Dataset</b></a>
-  &nbsp;·&nbsp;
-  <a href="https://huggingface.co/OpenMobile-2/OpenMobile-27B"><b>Model</b></a>
-  &nbsp;·&nbsp;
-  <a href="https://mobilegym-mock-production.up.railway.app"><b>Try the phone</b></a>
+  <a href="#demo"><b>Demo</b></a>
 </p>
 
 <p align="center">
@@ -19,6 +11,14 @@
   <a href="bench_env/benchmark/official.json"><img alt="215 tasks" src="https://img.shields.io/badge/bench-215%20tasks-111111.svg"></a>
   <a href="#the-phone"><img alt="63 clients" src="https://img.shields.io/badge/clients-63-111111.svg"></a>
 </p>
+
+## Demo
+
+<p align="center">
+  <video src="docs/demo/demo.mp4" controls muted width="780"></video>
+</p>
+
+If the player does not load, open [`docs/demo/demo.mp4`](docs/demo/demo.mp4) (42 s). It shows the phone itself, then one agent finishing a task with GUI actions and app-native tool calls.
 
 ## Leaderboard
 
@@ -124,7 +124,7 @@ Mobile agents are being asked to finish real workflows on commercial application
 
 **MobileGym++** is a phone that runs in the browser, so those workflows can be reset, replayed, and checked in parallel. It extends [MobileGym](https://arxiv.org/abs/2605.26114) with 35 new commercial-style applications, explicit cross-app mechanisms, and an experimental setting in which an application exposes selected functions as tools beside its GUI. The agent sees screen pixels. There is no accessibility tree, and it cannot read business state directly. Device state is fully serializable, so every episode can start from the same snapshot.
 
-This repository is that phone, together with **MobileGym++ Bench**: 215 tasks, each scored by a programmatic checker over application state. Training trajectories, the Android-emulator playground, and the released model live with [OpenMobile2](https://github.com/OpenMobile2/OpenMobile2-Code).
+This repository is that phone, together with **MobileGym++ Bench**: 215 tasks, each scored by a programmatic checker over application state. Training trajectories, the Android-emulator playground, and the model are released separately with the paper.
 
 ## Two channels, one state
 
@@ -146,7 +146,7 @@ The phone installs **63** clients: **35** built for this release and **28** kept
   <img src="docs/images/app-coverage.png" alt="Application coverage. The simulator phone has 63 apps and is this repository. The emulator phone has 62 apps and is not in this repository. Each square is two applications. Dots mark apps that expose native tools." width="720">
 </p>
 
-The upper phone is this repository. The lower phone is the Android-emulator playground released with OpenMobile2, and those apps are not in this clone. Each square stands for two applications. A dot marks an application that exposes native tools.
+The upper phone is this repository. The lower phone is the Android-emulator playground released with the paper, and those apps are not in this repository. Each square stands for two applications. A dot marks an application that exposes native tools.
 
 Each client keeps its own business objects — orders, bills, itineraries, messages — and those objects change as the agent acts. Clipboard transfer, app-to-app sharing, payment redirection, and media selection connect the clients, so a workflow can leave one application and write into another. The whole device can be snapshotted and restored, which is what makes a training episode and an evaluation run start from the same place.
 
@@ -216,12 +216,12 @@ Open the phone to use the product. Open `bench_env/benchmark/` to score a model.
 Node.js 22 or newer. This is the only command the phone needs. Leave the terminal running and open <http://127.0.0.1:3000>.
 
 ```bash
-git clone https://github.com/OpenMobile2/MobileGym-plusplus.git
-cd MobileGym-plusplus
+# Download this repository as a ZIP from this page and unzip it, then:
+cd <unzipped-folder>
 zsh scripts/start_phone.sh
 ```
 
-The script installs Node packages on the first run and loads wallpapers from `https://cdn.mobilegym.dev`, the same host as the hosted phone. The 215 tasks do not need map, weather, or assistant keys.
+The script installs Node packages on the first run, restores a few large data files that are stored compressed, and loads wallpapers and themes from `https://cdn.mobilegym.dev`. The 215 tasks do not need map, weather, or assistant keys.
 
 ## 2. Score your model
 
@@ -246,7 +246,7 @@ zsh bench_env/benchmark/run.sh \
 
 `--mode gui_only` uses the same 215 tasks and the same checkers, with the app-native tools turned off. With the default protocol the script runs `qwen35_session`: the system prompt and the task are sent once, `tools` stays `mobile_use`, and the last 3 screenshots are kept. Inside that protocol the model name selects the adapter: Qwen, Gemini, Kimi K3, DeepSeek, or GLM. The run writes `results.jsonl` and `summary.json`.
 
-OpenMobile2-Code can score this same phone. Leave `scripts/start_phone.sh` running, then from `MobileGymPP/` run `eval_bench215.py` with `--mock-root` set to this repository and `--env-url http://127.0.0.1:3000`. The task list it reads is `bench215/official.json`. Pass `--runtime qwen35_session` to use the protocol above. For many parallel episodes, use `scripts/server/start_nginx_gateway.sh` as described in [`docs/getting-started.md`](docs/getting-started.md). The Vite server above is one process.
+The agent code released with the paper can score this same phone. Leave `scripts/start_phone.sh` running, then from `MobileGymPP/` run `eval_bench215.py` with `--mock-root` set to this repository and `--env-url http://127.0.0.1:3000`. The task list it reads is `bench215/official.json`. Pass `--runtime qwen35_session` to use the protocol above. For many parallel episodes, use `scripts/server/start_nginx_gateway.sh` as described in [`docs/getting-started.md`](docs/getting-started.md). The Vite server above is one process.
 
 ## License
 

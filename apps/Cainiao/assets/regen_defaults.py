@@ -14,14 +14,14 @@ OUT.parent.mkdir(exist_ok=True)
 
 A = lambda f: f"/@app-assets/Cainiao/{f}"  # noqa: E731
 IMG = {
-    "meat": A("products/doupi_roll.png"),
+    "meat": A("products/doupi_roll.jpg"),
     "sauce": A("products/chili_sauce.png"),
     "sausage": A("products/corn_sausage.png"),
     "cake": A("products/berry_cake.png"),
     "cube": A("products/magic_cube.png"),
-    "snack": A("products/veg_snack.png"),
+    "snack": A("products/veg_snack.jpg"),
     "fan": A("products/hand_fan.png"),
-    "ear": A("products/ear_cushion.png"),
+    "ear": A("products/ear_cushion.jpg"),
     "hdd": A("products/hdd.png"),
     "plant_lucky": A("products/plant_lucky.png"),
     "plant_fortune": A("products/plant_fortune.png"),

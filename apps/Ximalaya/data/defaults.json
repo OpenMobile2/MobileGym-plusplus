@@ -15,7 +15,7 @@
   {
    "id": "a_novel",
    "title": "星河纪元",
-   "cover": "/@app-assets/Ximalaya/covers/a_novel.png",
+   "cover": "/@app-assets/Ximalaya/covers/a_novel.jpg",
    "anchorId": "an_yh",
    "anchorName": "银河之声",
    "category": "小说",
@@ -45,7 +45,7 @@
   {
    "id": "nv01",
    "title": "混沌天尊",
-   "cover": "/@app-assets/Ximalaya/covers/nv01.png",
+   "cover": "/@app-assets/Ximalaya/covers/nv01.jpg",
    "anchorId": "an_cq",
    "anchorName": "苍穹说书",
    "category": "小说",
@@ -75,7 +75,7 @@
   {
    "id": "nv02",
    "title": "万界之门",
-   "cover": "/@app-assets/Ximalaya/covers/nv02.png",
+   "cover": "/@app-assets/Ximalaya/covers/nv02.jpg",
    "anchorId": "an_mj",
    "anchorName": "墨玄居士",
    "category": "小说",
@@ -105,7 +105,7 @@
   {
    "id": "nv03",
    "title": "上古神魔录",
-   "cover": "/@app-assets/Ximalaya/covers/nv03.png",
+   "cover": "/@app-assets/Ximalaya/covers/nv03.jpg",
    "anchorId": "an_jg",
    "anchorName": "九歌",
    "category": "小说",
@@ -135,7 +135,7 @@
   {
    "id": "nv04",
    "title": "九天玄帝",
-   "cover": "/@app-assets/Ximalaya/covers/nv04.png",
+   "cover": "/@app-assets/Ximalaya/covers/nv04.jpg",
    "anchorId": "an_tx",
    "anchorName": "天行",
    "category": "小说",
@@ -165,7 +165,7 @@
   {
    "id": "nv05",
    "title": "灵域苍穹",
-   "cover": "/@app-assets/Ximalaya/covers/nv05.png",
+   "cover": "/@app-assets/Ximalaya/covers/nv05.jpg",
    "anchorId": "an_yy",
    "anchorName": "云隐",
    "category": "小说",
@@ -195,7 +195,7 @@
   {
    "id": "a_myst",
    "title": "迷雾档案馆",
-   "cover": "/@app-assets/Ximalaya/covers/a_myst.png",
+   "cover": "/@app-assets/Ximalaya/covers/a_myst.jpg",
    "anchorId": "an_yx",
    "anchorName": "夜行者",
    "category": "小说",
@@ -225,7 +225,7 @@
   {
    "id": "nm01",
    "title": "暗夜追凶",
-   "cover": "/@app-assets/Ximalaya/covers/nm01.png",
+   "cover": "/@app-assets/Ximalaya/covers/nm01.jpg",
    "anchorId": "an_yx",
    "anchorName": "夜行者",
    "category": "小说",
@@ -255,7 +255,7 @@
   {
    "id": "nm02",
    "title": "第七重密室",
-   "cover": "/@app-assets/Ximalaya/covers/nm02.png",
+   "cover": "/@app-assets/Ximalaya/covers/nm02.jpg",
    "anchorId": "an_bl",
    "anchorName": "白鹿",
    "category": "小说",
@@ -285,7 +285,7 @@
   {
    "id": "nm03",
    "title": "心理罪档案",
-   "cover": "/@app-assets/Ximalaya/covers/nm03.png",
+   "cover": "/@app-assets/Ximalaya/covers/nm03.jpg",
    "anchorId": "an_sj2",
    "anchorName": "深镜",
    "category": "小说",
@@ -315,7 +315,7 @@
   {
    "id": "nm04",
    "title": "幽灵电台",
-   "cover": "/@app-assets/Ximalaya/covers/nm04.png",
+   "cover": "/@app-assets/Ximalaya/covers/nm04.jpg",
    "anchorId": "an_yy2",
    "anchorName": "夜语",
    "category": "小说",
@@ -345,7 +345,7 @@
   {
    "id": "nd01",
    "title": "浮城往事",
-   "cover": "/@app-assets/Ximalaya/covers/nd01.png",
+   "cover": "/@app-assets/Ximalaya/covers/nd01.jpg",
    "anchorId": "an_lc2",
    "anchorName": "临川",
    "category": "小说",
@@ -375,7 +375,7 @@
   {
    "id": "nd02",
    "title": "商海沉浮",
-   "cover": "/@app-assets/Ximalaya/covers/nd02.png",
+   "cover": "/@app-assets/Ximalaya/covers/nd02.jpg",
    "anchorId": "an_lc2",
    "anchorName": "临川",
    "category": "小说",
@@ -465,7 +465,7 @@
   {
    "id": "nd05",
    "title": "青春不散场",
-   "cover": "/@app-assets/Ximalaya/covers/nd05.png",
+   "cover": "/@app-assets/Ximalaya/covers/nd05.jpg",
    "anchorId": "an_nk",
    "anchorName": "南柯",
    "category": "小说",
@@ -495,7 +495,7 @@
   {
    "id": "nr01",
    "title": "锦绣良缘",
-   "cover": "/@app-assets/Ximalaya/covers/nr01.png",
+   "cover": "/@app-assets/Ximalaya/covers/nr01.jpg",
    "anchorId": "an_ws",
    "anchorName": "晚霜",
    "category": "小说",
@@ -525,7 +525,7 @@
   {
    "id": "nr02",
    "title": "穿越时空的爱恋",
-   "cover": "/@app-assets/Ximalaya/covers/nr02.png",
+   "cover": "/@app-assets/Ximalaya/covers/nr02.jpg",
    "anchorId": "an_ws",
    "anchorName": "晚霜",
    "category": "小说",
@@ -615,7 +615,7 @@
   {
    "id": "nw01",
    "title": "江湖夜雨十年灯",
-   "cover": "/@app-assets/Ximalaya/covers/nw01.png",
+   "cover": "/@app-assets/Ximalaya/covers/nw01.jpg",
    "anchorId": "an_xm2",
    "anchorName": "萧鸣",
    "category": "小说",
@@ -645,7 +645,7 @@
   {
    "id": "nw02",
    "title": "剑啸西风",
-   "cover": "/@app-assets/Ximalaya/covers/nw02.png",
+   "cover": "/@app-assets/Ximalaya/covers/nw02.jpg",
    "anchorId": "an_xm2",
    "anchorName": "萧鸣",
    "category": "小说",
@@ -675,7 +675,7 @@
   {
    "id": "nw03",
    "title": "侠骨柔情",
-   "cover": "/@app-assets/Ximalaya/covers/nw03.png",
+   "cover": "/@app-assets/Ximalaya/covers/nw03.jpg",
    "anchorId": "an_fy",
    "anchorName": "风影",
    "category": "小说",
@@ -705,7 +705,7 @@
   {
    "id": "ns01",
    "title": "银河舰队",
-   "cover": "/@app-assets/Ximalaya/covers/ns01.png",
+   "cover": "/@app-assets/Ximalaya/covers/ns01.jpg",
    "anchorId": "an_xy",
    "anchorName": "星渊",
    "category": "小说",
@@ -735,7 +735,7 @@
   {
    "id": "ns02",
    "title": "赛博深渊",
-   "cover": "/@app-assets/Ximalaya/covers/ns02.png",
+   "cover": "/@app-assets/Ximalaya/covers/ns02.jpg",
    "anchorId": "an_xy",
    "anchorName": "星渊",
    "category": "小说",
@@ -765,7 +765,7 @@
   {
    "id": "ns03",
    "title": "时间囚徒",
-   "cover": "/@app-assets/Ximalaya/covers/ns03.png",
+   "cover": "/@app-assets/Ximalaya/covers/ns03.jpg",
    "anchorId": "an_hg",
    "anchorName": "黑洞",
    "category": "小说",
@@ -795,7 +795,7 @@
   {
    "id": "ns04",
    "title": "星际拓荒",
-   "cover": "/@app-assets/Ximalaya/covers/ns04.png",
+   "cover": "/@app-assets/Ximalaya/covers/ns04.jpg",
    "anchorId": "an_hg",
    "anchorName": "黑洞",
    "category": "小说",
@@ -825,7 +825,7 @@
   {
    "id": "ne01",
    "title": "丧尸纪元",
-   "cover": "/@app-assets/Ximalaya/covers/ne01.png",
+   "cover": "/@app-assets/Ximalaya/covers/ne01.jpg",
    "anchorId": "an_hh",
    "anchorName": "灰烬",
    "category": "小说",
@@ -855,7 +855,7 @@
   {
    "id": "ne02",
    "title": "废土行者",
-   "cover": "/@app-assets/Ximalaya/covers/ne02.png",
+   "cover": "/@app-assets/Ximalaya/covers/ne02.jpg",
    "anchorId": "an_hh",
    "anchorName": "灰烬",
    "category": "小说",
@@ -885,7 +885,7 @@
   {
    "id": "ne03",
    "title": "变异黎明",
-   "cover": "/@app-assets/Ximalaya/covers/ne03.png",
+   "cover": "/@app-assets/Ximalaya/covers/ne03.jpg",
    "anchorId": "an_jy",
    "anchorName": "惊蛰",
    "category": "小说",
@@ -915,7 +915,7 @@
   {
    "id": "a_cross",
    "title": "欢乐相声大会",
-   "cover": "/@app-assets/Ximalaya/covers/a_cross.png",
+   "cover": "/@app-assets/Ximalaya/covers/a_cross.jpg",
    "anchorId": "an_dg",
    "anchorName": "逗哏堂",
    "category": "相声评书",
@@ -945,7 +945,7 @@
   {
    "id": "xs01",
    "title": "传统相声精选",
-   "cover": "/@app-assets/Ximalaya/covers/xs01.png",
+   "cover": "/@app-assets/Ximalaya/covers/xs01.jpg",
    "anchorId": "an_dg",
    "anchorName": "逗哏堂",
    "category": "相声评书",
@@ -975,7 +975,7 @@
   {
    "id": "xs02",
    "title": "爆笑单口集",
-   "cover": "/@app-assets/Ximalaya/covers/xs02.png",
+   "cover": "/@app-assets/Ximalaya/covers/xs02.jpg",
    "anchorId": "an_ly",
    "anchorName": "老于",
    "category": "相声评书",
@@ -1005,7 +1005,7 @@
   {
    "id": "xs03",
    "title": "群口相声专场",
-   "cover": "/@app-assets/Ximalaya/covers/xs03.png",
+   "cover": "/@app-assets/Ximalaya/covers/xs03.jpg",
    "anchorId": "an_ly",
    "anchorName": "老于",
    "category": "相声评书",
@@ -1065,7 +1065,7 @@
   {
    "id": "xs05",
    "title": "相声名家名段",
-   "cover": "/@app-assets/Ximalaya/covers/xs05.png",
+   "cover": "/@app-assets/Ximalaya/covers/xs05.jpg",
    "anchorId": "an_dg",
    "anchorName": "逗哏堂",
    "category": "相声评书",
@@ -1095,7 +1095,7 @@
   {
    "id": "xs06",
    "title": "逗你笑翻天",
-   "cover": "/@app-assets/Ximalaya/covers/xs06.png",
+   "cover": "/@app-assets/Ximalaya/covers/xs06.jpg",
    "anchorId": "an_xp",
    "anchorName": "新芽",
    "category": "相声评书",
@@ -1125,7 +1125,7 @@
   {
    "id": "xs07",
    "title": "相声春晚",
-   "cover": "/@app-assets/Ximalaya/covers/xs07.png",
+   "cover": "/@app-assets/Ximalaya/covers/xs07.jpg",
    "anchorId": "an_dg",
    "anchorName": "逗哏堂",
    "category": "相声评书",
@@ -1153,7 +1153,7 @@
   {
    "id": "a_story",
    "title": "英雄评书演义",
-   "cover": "/@app-assets/Ximalaya/covers/a_story.png",
+   "cover": "/@app-assets/Ximalaya/covers/a_story.jpg",
    "anchorId": "an_xm",
    "anchorName": "醒木先生",
    "category": "相声评书",
@@ -1183,7 +1183,7 @@
   {
    "id": "ps01",
    "title": "三国演义",
-   "cover": "/@app-assets/Ximalaya/covers/ps01.png",
+   "cover": "/@app-assets/Ximalaya/covers/ps01.jpg",
    "anchorId": "an_xm",
    "anchorName": "醒木先生",
    "category": "相声评书",
@@ -1213,7 +1213,7 @@
   {
    "id": "ps02",
    "title": "水浒英雄传",
-   "cover": "/@app-assets/Ximalaya/covers/ps02.png",
+   "cover": "/@app-assets/Ximalaya/covers/ps02.jpg",
    "anchorId": "an_xm",
    "anchorName": "醒木先生",
    "category": "相声评书",
@@ -1243,7 +1243,7 @@
   {
    "id": "ps03",
    "title": "西游记评书",
-   "cover": "/@app-assets/Ximalaya/covers/ps03.png",
+   "cover": "/@app-assets/Ximalaya/covers/ps03.jpg",
    "anchorId": "an_zx",
    "anchorName": "知闲",
    "category": "相声评书",
@@ -1273,7 +1273,7 @@
   {
    "id": "ps04",
    "title": "红楼梦评话",
-   "cover": "/@app-assets/Ximalaya/covers/ps04.png",
+   "cover": "/@app-assets/Ximalaya/covers/ps04.jpg",
    "anchorId": "an_zx",
    "anchorName": "知闲",
    "category": "相声评书",
@@ -1303,7 +1303,7 @@
   {
    "id": "ps05",
    "title": "隋唐风云",
-   "cover": "/@app-assets/Ximalaya/covers/ps05.png",
+   "cover": "/@app-assets/Ximalaya/covers/ps05.jpg",
    "anchorId": "an_yd",
    "anchorName": "远帆",
    "category": "相声评书",
@@ -1333,7 +1333,7 @@
   {
    "id": "ps06",
    "title": "封神演义",
-   "cover": "/@app-assets/Ximalaya/covers/ps06.png",
+   "cover": "/@app-assets/Ximalaya/covers/ps06.jpg",
    "anchorId": "an_yd",
    "anchorName": "远帆",
    "category": "相声评书",
@@ -1391,7 +1391,7 @@
   {
    "id": "xq01",
    "title": "京剧经典",
-   "cover": "/@app-assets/Ximalaya/covers/xq01.png",
+   "cover": "/@app-assets/Ximalaya/covers/xq01.jpg",
    "anchorId": "an_lm",
    "anchorName": "梨园客",
    "category": "相声评书",
@@ -1421,7 +1421,7 @@
   {
    "id": "xq02",
    "title": "越剧名段",
-   "cover": "/@app-assets/Ximalaya/covers/xq02.png",
+   "cover": "/@app-assets/Ximalaya/covers/xq02.jpg",
    "anchorId": "an_ly2",
    "anchorName": "柳吟",
    "category": "相声评书",
@@ -1449,7 +1449,7 @@
   {
    "id": "xq03",
    "title": "黄梅戏精选",
-   "cover": "/@app-assets/Ximalaya/covers/xq03.png",
+   "cover": "/@app-assets/Ximalaya/covers/xq03.jpg",
    "anchorId": "an_ly2",
    "anchorName": "柳吟",
    "category": "相声评书",
@@ -1477,7 +1477,7 @@
   {
    "id": "xq04",
    "title": "豫剧大观",
-   "cover": "/@app-assets/Ximalaya/covers/xq04.png",
+   "cover": "/@app-assets/Ximalaya/covers/xq04.jpg",
    "anchorId": "an_zz",
    "anchorName": "中原韵",
    "category": "相声评书",
@@ -1505,7 +1505,7 @@
   {
    "id": "a_kid",
    "title": "小熊童话晚安",
-   "cover": "/@app-assets/Ximalaya/covers/a_kid.png",
+   "cover": "/@app-assets/Ximalaya/covers/a_kid.jpg",
    "anchorId": "an_hp",
    "anchorName": "花婆婆",
    "category": "儿童",
@@ -1535,7 +1535,7 @@
   {
    "id": "kd01",
    "title": "格林童话精选",
-   "cover": "/@app-assets/Ximalaya/covers/kd01.png",
+   "cover": "/@app-assets/Ximalaya/covers/kd01.jpg",
    "anchorId": "an_hp",
    "anchorName": "花婆婆",
    "category": "儿童",
@@ -1565,7 +1565,7 @@
   {
    "id": "kd02",
    "title": "安徒生故事集",
-   "cover": "/@app-assets/Ximalaya/covers/kd02.png",
+   "cover": "/@app-assets/Ximalaya/covers/kd02.jpg",
    "anchorId": "an_hp",
    "anchorName": "花婆婆",
    "category": "儿童",
@@ -1595,7 +1595,7 @@
   {
    "id": "kd03",
    "title": "一千零一夜",
-   "cover": "/@app-assets/Ximalaya/covers/kd03.png",
+   "cover": "/@app-assets/Ximalaya/covers/kd03.jpg",
    "anchorId": "an_yy3",
    "anchorName": "夜莺",
    "category": "儿童",
@@ -1625,7 +1625,7 @@
   {
    "id": "kd04",
    "title": "宝宝睡前音乐",
-   "cover": "/@app-assets/Ximalaya/covers/kd04.png",
+   "cover": "/@app-assets/Ximalaya/covers/kd04.jpg",
    "anchorId": "an_yy3",
    "anchorName": "夜莺",
    "category": "儿童",
@@ -1655,7 +1655,7 @@
   {
    "id": "kd05",
    "title": "动物寓言故事",
-   "cover": "/@app-assets/Ximalaya/covers/kd05.png",
+   "cover": "/@app-assets/Ximalaya/covers/kd05.jpg",
    "anchorId": "an_tt",
    "anchorName": "跳跳虎",
    "category": "儿童",
@@ -1685,7 +1685,7 @@
   {
    "id": "kd06",
    "title": "森林冒险记",
-   "cover": "/@app-assets/Ximalaya/covers/kd06.png",
+   "cover": "/@app-assets/Ximalaya/covers/kd06.jpg",
    "anchorId": "an_tt",
    "anchorName": "跳跳虎",
    "category": "儿童",
@@ -1713,7 +1713,7 @@
   {
    "id": "kd07",
    "title": "海底世界探秘",
-   "cover": "/@app-assets/Ximalaya/covers/kd07.png",
+   "cover": "/@app-assets/Ximalaya/covers/kd07.jpg",
    "anchorId": "an_hl",
    "anchorName": "海螺",
    "category": "儿童",
@@ -1741,7 +1741,7 @@
   {
    "id": "kd08",
    "title": "成长不烦恼",
-   "cover": "/@app-assets/Ximalaya/covers/kd08.png",
+   "cover": "/@app-assets/Ximalaya/covers/kd08.jpg",
    "anchorId": "an_mm",
    "anchorName": "米米",
    "category": "儿童",
@@ -1797,7 +1797,7 @@
   {
    "id": "kd10",
    "title": "趣味自然百科",
-   "cover": "/@app-assets/Ximalaya/covers/kd10.png",
+   "cover": "/@app-assets/Ximalaya/covers/kd10.jpg",
    "anchorId": "an_zr",
    "anchorName": "自然姐姐",
    "category": "儿童",
@@ -1855,7 +1855,7 @@
   {
    "id": "kd12",
    "title": "人体大揭秘",
-   "cover": "/@app-assets/Ximalaya/covers/kd12.png",
+   "cover": "/@app-assets/Ximalaya/covers/kd12.jpg",
    "anchorId": "an_kx",
    "anchorName": "科科",
    "category": "儿童",
@@ -1883,7 +1883,7 @@
   {
    "id": "kd13",
    "title": "历史故事连环画",
-   "cover": "/@app-assets/Ximalaya/covers/kd13.png",
+   "cover": "/@app-assets/Ximalaya/covers/kd13.jpg",
    "anchorId": "an_ls",
    "anchorName": "历史叔叔",
    "category": "儿童",
@@ -1911,7 +1911,7 @@
   {
    "id": "kd14",
    "title": "中华成语故事",
-   "cover": "/@app-assets/Ximalaya/covers/kd14.png",
+   "cover": "/@app-assets/Ximalaya/covers/kd14.jpg",
    "anchorId": "an_ls",
    "anchorName": "历史叔叔",
    "category": "儿童",
@@ -1939,7 +1939,7 @@
   {
    "id": "a_cul",
    "title": "华夏文明通识课",
-   "cover": "/@app-assets/Ximalaya/covers/a_cul.png",
+   "cover": "/@app-assets/Ximalaya/covers/a_cul.jpg",
    "anchorId": "an_wy",
    "anchorName": "文渊先生",
    "category": "大师课",
@@ -1996,7 +1996,7 @@
   {
    "id": "ms01",
    "title": "国学精读论语",
-   "cover": "/@app-assets/Ximalaya/covers/ms01.png",
+   "cover": "/@app-assets/Ximalaya/covers/ms01.jpg",
    "anchorId": "an_wy",
    "anchorName": "文渊先生",
    "category": "大师课",
@@ -2024,7 +2024,7 @@
   {
    "id": "ms02",
    "title": "唐诗宋词鉴赏",
-   "cover": "/@app-assets/Ximalaya/covers/ms02.png",
+   "cover": "/@app-assets/Ximalaya/covers/ms02.jpg",
    "anchorId": "an_wy",
    "anchorName": "文渊先生",
    "category": "大师课",
@@ -2052,7 +2052,7 @@
   {
    "id": "ms03",
    "title": "中国书画艺术",
-   "cover": "/@app-assets/Ximalaya/covers/ms03.png",
+   "cover": "/@app-assets/Ximalaya/covers/ms03.jpg",
    "anchorId": "an_sy",
    "anchorName": "舒雅",
    "category": "大师课",
@@ -2080,7 +2080,7 @@
   {
    "id": "ms04",
    "title": "茶道与生活美学",
-   "cover": "/@app-assets/Ximalaya/covers/ms04.png",
+   "cover": "/@app-assets/Ximalaya/covers/ms04.jpg",
    "anchorId": "an_sy",
    "anchorName": "舒雅",
    "category": "大师课",
@@ -2107,7 +2107,7 @@
   {
    "id": "ms05",
    "title": "创业实战课",
-   "cover": "/@app-assets/Ximalaya/covers/ms05.png",
+   "cover": "/@app-assets/Ximalaya/covers/ms05.jpg",
    "anchorId": "an_lc",
    "anchorName": "洞见学长",
    "category": "大师课",
@@ -2191,7 +2191,7 @@
   {
    "id": "ms08",
    "title": "中国古代史",
-   "cover": "/@app-assets/Ximalaya/covers/ms08.png",
+   "cover": "/@app-assets/Ximalaya/covers/ms08.jpg",
    "anchorId": "an_gz",
    "anchorName": "古舟",
    "category": "大师课",
@@ -2219,7 +2219,7 @@
   {
    "id": "ms09",
    "title": "近代中国变革",
-   "cover": "/@app-assets/Ximalaya/covers/ms09.png",
+   "cover": "/@app-assets/Ximalaya/covers/ms09.jpg",
    "anchorId": "an_gz",
    "anchorName": "古舟",
    "category": "大师课",
@@ -2247,7 +2247,7 @@
   {
    "id": "ms10",
    "title": "世界文明史",
-   "cover": "/@app-assets/Ximalaya/covers/ms10.png",
+   "cover": "/@app-assets/Ximalaya/covers/ms10.jpg",
    "anchorId": "an_gz",
    "anchorName": "古舟",
    "category": "大师课",
@@ -2275,7 +2275,7 @@
   {
    "id": "ms11",
    "title": "物理学的奥秘",
-   "cover": "/@app-assets/Ximalaya/covers/ms11.png",
+   "cover": "/@app-assets/Ximalaya/covers/ms11.jpg",
    "anchorId": "an_lk",
    "anchorName": "理科爷爷",
    "category": "大师课",
@@ -2303,7 +2303,7 @@
   {
    "id": "ms12",
    "title": "生命科学探秘",
-   "cover": "/@app-assets/Ximalaya/covers/ms12.png",
+   "cover": "/@app-assets/Ximalaya/covers/ms12.jpg",
    "anchorId": "an_lk",
    "anchorName": "理科爷爷",
    "category": "大师课",
@@ -2331,7 +2331,7 @@
   {
    "id": "ms13",
    "title": "天文宇宙观",
-   "cover": "/@app-assets/Ximalaya/covers/ms13.png",
+   "cover": "/@app-assets/Ximalaya/covers/ms13.jpg",
    "anchorId": "an_xk",
    "anchorName": "星客",
    "category": "大师课",
@@ -2389,7 +2389,7 @@
   {
    "id": "pk01",
    "title": "恋爱心理学",
-   "cover": "/@app-assets/Ximalaya/covers/pk01.png",
+   "cover": "/@app-assets/Ximalaya/covers/pk01.jpg",
    "anchorId": "an_xn",
    "anchorName": "小暖",
    "category": "播客",
@@ -2417,7 +2417,7 @@
   {
    "id": "pk02",
    "title": "婚姻经营课",
-   "cover": "/@app-assets/Ximalaya/covers/pk02.png",
+   "cover": "/@app-assets/Ximalaya/covers/pk02.jpg",
    "anchorId": "an_xn",
    "anchorName": "小暖",
    "category": "播客",
@@ -2445,7 +2445,7 @@
   {
    "id": "pk03",
    "title": "情绪研究所",
-   "cover": "/@app-assets/Ximalaya/covers/pk03.png",
+   "cover": "/@app-assets/Ximalaya/covers/pk03.jpg",
    "anchorId": "an_qx2",
    "anchorName": "情绪君",
    "category": "播客",
@@ -2473,7 +2473,7 @@
   {
    "id": "pk04",
    "title": "互联网观察",
-   "cover": "/@app-assets/Ximalaya/covers/pk04.png",
+   "cover": "/@app-assets/Ximalaya/covers/pk04.jpg",
    "anchorId": "an_wg",
    "anchorName": "网观",
    "category": "播客",
@@ -2501,7 +2501,7 @@
   {
    "id": "pk05",
    "title": "AI前线",
-   "cover": "/@app-assets/Ximalaya/covers/pk05.png",
+   "cover": "/@app-assets/Ximalaya/covers/pk05.jpg",
    "anchorId": "an_wg",
    "anchorName": "网观",
    "category": "播客",
@@ -2531,7 +2531,7 @@
   {
    "id": "pk06",
    "title": "数码生活馆",
-   "cover": "/@app-assets/Ximalaya/covers/pk06.png",
+   "cover": "/@app-assets/Ximalaya/covers/pk06.jpg",
    "anchorId": "an_sm",
    "anchorName": "数码叔",
    "category": "播客",
@@ -2559,7 +2559,7 @@
   {
    "id": "pk07",
    "title": "舌尖上的故事",
-   "cover": "/@app-assets/Ximalaya/covers/pk07.png",
+   "cover": "/@app-assets/Ximalaya/covers/pk07.jpg",
    "anchorId": "an_ms",
    "anchorName": "美食家",
    "category": "播客",
@@ -2587,7 +2587,7 @@
   {
    "id": "pk08",
    "title": "旅行日记",
-   "cover": "/@app-assets/Ximalaya/covers/pk08.png",
+   "cover": "/@app-assets/Ximalaya/covers/pk08.jpg",
    "anchorId": "an_lx",
    "anchorName": "行者",
    "category": "播客",
@@ -2643,7 +2643,7 @@
   {
    "id": "a_hist",
    "title": "如果历史会说话",
-   "cover": "/@app-assets/Ximalaya/covers/a_hist.png",
+   "cover": "/@app-assets/Ximalaya/covers/a_hist.jpg",
    "anchorId": "an_sj",
    "anchorName": "史家笔谈",
    "category": "历史",
@@ -2673,7 +2673,7 @@
   {
    "id": "hi01",
    "title": "中国通史",
-   "cover": "/@app-assets/Ximalaya/covers/hi01.png",
+   "cover": "/@app-assets/Ximalaya/covers/hi01.jpg",
    "anchorId": "an_sj",
    "anchorName": "史家笔谈",
    "category": "历史",
@@ -2703,7 +2703,7 @@
   {
    "id": "hi02",
    "title": "近代百年风云",
-   "cover": "/@app-assets/Ximalaya/covers/hi02.png",
+   "cover": "/@app-assets/Ximalaya/covers/hi02.jpg",
    "anchorId": "an_sj",
    "anchorName": "史家笔谈",
    "category": "历史",
@@ -2733,7 +2733,7 @@
   {
    "id": "hi03",
    "title": "世界通史",
-   "cover": "/@app-assets/Ximalaya/covers/hi03.png",
+   "cover": "/@app-assets/Ximalaya/covers/hi03.jpg",
    "anchorId": "an_sj3",
    "anchorName": "世界说",
    "category": "历史",
@@ -2763,7 +2763,7 @@
   {
    "id": "hi04",
    "title": "秦汉帝国",
-   "cover": "/@app-assets/Ximalaya/covers/hi04.png",
+   "cover": "/@app-assets/Ximalaya/covers/hi04.jpg",
    "anchorId": "an_gh",
    "anchorName": "故瀚",
    "category": "历史",
@@ -2791,7 +2791,7 @@
   {
    "id": "hi05",
    "title": "唐宋繁华",
-   "cover": "/@app-assets/Ximalaya/covers/hi05.png",
+   "cover": "/@app-assets/Ximalaya/covers/hi05.jpg",
    "anchorId": "an_gh",
    "anchorName": "故瀚",
    "category": "历史",
@@ -2819,7 +2819,7 @@
   {
    "id": "hi06",
    "title": "明清兴衰",
-   "cover": "/@app-assets/Ximalaya/covers/hi06.png",
+   "cover": "/@app-assets/Ximalaya/covers/hi06.jpg",
    "anchorId": "an_gh",
    "anchorName": "故瀚",
    "category": "历史",
@@ -2847,7 +2847,7 @@
   {
    "id": "hi07",
    "title": "民国往事",
-   "cover": "/@app-assets/Ximalaya/covers/hi07.png",
+   "cover": "/@app-assets/Ximalaya/covers/hi07.jpg",
    "anchorId": "an_mg",
    "anchorName": "民国客",
    "category": "历史",
@@ -2875,7 +2875,7 @@
   {
    "id": "hi08",
    "title": "战争与文明",
-   "cover": "/@app-assets/Ximalaya/covers/hi08.png",
+   "cover": "/@app-assets/Ximalaya/covers/hi08.jpg",
    "anchorId": "an_zh",
    "anchorName": "战史堂",
    "category": "历史",
@@ -2905,7 +2905,7 @@
   {
    "id": "hi09",
    "title": "历史人物志",
-   "cover": "/@app-assets/Ximalaya/covers/hi09.png",
+   "cover": "/@app-assets/Ximalaya/covers/hi09.jpg",
    "anchorId": "an_zh",
    "anchorName": "战史堂",
    "category": "历史",
@@ -10857,7 +10857,7 @@
   {
    "id": "an_mj",
    "name": "墨玄居士",
-   "avatar": "/@app-assets/Ximalaya/avatars/an_mj.png",
+   "avatar": "/@app-assets/Ximalaya/avatars/an_mj.jpg",
    "desc": "墨玄居士,小说领域主播。",
    "fansCount": 161734,
    "albumCount": 1,
@@ -10868,7 +10868,7 @@
   {
    "id": "an_jg",
    "name": "九歌",
-   "avatar": "/@app-assets/Ximalaya/avatars/an_jg.png",
+   "avatar": "/@app-assets/Ximalaya/avatars/an_jg.jpg",
    "desc": "九歌,小说领域主播。",
    "fansCount": 185719,
    "albumCount": 1,
@@ -10890,7 +10890,7 @@
   {
    "id": "an_yy",
    "name": "云隐",
-   "avatar": "/@app-assets/Ximalaya/avatars/an_yy.png",
+   "avatar": "/@app-assets/Ximalaya/avatars/an_yy.jpg",
    "desc": "云隐,小说领域主播。",
    "fansCount": 191019,
    "albumCount": 1,
@@ -10913,7 +10913,7 @@
   {
    "id": "an_bl",
    "name": "白鹿",
-   "avatar": "/@app-assets/Ximalaya/avatars/an_bl.png",
+   "avatar": "/@app-assets/Ximalaya/avatars/an_bl.jpg",
    "desc": "白鹿,小说领域主播。",
    "fansCount": 179671,
    "albumCount": 1,
@@ -10980,7 +10980,7 @@
   {
    "id": "an_nk",
    "name": "南柯",
-   "avatar": "/@app-assets/Ximalaya/avatars/an_nk.png",
+   "avatar": "/@app-assets/Ximalaya/avatars/an_nk.jpg",
    "desc": "南柯,小说领域主播。",
    "fansCount": 154479,
    "albumCount": 1,
@@ -11015,7 +11015,7 @@
   {
    "id": "an_xm2",
    "name": "萧鸣",
-   "avatar": "/@app-assets/Ximalaya/avatars/an_xm2.png",
+   "avatar": "/@app-assets/Ximalaya/avatars/an_xm2.jpg",
    "desc": "萧鸣,小说领域主播。",
    "fansCount": 228327,
    "albumCount": 2,
@@ -11085,7 +11085,7 @@
   {
    "id": "an_dg",
    "name": "逗哏堂",
-   "avatar": "/@app-assets/Ximalaya/avatars/an_dg.png",
+   "avatar": "/@app-assets/Ximalaya/avatars/an_dg.jpg",
    "desc": "逗哏堂,相声评书领域主播。",
    "fansCount": 326319,
    "albumCount": 4,
@@ -11160,7 +11160,7 @@
   {
    "id": "an_lm",
    "name": "梨园客",
-   "avatar": "/@app-assets/Ximalaya/avatars/an_lm.png",
+   "avatar": "/@app-assets/Ximalaya/avatars/an_lm.jpg",
    "desc": "梨园客,相声评书领域主播。",
    "fansCount": 246447,
    "albumCount": 2,
@@ -11184,7 +11184,7 @@
   {
    "id": "an_zz",
    "name": "中原韵",
-   "avatar": "/@app-assets/Ximalaya/avatars/an_zz.png",
+   "avatar": "/@app-assets/Ximalaya/avatars/an_zz.jpg",
    "desc": "中原韵,相声评书领域主播。",
    "fansCount": 188960,
    "albumCount": 1,
@@ -11220,7 +11220,7 @@
   {
    "id": "an_tt",
    "name": "跳跳虎",
-   "avatar": "/@app-assets/Ximalaya/avatars/an_tt.png",
+   "avatar": "/@app-assets/Ximalaya/avatars/an_tt.jpg",
    "desc": "跳跳虎,儿童领域主播。",
    "fansCount": 241139,
    "albumCount": 2,
@@ -11276,7 +11276,7 @@
   {
    "id": "an_kx",
    "name": "科科",
-   "avatar": "/@app-assets/Ximalaya/avatars/an_kx.png",
+   "avatar": "/@app-assets/Ximalaya/avatars/an_kx.jpg",
    "desc": "科科,儿童领域主播。",
    "fansCount": 215436,
    "albumCount": 2,
@@ -11288,7 +11288,7 @@
   {
    "id": "an_ls",
    "name": "历史叔叔",
-   "avatar": "/@app-assets/Ximalaya/avatars/an_ls.png",
+   "avatar": "/@app-assets/Ximalaya/avatars/an_ls.jpg",
    "desc": "历史叔叔,儿童领域主播。",
    "fansCount": 244848,
    "albumCount": 2,
@@ -11300,7 +11300,7 @@
   {
    "id": "an_wy",
    "name": "文渊先生",
-   "avatar": "/@app-assets/Ximalaya/avatars/an_wy.png",
+   "avatar": "/@app-assets/Ximalaya/avatars/an_wy.jpg",
    "desc": "文渊先生,大师课领域主播。",
    "fansCount": 295103,
    "albumCount": 3,
@@ -11362,7 +11362,7 @@
   {
    "id": "an_lk",
    "name": "理科爷爷",
-   "avatar": "/@app-assets/Ximalaya/avatars/an_lk.png",
+   "avatar": "/@app-assets/Ximalaya/avatars/an_lk.jpg",
    "desc": "理科爷爷,大师课领域主播。",
    "fansCount": 227471,
    "albumCount": 2,
@@ -11442,7 +11442,7 @@
   {
    "id": "an_ms",
    "name": "美食家",
-   "avatar": "/@app-assets/Ximalaya/avatars/an_ms.png",
+   "avatar": "/@app-assets/Ximalaya/avatars/an_ms.jpg",
    "desc": "美食家,播客领域主播。",
    "fansCount": 148771,
    "albumCount": 1,
@@ -11475,7 +11475,7 @@
   {
    "id": "an_sj",
    "name": "史家笔谈",
-   "avatar": "/@app-assets/Ximalaya/avatars/an_sj.png",
+   "avatar": "/@app-assets/Ximalaya/avatars/an_sj.jpg",
    "desc": "史家笔谈,历史领域主播。",
    "fansCount": 270786,
    "albumCount": 3,
@@ -11488,7 +11488,7 @@
   {
    "id": "an_sj3",
    "name": "世界说",
-   "avatar": "/@app-assets/Ximalaya/avatars/an_sj3.png",
+   "avatar": "/@app-assets/Ximalaya/avatars/an_sj3.jpg",
    "desc": "世界说,历史领域主播。",
    "fansCount": 190894,
    "albumCount": 1,
@@ -11523,7 +11523,7 @@
   {
    "id": "an_zh",
    "name": "战史堂",
-   "avatar": "/@app-assets/Ximalaya/avatars/an_zh.png",
+   "avatar": "/@app-assets/Ximalaya/avatars/an_zh.jpg",
    "desc": "战史堂,历史领域主播。",
    "fansCount": 224681,
    "albumCount": 2,
