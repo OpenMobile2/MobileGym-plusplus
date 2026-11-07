@@ -1,24 +1,49 @@
-# MobileGym++
+<h1 align="center">MobileGym++</h1>
+
+<p align="center">
+  <b>A phone that runs in the browser: 63 commercial-style apps, app-native tools beside the GUI,<br>
+  and 215 long-horizon tasks scored on application state.</b>
+</p>
 
 <p align="center">
   <a href="README_zh.md"><b>中文</b></a>
   &nbsp;·&nbsp;
-  <a href="#demo"><b>Demo</b></a>
+  <a href="#1-start-the-phone"><b>Quick start</b></a>
+  &nbsp;·&nbsp;
+  <a href="#leaderboard"><b>Leaderboard</b></a>
+  &nbsp;·&nbsp;
+  <a href="docs/demo/demo.mp4"><b>Full video (42 s)</b></a>
 </p>
 
 <p align="center">
   <a href="LICENSE"><img alt="Apache 2.0" src="https://img.shields.io/badge/license-Apache%202.0-blue.svg"></a>
   <a href="bench_env/benchmark/official.json"><img alt="215 tasks" src="https://img.shields.io/badge/bench-215%20tasks-111111.svg"></a>
   <a href="#the-phone"><img alt="63 clients" src="https://img.shields.io/badge/clients-63-111111.svg"></a>
+  <img alt="300+ app-native tools" src="https://img.shields.io/badge/app--native%20tools-300%2B-0a7d5a.svg">
 </p>
-
-## Demo
 
 <p align="center">
-  <video src="docs/demo/demo.mp4" controls muted width="780"></video>
+  <img src="docs/demo/phone.gif" alt="The phone itself: commercial-style apps with persistent state, playable in the browser." width="900">
 </p>
 
-If the player does not load, open [`docs/demo/demo.mp4`](docs/demo/demo.mp4) (42 s). It shows the phone itself, then one agent finishing a task with GUI actions and app-native tool calls.
+<table align="center">
+  <tr>
+    <td align="center" width="25%"><h2>63</h2>installable clients<br><sub>35 built for this release</sub></td>
+    <td align="center" width="25%"><h2>300+</h2>app-native tools<br><sub>across 50+ apps</sub></td>
+    <td align="center" width="25%"><h2>215</h2>benchmark tasks<br><sub>106 cross several apps</sub></td>
+    <td align="center" width="25%"><h2>1</h2>shared state<br><sub>GUI and tools write the same store</sub></td>
+  </tr>
+</table>
+
+## One agent, GUI + tools
+
+<p align="center">
+  <img src="docs/demo/agent.gif" alt="One agent finishing tasks on Taobao and Notes, interleaving taps with app-native tool calls such as taobao__open_search_results." width="900">
+</p>
+
+<p align="center">
+  <em>The agent sees only screen pixels. It taps and types like a person, and when the app in front exposes a tool, it can call it directly. Both paths change the same application records, and the checker reads those records at the end.</em>
+</p>
 
 ## Leaderboard
 
@@ -141,6 +166,10 @@ More than 300 such tools are exposed across 50-plus applications, including syst
 ## The phone
 
 The phone installs **63** clients: **35** built for this release and **28** kept from MobileGym. **47** are commercial-style applications and **16** are system clients. They cover travel, shopping, finance, content, social, office, and local services.
+
+<p align="center">
+  <img src="docs/images/apps-gallery.jpg" alt="Twelve of the clients running in the browser phone: Taobao, Ctrip, Alipay, RedBook, Youku, Ximalaya, Railway 12306, Dianping, Slack, Spotify, Pinduoduo, Didi." width="100%">
+</p>
 
 <p align="center">
   <img src="docs/images/app-coverage.png" alt="Application coverage. The simulator phone has 63 apps and is this repository. The emulator phone has 62 apps and is not in this repository. Each square is two applications. Dots mark apps that expose native tools." width="720">

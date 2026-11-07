@@ -1,24 +1,49 @@
-# MobileGym++
+<h1 align="center">MobileGym++</h1>
+
+<p align="center">
+  <b>一部在浏览器里运行的手机：63 个仿商业应用，界面旁边配有应用自带工具，<br>
+  以及 215 道按应用状态判分的长流程任务。</b>
+</p>
 
 <p align="center">
   <a href="README.md"><b>English</b></a>
   &nbsp;·&nbsp;
-  <a href="#演示"><b>演示</b></a>
+  <a href="#1-起手机"><b>快速开始</b></a>
+  &nbsp;·&nbsp;
+  <a href="#排行榜"><b>排行榜</b></a>
+  &nbsp;·&nbsp;
+  <a href="docs/demo/demo.mp4"><b>完整视频（42 秒）</b></a>
 </p>
 
 <p align="center">
   <a href="LICENSE"><img alt="Apache 2.0" src="https://img.shields.io/badge/license-Apache%202.0-blue.svg"></a>
   <a href="bench_env/benchmark/official.json"><img alt="215 题" src="https://img.shields.io/badge/bench-215%20tasks-111111.svg"></a>
   <a href="#这部手机"><img alt="63 个客户端" src="https://img.shields.io/badge/clients-63-111111.svg"></a>
+  <img alt="300+ 个应用自带工具" src="https://img.shields.io/badge/app--native%20tools-300%2B-0a7d5a.svg">
 </p>
-
-## 演示
 
 <p align="center">
-  <video src="docs/demo/demo.mp4" controls muted width="780"></video>
+  <img src="docs/demo/phone.gif" alt="这部手机本身：仿商业应用，状态持久，可以在浏览器里直接玩。" width="900">
 </p>
 
-如果播放器没有加载，直接打开 [`docs/demo/demo.mp4`](docs/demo/demo.mp4)（42 秒）。前半段是这部手机本身，后半段是一个智能体用点击和应用自带工具完成一道题。
+<table align="center">
+  <tr>
+    <td align="center" width="25%"><h2>63</h2>可安装的客户端<br><sub>其中 35 个为本次新做</sub></td>
+    <td align="center" width="25%"><h2>300+</h2>应用自带工具<br><sub>覆盖 50 多个应用</sub></td>
+    <td align="center" width="25%"><h2>215</h2>道评测题<br><sub>106 道跨多个应用</sub></td>
+    <td align="center" width="25%"><h2>1</h2>份共享状态<br><sub>点击和工具写同一份数据</sub></td>
+  </tr>
+</table>
+
+## 一个智能体，点击加工具
+
+<p align="center">
+  <img src="docs/demo/agent.gif" alt="一个智能体在淘宝和笔记里做题，点击和 taobao__open_search_results 这类应用自带工具交替使用。" width="900">
+</p>
+
+<p align="center">
+  <em>智能体只看屏幕像素，像人一样点击和输入；前台应用提供工具时，也可以直接调用。两条路改的是同一份应用数据，检查器在最后读这份数据判分。</em>
+</p>
 
 ## 排行榜
 
@@ -141,6 +166,10 @@
 ## 这部手机
 
 手机里装了 **63** 个客户端：这次新做的 **35** 个，加上从 MobileGym 留下来的 **28** 个。其中 **47** 个是商业风格应用，**16** 个是系统客户端。覆盖出行、购物、财务、内容、社交、办公和本地生活。
+
+<p align="center">
+  <img src="docs/images/apps-gallery.jpg" alt="浏览器手机里运行的 12 个客户端：淘宝、携程、支付宝、小红书、优酷、喜马拉雅、12306、大众点评、Slack、Spotify、拼多多、滴滴。" width="100%">
+</p>
 
 <p align="center">
   <img src="docs/images/app-coverage.png" alt="应用覆盖。上面的模拟器手机是 63 个应用，就是这个仓库。下面的安卓模拟器是 62 个应用，不在这个仓库里。每一格代表两个应用。圆点表示该应用暴露了自带工具。" width="720">
