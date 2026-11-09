@@ -8,7 +8,7 @@
 <p align="center">
   <a href="README.md"><b>English</b></a>
   &nbsp;·&nbsp;
-  <a href="#1-起手机"><b>快速开始</b></a>
+  <a href="#快速开始"><b>快速开始</b></a>
   &nbsp;·&nbsp;
   <a href="#论文结果"><b>结果</b></a>
   &nbsp;·&nbsp;
@@ -46,6 +46,49 @@
 开源的手机智能体数据，大多来自几十个模拟器里的应用，主要是系统工具和开源客户端。原因是第三方应用很难干净地重置，完整的安卓环境在训练规模上复制起来也很贵。MobileGym++ 把商业应用重建成带持久业务状态的浏览器客户端，所以订行程、付订单、把一个应用里的值带到另一个应用这类长流程，都可以重置、重放，并行检查。
 
 它在 [MobileGym](https://arxiv.org/abs/2605.26114) 的基础上新做了 35 个仿商业应用，补上了明确的跨应用机制，并加入了可调工具模式：应用在图形界面旁边，把自己的一部分功能暴露成工具。智能体的观测是截图，没有无障碍树。在可调工具模式下，它还会拿到前台应用的工具定义，以及每次调用的结构化返回。
+
+## 快速开始
+
+开两个终端：一个跑手机，另一个用你的模型在上面打分。
+
+### 1. 起手机
+
+需要 Node.js 22 或更新版本。终端不要关，浏览器打开 <http://127.0.0.1:3000>。
+
+```bash
+git clone <本仓库地址> mobilegym-pp   # 在匿名页面上请用「Download repository」下载
+cd mobilegym-pp
+zsh scripts/start_phone.sh
+```
+
+脚本会依次打印四步：检查 Node.js、恢复压缩存放的数据文件、安装 Node 依赖（只有第一次，需要几分钟）、启动手机。215 道题不需要地图、天气或助手的密钥。
+
+壁纸、主题小组件和部分媒体图片从一个公开的素材 CDN（`https://cdn.mobilegym.dev`）加载，不会发送任何账号或密钥。想完全不访问外部网络，用 `VITE_CDN_BASE= zsh scripts/start_phone.sh` 启动；应用和题目都照常能用，只是这些图片不显示，桌面上的两个小组件会显示加载失败。
+
+### 2. 用你的模型打分
+
+需要 Python 3.11 或更新版本。另开一个终端，在仓库根目录先装一次检查器：
+
+```bash
+python3 -m pip install -r bench_env/requirements.txt
+python3 -m playwright install chromium
+```
+
+第二条命令会下载一次无头 Chromium（约 150 MB）。检查器通过它来操作手机；只起手机不需要它。
+
+然后把手机和你自己的、兼容 OpenAI `/v1` 的模型接上：
+
+```bash
+zsh bench_env/benchmark/run.sh \
+  --mode hybrid \
+  --env-url http://127.0.0.1:3000 \
+  --model-base-url http://HOST:PORT/v1 \
+  --model-name YourModel \
+  --model-api-key "$OPENAI_API_KEY" \
+  --output-dir runs/bench-hybrid
+```
+
+`--mode gui_only` 仍是这 215 题和同一套检查器，只是关掉应用自带工具。默认协议是 `qwen35_session`：系统提示和题目只发一次，只留最近 3 张截图，接口里的 `tools` 只有 `mobile_use`；可调工具模式下，应用切到前台的那一轮会附上它的工具定义。模型名字会选适配：Qwen、Gemini、Kimi K3、DeepSeek 或 GLM。每题都从绑定的初始快照开始，回合之间互不影响，可以并行跑（`--parallel`，默认 5）。跑完会写下 `results.jsonl` 和 `summary.json`。并行很多路时，用 `scripts/server/start_nginx_gateway.sh`，做法在 [`docs/getting-started.md`](docs/getting-started.md)。
 
 ## 一个智能体，点击加工具
 
@@ -288,43 +331,6 @@
 | `bench_env/benchmark/` | 215 题和 `run.sh` |
 | `bench_env/task/` | 题目的初始化和检查器 |
 | `docs/getting-started.md` | 从下载到跑完一道题 |
-
-## 1. 起手机
-
-需要 Node.js 22 或更新版本。终端不要关，浏览器打开 <http://127.0.0.1:3000>。
-
-```bash
-# 在本页下载仓库 ZIP 并解压，然后：
-cd <解压后的目录>
-zsh scripts/start_phone.sh
-```
-
-脚本第一次会安装 Node 依赖，并恢复几个以压缩形式存放的大数据文件。215 道题不需要地图、天气或助手的密钥。
-
-壁纸、主题小组件和部分媒体图片从一个公开的素材 CDN（`https://cdn.mobilegym.dev`）加载，不会发送任何账号或密钥。想完全不访问外部网络，用 `VITE_CDN_BASE= zsh scripts/start_phone.sh` 启动；应用和题目都照常能用，只是这些图片不显示，桌面上的两个小组件会显示加载失败。
-
-## 2. 用你的模型打分
-
-需要 Python 3.11 或更新版本。另开一个终端，在仓库根目录先装一次检查器：
-
-```bash
-python3 -m pip install -r bench_env/requirements.txt
-python3 -m playwright install chromium
-```
-
-然后把手机和你自己的、兼容 OpenAI `/v1` 的模型接上：
-
-```bash
-zsh bench_env/benchmark/run.sh \
-  --mode hybrid \
-  --env-url http://127.0.0.1:3000 \
-  --model-base-url http://HOST:PORT/v1 \
-  --model-name YourModel \
-  --model-api-key "$OPENAI_API_KEY" \
-  --output-dir runs/bench-hybrid
-```
-
-`--mode gui_only` 仍是这 215 题和同一套检查器，只是关掉应用自带工具。默认协议是 `qwen35_session`：系统提示和题目只发一次，只留最近 3 张截图，接口里的 `tools` 只有 `mobile_use`；可调工具模式下，应用切到前台的那一轮会附上它的工具定义。模型名字会选适配：Qwen、Gemini、Kimi K3、DeepSeek 或 GLM。每题都从绑定的初始快照开始，回合之间互不影响，可以并行跑（`--parallel`，默认 5）。跑完会写下 `results.jsonl` 和 `summary.json`。并行很多路时，用 `scripts/server/start_nginx_gateway.sh`，做法在 [`docs/getting-started.md`](docs/getting-started.md)。
 
 ## 许可
 

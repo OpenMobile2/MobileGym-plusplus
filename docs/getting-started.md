@@ -14,8 +14,8 @@ This guide walks you from a fresh clone to a fully evaluated task in about 10 mi
 ## Install
 
 ```bash
-# Download this repository as a ZIP and unzip it, then:
-cd <unzipped-folder>
+git clone <this-repository> mobilegym-pp   # on the anonymized page, use "Download repository" instead
+cd mobilegym-pp
 
 # Front-end / simulator
 npm install
@@ -166,7 +166,7 @@ This flag only affects the Playwright browser's outbound requests; the agent pro
 If you just want every command in one block:
 
 ```bash
-cd <unzipped-folder>
+cd mobilegym-pp
 npm install
 pip install -r bench_env/requirements.txt && playwright install chromium
 

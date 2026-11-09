@@ -8,7 +8,7 @@
 <p align="center">
   <a href="README_zh.md"><b>中文</b></a>
   &nbsp;·&nbsp;
-  <a href="#1-start-the-phone"><b>Quick start</b></a>
+  <a href="#quick-start"><b>Quick start</b></a>
   &nbsp;·&nbsp;
   <a href="#results-from-the-paper"><b>Results</b></a>
   &nbsp;·&nbsp;
@@ -46,6 +46,49 @@
 Open mobile-agent data mostly comes from a few dozen emulator apps, largely system utilities and open-source clients, because third-party apps rarely reset cleanly and the full Android stack is costly to replicate at training scale. MobileGym++ rebuilds commercial apps as browser clients with persistent business state, so long workflows such as booking a trip, paying an order, or carrying a value from one app into another can be reset, replayed, and checked in parallel.
 
 It extends [MobileGym](https://arxiv.org/abs/2605.26114) with 35 new commercial-style applications, explicit cross-app mechanisms, and a hybrid mode in which an application exposes selected functions as tools beside its GUI. Observations are screenshots, with no accessibility tree. In hybrid mode the agent also receives the foreground app's tool schemas and the structured result of each call.
+
+## Quick start
+
+Two terminals: one runs the phone, the other scores a model against it.
+
+### 1. Start the phone
+
+Node.js 22 or newer. Leave the terminal running and open <http://127.0.0.1:3000>.
+
+```bash
+git clone <this-repository> mobilegym-pp   # on the anonymized page, use "Download repository" instead
+cd mobilegym-pp
+zsh scripts/start_phone.sh
+```
+
+The script prints four steps: check Node.js, restore the compressed data files, install Node packages (first run only, a few minutes), and start the phone. The 215 tasks do not need map, weather, or assistant keys.
+
+Wallpapers, theme widgets, and some media images load from a public asset CDN (`https://cdn.mobilegym.dev`); no account or key is sent. To run with no external requests, start with `VITE_CDN_BASE= zsh scripts/start_phone.sh`. The apps and tasks still work, but those images will be missing and the two home-screen widgets will show a load error.
+
+### 2. Score your model
+
+Python 3.11 or newer. In a second terminal, at the repository root, install the checker once:
+
+```bash
+python3 -m pip install -r bench_env/requirements.txt
+python3 -m playwright install chromium
+```
+
+The second command downloads a headless Chromium once (about 150 MB). The checker drives the phone through it; starting the phone alone does not need it.
+
+Then point it at the phone and at your OpenAI-compatible endpoint:
+
+```bash
+zsh bench_env/benchmark/run.sh \
+  --mode hybrid \
+  --env-url http://127.0.0.1:3000 \
+  --model-base-url http://HOST:PORT/v1 \
+  --model-name YourModel \
+  --model-api-key "$OPENAI_API_KEY" \
+  --output-dir runs/bench-hybrid
+```
+
+`--mode gui_only` uses the same 215 tasks and the same checkers, with the app-native tools turned off. With the default protocol the script runs `qwen35_session`: the system prompt and the task are sent once, the last 3 screenshots are kept, and the API `tools` list stays `mobile_use`; in hybrid mode, the foreground app's tool schemas are added to the turn in which that app comes to the front. Inside that protocol the model name selects the adapter: Qwen, Gemini, Kimi K3, DeepSeek, or GLM. Each task starts from its bound initial snapshot, so episodes are independent and run in parallel (`--parallel`, default 5). The run writes `results.jsonl` and `summary.json`. For many parallel episodes, use `scripts/server/start_nginx_gateway.sh` as described in [`docs/getting-started.md`](docs/getting-started.md).
 
 ## One agent, GUI + tools
 
@@ -288,43 +331,6 @@ The training data (11.6K demonstration trajectories and 2K+ executable RL tasks)
 | `bench_env/benchmark/` | The 215 tasks and `run.sh` |
 | `bench_env/task/` | Task setup and the checkers |
 | `docs/getting-started.md` | From a fresh download to one finished task |
-
-## 1. Start the phone
-
-Node.js 22 or newer. Leave the terminal running and open <http://127.0.0.1:3000>.
-
-```bash
-# Download this repository as a ZIP from this page and unzip it, then:
-cd <unzipped-folder>
-zsh scripts/start_phone.sh
-```
-
-The script installs Node packages on the first run and restores a few large data files that are stored compressed. The 215 tasks do not need map, weather, or assistant keys.
-
-Wallpapers, theme widgets, and some media images load from a public asset CDN (`https://cdn.mobilegym.dev`); no account or key is sent. To run with no external requests, start with `VITE_CDN_BASE= zsh scripts/start_phone.sh`. The apps and tasks still work, but those images will be missing and the two home-screen widgets will show a load error.
-
-## 2. Score your model
-
-Python 3.11 or newer. In a second terminal, at the repository root, install the checker once:
-
-```bash
-python3 -m pip install -r bench_env/requirements.txt
-python3 -m playwright install chromium
-```
-
-Then point it at the phone and at your OpenAI-compatible endpoint:
-
-```bash
-zsh bench_env/benchmark/run.sh \
-  --mode hybrid \
-  --env-url http://127.0.0.1:3000 \
-  --model-base-url http://HOST:PORT/v1 \
-  --model-name YourModel \
-  --model-api-key "$OPENAI_API_KEY" \
-  --output-dir runs/bench-hybrid
-```
-
-`--mode gui_only` uses the same 215 tasks and the same checkers, with the app-native tools turned off. With the default protocol the script runs `qwen35_session`: the system prompt and the task are sent once, the last 3 screenshots are kept, and the API `tools` list stays `mobile_use`; in hybrid mode, the foreground app's tool schemas are added to the turn in which that app comes to the front. Inside that protocol the model name selects the adapter: Qwen, Gemini, Kimi K3, DeepSeek, or GLM. Each task starts from its bound initial snapshot, so episodes are independent and run in parallel (`--parallel`, default 5). The run writes `results.jsonl` and `summary.json`. For many parallel episodes, use `scripts/server/start_nginx_gateway.sh` as described in [`docs/getting-started.md`](docs/getting-started.md).
 
 ## License
 
