@@ -1,0 +1,11 @@
+{
+  "_note": "阶段⑤ 人工复核后的预期项:以下交互经 runtime_walkthrough / 手动 Playwright 探针 / visual_diff 证实真实可用,contract_crawler 的粗筛信号(__SIM__ state + 可见 innerText 哈希)对'纯本地态/滚动/需输入'类交互存在已知盲区,故列入 baseline 不再报告。运行时错误始终为 0。",
+  "detail.gallery.select.target": "视觉型:点圆点平滑滚动主图轮播(scrollGallery),不改文本/不改 __SIM__,粗筛无法观测;探针确认 galleryRef.scrollTo 生效。",
+  "chat.message.send": "需先在输入框输入文本再点发送;crawler 只点按钮不输入,空文本被 sendChatMessage 守卫为 no-op。walkthrough W6 已证实机器人应答链路(botReply)可用,发送逻辑同源。",
+  "brand.sort.select.target": "本地态重排专场商品(销量/价格/折扣)。手动探针证实点击后商品顺序真实变化(before≠after);crawler 随机漫游到的实例态未触发信号,属粗筛盲区。",
+  "searchResult.sort.select.target": "本地态重排搜索结果(综合/销量/价格/榜单)。探针证实价格排序后价格序真实变化([179,199,179,199,79]→[79,179,189,199,209]);268 件时 crawler 首屏 innerText 未捕捉到 top 变化,属粗筛盲区。",
+  "searchResult.chips.toggle": "本地筛选 chip 选中后以边框/底色变化表达状态并同步过滤商品；runtime_walkthrough W18 断言 computedStyle.borderColor 前后不同。crawler 的 innerText 哈希不含样式，属粗筛盲区。",
+  "home.camera.disabled": "相机搜索点击弹 toast「该功能暂未开放」,探针证实 toast 出现;toast 渲染在首页(长页)DOM 末尾,超出 crawler 的 body.innerText 前 1500 字窗口,故粗筛未捕捉,非死交互。",
+  "brand.subcat.select.target": "本地态子分类轮转筛选,探针证实点击后可见顺序变化;同上属粗筛盲区。",
+  "detail.findSimilar-open": "真实详情页顶栏'找相似'搜索按钮,visual_diff 详情页截图可见并可点、跳搜索结果页;crawler UNCLICKABLE 系其漫游到 :id 非真实商品的'商品不存在'兜底页(该页不渲染顶栏右侧按钮)所致的定位失败,非死交互。"
+}

@@ -1,0 +1,556 @@
+{
+  "_comment": [
+    "真机截图含个人信息(头像/壁纸/会员到期/Apple ID),按 spec §四 一律替换为虚构值。",
+    "日期不写死:logs/notes/todos/records 用 dayOffset(0=今天)与 minuteOfDay,",
+    "由 state.ts 经 TimeService 物化,避免种子数据随时间腐坏。"
+  ],
+  "user": {
+    "nickname": "小满",
+    "avatar": "user",
+    "vip": false
+  },
+  "contexts": [
+    {
+      "id": "ctx_morning",
+      "name": "晨间",
+      "order": 0
+    },
+    {
+      "id": "ctx_day",
+      "name": "日间",
+      "order": 1
+    },
+    {
+      "id": "ctx_night",
+      "name": "晚间",
+      "order": 2
+    }
+  ],
+  "habits": [
+    {
+      "id": "h_wakeup",
+      "name": "早起",
+      "icon": "IcSunrise",
+      "color": "#E9C46A",
+      "contextId": "ctx_morning",
+      "reward": 10,
+      "recurrence": {
+        "kind": "daily"
+      },
+      "focusRequired": false,
+      "important": true,
+      "archived": false,
+      "order": 0,
+      "oneTap": true,
+      "iconStyle": "graphic",
+      "reminders": [
+        {
+          "id": "rm_1",
+          "mode": "soft",
+          "time": "06:30",
+          "repeat": "daily",
+          "sound": "moving_on_bell"
+        }
+      ]
+    },
+    {
+      "id": "h_water",
+      "name": "起床一杯水",
+      "icon": "IcDroplet",
+      "color": "#6BAED6",
+      "contextId": "ctx_morning",
+      "reward": 10,
+      "recurrence": {
+        "kind": "daily"
+      },
+      "focusRequired": false,
+      "important": false,
+      "archived": false,
+      "order": 1,
+      "oneTap": true,
+      "iconStyle": "graphic"
+    },
+    {
+      "id": "h_word",
+      "name": "背一个单词",
+      "icon": "IcBook",
+      "color": "#A8C686",
+      "contextId": "ctx_day",
+      "reward": 10,
+      "recurrence": {
+        "kind": "weekly",
+        "weekdays": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "quantify": {
+        "enabled": true,
+        "unit": "个",
+        "target": 20
+      },
+      "focusRequired": false,
+      "important": false,
+      "archived": false,
+      "order": 2,
+      "oneTap": true,
+      "iconStyle": "graphic"
+    },
+    {
+      "id": "h_read",
+      "name": "读书 30 分钟",
+      "icon": "IcBookOpen",
+      "color": "#9B8FD1",
+      "contextId": "ctx_day",
+      "reward": 30,
+      "recurrence": {
+        "kind": "daily"
+      },
+      "focusRequired": true,
+      "important": true,
+      "archived": false,
+      "order": 3,
+      "oneTap": false,
+      "iconStyle": "graphic"
+    },
+    {
+      "id": "h_run",
+      "name": "夜跑",
+      "icon": "IcRun",
+      "color": "#7FB685",
+      "contextId": "ctx_night",
+      "reward": 20,
+      "recurrence": {
+        "kind": "interval",
+        "everyDays": 2
+      },
+      "quantify": {
+        "enabled": true,
+        "unit": "公里",
+        "target": 3
+      },
+      "focusRequired": false,
+      "important": false,
+      "archived": false,
+      "order": 4,
+      "oneTap": true,
+      "iconStyle": "graphic"
+    },
+    {
+      "id": "h_breath",
+      "name": "深呼吸 3 次",
+      "icon": "IcWind",
+      "color": "#6FB1A0",
+      "contextId": "ctx_night",
+      "reward": 10,
+      "recurrence": {
+        "kind": "daily"
+      },
+      "focusRequired": false,
+      "important": false,
+      "archived": false,
+      "order": 5,
+      "oneTap": true,
+      "iconStyle": "graphic"
+    },
+    {
+      "id": "h_sleep",
+      "name": "睡觉",
+      "icon": "IcMoon",
+      "color": "#7C9EDB",
+      "contextId": "ctx_night",
+      "reward": 10,
+      "recurrence": {
+        "kind": "monthly",
+        "days": [
+          1,
+          15
+        ]
+      },
+      "focusRequired": false,
+      "important": false,
+      "archived": false,
+      "order": 6,
+      "oneTap": true,
+      "iconStyle": "graphic"
+    },
+    {
+      "id": "h_diary",
+      "name": "写日记(已归档)",
+      "icon": "IcPen",
+      "color": "#DE8FA6",
+      "contextId": "ctx_night",
+      "reward": 10,
+      "recurrence": {
+        "kind": "daily"
+      },
+      "focusRequired": false,
+      "important": false,
+      "archived": true,
+      "order": 7,
+      "oneTap": true,
+      "iconStyle": "graphic"
+    }
+  ],
+  "groups": [
+    {
+      "id": "g_morning_routine",
+      "name": "晨间三件套",
+      "habitIds": [
+        "h_wakeup",
+        "h_water",
+        "h_word"
+      ]
+    }
+  ],
+  "logs": [
+    {
+      "habitId": "h_wakeup",
+      "dayOffset": -2,
+      "status": "done",
+      "stamps": [
+        390
+      ]
+    },
+    {
+      "habitId": "h_water",
+      "dayOffset": -2,
+      "status": "done",
+      "stamps": [
+        400
+      ]
+    },
+    {
+      "habitId": "h_word",
+      "dayOffset": -2,
+      "status": "failed",
+      "stamps": []
+    },
+    {
+      "habitId": "h_breath",
+      "dayOffset": -2,
+      "status": "pending",
+      "stamps": []
+    },
+    {
+      "habitId": "h_wakeup",
+      "dayOffset": -1,
+      "status": "done",
+      "stamps": [
+        385,
+        402
+      ],
+      "note": "闹钟响了两次"
+    },
+    {
+      "habitId": "h_water",
+      "dayOffset": -1,
+      "status": "done",
+      "stamps": [
+        395
+      ]
+    },
+    {
+      "habitId": "h_read",
+      "dayOffset": -1,
+      "status": "done",
+      "stamps": [
+        1290
+      ]
+    },
+    {
+      "habitId": "h_run",
+      "dayOffset": -1,
+      "status": "done",
+      "stamps": [
+        1200
+      ],
+      "quantity": 3
+    },
+    {
+      "habitId": "h_word",
+      "dayOffset": -1,
+      "status": "done",
+      "stamps": [
+        800
+      ],
+      "quantity": 22
+    },
+    {
+      "habitId": "h_wakeup",
+      "dayOffset": 0,
+      "status": "done",
+      "stamps": [
+        392
+      ]
+    },
+    {
+      "habitId": "h_water",
+      "dayOffset": 0,
+      "status": "done",
+      "stamps": [
+        398
+      ]
+    }
+  ],
+  "glow": {
+    "cumulative": 90,
+    "redeemed": 0
+  },
+  "wishes": [
+    {
+      "id": "w_milktea",
+      "name": "一杯芝士奶茶",
+      "cost": 50
+    },
+    {
+      "id": "w_book",
+      "name": "买一本想读很久的书",
+      "cost": 120
+    },
+    {
+      "id": "w_movie",
+      "name": "周末看场电影",
+      "cost": 200
+    },
+    {
+      "id": "w_headphone",
+      "name": "换一副耳机",
+      "cost": 800
+    },
+    {
+      "id": "w_trip",
+      "name": "一次短途旅行",
+      "cost": 2000
+    }
+  ],
+  "notes": [
+    {
+      "id": "n_habit",
+      "title": "小习惯大改变",
+      "color": "#F7CE45",
+      "dayOffset": 0,
+      "minuteOfDay": 877,
+      "body": "这是一条笔记:别急着把目标定得很大。先选一个小到不可思议的习惯:做一个俯卧撑、读一页书、拉伸10秒——小到几乎不会失败。你要培养的不是「意志力」,而是「开始的动作」。从今天起,只要每天完成这一点点,你就已经在变得更容易坚持了。"
+    },
+    {
+      "id": "n_drag",
+      "color": "#F7CE45",
+      "dayOffset": 0,
+      "minuteOfDay": 877,
+      "body": "长按拖动下方的习惯,可以将其拖动到不同的时间段中。"
+    },
+    {
+      "id": "n_rain",
+      "title": "雨天",
+      "color": "#6BAED6",
+      "dayOffset": -1,
+      "minuteOfDay": 1305,
+      "body": "下雨了,把跑步换成了室内拉伸。规则可以让步,别让它断掉。"
+    },
+    {
+      "id": "n_word",
+      "color": "#A8C686",
+      "dayOffset": -2,
+      "minuteOfDay": 810,
+      "body": "今天单词没背完,标了失败。扣掉的光芒值就当是学费。"
+    },
+    {
+      "id": "n_focus",
+      "title": "专注复盘",
+      "color": "#9B8FD1",
+      "dayOffset": -3,
+      "minuteOfDay": 1340,
+      "body": "45 分钟那档最舒服,25 分钟刚进入状态就被打断。"
+    }
+  ],
+  "todos": [
+    {
+      "id": "t_reply",
+      "title": "回复班主任消息",
+      "done": false,
+      "dueDayOffset": 0,
+      "order": 0
+    },
+    {
+      "id": "t_pack",
+      "title": "收拾明天的书包",
+      "done": false,
+      "dueDayOffset": 0,
+      "order": 1
+    },
+    {
+      "id": "t_water",
+      "title": "给绿萝浇水",
+      "done": false,
+      "dueDayOffset": 1,
+      "order": 2
+    },
+    {
+      "id": "t_hello",
+      "title": "买牙膏",
+      "done": true,
+      "doneDayOffset": 0,
+      "order": 3
+    },
+    {
+      "id": "t_more",
+      "title": "预约周六理发",
+      "done": true,
+      "doneDayOffset": 0,
+      "order": 4
+    },
+    {
+      "id": "t_bill",
+      "title": "交电费",
+      "done": true,
+      "doneDayOffset": -1,
+      "order": 5
+    }
+  ],
+  "records": [
+    {
+      "id": "r_1",
+      "habitId": "h_read",
+      "dayOffset": -1,
+      "startMinute": 1260,
+      "minutes": 30
+    },
+    {
+      "id": "r_2",
+      "habitId": null,
+      "dayOffset": -1,
+      "startMinute": 600,
+      "minutes": 45,
+      "note": "写周报"
+    },
+    {
+      "id": "r_3",
+      "habitId": "h_read",
+      "dayOffset": -2,
+      "startMinute": 1270,
+      "minutes": 25
+    },
+    {
+      "id": "r_4",
+      "habitId": null,
+      "dayOffset": -3,
+      "startMinute": 870,
+      "minutes": 60,
+      "note": "复习"
+    },
+    {
+      "id": "r_5",
+      "habitId": null,
+      "dayOffset": 0,
+      "startMinute": 540,
+      "minutes": 1
+    }
+  ],
+  "settings": {
+    "followSystemDark": true,
+    "language": "system",
+    "modules": [
+      {
+        "id": "stats",
+        "enabled": true,
+        "order": 0
+      },
+      {
+        "id": "habits",
+        "enabled": true,
+        "order": 1
+      },
+      {
+        "id": "todos",
+        "enabled": true,
+        "order": 2
+      },
+      {
+        "id": "notes",
+        "enabled": true,
+        "order": 3
+      },
+      {
+        "id": "focus",
+        "enabled": true,
+        "order": 4
+      },
+      {
+        "id": "timeline",
+        "enabled": true,
+        "order": 5
+      },
+      {
+        "id": "contexts",
+        "enabled": true,
+        "order": 6
+      },
+      {
+        "id": "archived",
+        "enabled": true,
+        "order": 7
+      },
+      {
+        "id": "personalize",
+        "enabled": true,
+        "order": 8
+      },
+      {
+        "id": "widget",
+        "enabled": true,
+        "order": 9
+      },
+      {
+        "id": "export",
+        "enabled": true,
+        "order": 10
+      },
+      {
+        "id": "lab",
+        "enabled": true,
+        "order": 11
+      },
+      {
+        "id": "modules",
+        "enabled": true,
+        "order": 12
+      },
+      {
+        "id": "aiplanner",
+        "enabled": true,
+        "order": 13
+      }
+    ],
+    "todoSort": "createdAt",
+    "todoHomeDisplay": true,
+    "hideCompleted": true,
+    "showArchived": false,
+    "dailyReminder": true,
+    "reminderTime": "21:18",
+    "weekStart": "mon",
+    "keySound": false,
+    "haptic": true,
+    "glowBanner": true,
+    "badge": false,
+    "themeId": "classic",
+    "focusMusic": "mute",
+    "focusKeepAwake": false,
+    "focusAutoLoop": false,
+    "customDurations": [],
+    "widget": {
+      "directCheckin": false,
+      "keepVisible": true,
+      "bgColor": "#FFF5D5"
+    },
+    "paletteId": "p_default",
+    "customPalettes": [],
+    "chimeHours": [],
+    "iconShape": "circle",
+    "layoutDensity": "compact"
+  },
+  "cards": []
+}

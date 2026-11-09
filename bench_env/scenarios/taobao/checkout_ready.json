@@ -1,0 +1,23 @@
+{
+  "_meta": {
+    "id": "taobao.checkout_ready",
+    "description": "单件待结账：购物车仅卫衣一件且已勾选，供完整购物任务演示"
+  },
+  "apps": {
+    "taobao": {
+      "cart": [
+        {
+          "id": "c3",
+          "itemId": "i_hoodie",
+          "skuDesc": "颜色:白灰色;尺码:M",
+          "qty": 1,
+          "price": 96.9,
+          "selected": true,
+          "invalid": false,
+          "addedAt": 1780776000000
+        }
+      ],
+      "checkout": null
+    }
+  }
+}

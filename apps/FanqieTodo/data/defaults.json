@@ -1,0 +1,428 @@
+{
+  "user": {
+    "name": "番茄用户",
+    "signature": "千里之行,始于足下",
+    "avatarKey": "user",
+    "account": "oirUauA4-n5tbwK7xAiEfn4xfWlY"
+  },
+  "todos": [
+    {
+      "id": "t_doc",
+      "name": "文档写作",
+      "type": "normal",
+      "timing": "countdown",
+      "durationMin": 25,
+      "bgKey": "confetti",
+      "bgColor": "#2AA6A0",
+      "order": 0,
+      "todayFocusCount": 0,
+      "todayDoneCount": 0
+    },
+    {
+      "id": "t_paper",
+      "name": "论文阅读",
+      "type": "habit",
+      "timing": "countup",
+      "durationMin": 0,
+      "bgKey": "night",
+      "bgColor": "#3B417A",
+      "order": 1,
+      "todayFocusCount": 0,
+      "todayDoneCount": 0,
+      "habitTodayMin": 0,
+      "habitTargetMin": 60
+    },
+    {
+      "id": "t_code",
+      "name": "代码",
+      "type": "normal",
+      "timing": "countup",
+      "durationMin": 0,
+      "bgKey": "starlight",
+      "bgColor": "#E8A0AE",
+      "order": 2,
+      "todayFocusCount": 2,
+      "todayDoneCount": 0
+    },
+    {
+      "id": "t_agent",
+      "name": "mobile agent调研",
+      "type": "normal",
+      "timing": "countup",
+      "durationMin": 0,
+      "bgKey": "birds",
+      "bgColor": "#C79A6B",
+      "order": 3,
+      "todayFocusCount": 2,
+      "todayDoneCount": 0
+    },
+    {
+      "id": "t_express",
+      "name": "取快递",
+      "type": "normal",
+      "timing": "none",
+      "durationMin": 0,
+      "bgKey": "dawn",
+      "bgColor": "#BFC6CE",
+      "order": 4,
+      "todayFocusCount": 0,
+      "todayDoneCount": 1
+    },
+    {
+      "id": "t_goal",
+      "name": "备考计划",
+      "type": "goal",
+      "timing": "countdown",
+      "durationMin": 25,
+      "bgKey": "snow",
+      "bgColor": "#9FB2C4",
+      "order": 5,
+      "todayFocusCount": 0,
+      "todayDoneCount": 0,
+      "goalDate": 1786723200000,
+      "goalHours": 60
+    }
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "todoId": "t_express",
+      "todoName": "取快递",
+      "startTs": 1783335240000,
+      "endTs": 1783335240000,
+      "durationMin": 0,
+      "status": "done"
+    },
+    {
+      "id": "r2",
+      "todoId": "t_code",
+      "todoName": "代码",
+      "startTs": 1783335180000,
+      "endTs": 1783335180000,
+      "durationMin": 0,
+      "status": "done"
+    },
+    {
+      "id": "r3",
+      "todoId": "t_paper",
+      "todoName": "论文阅读",
+      "startTs": 1783330800000,
+      "endTs": 1783332360000,
+      "durationMin": 26,
+      "status": "done",
+      "percent": 100
+    },
+    {
+      "id": "r4",
+      "todoId": "t_code",
+      "todoName": "代码",
+      "startTs": 1783319520000,
+      "endTs": 1783330200000,
+      "durationMin": 178,
+      "status": "done",
+      "percent": 100,
+      "reflection": ""
+    },
+    {
+      "id": "r5",
+      "todoId": "t_agent",
+      "todoName": "mobile agent调研",
+      "startTs": 1783216800000,
+      "endTs": 1783220400000,
+      "durationMin": 60,
+      "status": "done",
+      "percent": 100
+    },
+    {
+      "id": "r6",
+      "todoId": "t_doc",
+      "todoName": "文档写作",
+      "startTs": 1783235400000,
+      "endTs": 1783236900000,
+      "durationMin": 25,
+      "status": "done",
+      "percent": 100
+    },
+    {
+      "id": "r7",
+      "todoId": "t_code",
+      "todoName": "代码",
+      "startTs": 1783128600000,
+      "endTs": 1783134000000,
+      "durationMin": 90,
+      "status": "done",
+      "percent": 100
+    },
+    {
+      "id": "r8",
+      "todoId": "t_paper",
+      "todoName": "论文阅读",
+      "startTs": 1783080000000,
+      "endTs": 1783082400000,
+      "durationMin": 40,
+      "status": "done",
+      "percent": 100
+    },
+    {
+      "id": "r9",
+      "todoId": "t_code",
+      "todoName": "代码",
+      "startTs": 1783058400000,
+      "endTs": 1783060200000,
+      "durationMin": 30,
+      "status": "done",
+      "percent": 100
+    },
+    {
+      "id": "r15",
+      "todoId": "t_doc",
+      "todoName": "文档写作",
+      "startTs": 1782961200000,
+      "endTs": 1782963900000,
+      "durationMin": 45,
+      "status": "done",
+      "percent": 100
+    },
+    {
+      "id": "r10",
+      "todoId": "t_doc",
+      "todoName": "文档写作",
+      "startTs": 1782892800000,
+      "endTs": 1782895800000,
+      "durationMin": 50,
+      "status": "done",
+      "percent": 100
+    },
+    {
+      "id": "r16",
+      "todoId": "t_agent",
+      "todoName": "mobile agent调研",
+      "startTs": 1782817200000,
+      "endTs": 1782819300000,
+      "durationMin": 35,
+      "status": "done",
+      "percent": 100
+    },
+    {
+      "id": "r11",
+      "todoId": "t_agent",
+      "todoName": "mobile agent调研",
+      "startTs": 1782702000000,
+      "endTs": 1782709200000,
+      "durationMin": 120,
+      "status": "done",
+      "percent": 100
+    },
+    {
+      "id": "r12",
+      "todoId": "t_code",
+      "todoName": "代码",
+      "startTs": 1782435600000,
+      "endTs": 1782438900000,
+      "durationMin": 55,
+      "status": "done",
+      "percent": 100
+    },
+    {
+      "id": "r13",
+      "todoId": "t_paper",
+      "todoName": "论文阅读",
+      "startTs": 1782478800000,
+      "endTs": 1782480900000,
+      "durationMin": 35,
+      "status": "done",
+      "percent": 100
+    },
+    {
+      "id": "r14",
+      "todoId": "t_doc",
+      "todoName": "文档写作",
+      "startTs": 1782278400000,
+      "endTs": 1782279900000,
+      "durationMin": 25,
+      "status": "done",
+      "percent": 100
+    },
+    {
+      "id": "r17",
+      "todoId": "t_code",
+      "todoName": "代码",
+      "startTs": 1782088200000,
+      "endTs": 1782091800000,
+      "durationMin": 60,
+      "status": "done",
+      "percent": 100
+    },
+    {
+      "id": "r18",
+      "todoId": "t_paper",
+      "todoName": "论文阅读",
+      "startTs": 1781787600000,
+      "endTs": 1781790600000,
+      "durationMin": 50,
+      "status": "done",
+      "percent": 100
+    },
+    {
+      "id": "r19",
+      "todoId": "t_code",
+      "todoName": "代码",
+      "startTs": 1781144100000,
+      "endTs": 1781148600000,
+      "durationMin": 75,
+      "status": "done",
+      "percent": 100
+    },
+    {
+      "id": "r20",
+      "todoId": "t_doc",
+      "todoName": "文档写作",
+      "startTs": 1780898400000,
+      "endTs": 1780900800000,
+      "durationMin": 40,
+      "status": "done",
+      "percent": 100
+    },
+    {
+      "id": "r21",
+      "todoId": "t_agent",
+      "todoName": "mobile agent调研",
+      "startTs": 1780534800000,
+      "endTs": 1780539600000,
+      "durationMin": 80,
+      "status": "done",
+      "percent": 100
+    },
+    {
+      "id": "r22",
+      "todoId": "t_paper",
+      "todoName": "论文阅读",
+      "startTs": 1780317000000,
+      "endTs": 1780319700000,
+      "durationMin": 45,
+      "status": "done",
+      "percent": 100
+    },
+    {
+      "id": "r23",
+      "todoId": "t_code",
+      "todoName": "代码",
+      "startTs": 1779865200000,
+      "endTs": 1779870600000,
+      "durationMin": 90,
+      "status": "done",
+      "percent": 100
+    },
+    {
+      "id": "r24",
+      "todoId": "t_doc",
+      "todoName": "文档写作",
+      "startTs": 1779420000000,
+      "endTs": 1779422400000,
+      "durationMin": 40,
+      "status": "done",
+      "percent": 100
+    },
+    {
+      "id": "r25",
+      "todoId": "t_paper",
+      "todoName": "论文阅读",
+      "startTs": 1778842800000,
+      "endTs": 1778846100000,
+      "durationMin": 55,
+      "status": "done",
+      "percent": 100
+    },
+    {
+      "id": "r26",
+      "todoId": "t_agent",
+      "todoName": "mobile agent调研",
+      "startTs": 1778292000000,
+      "endTs": 1778296200000,
+      "durationMin": 70,
+      "status": "done",
+      "percent": 100
+    },
+    {
+      "id": "r27",
+      "todoId": "t_code",
+      "todoName": "代码",
+      "startTs": 1777700400000,
+      "endTs": 1777703100000,
+      "durationMin": 45,
+      "status": "done",
+      "percent": 100
+    },
+    {
+      "id": "r28",
+      "todoId": "t_doc",
+      "todoName": "文档写作",
+      "startTs": 1777104000000,
+      "endTs": 1777107000000,
+      "durationMin": 50,
+      "status": "done",
+      "percent": 100
+    },
+    {
+      "id": "r29",
+      "todoId": "t_paper",
+      "todoName": "论文阅读",
+      "startTs": 1776431400000,
+      "endTs": 1776433500000,
+      "durationMin": 35,
+      "status": "done",
+      "percent": 100
+    },
+    {
+      "id": "r30",
+      "todoId": "t_code",
+      "todoName": "代码",
+      "startTs": 1775525400000,
+      "endTs": 1775530800000,
+      "durationMin": 90,
+      "status": "done",
+      "percent": 100
+    }
+  ],
+  "futures": [
+    {
+      "id": "f1",
+      "name": "考研",
+      "remark": "上岸心仪的学校",
+      "targetDate": 1798819200000
+    },
+    {
+      "id": "f2",
+      "name": "毕业",
+      "remark": "顺利答辩",
+      "targetDate": 1810915200000
+    },
+    {
+      "id": "f3",
+      "name": "生日",
+      "remark": "又长大一岁",
+      "targetDate": 1787760000000
+    }
+  ],
+  "settings": {
+    "restDurationMin": 10,
+    "studyMode": false,
+    "strictMode": false,
+    "midnightMode": true,
+    "noStrikethrough": true,
+    "fixedOrder": false,
+    "pullSearch": true,
+    "focusVisible": true,
+    "wakeVisible": true,
+    "lockCountStats": true,
+    "themeColor": "blue",
+    "motto": ""
+  },
+  "stats": {
+    "totalCount": 120,
+    "totalMinutes": 7600,
+    "streakDays": 7,
+    "totalDays": 55,
+    "monthlyLockExit": 0
+  }
+}

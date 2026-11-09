@@ -1,0 +1,21 @@
+node_modules/
+.venv/
+.env
+.env.*
+runs/
+dist/
+__pycache__/
+.DS_Store
+
+# Restored by scripts/unpack_large_files.sh
+/apps/Bilibili/data/commenters.json
+/apps/Bilibili/data/videoComments.json
+/apps/Bilibili/data/videoDetails.jsonl
+/apps/Bilibili/data/videos.json
+/apps/Map/data/routes.json
+/apps/Railway12306/data/catalog/trainCatalog.json
+/apps/RedBook/data/notes.json
+/apps/Reddit/assets/posts/post_1qy1hv6.png
+/apps/Reddit/data/posts.json
+/public/ime/pinyin_dict.json
+/public/sdcard/DCIM/Camera/IMG_20260320_yiheyuan_wanshoushan.jpg

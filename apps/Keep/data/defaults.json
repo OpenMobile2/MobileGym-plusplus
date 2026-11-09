@@ -1,0 +1,3346 @@
+{
+  "lastToast": null,
+  "user": {
+    "id": "u_demo_keep_42",
+    "nickname": "Keep体验用户42",
+    "avatar": "avatar_me",
+    "gender": "保密",
+    "heightCm": 171,
+    "weightKg": 67.8,
+    "bmi": 23.2,
+    "kgLevel": 12,
+    "following": 9,
+    "followers": 2,
+    "cheers": 14,
+    "sportCoins": 1386,
+    "totalMinutes": 5280,
+    "totalRunKm": 188.4,
+    "memberExpired": true
+  },
+  "followedCoaches": [
+    "coach_pamela",
+    "coach_cheng33",
+    "coach_ouyang",
+    "coach_keepjun",
+    "coach_yujie",
+    "coach_beibei",
+    "coach_jinan",
+    "coach_xiaoa"
+  ],
+  "followedUsers": [
+    "帕梅拉",
+    "成33Jane",
+    "欧阳春晓",
+    "减脂塑形中的Keep君",
+    "联系人体验号2",
+    "北北今天也开练",
+    "济南小跑者",
+    "小A体验号"
+  ],
+  "followedNames": [
+    "帕梅拉",
+    "成33Jane",
+    "欧阳春晓",
+    "减脂塑形中的Keep君",
+    "联系人体验号2",
+    "北北今天也开练",
+    "济南小跑者",
+    "小A体验号"
+  ],
+  "wishCourses": [
+    "c_bigweight",
+    "c_belly1",
+    "c_hiit20",
+    "c_rope1000"
+  ],
+  "wishCourseIds": [
+    "c_bigweight",
+    "c_belly1",
+    "c_hiit20",
+    "c_rope1000"
+  ],
+  "member": {
+    "active": false,
+    "expireDate": "2026-07-07",
+    "plans": [
+      {
+        "id": "m_monthly_cont",
+        "label": "连续包月",
+        "price": 4,
+        "origPrice": 19,
+        "note": "到期按19元/月自动续费,可随时取消,优惠仅限1次"
+      },
+      {
+        "id": "m_month",
+        "label": "月卡会员",
+        "price": 25,
+        "origPrice": 25,
+        "note": ""
+      },
+      {
+        "id": "m_quarter",
+        "label": "季卡",
+        "price": 40,
+        "origPrice": 68,
+        "note": ""
+      },
+      {
+        "id": "m_year",
+        "label": "年卡",
+        "price": 128,
+        "origPrice": 248,
+        "note": ""
+      }
+    ]
+  },
+  "courses": [
+    {
+      "id": "c_bigweight",
+      "title": "大体重减脂|无跳跃,不伤膝,燃脂快",
+      "coach": "猫叔慢跑",
+      "coachId": "coach_maoshu",
+      "level": "K2",
+      "minutes": 6,
+      "kcalRange": "22-32千卡",
+      "rating": 7.5,
+      "practiced": "1942万",
+      "category": "免费课",
+      "cover": "course_bigweight",
+      "isMember": false,
+      "segments": [
+        {
+          "name": "开肩热身",
+          "seconds": 45
+        },
+        {
+          "name": "原地垫步",
+          "seconds": 60
+        },
+        {
+          "name": "徒手深蹲",
+          "seconds": 50
+        },
+        {
+          "name": "站姿提膝转体",
+          "seconds": 60
+        },
+        {
+          "name": "静态拉伸",
+          "seconds": 55
+        }
+      ],
+      "description": "专为大体重人群设计的无跳跃燃脂课,全程低冲击不伤膝盖,在家就能安全开练,快速点燃全身脂肪。",
+      "commentsCount": 12140,
+      "comments": [
+        {
+          "id": "cc_bw_1",
+          "author": "训练体验号1",
+          "avatar": "avatar_xiaoa",
+          "content": "第14天打卡,膝盖真的没有不舒服,已经掉了2.6斤!",
+          "time": "2026-07-12",
+          "region": "示例区",
+          "likes": 326,
+          "replies": [
+            {
+              "id": "cc_bw_1r1",
+              "author": "猫叔慢跑",
+              "content": "坚持住,注意跟上呼吸节奏。",
+              "time": "2026-07-12",
+              "region": "示例区",
+              "likes": 88
+            },
+            {
+              "id": "cc_bw_1r2",
+              "author": "训练体验号2",
+              "content": "同款进度,一起加油!",
+              "time": "2026-07-13",
+              "region": "示例区",
+              "likes": 12
+            }
+          ]
+        },
+        {
+          "id": "cc_bw_2",
+          "author": "小A体验号",
+          "avatar": "avatar_xiaoa",
+          "content": "适合我这种200斤的新手,动作讲解很细。",
+          "time": "2026-07-10",
+          "region": "示例区",
+          "likes": 154,
+          "replies": []
+        },
+        {
+          "id": "cc_bw_3",
+          "author": "训练体验号3",
+          "avatar": "avatar_beibei",
+          "content": "6分钟看着短,认真做完还是会出汗的。",
+          "time": "2026-07-08",
+          "region": "示例区",
+          "likes": 97,
+          "replies": [
+            {
+              "id": "cc_bw_3r1",
+              "author": "训练体验号4",
+              "content": "配合超慢跑效果更好。",
+              "time": "2026-07-09",
+              "region": "示例区",
+              "likes": 21
+            }
+          ]
+        },
+        {
+          "id": "cc_bw_4",
+          "author": "训练体验号5",
+          "avatar": "avatar_jinan",
+          "content": "跟练一个月,裤腰松了一格,感谢猫叔!",
+          "time": "2026-07-02",
+          "region": "示例区",
+          "likes": 245,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "id": "c_belly1",
+      "title": "大体重减肚子1",
+      "coach": "猫叔慢跑",
+      "coachId": "coach_maoshu",
+      "level": "K2",
+      "minutes": 14,
+      "kcalRange": "80-120千卡",
+      "rating": 7.2,
+      "practiced": "1004万",
+      "category": "免费课",
+      "cover": "course_belly",
+      "isMember": false,
+      "segments": [
+        {
+          "name": "膝关节热身",
+          "seconds": 60
+        },
+        {
+          "name": "站姿侧屈",
+          "seconds": 60
+        },
+        {
+          "name": "弓步后转体",
+          "seconds": 45
+        },
+        {
+          "name": "站姿卷腹",
+          "seconds": 60
+        },
+        {
+          "name": "腹部拉伸",
+          "seconds": 50
+        }
+      ],
+      "description": "针对腹部脂肪的大体重友好训练,站姿为主减少腰椎压力,循序渐进收紧核心。",
+      "commentsCount": 8320,
+      "comments": [
+        {
+          "id": "cc_by_1",
+          "author": "训练体验号6",
+          "avatar": "avatar_swimmer",
+          "content": "第一节就跟下来了,强度刚刚好。",
+          "time": "2026-07-11",
+          "region": "示例区",
+          "likes": 76,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "id": "c_backschool",
+      "title": "开学减脂40分钟暴汗",
+      "coach": "成33Jane",
+      "coachId": "coach_cheng33",
+      "level": "K3",
+      "minutes": 43,
+      "kcalRange": "300-420千卡",
+      "rating": 8.8,
+      "practiced": "356万",
+      "category": "HIIT训练",
+      "cover": "course_sweat40",
+      "isMember": false,
+      "segments": [
+        {
+          "name": "动态热身",
+          "seconds": 180
+        },
+        {
+          "name": "全身循环第1轮",
+          "seconds": 600
+        },
+        {
+          "name": "全身循环第2轮",
+          "seconds": 600
+        },
+        {
+          "name": "核心冲刺",
+          "seconds": 480
+        },
+        {
+          "name": "放松拉伸",
+          "seconds": 300
+        }
+      ],
+      "description": "43分钟高强度进阶暴汗课,循环冲刺配合核心训练,开学季快速刷脂。",
+      "commentsCount": 4021,
+      "comments": [
+        {
+          "id": "cc_bs_1",
+          "author": "训练体验号7",
+          "avatar": "avatar_xiaoa",
+          "content": "全宿舍一起跟练,汗流成河。",
+          "time": "2026-07-09",
+          "region": "示例区",
+          "likes": 63,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "id": "c_live40",
+      "title": "40分钟大体重爆汗燃脂课Keep直播版",
+      "coach": "欧阳春晓",
+      "coachId": "coach_ouyang",
+      "level": "K2",
+      "minutes": 40,
+      "kcalRange": "280-380千卡",
+      "rating": 8.4,
+      "practiced": "89万",
+      "category": "免费课",
+      "cover": "course_live",
+      "isMember": false,
+      "segments": [
+        {
+          "name": "直播热身",
+          "seconds": 240
+        },
+        {
+          "name": "有氧燃脂第1节",
+          "seconds": 720
+        },
+        {
+          "name": "有氧燃脂第2节",
+          "seconds": 720
+        },
+        {
+          "name": "整理放松",
+          "seconds": 300
+        }
+      ],
+      "description": "直播课回放版,教练全程口令带练,大体重也能安全爆汗。",
+      "commentsCount": 1520,
+      "comments": []
+    },
+    {
+      "id": "c_fartlek3",
+      "title": "3公里法特莱克跑",
+      "coach": "陆知行、程一凡 2位教练",
+      "coachId": null,
+      "level": "K1",
+      "minutes": 26,
+      "kcalRange": "226-338千卡",
+      "rating": 9.5,
+      "practiced": "7万",
+      "category": "会员课",
+      "cover": "course_fartlek",
+      "isMember": true,
+      "distanceKm": 3.05,
+      "seriesIndex": 1,
+      "seriesTotal": 6,
+      "segments": [
+        {
+          "name": "慢跑热身",
+          "seconds": 300
+        },
+        {
+          "name": "变速段·快",
+          "seconds": 240
+        },
+        {
+          "name": "变速段·缓",
+          "seconds": 300
+        },
+        {
+          "name": "变速段·快",
+          "seconds": 240
+        },
+        {
+          "name": "冷身慢走",
+          "seconds": 240
+        }
+      ],
+      "description": "零基础也能上手的法特莱克变速跑,快慢交替提升心肺,26分钟完成3.05公里。",
+      "commentsCount": 12,
+      "comments": [
+        {
+          "id": "cc_f3_1",
+          "author": "跑步体验号1",
+          "avatar": "avatar_beibei",
+          "content": "第一次变速跑,原来这么有意思。",
+          "time": "2026-07-06",
+          "region": "示例区",
+          "likes": 9,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "id": "c_fartlek5",
+      "title": "5公里法特莱克跑·初级",
+      "coach": "陆知行、程一凡 2位教练",
+      "coachId": null,
+      "level": "K2",
+      "minutes": 38,
+      "kcalRange": "380-520千卡",
+      "rating": 9.3,
+      "practiced": "5万",
+      "category": "会员课",
+      "cover": "course_fartlek",
+      "isMember": true,
+      "distanceKm": 5.0,
+      "seriesIndex": 2,
+      "seriesTotal": 6,
+      "segments": [
+        {
+          "name": "慢跑热身",
+          "seconds": 360
+        },
+        {
+          "name": "变速循环×4",
+          "seconds": 1500
+        },
+        {
+          "name": "冷身慢走",
+          "seconds": 420
+        }
+      ],
+      "description": "在3公里基础上进阶的5公里变速跑课程,38分钟科学配速带你突破。",
+      "commentsCount": 8,
+      "comments": []
+    },
+    {
+      "id": "c_assault",
+      "title": "突击减脂训练",
+      "coach": "成33Jane",
+      "coachId": "coach_cheng33",
+      "level": "K3",
+      "minutes": 32,
+      "kcalRange": "260-360千卡",
+      "rating": 9.2,
+      "practiced": "12万",
+      "category": "会员课",
+      "cover": "course_assault",
+      "isMember": true,
+      "segments": [
+        {
+          "name": "激活热身",
+          "seconds": 180
+        },
+        {
+          "name": "突击循环第1组",
+          "seconds": 540
+        },
+        {
+          "name": "突击循环第2组",
+          "seconds": 540
+        },
+        {
+          "name": "拉伸放松",
+          "seconds": 300
+        }
+      ],
+      "description": "短时高效的突击式减脂训练,复合动作连续输出,快速拉高心率。",
+      "commentsCount": 960,
+      "comments": []
+    },
+    {
+      "id": "c_rope2000",
+      "title": "2000次跳绳",
+      "coach": "Keep官方",
+      "coachId": null,
+      "level": "K3",
+      "minutes": 35,
+      "kcalRange": "400-500千卡",
+      "rating": 9.7,
+      "practiced": "23万",
+      "category": "跳绳燃脂",
+      "cover": "course_rope",
+      "isMember": true,
+      "segments": [
+        {
+          "name": "腕踝热身",
+          "seconds": 120
+        },
+        {
+          "name": "跳绳500次×4组",
+          "seconds": 1680
+        },
+        {
+          "name": "小腿拉伸",
+          "seconds": 240
+        }
+      ],
+      "description": "全官方精品系列课,分组完成2000次跳绳,组间科学休息不伤膝。",
+      "commentsCount": 2103,
+      "comments": []
+    },
+    {
+      "id": "c_rope1000",
+      "title": "1000次跳绳",
+      "coach": "Keep官方",
+      "coachId": null,
+      "level": "K2",
+      "minutes": 20,
+      "kcalRange": "200-260千卡",
+      "rating": 9.5,
+      "practiced": "41万",
+      "category": "跳绳燃脂",
+      "cover": "course_rope",
+      "isMember": true,
+      "segments": [
+        {
+          "name": "腕踝热身",
+          "seconds": 120
+        },
+        {
+          "name": "跳绳250次×4组",
+          "seconds": 840
+        },
+        {
+          "name": "小腿拉伸",
+          "seconds": 240
+        }
+      ],
+      "description": "跳绳入门量级,1000次分四组完成,轻松燃脂无压力。",
+      "commentsCount": 3305,
+      "comments": []
+    },
+    {
+      "id": "c_aerobic45",
+      "title": "45分钟有氧燃脂跑",
+      "coach": "陆知行",
+      "coachId": null,
+      "level": "K2",
+      "minutes": 45,
+      "kcalRange": "420-520千卡",
+      "rating": 9.3,
+      "practiced": "18万",
+      "category": "户外跑步",
+      "cover": "course_run_outdoor",
+      "isMember": false,
+      "distanceKm": 6.5,
+      "segments": [
+        {
+          "name": "热身快走",
+          "seconds": 300
+        },
+        {
+          "name": "匀速有氧跑",
+          "seconds": 2100
+        },
+        {
+          "name": "冷身慢走",
+          "seconds": 300
+        }
+      ],
+      "description": "45分钟匀速有氧,语音全程指导心率区间,打好耐力底子。",
+      "commentsCount": 1250,
+      "comments": []
+    },
+    {
+      "id": "c_slowrun45",
+      "title": "45分钟大体重超慢跑",
+      "coach": "猫叔慢跑",
+      "coachId": "coach_maoshu",
+      "level": "K1",
+      "minutes": 45,
+      "kcalRange": "300-380千卡",
+      "rating": 8.6,
+      "practiced": "52万",
+      "category": "户外跑步",
+      "cover": "course_slowrun",
+      "isMember": false,
+      "distanceKm": 4.5,
+      "segments": [
+        {
+          "name": "关节热身",
+          "seconds": 300
+        },
+        {
+          "name": "超慢跑主段",
+          "seconds": 2100
+        },
+        {
+          "name": "放松走",
+          "seconds": 300
+        }
+      ],
+      "description": "大体重专属超慢跑节奏,心率友好不伤膝,跑步入门第一课。",
+      "commentsCount": 5218,
+      "comments": []
+    },
+    {
+      "id": "c_metronome",
+      "title": "跑步节拍器180步频",
+      "coach": "程一凡",
+      "coachId": null,
+      "level": "K1",
+      "minutes": 30,
+      "kcalRange": "240-320千卡",
+      "rating": 8.9,
+      "practiced": "9万",
+      "category": "户外跑步",
+      "cover": "course_slowrun",
+      "isMember": false,
+      "segments": [
+        {
+          "name": "节奏热身",
+          "seconds": 300
+        },
+        {
+          "name": "180步频跟跑",
+          "seconds": 1320
+        },
+        {
+          "name": "冷身",
+          "seconds": 180
+        }
+      ],
+      "description": "跟着180BPM节拍器建立高效步频,改善跑姿减少伤病。",
+      "commentsCount": 742,
+      "comments": []
+    },
+    {
+      "id": "c_easyburn",
+      "title": "大体重轻松燃脂跑",
+      "coach": "猫叔慢跑",
+      "coachId": "coach_maoshu",
+      "level": "K1",
+      "minutes": 25,
+      "kcalRange": "180-240千卡",
+      "rating": 7.6,
+      "practiced": "36万",
+      "category": "户外跑步",
+      "cover": "course_run_outdoor",
+      "isMember": false,
+      "segments": [
+        {
+          "name": "热身走",
+          "seconds": 240
+        },
+        {
+          "name": "跑走交替",
+          "seconds": 1080
+        },
+        {
+          "name": "放松走",
+          "seconds": 180
+        }
+      ],
+      "description": "跑走结合的轻松燃脂入门,大体重也能坚持完成的第一节户外课。",
+      "commentsCount": 2860,
+      "comments": []
+    },
+    {
+      "id": "c_darun30",
+      "title": "大正领跑·30分钟有氧跑",
+      "coach": "大正",
+      "coachId": null,
+      "level": "K3",
+      "minutes": 30,
+      "kcalRange": "300-380千卡",
+      "rating": 8.7,
+      "practiced": "6万",
+      "category": "户外跑步",
+      "cover": "course_run_outdoor",
+      "isMember": true,
+      "distanceKm": 5.2,
+      "segments": [
+        {
+          "name": "热身激活",
+          "seconds": 240
+        },
+        {
+          "name": "领跑主段",
+          "seconds": 1320
+        },
+        {
+          "name": "冷身拉伸",
+          "seconds": 240
+        }
+      ],
+      "description": "教练全程语音领跑的30分钟有氧,节奏紧凑,适合有跑步基础的你。",
+      "commentsCount": 415,
+      "comments": []
+    },
+    {
+      "id": "c_congrong",
+      "title": "从容乐动",
+      "coach": "帕梅拉",
+      "coachId": "coach_pamela",
+      "level": "K2",
+      "minutes": 25,
+      "kcalRange": "180-260千卡",
+      "rating": 7.7,
+      "practiced": "128万",
+      "category": "健身操",
+      "cover": "course_dance1",
+      "isMember": false,
+      "segments": [
+        {
+          "name": "律动热身",
+          "seconds": 180
+        },
+        {
+          "name": "有氧操第1节",
+          "seconds": 540
+        },
+        {
+          "name": "有氧操第2节",
+          "seconds": 540
+        },
+        {
+          "name": "舒缓拉伸",
+          "seconds": 240
+        }
+      ],
+      "description": "音乐驱动的从容节奏健身操,边跳边燃脂,快乐不知不觉出汗。",
+      "commentsCount": 6840,
+      "comments": []
+    },
+    {
+      "id": "c_hongri",
+      "title": "《红日》港风燃脂舞",
+      "coach": "欧阳春晓",
+      "coachId": "coach_ouyang",
+      "level": "K2",
+      "minutes": 18,
+      "kcalRange": "140-200千卡",
+      "rating": 8.1,
+      "practiced": "74万",
+      "category": "健身操",
+      "cover": "course_dance2",
+      "isMember": false,
+      "segments": [
+        {
+          "name": "热身律动",
+          "seconds": 150
+        },
+        {
+          "name": "港风舞段跟跳",
+          "seconds": 720
+        },
+        {
+          "name": "放松拉伸",
+          "seconds": 210
+        }
+      ],
+      "description": "经典港乐配上燃脂舞步,一首《红日》跳出好心情。",
+      "commentsCount": 3190,
+      "comments": []
+    },
+    {
+      "id": "c_yesok",
+      "title": "YES OK女团舞",
+      "coach": "帕梅拉",
+      "coachId": "coach_pamela",
+      "level": "K2",
+      "minutes": 15,
+      "kcalRange": "110-160千卡",
+      "rating": 8.5,
+      "practiced": "216万",
+      "category": "健身操",
+      "cover": "course_dance1",
+      "isMember": false,
+      "segments": [
+        {
+          "name": "热身",
+          "seconds": 120
+        },
+        {
+          "name": "女团舞分解教学",
+          "seconds": 420
+        },
+        {
+          "name": "完整跟跳",
+          "seconds": 300
+        }
+      ],
+      "description": "女团同款编舞拆解教学,零基础也能跳完整支舞。",
+      "commentsCount": 9042,
+      "comments": []
+    },
+    {
+      "id": "c_hiit20",
+      "title": "20分钟HIIT",
+      "coach": "成33Jane",
+      "coachId": "coach_cheng33",
+      "level": "K2",
+      "minutes": 20,
+      "kcalRange": "180-260千卡",
+      "rating": 8.6,
+      "practiced": "310万",
+      "category": "HIIT训练",
+      "cover": "course_hiit",
+      "isMember": false,
+      "segments": [
+        {
+          "name": "动态热身",
+          "seconds": 150
+        },
+        {
+          "name": "弓步后转体",
+          "seconds": 40
+        },
+        {
+          "name": "开合跳",
+          "seconds": 40
+        },
+        {
+          "name": "高抬腿循环",
+          "seconds": 480
+        },
+        {
+          "name": "拉伸放松",
+          "seconds": 200
+        }
+      ],
+      "description": "25个动作循环的高强度间歇训练,20分钟榨干糖原点燃后燃效应。",
+      "commentsCount": 15230,
+      "comments": [
+        {
+          "id": "cc_h20_1",
+          "author": "训练体验号3",
+          "avatar": "avatar_beibei",
+          "content": "戳我打卡那个彩带太爽了!",
+          "time": "2026-07-13",
+          "region": "示例区",
+          "likes": 41,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "id": "c_cusuo",
+      "title": "12分钟促睾",
+      "coach": "Keep官方",
+      "coachId": null,
+      "level": "K1",
+      "minutes": 12,
+      "kcalRange": "60-90千卡",
+      "rating": 6.5,
+      "practiced": "88万",
+      "category": "健康改善",
+      "cover": "course_health",
+      "isMember": false,
+      "segments": [
+        {
+          "name": "唤醒热身",
+          "seconds": 120
+        },
+        {
+          "name": "深蹲激活",
+          "seconds": 300
+        },
+        {
+          "name": "整理呼吸",
+          "seconds": 180
+        }
+      ],
+      "description": "以下肢大肌群激活为主的健康改善训练,12分钟唤醒身体状态。",
+      "commentsCount": 1980,
+      "comments": []
+    },
+    {
+      "id": "c_knee",
+      "title": "膝关节稳定",
+      "coach": "Keep官方",
+      "coachId": null,
+      "level": "K1",
+      "minutes": 15,
+      "kcalRange": "50-80千卡",
+      "rating": 7.4,
+      "practiced": "132万",
+      "category": "健康改善",
+      "cover": "course_health",
+      "isMember": false,
+      "segments": [
+        {
+          "name": "关节热身",
+          "seconds": 120
+        },
+        {
+          "name": "靠墙静蹲",
+          "seconds": 300
+        },
+        {
+          "name": "腿部拉伸",
+          "seconds": 240
+        }
+      ],
+      "description": "强化膝关节周围肌群的稳定性训练,跑者和大体重人群的护膝必修课。",
+      "commentsCount": 2410,
+      "comments": []
+    }
+  ],
+  "coaches": [
+    {
+      "id": "coach_maoshu",
+      "name": "猫叔慢跑",
+      "avatar": "coach_maoshu",
+      "fans": "271.6w",
+      "monthly": "34.5w",
+      "cheers": "81.0w",
+      "following": 578,
+      "certs": [
+        "ACE教练"
+      ],
+      "achievements": [
+        {
+          "label": "半马PB",
+          "value": "01:16:15"
+        },
+        {
+          "label": "最远距离",
+          "value": "22.22公里"
+        },
+        {
+          "label": "KG等级",
+          "value": "KG11"
+        }
+      ],
+      "courses": [
+        "c_bigweight",
+        "c_belly1",
+        "c_slowrun45",
+        "c_easyburn"
+      ],
+      "bio": "大体重减脂领路人,慢慢跑,不受伤。"
+    },
+    {
+      "id": "coach_pamela",
+      "name": "帕梅拉",
+      "avatar": "coach_pamela",
+      "fans": "1652.5w",
+      "monthly": "363.3w",
+      "cheers": "114.0w",
+      "following": 3,
+      "certs": [
+        "YouTube运动博主"
+      ],
+      "achievements": [
+        {
+          "label": "月跟练",
+          "value": "363.3w"
+        },
+        {
+          "label": "课程数",
+          "value": "120+"
+        },
+        {
+          "label": "KG等级",
+          "value": "KG12"
+        }
+      ],
+      "courses": [
+        "c_congrong",
+        "c_yesok"
+      ],
+      "bio": "女 · 德国 · IP广西|和我一起快乐流汗。"
+    },
+    {
+      "id": "coach_cheng33",
+      "name": "成33Jane",
+      "avatar": "coach_cheng33",
+      "fans": "96.4w",
+      "monthly": "21.8w",
+      "cheers": "35.2w",
+      "following": 210,
+      "certs": [
+        "NSCA-CPT认证"
+      ],
+      "achievements": [
+        {
+          "label": "带练时长",
+          "value": "3200小时"
+        },
+        {
+          "label": "月跟练",
+          "value": "21.8w"
+        },
+        {
+          "label": "KG等级",
+          "value": "KG13"
+        }
+      ],
+      "courses": [
+        "c_backschool",
+        "c_assault",
+        "c_hiit20"
+      ],
+      "bio": "HIIT狂热份子,短时高效是我的信条。"
+    },
+    {
+      "id": "coach_ouyang",
+      "name": "欧阳春晓",
+      "avatar": "coach_ouyang",
+      "fans": "188.9w",
+      "monthly": "45.1w",
+      "cheers": "52.7w",
+      "following": 96,
+      "certs": [
+        "国家健身操舞一级教练"
+      ],
+      "achievements": [
+        {
+          "label": "原创编舞",
+          "value": "86支"
+        },
+        {
+          "label": "月跟练",
+          "value": "45.1w"
+        },
+        {
+          "label": "KG等级",
+          "value": "KG10"
+        }
+      ],
+      "courses": [
+        "c_live40",
+        "c_hongri"
+      ],
+      "bio": "跳舞就是最好的有氧,跟我一起动起来。"
+    },
+    {
+      "id": "coach_keepjun",
+      "name": "减脂塑形中的Keep君",
+      "avatar": "coach_keepjun",
+      "fans": "448.6w",
+      "monthly": "88.3w",
+      "cheers": "120.5w",
+      "following": 12,
+      "certs": [
+        "Keep官方账号"
+      ],
+      "achievements": [
+        {
+          "label": "话题主持",
+          "value": "230个"
+        },
+        {
+          "label": "月跟练",
+          "value": "88.3w"
+        },
+        {
+          "label": "KG等级",
+          "value": "KG14"
+        }
+      ],
+      "courses": [],
+      "bio": "官方减脂搭子,超级组/金字塔模板主理人。"
+    },
+    {
+      "id": "coach_yujie",
+      "name": "联系人体验号2",
+      "avatar": "coach_yujie",
+      "fans": "32.7w",
+      "monthly": "6.9w",
+      "cheers": "11.4w",
+      "following": 305,
+      "certs": [
+        "ACSM认证私教"
+      ],
+      "achievements": [
+        {
+          "label": "带练学员",
+          "value": "1.2w人"
+        },
+        {
+          "label": "月跟练",
+          "value": "6.9w"
+        },
+        {
+          "label": "KG等级",
+          "value": "KG9"
+        }
+      ],
+      "courses": [],
+      "bio": "主页有更精彩的健身教程,有问题留言给我哦。"
+    },
+    {
+      "id": "coach_beibei",
+      "name": "北北今天也开练",
+      "avatar": "avatar_beibei",
+      "fans": "1.2w",
+      "monthly": "3280",
+      "cheers": "8600",
+      "following": 42,
+      "certs": ["运动达人"],
+      "achievements": [{"label": "连续训练", "value": "128天"}, {"label": "累计训练", "value": "396次"}, {"label": "KG等级", "value": "KG7"}],
+      "courses": [],
+      "bio": "坚持记录每一次训练，今天也一起开练。"
+    },
+    {
+      "id": "coach_jinan",
+      "name": "济南小跑者",
+      "avatar": "avatar_jinan",
+      "fans": "8600",
+      "monthly": "2190",
+      "cheers": "5400",
+      "following": 67,
+      "certs": ["跑步达人"],
+      "achievements": [{"label": "月跑量", "value": "86公里"}, {"label": "累计跑步", "value": "428次"}, {"label": "KG等级", "value": "KG6"}],
+      "courses": [],
+      "bio": "低冲击慢跑爱好者，分享安全训练心得。"
+    },
+    {
+      "id": "coach_xiaoa",
+      "name": "小A体验号",
+      "avatar": "avatar_xiaoa",
+      "fans": "3200",
+      "monthly": "980",
+      "cheers": "2100",
+      "following": 31,
+      "certs": ["运动爱好者"],
+      "achievements": [{"label": "本月训练", "value": "18次"}, {"label": "累计时长", "value": "126小时"}, {"label": "KG等级", "value": "KG5"}],
+      "courses": [],
+      "bio": "跟着课程认真练，用体验记录一点点进步。"
+    }
+  ],
+  "plans": [
+    {
+      "id": "p_bigweight",
+      "title": "大体重·全身燃脂计划",
+      "weeks": 4,
+      "daysPerWeek": 7,
+      "practiced": "935万人",
+      "tags": [
+        "大体重掉秤",
+        "瘦全身"
+      ],
+      "cover": "plan_bigweight",
+      "days": 28,
+      "kcal": 8784,
+      "level": "K2"
+    },
+    {
+      "id": "p_student_slim",
+      "title": "学生专属·瘦全身计划",
+      "weeks": 6,
+      "daysPerWeek": 4,
+      "practiced": "702万人",
+      "tags": [
+        "瘦全身"
+      ],
+      "cover": "plan_student",
+      "days": 24,
+      "kcal": 6120,
+      "level": "K1"
+    },
+    {
+      "id": "p_abs",
+      "title": "腹肌撕裂计划",
+      "weeks": 4,
+      "daysPerWeek": 5,
+      "practiced": "483万人",
+      "tags": [
+        "练腹肌"
+      ],
+      "cover": "plan_abs",
+      "days": 20,
+      "kcal": 1760,
+      "level": "K1"
+    },
+    {
+      "id": "p_chest",
+      "title": "告别脂肪胸计划",
+      "weeks": 4,
+      "daysPerWeek": 4,
+      "practiced": "156万人",
+      "tags": [
+        "瘦全身"
+      ],
+      "cover": "plan_chest",
+      "days": 16,
+      "kcal": 3240,
+      "level": "K2"
+    },
+    {
+      "id": "p_summer60",
+      "title": "学生60天暑假逆袭",
+      "weeks": 8,
+      "daysPerWeek": 5,
+      "practiced": "98万人",
+      "tags": [
+        "瘦全身",
+        "大体重掉秤"
+      ],
+      "cover": "plan_summer",
+      "days": 60,
+      "kcal": 15600,
+      "level": "K2"
+    },
+    {
+      "id": "p_muscle",
+      "title": "学生党全身增肌",
+      "weeks": 6,
+      "daysPerWeek": 4,
+      "practiced": "64万人",
+      "tags": [
+        "练腹肌"
+      ],
+      "cover": "plan_muscle",
+      "days": 24,
+      "kcal": 5280,
+      "level": "K3"
+    },
+    {
+      "id": "p_run",
+      "title": "轻松入门·跑步燃脂计划",
+      "weeks": 6,
+      "daysPerWeek": 4,
+      "practiced": "312万人",
+      "tags": [
+        "跑步",
+        "瘦全身"
+      ],
+      "cover": "plan_run",
+      "days": 24,
+      "kcal": 4860,
+      "level": "K1"
+    },
+    {
+      "id": "p_run_advance",
+      "title": "5公里突破·进阶跑量计划",
+      "weeks": 8,
+      "daysPerWeek": 5,
+      "practiced": "128万人",
+      "tags": [
+        "跑步"
+      ],
+      "cover": "plan_run_advance",
+      "days": 40,
+      "kcal": 9200,
+      "level": "K2"
+    }
+  ],
+  "quiz": {
+    "answers": {},
+    "generatedPlanId": null
+  },
+  "schedule": {
+    "activePlanId": null,
+    "recommendedPlanId": "p_abs",
+    "recommendHidden": false,
+    "planDay": 0,
+    "todayCourses": [
+      "c_bigweight",
+      "c_belly1",
+      "c_hiit20"
+    ],
+    "dayCourses": {
+      "2026-07-14": [
+        "c_bigweight",
+        "c_belly1",
+        "c_hiit20"
+      ],
+      "2026-07-16": [
+        "c_belly1"
+      ],
+      "2026-07-18": [
+        "c_hiit20",
+        "c_bigweight"
+      ]
+    },
+    "weekDays": [
+      {
+        "date": "2026-07-13",
+        "label": "一"
+      },
+      {
+        "date": "2026-07-14",
+        "label": "二"
+      },
+      {
+        "date": "2026-07-15",
+        "label": "三"
+      },
+      {
+        "date": "2026-07-16",
+        "label": "四"
+      },
+      {
+        "date": "2026-07-17",
+        "label": "五"
+      },
+      {
+        "date": "2026-07-18",
+        "label": "六"
+      },
+      {
+        "date": "2026-07-19",
+        "label": "日"
+      }
+    ],
+    "goals": [
+      {
+        "id": "g_minutes",
+        "label": "每天运动时长",
+        "current": 0,
+        "target": 18,
+        "unit": "分钟"
+      },
+      {
+        "id": "g_kcal",
+        "label": "每天运动消耗",
+        "current": 0,
+        "target": 140,
+        "unit": "千卡"
+      },
+      {
+        "id": "g_thigh",
+        "label": "大腿围",
+        "current": null,
+        "target": null,
+        "unit": "厘米"
+      }
+    ]
+  },
+  "trainingDays": [
+    "2026-07-14",
+    "2026-07-16",
+    "2026-07-18",
+    "2026-07-21",
+    "2026-07-23",
+    "2026-07-25",
+    "2026-07-28",
+    "2026-07-30",
+    "2026-08-01",
+    "2026-08-04",
+    "2026-08-06",
+    "2026-08-08",
+    "2026-08-11"
+  ],
+  "runState": {
+    "sportType": "户外跑步",
+    "mode": "自由跑",
+    "goalKm": 3.0,
+    "voiceguideSeen": true
+  },
+  "runRecords": [
+    {
+      "id": "rr_demo_pending",
+      "type": "户外跑步",
+      "name": "户外跑步",
+      "km": 3.46,
+      "durationSec": 1985,
+      "kcal": 226,
+      "paceSecPerKm": 574,
+      "date": "2026-07-11",
+      "timeOfDay": "06:45",
+      "source": "Apple健康",
+      "uploaded": false,
+      "heartAvg": 142
+    },
+    {
+      "id": "rr_demo_cardio_1",
+      "type": "室内有氧",
+      "name": "室内有氧",
+      "km": null,
+      "durationSec": 566,
+      "kcal": 61,
+      "paceSecPerKm": null,
+      "date": "2026-07-10",
+      "timeOfDay": "20:40",
+      "source": "Keep",
+      "uploaded": true,
+      "heartAvg": 110,
+      "load": 3
+    },
+    {
+      "id": "rr_demo_run_1",
+      "type": "户外跑步",
+      "name": "户外跑步",
+      "km": 2.72,
+      "durationSec": 1248,
+      "kcal": 208,
+      "paceSecPerKm": 459,
+      "date": "2026-07-07",
+      "timeOfDay": "07:18",
+      "source": "Garmin佳明",
+      "uploaded": true,
+      "heartAvg": 146,
+      "heartMax": 169,
+      "climb": 7,
+      "cadence": 156,
+      "power": 218,
+      "load": 41,
+      "totalSec": 1264,
+      "vo2max": 36.8,
+      "gear": "Garmin佳明"
+    },
+    {
+      "id": "rr_demo_cardio_2",
+      "type": "室内有氧",
+      "name": "室内有氧",
+      "km": null,
+      "durationSec": 920,
+      "kcal": 102,
+      "paceSecPerKm": null,
+      "date": "2026-07-04",
+      "timeOfDay": "19:50",
+      "source": "Keep",
+      "uploaded": true,
+      "heartAvg": 116,
+      "load": 9
+    },
+    {
+      "id": "rr_demo_walk_1",
+      "type": "户外行走",
+      "name": "户外行走",
+      "km": 3.12,
+      "durationSec": 2690,
+      "kcal": 136,
+      "paceSecPerKm": null,
+      "date": "2026-06-22",
+      "timeOfDay": "18:15",
+      "source": "Apple健康",
+      "uploaded": true,
+      "steps": 4860
+    },
+    {
+      "id": "rr_demo_indoor_run",
+      "type": "室内跑步",
+      "name": "室内跑步",
+      "km": 11.98,
+      "durationSec": 4397,
+      "kcal": 454,
+      "paceSecPerKm": 367,
+      "date": "2026-05-17",
+      "timeOfDay": "19:05",
+      "source": "Keep",
+      "uploaded": true,
+      "heartAvg": 152,
+      "load": 72
+    },
+    {
+      "id": "rr_demo_run_2",
+      "type": "户外跑步",
+      "name": "户外跑步",
+      "km": 1.86,
+      "durationSec": 650,
+      "kcal": 118,
+      "paceSecPerKm": 349,
+      "date": "2026-05-08",
+      "timeOfDay": "07:25",
+      "source": "Keep",
+      "uploaded": true,
+      "heartAvg": 158,
+      "cadence": 172
+    },
+    {
+      "id": "rr_demo_run_3",
+      "type": "户外跑步",
+      "name": "户外跑步",
+      "km": 4.35,
+      "durationSec": 1739,
+      "kcal": 285,
+      "paceSecPerKm": 400,
+      "date": "2026-04-05",
+      "timeOfDay": "08:05",
+      "source": "Garmin佳明",
+      "uploaded": true,
+      "heartAvg": 154,
+      "heartMax": 176,
+      "climb": 18,
+      "gear": "Garmin佳明"
+    },
+    {
+      "id": "rr_demo_ride",
+      "type": "户外骑行",
+      "name": "户外骑行",
+      "km": 11.8,
+      "durationSec": 2840,
+      "kcal": 305,
+      "paceSecPerKm": null,
+      "date": "2026-03-01",
+      "timeOfDay": "15:10",
+      "source": "Keep",
+      "uploaded": true,
+      "heartAvg": 128
+    },
+    {
+      "id": "rr_demo_cardio_3",
+      "type": "室内有氧",
+      "name": "室内有氧",
+      "km": null,
+      "durationSec": 2810,
+      "kcal": 318,
+      "paceSecPerKm": null,
+      "date": "2026-02-20",
+      "timeOfDay": "19:42",
+      "source": "Keep",
+      "uploaded": true,
+      "heartAvg": 133,
+      "load": 48
+    },
+    {
+      "id": "rr_demo_walk_2",
+      "type": "户外行走",
+      "name": "户外行走",
+      "km": 2.45,
+      "durationSec": 2205,
+      "kcal": 110,
+      "paceSecPerKm": null,
+      "date": "2026-02-09",
+      "timeOfDay": "12:20",
+      "source": "Apple健康",
+      "uploaded": true,
+      "steps": 3600
+    }
+  ],
+  "routes": [
+    {
+      "id": "rt_binhu",
+      "name": "滨湖绿道环线",
+      "km": 5.2,
+      "climb": 36,
+      "type": "跑步",
+      "shape": "环形",
+      "distanceMe": 0.8,
+      "checkins": 1204,
+      "creator": "Keep路线官方",
+      "createdDate": "2025-03-12",
+      "cover": "map_route"
+    },
+    {
+      "id": "rt_chunhui",
+      "name": "活力路慢跑线",
+      "km": 3.1,
+      "climb": 12,
+      "type": "跑步",
+      "shape": "单程",
+      "distanceMe": 1.5,
+      "checkins": 673,
+      "creator": "夜跑不停",
+      "createdDate": "2025-06-01",
+      "cover": "map_city"
+    },
+    {
+      "id": "rt_teaport",
+      "name": "东方茶港骑行环线",
+      "km": 24.6,
+      "climb": 152,
+      "type": "骑行",
+      "shape": "环形",
+      "distanceMe": 4.2,
+      "checkins": 2318,
+      "creator": "Keep路线官方",
+      "createdDate": "2025-04-20",
+      "cover": "map_route"
+    },
+    {
+      "id": "rt_campus",
+      "name": "大学城操场外圈",
+      "km": 2.4,
+      "climb": 5,
+      "type": "跑步",
+      "shape": "环形",
+      "distanceMe": 3.6,
+      "checkins": 981,
+      "creator": "学府跑团",
+      "createdDate": "2025-09-08",
+      "cover": "map_city"
+    },
+    {
+      "id": "rt_forest",
+      "name": "江畔森林公园健走线",
+      "km": 6.8,
+      "climb": 58,
+      "type": "健走",
+      "shape": "单程",
+      "distanceMe": 5.1,
+      "checkins": 447,
+      "creator": "晨光徒步队",
+      "createdDate": "2025-10-15",
+      "cover": "map_route"
+    },
+    {
+      "id": "rt_lakeside",
+      "name": "环湖夜骑线",
+      "km": 18.3,
+      "climb": 96,
+      "type": "骑行",
+      "shape": "环形",
+      "distanceMe": 6.9,
+      "checkins": 1560,
+      "creator": "骑遇小分队",
+      "createdDate": "2025-11-02",
+      "cover": "map_city"
+    }
+  ],
+  "actionsLib": [
+    {
+      "id": "act_pushup",
+      "name": "俯卧撑",
+      "muscle": [
+        "胸大肌",
+        "肱三头肌",
+        "三角肌前束"
+      ],
+      "bodyPart": "胸部",
+      "equipment": "自重",
+      "posture": "俯卧",
+      "rating": 8.3,
+      "practiced": "490万",
+      "steps": [
+        "双手略宽于肩撑地,双脚并拢,身体呈一条直线",
+        "核心收紧,屈肘下落至胸部接近地面",
+        "肘部与躯干约呈45度,避免外展过大",
+        "快速推起回到起始位,顶端不锁死肘关节"
+      ]
+    },
+    {
+      "id": "act_bicycle",
+      "name": "空中蹬车",
+      "muscle": [
+        "腹直肌下部",
+        "髂腰肌"
+      ],
+      "bodyPart": "下腹部",
+      "equipment": "自重",
+      "posture": "仰卧",
+      "rating": 8.2,
+      "practiced": "36万",
+      "steps": [
+        "仰卧于垫上,双手轻扶耳侧,双腿抬起",
+        "交替屈伸双腿,如同蹬自行车",
+        "对侧肘与膝相互靠近,躯干微微转动",
+        "全程下背部贴住垫面,匀速呼吸"
+      ]
+    },
+    {
+      "id": "act_crunch",
+      "name": "卷腹",
+      "muscle": [
+        "腹直肌上部"
+      ],
+      "bodyPart": "上腹部",
+      "equipment": "自重",
+      "posture": "仰卧",
+      "rating": 8.0,
+      "practiced": "812万",
+      "steps": [
+        "仰卧屈膝,双脚踩实地面",
+        "双手交叉放于胸前或轻扶耳侧",
+        "呼气时上背部离地,卷起至肩胛骨离开垫面",
+        "吸气缓慢还原,颈部保持放松"
+      ]
+    },
+    {
+      "id": "act_squat",
+      "name": "标准深蹲",
+      "muscle": [
+        "股四头肌",
+        "臀大肌"
+      ],
+      "bodyPart": "腿部",
+      "equipment": "自重",
+      "posture": "站立",
+      "rating": 8.6,
+      "practiced": "1023万",
+      "steps": [
+        "双脚与肩同宽,脚尖微微外展",
+        "屈髋屈膝下蹲,如同向后坐椅子",
+        "下蹲至大腿与地面平行,膝盖与脚尖同向",
+        "脚跟发力站起,臀部收紧"
+      ]
+    },
+    {
+      "id": "act_plank",
+      "name": "平板支撑",
+      "muscle": [
+        "腹横肌",
+        "竖脊肌"
+      ],
+      "bodyPart": "核心",
+      "equipment": "自重",
+      "posture": "俯卧",
+      "rating": 8.4,
+      "practiced": "956万",
+      "steps": [
+        "肘部支撑于肩部正下方,双脚后撤",
+        "身体从头到脚呈一条直线",
+        "收紧腹部与臀部,避免塌腰或抬臀",
+        "保持自然呼吸,坚持目标时长"
+      ]
+    },
+    {
+      "id": "act_jump",
+      "name": "开合跳",
+      "muscle": [
+        "腓肠肌",
+        "三角肌",
+        "全身"
+      ],
+      "bodyPart": "全身",
+      "equipment": "自重",
+      "posture": "站立",
+      "rating": 7.9,
+      "practiced": "1387万",
+      "steps": [
+        "双脚并拢站立,双臂自然下垂",
+        "跳起时双脚向外分开,双臂上举过头",
+        "再次跳起收回至起始位",
+        "前脚掌着地缓冲,保持节奏"
+      ]
+    },
+    {
+      "id": "act_lunge",
+      "name": "弓步后转体",
+      "muscle": [
+        "股四头肌",
+        "腹斜肌"
+      ],
+      "bodyPart": "腿部",
+      "equipment": "自重",
+      "posture": "站立",
+      "rating": 7.8,
+      "practiced": "68万",
+      "steps": [
+        "站立位向后撤步下蹲成弓步",
+        "双手于胸前合十,躯干向前腿一侧旋转",
+        "转体时保持下肢稳定,骨盆朝前",
+        "还原站立后换边交替进行"
+      ]
+    }
+  ],
+  "posts": [
+    {
+      "id": "post_maoshu_slowrun",
+      "authorId": "coach_maoshu",
+      "author": "猫叔慢跑",
+      "avatar": "coach_maoshu",
+      "time": "2026-07-13 07:30",
+      "region": "IP 示例区",
+      "type": "视频",
+      "content": "慢跑不是越慢越好：把呼吸稳定在能完整说一句话的节奏，今天从20分钟轻松跑开始。",
+      "images": [
+        "course_slowrun"
+      ],
+      "cheers": 865,
+      "commentsCount": 32,
+      "comments": [],
+      "collects": 216,
+      "emojis": {
+        "🏃": 88,
+        "👍": 51
+      }
+    },
+    {
+      "id": "post_maoshu_recovery",
+      "authorId": "coach_maoshu",
+      "author": "猫叔慢跑",
+      "avatar": "coach_maoshu",
+      "time": "2026-07-11 19:10",
+      "region": "IP 示例区",
+      "type": "图文",
+      "content": "跑后别急着坐下，先走三分钟，再完成小腿和臀腿拉伸。恢复做对了，下一次跑得更轻松。",
+      "images": [
+        "course_belly"
+      ],
+      "cheers": 629,
+      "commentsCount": 18,
+      "comments": [],
+      "collects": 173,
+      "emojis": {
+        "💪": 63,
+        "👍": 41
+      }
+    },
+    {
+      "id": "post_maoshu_easy5k",
+      "authorId": "coach_maoshu",
+      "author": "猫叔慢跑",
+      "avatar": "coach_maoshu",
+      "time": "2026-07-09 06:55",
+      "region": "IP 示例区",
+      "type": "运动记录",
+      "content": "清晨轻松跑5公里，配速不重要，保持动作放松和步频稳定。",
+      "images": [
+        "course_bigweight"
+      ],
+      "sportData": {
+        "type": "户外跑步",
+        "km": 5,
+        "duration": "00:34:28",
+        "kcal": 318,
+        "speed": "8.7"
+      },
+      "cheers": 742,
+      "commentsCount": 26,
+      "comments": [],
+      "collects": 204,
+      "emojis": {
+        "🏃": 72,
+        "🔥": 39
+      }
+    },
+    {
+      "id": "post_ride1",
+      "authorId": null,
+      "author": "骑行体验号7",
+      "avatar": "avatar_jinan",
+      "time": "2026-07-11 18:42",
+      "region": "IP 示例区",
+      "type": "运动记录",
+      "content": "夏天傍晚的风,配上新解锁的环线,骑起来太舒服了!顺手把个人最佳刷新了。",
+      "images": [
+        "post_cycling"
+      ],
+      "sportData": {
+        "type": "户外骑行",
+        "km": 18.2,
+        "duration": "01:27:40",
+        "kcal": 486,
+        "speed": "12.5",
+        "medal": "金牌①",
+        "achievement": "个人成绩最佳"
+      },
+      "cheers": 312,
+      "commentsCount": 26,
+      "comments": [
+        {
+          "id": "pc_r1_1",
+          "author": "骑行体验号2",
+          "avatar": "avatar_beibei",
+          "content": "均速10.0太强了,这条环线爬升不小吧?",
+          "time": "2026-07-11",
+          "region": "示例区",
+          "likes": 56,
+          "replies": [
+            {
+              "id": "pc_r1_1r1",
+              "author": "骑行体验号7",
+              "content": "后半段有连续缓坡,全程按自己的节奏完成。",
+              "time": "2026-07-11",
+              "region": "示例区",
+              "likes": 23
+            },
+            {
+              "id": "pc_r1_1r2",
+              "author": "骑行体验号2",
+              "content": "收藏了,周末去挑战!",
+              "time": "2026-07-12",
+              "region": "示例区",
+              "likes": 4
+            }
+          ]
+        },
+        {
+          "id": "pc_r1_2",
+          "author": "小A体验号",
+          "avatar": "avatar_xiaoa",
+          "content": "恭喜PB!加油鸭!",
+          "time": "2026-07-11",
+          "region": "示例区",
+          "likes": 18,
+          "replies": []
+        },
+        {
+          "id": "pc_r1_3",
+          "author": "骑行体验号4",
+          "avatar": "avatar_swimmer",
+          "content": "轨迹图好看,贴纸是哪款皮肤?",
+          "time": "2026-07-12",
+          "region": "示例区",
+          "likes": 9,
+          "replies": [
+            {
+              "id": "pc_r1_3r1",
+              "author": "骑行体验号7",
+              "content": "夏日限定皮肤,活动页可以领。",
+              "time": "2026-07-12",
+              "region": "示例区",
+              "likes": 6
+            }
+          ]
+        },
+        {
+          "id": "pc_r1_4",
+          "author": "训练体验号5",
+          "avatar": "avatar_me",
+          "content": "看完立刻想出门骑车了。",
+          "time": "2026-07-13",
+          "region": "示例区",
+          "likes": 5,
+          "replies": []
+        }
+      ],
+      "collects": 58,
+      "emojis": {
+        "👍": 56,
+        "🔥": 31,
+        "💪": 24
+      }
+    },
+    {
+      "id": "post_ride2",
+      "authorId": null,
+      "author": "晨骑体验号3",
+      "avatar": "avatar_beibei",
+      "time": "2026-07-10 07:55",
+      "region": "IP 示例区",
+      "type": "运动记录",
+      "content": "晨骑23公里打卡,男子组第2名收入囊中,Keep邀你看演唱会的挑战也点亮了!",
+      "images": [
+        "post_ride2"
+      ],
+      "sportData": {
+        "type": "户外骑行",
+        "km": 21.4,
+        "duration": "01:45:18",
+        "kcal": 618,
+        "speed": "12.2",
+        "medal": "银牌②",
+        "rank": "男子组No.2"
+      },
+      "cheers": 205,
+      "commentsCount": 18,
+      "comments": [
+        {
+          "id": "pc_r2_1",
+          "author": "骑行体验号5",
+          "avatar": "avatar_jinan",
+          "content": "重庆的坡都被你踩平了吧,No.2实至名归。",
+          "time": "2026-07-10",
+          "region": "示例区",
+          "likes": 33,
+          "replies": [
+            {
+              "id": "pc_r2_1r1",
+              "author": "晨骑体验号3",
+              "content": "下次冲No.1!",
+              "time": "2026-07-10",
+              "region": "示例区",
+              "likes": 11
+            }
+          ]
+        },
+        {
+          "id": "pc_r2_2",
+          "author": "训练体验号4",
+          "avatar": "avatar_xiaoa",
+          "content": "演唱会门票冲!",
+          "time": "2026-07-11",
+          "region": "示例区",
+          "likes": 7,
+          "replies": []
+        }
+      ],
+      "collects": 65,
+      "emojis": {
+        "👍": 40,
+        "🎉": 15,
+        "💪": 12
+      }
+    },
+    {
+      "id": "post_pamela_w29",
+      "authorId": "coach_pamela",
+      "author": "帕梅拉",
+      "avatar": "coach_pamela",
+      "time": "2026-07-13 09:20",
+      "region": "IP 示例区",
+      "type": "图文",
+      "content": "进阶减脂WEEK29+30课表来啦!这两周加入了更多下肢复合动作,记得先做热身,跟练打卡见~",
+      "images": [
+        "post_pamela"
+      ],
+      "cheers": 24,
+      "commentsCount": 12,
+      "comments": [
+        {
+          "id": "pc_pw_1",
+          "author": "训练体验号1",
+          "avatar": "avatar_xiaoa",
+          "content": "课表已存,今晚开跟!",
+          "time": "2026-07-13",
+          "region": "示例区",
+          "likes": 8,
+          "replies": []
+        }
+      ],
+      "collects": 41,
+      "emojis": {
+        "📢": 19,
+        "🔥": 12,
+        "❤️": 9
+      }
+    },
+    {
+      "id": "post_pamela_dance",
+      "authorId": "coach_pamela",
+      "author": "帕梅拉",
+      "avatar": "coach_pamela",
+      "time": "2026-07-09 10:05",
+      "region": "IP 示例区",
+      "type": "图文",
+      "content": "跳舞也能刷脂!这周的舞蹈减脂课表:周一YES OK女团舞,周三从容乐动,周五自由舞动30分钟。坚持四周,一起看变化。",
+      "images": [
+        "course_dance1"
+      ],
+      "cheers": 156,
+      "commentsCount": 28,
+      "comments": [
+        {
+          "id": "pc_pd_1",
+          "author": "训练体验号7",
+          "avatar": "avatar_swimmer",
+          "content": "舞蹈课表终于来了,爱了爱了。",
+          "time": "2026-07-09",
+          "region": "示例区",
+          "likes": 14,
+          "replies": []
+        }
+      ],
+      "collects": 89,
+      "emojis": {
+        "📢": 22,
+        "💃": 17,
+        "❤️": 11
+      }
+    },
+    {
+      "id": "post_swim",
+      "authorId": null,
+      "author": "游泳体验号1",
+      "avatar": "avatar_swimmer",
+      "time": "2026-07-12 21:10",
+      "region": "IP 示例区",
+      "type": "运动记录",
+      "content": "夜游1200米,水温刚好,游完整个人都轻了。",
+      "images": [
+        "post_swim"
+      ],
+      "sportData": {
+        "type": "游泳",
+        "km": 1.525,
+        "duration": "00:41:26",
+        "kcal": 386
+      },
+      "cheers": 73,
+      "commentsCount": 9,
+      "comments": [
+        {
+          "id": "pc_sw_1",
+          "author": "游泳体验号2",
+          "avatar": "avatar_me",
+          "content": "羡慕会游泳的人!",
+          "time": "2026-07-12",
+          "region": "示例区",
+          "likes": 3,
+          "replies": []
+        }
+      ],
+      "collects": 12,
+      "emojis": {
+        "👍": 21,
+        "🐟": 8
+      }
+    },
+    {
+      "id": "post_jianwang",
+      "authorId": "coach_keepjun",
+      "author": "减脂塑形中的Keep君",
+      "avatar": "coach_keepjun",
+      "time": "2026-07-13 12:00",
+      "region": "IP 示例区",
+      "type": "图文",
+      "content": "剑网3侠士线上跑第三期正式开跑!63026位侠士已集结,¥59含实体奖牌,完赛还有专属称号,江湖见。",
+      "images": [
+        "medal_jianwang"
+      ],
+      "cheers": 3021,
+      "commentsCount": 210,
+      "comments": [
+        {
+          "id": "pc_jw_1",
+          "author": "活动体验号1",
+          "avatar": "avatar_beibei",
+          "content": "第三期奖牌比前两期都好看,已报名。",
+          "time": "2026-07-13",
+          "region": "示例区",
+          "likes": 45,
+          "replies": []
+        }
+      ],
+      "collects": 466,
+      "emojis": {
+        "⚔️": 88,
+        "🔥": 54,
+        "👍": 39
+      }
+    },
+    {
+      "id": "post_koi",
+      "authorId": "coach_keepjun",
+      "author": "减脂塑形中的Keep君",
+      "avatar": "coach_keepjun",
+      "time": "2026-07-11 10:30",
+      "region": "IP 示例区",
+      "type": "图文",
+      "content": "锦鲤奖牌返场!¥49把好运挂在身上,跑步、健走、跳绳任选一项完赛即可,考试季上岸就靠它了。",
+      "images": [
+        "medal_koi"
+      ],
+      "cheers": 1268,
+      "commentsCount": 96,
+      "comments": [
+        {
+          "id": "pc_koi_1",
+          "author": "训练体验号8",
+          "avatar": "avatar_xiaoa",
+          "content": "为了上岸,报!",
+          "time": "2026-07-11",
+          "region": "示例区",
+          "likes": 30,
+          "replies": []
+        }
+      ],
+      "collects": 204,
+      "emojis": {
+        "🐟": 66,
+        "🍀": 41,
+        "👍": 28
+      }
+    },
+    {
+      "id": "post_concert",
+      "authorId": "coach_keepjun",
+      "author": "减脂塑形中的Keep君",
+      "avatar": "coach_keepjun",
+      "time": "2026-07-10 16:20",
+      "region": "IP 示例区",
+      "type": "图文",
+      "content": "Keep邀你看演唱会!7月累计跑量打卡满30公里即可抽演唱会门票,骑行翻倍计入,快喊上搭子一起冲。",
+      "images": [
+        "banner_concert"
+      ],
+      "cheers": 954,
+      "commentsCount": 132,
+      "comments": [
+        {
+          "id": "pc_ct_1",
+          "author": "骑行体验号2",
+          "avatar": "avatar_beibei",
+          "content": "已经打卡12公里,门票等我。",
+          "time": "2026-07-10",
+          "region": "示例区",
+          "likes": 22,
+          "replies": []
+        }
+      ],
+      "collects": 178,
+      "emojis": {
+        "🎤": 51,
+        "🔥": 37,
+        "🎉": 25
+      }
+    }
+  ],
+  "products": [
+    {
+      "id": "pr_dumbbell",
+      "title": "Keep浸塑哑铃家用健身防滑六角小哑铃",
+      "price": 39.9,
+      "origPrice": 55.9,
+      "coinDeduct": 5,
+      "monthlySales": "1000+",
+      "category": "运动装备",
+      "cover": "product_dumbbell",
+      "skus": [
+        {
+          "id": "sku_d1",
+          "label": "1kg*2 樱粉",
+          "stock": 156
+        },
+        {
+          "id": "sku_d2",
+          "label": "2kg*2 晨雾灰",
+          "stock": 89
+        },
+        {
+          "id": "sku_d3",
+          "label": "3kg*2 薄荷绿",
+          "stock": 0
+        },
+        {
+          "id": "sku_d4",
+          "label": "4kg*2 石墨黑",
+          "stock": 47
+        },
+        {
+          "id": "sku_d5",
+          "label": "5kg*2 石墨黑",
+          "stock": 32
+        },
+        {
+          "id": "sku_d6",
+          "label": "8kg*2 石墨黑",
+          "stock": 18
+        },
+        {
+          "id": "sku_d7",
+          "label": "10kg*2 暮山紫",
+          "stock": 12
+        },
+        {
+          "id": "sku_d8",
+          "label": "1kg*2 抗菌清爽绿",
+          "stock": 88
+        },
+        {
+          "id": "sku_d9",
+          "label": "1.5kg*2 抗菌超凡粉",
+          "stock": 76
+        },
+        {
+          "id": "sku_d10",
+          "label": "2kg*2 抗菌天空蓝",
+          "stock": 63
+        },
+        {
+          "id": "sku_d11",
+          "label": "3kg*2 抗菌氧气紫",
+          "stock": 41
+        },
+        {
+          "id": "sku_d12",
+          "label": "4kg*2 抗菌格调灰",
+          "stock": 35
+        },
+        {
+          "id": "sku_d13",
+          "label": "5kg*2 抗菌岩石灰",
+          "stock": 24
+        },
+        {
+          "id": "sku_d14",
+          "label": "6kg*2 抗菌琥珀棕",
+          "stock": 20
+        }
+      ],
+      "sellPoints": [
+        "环保浸塑不伤地板",
+        "哑光防滑手感",
+        "六角设计防滚动"
+      ],
+      "guarantee": "包邮·七天无理由退换",
+      "commentsCount": 1813,
+      "countdownDays": 48,
+      "bundleIds": [
+        "pr_board",
+        "pr_puller",
+        "pr_hoop"
+      ]
+    },
+    {
+      "id": "pr_scale",
+      "title": "【新人专享】Keep智能体脂秤S3",
+      "price": 149,
+      "origPrice": 196,
+      "coinDeduct": 2.48,
+      "coupon": "满99减47代金券",
+      "monthlySales": "5000+",
+      "category": "体脂秤",
+      "cover": "product_scale",
+      "skus": [
+        {
+          "id": "sku_s1",
+          "label": "月光白-S3新品(31项身体指标)",
+          "stock": 320
+        },
+        {
+          "id": "sku_s2",
+          "label": "深空灰-S3新品(全家健康管理)",
+          "stock": 275
+        }
+      ],
+      "sellPoints": [
+        "31项身体指标",
+        "高精度G型传感器",
+        "全家健康管理"
+      ],
+      "guarantee": "包邮·七天无理由退换",
+      "commentsCount": 4260,
+      "isNewUser": true,
+      "bundleIds": [
+        "pr_board",
+        "pr_puller",
+        "pr_hoop"
+      ]
+    },
+    {
+      "id": "pr_carnitine",
+      "title": "Keep左旋肉碱纤维饮",
+      "price": 25,
+      "origPrice": null,
+      "monthlySales": "800+",
+      "category": "健康食品",
+      "cover": "product_carnitine",
+      "skus": [
+        {
+          "id": "sku_c1",
+          "label": "左旋肉碱10瓶装",
+          "stock": 210
+        },
+        {
+          "id": "sku_c2",
+          "label": "左旋肉碱20瓶装",
+          "stock": 145
+        },
+        {
+          "id": "sku_c3",
+          "label": "防弹咖+左旋组合装",
+          "stock": 66
+        },
+        {
+          "id": "sku_c4",
+          "label": "餐前片+左旋组合装",
+          "stock": 58
+        },
+        {
+          "id": "sku_c5",
+          "label": "左旋果冻条12支",
+          "stock": 97
+        },
+        {
+          "id": "sku_c6",
+          "label": "左旋胶囊60粒",
+          "stock": 120
+        }
+      ],
+      "sellPoints": [
+        "运动前30分钟一瓶",
+        "0糖0脂",
+        "便携小瓶装"
+      ],
+      "guarantee": "包邮·不支持七天无理由",
+      "commentsCount": 986,
+      "countdownDays": 17
+    },
+    {
+      "id": "pr_band_b6",
+      "title": "Keep手环B6 智能运动手环",
+      "price": 224.1,
+      "origPrice": 304,
+      "monthlySales": "2000+",
+      "category": "智能穿戴",
+      "cover": "product_band_b6",
+      "skus": [
+        {
+          "id": "sku_b6_1",
+          "label": "曜石黑",
+          "stock": 402
+        },
+        {
+          "id": "sku_b6_2",
+          "label": "薄雾粉",
+          "stock": 218
+        }
+      ],
+      "sellPoints": [
+        "高清彩屏",
+        "血氧/心率全天监测",
+        "14天长续航"
+      ],
+      "guarantee": "包邮·七天无理由退换",
+      "commentsCount": 5120
+    },
+    {
+      "id": "pr_band_b5",
+      "title": "Keep手环B5",
+      "price": 251.1,
+      "origPrice": 279,
+      "monthlySales": "900+",
+      "category": "智能穿戴",
+      "cover": "product_band_b5",
+      "skus": [
+        {
+          "id": "sku_b5_1",
+          "label": "标准版 黑色",
+          "stock": 156
+        }
+      ],
+      "sellPoints": [
+        "课程实时心率",
+        "50米防水"
+      ],
+      "guarantee": "包邮·七天无理由退换"
+    },
+    {
+      "id": "pr_band_b4",
+      "title": "Keep手环B4",
+      "price": 179.25,
+      "origPrice": 239,
+      "monthlySales": "600+",
+      "category": "智能穿戴",
+      "cover": "product_band_b4",
+      "skus": [
+        {
+          "id": "sku_b4_1",
+          "label": "经典黑",
+          "stock": 88
+        }
+      ],
+      "sellPoints": [
+        "轻至22g",
+        "跟练自动识别"
+      ],
+      "guarantee": "包邮·七天无理由退换"
+    },
+    {
+      "id": "pr_watch",
+      "title": "Keep Watch Pilot 1 智能运动手表",
+      "price": 849.15,
+      "origPrice": 999,
+      "monthlySales": "300+",
+      "category": "智能穿戴",
+      "cover": "product_watch",
+      "skus": [
+        {
+          "id": "sku_w1",
+          "label": "深空黑 46mm",
+          "stock": 64
+        },
+        {
+          "id": "sku_w2",
+          "label": "月岩白 42mm",
+          "stock": 41
+        }
+      ],
+      "sellPoints": [
+        "双频GPS精准轨迹",
+        "跑力指数分析",
+        "21天续航"
+      ],
+      "guarantee": "包邮·七天无理由退换",
+      "commentsCount": 720
+    },
+    {
+      "id": "pr_rope",
+      "title": "Keep智能跳绳SR3",
+      "price": 99.9,
+      "origPrice": 129,
+      "monthlySales": "3000+",
+      "category": "运动装备",
+      "cover": "product_rope",
+      "skus": [
+        {
+          "id": "sku_r1",
+          "label": "有绳版 青提绿",
+          "stock": 502
+        },
+        {
+          "id": "sku_r2",
+          "label": "无绳球版 曜石黑",
+          "stock": 310
+        }
+      ],
+      "sellPoints": [
+        "高清计数屏",
+        "App实时同步",
+        "轴承顺滑不缠绳"
+      ],
+      "guarantee": "包邮·七天无理由退换",
+      "commentsCount": 2870
+    },
+    {
+      "id": "pr_abroller",
+      "title": "Keep健腹轮 自动回弹款",
+      "price": 89.9,
+      "origPrice": 119,
+      "monthlySales": "700+",
+      "category": "运动装备",
+      "cover": "product_abroller",
+      "skus": [
+        {
+          "id": "sku_ab1",
+          "label": "自动回弹 灰绿",
+          "stock": 133
+        }
+      ],
+      "sellPoints": [
+        "自动回弹助力",
+        "静音宽轮"
+      ],
+      "guarantee": "包邮·七天无理由退换"
+    },
+    {
+      "id": "pr_mat",
+      "title": "Keep加厚健身垫 防滑减震",
+      "price": 119.5,
+      "origPrice": 149,
+      "monthlySales": "1500+",
+      "category": "运动装备",
+      "cover": "product_mat",
+      "skus": [
+        {
+          "id": "sku_m1",
+          "label": "10mm 雾霾蓝",
+          "stock": 260
+        },
+        {
+          "id": "sku_m2",
+          "label": "15mm 石墨黑",
+          "stock": 188
+        }
+      ],
+      "sellPoints": [
+        "加厚减震护关节",
+        "双面防滑纹理"
+      ],
+      "guarantee": "包邮·七天无理由退换",
+      "commentsCount": 1930
+    },
+    {
+      "id": "pr_dbset",
+      "title": "Keep快拆杠哑铃两用套装",
+      "price": 169.9,
+      "origPrice": 219,
+      "monthlySales": "54",
+      "category": "运动装备",
+      "cover": "product_dbset",
+      "skus": [
+        {
+          "id": "sku_ds1",
+          "label": "20kg套装",
+          "stock": 45
+        },
+        {
+          "id": "sku_ds2",
+          "label": "30kg套装",
+          "stock": 27
+        }
+      ],
+      "sellPoints": [
+        "杠铃哑铃一秒切换",
+        "包胶静音"
+      ],
+      "guarantee": "包邮·七天无理由退换"
+    },
+    {
+      "id": "pr_whey",
+      "title": "Keep乳清蛋白粉 750g",
+      "price": 299,
+      "origPrice": 359,
+      "monthlySales": "400+",
+      "category": "健康食品",
+      "cover": "product_whey",
+      "skus": [
+        {
+          "id": "sku_wh1",
+          "label": "香草味 750g",
+          "stock": 96
+        },
+        {
+          "id": "sku_wh2",
+          "label": "可可味 750g",
+          "stock": 74
+        }
+      ],
+      "sellPoints": [
+        "每份24g蛋白",
+        "低乳糖配方"
+      ],
+      "guarantee": "包邮·不支持七天无理由"
+    },
+    {
+      "id": "pr_electrolyte",
+      "title": "Keep电解质气泡片",
+      "price": 39.9,
+      "origPrice": 49.9,
+      "monthlySales": "1200+",
+      "category": "健康食品",
+      "cover": "product_electrolyte",
+      "skus": [
+        {
+          "id": "sku_e1",
+          "label": "柠檬味 20片",
+          "stock": 340
+        },
+        {
+          "id": "sku_e2",
+          "label": "西柚味 20片",
+          "stock": 295
+        }
+      ],
+      "sellPoints": [
+        "快速补充电解质",
+        "0糖气泡口感"
+      ],
+      "guarantee": "包邮·不支持七天无理由"
+    },
+    {
+      "id": "pr_chicken",
+      "title": "Keep即食鸡胸肉 100g",
+      "price": 9.5,
+      "origPrice": 12.9,
+      "monthlySales": "8000+",
+      "category": "健康食品",
+      "cover": "product_chicken",
+      "skus": [
+        {
+          "id": "sku_ck1",
+          "label": "原味 100g",
+          "stock": 900
+        },
+        {
+          "id": "sku_ck2",
+          "label": "黑胡椒味 100g",
+          "stock": 760
+        }
+      ],
+      "sellPoints": [
+        "每袋19g蛋白",
+        "开袋即食"
+      ],
+      "guarantee": "包邮·不支持七天无理由",
+      "flashExpire": "2026-08-15"
+    },
+    {
+      "id": "pr_fishoil",
+      "title": "Keep深海鱼油软胶囊",
+      "price": 59.9,
+      "origPrice": 79.9,
+      "monthlySales": "500+",
+      "category": "健康食品",
+      "cover": "product_fishoil",
+      "skus": [
+        {
+          "id": "sku_f1",
+          "label": "90粒装",
+          "stock": 180
+        }
+      ],
+      "sellPoints": [
+        "高纯度Omega-3",
+        "无腥味包衣"
+      ],
+      "guarantee": "包邮·不支持七天无理由"
+    },
+    {
+      "id": "pr_gummy",
+      "title": "Keep富铁软糖",
+      "price": 69.9,
+      "origPrice": 89.9,
+      "monthlySales": "600+",
+      "category": "健康食品",
+      "cover": "product_gummy",
+      "skus": [
+        {
+          "id": "sku_g1",
+          "label": "蜜桃味 60粒",
+          "stock": 220
+        }
+      ],
+      "sellPoints": [
+        "每日2粒补铁",
+        "0蔗糖"
+      ],
+      "guarantee": "包邮·不支持七天无理由",
+      "flashExpire": "2026-08-30"
+    },
+    {
+      "id": "pr_smith",
+      "title": "Keep史密斯综合训练架",
+      "price": 8999,
+      "origPrice": 9999,
+      "monthlySales": "20+",
+      "category": "运动装备",
+      "cover": "product_smith",
+      "skus": [
+        {
+          "id": "sku_sm1",
+          "label": "豪华全套版",
+          "stock": 12
+        }
+      ],
+      "sellPoints": [
+        "商用级承重",
+        "龙门架+史密斯二合一",
+        "整机安装入户"
+      ],
+      "guarantee": "包邮·七天无理由退换"
+    },
+    {
+      "id": "pr_bra",
+      "title": "Keep高强度运动内衣",
+      "price": 122,
+      "origPrice": 159,
+      "monthlySales": "1100+",
+      "category": "运动服饰",
+      "cover": "product_bra",
+      "skus": [
+        {
+          "id": "sku_br1",
+          "label": "黑色 M",
+          "stock": 240
+        },
+        {
+          "id": "sku_br2",
+          "label": "藕荷紫 M",
+          "stock": 130
+        },
+        {
+          "id": "sku_br3",
+          "label": "黑色 L",
+          "stock": 178
+        }
+      ],
+      "sellPoints": [
+        "高强度支撑防震",
+        "透气速干"
+      ],
+      "guarantee": "包邮·七天无理由退换"
+    },
+    {
+      "id": "pr_yeast",
+      "title": "Keep酵母蛋白粉",
+      "price": 189.9,
+      "origPrice": 219,
+      "monthlySales": "新品",
+      "category": "健康食品",
+      "cover": "product_yeast",
+      "skus": [
+        {
+          "id": "sku_y1",
+          "label": "原味 600g",
+          "stock": 150
+        }
+      ],
+      "sellPoints": [
+        "植物基酵母蛋白",
+        "上新榜TOP1"
+      ],
+      "guarantee": "包邮·不支持七天无理由"
+    },
+    {
+      "id": "pr_steak",
+      "title": "澳洲安格斯牛排脆",
+      "price": 42.9,
+      "origPrice": 52.9,
+      "monthlySales": "900+",
+      "category": "健康食品",
+      "cover": "product_steak",
+      "skus": [
+        {
+          "id": "sku_st1",
+          "label": "原切原味 80g",
+          "stock": 320
+        }
+      ],
+      "sellPoints": [
+        "高蛋白低脂零食",
+        "非油炸烘烤"
+      ],
+      "guarantee": "包邮·不支持七天无理由",
+      "flashExpire": "2026-09-10"
+    },
+    {
+      "id": "pr_board",
+      "title": "【搭配购】金字塔软硅胶按摩指压板",
+      "price": 75,
+      "origPrice": 99,
+      "monthlySales": "300+",
+      "category": "运动装备",
+      "cover": "product_board",
+      "skus": [
+        {
+          "id": "sku_bd1",
+          "label": "氧气紫",
+          "stock": 88
+        },
+        {
+          "id": "sku_bd2",
+          "label": "雾灰",
+          "stock": 64
+        }
+      ],
+      "sellPoints": [
+        "软硅胶不硌脚",
+        "睡前5分钟放松"
+      ],
+      "guarantee": "包邮·七天无理由退换"
+    },
+    {
+      "id": "pr_puller",
+      "title": "【搭配购】猫猫头美背八字拉力器",
+      "price": 26,
+      "origPrice": 39,
+      "monthlySales": "500+",
+      "category": "运动装备",
+      "cover": "product_puller",
+      "skus": [
+        {
+          "id": "sku_p1",
+          "label": "樱粉 标准阻力",
+          "stock": 200
+        }
+      ],
+      "sellPoints": [
+        "开肩美背",
+        "萌系造型"
+      ],
+      "guarantee": "包邮·七天无理由退换"
+    },
+    {
+      "id": "pr_hoop",
+      "title": "【搭配购】美体塑形弹力呼啦圈",
+      "price": 39.9,
+      "origPrice": 59.9,
+      "monthlySales": "400+",
+      "category": "运动装备",
+      "cover": "product_hoop",
+      "skus": [
+        {
+          "id": "sku_hp1",
+          "label": "粉紫渐变 可拆卸",
+          "stock": 150
+        }
+      ],
+      "sellPoints": [
+        "可拆卸调节大小",
+        "软胶不硌腰"
+      ],
+      "guarantee": "包邮·七天无理由退换"
+    }
+  ],
+  "cart": [
+    {
+      "productId": "pr_dumbbell",
+      "skuId": "sku_d1",
+      "count": 1
+    }
+  ],
+  "orders": [
+    {
+      "id": "KP20260710102201",
+      "type": "商城",
+      "title": "【新人专享】Keep智能体脂秤S3",
+      "status": "退款中",
+      "amount": 149.0,
+      "paidAmount": 146.52,
+      "sku": "深空灰-S3新品(全家健康管理)",
+      "payMethod": "支付宝支付",
+      "payTime": "2026-07-10 10:24",
+      "createTime": "2026-07-10 10:22",
+      "addressName": "运动体验官",
+      "addressPhone": "139****4242",
+      "address": "示例市演示区活力路42号（虚构地址）",
+      "cover": "product_scale"
+    },
+    {
+      "id": "KP20260713210502",
+      "type": "商城",
+      "title": "Keep浸塑哑铃家用健身防滑六角小哑铃",
+      "status": "待发货",
+      "amount": 39.9,
+      "paidAmount": 34.9,
+      "sku": "2kg*2 晨雾灰",
+      "payMethod": "微信支付",
+      "payTime": "2026-07-13 21:05",
+      "createTime": "2026-07-13 21:03",
+      "addressName": "运动体验官",
+      "addressPhone": "139****4242",
+      "address": "示例市演示区活力路42号（虚构地址）",
+      "cover": "product_dumbbell"
+    },
+    {
+      "id": "KP20260521143307",
+      "type": "商城",
+      "title": "Keep智能跳绳SR3",
+      "status": "已完成",
+      "amount": 99.9,
+      "paidAmount": 99.9,
+      "sku": "有绳版 青提绿",
+      "payMethod": "支付宝支付",
+      "payTime": "2026-05-21 14:33",
+      "createTime": "2026-05-21 14:31",
+      "addressName": "运动体验官",
+      "addressPhone": "139****4242",
+      "address": "示例市演示区活力路42号（虚构地址）",
+      "cover": "product_rope"
+    },
+    {
+      "id": "AC20260625091504",
+      "type": "活动",
+      "title": "凯蒂猫缤纷夏日线上跑·奖牌套餐报名",
+      "status": "已完成",
+      "amount": 39.0,
+      "paidAmount": 39.0,
+      "sku": "奖牌套餐",
+      "payMethod": "微信支付",
+      "payTime": "2026-06-25 09:15",
+      "createTime": "2026-06-25 09:14",
+      "addressName": "运动体验官",
+      "addressPhone": "139****4242",
+      "address": "示例市演示区活力路42号（虚构地址）",
+      "cover": "medal_kitty"
+    },
+    {
+      "id": "AC20260602201808",
+      "type": "活动",
+      "title": "名侦探线上跑·奖牌套餐报名",
+      "status": "已取消",
+      "amount": 59.0,
+      "paidAmount": 0,
+      "sku": "奖牌套餐",
+      "payMethod": "",
+      "payTime": "",
+      "createTime": "2026-06-02 20:18",
+      "addressName": "运动体验官",
+      "addressPhone": "139****4242",
+      "address": "示例市演示区活力路42号（虚构地址）",
+      "cover": "medal_conan"
+    },
+    {
+      "id": "VIP20260607083012",
+      "type": "会员",
+      "title": "Keep月卡会员",
+      "status": "已完成",
+      "amount": 25.0,
+      "paidAmount": 25.0,
+      "sku": "月卡会员",
+      "payMethod": "支付宝支付",
+      "payTime": "2026-06-07 08:30",
+      "createTime": "2026-06-07 08:30",
+      "addressName": "",
+      "addressPhone": "",
+      "address": "",
+      "cover": "banner_newuser"
+    }
+  ],
+  "coupons": [
+    {
+      "id": "cp_47",
+      "title": "代金券",
+      "amount": 47,
+      "threshold": "满99可用",
+      "scope": "商城通用",
+      "expireDate": "2026-07-31",
+      "status": "未使用"
+    },
+    {
+      "id": "cp_30",
+      "title": "满减券",
+      "amount": 30,
+      "threshold": "满199可用",
+      "scope": "商城通用",
+      "expireDate": "2026-07-31",
+      "status": "未使用"
+    },
+    {
+      "id": "cp_10",
+      "title": "满减券",
+      "amount": 10,
+      "threshold": "满49可用",
+      "scope": "商城通用",
+      "expireDate": "2026-08-15",
+      "status": "未使用"
+    },
+    {
+      "id": "cp_5",
+      "title": "无门槛券",
+      "amount": 5,
+      "threshold": "",
+      "scope": "商城通用",
+      "expireDate": "2026-07-20",
+      "status": "已使用"
+    },
+    {
+      "id": "cp_88off",
+      "title": "新品专享88折券",
+      "amount": 0,
+      "threshold": "限上新频道商品",
+      "scope": "上新专区",
+      "expireDate": "2026-08-10",
+      "status": "未使用"
+    }
+  ],
+  "medals": [
+    {
+      "id": "md_kitty",
+      "name": "凯蒂猫缤纷夏日线上跑",
+      "ip": "Hello Kitty",
+      "price": 39,
+      "participants": "247332人已报名",
+      "dateRange": "06.24-08.23",
+      "taskDesc": "跑步累计1.314公里即可完赛",
+      "rewards": [
+        "实体奖牌",
+        "奖牌身份卡",
+        "虚拟徽章",
+        "完赛证书"
+      ],
+      "cover": "medal_kitty",
+      "canSubmit": true
+    },
+    {
+      "id": "md_dog",
+      "name": "线条小狗系列线上跑",
+      "ip": "线条小狗",
+      "price": 45,
+      "participants": "1842人已报名",
+      "dateRange": "07.01-09.01",
+      "taskDesc": "跑步1.314公里 / 开合跳50次(多类型任选其一)",
+      "rewards": [
+        "实体奖牌",
+        "奖牌身份卡",
+        "虚拟Plus",
+        "虚拟徽章",
+        "完赛证书"
+      ],
+      "cover": "medal_dog",
+      "canSubmit": false
+    },
+    {
+      "id": "md_ruyuan",
+      "name": "如鸢主题线上跑",
+      "ip": "如鸢",
+      "price": 49,
+      "participants": "58210人已报名",
+      "dateRange": "07.10-09.10",
+      "taskDesc": "跑步累计3公里即可完赛",
+      "rewards": [
+        "实体奖牌",
+        "奖牌身份卡",
+        "虚拟徽章",
+        "完赛证书"
+      ],
+      "cover": "medal_ruyuan",
+      "canSubmit": false
+    },
+    {
+      "id": "md_pingpong",
+      "name": "乒乓冠军系列线上跑",
+      "ip": "乒乓冠军系列",
+      "price": 59,
+      "participants": "96023人已报名",
+      "dateRange": "07.05-09.05",
+      "taskDesc": "跑步累计5公里 / 健走10公里(任选其一)",
+      "rewards": [
+        "实体奖牌",
+        "奖牌身份卡",
+        "虚拟徽章",
+        "完赛证书"
+      ],
+      "cover": "medal_pingpong",
+      "canSubmit": false
+    },
+    {
+      "id": "md_conan",
+      "name": "名侦探线上跑",
+      "ip": "名侦探",
+      "price": 59,
+      "participants": "132408人已报名",
+      "dateRange": "06.15-08.15",
+      "taskDesc": "跑步累计5.20公里即可完赛",
+      "rewards": [
+        "实体奖牌",
+        "奖牌身份卡",
+        "虚拟Plus",
+        "虚拟徽章",
+        "完赛证书"
+      ],
+      "cover": "medal_conan",
+      "canSubmit": false
+    },
+    {
+      "id": "md_jianwang",
+      "name": "剑网3侠士线上跑·第三期",
+      "ip": "剑网3",
+      "price": 59,
+      "participants": "63026人已报名",
+      "dateRange": "07.13-09.13",
+      "taskDesc": "跑步累计10公里即可完赛",
+      "rewards": [
+        "实体奖牌",
+        "奖牌身份卡",
+        "虚拟徽章",
+        "完赛证书"
+      ],
+      "cover": "medal_jianwang",
+      "canSubmit": false
+    },
+    {
+      "id": "md_koi",
+      "name": "锦鲤上岸线上跑",
+      "ip": "锦鲤",
+      "price": 49,
+      "participants": "88451人已报名",
+      "dateRange": "06.20-08.31",
+      "taskDesc": "跑步 / 健走 / 跳绳任选一项完赛",
+      "rewards": [
+        "实体奖牌",
+        "奖牌身份卡",
+        "虚拟徽章",
+        "完赛证书"
+      ],
+      "cover": "medal_koi",
+      "canSubmit": false
+    }
+  ],
+  "races": [
+    {
+      "id": "rc_fruit",
+      "name": "佳农水果线上赛",
+      "type": "线上活动",
+      "date": "07.01-07.31",
+      "location": "线上",
+      "cover": "race_fruit"
+    },
+    {
+      "id": "rc_kma",
+      "name": "8.8城市K马·重庆站",
+      "type": "品牌赛",
+      "date": "08.08",
+      "location": "重庆",
+      "cover": "race_kma"
+    },
+    {
+      "id": "rc_cycling",
+      "name": "东方茶港骑遇·统一绿茶骑行赛",
+      "type": "品牌赛",
+      "date": "07.26",
+      "location": "云江",
+      "cover": "race_cycling"
+    },
+    {
+      "id": "rc_shoot",
+      "name": "射门挑战·瓜分120000元红包",
+      "type": "线上活动",
+      "date": "07.14-08.14",
+      "location": "线上",
+      "cover": "race_football"
+    },
+    {
+      "id": "rc_duanwu",
+      "name": "端午野练城市挑战",
+      "type": "比赛报名",
+      "date": "06.19-06.21",
+      "location": "全国",
+      "cover": "race_duanwu"
+    }
+  ],
+  "messages": {
+    "threads": [
+      {
+        "id": "t_xiaoa",
+        "name": "小A体验号",
+        "avatar": "avatar_xiaoa",
+        "preview": "你总算来了,谢谢你长得这么好看还关注我噢",
+        "time": "2026-07-13 20:16",
+        "unread": 1,
+        "kind": "好友"
+      },
+      {
+        "id": "t_yujie",
+        "name": "联系人体验号2",
+        "avatar": "coach_yujie",
+        "preview": "主页有更精彩的健身教程,有问题留言给我哦",
+        "time": "2026-07-12 11:40",
+        "unread": 1,
+        "kind": "好友"
+      },
+      {
+        "id": "t_maoshu",
+        "name": "猫叔慢跑",
+        "avatar": "coach_maoshu",
+        "preview": "来了老铁😎,有问题在评论区留言告诉猫叔。",
+        "time": "2026-07-11 09:30",
+        "unread": 1,
+        "kind": "好友"
+      },
+      {
+        "id": "t_sys",
+        "name": "系统通知",
+        "avatar": "",
+        "preview": "新周期评定你的 KG 等级为 KG.14,快来查看",
+        "time": "2026-07-13 08:00",
+        "unread": 99,
+        "kind": "系统"
+      },
+      {
+        "id": "t_stranger",
+        "name": "未关注人消息",
+        "avatar": "",
+        "preview": "有1条来自未关注人的消息",
+        "time": "2026-07-10 22:18",
+        "unread": 0,
+        "kind": "系统"
+      },
+      {
+        "id": "t_featured",
+        "name": "精选活动",
+        "avatar": "",
+        "preview": "HelloKitty返场赛开跑,快来领取参赛资格",
+        "time": "2026-07-12 10:00",
+        "unread": 23,
+        "kind": "系统"
+      },
+      {
+        "id": "t_member",
+        "name": "Keep_会员",
+        "avatar": "",
+        "preview": "你的会员已过期7天,续费立享连续包月特惠",
+        "time": "2026-07-14 09:00",
+        "unread": 5,
+        "kind": "系统"
+      },
+      {
+        "id": "t_activity",
+        "name": "活动通知",
+        "avatar": "",
+        "preview": "你报名的凯蒂猫缤纷夏日线上跑已开赛",
+        "time": "2026-07-09 08:30",
+        "unread": 3,
+        "kind": "系统"
+      },
+      {
+        "id": "t_trade",
+        "name": "交易物流",
+        "avatar": "",
+        "preview": "订单已签收:Keep智能跳绳SR3",
+        "time": "2026-05-24 16:20",
+        "unread": 7,
+        "kind": "系统"
+      }
+    ],
+    "chat": {
+      "t_xiaoa": [
+        {
+          "id": "msg_a1",
+          "from": "peer",
+          "content": "你总算来了,谢谢你长得这么好看还关注我噢",
+          "time": "2026-07-13 20:15"
+        },
+        {
+          "id": "msg_a2",
+          "from": "peer",
+          "content": "最近开始跟练大体重减脂课了吗?一起打卡呀",
+          "time": "2026-07-13 20:16"
+        }
+      ],
+      "t_yujie": [
+        {
+          "id": "msg_y1",
+          "from": "peer",
+          "content": "主页有更精彩的健身教程,有问题留言给我哦",
+          "time": "2026-07-12 11:40"
+        }
+      ],
+      "t_maoshu": [
+        {
+          "id": "msg_m1",
+          "from": "peer",
+          "content": "来了老铁😎,有问题在评论区留言告诉猫叔。",
+          "time": "2026-07-11 09:30"
+        }
+      ]
+    }
+  },
+  "notificationsRead": false,
+  "settings": {
+    "bgMusic": "默认音乐",
+    "bgMusicVolume": 70,
+    "headphoneControl": false,
+    "voiceGuide": true,
+    "voiceVolume": 80,
+    "teamMode": true,
+    "backgroundTraining": true,
+    "screenLock": false,
+    "autoUpload": false,
+    "address": {
+      "name": "运动体验官",
+      "phone": "139****4242",
+      "detail": "示例市演示区活力路42号（虚构地址）"
+    }
+  },
+  "wallet": {
+    "coins": 1386,
+    "redPacket": 0.0,
+    "kBalance": 0
+  },
+  "weightLog": [
+    {
+      "date": "2026-04-26",
+      "kg": 70.2
+    },
+    {
+      "date": "2026-05-19",
+      "kg": 69.5
+    },
+    {
+      "date": "2026-06-09",
+      "kg": 68.9
+    },
+    {
+      "date": "2026-06-27",
+      "kg": 68.3
+    },
+    {
+      "date": "2026-07-11",
+      "kg": 67.8
+    }
+  ],
+  "steps": {
+    "today": 6432,
+    "week": [
+      4210,
+      7350,
+      6820,
+      9134,
+      5488,
+      7902,
+      6432
+    ]
+  },
+  "feedFollow": [
+    "post_pamela_w29",
+    "post_ride2",
+    "post_pamela_dance",
+    "post_ride1",
+    "post_swim"
+  ],
+  "feedCommunity": [
+    "post_jianwang",
+    "post_koi",
+    "post_concert",
+    "post_swim",
+    "post_ride1"
+  ],
+  "searchState": {
+    "recents": [
+      "减脂",
+      "跳绳",
+      "哑铃"
+    ],
+    "hotwords": [
+      "骑遇东方茶港",
+      "智能手环",
+      "减脂平台期该怎么破",
+      "法特莱克跑",
+      "帕梅拉",
+      "大体重减脂",
+      "HelloKitty线上跑",
+      "体脂秤"
+    ]
+  },
+  "current": {}
+}

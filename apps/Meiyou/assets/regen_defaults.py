@@ -1,0 +1,177 @@
+# -*- coding: utf-8 -*-
+"""美柚 defaults.json 生成脚本(Playbook §5.2:JSON 一律脚本生成)。
+
+经期数据用相对偏移(daysAgo),state.ts 初始化时按 TimeService 换算为具体日期,
+保证任何时候打开 app 都处于「经期第5天、预计明天结束」的真机采集态。
+其余种子(帖子/圈子/评论/通知/AI)静态多样(≥5条,内容各异,§5.7)。
+"""
+import json
+from pathlib import Path
+
+OUT = Path(__file__).parent.parent / "data" / "defaults.json"
+A = lambda f: f"/@app-assets/Meiyou/gen/{f}.png"
+
+# 相对“今天”的偏移天数(state.ts 转绝对日期)
+CYCLE_SEED = {
+    "cycle": {"periodLen": 6, "cycleLen": 28, "smartPredict": True, "showPregProb": True},
+    # 当前经期:4天前开始(今天=第5天,periodLen6 → 预计明天结束);上一段:31天前开始,5天
+    "periodOffsets": [
+        {"startDaysAgo": 31, "lenDays": 5},
+        {"startDaysAgo": 4, "ongoing": True},
+    ],
+    # 逐日记录(offset 相对今天;对应录屏 r1/r2 的记录内容)
+    "recordOffsets": {
+        "-4": {"flow": "中量", "color": "深红色", "pain": "比较痛", "startTime": "08:30"},
+        "-3": {"flow": "大量", "color": "鲜红色", "pain": "轻微痛", "mood": "不开心"},
+        "-2": {"flow": "中量", "color": "鲜红色", "pain": "完全不痛", "symptoms": ["腰酸", "腹痛", "小腹坠胀", "失眠", "疲惫"], "weight": 63.2},
+        "-1": {"flow": "少量", "color": "褐色", "pain": "完全不痛", "mood": "一般", "love": {"count": 0, "measure": "", "time": ""}},
+        "0": {"flow": "非常少量", "color": "褐色", "pain": "完全不痛", "mood": "一般",
+               "poop": {"feel": "舒畅", "time": "18:05", "count": 1}, "weight": 63.35},
+        # 上一周期两天(31天前起)
+        "-31": {"flow": "中量", "color": "深红色", "pain": "比较痛"},
+        "-30": {"flow": "大量", "color": "鲜红色", "pain": "轻微痛", "mood": "好伤心"},
+    },
+}
+
+CIRCLES = [
+    {"id": "love", "name": "爱情碎碎念", "icon": A("circle_love"), "members": "4971.3万", "discussions": "14.1亿", "headerColor": "#5BB8F0"},
+    {"id": "gynec", "name": "妇科讨论区", "icon": A("circle_gynec"), "members": "3208.6万", "discussions": "9.2亿", "headerColor": "#F08FB4"},
+    {"id": "married", "name": "婚后生活圈", "icon": A("circle_married"), "members": "1856.4万", "discussions": "5.7亿", "headerColor": "#F0A75B"},
+    {"id": "health", "name": "健康养生馆", "icon": A("circle_health"), "members": "2410.9万", "discussions": "6.3亿", "headerColor": "#7BC97F"},
+    {"id": "prep", "name": "备孕交流区", "icon": A("circle_prep"), "members": "1523.8万", "discussions": "4.1亿", "headerColor": "#A98BE8"},
+]
+
+# hoursAgo → state.ts 转绝对时间戳
+POSTS = [
+    {"id": "p1", "author": {"name": "洛萱钰", "avatar": A("avatar_u1")}, "circleId": "love",
+     "text": "谈对象就乱成这个样子了,大家评评理,到底是谁的问题?", "images": [A("post_nightcity")],
+     "topics": ["#姐妹来帮忙"], "likes": 4837, "commentCount": 2464,
+     "replyPreview": "姐妹快跑,这不是你的问题,他连基本的尊重都没有…", "hoursAgo": 5, "region": "江苏"},
+    {"id": "p2", "author": {"name": "笨蛋美女234", "avatar": A("avatar_u2")}, "circleId": "gynec",
+     "text": "感染了HPV怎么办 😭😭 有没有姐妹有经验,会自己转阴吗?", "images": [],
+     "topics": ["#妇科健康"], "likes": 1330, "commentCount": 1074, "hoursAgo": 8, "region": "广东"},
+    {"id": "p3", "author": {"name": "小柚子WHSRBS80", "avatar": A("avatar_u3"), "tag": "备孕"}, "circleId": "prep",
+     "text": "马宝快来吧,都不想同房了,排卵试纸测了一周还是弱阳…", "images": [A("post_testkit")],
+     "topics": ["#我的备孕日常"], "likes": 660, "commentCount": 511, "hoursAgo": 12, "region": "山东"},
+    {"id": "p4", "author": {"name": "俗莲", "avatar": A("avatar_u4")}, "circleId": "love",
+     "text": "35岁这样穿有什么问题吗?被同事说了一整天,心情差到极点。", "images": [A("post_flowers")],
+     "topics": ["#今天穿了什么"], "likes": 2339, "commentCount": 1782, "hoursAgo": 18, "region": "上海"},
+    {"id": "p5", "author": {"name": "滴滴滴T3L0", "avatar": A("avatar_u6"), "tag": "孕35周"}, "circleId": "gynec",
+     "text": "孕晚期皮肤痒得受不了,涂了很多身体乳都没用,姐妹们有什么办法?", "images": [A("post_carepack")],
+     "topics": ["#孕期护理"], "likes": 278, "commentCount": 96, "hoursAgo": 22, "region": "浙江"},
+    {"id": "p6", "author": {"name": "csl,aly", "avatar": A("avatar_u5"), "tag": "备孕"}, "circleId": "prep",
+     "text": "这都怀不上,天理何容😂 排卵期天天做功课,大姨妈还是准时来报到。", "images": [A("post_scale")],
+     "topics": ["#我的备孕日常"], "likes": 2240, "commentCount": 1989,
+     "replyPreview": "不要太频繁了影响质量,隔天一次刚刚好,放松心态最重要…", "hoursAgo": 26, "region": "四川"},
+    {"id": "p7", "author": {"name": "梅予诺", "avatar": A("avatar_u7"), "tag": "孕29周5天"}, "circleId": "married",
+     "text": "老公出差了,看命了[捂脸] 一个人在家又要做饭又要产检。", "images": [A("post_breakfast")],
+     "topics": ["#婚后真实生活记录"], "likes": 6290, "commentCount": 2222, "hoursAgo": 30, "region": "重庆"},
+    {"id": "p8", "author": {"name": "小云莜", "avatar": A("avatar_u8"), "tag": "备孕"}, "circleId": "prep",
+     "text": "#我的备孕日常 网上说同房后把屁股垫高能增加受孕几率,是真的吗?", "images": [A("post_yoga")],
+     "topics": ["#我的备孕日常"], "likes": 483, "commentCount": 367, "hoursAgo": 36, "region": "湖南"},
+    {"id": "p9", "author": {"name": "宝贝B9X4", "avatar": A("avatar_u9"), "tag": "孕13周1天"}, "circleId": "love",
+     "text": "求助 是留是去?今天是孕9周6天,我很纠结也很懊恼,男方态度一直模糊…我该怎么选择呢?",
+     "images": [A("post_journal")], "topics": ["#该不该要"], "likes": 48, "commentCount": 826, "hoursAgo": 40, "region": "四川"},
+    {"id": "p10", "author": {"name": "想你的每天K7H0", "avatar": A("avatar_u10"), "tag": ""}, "circleId": "love",
+     "text": "姐妹们你们有没有和不认识男的聊过天,聊得特别开的那种 #姐妹们有这样的嘛", "images": [],
+     "topics": ["#姐妹们有这样的嘛"], "likes": 152, "commentCount": 67, "hoursAgo": 44, "region": "江苏"},
+    {"id": "p11", "author": {"name": "低调奢华的紫色皇后", "avatar": A("avatar_u1"), "tag": "备孕"}, "circleId": "love",
+     "text": "我和我对象还没结婚,一直在备孕,他工资1.2w,独生子,家里父母都催得紧,该不该先领证?",
+     "images": [], "topics": [], "likes": 7, "commentCount": 261, "hoursAgo": 50, "region": "河南"},
+    {"id": "p12", "author": {"name": "学烘焙的小刺猬", "avatar": A("avatar_u4")}, "circleId": "love",
+     "text": "今年我4月26号才满18岁,然后我男朋友还有几天30岁,家里人都反对,可我真的很喜欢他…",
+     "images": [A("post_dessert")], "topics": ["#男朋友不带我回家见家长"], "likes": 17, "commentCount": 123, "hoursAgo": 55, "region": "广西"},
+    # 广告卡(合成品牌,×可关,按钮 toast)
+    {"id": "ad1", "author": {"name": "叮当鲜生", "avatar": A("post_milktea")}, "circleId": "love",
+     "text": "【满34减17】夏日冰镇西瓜 8斤装,可选冰镇到家", "images": [A("post_milktea")],
+     "topics": [], "likes": 0, "commentCount": 0, "hoursAgo": 6, "region": "", "isAd": True,
+     "adBrand": "叮当鲜生", "adCta": "立即购买"},
+    {"id": "ad2", "author": {"name": "花颜美妆", "avatar": A("post_flowers")}, "circleId": "gynec",
+     "text": "第3代磁力吸油粉饼,清透不压光,油皮亲妈", "images": [A("post_flowers")],
+     "topics": [], "likes": 0, "commentCount": 0, "hoursAgo": 20, "region": "", "isAd": True,
+     "adBrand": "花颜美妆", "adCta": "查看详情"},
+]
+
+COMMENTS = {
+    "p10": [
+        {"id": "c1", "author": {"name": "小柚子O99JNXOS", "avatar": A("avatar_u2")}, "text": "你只要问就是有的",
+         "hoursAgo": 26, "region": "江苏", "likes": 1, "hiddenReplies": 4,
+         "replies": [{"id": "c1r1", "author": {"name": "幸福永远MVNT", "avatar": A("avatar_u3")}, "text": "男的最好别聊", "hoursAgo": 25, "region": "山东", "likes": 0, "replies": []}]},
+        {"id": "c2", "author": {"name": "赫UN帝舵", "avatar": A("avatar_u5")}, "text": "不认识的才能放得开",
+         "hoursAgo": 24, "region": "河北", "likes": 3, "hiddenReplies": 5,
+         "replies": [{"id": "c2r1", "author": {"name": "想你的每天K7H0", "avatar": A("avatar_u10")}, "text": "你试过?", "hoursAgo": 23, "region": "江苏", "likes": 0, "isAuthor": True, "replies": []}]},
+        {"id": "c3", "author": {"name": "乐乐Y0W3", "avatar": A("avatar_u7")}, "text": "有……男朋友异地真的有时候很无聊 😱😱 聊了再聊嘛",
+         "hoursAgo": 18, "region": "广西", "likes": 7, "hiddenReplies": 3,
+         "replies": [{"id": "c3r1", "author": {"name": "糖🍬卜🍭甜", "avatar": A("avatar_u8")}, "text": "有道理", "hoursAgo": 17, "region": "浙江", "likes": 0, "replies": []}]},
+        {"id": "c4", "author": {"name": "远方的乡", "avatar": A("avatar_u9")}, "text": "这上面就有,陌生人只是聊天",
+         "hoursAgo": 18, "region": "山东", "likes": 2, "hiddenReplies": 2,
+         "replies": [{"id": "c4r1", "author": {"name": "小柚子L3TYL6GT", "avatar": A("avatar_u1")}, "text": "随便聊聊没啥的", "hoursAgo": 9, "region": "上海", "likes": 0, "replies": []}]},
+        {"id": "c5", "author": {"name": "晨华", "avatar": A("avatar_u4")}, "text": "以前微信还能玩摇一摇的时候聊过",
+         "hoursAgo": 26, "region": "广西", "likes": 1, "hiddenReplies": 1,
+         "replies": [{"id": "c5r1", "author": {"name": "小柚子QRWPDCA7", "avatar": A("avatar_u6"), "tag": "备孕"}, "text": "现在不摇了吗 😂", "hoursAgo": 23, "region": "河北", "likes": 0, "replies": []}]},
+    ],
+    "p9": [
+        {"id": "c6", "author": {"name": "小柚子Y99CAF44", "avatar": A("avatar_u3")}, "text": "可以承担自己抚养小孩就留下,不然就请先对自己的人生负责",
+         "hoursAgo": 12, "region": "江苏", "likes": 45, "hiddenReplies": 110, "replies": []},
+        {"id": "c7", "author": {"name": "热心的柚子酱", "avatar": A("avatar_u5")}, "text": "男方态度模糊就是答案了,姐妹想清楚",
+         "hoursAgo": 10, "region": "北京", "likes": 32, "replies": []},
+    ],
+    "p6": [
+        {"id": "c8", "author": {"name": "好孕来临LL", "avatar": A("avatar_u6"), "tag": "备孕"}, "text": "不要太频繁了影响质量,隔天一次刚刚好",
+         "hoursAgo": 20, "region": "湖北", "likes": 208, "hiddenReplies": 36, "replies": []},
+        {"id": "c9", "author": {"name": "小月牙MM", "avatar": A("avatar_u8")}, "text": "查查激素六项和输卵管,别光埋头苦干",
+         "hoursAgo": 15, "region": "陕西", "likes": 96, "replies": []},
+    ],
+}
+
+NOTICES = [
+    {"id": "n1", "kind": "like", "user": {"name": "乐乐Y0W3", "avatar": A("avatar_u7")}, "text": "赞了你的帖子", "postId": "p10", "hoursAgo": 3},
+    {"id": "n2", "kind": "like", "user": {"name": "晨华", "avatar": A("avatar_u4")}, "text": "赞了你的评论", "postId": "p9", "hoursAgo": 7},
+    {"id": "n3", "kind": "reply", "user": {"name": "幸福永远MVNT", "avatar": A("avatar_u3")}, "text": "回复了你:说得太对了", "postId": "p10", "hoursAgo": 4},
+    {"id": "n4", "kind": "reply", "user": {"name": "赫UN帝舵", "avatar": A("avatar_u5")}, "text": "回复了你:姐妹清醒", "postId": "p9", "hoursAgo": 16},
+    {"id": "n5", "kind": "like", "user": {"name": "小月牙MM", "avatar": A("avatar_u8")}, "text": "赞了你的帖子", "postId": "p10", "hoursAgo": 20},
+]
+
+SYS_NOTICES = [
+    {"id": "s1", "title": "个人资料修改", "body": "您的新头像已审核通过。", "hoursAgo": 2},
+    {"id": "s2", "title": "社区公约更新", "body": "《她她圈社区公约》已更新,请查看最新内容。", "hoursAgo": 50},
+    {"id": "s3", "title": "帐号安全提醒", "body": "您的帐号于新设备登录,如非本人操作请及时修改密码。", "hoursAgo": 120},
+]
+
+AI = {
+    "suggested": ["经期可以做瑜伽或慢跑吗?", "经期水肿像胖了一圈怎么消肿?", "痛经不想吃药热敷贴有用吗?"],
+    "answers": {
+        "经期可以做瑜伽或慢跑吗?": "经期可以适当做瑜伽或慢跑,关键是控制强度、跟随身体感受。\n\n为什么经期运动是安全的?\n适度运动能促进血液循环,帮助缓解痛经和情绪波动,并不会增加经量或伤害身体。\n\n哪些情况需要暂停运动?\n· 痛经严重到无法站立\n· 经量明显增多\n· 头晕乏力等贫血症状\n· 有子宫内膜异位症或子宫肌瘤病史\n\n运动注意事项\n1. 选择舒适透气的装备 2. 控制强度在低到中等 3. 及时补水 4. 出现不适立即停止\n\n推荐方案:瑜伽每天15-20分钟(避免倒立类体式),慢跑以能正常说话的速度为宜。\n\n以上建议仅供参考,不能替代专业医疗机构的诊断和治疗。",
+        "经期水肿像胖了一圈怎么消肿?": "经期水肿主要和激素变化导致的水钠潴留有关,通常经期结束会自行消退。\n\n可以这样缓解:\n1. 少盐:经期前后清淡饮食,少吃腌制食品\n2. 补钾:香蕉、菠菜、牛油果帮助排出多余钠\n3. 适度活动:散步、拉伸促进循环\n4. 睡前抬腿:平躺把腿抬高10-15分钟\n5. 保证睡眠:熬夜会加重水肿\n\n如果水肿持续到经期结束后仍不消退,或伴随明显体重增加,建议就医检查。\n\n以上建议仅供参考,不能替代专业医疗机构的诊断和治疗。",
+        "痛经不想吃药热敷贴有用吗?": "有用!热敷是缓解原发性痛经的有效非药物手段。\n\n原理:热量能放松子宫平滑肌、促进局部血液循环,减轻痉挛性疼痛。研究显示40℃左右持续热敷的止痛效果接近部分止痛药。\n\n使用建议:\n· 贴在下腹部,温度40℃左右\n· 每次不超过8小时,睡觉时不要贴\n· 皮肤敏感者隔一层薄衣物\n\n还可以搭配:热水泡脚、腹部按摩、喝温热饮品。\n\n注意:如果痛经逐年加重、止痛措施都无效,可能是继发性痛经(如内异症),建议就医排查。\n\n以上建议仅供参考,不能替代专业医疗机构的诊断和治疗。",
+    },
+    "fallback": "收到啦~ 这个问题我需要结合你的健康档案想一想。通常来说,保持规律作息、均衡饮食、适度运动对经期健康最重要。如果症状持续或加重,建议及时就医哦。你也可以点上方的推荐问题,我可以答得更详细~\n\n以上建议仅供参考,不能替代专业医疗机构的诊断和治疗。",
+}
+
+data = {
+    "user": {
+        "id": "u_me", "nick": "小柚子1O9NA46X", "avatar": A("avatar_me"),
+        "ipRegion": "江苏", "wechatMask": "大**学",
+        "stats": {"follows": 0, "fans": 0, "likes": 0, "favs": 0},
+    },
+    "loggedIn": True,
+    "mode": "period",
+    "prepEnabled": False,
+    **CYCLE_SEED,
+    "circles": CIRCLES,
+    "joinedCircles": ["love", "gynec", "married", "health"],
+    "posts": POSTS,
+    "comments": COMMENTS,
+    "notices": NOTICES,
+    "sysNotices": SYS_NOTICES,
+    "ai": AI,
+    "searchHot": ["经期能吃芒果吗", "排卵期同房怀孕几率", "黄体酮不足的表现", "备孕前检查项目", "经期推迟几天正常",
+                   "痛经缓解小妙招", "HPV疫苗几价好", "月经量少发黑", "宫寒怎么调理", "验孕棒什么时候测最准"],
+    "searchGuess": ["经期可以运动吗", "褐色分泌物正常吗", "怀孕初期症状", "大姨妈迟到10天"],
+    "searchHistory": [],
+    "notifSettings": {"master": True, "night": True, "sound": True, "vibrate": True},
+}
+
+OUT.parent.mkdir(parents=True, exist_ok=True)
+OUT.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+print(f"OK: defaults.json ({OUT.stat().st_size} bytes) posts={len(POSTS)} circles={len(CIRCLES)}")

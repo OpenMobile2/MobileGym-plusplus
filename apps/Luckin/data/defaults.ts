@@ -1,0 +1,1 @@
+export { ADDRESSES, COUPONS, INSTANT_PRODUCTS, ORDERS, PRODUCTS, STORES } from '../res/data.zh';

@@ -1,0 +1,728 @@
+{
+  "workspace": {
+    "name": "stu",
+    "url": "stu-dwp9564.slack.com",
+    "initial": "S",
+    "memberCount": 6
+  },
+  "users": [
+    {
+      "id": "u_me",
+      "handle": "hy",
+      "displayName": "HY",
+      "title": "产品负责人",
+      "avatarColor": "avatarPurple",
+      "initial": "H",
+      "online": true,
+      "statusEmoji": "📝",
+      "statusText": "会议中",
+      "isBot": false,
+      "isSelf": true,
+      "email": "beatccjiang@gmail.com"
+    },
+    {
+      "id": "u_lin",
+      "handle": "lin.xiao",
+      "displayName": "林筱",
+      "title": "产品设计",
+      "avatarColor": "avatarBlue",
+      "initial": "林",
+      "online": true,
+      "statusEmoji": "🎧",
+      "statusText": "专注设计中",
+      "isBot": false,
+      "isSelf": false,
+      "email": "lin.xiao@stu.example.com"
+    },
+    {
+      "id": "u_chen",
+      "handle": "chen.hao",
+      "displayName": "陈昊",
+      "title": "前端工程师",
+      "avatarColor": "avatarGreen",
+      "initial": "陈",
+      "online": true,
+      "statusEmoji": "",
+      "statusText": "",
+      "isBot": false,
+      "isSelf": false,
+      "email": "chen.hao@stu.example.com"
+    },
+    {
+      "id": "u_su",
+      "handle": "su.ya",
+      "displayName": "苏雅",
+      "title": "内容运营",
+      "avatarColor": "avatarOrange",
+      "initial": "苏",
+      "online": false,
+      "statusEmoji": "🌙",
+      "statusText": "已下班",
+      "isBot": false,
+      "isSelf": false,
+      "email": "su.ya@stu.example.com"
+    },
+    {
+      "id": "u_wu",
+      "handle": "wu.kai",
+      "displayName": "吴凯",
+      "title": "后端工程师",
+      "avatarColor": "avatarRed",
+      "initial": "吴",
+      "online": false,
+      "statusEmoji": "",
+      "statusText": "",
+      "isBot": false,
+      "isSelf": false,
+      "email": "wu.kai@stu.example.com"
+    },
+    {
+      "id": "u_mei",
+      "handle": "mei.zi",
+      "displayName": "梅子",
+      "title": "市场增长",
+      "avatarColor": "avatarTeal",
+      "initial": "梅",
+      "online": true,
+      "statusEmoji": "",
+      "statusText": "",
+      "isBot": false,
+      "isSelf": false,
+      "email": "mei.zi@stu.example.com"
+    },
+    {
+      "id": "u_slackbot",
+      "handle": "slackbot",
+      "displayName": "Slackbot",
+      "title": "机器人",
+      "avatarColor": "avatarPurple",
+      "initial": "S",
+      "online": true,
+      "statusEmoji": "",
+      "statusText": "",
+      "isBot": true,
+      "isSelf": false,
+      "email": ""
+    }
+  ],
+  "sections": [
+    { "id": "s_starred", "name": "已加星标", "collapsed": false },
+    { "id": "s_channels", "name": "频道", "collapsed": false },
+    { "id": "s_dms", "name": "私信", "collapsed": false }
+  ],
+  "conversations": [
+    {
+      "id": "c_education",
+      "kind": "channel",
+      "name": "education",
+      "isPrivate": false,
+      "topic": "学习资料与内部分享",
+      "description": "沉淀教学素材、课程反馈和分享安排。",
+      "memberIds": ["u_me", "u_lin", "u_chen", "u_su", "u_wu", "u_mei"],
+      "sectionId": "s_channels",
+      "unreadCount": 0,
+      "hasUnread": true,
+      "lastReadIndex": 6,
+      "muted": false,
+      "starred": false,
+      "draft": "",
+      "lastActivity": { "dayOffset": 0, "timeMin": 620 }
+    },
+    {
+      "id": "c_general",
+      "kind": "channel",
+      "name": "general",
+      "isPrivate": false,
+      "topic": "全员公告",
+      "description": "这个频道用于全体成员沟通，所有人都在这里。",
+      "memberIds": ["u_me", "u_lin", "u_chen", "u_su", "u_wu", "u_mei"],
+      "sectionId": "s_channels",
+      "unreadCount": 1,
+      "hasUnread": true,
+      "lastReadIndex": 3,
+      "muted": false,
+      "starred": false,
+      "draft": "",
+      "lastActivity": { "dayOffset": 0, "timeMin": 545 }
+    },
+    {
+      "id": "c_design",
+      "kind": "channel",
+      "name": "design-review",
+      "isPrivate": false,
+      "topic": "设计评审",
+      "description": "每周三下午集中过稿。",
+      "memberIds": ["u_me", "u_lin", "u_chen"],
+      "sectionId": "s_channels",
+      "unreadCount": 0,
+      "hasUnread": false,
+      "lastReadIndex": 99,
+      "muted": false,
+      "starred": false,
+      "draft": "这版间距我觉得还可以再收一点",
+      "lastActivity": { "dayOffset": -1, "timeMin": 900 }
+    },
+    {
+      "id": "c_yue",
+      "kind": "channel",
+      "name": "yue",
+      "isPrivate": false,
+      "topic": "",
+      "description": "约时间、约场地的杂事频道。",
+      "memberIds": ["u_me", "u_su", "u_mei"],
+      "sectionId": "s_channels",
+      "unreadCount": 0,
+      "hasUnread": false,
+      "lastReadIndex": 99,
+      "muted": true,
+      "starred": false,
+      "draft": "",
+      "lastActivity": { "dayOffset": -2, "timeMin": 780 }
+    },
+    {
+      "id": "c_test",
+      "kind": "channel",
+      "name": "test-channel",
+      "isPrivate": true,
+      "topic": "内部测试",
+      "description": "私密频道，只有受邀成员可见。",
+      "memberIds": ["u_me", "u_chen"],
+      "sectionId": "s_channels",
+      "unreadCount": 0,
+      "hasUnread": false,
+      "lastReadIndex": 99,
+      "muted": false,
+      "starred": false,
+      "draft": "",
+      "lastActivity": { "dayOffset": -3, "timeMin": 600 }
+    },
+    {
+      "id": "c_iii",
+      "kind": "channel",
+      "name": "iii",
+      "isPrivate": false,
+      "topic": "",
+      "description": "",
+      "memberIds": ["u_me"],
+      "sectionId": "s_channels",
+      "unreadCount": 0,
+      "hasUnread": false,
+      "lastReadIndex": 99,
+      "muted": false,
+      "starred": false,
+      "draft": "",
+      "lastActivity": { "dayOffset": -5, "timeMin": 540 }
+    },
+    {
+      "id": "d_slackbot",
+      "kind": "dm",
+      "name": "Slackbot",
+      "isPrivate": false,
+      "topic": "",
+      "description": "",
+      "memberIds": ["u_me", "u_slackbot"],
+      "sectionId": "s_dms",
+      "unreadCount": 1,
+      "hasUnread": true,
+      "lastReadIndex": 1,
+      "muted": false,
+      "starred": false,
+      "draft": "",
+      "lastActivity": { "dayOffset": 0, "timeMin": 600 }
+    },
+    {
+      "id": "d_lin",
+      "kind": "dm",
+      "name": "林筱",
+      "isPrivate": false,
+      "topic": "",
+      "description": "",
+      "memberIds": ["u_me", "u_lin"],
+      "sectionId": "s_dms",
+      "unreadCount": 2,
+      "hasUnread": true,
+      "lastReadIndex": 1,
+      "muted": false,
+      "starred": false,
+      "draft": "",
+      "lastActivity": { "dayOffset": 0, "timeMin": 610 }
+    },
+    {
+      "id": "d_chen",
+      "kind": "dm",
+      "name": "陈昊",
+      "isPrivate": false,
+      "topic": "",
+      "description": "",
+      "memberIds": ["u_me", "u_chen"],
+      "sectionId": "s_dms",
+      "unreadCount": 0,
+      "hasUnread": false,
+      "lastReadIndex": 99,
+      "muted": false,
+      "starred": false,
+      "draft": "",
+      "lastActivity": { "dayOffset": 0, "timeMin": 480 }
+    },
+    {
+      "id": "d_su",
+      "kind": "dm",
+      "name": "苏雅",
+      "isPrivate": false,
+      "topic": "",
+      "description": "",
+      "memberIds": ["u_me", "u_su"],
+      "sectionId": "s_dms",
+      "unreadCount": 0,
+      "hasUnread": false,
+      "lastReadIndex": 99,
+      "muted": false,
+      "starred": false,
+      "draft": "明天的排期我下午发你",
+      "lastActivity": { "dayOffset": -1, "timeMin": 1020 }
+    },
+    {
+      "id": "d_me",
+      "kind": "dm",
+      "name": "HY",
+      "isPrivate": false,
+      "topic": "",
+      "description": "",
+      "memberIds": ["u_me"],
+      "sectionId": "s_dms",
+      "unreadCount": 0,
+      "hasUnread": false,
+      "lastReadIndex": 99,
+      "muted": false,
+      "starred": false,
+      "draft": "",
+      "lastActivity": { "dayOffset": -4, "timeMin": 720 }
+    },
+    {
+      "id": "g_team",
+      "kind": "group",
+      "name": "林筱、陈昊、苏雅",
+      "isPrivate": false,
+      "topic": "",
+      "description": "",
+      "memberIds": ["u_me", "u_lin", "u_chen", "u_su"],
+      "sectionId": "s_dms",
+      "unreadCount": 0,
+      "hasUnread": false,
+      "lastReadIndex": 99,
+      "muted": false,
+      "starred": false,
+      "draft": "",
+      "lastActivity": { "dayOffset": -1, "timeMin": 660 }
+    }
+  ],
+  "messages": [
+    {
+      "id": "m_gen_1",
+      "convId": "c_general",
+      "userId": "u_me",
+      "text": "林筱 已加入 #general",
+      "dayOffset": -6,
+      "timeMin": 540,
+      "system": true
+    },
+    {
+      "id": "m_gen_2",
+      "convId": "c_general",
+      "userId": "u_me",
+      "text": "欢迎！这里是全员频道，公告都会发在这。",
+      "dayOffset": -6,
+      "timeMin": 545,
+      "reactions": [{ "emoji": "🎉", "userIds": ["u_lin", "u_chen", "u_su"] }]
+    },
+    {
+      "id": "m_gen_3",
+      "convId": "c_general",
+      "userId": "u_mei",
+      "text": "下周三下午两点全员例会，地点换到 3 楼会议室。",
+      "dayOffset": -1,
+      "timeMin": 1000
+    },
+    {
+      "id": "m_gen_4",
+      "convId": "c_general",
+      "userId": "u_su",
+      "text": "@hy 麻烦确认一下例会的议题顺序，我把纪要模板准备好了。",
+      "dayOffset": 0,
+      "timeMin": 545,
+      "isMention": true
+    },
+    {
+      "id": "m_edu_1",
+      "convId": "c_education",
+      "userId": "u_me",
+      "text": "陈昊 已加入 #education",
+      "dayOffset": -5,
+      "timeMin": 600,
+      "system": true
+    },
+    {
+      "id": "m_edu_2",
+      "convId": "c_education",
+      "userId": "u_lin",
+      "text": "这周的课程反馈整理好了，重点是第三章的练习太密。",
+      "dayOffset": -2,
+      "timeMin": 610,
+      "reactions": [
+        { "emoji": "👍", "userIds": ["u_me", "u_chen", "u_mei"] },
+        { "emoji": "👀", "userIds": ["u_su"] }
+      ]
+    },
+    {
+      "id": "m_edu_3",
+      "convId": "c_education",
+      "userId": "u_chen",
+      "text": "我把练习拆成两节，先发一版结构图看看。",
+      "dayOffset": -2,
+      "timeMin": 625,
+      "replyCount": 3,
+      "replyUserIds": ["u_lin", "u_me", "u_chen"]
+    },
+    {
+      "id": "m_edu_3_r1",
+      "convId": "c_education",
+      "userId": "u_lin",
+      "text": "结构上没问题，第二节标题可以更直白一点。",
+      "dayOffset": -2,
+      "timeMin": 640,
+      "threadParentId": "m_edu_3"
+    },
+    {
+      "id": "m_edu_3_r2",
+      "convId": "c_education",
+      "userId": "u_me",
+      "text": "同意，叫「动手做一遍」就行。",
+      "dayOffset": -2,
+      "timeMin": 645,
+      "threadParentId": "m_edu_3",
+      "reactions": [{ "emoji": "✅", "userIds": ["u_chen"] }]
+    },
+    {
+      "id": "m_edu_3_r3",
+      "convId": "c_education",
+      "userId": "u_chen",
+      "text": "改好了，明天上传新版。",
+      "dayOffset": -1,
+      "timeMin": 540,
+      "threadParentId": "m_edu_3"
+    },
+    {
+      "id": "m_edu_4",
+      "convId": "c_education",
+      "userId": "u_chen",
+      "text": "新版结构图：",
+      "dayOffset": -1,
+      "timeMin": 600,
+      "attachments": [
+        { "kind": "image", "name": "course-structure-v2.png", "color": "#C7D7E8", "ratio": 1.5 }
+      ],
+      "reactions": [{ "emoji": "🔥", "userIds": ["u_lin", "u_me"] }]
+    },
+    {
+      "id": "m_edu_5",
+      "convId": "c_education",
+      "userId": "u_su",
+      "text": "配套的讲义也更新了，见附件。",
+      "dayOffset": -1,
+      "timeMin": 720,
+      "attachments": [
+        { "kind": "file", "name": "第三章讲义 v2.pdf", "ext": "PDF", "size": "1.8 MB" }
+      ]
+    },
+    {
+      "id": "m_edu_6",
+      "convId": "c_education",
+      "userId": "u_mei",
+      "text": "这篇讲交互练习设计的文章挺适合我们参考 https://slack.com/blog/collaboration",
+      "dayOffset": 0,
+      "timeMin": 545,
+      "attachments": [
+        {
+          "kind": "link",
+          "url": "https://slack.com/blog/collaboration",
+          "title": "让团队协作更专注的 7 个习惯",
+          "domain": "slack.com",
+          "desc": "从频道结构到消息列使用，梳理一套可落地的协作规范。"
+        }
+      ]
+    },
+    {
+      "id": "m_edu_7",
+      "convId": "c_education",
+      "userId": "u_wu",
+      "text": "接口那边我今天下午能给到测试环境，改动比原计划小。",
+      "dayOffset": 0,
+      "timeMin": 600,
+      "edited": true
+    },
+    {
+      "id": "m_edu_8",
+      "convId": "c_education",
+      "userId": "u_lin",
+      "text": "🎉",
+      "dayOffset": 0,
+      "timeMin": 615,
+      "bigEmoji": true
+    },
+    {
+      "id": "m_edu_9",
+      "convId": "c_education",
+      "userId": "u_su",
+      "text": "",
+      "dayOffset": 0,
+      "timeMin": 618,
+      "deleted": true
+    },
+    {
+      "id": "m_edu_10",
+      "convId": "c_education",
+      "userId": "u_chen",
+      "text": "那我把上线时间提前到周五，@hy 你看行吗？",
+      "dayOffset": 0,
+      "timeMin": 620,
+      "isMention": true
+    },
+    {
+      "id": "m_des_1",
+      "convId": "c_design",
+      "userId": "u_lin",
+      "text": "首页改版第二稿，主要动了卡片间距和标题层级。",
+      "dayOffset": -1,
+      "timeMin": 880,
+      "attachments": [
+        { "kind": "image", "name": "home-v2.png", "color": "#E4D8F0", "ratio": 0.75 }
+      ],
+      "reactions": [{ "emoji": "👏", "userIds": ["u_me", "u_chen"] }]
+    },
+    {
+      "id": "m_des_2",
+      "convId": "c_design",
+      "userId": "u_chen",
+      "text": "间距我这边实现没问题，标题字号要不要再大一档？",
+      "dayOffset": -1,
+      "timeMin": 900
+    },
+    {
+      "id": "m_yue_1",
+      "convId": "c_yue",
+      "userId": "u_su",
+      "text": "周五的场地订好了，下午三点到五点。",
+      "dayOffset": -2,
+      "timeMin": 780
+    },
+    {
+      "id": "m_test_1",
+      "convId": "c_test",
+      "userId": "u_chen",
+      "text": "这个频道先用来试灰度开关，别往外说。",
+      "dayOffset": -3,
+      "timeMin": 600
+    },
+    {
+      "id": "m_sb_1",
+      "convId": "d_slackbot",
+      "userId": "u_slackbot",
+      "text": "你好！我是 Slackbot。你可以随时问我怎么用 Slack，或者把这里当成给自己记事的地方。",
+      "dayOffset": -6,
+      "timeMin": 520
+    },
+    {
+      "id": "m_sb_2",
+      "convId": "d_slackbot",
+      "userId": "u_me",
+      "text": "记一下：周五前把课程结构定稿。",
+      "dayOffset": -1,
+      "timeMin": 800,
+      "saved": true
+    },
+    {
+      "id": "m_sb_3",
+      "convId": "d_slackbot",
+      "userId": "u_slackbot",
+      "text": "@hy 提醒你：「周五前把课程结构定稿」。",
+      "dayOffset": 0,
+      "timeMin": 600,
+      "isMention": true
+    },
+    {
+      "id": "m_lin_1",
+      "convId": "d_lin",
+      "userId": "u_lin",
+      "text": "评审前我想先跟你对一下改版的取舍。",
+      "dayOffset": -1,
+      "timeMin": 940
+    },
+    {
+      "id": "m_lin_2",
+      "convId": "d_lin",
+      "userId": "u_me",
+      "text": "好，明天上午十点？",
+      "dayOffset": -1,
+      "timeMin": 950
+    },
+    {
+      "id": "m_lin_3",
+      "convId": "d_lin",
+      "userId": "u_lin",
+      "text": "十点可以。我把两版对比图整理出来。",
+      "dayOffset": 0,
+      "timeMin": 600
+    },
+    {
+      "id": "m_lin_4",
+      "convId": "d_lin",
+      "userId": "u_lin",
+      "text": "另外第三章的练习拆分我也想听你意见。",
+      "dayOffset": 0,
+      "timeMin": 610
+    },
+    {
+      "id": "m_chen_1",
+      "convId": "d_chen",
+      "userId": "u_chen",
+      "text": "灰度开关加好了，你那边可以试试。",
+      "dayOffset": 0,
+      "timeMin": 470
+    },
+    {
+      "id": "m_chen_2",
+      "convId": "d_chen",
+      "userId": "u_me",
+      "text": "收到，我下午看。",
+      "dayOffset": 0,
+      "timeMin": 480
+    },
+    {
+      "id": "m_su_1",
+      "convId": "d_su",
+      "userId": "u_su",
+      "text": "讲义排版我按新模板改了一遍，明天发你确认。",
+      "dayOffset": -1,
+      "timeMin": 1020
+    },
+    {
+      "id": "m_me_1",
+      "convId": "d_me",
+      "userId": "u_me",
+      "text": "给自己的备忘：下周开始每天留半小时看反馈。",
+      "dayOffset": -4,
+      "timeMin": 720,
+      "saved": true
+    },
+    {
+      "id": "m_grp_1",
+      "convId": "g_team",
+      "userId": "u_lin",
+      "text": "咱们三个把评审的分工先定下来吧。",
+      "dayOffset": -1,
+      "timeMin": 640
+    },
+    {
+      "id": "m_grp_2",
+      "convId": "g_team",
+      "userId": "u_su",
+      "text": "我负责内容部分，昊哥看实现成本？",
+      "dayOffset": -1,
+      "timeMin": 650,
+      "reactions": [{ "emoji": "👌", "userIds": ["u_chen"] }]
+    },
+    {
+      "id": "m_grp_3",
+      "convId": "g_team",
+      "userId": "u_chen",
+      "text": "行，我今晚出个评估。",
+      "dayOffset": -1,
+      "timeMin": 660
+    }
+  ],
+  "activity": [
+    {
+      "id": "a_1",
+      "kind": "mention",
+      "userId": "u_chen",
+      "convId": "c_education",
+      "messageId": "m_edu_10",
+      "text": "那我把上线时间提前到周五，@hy 你看行吗？",
+      "emoji": "",
+      "dayOffset": 0,
+      "timeMin": 620,
+      "read": false
+    },
+    {
+      "id": "a_2",
+      "kind": "mention",
+      "userId": "u_su",
+      "convId": "c_general",
+      "messageId": "m_gen_4",
+      "text": "@hy 麻烦确认一下例会的议题顺序，我把纪要模板准备好了。",
+      "emoji": "",
+      "dayOffset": 0,
+      "timeMin": 545,
+      "read": false
+    },
+    {
+      "id": "a_3",
+      "kind": "reaction",
+      "userId": "u_chen",
+      "convId": "c_education",
+      "messageId": "m_edu_3_r2",
+      "text": "同意，叫「动手做一遍」就行。",
+      "emoji": "✅",
+      "dayOffset": -2,
+      "timeMin": 646,
+      "read": false
+    },
+    {
+      "id": "a_4",
+      "kind": "thread",
+      "userId": "u_chen",
+      "convId": "c_education",
+      "messageId": "m_edu_3",
+      "text": "改好了，明天上传新版。",
+      "emoji": "",
+      "dayOffset": -1,
+      "timeMin": 540,
+      "read": true
+    },
+    {
+      "id": "a_5",
+      "kind": "reaction",
+      "userId": "u_lin",
+      "convId": "c_general",
+      "messageId": "m_gen_2",
+      "text": "欢迎！这里是全员频道，公告都会发在这。",
+      "emoji": "🎉",
+      "dayOffset": -6,
+      "timeMin": 560,
+      "read": true
+    }
+  ],
+  "searchHistory": ["课程结构", "讲义", "例会"],
+  "status": {
+    "emoji": "📝",
+    "text": "会议中",
+    "clearAfter": "",
+    "clearAtTs": null
+  },
+  "settings": {
+    "language": "system",
+    "colorMode": "light",
+    "homeSort": "section",
+    "unreadSort": "inline",
+    "customizeOrder": ["unreadTidy", "threads", "huddle", "saved", "drafts"],
+    "customizeEnabled": {
+      "unreadTidy": true,
+      "threads": true,
+      "huddle": true,
+      "saved": true,
+      "drafts": true
+    },
+    "notificationsPausedUntil": null,
+    "notifyMode": "all"
+  }
+}

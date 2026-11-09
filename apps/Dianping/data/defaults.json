@@ -1,0 +1,1371 @@
+{
+  "city": "南京",
+  "user": {
+    "nickname": "爱吃的考拉",
+    "level": 1,
+    "phone": "138****0000",
+    "gender": "女",
+    "bio": "唯有美食不可辜负",
+    "birthday": "2003-12-11 射手座",
+    "hometown": "南京",
+    "residence": "南京",
+    "fans": 3,
+    "following": 5,
+    "likes": 10
+  },
+  "shops": [
+    {
+      "id": "wangheli",
+      "name": "王和李·海鲜火锅大排档(万达茂店)",
+      "category": "海鲜火锅",
+      "district": "万达茂",
+      "avgPrice": 94,
+      "score": 4.6,
+      "taste": 4.4,
+      "env": 4.4,
+      "service": 4.4,
+      "ingredient": 4.6,
+      "reviewCount": 387,
+      "distanceM": 540,
+      "address": "南京市栖霞区示范路88号A座3层",
+      "hours": {
+        "open": "11:00",
+        "close": "02:00"
+      },
+      "tags": [
+        "新鲜活味",
+        "服务周到",
+        "口味赞"
+      ],
+      "coverColor": "#E85D4C",
+      "coverLabel": "海鲜火锅 天花板",
+      "foodTabs": [
+        "restaurant",
+        "hotpot"
+      ],
+      "deals": [
+        {
+          "id": "vh100",
+          "title": "【马到大吉】100元代金券",
+          "price": 57.6,
+          "origin": 100,
+          "sold": "半年售 1000+",
+          "kind": "voucher",
+          "rules": "全场可用·免预约·过期自动退"
+        },
+        {
+          "id": "vh2",
+          "title": "多人嗨聚海鲜火锅双人餐",
+          "price": 139,
+          "origin": 261,
+          "sold": "半年售 500+",
+          "kind": "setmeal",
+          "rules": "全场可用·免预约·过期自动退",
+          "items": [
+            { "name": "秘制牛油锅底", "qty": 1 },
+            { "name": "大生蚝", "qty": 6 },
+            { "name": "抱抱大虾", "qty": 1 },
+            { "name": "牛肉拼盘", "qty": 1 },
+            { "name": "时蔬拼盘", "qty": 1 },
+            { "name": "鲜榨饮品", "qty": 2 }
+          ]
+        }
+      ],
+      "dishes": [
+        {
+          "id": "oyster",
+          "name": "大生蚝",
+          "price": 20,
+          "recommendCount": 131
+        },
+        {
+          "id": "beef",
+          "name": "牛肉拼盘",
+          "price": 68,
+          "recommendCount": 28
+        },
+        {
+          "id": "soup",
+          "name": "贵州红酸汤锅底",
+          "price": 48,
+          "recommendCount": 12
+        },
+        {
+          "id": "shrimp",
+          "name": "抱抱大虾",
+          "price": 58,
+          "recommendCount": 41
+        },
+        {
+          "id": "crab",
+          "name": "帝王蟹脚",
+          "price": 128,
+          "recommendCount": 36
+        },
+        {
+          "id": "clam",
+          "name": "爆炒花甲",
+          "price": 32,
+          "recommendCount": 25
+        },
+        {
+          "id": "mushroom",
+          "name": "菌菇拼盘",
+          "price": 26,
+          "recommendCount": 19
+        }
+      ],
+      "reviews": [
+        {
+          "id": "r1",
+          "userName": "火锅爱好者小王",
+          "score": 5,
+          "body": "生蚝很新鲜，酸汤锅底够味，周末人多建议提前排队。",
+          "tags": [
+            "有图",
+            "新鲜活味"
+          ],
+          "dateLabel": "3天前",
+          "hasPhoto": true
+        },
+        {
+          "id": "r2",
+          "userName": "仙林吃货",
+          "score": 3,
+          "body": "味道还行，但周末排队有点久，服务有点忙不过来。",
+          "tags": [
+            "排队"
+          ],
+          "dateLabel": "1周前",
+          "hasPhoto": false
+        },
+        {
+          "id": "r3",
+          "userName": "匿名用户",
+          "score": 2,
+          "body": "上菜慢，叫号体验一般，环境有点吵。",
+          "tags": [
+            "差评"
+          ],
+          "dateLabel": "2周前",
+          "hasPhoto": false
+        },
+        {
+          "id": "r4",
+          "userName": "南京本地人",
+          "score": 5,
+          "body": "海鲜新鲜，锅底层次丰富，朋友聚会首选。",
+          "tags": [
+            "有图",
+            "推荐"
+          ],
+          "dateLabel": "5天前",
+          "hasPhoto": true
+        },
+        {
+          "id": "r5",
+          "userName": "吃货小分队",
+          "score": 4,
+          "body": "性价比不错，代金券很划算。",
+          "tags": [
+            "性价比"
+          ],
+          "dateLabel": "昨天",
+          "hasPhoto": false
+        }
+      ]
+    },
+    {
+      "id": "pangpang",
+      "name": "PangPang·熊(仙林万达店)",
+      "category": "蛋糕甜品",
+      "district": "仙林万达",
+      "avgPrice": 88,
+      "score": 4.8,
+      "taste": 4.9,
+      "env": 4.7,
+      "service": 4.8,
+      "reviewCount": 256,
+      "distanceM": 620,
+      "address": "南京市栖霞区示范路126号",
+      "hours": {
+        "open": "10:00",
+        "close": "21:30"
+      },
+      "tags": [
+        "手绘蛋糕",
+        "约会"
+      ],
+      "coverColor": "#F4A261",
+      "coverLabel": "手绘蛋糕",
+      "foodTabs": [
+        "restaurant",
+        "cafe"
+      ],
+      "deals": [
+        {
+          "id": "pp1",
+          "title": "6英寸动物奶油蛋糕",
+          "price": 198,
+          "origin": 288,
+          "sold": "月售 200+",
+          "kind": "setmeal",
+          "rules": "全场可用·免预约·过期自动退",
+          "items": [
+            { "name": "6英寸手绘动物奶油蛋糕", "qty": 1 },
+            { "name": "生日蜡烛套装", "qty": 1 },
+            { "name": "餐具刀叉套装", "qty": 1 }
+          ]
+        }
+      ],
+      "dishes": [
+        {
+          "id": "hand",
+          "name": "手绘蛋糕",
+          "price": 388,
+          "recommendCount": 96
+        },
+        {
+          "id": "cream",
+          "name": "奶油霜动物蛋糕",
+          "price": 268,
+          "recommendCount": 54
+        },
+        {
+          "id": "cup",
+          "name": "纸杯小蛋糕",
+          "price": 28,
+          "recommendCount": 22
+        },
+        {
+          "id": "tea",
+          "name": "搭配红茶",
+          "price": 18,
+          "recommendCount": 11
+        },
+        {
+          "id": "mousse",
+          "name": "芒果慕斯杯",
+          "price": 32,
+          "recommendCount": 33
+        },
+        {
+          "id": "macaron",
+          "name": "法式马卡龙",
+          "price": 15,
+          "recommendCount": 20
+        },
+        {
+          "id": "cookie",
+          "name": "手工曲奇礼盒",
+          "price": 45,
+          "recommendCount": 14
+        }
+      ],
+      "reviews": [
+        {
+          "id": "pr1",
+          "userName": "甜品控Mia",
+          "score": 5,
+          "body": "手绘很精细，奶油不腻，生日订做很顺利。",
+          "tags": [
+            "有图",
+            "推荐"
+          ],
+          "dateLabel": "昨天",
+          "hasPhoto": true
+        },
+        {
+          "id": "pr2",
+          "userName": "小熊粉丝",
+          "score": 5,
+          "body": "造型可爱，味道也在线。",
+          "tags": [
+            "有图"
+          ],
+          "dateLabel": "3天前",
+          "hasPhoto": true
+        },
+        {
+          "id": "pr3",
+          "userName": "路过买蛋糕",
+          "score": 4,
+          "body": "价格偏贵但仪式感很强。",
+          "tags": [
+            "仪式感"
+          ],
+          "dateLabel": "1周前",
+          "hasPhoto": false
+        },
+        {
+          "id": "pr4",
+          "userName": "匿名用户",
+          "score": 2,
+          "body": "取货要等很久。",
+          "tags": [
+            "差评"
+          ],
+          "dateLabel": "2周前",
+          "hasPhoto": false
+        },
+        {
+          "id": "pr5",
+          "userName": "仙林宝妈",
+          "score": 5,
+          "body": "孩子超喜欢，下次还来。",
+          "tags": [
+            "推荐"
+          ],
+          "dateLabel": "4天前",
+          "hasPhoto": false
+        }
+      ]
+    },
+    {
+      "id": "wuyuesi",
+      "name": "五月四·创意烤肉店",
+      "category": "烤肉",
+      "district": "新街口",
+      "avgPrice": 76,
+      "score": 4.2,
+      "taste": 4.3,
+      "env": 4.0,
+      "service": 4.1,
+      "reviewCount": 128,
+      "distanceM": 3200,
+      "address": "南京市玄武区样板街17号",
+      "hours": {
+        "open": "17:00",
+        "close": "00:30"
+      },
+      "tags": [
+        "创意烤肉",
+        "夜宵"
+      ],
+      "coverColor": "#2A9D8F",
+      "coverLabel": "创意烤肉",
+      "foodTabs": [
+        "restaurant",
+        "snack"
+      ],
+      "deals": [
+        {
+          "id": "wy1",
+          "title": "双人烤肉套餐",
+          "price": 128,
+          "origin": 198,
+          "sold": "月售 300+",
+          "kind": "setmeal",
+          "rules": "全场可用·免预约·过期自动退",
+          "items": [
+            { "name": "秘制肋排", "qty": 1 },
+            { "name": "招牌烤串拼盘", "qty": 1 },
+            { "name": "蔬菜拼盘", "qty": 1 },
+            { "name": "精酿啤酒", "qty": 2 },
+            { "name": "主食任选", "qty": 2 }
+          ]
+        },
+        {
+          "id": "wy2",
+          "title": "50元代金券",
+          "price": 39,
+          "origin": 50,
+          "sold": "月售 200+",
+          "kind": "voucher",
+          "rules": "全场可用·免预约·过期自动退"
+        }
+      ],
+      "dishes": [
+        {
+          "id": "ribs",
+          "name": "秘制肋排",
+          "price": 58,
+          "recommendCount": 40
+        },
+        {
+          "id": "skewers",
+          "name": "招牌烤串拼盘",
+          "price": 48,
+          "recommendCount": 33
+        },
+        {
+          "id": "veg",
+          "name": "蔬菜拼盘",
+          "price": 28,
+          "recommendCount": 12
+        },
+        {
+          "id": "beer",
+          "name": "精酿啤酒",
+          "price": 25,
+          "recommendCount": 18
+        },
+        {
+          "id": "wings",
+          "name": "蜜汁烤鸡翅",
+          "price": 32,
+          "recommendCount": 29
+        },
+        {
+          "id": "corn",
+          "name": "黄油烤玉米",
+          "price": 16,
+          "recommendCount": 15
+        },
+        {
+          "id": "enoki",
+          "name": "烤金针菇",
+          "price": 14,
+          "recommendCount": 11
+        }
+      ],
+      "reviews": [
+        {
+          "id": "wr1",
+          "userName": "夜行者",
+          "score": 4,
+          "body": "夜宵氛围不错，烤肉偏甜口，适合小聚。",
+          "tags": [
+            "夜宵"
+          ],
+          "dateLabel": "5天前",
+          "hasPhoto": false
+        },
+        {
+          "id": "wr2",
+          "userName": "烤串爱好者",
+          "score": 5,
+          "body": "肋排入味，推荐。",
+          "tags": [
+            "有图"
+          ],
+          "dateLabel": "2天前",
+          "hasPhoto": true
+        },
+        {
+          "id": "wr3",
+          "userName": "上班族",
+          "score": 3,
+          "body": "等位偏久。",
+          "tags": [
+            "排队"
+          ],
+          "dateLabel": "1周前",
+          "hasPhoto": false
+        },
+        {
+          "id": "wr4",
+          "userName": "匿名",
+          "score": 2,
+          "body": "油烟有点大。",
+          "tags": [
+            "差评"
+          ],
+          "dateLabel": "2周前",
+          "hasPhoto": false
+        },
+        {
+          "id": "wr5",
+          "userName": "周末搭子",
+          "score": 4,
+          "body": "套餐划算。",
+          "tags": [
+            "性价比"
+          ],
+          "dateLabel": "昨天",
+          "hasPhoto": false
+        }
+      ]
+    },
+    {
+      "id": "luckin",
+      "name": "瑞幸咖啡(南大仙林店)",
+      "category": "咖啡",
+      "district": "仙林",
+      "avgPrice": 18,
+      "score": 4.1,
+      "taste": 4.0,
+      "env": 4.2,
+      "service": 4.1,
+      "reviewCount": 520,
+      "distanceM": 180,
+      "address": "南京市栖霞区学苑路9号",
+      "hours": {
+        "open": "07:30",
+        "close": "21:00"
+      },
+      "tags": [
+        "咖啡",
+        "自习"
+      ],
+      "coverColor": "#1E88E5",
+      "coverLabel": "瑞幸",
+      "foodTabs": [
+        "cafe"
+      ],
+      "deals": [
+        {
+          "id": "lk1",
+          "title": "生椰拿铁兑换券",
+          "price": 9.9,
+          "origin": 18,
+          "sold": "月售 999+",
+          "kind": "voucher",
+          "rules": "全场可用·免预约·过期自动退"
+        }
+      ],
+      "dishes": [
+        {
+          "id": "coco",
+          "name": "生椰拿铁",
+          "price": 18,
+          "recommendCount": 210
+        },
+        {
+          "id": "amer",
+          "name": "美式",
+          "price": 12,
+          "recommendCount": 88
+        },
+        {
+          "id": "latte",
+          "name": "标准拿铁",
+          "price": 16,
+          "recommendCount": 66
+        },
+        {
+          "id": "tin",
+          "name": "厚乳拿铁",
+          "price": 19,
+          "recommendCount": 54
+        },
+        {
+          "id": "velvet",
+          "name": "丝绒拿铁",
+          "price": 19,
+          "recommendCount": 47
+        },
+        {
+          "id": "sea",
+          "name": "海盐芝士拿铁",
+          "price": 21,
+          "recommendCount": 38
+        },
+        {
+          "id": "youzi",
+          "name": "柚C美式",
+          "price": 16,
+          "recommendCount": 22
+        }
+      ],
+      "reviews": [
+        {
+          "id": "lr1",
+          "userName": "考研人",
+          "score": 4,
+          "body": "出杯快，校门口方便，高峰会排队。",
+          "tags": [
+            "方便"
+          ],
+          "dateLabel": "2天前",
+          "hasPhoto": false
+        },
+        {
+          "id": "lr2",
+          "userName": "早八战士",
+          "score": 5,
+          "body": "生椰永远的神。",
+          "tags": [
+            "推荐"
+          ],
+          "dateLabel": "昨天",
+          "hasPhoto": false
+        },
+        {
+          "id": "lr3",
+          "userName": "匿名",
+          "score": 3,
+          "body": "有时糖度不准。",
+          "tags": [],
+          "dateLabel": "1周前",
+          "hasPhoto": false
+        },
+        {
+          "id": "lr4",
+          "userName": "路过",
+          "score": 2,
+          "body": "点单系统卡。",
+          "tags": [
+            "差评"
+          ],
+          "dateLabel": "2周前",
+          "hasPhoto": false
+        },
+        {
+          "id": "lr5",
+          "userName": "自习搭子",
+          "score": 4,
+          "body": "座位不多但能坐一会。",
+          "tags": [
+            "自习"
+          ],
+          "dateLabel": "3天前",
+          "hasPhoto": false
+        }
+      ]
+    },
+    {
+      "id": "yeren",
+      "name": "野人先生现做冰淇淋",
+      "category": "冰淇淋",
+      "district": "仙林",
+      "avgPrice": 25,
+      "score": 4.6,
+      "taste": 4.7,
+      "env": 4.5,
+      "service": 4.5,
+      "reviewCount": 89,
+      "distanceM": 450,
+      "address": "南京市栖霞区示范路201号",
+      "hours": {
+        "open": "12:00",
+        "close": "22:00"
+      },
+      "tags": [
+        "冰淇淋",
+        "甜品"
+      ],
+      "coverColor": "#90BE6D",
+      "coverLabel": "现做冰淇淋",
+      "foodTabs": [
+        "cafe",
+        "snack"
+      ],
+      "deals": [
+        {
+          "id": "ye1",
+          "title": "双球冰淇淋",
+          "price": 15.8,
+          "origin": 28,
+          "sold": "月售 400+",
+          "kind": "setmeal",
+          "rules": "全场可用·免预约·过期自动退",
+          "items": [
+            { "name": "现做冰淇淋球(口味任选)", "qty": 2 },
+            { "name": "配料任选", "qty": 2 }
+          ]
+        }
+      ],
+      "dishes": [
+        {
+          "id": "ball",
+          "name": "招牌双球",
+          "price": 28,
+          "recommendCount": 67
+        },
+        {
+          "id": "pista",
+          "name": "开心果",
+          "price": 32,
+          "recommendCount": 40
+        },
+        {
+          "id": "mango",
+          "name": "芒果冰",
+          "price": 26,
+          "recommendCount": 22
+        },
+        {
+          "id": "choco",
+          "name": "黑巧",
+          "price": 26,
+          "recommendCount": 18
+        },
+        {
+          "id": "matcha",
+          "name": "宇治抹茶",
+          "price": 30,
+          "recommendCount": 34
+        },
+        {
+          "id": "straw",
+          "name": "草莓牛乳",
+          "price": 28,
+          "recommendCount": 27
+        },
+        {
+          "id": "vanilla",
+          "name": "香草云朵",
+          "price": 24,
+          "recommendCount": 15
+        }
+      ],
+      "reviews": [
+        {
+          "id": "yr1",
+          "userName": "夏日限定",
+          "score": 5,
+          "body": "现做口感细腻，推荐开心果味。",
+          "tags": [
+            "推荐"
+          ],
+          "dateLabel": "4天前",
+          "hasPhoto": true
+        },
+        {
+          "id": "yr2",
+          "userName": "甜品人",
+          "score": 5,
+          "body": "排队值得。",
+          "tags": [
+            "有图"
+          ],
+          "dateLabel": "昨天",
+          "hasPhoto": true
+        },
+        {
+          "id": "yr3",
+          "userName": "路人",
+          "score": 4,
+          "body": "份量适中。",
+          "tags": [],
+          "dateLabel": "1周前",
+          "hasPhoto": false
+        },
+        {
+          "id": "yr4",
+          "userName": "匿名",
+          "score": 2,
+          "body": "融化有点快。",
+          "tags": [
+            "差评"
+          ],
+          "dateLabel": "2周前",
+          "hasPhoto": false
+        },
+        {
+          "id": "yr5",
+          "userName": "情侣档",
+          "score": 5,
+          "body": "拍照好看。",
+          "tags": [
+            "约会"
+          ],
+          "dateLabel": "3天前",
+          "hasPhoto": false
+        }
+      ]
+    },
+    {
+      "id": "sushiya",
+      "name": "一绪に寿喜烧(新街口店)",
+      "category": "日料",
+      "district": "新街口",
+      "avgPrice": 128,
+      "score": 4.5,
+      "taste": 4.6,
+      "env": 4.4,
+      "service": 4.5,
+      "reviewCount": 210,
+      "distanceM": 3500,
+      "address": "南京市玄武区样板街35号2层",
+      "hours": {
+        "open": "11:00",
+        "close": "21:30"
+      },
+      "tags": [
+        "寿喜烧",
+        "日料"
+      ],
+      "coverColor": "#C2410C",
+      "coverLabel": "寿喜烧",
+      "foodTabs": [
+        "restaurant"
+      ],
+      "deals": [
+        {
+          "id": "su1",
+          "title": "双人寿喜烧套餐",
+          "price": 199,
+          "origin": 298,
+          "sold": "月售 180+",
+          "kind": "setmeal",
+          "rules": "全场可用·免预约·过期自动退",
+          "items": [
+            { "name": "霜降肥牛", "qty": 2 },
+            { "name": "生鸡蛋拌饭", "qty": 2 },
+            { "name": "豆腐", "qty": 1 },
+            { "name": "时蔬拼盘", "qty": 1 },
+            { "name": "饮品任选", "qty": 2 }
+          ]
+        },
+        {
+          "id": "su2",
+          "title": "100元代金券",
+          "price": 88,
+          "origin": 100,
+          "sold": "月售 120+",
+          "kind": "voucher",
+          "rules": "全场可用·免预约·过期自动退"
+        }
+      ],
+      "dishes": [
+        {
+          "id": "beef2",
+          "name": "霜降肥牛",
+          "price": 68,
+          "recommendCount": 55
+        },
+        {
+          "id": "egg",
+          "name": "生鸡蛋拌饭",
+          "price": 18,
+          "recommendCount": 40
+        },
+        {
+          "id": "tofu",
+          "name": "豆腐",
+          "price": 12,
+          "recommendCount": 10
+        },
+        {
+          "id": "veg2",
+          "name": "时蔬拼盘",
+          "price": 22,
+          "recommendCount": 14
+        },
+        {
+          "id": "pork2",
+          "name": "雪花猪五花",
+          "price": 42,
+          "recommendCount": 31
+        },
+        {
+          "id": "udon",
+          "name": "手打乌冬面",
+          "price": 16,
+          "recommendCount": 22
+        },
+        {
+          "id": "mushroom2",
+          "name": "菌菇拼盘",
+          "price": 26,
+          "recommendCount": 12
+        }
+      ],
+      "reviews": [
+        {
+          "id": "sr1",
+          "userName": "日料粉",
+          "score": 5,
+          "body": "汤底甜香，肥牛品质在线。",
+          "tags": [
+            "有图",
+            "推荐"
+          ],
+          "dateLabel": "2天前",
+          "hasPhoto": true
+        },
+        {
+          "id": "sr2",
+          "userName": "约会笔记",
+          "score": 5,
+          "body": "环境安静适合聊天。",
+          "tags": [
+            "约会"
+          ],
+          "dateLabel": "昨天",
+          "hasPhoto": false
+        },
+        {
+          "id": "sr3",
+          "userName": "吃货",
+          "score": 4,
+          "body": "套餐很够吃。",
+          "tags": [
+            "性价比"
+          ],
+          "dateLabel": "5天前",
+          "hasPhoto": false
+        },
+        {
+          "id": "sr4",
+          "userName": "匿名",
+          "score": 2,
+          "body": "周末太吵。",
+          "tags": [
+            "差评"
+          ],
+          "dateLabel": "1周前",
+          "hasPhoto": false
+        },
+        {
+          "id": "sr5",
+          "userName": "办公党",
+          "score": 4,
+          "body": "午市挺快。",
+          "tags": [],
+          "dateLabel": "3天前",
+          "hasPhoto": false
+        }
+      ]
+    },
+    {
+      "id": "malatang",
+      "name": "杨国福麻辣烫(仙林店)",
+      "category": "小吃简餐",
+      "district": "仙林",
+      "avgPrice": 32,
+      "score": 3.9,
+      "taste": 4.0,
+      "env": 3.6,
+      "service": 3.8,
+      "reviewCount": 640,
+      "distanceM": 260,
+      "address": "南京市栖霞区学苑路22号",
+      "hours": {
+        "open": "10:00",
+        "close": "22:30"
+      },
+      "tags": [
+        "麻辣烫",
+        "一人食"
+      ],
+      "coverColor": "#DC2626",
+      "coverLabel": "麻辣烫",
+      "foodTabs": [
+        "snack",
+        "restaurant"
+      ],
+      "deals": [
+        {
+          "id": "mt1",
+          "title": "30元代金券",
+          "price": 24,
+          "origin": 30,
+          "sold": "月售 800+",
+          "kind": "voucher",
+          "rules": "全场可用·免预约·过期自动退"
+        }
+      ],
+      "dishes": [
+        {
+          "id": "noodle",
+          "name": "宽粉",
+          "price": 6,
+          "recommendCount": 90
+        },
+        {
+          "id": "beef3",
+          "name": "牛肉片",
+          "price": 12,
+          "recommendCount": 70
+        },
+        {
+          "id": "ball2",
+          "name": "鱼豆腐",
+          "price": 5,
+          "recommendCount": 55
+        },
+        {
+          "id": "veg3",
+          "name": "生菜",
+          "price": 3,
+          "recommendCount": 40
+        },
+        {
+          "id": "lotus",
+          "name": "藕片",
+          "price": 4,
+          "recommendCount": 33
+        },
+        {
+          "id": "meatball",
+          "name": "撒尿牛丸",
+          "price": 8,
+          "recommendCount": 28
+        },
+        {
+          "id": "beancurd",
+          "name": "响铃豆皮",
+          "price": 5,
+          "recommendCount": 21
+        }
+      ],
+      "reviews": [
+        {
+          "id": "mr1",
+          "userName": "一人食日常",
+          "score": 4,
+          "body": "出餐快，适合赶时间。",
+          "tags": [
+            "方便"
+          ],
+          "dateLabel": "昨天",
+          "hasPhoto": false
+        },
+        {
+          "id": "mr2",
+          "userName": "辣度挑战",
+          "score": 5,
+          "body": "微辣刚刚好。",
+          "tags": [
+            "推荐"
+          ],
+          "dateLabel": "2天前",
+          "hasPhoto": false
+        },
+        {
+          "id": "mr3",
+          "userName": "学生党",
+          "score": 3,
+          "body": "高峰人多。",
+          "tags": [
+            "排队"
+          ],
+          "dateLabel": "4天前",
+          "hasPhoto": false
+        },
+        {
+          "id": "mr4",
+          "userName": "匿名",
+          "score": 2,
+          "body": "有点咸。",
+          "tags": [
+            "差评"
+          ],
+          "dateLabel": "1周前",
+          "hasPhoto": false
+        },
+        {
+          "id": "mr5",
+          "userName": "夜归人",
+          "score": 4,
+          "body": "夜宵也能吃到。",
+          "tags": [
+            "夜宵"
+          ],
+          "dateLabel": "3天前",
+          "hasPhoto": false
+        }
+      ]
+    },
+    {
+      "id": "bbqking",
+      "name": "烤匠·炭火烤肉",
+      "category": "烧烤",
+      "district": "河西",
+      "avgPrice": 85,
+      "score": 4.3,
+      "taste": 4.4,
+      "env": 4.1,
+      "service": 4.2,
+      "reviewCount": 176,
+      "distanceM": 7800,
+      "address": "南京市建邺区示例大道66号",
+      "hours": {
+        "open": "16:30",
+        "close": "01:00"
+      },
+      "tags": [
+        "炭火",
+        "聚会"
+      ],
+      "coverColor": "#7C2D12",
+      "coverLabel": "炭火烤肉",
+      "foodTabs": [
+        "restaurant",
+        "snack"
+      ],
+      "deals": [
+        {
+          "id": "bb1",
+          "title": "三人烤肉欢聚餐",
+          "price": 219,
+          "origin": 329,
+          "sold": "月售 90+",
+          "kind": "setmeal",
+          "rules": "全场可用·免预约·过期自动退",
+          "items": [
+            { "name": "五花肉", "qty": 2 },
+            { "name": "羊排", "qty": 1 },
+            { "name": "泡菜", "qty": 1 },
+            { "name": "石锅拌饭", "qty": 3 },
+            { "name": "饮料任选", "qty": 3 }
+          ]
+        },
+        {
+          "id": "bb2",
+          "title": "80元代金券",
+          "price": 62,
+          "origin": 80,
+          "sold": "月售 150+",
+          "kind": "voucher",
+          "rules": "全场可用·免预约·过期自动退"
+        }
+      ],
+      "dishes": [
+        {
+          "id": "pork",
+          "name": "五花肉",
+          "price": 48,
+          "recommendCount": 60
+        },
+        {
+          "id": "lamb",
+          "name": "羊排",
+          "price": 68,
+          "recommendCount": 44
+        },
+        {
+          "id": "kim",
+          "name": "泡菜",
+          "price": 12,
+          "recommendCount": 20
+        },
+        {
+          "id": "rice",
+          "name": "石锅拌饭",
+          "price": 22,
+          "recommendCount": 18
+        },
+        {
+          "id": "tongue",
+          "name": "厚切牛舌",
+          "price": 78,
+          "recommendCount": 33
+        },
+        {
+          "id": "wings2",
+          "name": "炭烤鸡翅",
+          "price": 26,
+          "recommendCount": 24
+        },
+        {
+          "id": "enoki2",
+          "name": "锡纸金针菇",
+          "price": 16,
+          "recommendCount": 15
+        }
+      ],
+      "reviews": [
+        {
+          "id": "br1",
+          "userName": "聚会组织者",
+          "score": 5,
+          "body": "炭火香气足，适合多人。",
+          "tags": [
+            "聚会",
+            "有图"
+          ],
+          "dateLabel": "昨天",
+          "hasPhoto": true
+        },
+        {
+          "id": "br2",
+          "userName": "肉食动物",
+          "score": 4,
+          "body": "五花肉不错。",
+          "tags": [
+            "推荐"
+          ],
+          "dateLabel": "3天前",
+          "hasPhoto": false
+        },
+        {
+          "id": "br3",
+          "userName": "路人甲",
+          "score": 3,
+          "body": "距离有点远。",
+          "tags": [],
+          "dateLabel": "1周前",
+          "hasPhoto": false
+        },
+        {
+          "id": "br4",
+          "userName": "匿名",
+          "score": 2,
+          "body": "烟雾大。",
+          "tags": [
+            "差评"
+          ],
+          "dateLabel": "2周前",
+          "hasPhoto": false
+        },
+        {
+          "id": "br5",
+          "userName": "周末党",
+          "score": 4,
+          "body": "套餐实惠。",
+          "tags": [
+            "性价比"
+          ],
+          "dateLabel": "5天前",
+          "hasPhoto": false
+        }
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "id": "n1",
+      "title": "感觉是南京现在最好吃的火锅之一",
+      "author": "爱吃喝玩乐的…",
+      "likes": 6,
+      "shopId": "wangheli",
+      "coverColor": "#C45C26",
+      "body": "生蚝和酸汤绝了，建议周末提早去。"
+    },
+    {
+      "id": "n2",
+      "title": "南京首店！胖东瓜也太香了",
+      "author": "LonelyZzed",
+      "likes": 9,
+      "coverColor": "#8B5E3C",
+      "body": "打卡笔记，暂未关联店铺。"
+    },
+    {
+      "id": "n3",
+      "title": "来万达茂必记这家海鲜火锅",
+      "author": "栗子肥锤",
+      "likes": 6,
+      "shopId": "wangheli",
+      "coverColor": "#D97706",
+      "body": "代金券很划算。"
+    },
+    {
+      "id": "n4",
+      "title": "手绘蛋糕也太精致了",
+      "author": "甜品日记",
+      "likes": 12,
+      "shopId": "pangpang",
+      "coverColor": "#EC4899",
+      "body": "生日预定冲。"
+    },
+    {
+      "id": "n5",
+      "title": "仙林咖啡续命指南",
+      "author": "考研搭子",
+      "likes": 8,
+      "shopId": "luckin",
+      "coverColor": "#2563EB",
+      "body": "早八必备。"
+    },
+    {
+      "id": "n6",
+      "title": "寿喜烧约会选这家",
+      "author": "周末日记",
+      "likes": 15,
+      "shopId": "sushiya",
+      "coverColor": "#EA580C",
+      "body": "汤底很稳。"
+    }
+  ],
+  "favoriteShopIds": [
+    "pangpang"
+  ],
+  "favoriteDishIds": [
+    "pangpang:hand",
+    "luckin:coco"
+  ],
+  "browseHistory": [],
+  "orders": [
+    {
+      "id": "ord_seed_1",
+      "shopId": "wangheli",
+      "shopName": "王和李·海鲜火锅大排档(万达茂店)",
+      "dealId": "vh100",
+      "dealTitle": "【马到大吉】100元代金券",
+      "unitPrice": 57.6,
+      "originPrice": 100,
+      "qty": 1,
+      "payAmount": 57.6,
+      "status": "usable",
+      "code": "628104773905",
+      "createdAt": 1753720000000,
+      "paidAt": 1753720000000,
+      "coverColor": "#E85D4C"
+    },
+    {
+      "id": "ord_seed_2",
+      "shopId": "sushiya",
+      "shopName": "一绪に寿喜烧(新街口店)",
+      "dealId": "su2",
+      "dealTitle": "100元代金券",
+      "unitPrice": 88,
+      "originPrice": 100,
+      "qty": 1,
+      "payAmount": 88,
+      "status": "usable",
+      "code": "517293846021",
+      "createdAt": 1753640000000,
+      "paidAt": 1753640000000,
+      "coverColor": "#C2410C"
+    },
+    {
+      "id": "ord_seed_3",
+      "shopId": "luckin",
+      "shopName": "瑞幸咖啡(南大仙林店)",
+      "dealId": "lk1",
+      "dealTitle": "生椰拿铁兑换券",
+      "unitPrice": 9.9,
+      "originPrice": 18,
+      "qty": 2,
+      "payAmount": 19.8,
+      "status": "used",
+      "code": "903471258860",
+      "createdAt": 1753380000000,
+      "paidAt": 1753380000000,
+      "coverColor": "#1E88E5"
+    },
+    {
+      "id": "ord_seed_4",
+      "shopId": "wuyuesi",
+      "shopName": "五月四·创意烤肉店",
+      "dealId": "wy1",
+      "dealTitle": "双人烤肉套餐",
+      "unitPrice": 128,
+      "originPrice": 198,
+      "qty": 1,
+      "payAmount": 128,
+      "status": "refunded",
+      "code": "740298135567",
+      "createdAt": 1753120000000,
+      "paidAt": 1753120000000,
+      "refundReason": "计划有变，不想去了",
+      "coverColor": "#2A9D8F"
+    }
+  ],
+  "searchHistory": [
+    "火锅",
+    "蛋糕"
+  ],
+  "checkins": [],
+  "userReviews": [
+    {
+      "id": "ur_seed_1",
+      "shopId": "sushiya",
+      "shopName": "一绪に寿喜烧(新街口店)",
+      "score": 5,
+      "body": "蔬菜水果都特别新鲜，环境好，味道好，服务好，产品多。",
+      "createdAt": 1784073600000,
+      "reply": "真心感谢您带给一绪的鼓励，一绪会继续把更好的服务及菜品口感带给您~期待您的再次光临~"
+    },
+    {
+      "id": "ur_seed_2",
+      "shopId": "wangheli",
+      "shopName": "王和李·海鲜火锅大排档(万达茂店)",
+      "score": 5,
+      "body": "一家五口来吃的，吃的很饱很饱，我们都是端的肉和海鲜，还有几碟菌菇，先吃啥端啥，很过瘾。",
+      "createdAt": 1783900800000
+    },
+    {
+      "id": "ur_seed_3",
+      "shopId": "luckin",
+      "shopName": "瑞幸咖啡(南大仙林店)",
+      "score": 4,
+      "body": "出杯快，校门口很方便，生椰拿铁永远的神，高峰期会排队。",
+      "createdAt": 1783728000000
+    }
+  ]
+}

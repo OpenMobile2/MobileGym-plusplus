@@ -1,0 +1,5422 @@
+{
+  "user": {
+    "nickname": "小竹笋",
+    "role": "学生",
+    "age": 23,
+    "gradLabel": "27年应届生",
+    "degree": "硕士",
+    "school": "江东大学",
+    "schoolYears": "2025-2027",
+    "major": "计算机科学与技术",
+    "schoolTag": "985院校",
+    "phoneMasked": "138******00",
+    "wechatFilled": false,
+    "advantage": "擅长领域:ai agent;nlp",
+    "skills": "python,agent相关",
+    "jobStatus": "在校-考虑机会",
+    "ipLocation": "上海",
+    "intro": "",
+    "communityNick": "",
+    "followCount": 0,
+    "fansCount": 0
+  },
+  "expects": [
+    {
+      "id": "e1",
+      "position": "算法工程师",
+      "city": "上海",
+      "salary": "15-16K",
+      "industry": "行业不限"
+    }
+  ],
+  "city": "上海",
+  "searchHistory": [
+    "熟悉linux"
+  ],
+  "searchDiscover": [
+    "linux",
+    "java",
+    "熟悉linux开发",
+    "linux工程师",
+    "算法部署工程师",
+    "嵌入式",
+    "python",
+    "前端开发",
+    "初级算法工程师",
+    "slam算法工程师",
+    "人工智能",
+    "需求分析"
+  ],
+  "companies": [
+    {
+      "id": "c_xinglian",
+      "name": "曜衡科技",
+      "stage": "已上市",
+      "scale": "1000-9999人",
+      "industry": "互联网",
+      "logo": "c_xinglian",
+      "workHours": "上午10:00-下午7:00",
+      "restDays": "双休",
+      "overtime": "偶尔加班",
+      "welfare": [
+        "五险一金",
+        "定期体检",
+        "年终奖",
+        "股票期权"
+      ],
+      "district": "长宁区",
+      "address": "上海长宁区汇智国际中心",
+      "intro": "曜衡科技以「连接每一次机会」为使命,构建了覆盖搜索、推荐与智能交互的技术平台。我们持续投入大模型与智能体方向,吸引了大批优秀工程师与研究者,共同打造服务数亿用户的产品矩阵。",
+      "photos": [
+        "env1",
+        "env2",
+        "env3",
+        "env4"
+      ]
+    },
+    {
+      "id": "c_yunshan",
+      "name": "岫云信息",
+      "stage": "D轮及以上",
+      "scale": "1000-9999人",
+      "industry": "移动互联网",
+      "logo": "c_yunshan",
+      "workHours": "上午9:30-下午6:30",
+      "restDays": "双休",
+      "overtime": "偶尔加班",
+      "welfare": [
+        "五险一金",
+        "补充医疗",
+        "免费三餐",
+        "年终奖"
+      ],
+      "district": "浦东新区",
+      "address": "上海浦东新区岫云大厦",
+      "intro": "岫云信息专注移动端智能应用,核心产品覆盖出行、生活与内容服务,AI 算法团队规模持续扩张。",
+      "photos": [
+        "env2",
+        "env3"
+      ]
+    },
+    {
+      "id": "c_huitu",
+      "name": "珩视智能",
+      "stage": "B轮",
+      "scale": "500-999人",
+      "industry": "人工智能",
+      "logo": "c_huitu",
+      "workHours": "上午10:00-下午7:00",
+      "restDays": "双休",
+      "overtime": "弹性工作",
+      "welfare": [
+        "五险一金",
+        "年终奖",
+        "带薪年假"
+      ],
+      "district": "徐汇区",
+      "address": "上海徐汇区慧谷园区",
+      "intro": "珩视智能深耕计算机视觉与机器人方向,产品服务于工业质检与智能仓储场景。",
+      "photos": [
+        "env1",
+        "env4"
+      ]
+    },
+    {
+      "id": "c_tuojie",
+      "name": "垣拓网络",
+      "stage": "未融资",
+      "scale": "500-999人",
+      "industry": "互联网",
+      "logo": "c_tuojie",
+      "workHours": "上午9:00-下午6:00",
+      "restDays": "双休",
+      "overtime": "偶尔加班",
+      "welfare": [
+        "五险一金",
+        "节日福利"
+      ],
+      "district": "黄浦区",
+      "address": "上海黄浦区外滩金融中心",
+      "intro": "垣拓网络聚焦机器人本体与灵巧手方案,团队小而精,技术氛围浓厚。",
+      "photos": [
+        "env3"
+      ]
+    },
+    {
+      "id": "c_lanzhou",
+      "name": "汐衡数据",
+      "stage": "已上市",
+      "scale": "10000人以上",
+      "industry": "数据服务",
+      "logo": "c_lanzhou",
+      "workHours": "上午9:30-下午6:30",
+      "restDays": "双休",
+      "overtime": "偶尔加班",
+      "welfare": [
+        "五险一金",
+        "定期体检",
+        "餐补",
+        "年终奖"
+      ],
+      "district": "浦东新区",
+      "address": "上海浦东新区汐衡科技园",
+      "intro": "汐衡数据是国内领先的大数据服务商,为金融、零售等行业提供数据智能解决方案。",
+      "photos": [
+        "env1",
+        "env2"
+      ]
+    },
+    {
+      "id": "c_qiming",
+      "name": "烛序电子",
+      "stage": "已上市",
+      "scale": "10000人以上",
+      "industry": "智能硬件",
+      "logo": "c_qiming",
+      "workHours": "上午9:00-下午6:00",
+      "restDays": "双休",
+      "overtime": "偶尔加班",
+      "welfare": [
+        "五险一金",
+        "住房补贴",
+        "年终奖"
+      ],
+      "district": "浦东新区",
+      "address": "上海浦东新区张江高科",
+      "intro": "烛序电子专注通信与智能计算硬件,NPU 与端侧 AI 软件方向持续招聘。",
+      "photos": [
+        "env2",
+        "env4"
+      ]
+    },
+    {
+      "id": "c_lanjing",
+      "name": "泛舸出行",
+      "stage": "已上市",
+      "scale": "10000人以上",
+      "industry": "汽车/出行",
+      "logo": "c_lanjing",
+      "workHours": "上午10:00-下午7:00",
+      "restDays": "双休",
+      "overtime": "偶尔加班",
+      "welfare": [
+        "五险一金",
+        "免费班车",
+        "年终奖"
+      ],
+      "district": "浦东新区",
+      "address": "上海浦东新区张江汽车创新港",
+      "intro": "泛舸出行打造智能出行平台与智能座舱系统,AI Agents 团队面向整车业务场景。",
+      "photos": [
+        "env1",
+        "env3"
+      ]
+    },
+    {
+      "id": "c_shanhai",
+      "name": "岱屿文化",
+      "stage": "A轮",
+      "scale": "100-499人",
+      "industry": "文化传媒",
+      "logo": "c_shanhai",
+      "workHours": "上午10:00-下午7:00",
+      "restDays": "双休",
+      "overtime": "弹性工作",
+      "welfare": [
+        "五险一金",
+        "下午茶"
+      ],
+      "district": "黄浦区",
+      "address": "上海黄浦区创意园区8号楼",
+      "intro": "岱屿文化专注互动内容与图形技术,作品覆盖休闲互动与虚拟场景。",
+      "photos": [
+        "env4"
+      ]
+    },
+    {
+      "id": "c_chixing",
+      "name": "骋澈汽车",
+      "stage": "已上市",
+      "scale": "10000人以上",
+      "industry": "汽车",
+      "logo": "c_chixing",
+      "workHours": "上午9:00-下午6:00",
+      "restDays": "双休",
+      "overtime": "偶尔加班",
+      "welfare": [
+        "五险一金",
+        "购车优惠",
+        "年终奖"
+      ],
+      "district": "浦东新区",
+      "address": "上海浦东新区骋澈汽车技术中心",
+      "intro": "骋澈汽车是智能电动汽车品牌,AI Agents 与智能座舱方向大量招人。",
+      "photos": [
+        "env2",
+        "env3"
+      ]
+    },
+    {
+      "id": "c_nuofang",
+      "name": "芷诺医疗",
+      "stage": "C轮",
+      "scale": "1000-9999人",
+      "industry": "医疗健康",
+      "logo": "c_nuofang",
+      "workHours": "上午9:00-下午5:30",
+      "restDays": "双休",
+      "overtime": "很少加班",
+      "welfare": [
+        "五险一金",
+        "补充医疗",
+        "带薪年假"
+      ],
+      "district": "闵行区",
+      "address": "上海闵行区医谷产业园",
+      "intro": "芷诺医疗研发智能医疗设备与影像分析系统,质量与算法团队同步扩张。",
+      "photos": [
+        "env1"
+      ]
+    },
+    {
+      "id": "c_qinghe",
+      "name": "圃禾教育",
+      "stage": "已上市",
+      "scale": "10000人以上",
+      "industry": "教育培训",
+      "logo": "c_qinghe",
+      "workHours": "上午9:30-下午6:30",
+      "restDays": "双休",
+      "overtime": "偶尔加班",
+      "welfare": [
+        "五险一金",
+        "课程福利",
+        "年终奖"
+      ],
+      "district": "杨浦区",
+      "address": "上海杨浦区创智天地",
+      "intro": "圃禾教育深耕智能学习产品,教育 Agent 团队快速成长。",
+      "photos": [
+        "env3",
+        "env4"
+      ]
+    },
+    {
+      "id": "c_lingyun",
+      "name": "霁阑软件",
+      "stage": "D轮及以上",
+      "scale": "1000-9999人",
+      "industry": "计算机软件",
+      "logo": "c_lingyun",
+      "workHours": "上午9:30-下午6:30",
+      "restDays": "双休",
+      "overtime": "偶尔加班",
+      "welfare": [
+        "五险一金",
+        "定期体检",
+        "年终奖"
+      ],
+      "district": "静安区",
+      "address": "上海静安区霁阑大厦",
+      "intro": "霁阑软件为全球客户提供企业级软件与算法服务,跨国项目机会多。",
+      "photos": [
+        "env2"
+      ]
+    },
+    {
+      "id": "c_juzhou",
+      "name": "柚汀电商",
+      "stage": "已上市",
+      "scale": "10000人以上",
+      "industry": "电子商务",
+      "logo": "c_juzhou",
+      "workHours": "上午9:30-下午6:30",
+      "restDays": "双休",
+      "overtime": "偶尔加班",
+      "welfare": [
+        "五险一金",
+        "购物折扣",
+        "年终奖"
+      ],
+      "district": "静安区",
+      "address": "上海静安区柚汀中心",
+      "intro": "柚汀电商是综合型电商平台,覆盖零售、供应链与数字营销,技术团队支撑亿级交易。",
+      "photos": [
+        "env1",
+        "env3"
+      ]
+    },
+    {
+      "id": "c_linli",
+      "name": "巷邻到家",
+      "stage": "C轮",
+      "scale": "1000-9999人",
+      "industry": "生活服务",
+      "logo": "c_linli",
+      "workHours": "上午9:00-下午6:00",
+      "restDays": "双休",
+      "overtime": "很少加班",
+      "welfare": [
+        "五险一金",
+        "餐补",
+        "带薪年假"
+      ],
+      "district": "普陀区",
+      "address": "上海普陀区巷邻大厦",
+      "intro": "巷邻到家提供到家家政与社区生活服务,服务覆盖全国主要城市。",
+      "photos": [
+        "env2",
+        "env4"
+      ]
+    },
+    {
+      "id": "c_xingchen",
+      "name": "熠屿游戏",
+      "stage": "B轮",
+      "scale": "100-499人",
+      "industry": "游戏",
+      "logo": "c_xingchen",
+      "workHours": "上午11:00-下午8:00",
+      "restDays": "双休",
+      "overtime": "偶尔加班",
+      "welfare": [
+        "五险一金",
+        "下午茶",
+        "项目奖金"
+      ],
+      "district": "徐汇区",
+      "address": "上海徐汇区熠屿创意园",
+      "intro": "熠屿游戏专注休闲与二次元品类,两款产品月活千万级,技术与美术团队持续扩张。",
+      "photos": [
+        "env1",
+        "env4"
+      ]
+    },
+    {
+      "id": "c_manyu",
+      "name": "芽语科技",
+      "stage": "天使轮",
+      "scale": "0-20人",
+      "industry": "人工智能",
+      "logo": "c_manyu",
+      "workHours": "弹性工作制",
+      "restDays": "双休",
+      "overtime": "弹性工作",
+      "welfare": [
+        "期权激励",
+        "扁平团队"
+      ],
+      "district": "杨浦区",
+      "address": "上海杨浦区创智汇孵化器",
+      "intro": "芽语科技是教育智能体方向的早期团队,创始成员来自一线大模型实验室,正在寻找创始工程师。",
+      "photos": [
+        "env3"
+      ]
+    },
+    {
+      "id": "c_fengchao",
+      "name": "巢矩供应链",
+      "stage": "D轮及以上",
+      "scale": "1000-9999人",
+      "industry": "物流/供应链",
+      "logo": "c_fengchao",
+      "workHours": "上午9:00-下午6:00",
+      "restDays": "双休",
+      "overtime": "偶尔加班",
+      "welfare": [
+        "五险一金",
+        "免费班车",
+        "餐补"
+      ],
+      "district": "嘉定区",
+      "address": "上海嘉定区巢矩智慧物流园",
+      "intro": "巢矩供应链运营全国智能仓网,自动化仓储与运筹优化是核心技术方向。",
+      "photos": [
+        "env2",
+        "env1"
+      ]
+    },
+    {
+      "id": "c_xinhe",
+      "name": "珪岸半导体",
+      "stage": "已上市",
+      "scale": "1000-9999人",
+      "industry": "芯片/半导体",
+      "logo": "c_xinhe",
+      "workHours": "上午9:00-下午6:00",
+      "restDays": "双休",
+      "overtime": "偶尔加班",
+      "welfare": [
+        "五险一金",
+        "住房补贴",
+        "年终奖",
+        "股票"
+      ],
+      "district": "浦东新区",
+      "address": "上海浦东新区珪岸科技大厦",
+      "intro": "珪岸半导体专注端侧AI芯片设计,产品覆盖智能终端与车载市场。",
+      "photos": [
+        "env3",
+        "env2"
+      ]
+    },
+    {
+      "id": "c_yunqi",
+      "name": "契枢科技",
+      "stage": "C轮",
+      "scale": "20-99人",
+      "industry": "计算机软件",
+      "logo": "c_yunqi",
+      "workHours": "上午10:00-下午7:00",
+      "restDays": "双休",
+      "overtime": "很少加班",
+      "welfare": [
+        "五险一金",
+        "混合办公",
+        "带薪年假"
+      ],
+      "district": "静安区",
+      "address": "上海静安区契枢中心",
+      "intro": "契枢科技为中大型企业提供合同与流程SaaS,支持混合办公,工程师文化浓厚。",
+      "photos": [
+        "env4"
+      ]
+    },
+    {
+      "id": "c_lvchao",
+      "name": "汀澜能源",
+      "stage": "已上市",
+      "scale": "10000人以上",
+      "industry": "新能源",
+      "logo": "c_lvchao",
+      "workHours": "上午8:30-下午5:30",
+      "restDays": "双休",
+      "overtime": "偶尔加班",
+      "welfare": [
+        "五险一金",
+        "高温补贴",
+        "年终奖"
+      ],
+      "district": "浦东新区",
+      "address": "上海临港汀澜能源基地",
+      "intro": "汀澜能源布局风光储一体化,电池管理与电站智能运维是重点技术团队。",
+      "photos": [
+        "env1",
+        "env2"
+      ]
+    },
+    {
+      "id": "c_gusu",
+      "name": "姑苏智造",
+      "stage": "B轮",
+      "scale": "500-999人",
+      "industry": "文化传媒",
+      "logo": "c_gusu",
+      "workHours": "上午9:30-下午6:30",
+      "restDays": "双休",
+      "overtime": "偶尔加班",
+      "welfare": [
+        "五险一金",
+        "定期体检",
+        "年终奖"
+      ],
+      "district": "工业园区",
+      "address": "苏州工业园区姑苏智造产业园",
+      "intro": "姑苏智造是扎根苏州的科技公司,专注文化传媒方向,团队务实,发展稳健。",
+      "photos": [
+        "env1",
+        "env3"
+      ]
+    },
+    {
+      "id": "c_ganjiang",
+      "name": "赣江数科",
+      "stage": "B轮",
+      "scale": "500-999人",
+      "industry": "医疗健康",
+      "logo": "c_ganjiang",
+      "workHours": "上午9:30-下午6:30",
+      "restDays": "双休",
+      "overtime": "偶尔加班",
+      "welfare": [
+        "五险一金",
+        "定期体检",
+        "年终奖"
+      ],
+      "district": "红谷滩区",
+      "address": "南昌红谷滩区赣江数科产业园",
+      "intro": "赣江数科是扎根南昌的科技公司,专注医疗健康方向,团队务实,发展稳健。",
+      "photos": [
+        "env1",
+        "env3"
+      ]
+    },
+    {
+      "id": "c_jinghua",
+      "name": "京华智算",
+      "stage": "B轮",
+      "scale": "500-999人",
+      "industry": "互联网",
+      "logo": "c_jinghua",
+      "workHours": "上午9:30-下午6:30",
+      "restDays": "双休",
+      "overtime": "偶尔加班",
+      "welfare": [
+        "五险一金",
+        "定期体检",
+        "年终奖"
+      ],
+      "district": "海淀区",
+      "address": "北京海淀区京华智算产业园",
+      "intro": "京华智算是扎根北京的科技公司,专注互联网方向,团队务实,发展稳健。",
+      "photos": [
+        "env1",
+        "env3"
+      ]
+    },
+    {
+      "id": "c_pengrui",
+      "name": "鹏睿科技",
+      "stage": "B轮",
+      "scale": "500-999人",
+      "industry": "智能硬件",
+      "logo": "c_pengrui",
+      "workHours": "上午9:30-下午6:30",
+      "restDays": "双休",
+      "overtime": "偶尔加班",
+      "welfare": [
+        "五险一金",
+        "定期体检",
+        "年终奖"
+      ],
+      "district": "南山区",
+      "address": "深圳南山区鹏睿科技产业园",
+      "intro": "鹏睿科技是扎根深圳的科技公司,专注智能硬件方向,团队务实,发展稳健。",
+      "photos": [
+        "env1",
+        "env3"
+      ]
+    },
+    {
+      "id": "c_qiantang",
+      "name": "钱塘云图",
+      "stage": "B轮",
+      "scale": "500-999人",
+      "industry": "移动互联网",
+      "logo": "c_qiantang",
+      "workHours": "上午9:30-下午6:30",
+      "restDays": "双休",
+      "overtime": "偶尔加班",
+      "welfare": [
+        "五险一金",
+        "定期体检",
+        "年终奖"
+      ],
+      "district": "西湖区",
+      "address": "杭州西湖区钱塘云图产业园",
+      "intro": "钱塘云图是扎根杭州的科技公司,专注移动互联网方向,团队务实,发展稳健。",
+      "photos": [
+        "env1",
+        "env3"
+      ]
+    },
+    {
+      "id": "c_zhujiang",
+      "name": "珠江云枢",
+      "stage": "B轮",
+      "scale": "500-999人",
+      "industry": "新能源",
+      "logo": "c_zhujiang",
+      "workHours": "上午9:30-下午6:30",
+      "restDays": "双休",
+      "overtime": "偶尔加班",
+      "welfare": [
+        "五险一金",
+        "定期体检",
+        "年终奖"
+      ],
+      "district": "天河区",
+      "address": "广州天河区珠江云枢产业园",
+      "intro": "珠江云枢是扎根广州的科技公司,专注新能源方向,团队务实,发展稳健。",
+      "photos": [
+        "env1",
+        "env3"
+      ]
+    },
+    {
+      "id": "c_rongcheng2",
+      "name": "蓉城智数",
+      "stage": "B轮",
+      "scale": "500-999人",
+      "industry": "数据服务",
+      "logo": "c_rongcheng2",
+      "workHours": "上午9:30-下午6:30",
+      "restDays": "双休",
+      "overtime": "偶尔加班",
+      "welfare": [
+        "五险一金",
+        "定期体检",
+        "年终奖"
+      ],
+      "district": "高新区",
+      "address": "成都高新区蓉城智数产业园",
+      "intro": "蓉城智数是扎根成都的科技公司,专注数据服务方向,团队务实,发展稳健。",
+      "photos": [
+        "env1",
+        "env3"
+      ]
+    },
+    {
+      "id": "c_jiangcheng",
+      "name": "江城数擎",
+      "stage": "B轮",
+      "scale": "500-999人",
+      "industry": "移动互联网",
+      "logo": "c_jiangcheng",
+      "workHours": "上午9:30-下午6:30",
+      "restDays": "双休",
+      "overtime": "偶尔加班",
+      "welfare": [
+        "五险一金",
+        "定期体检",
+        "年终奖"
+      ],
+      "district": "洪山区",
+      "address": "武汉洪山区江城数擎产业园",
+      "intro": "江城数擎是扎根武汉的科技公司,专注移动互联网方向,团队务实,发展稳健。",
+      "photos": [
+        "env1",
+        "env3"
+      ]
+    },
+    {
+      "id": "c_shancheng",
+      "name": "山城合智",
+      "stage": "B轮",
+      "scale": "500-999人",
+      "industry": "电子商务",
+      "logo": "c_shancheng",
+      "workHours": "上午9:30-下午6:30",
+      "restDays": "双休",
+      "overtime": "偶尔加班",
+      "welfare": [
+        "五险一金",
+        "定期体检",
+        "年终奖"
+      ],
+      "district": "渝北区",
+      "address": "重庆渝北区山城合智产业园",
+      "intro": "山城合智是扎根重庆的科技公司,专注电子商务方向,团队务实,发展稳健。",
+      "photos": [
+        "env1",
+        "env3"
+      ]
+    },
+    {
+      "id": "c_quancheng",
+      "name": "泉城数据",
+      "stage": "B轮",
+      "scale": "500-999人",
+      "industry": "计算机软件",
+      "logo": "c_quancheng",
+      "workHours": "上午9:30-下午6:30",
+      "restDays": "双休",
+      "overtime": "偶尔加班",
+      "welfare": [
+        "五险一金",
+        "定期体检",
+        "年终奖"
+      ],
+      "district": "历下区",
+      "address": "济南历下区泉城数据产业园",
+      "intro": "泉城数据是扎根济南的科技公司,专注计算机软件方向,团队务实,发展稳健。",
+      "photos": [
+        "env1",
+        "env3"
+      ]
+    },
+    {
+      "id": "c_zhongyuan",
+      "name": "中原智联",
+      "stage": "B轮",
+      "scale": "500-999人",
+      "industry": "教育培训",
+      "logo": "c_zhongyuan",
+      "workHours": "上午9:30-下午6:30",
+      "restDays": "双休",
+      "overtime": "偶尔加班",
+      "welfare": [
+        "五险一金",
+        "定期体检",
+        "年终奖"
+      ],
+      "district": "金水区",
+      "address": "郑州金水区中原智联产业园",
+      "intro": "中原智联是扎根郑州的科技公司,专注教育培训方向,团队务实,发展稳健。",
+      "photos": [
+        "env1",
+        "env3"
+      ]
+    },
+    {
+      "id": "c_yongjiang",
+      "name": "甬江科创",
+      "stage": "B轮",
+      "scale": "500-999人",
+      "industry": "移动互联网",
+      "logo": "c_yongjiang",
+      "workHours": "上午9:30-下午6:30",
+      "restDays": "双休",
+      "overtime": "偶尔加班",
+      "welfare": [
+        "五险一金",
+        "定期体检",
+        "年终奖"
+      ],
+      "district": "鄞州区",
+      "address": "宁波鄞州区甬江科创产业园",
+      "intro": "甬江科创是扎根宁波的科技公司,专注移动互联网方向,团队务实,发展稳健。",
+      "photos": [
+        "env1",
+        "env3"
+      ]
+    },
+    {
+      "id": "c_wanyi",
+      "name": "莞邑智造",
+      "stage": "B轮",
+      "scale": "500-999人",
+      "industry": "智能硬件",
+      "logo": "c_wanyi",
+      "workHours": "上午9:30-下午6:30",
+      "restDays": "双休",
+      "overtime": "偶尔加班",
+      "welfare": [
+        "五险一金",
+        "定期体检",
+        "年终奖"
+      ],
+      "district": "松山湖",
+      "address": "东莞松山湖莞邑智造产业园",
+      "intro": "莞邑智造是扎根东莞的科技公司,专注智能硬件方向,团队务实,发展稳健。",
+      "photos": [
+        "env1",
+        "env3"
+      ]
+    },
+    {
+      "id": "c_jinling",
+      "name": "金陵软件",
+      "stage": "B轮",
+      "scale": "500-999人",
+      "industry": "计算机软件",
+      "logo": "c_jinling",
+      "workHours": "上午9:30-下午6:30",
+      "restDays": "双休",
+      "overtime": "偶尔加班",
+      "welfare": [
+        "五险一金",
+        "定期体检",
+        "年终奖"
+      ],
+      "district": "建邺区",
+      "address": "南京建邺区金陵软件产业园",
+      "intro": "金陵软件是扎根南京的科技公司,专注计算机软件方向,团队务实,发展稳健。",
+      "photos": [
+        "env1",
+        "env3"
+      ]
+    },
+    {
+      "id": "c_luzhou",
+      "name": "庐州芯图",
+      "stage": "B轮",
+      "scale": "500-999人",
+      "industry": "计算机软件",
+      "logo": "c_luzhou",
+      "workHours": "上午9:30-下午6:30",
+      "restDays": "双休",
+      "overtime": "偶尔加班",
+      "welfare": [
+        "五险一金",
+        "定期体检",
+        "年终奖"
+      ],
+      "district": "蜀山区",
+      "address": "合肥蜀山区庐州芯图产业园",
+      "intro": "庐州芯图是扎根合肥的科技公司,专注计算机软件方向,团队务实,发展稳健。",
+      "photos": [
+        "env1",
+        "env3"
+      ]
+    },
+    {
+      "id": "c_changan",
+      "name": "长安智码",
+      "stage": "B轮",
+      "scale": "500-999人",
+      "industry": "移动互联网",
+      "logo": "c_changan",
+      "workHours": "上午9:30-下午6:30",
+      "restDays": "双休",
+      "overtime": "偶尔加班",
+      "welfare": [
+        "五险一金",
+        "定期体检",
+        "年终奖"
+      ],
+      "district": "雁塔区",
+      "address": "西安雁塔区长安智码产业园",
+      "intro": "长安智码是扎根西安的科技公司,专注移动互联网方向,团队务实,发展稳健。",
+      "photos": [
+        "env1",
+        "env3"
+      ]
+    },
+    {
+      "id": "c_rongcheng",
+      "name": "榕城数联",
+      "stage": "B轮",
+      "scale": "500-999人",
+      "industry": "电子商务",
+      "logo": "c_rongcheng",
+      "workHours": "上午9:30-下午6:30",
+      "restDays": "双休",
+      "overtime": "偶尔加班",
+      "welfare": [
+        "五险一金",
+        "定期体检",
+        "年终奖"
+      ],
+      "district": "鼓楼区",
+      "address": "福州鼓楼区榕城数联产业园",
+      "intro": "榕城数联是扎根福州的科技公司,专注电子商务方向,团队务实,发展稳健。",
+      "photos": [
+        "env1",
+        "env3"
+      ]
+    },
+    {
+      "id": "c_xingcheng2",
+      "name": "星城智算",
+      "stage": "B轮",
+      "scale": "500-999人",
+      "industry": "计算机软件",
+      "logo": "c_xingcheng2",
+      "workHours": "上午9:30-下午6:30",
+      "restDays": "双休",
+      "overtime": "偶尔加班",
+      "welfare": [
+        "五险一金",
+        "定期体检",
+        "年终奖"
+      ],
+      "district": "岳麓区",
+      "address": "长沙岳麓区星城智算产业园",
+      "intro": "星城智算是扎根长沙的科技公司,专注计算机软件方向,团队务实,发展稳健。",
+      "photos": [
+        "env1",
+        "env3"
+      ]
+    }
+  ],
+  "bosses": [
+    {
+      "id": "b1",
+      "name": "阚云舟",
+      "title": "技术负责人",
+      "companyId": "c_xinglian",
+      "avatar": "b1",
+      "activity": "4分钟前回复",
+      "online": true,
+      "activeTier": "刚刚活跃"
+    },
+    {
+      "id": "b2",
+      "name": "蔺晓禾",
+      "title": "AI工程师",
+      "companyId": "c_yunshan",
+      "avatar": "b2",
+      "activity": "今日回复10+次",
+      "online": true,
+      "activeTier": "今日活跃"
+    },
+    {
+      "id": "b3",
+      "name": "湛明阔",
+      "title": "算法负责人",
+      "companyId": "c_huitu",
+      "avatar": "b3",
+      "activity": "回复率高",
+      "online": false,
+      "activeTier": "3日内活跃"
+    },
+    {
+      "id": "b4",
+      "name": "晏一鸣",
+      "title": "项目负责人",
+      "companyId": "c_tuojie",
+      "avatar": "b4",
+      "activity": "今日回复1次",
+      "online": false,
+      "activeTier": "本周活跃"
+    },
+    {
+      "id": "b5",
+      "name": "宓倩然",
+      "title": "HRBP",
+      "companyId": "c_lanzhou",
+      "avatar": "b5",
+      "activity": "今日活跃",
+      "online": true,
+      "activeTier": "今日活跃"
+    },
+    {
+      "id": "b6",
+      "name": "仲柏鸣",
+      "title": "开发主管",
+      "companyId": "c_qiming",
+      "avatar": "b6",
+      "activity": "回复率高",
+      "online": false,
+      "activeTier": "3日内活跃"
+    },
+    {
+      "id": "b7",
+      "name": "覃思远",
+      "title": "技术研发负责人",
+      "companyId": "c_lanjing",
+      "avatar": "b7",
+      "activity": "今日回复5次",
+      "online": true,
+      "activeTier": "今日活跃"
+    },
+    {
+      "id": "b8",
+      "name": "雒可",
+      "title": "HR主管",
+      "companyId": "c_shanhai",
+      "avatar": "b8",
+      "activity": "今日活跃",
+      "online": false,
+      "activeTier": "本月活跃"
+    },
+    {
+      "id": "b9",
+      "name": "桑维",
+      "title": "招聘经理",
+      "companyId": "c_chixing",
+      "avatar": "b9",
+      "activity": "回复率高",
+      "online": true,
+      "activeTier": "刚刚活跃"
+    },
+    {
+      "id": "b10",
+      "name": "庾静然",
+      "title": "招聘者",
+      "companyId": "c_nuofang",
+      "avatar": "b10",
+      "activity": "今日回复3次",
+      "online": false,
+      "activeTier": "3日内活跃"
+    },
+    {
+      "id": "b11",
+      "name": "邬清羽",
+      "title": "HRBP",
+      "companyId": "c_qinghe",
+      "avatar": "b11",
+      "activity": "今日回复1次",
+      "online": true,
+      "activeTier": "本周活跃"
+    },
+    {
+      "id": "b12",
+      "name": "糜兰舟",
+      "title": "招聘HR",
+      "companyId": "c_lingyun",
+      "avatar": "b12",
+      "activity": "回复率高",
+      "online": false,
+      "activeTier": "本月活跃"
+    },
+    {
+      "id": "b13",
+      "name": "花溆",
+      "title": "招聘官",
+      "companyId": "c_juzhou",
+      "avatar": "b13",
+      "activity": "刚刚活跃",
+      "online": true,
+      "activeTier": "刚刚活跃"
+    },
+    {
+      "id": "b14",
+      "name": "尉迟恺",
+      "title": "技术总监",
+      "companyId": "c_linli",
+      "avatar": "b14",
+      "activity": "本周活跃",
+      "online": false,
+      "activeTier": "本周活跃"
+    },
+    {
+      "id": "b15",
+      "name": "都航宇",
+      "title": "客户端主程",
+      "companyId": "c_xingchen",
+      "avatar": "b15",
+      "activity": "今日回复8次",
+      "online": true,
+      "activeTier": "今日活跃"
+    },
+    {
+      "id": "b16",
+      "name": "晁遥",
+      "title": "创始人",
+      "companyId": "c_manyu",
+      "avatar": "b16",
+      "activity": "刚刚活跃",
+      "online": true,
+      "activeTier": "刚刚活跃"
+    },
+    {
+      "id": "b17",
+      "name": "逄越",
+      "title": "算法总监",
+      "companyId": "c_fengchao",
+      "avatar": "b17",
+      "activity": "3日内活跃",
+      "online": false,
+      "activeTier": "3日内活跃"
+    },
+    {
+      "id": "b18",
+      "name": "展知微",
+      "title": "HRD",
+      "companyId": "c_xinhe",
+      "avatar": "b18",
+      "activity": "今日活跃",
+      "online": true,
+      "activeTier": "今日活跃"
+    },
+    {
+      "id": "b19",
+      "name": "濮云开",
+      "title": "技术合伙人",
+      "companyId": "c_yunqi",
+      "avatar": "b19",
+      "activity": "本周活跃",
+      "online": false,
+      "activeTier": "本周活跃"
+    },
+    {
+      "id": "b20",
+      "name": "蔚风临",
+      "title": "招聘经理",
+      "companyId": "c_lvchao",
+      "avatar": "b20",
+      "activity": "本月活跃",
+      "online": false,
+      "activeTier": "本月活跃"
+    },
+    {
+      "id": "b_sz2",
+      "name": "蒉之桁",
+      "title": "招聘负责人",
+      "companyId": "c_gusu",
+      "avatar": "b_sz2",
+      "activity": "今日活跃",
+      "online": true,
+      "activeTier": "今日活跃"
+    },
+    {
+      "id": "b_nc",
+      "name": "冉知许",
+      "title": "招聘负责人",
+      "companyId": "c_ganjiang",
+      "avatar": "b_nc",
+      "activity": "今日活跃",
+      "online": true,
+      "activeTier": "今日活跃"
+    },
+    {
+      "id": "b_bj",
+      "name": "蒯明轩",
+      "title": "招聘负责人",
+      "companyId": "c_jinghua",
+      "avatar": "b_bj",
+      "activity": "今日活跃",
+      "online": true,
+      "activeTier": "今日活跃"
+    },
+    {
+      "id": "b_sz",
+      "name": "花承宇",
+      "title": "招聘负责人",
+      "companyId": "c_pengrui",
+      "avatar": "b_sz",
+      "activity": "今日活跃",
+      "online": true,
+      "activeTier": "今日活跃"
+    },
+    {
+      "id": "b_hz",
+      "name": "慕青野",
+      "title": "招聘负责人",
+      "companyId": "c_qiantang",
+      "avatar": "b_hz",
+      "activity": "今日活跃",
+      "online": true,
+      "activeTier": "今日活跃"
+    },
+    {
+      "id": "b_gz",
+      "name": "沃承业",
+      "title": "招聘负责人",
+      "companyId": "c_zhujiang",
+      "avatar": "b_gz",
+      "activity": "今日活跃",
+      "online": true,
+      "activeTier": "今日活跃"
+    },
+    {
+      "id": "b_cd",
+      "name": "扶知远",
+      "title": "招聘负责人",
+      "companyId": "c_rongcheng2",
+      "avatar": "b_cd",
+      "activity": "今日活跃",
+      "online": true,
+      "activeTier": "今日活跃"
+    },
+    {
+      "id": "b_wh",
+      "name": "郄星野",
+      "title": "招聘负责人",
+      "companyId": "c_jiangcheng",
+      "avatar": "b_wh",
+      "activity": "今日活跃",
+      "online": true,
+      "activeTier": "今日活跃"
+    },
+    {
+      "id": "b_cq",
+      "name": "都柏川",
+      "title": "招聘负责人",
+      "companyId": "c_shancheng",
+      "avatar": "b_cq",
+      "activity": "今日活跃",
+      "online": true,
+      "activeTier": "今日活跃"
+    },
+    {
+      "id": "b_jn",
+      "name": "邴予安",
+      "title": "招聘负责人",
+      "companyId": "c_quancheng",
+      "avatar": "b_jn",
+      "activity": "今日活跃",
+      "online": true,
+      "activeTier": "今日活跃"
+    },
+    {
+      "id": "b_zz",
+      "name": "郗云和",
+      "title": "招聘负责人",
+      "companyId": "c_zhongyuan",
+      "avatar": "b_zz",
+      "activity": "今日活跃",
+      "online": true,
+      "activeTier": "今日活跃"
+    },
+    {
+      "id": "b_nb",
+      "name": "逯明澈",
+      "title": "招聘负责人",
+      "companyId": "c_yongjiang",
+      "avatar": "b_nb",
+      "activity": "今日活跃",
+      "online": true,
+      "activeTier": "今日活跃"
+    },
+    {
+      "id": "b_dg",
+      "name": "养景行",
+      "title": "招聘负责人",
+      "companyId": "c_wanyi",
+      "avatar": "b_dg",
+      "activity": "今日活跃",
+      "online": true,
+      "activeTier": "今日活跃"
+    },
+    {
+      "id": "b_nj",
+      "name": "池砚舟",
+      "title": "招聘负责人",
+      "companyId": "c_jinling",
+      "avatar": "b_nj",
+      "activity": "今日活跃",
+      "online": true,
+      "activeTier": "今日活跃"
+    },
+    {
+      "id": "b_hf",
+      "name": "蒙星阑",
+      "title": "招聘负责人",
+      "companyId": "c_luzhou",
+      "avatar": "b_hf",
+      "activity": "今日活跃",
+      "online": true,
+      "activeTier": "今日活跃"
+    },
+    {
+      "id": "b_xa",
+      "name": "綦怀瑾",
+      "title": "招聘负责人",
+      "companyId": "c_changan",
+      "avatar": "b_xa",
+      "activity": "今日活跃",
+      "online": true,
+      "activeTier": "今日活跃"
+    },
+    {
+      "id": "b_fz",
+      "name": "桓叙白",
+      "title": "招聘负责人",
+      "companyId": "c_rongcheng",
+      "avatar": "b_fz",
+      "activity": "今日活跃",
+      "online": true,
+      "activeTier": "今日活跃"
+    },
+    {
+      "id": "b_cs",
+      "name": "麴清越",
+      "title": "招聘负责人",
+      "companyId": "c_xingcheng2",
+      "avatar": "b_cs",
+      "activity": "今日活跃",
+      "online": true,
+      "activeTier": "今日活跃"
+    }
+  ],
+  "jobs": [
+    {
+      "id": "j1",
+      "title": "校招提前批-算法工程师",
+      "salary": "30-35K·15薪",
+      "jobType": "fulltime",
+      "campus": true,
+      "companyId": "c_xinglian",
+      "bossId": "b1",
+      "city": "上海",
+      "district": "长宁区",
+      "address": "上海长宁区汇智国际中心",
+      "eduReq": "本科",
+      "expReq": "在校/应届",
+      "tags": [
+        "60+位校友入职",
+        "本科",
+        "分布式训练",
+        "自然语言处理算法"
+      ],
+      "skills": [
+        "分布式训练",
+        "深度学习",
+        "大模型算法",
+        "自然语言处理算法",
+        "大数据处理框架(Spark/Hadoop/Hive)",
+        "算法工程化经验",
+        "广告算法",
+        "MATLAB",
+        "推荐算法"
+      ],
+      "desc": [
+        "利用机器学习/深度学习技术/图计算技术,优化app内外搜索、推荐、广告、图像、风控、智能客服、平台等效果,提升数亿用户的使用体验和平台的变现效率;",
+        "深入产品和业务,发现算法和机制中的不足,提出改进方案并且推动实现;",
+        "跟踪业界和学术界最新进展,将理论成果应用到业务场景,提升业务效果。"
+      ],
+      "reqs": [
+        "2027届毕业生,硕士及以上学历,计算机相关专业,对算法有浓厚兴趣;",
+        "具备强悍的编码能力,熟悉linux开发环境,熟悉TensorFlow、PyTorch、Hive优先;",
+        "具备扎实的数据结构功底,熟悉机器学习、深度学习、图计算、自然语言处理、数据挖掘中一项或多项;",
+        "对大语言模型、用户增长、搜索引擎、推荐系统、计算广告、图像、互联网风控、智能客服、平台等相关领域有经验者优先;",
+        "具备较好的数理基础和逻辑分析能力,对解决挑战性问题充满热情。"
+      ],
+      "gradYear": "2027年",
+      "deadline": "2026.08.23",
+      "distanceKm": 21.5,
+      "publishedDaysAgo": 2,
+      "hotBadge": "新"
+    },
+    {
+      "id": "j2",
+      "title": "高级大模型应用算法工程师",
+      "salary": "40-70K·16薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_xinglian",
+      "bossId": "b1",
+      "city": "上海",
+      "district": "长宁区",
+      "address": "上海长宁区汇智国际中心",
+      "eduReq": "硕士",
+      "expReq": "经验不限",
+      "tags": [
+        "经验不限",
+        "硕士",
+        "60+位校友入职",
+        "强化学习"
+      ],
+      "skills": [
+        "强化学习",
+        "大模型算法",
+        "RLHF",
+        "深度学习",
+        "PyTorch"
+      ],
+      "desc": [
+        "负责大模型在搜索与推荐场景的应用落地;",
+        "探索强化学习与人类反馈对齐技术;",
+        "推动模型效果与工程效率双提升。"
+      ],
+      "reqs": [
+        "硕士及以上学历,计算机相关专业;",
+        "有大模型训练或应用经验优先;",
+        "熟悉强化学习者优先。"
+      ],
+      "distanceKm": 21.5,
+      "publishedDaysAgo": 5
+    },
+    {
+      "id": "j3",
+      "title": "AI Agent研发工程师(2027届)",
+      "salary": "20-40K·18薪",
+      "jobType": "fulltime",
+      "campus": true,
+      "companyId": "c_xinglian",
+      "bossId": "b1",
+      "city": "上海",
+      "district": "长宁区",
+      "address": "上海长宁区汇智国际中心",
+      "eduReq": "本科",
+      "expReq": "在校/应届",
+      "tags": [
+        "60+位校友入职",
+        "本科",
+        "发表算法相关优秀论文",
+        "C/C++"
+      ],
+      "skills": [
+        "Agent",
+        "C/C++",
+        "大模型算法",
+        "工具调用",
+        "多轮对话"
+      ],
+      "desc": [
+        "参与智能体框架研发,构建可靠的规划与执行链路;",
+        "设计工具调用与多轮对话策略;",
+        "与业务团队合作落地 Agent 应用。"
+      ],
+      "reqs": [
+        "2027届,本科及以上;",
+        "扎实的编程功底,熟悉 C/C++ 或 Python;",
+        "对 LLM Agent 有实践经验者优先。"
+      ],
+      "gradYear": "2027年",
+      "distanceKm": 21.3,
+      "publishedDaysAgo": 1,
+      "hotBadge": "爆"
+    },
+    {
+      "id": "j4",
+      "title": "算法工程师(AI工程应用)",
+      "salary": "30-40K·15薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_yunshan",
+      "bossId": "b2",
+      "city": "上海",
+      "district": "浦东新区",
+      "address": "上海浦东新区岫云大厦",
+      "eduReq": "硕士",
+      "expReq": "3-5年",
+      "tags": [
+        "3-5年",
+        "硕士",
+        "Python",
+        "大模型算法",
+        "风控算法"
+      ],
+      "skills": [
+        "Python",
+        "大模型算法",
+        "风控算法",
+        "特征工程"
+      ],
+      "desc": [
+        "负责风控与增长场景的算法建模;",
+        "推动大模型在业务中的工程化应用。"
+      ],
+      "reqs": [
+        "硕士,3-5年算法经验;",
+        "熟悉 Python 与主流深度学习框架。"
+      ],
+      "distanceKm": 12.4,
+      "publishedDaysAgo": 3
+    },
+    {
+      "id": "j5",
+      "title": "AI算法工程师",
+      "salary": "25-40K·15薪",
+      "jobType": "fulltime",
+      "campus": true,
+      "companyId": "c_yunshan",
+      "bossId": "b2",
+      "city": "上海",
+      "district": "浦东新区",
+      "address": "上海浦东新区岫云大厦",
+      "eduReq": "本科",
+      "expReq": "在校/应届",
+      "tags": [
+        "上海",
+        "在校/应届",
+        "本科"
+      ],
+      "skills": [
+        "大语言模型",
+        "AIGC",
+        "NPU",
+        "深度学习"
+      ],
+      "desc": [
+        "大模型技术应用:参与大语言模型、AIGC(图片/视频)生成方向的模型优化与落地;",
+        "端侧推理加速与算子优化;",
+        "参与智能应用的算法方案设计。"
+      ],
+      "reqs": [
+        "2027届本科及以上;",
+        "熟悉深度学习基础;",
+        "有端侧或推理优化经验优先。"
+      ],
+      "gradYear": "2027年",
+      "distanceKm": 13.1,
+      "publishedDaysAgo": 1
+    },
+    {
+      "id": "j6",
+      "title": "算法工程师",
+      "salary": "30-50K",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_huitu",
+      "bossId": "b3",
+      "city": "上海",
+      "district": "徐汇区",
+      "address": "上海徐汇区慧谷园区",
+      "eduReq": "硕士",
+      "expReq": "3-5年",
+      "tags": [
+        "5+位校友入职",
+        "3-5年",
+        "硕士",
+        "大模型算法",
+        "语音算法"
+      ],
+      "skills": [
+        "语音算法",
+        "大模型算法",
+        "多模态"
+      ],
+      "desc": [
+        "负责语音与多模态方向的算法研发;",
+        "优化识别与生成效果。"
+      ],
+      "reqs": [
+        "硕士,3-5年经验;",
+        "有语音或多模态项目经验。"
+      ],
+      "distanceKm": 8.6,
+      "publishedDaysAgo": 4
+    },
+    {
+      "id": "j7",
+      "title": "AI算法工程师(教育Agent)",
+      "salary": "15-25K·13薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_qinghe",
+      "bossId": "b11",
+      "city": "上海",
+      "district": "杨浦区",
+      "address": "上海杨浦区创智天地",
+      "eduReq": "本科",
+      "expReq": "3-5年",
+      "tags": [
+        "3-5年",
+        "本科",
+        "推荐算法",
+        "自然语言处理算法",
+        "深度学习"
+      ],
+      "skills": [
+        "推荐算法",
+        "自然语言处理算法",
+        "深度学习",
+        "教育大模型"
+      ],
+      "desc": [
+        "构建教育场景的智能辅导 Agent;",
+        "优化个性化学习推荐效果。"
+      ],
+      "reqs": [
+        "本科及以上,3-5年经验;",
+        "熟悉 NLP 与推荐系统。"
+      ],
+      "distanceKm": 0.135,
+      "publishedDaysAgo": 2
+    },
+    {
+      "id": "j8",
+      "title": "AI Agents开发工程师",
+      "salary": "30-45K·15薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_chixing",
+      "bossId": "b9",
+      "city": "上海",
+      "district": "浦东新区",
+      "address": "上海浦东新区骋澈汽车技术中心",
+      "eduReq": "硕士",
+      "expReq": "经验不限",
+      "tags": [
+        "5+位校友入职",
+        "经验不限",
+        "硕士",
+        "汽车技术中心",
+        "业务场景"
+      ],
+      "skills": [
+        "Agent",
+        "大模型算法",
+        "智能座舱"
+      ],
+      "desc": [
+        "面向整车业务构建 AI Agents 能力;",
+        "推动智能座舱语音交互升级。"
+      ],
+      "reqs": [
+        "硕士及以上;",
+        "有 Agent 或对话系统经验优先。"
+      ],
+      "distanceKm": 18.9,
+      "publishedDaysAgo": 0,
+      "highlight": "该公司福利待遇好"
+    },
+    {
+      "id": "j9",
+      "title": "算法工程师",
+      "salary": "25-50K·16薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_lanjing",
+      "bossId": "b7",
+      "city": "上海",
+      "district": "浦东新区",
+      "address": "上海浦东新区张江汽车创新港",
+      "eduReq": "硕士",
+      "expReq": "经验不限",
+      "tags": [
+        "经验不限",
+        "硕士",
+        "推荐算法",
+        "机器学习",
+        "搜索算法"
+      ],
+      "skills": [
+        "推荐算法",
+        "机器学习",
+        "搜索算法"
+      ],
+      "desc": [
+        "负责出行平台搜索推荐算法;",
+        "提升匹配效率与用户体验。"
+      ],
+      "reqs": [
+        "硕士及以上;",
+        "扎实的机器学习基础。"
+      ],
+      "distanceKm": 20.2,
+      "publishedDaysAgo": 0,
+      "highlight": "本周热门职位"
+    },
+    {
+      "id": "j10",
+      "title": "AI大模型开发工程师",
+      "salary": "23-35K·14薪",
+      "jobType": "fulltime",
+      "campus": true,
+      "companyId": "c_qiming",
+      "bossId": "b6",
+      "city": "上海",
+      "district": "浦东新区",
+      "address": "上海浦东新区张江高科",
+      "eduReq": "硕士",
+      "expReq": "在校/应届",
+      "tags": [
+        "在校/应届",
+        "硕士",
+        "未来领军",
+        "AI开发"
+      ],
+      "skills": [
+        "大模型算法",
+        "NPU",
+        "端侧推理",
+        "C/C++"
+      ],
+      "desc": [
+        "参与端侧大模型软件栈研发;",
+        "优化 NPU 推理性能。"
+      ],
+      "reqs": [
+        "2027届硕士;",
+        "熟悉linux环境。"
+      ],
+      "gradYear": "2027年",
+      "distanceKm": 16.8,
+      "publishedDaysAgo": 1
+    },
+    {
+      "id": "j11",
+      "title": "图形算法工程师(2027校招)",
+      "salary": "面议",
+      "jobType": "fulltime",
+      "campus": true,
+      "companyId": "c_shanhai",
+      "bossId": "b8",
+      "city": "上海",
+      "district": "黄浦区",
+      "address": "上海黄浦区创意园区8号楼",
+      "eduReq": "硕士",
+      "expReq": "在校/应届",
+      "tags": [
+        "硕士",
+        "在校/应届",
+        "视觉图像算法"
+      ],
+      "skills": [
+        "视觉图像算法",
+        "渲染",
+        "几何处理"
+      ],
+      "desc": [
+        "负责互动内容的图形算法研发;",
+        "优化渲染管线与视觉效果。"
+      ],
+      "reqs": [
+        "2027届硕士;",
+        "熟悉图形学基础。"
+      ],
+      "gradYear": "2027年",
+      "distanceKm": 6.2,
+      "publishedDaysAgo": 3
+    },
+    {
+      "id": "j12",
+      "title": "算法工程师(跨国赋能)",
+      "salary": "25-45K·15薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_lingyun",
+      "bossId": "b12",
+      "city": "上海",
+      "district": "静安区",
+      "address": "上海静安区霁阑大厦",
+      "eduReq": "硕士",
+      "expReq": "3-5年",
+      "tags": [
+        "3-5年",
+        "硕士",
+        "Python",
+        "MATLAB",
+        "深度学习"
+      ],
+      "skills": [
+        "Python",
+        "MATLAB",
+        "深度学习"
+      ],
+      "desc": [
+        "为跨国客户提供算法解决方案;",
+        "参与国际项目交付。"
+      ],
+      "reqs": [
+        "硕士,3-5年经验;",
+        "英语可作工作语言优先。"
+      ],
+      "distanceKm": 9.7,
+      "publishedDaysAgo": 6
+    },
+    {
+      "id": "j13",
+      "title": "机器人研发实习生",
+      "salary": "150-200元/天",
+      "jobType": "intern",
+      "campus": true,
+      "companyId": "c_huitu",
+      "bossId": "b3",
+      "city": "上海",
+      "district": "徐汇区",
+      "address": "上海徐汇区慧谷园区",
+      "eduReq": "硕士",
+      "expReq": "在校生",
+      "tags": [
+        "4天/周",
+        "6个月",
+        "硕士"
+      ],
+      "duration": [
+        "4天/周",
+        "6个月"
+      ],
+      "skills": [
+        "ROS",
+        "运动控制",
+        "Python"
+      ],
+      "desc": [
+        "参与机器人感知与控制模块研发。"
+      ],
+      "reqs": [
+        "在校硕士,可实习6个月。"
+      ],
+      "distanceKm": 8.6,
+      "publishedDaysAgo": 1,
+      "highlight": "高薪实习岗位"
+    },
+    {
+      "id": "j14",
+      "title": "灵巧手(全直驱方案)机器人实习生",
+      "salary": "320-400元/天",
+      "jobType": "intern",
+      "campus": true,
+      "companyId": "c_tuojie",
+      "bossId": "b4",
+      "city": "上海",
+      "district": "黄浦区",
+      "address": "上海黄浦区外滩金融中心",
+      "eduReq": "本科",
+      "expReq": "在校生",
+      "tags": [
+        "4天/周",
+        "5个月",
+        "本科"
+      ],
+      "duration": [
+        "4天/周",
+        "5个月"
+      ],
+      "skills": [
+        "机构设计",
+        "电机控制",
+        "C++"
+      ],
+      "desc": [
+        "参与灵巧手全直驱方案的控制算法开发。"
+      ],
+      "reqs": [
+        "在校本科及以上,可到岗4天/周。"
+      ],
+      "distanceKm": 3.8,
+      "publishedDaysAgo": 0,
+      "highlight": "距离你大约3.8千米,高薪实习岗位"
+    },
+    {
+      "id": "j15",
+      "title": "技术开发实习生",
+      "salary": "100-200元/天",
+      "jobType": "intern",
+      "campus": true,
+      "companyId": "c_lanzhou",
+      "bossId": "b5",
+      "city": "上海",
+      "district": "浦东新区",
+      "address": "上海浦东新区汐衡科技园",
+      "eduReq": "本科",
+      "expReq": "在校生",
+      "tags": [
+        "3天/周",
+        "3个月",
+        "本科"
+      ],
+      "duration": [
+        "3天/周",
+        "3个月"
+      ],
+      "skills": [
+        "Python",
+        "SQL"
+      ],
+      "desc": [
+        "参与数据平台工具链开发。"
+      ],
+      "reqs": [
+        "在校本科,每周3天。"
+      ],
+      "distanceKm": 14.5,
+      "publishedDaysAgo": 2
+    },
+    {
+      "id": "j16",
+      "title": "AI应用开发实习生",
+      "salary": "200-250元/天",
+      "jobType": "intern",
+      "campus": true,
+      "companyId": "c_lanzhou",
+      "bossId": "b5",
+      "city": "上海",
+      "district": "浦东新区",
+      "address": "上海浦东新区汐衡科技园",
+      "eduReq": "本科",
+      "expReq": "在校生",
+      "tags": [
+        "3天/周",
+        "1个月",
+        "本科",
+        "Python",
+        "TensorFlow"
+      ],
+      "duration": [
+        "3天/周",
+        "1个月"
+      ],
+      "skills": [
+        "Python",
+        "TensorFlow",
+        "LangChain"
+      ],
+      "desc": [
+        "参与AI应用原型开发与评测。"
+      ],
+      "reqs": [
+        "在校本科,熟悉Python。"
+      ],
+      "distanceKm": 14.5,
+      "publishedDaysAgo": 0,
+      "hotBadge": "热"
+    },
+    {
+      "id": "j17",
+      "title": "品牌宣传实习生",
+      "salary": "120-160元/天",
+      "jobType": "intern",
+      "campus": true,
+      "companyId": "c_gusu",
+      "bossId": "b_sz2",
+      "city": "苏州",
+      "district": "工业园区",
+      "address": "苏州工业园区产业园",
+      "eduReq": "本科",
+      "expReq": "在校/应届",
+      "tags": [
+        "本科",
+        "在校/应届",
+        "专业拍摄",
+        "后期剪辑",
+        "教育培训"
+      ],
+      "skills": [
+        "拍摄",
+        "剪辑",
+        "文案"
+      ],
+      "desc": [
+        "参与品牌内容拍摄与剪辑。"
+      ],
+      "reqs": [
+        "在校本科,会剪辑工具。"
+      ],
+      "distanceKm": 80.3,
+      "publishedDaysAgo": 4
+    },
+    {
+      "id": "j18",
+      "title": "质量工程师(2027届)(MJ0079)",
+      "salary": "160-320元/天",
+      "jobType": "intern",
+      "campus": true,
+      "companyId": "c_ganjiang",
+      "bossId": "b_nc",
+      "city": "南昌",
+      "district": "南昌县",
+      "address": "南昌南昌县产业园",
+      "eduReq": "本科",
+      "expReq": "在校/应届",
+      "tags": [
+        "本科",
+        "4天/周",
+        "3个月",
+        "校招实习"
+      ],
+      "duration": [
+        "4天/周",
+        "3个月"
+      ],
+      "skills": [
+        "质量体系",
+        "测试用例"
+      ],
+      "desc": [
+        "参与医疗设备质量测试与体系维护。"
+      ],
+      "reqs": [
+        "2027届本科,可实习3个月。"
+      ],
+      "distanceKm": 690,
+      "publishedDaysAgo": 5
+    },
+    {
+      "id": "j19",
+      "title": "周末英语助教(兼职)",
+      "salary": "120元/天",
+      "jobType": "parttime",
+      "campus": false,
+      "companyId": "c_qinghe",
+      "bossId": "b11",
+      "city": "上海",
+      "district": "杨浦区",
+      "address": "上海杨浦区创智天地",
+      "eduReq": "本科",
+      "expReq": "经验不限",
+      "tags": [
+        "周末兼职",
+        "本科"
+      ],
+      "duration": [
+        "周末",
+        "长期"
+      ],
+      "parttimeCategories": [
+        "店铺兼职",
+        "周末兼职",
+        "长期兼职"
+      ],
+      "skills": [
+        "英语",
+        "沟通"
+      ],
+      "desc": [
+        "周末协助线下课堂教学管理。"
+      ],
+      "reqs": [
+        "英语流利,有耐心。"
+      ],
+      "distanceKm": 2.1,
+      "publishedDaysAgo": 1
+    },
+    {
+      "id": "j20",
+      "title": "数据标注兼职(AI训练)",
+      "salary": "30-35元/时",
+      "jobType": "parttime",
+      "campus": false,
+      "companyId": "c_lanzhou",
+      "bossId": "b5",
+      "city": "上海",
+      "district": "浦东新区",
+      "address": "上海浦东新区汐衡科技园",
+      "eduReq": "大专",
+      "expReq": "经验不限",
+      "tags": [
+        "长期兼职",
+        "宅家可做"
+      ],
+      "duration": [
+        "自由排班",
+        "长期"
+      ],
+      "parttimeCategories": [
+        "长期兼职",
+        "宅家可做"
+      ],
+      "skills": [
+        "细心",
+        "标注工具"
+      ],
+      "desc": [
+        "负责对话与图像数据标注。"
+      ],
+      "reqs": [
+        "细心负责,按时交付。"
+      ],
+      "distanceKm": 14.5,
+      "publishedDaysAgo": 0
+    },
+    {
+      "id": "j21",
+      "title": "嵌入式Linux开发工程师",
+      "salary": "15-25K·14薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_qiming",
+      "bossId": "b6",
+      "city": "上海",
+      "district": "浦东新区",
+      "address": "上海浦东新区科技园区",
+      "eduReq": "本科",
+      "expReq": "3-5年",
+      "tags": [
+        "3-5年",
+        "本科",
+        "嵌入式",
+        "Linux"
+      ],
+      "skills": [
+        "嵌入式",
+        "Linux",
+        "C/C++",
+        "驱动开发"
+      ],
+      "desc": [
+        "负责端侧设备嵌入式Linux系统与驱动开发;",
+        "优化系统启动与功耗表现。"
+      ],
+      "reqs": [
+        "本科,3-5年嵌入式经验;",
+        "熟悉linux内核与驱动框架。"
+      ],
+      "distanceKm": 17.2,
+      "publishedDaysAgo": 1
+    },
+    {
+      "id": "j22",
+      "title": "Java后端开发工程师",
+      "salary": "20-35K·15薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_juzhou",
+      "bossId": "b13",
+      "city": "上海",
+      "district": "静安区",
+      "address": "上海静安区科技园区",
+      "eduReq": "本科",
+      "expReq": "1-3年",
+      "tags": [
+        "1-3年",
+        "本科",
+        "Java",
+        "微服务"
+      ],
+      "skills": [
+        "Java",
+        "Spring",
+        "MySQL",
+        "微服务"
+      ],
+      "desc": [
+        "负责交易链路服务端开发;",
+        "参与大促稳定性保障。"
+      ],
+      "reqs": [
+        "本科,1-3年Java经验;",
+        "熟悉Spring与MySQL。"
+      ],
+      "distanceKm": 9.1,
+      "publishedDaysAgo": 0,
+      "hotBadge": "新"
+    },
+    {
+      "id": "j23",
+      "title": "前端开发工程师",
+      "salary": "18-30K·14薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_linli",
+      "bossId": "b14",
+      "city": "上海",
+      "district": "普陀区",
+      "address": "上海普陀区科技园区",
+      "eduReq": "本科",
+      "expReq": "1-3年",
+      "tags": [
+        "1-3年",
+        "本科",
+        "React",
+        "前端开发"
+      ],
+      "skills": [
+        "前端开发",
+        "React",
+        "TypeScript",
+        "小程序"
+      ],
+      "desc": [
+        "负责到家业务前端与小程序开发。"
+      ],
+      "reqs": [
+        "本科,1-3年前端经验;",
+        "熟悉React与TypeScript。"
+      ],
+      "distanceKm": 11.6,
+      "publishedDaysAgo": 2
+    },
+    {
+      "id": "j24",
+      "title": "SLAM算法工程师",
+      "salary": "30-50K·15薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_huitu",
+      "bossId": "b3",
+      "city": "上海",
+      "district": "徐汇区",
+      "address": "上海徐汇区科技园区",
+      "eduReq": "硕士",
+      "expReq": "3-5年",
+      "tags": [
+        "3-5年",
+        "硕士",
+        "SLAM",
+        "C++"
+      ],
+      "skills": [
+        "SLAM",
+        "视觉惯性里程计",
+        "C++",
+        "多传感器融合"
+      ],
+      "desc": [
+        "负责移动机器人SLAM算法研发;",
+        "优化建图与重定位鲁棒性。"
+      ],
+      "reqs": [
+        "硕士,3-5年SLAM经验;",
+        "熟悉VIO与图优化。"
+      ],
+      "distanceKm": 8.6,
+      "publishedDaysAgo": 1,
+      "hotBadge": "热"
+    },
+    {
+      "id": "j25",
+      "title": "算法部署工程师",
+      "salary": "25-40K·15薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_qiming",
+      "bossId": "b6",
+      "city": "上海",
+      "district": "浦东新区",
+      "address": "上海浦东新区科技园区",
+      "eduReq": "本科",
+      "expReq": "1-3年",
+      "tags": [
+        "1-3年",
+        "本科",
+        "TensorRT",
+        "模型部署"
+      ],
+      "skills": [
+        "模型部署",
+        "TensorRT",
+        "量化",
+        "Linux"
+      ],
+      "desc": [
+        "负责大模型端侧/服务端部署与推理加速。"
+      ],
+      "reqs": [
+        "本科,熟悉linux;",
+        "有TensorRT或量化经验优先。"
+      ],
+      "distanceKm": 16.8,
+      "publishedDaysAgo": 0
+    },
+    {
+      "id": "j26",
+      "title": "高性能计算工程师",
+      "salary": "35-60K·16薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_lanzhou",
+      "bossId": "b5",
+      "city": "上海",
+      "district": "浦东新区",
+      "address": "上海浦东新区科技园区",
+      "eduReq": "硕士",
+      "expReq": "3-5年",
+      "tags": [
+        "3-5年",
+        "硕士",
+        "CUDA",
+        "高性能计算"
+      ],
+      "skills": [
+        "高性能计算",
+        "CUDA",
+        "并行优化",
+        "C++"
+      ],
+      "desc": [
+        "负责训练集群算子与通信优化。"
+      ],
+      "reqs": [
+        "硕士,熟悉CUDA;",
+        "有大规模并行优化经验。"
+      ],
+      "distanceKm": 14.5,
+      "publishedDaysAgo": 3
+    },
+    {
+      "id": "j27",
+      "title": "需求分析师",
+      "salary": "12-18K·13薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_lingyun",
+      "bossId": "b12",
+      "city": "上海",
+      "district": "静安区",
+      "address": "上海静安区科技园区",
+      "eduReq": "本科",
+      "expReq": "1-3年",
+      "tags": [
+        "1-3年",
+        "本科",
+        "需求分析"
+      ],
+      "skills": [
+        "需求分析",
+        "原型设计",
+        "SQL"
+      ],
+      "desc": [
+        "负责企业客户需求调研与方案原型。"
+      ],
+      "reqs": [
+        "本科,1-3年需求分析经验。"
+      ],
+      "distanceKm": 9.7,
+      "publishedDaysAgo": 4
+    },
+    {
+      "id": "j28",
+      "title": "数据分析师(电商方向)",
+      "salary": "15-25K·14薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_juzhou",
+      "bossId": "b13",
+      "city": "上海",
+      "district": "静安区",
+      "address": "上海静安区科技园区",
+      "eduReq": "本科",
+      "expReq": "1-3年",
+      "tags": [
+        "1-3年",
+        "本科",
+        "Python",
+        "数据分析"
+      ],
+      "skills": [
+        "数据分析",
+        "Python",
+        "SQL",
+        "AB实验"
+      ],
+      "desc": [
+        "负责电商核心指标分析与实验评估。"
+      ],
+      "reqs": [
+        "本科,熟悉Python与SQL。"
+      ],
+      "distanceKm": 9.1,
+      "publishedDaysAgo": 1
+    },
+    {
+      "id": "j29",
+      "title": "测试开发工程师",
+      "salary": "18-28K·14薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_linli",
+      "bossId": "b14",
+      "city": "上海",
+      "district": "普陀区",
+      "address": "上海普陀区科技园区",
+      "eduReq": "本科",
+      "expReq": "1-3年",
+      "tags": [
+        "1-3年",
+        "本科",
+        "自动化测试"
+      ],
+      "skills": [
+        "测试开发",
+        "自动化",
+        "Python",
+        "接口测试"
+      ],
+      "desc": [
+        "负责服务质量保障与自动化体系建设。"
+      ],
+      "reqs": [
+        "本科,1-3年测试开发经验。"
+      ],
+      "distanceKm": 11.6,
+      "publishedDaysAgo": 5
+    },
+    {
+      "id": "j30",
+      "title": "首席大模型科学家",
+      "salary": "60-90K·16薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_xinglian",
+      "bossId": "b1",
+      "city": "上海",
+      "district": "长宁区",
+      "address": "上海长宁区科技园区",
+      "eduReq": "博士",
+      "expReq": "5-10年",
+      "tags": [
+        "5-10年",
+        "博士",
+        "预训练",
+        "RLHF"
+      ],
+      "skills": [
+        "大模型算法",
+        "预训练",
+        "RLHF",
+        "分布式训练"
+      ],
+      "desc": [
+        "主导下一代基座模型预训练与对齐路线。"
+      ],
+      "reqs": [
+        "博士,5-10年研究经验;",
+        "有大规模预训练一线经验。"
+      ],
+      "distanceKm": 21.5,
+      "publishedDaysAgo": 2
+    },
+    {
+      "id": "j31",
+      "title": "算法架构师",
+      "salary": "50-80K·16薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_yunshan",
+      "bossId": "b2",
+      "city": "上海",
+      "district": "浦东新区",
+      "address": "上海浦东新区科技园区",
+      "eduReq": "硕士",
+      "expReq": "10年以上",
+      "tags": [
+        "10年以上",
+        "硕士",
+        "架构设计"
+      ],
+      "skills": [
+        "架构设计",
+        "推荐系统",
+        "工程治理"
+      ],
+      "desc": [
+        "负责算法中台架构与技术路线。"
+      ],
+      "reqs": [
+        "硕士,10年以上经验。"
+      ],
+      "distanceKm": 12.4,
+      "publishedDaysAgo": 6
+    },
+    {
+      "id": "j32",
+      "title": "运维工程师(Linux方向)",
+      "salary": "10-18K·13薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_juzhou",
+      "bossId": "b13",
+      "city": "上海",
+      "district": "静安区",
+      "address": "上海静安区科技园区",
+      "eduReq": "大专",
+      "expReq": "1-3年",
+      "tags": [
+        "1-3年",
+        "大专",
+        "Linux",
+        "K8s"
+      ],
+      "skills": [
+        "Linux",
+        "Shell",
+        "K8s",
+        "监控"
+      ],
+      "desc": [
+        "负责线上集群运维与容器平台维护。"
+      ],
+      "reqs": [
+        "大专及以上,熟悉linux。"
+      ],
+      "distanceKm": 9.1,
+      "publishedDaysAgo": 2
+    },
+    {
+      "id": "j33",
+      "title": "客服专员",
+      "salary": "5-8K",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_linli",
+      "bossId": "b14",
+      "city": "上海",
+      "district": "普陀区",
+      "address": "上海普陀区科技园区",
+      "eduReq": "高中",
+      "expReq": "经验不限",
+      "tags": [
+        "经验不限",
+        "高中",
+        "双休"
+      ],
+      "skills": [
+        "沟通",
+        "客服系统"
+      ],
+      "desc": [
+        "负责用户咨询与工单处理。"
+      ],
+      "reqs": [
+        "高中及以上,沟通表达好。"
+      ],
+      "distanceKm": 11.6,
+      "publishedDaysAgo": 0
+    },
+    {
+      "id": "j34",
+      "title": "UI设计师",
+      "salary": "12-20K·13薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_shanhai",
+      "bossId": "b8",
+      "city": "上海",
+      "district": "黄浦区",
+      "address": "上海黄浦区科技园区",
+      "eduReq": "本科",
+      "expReq": "1-3年",
+      "tags": [
+        "1-3年",
+        "本科",
+        "Figma"
+      ],
+      "skills": [
+        "UI设计",
+        "Figma",
+        "设计规范"
+      ],
+      "desc": [
+        "负责互动产品界面与视觉规范。"
+      ],
+      "reqs": [
+        "本科,1-3年UI经验。"
+      ],
+      "distanceKm": 6.2,
+      "publishedDaysAgo": 3
+    },
+    {
+      "id": "j35",
+      "title": "AI算法工程师(多模态·2027届)",
+      "salary": "35-65K·16薪",
+      "jobType": "fulltime",
+      "campus": true,
+      "companyId": "c_jinghua",
+      "bossId": "b_bj",
+      "city": "北京",
+      "district": "海淀区",
+      "address": "北京海淀区产业园",
+      "eduReq": "硕士",
+      "expReq": "在校/应届",
+      "tags": [
+        "在校/应届",
+        "硕士",
+        "多模态"
+      ],
+      "skills": [
+        "多模态",
+        "大模型算法",
+        "视觉语言模型"
+      ],
+      "desc": [
+        "参与多模态基座模型研发。"
+      ],
+      "reqs": [
+        "2027届硕士;",
+        "有多模态论文或竞赛经历优先。"
+      ],
+      "distanceKm": 3.2,
+      "publishedDaysAgo": 1,
+      "gradYear": "2027年"
+    },
+    {
+      "id": "j36",
+      "title": "Java开发工程师(2027届)",
+      "salary": "20-30K·15薪",
+      "jobType": "fulltime",
+      "campus": true,
+      "companyId": "c_jinghua",
+      "bossId": "b_bj",
+      "city": "北京",
+      "district": "朝阳区",
+      "address": "北京朝阳区产业园",
+      "eduReq": "本科",
+      "expReq": "在校/应届",
+      "tags": [
+        "在校/应届",
+        "本科",
+        "Java"
+      ],
+      "skills": [
+        "Java",
+        "Spring",
+        "分布式"
+      ],
+      "desc": [
+        "参与电商后端服务研发。"
+      ],
+      "reqs": [
+        "2027届本科。"
+      ],
+      "distanceKm": 5.5,
+      "publishedDaysAgo": 2,
+      "gradYear": "2027年"
+    },
+    {
+      "id": "j37",
+      "title": "嵌入式软件工程师",
+      "salary": "20-35K·15薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_jinghua",
+      "bossId": "b_bj",
+      "city": "北京",
+      "district": "海淀区",
+      "address": "北京海淀区产业园",
+      "eduReq": "本科",
+      "expReq": "3-5年",
+      "tags": [
+        "3-5年",
+        "本科",
+        "嵌入式"
+      ],
+      "skills": [
+        "嵌入式",
+        "RTOS",
+        "C/C++"
+      ],
+      "desc": [
+        "负责智能硬件嵌入式软件研发。"
+      ],
+      "reqs": [
+        "本科,3-5年嵌入式经验。"
+      ],
+      "distanceKm": 4.8,
+      "publishedDaysAgo": 4
+    },
+    {
+      "id": "j38",
+      "title": "硬件测试工程师",
+      "salary": "15-25K·14薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_pengrui",
+      "bossId": "b_sz",
+      "city": "深圳",
+      "district": "南山区",
+      "address": "深圳南山区产业园",
+      "eduReq": "本科",
+      "expReq": "1-3年",
+      "tags": [
+        "1-3年",
+        "本科",
+        "硬件测试"
+      ],
+      "skills": [
+        "硬件测试",
+        "信号完整性",
+        "仪器仪表"
+      ],
+      "desc": [
+        "负责整机与模组测试。"
+      ],
+      "reqs": [
+        "本科,1-3年硬件测试经验。"
+      ],
+      "distanceKm": 2.9,
+      "publishedDaysAgo": 1
+    },
+    {
+      "id": "j39",
+      "title": "算法工程师(推荐方向)",
+      "salary": "30-55K·16薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_pengrui",
+      "bossId": "b_sz",
+      "city": "深圳",
+      "district": "南山区",
+      "address": "深圳南山区产业园",
+      "eduReq": "硕士",
+      "expReq": "3-5年",
+      "tags": [
+        "3-5年",
+        "硕士",
+        "推荐算法"
+      ],
+      "skills": [
+        "推荐算法",
+        "机器学习",
+        "特征工程"
+      ],
+      "desc": [
+        "负责推荐系统召回与排序优化。"
+      ],
+      "reqs": [
+        "硕士,3-5年推荐经验。"
+      ],
+      "distanceKm": 3.4,
+      "publishedDaysAgo": 0,
+      "hotBadge": "爆"
+    },
+    {
+      "id": "j40",
+      "title": "NLP算法工程师(2027届)",
+      "salary": "25-45K·15薪",
+      "jobType": "fulltime",
+      "campus": true,
+      "companyId": "c_qiantang",
+      "bossId": "b_hz",
+      "city": "杭州",
+      "district": "西湖区",
+      "address": "杭州西湖区产业园",
+      "eduReq": "硕士",
+      "expReq": "在校/应届",
+      "tags": [
+        "在校/应届",
+        "硕士",
+        "NLP"
+      ],
+      "skills": [
+        "自然语言处理算法",
+        "大模型算法",
+        "Python"
+      ],
+      "desc": [
+        "参与对话理解与生成算法研发。"
+      ],
+      "reqs": [
+        "2027届硕士;",
+        "熟悉PyTorch。"
+      ],
+      "distanceKm": 4.1,
+      "publishedDaysAgo": 1,
+      "gradYear": "2027年"
+    },
+    {
+      "id": "j41",
+      "title": "电商运营专员",
+      "salary": "8-12K·13薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_qiantang",
+      "bossId": "b_hz",
+      "city": "杭州",
+      "district": "余杭区",
+      "address": "杭州余杭区产业园",
+      "eduReq": "本科",
+      "expReq": "经验不限",
+      "tags": [
+        "经验不限",
+        "本科",
+        "电商运营"
+      ],
+      "skills": [
+        "电商运营",
+        "数据复盘",
+        "活动策划"
+      ],
+      "desc": [
+        "负责店铺活动策划与投放复盘。"
+      ],
+      "reqs": [
+        "本科,对电商有热情。"
+      ],
+      "distanceKm": 6.3,
+      "publishedDaysAgo": 3
+    },
+    {
+      "id": "j42",
+      "title": "前端开发实习生",
+      "salary": "180-220元/天",
+      "jobType": "intern",
+      "campus": true,
+      "companyId": "c_linli",
+      "bossId": "b14",
+      "city": "上海",
+      "district": "普陀区",
+      "address": "上海普陀区科技园区",
+      "eduReq": "本科",
+      "expReq": "在校生",
+      "tags": [
+        "4天/周",
+        "3个月",
+        "本科"
+      ],
+      "skills": [
+        "前端开发",
+        "React",
+        "JavaScript"
+      ],
+      "desc": [
+        "参与到家业务前端页面开发。"
+      ],
+      "reqs": [
+        "在校本科,每周4天。"
+      ],
+      "distanceKm": 11.6,
+      "publishedDaysAgo": 0,
+      "duration": [
+        "4天/周",
+        "3个月"
+      ]
+    },
+    {
+      "id": "j43",
+      "title": "大模型评测实习生",
+      "salary": "250-300元/天",
+      "jobType": "intern",
+      "campus": true,
+      "companyId": "c_xinglian",
+      "bossId": "b1",
+      "city": "上海",
+      "district": "长宁区",
+      "address": "上海长宁区科技园区",
+      "eduReq": "硕士",
+      "expReq": "在校生",
+      "tags": [
+        "5天/周",
+        "6个月",
+        "硕士"
+      ],
+      "skills": [
+        "大模型评测",
+        "Prompt",
+        "Python"
+      ],
+      "desc": [
+        "参与模型评测集建设与自动化评估。"
+      ],
+      "reqs": [
+        "在校硕士,可实习6个月。"
+      ],
+      "distanceKm": 21.5,
+      "publishedDaysAgo": 1,
+      "hotBadge": "热",
+      "duration": [
+        "5天/周",
+        "6个月"
+      ]
+    },
+    {
+      "id": "j44",
+      "title": "周末咖啡师兼职",
+      "salary": "28-35元/时",
+      "jobType": "parttime",
+      "campus": false,
+      "companyId": "c_linli",
+      "bossId": "b14",
+      "city": "上海",
+      "district": "普陀区",
+      "address": "上海普陀区科技园区",
+      "eduReq": "高中",
+      "expReq": "经验不限",
+      "tags": [
+        "周末兼职",
+        "高中"
+      ],
+      "skills": [
+        "咖啡制作",
+        "收银"
+      ],
+      "desc": [
+        "周末门店咖啡制作与接待。"
+      ],
+      "reqs": [
+        "高中及以上,周末可到岗。"
+      ],
+      "distanceKm": 10.8,
+      "publishedDaysAgo": 0,
+      "duration": [
+        "周末",
+        "长期"
+      ],
+      "parttimeCategories": [
+        "店铺兼职",
+        "周末兼职",
+        "长期兼职"
+      ]
+    },
+    {
+      "id": "j45",
+      "title": "展会协助兼职",
+      "salary": "180元/天",
+      "jobType": "parttime",
+      "campus": false,
+      "companyId": "c_shanhai",
+      "bossId": "b8",
+      "city": "上海",
+      "district": "黄浦区",
+      "address": "上海黄浦区科技园区",
+      "eduReq": "高中",
+      "expReq": "经验不限",
+      "tags": [
+        "短期兼职",
+        "高中"
+      ],
+      "skills": [
+        "布展",
+        "引导"
+      ],
+      "desc": [
+        "互动展布展与现场引导。"
+      ],
+      "reqs": [
+        "高中及以上,吃苦耐劳。"
+      ],
+      "distanceKm": 6.2,
+      "publishedDaysAgo": 1,
+      "duration": [
+        "按场次",
+        "短期"
+      ],
+      "parttimeCategories": [
+        "周末兼职"
+      ]
+    },
+    {
+      "id": "j46",
+      "title": "初级算法工程师",
+      "salary": "12-20K·13薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_huitu",
+      "bossId": "b3",
+      "city": "上海",
+      "district": "徐汇区",
+      "address": "上海徐汇区科技园区",
+      "eduReq": "本科",
+      "expReq": "应届生",
+      "tags": [
+        "应届生",
+        "本科",
+        "机器学习"
+      ],
+      "skills": [
+        "机器学习",
+        "Python",
+        "数据处理"
+      ],
+      "desc": [
+        "在资深工程师带教下参与视觉模型迭代。"
+      ],
+      "reqs": [
+        "本科应届,机器学习基础扎实。"
+      ],
+      "distanceKm": 8.6,
+      "publishedDaysAgo": 2
+    },
+    {
+      "id": "j47",
+      "title": "游戏客户端开发工程师(Unity)",
+      "salary": "25-45K·14薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_xingchen",
+      "bossId": "b15",
+      "city": "上海",
+      "district": "徐汇区",
+      "address": "上海徐汇区产业园",
+      "eduReq": "本科",
+      "expReq": "3-5年",
+      "tags": [
+        "3-5年",
+        "本科",
+        "Unity",
+        "C#"
+      ],
+      "skills": [
+        "Unity",
+        "C#",
+        "渲染优化",
+        "热更新"
+      ],
+      "desc": [
+        "负责二次元项目客户端核心玩法与性能优化。"
+      ],
+      "reqs": [
+        "本科,3-5年Unity经验;",
+        "有上线项目经历。"
+      ],
+      "distanceKm": 8.9,
+      "publishedDaysAgo": 0,
+      "hotBadge": "新"
+    },
+    {
+      "id": "j48",
+      "title": "游戏服务端开发(Golang)",
+      "salary": "25-40K·15薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_xingchen",
+      "bossId": "b15",
+      "city": "上海",
+      "district": "徐汇区",
+      "address": "上海徐汇区产业园",
+      "eduReq": "本科",
+      "expReq": "1-3年",
+      "tags": [
+        "1-3年",
+        "本科",
+        "Golang"
+      ],
+      "skills": [
+        "Golang",
+        "分布式",
+        "Redis"
+      ],
+      "desc": [
+        "负责游戏服务端逻辑与高并发架构。"
+      ],
+      "reqs": [
+        "本科,1-3年服务端经验。"
+      ],
+      "distanceKm": 8.9,
+      "publishedDaysAgo": 2
+    },
+    {
+      "id": "j49",
+      "title": "技术美术TA",
+      "salary": "30-55K·14薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_xingchen",
+      "bossId": "b15",
+      "city": "上海",
+      "district": "徐汇区",
+      "address": "上海徐汇区产业园",
+      "eduReq": "本科",
+      "expReq": "3-5年",
+      "tags": [
+        "3-5年",
+        "本科",
+        "Shader"
+      ],
+      "skills": [
+        "Shader",
+        "渲染管线",
+        "工具链"
+      ],
+      "desc": [
+        "搭建美术工具链,攻坚卡通渲染效果。"
+      ],
+      "reqs": [
+        "本科,3-5年TA经验。"
+      ],
+      "distanceKm": 8.9,
+      "publishedDaysAgo": 1,
+      "hotBadge": "爆"
+    },
+    {
+      "id": "j50",
+      "title": "AI产品经理(教育方向)",
+      "salary": "20-35K·14薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_manyu",
+      "bossId": "b16",
+      "city": "上海",
+      "district": "杨浦区",
+      "address": "上海杨浦区产业园",
+      "eduReq": "本科",
+      "expReq": "1-3年",
+      "tags": [
+        "1-3年",
+        "本科",
+        "AI产品"
+      ],
+      "skills": [
+        "产品设计",
+        "Prompt",
+        "用户研究"
+      ],
+      "desc": [
+        "定义教育Agent产品形态与迭代节奏。"
+      ],
+      "reqs": [
+        "本科,1-3年产品经验;",
+        "懂大模型能力边界。"
+      ],
+      "distanceKm": 2.4,
+      "publishedDaysAgo": 0
+    },
+    {
+      "id": "j51",
+      "title": "创始团队算法工程师(具身智能)",
+      "salary": "30-60K·14薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_manyu",
+      "bossId": "b16",
+      "city": "上海",
+      "district": "杨浦区",
+      "address": "上海杨浦区产业园",
+      "eduReq": "硕士",
+      "expReq": "经验不限",
+      "tags": [
+        "经验不限",
+        "硕士",
+        "期权",
+        "具身智能"
+      ],
+      "skills": [
+        "具身智能",
+        "强化学习",
+        "大模型算法"
+      ],
+      "desc": [
+        "作为创始工程师搭建智能体训练与评测体系。"
+      ],
+      "reqs": [
+        "硕士及以上;",
+        "动手能力强,能独立攻坚。"
+      ],
+      "distanceKm": 2.4,
+      "publishedDaysAgo": 0,
+      "highlight": "期权激励,直接向创始人汇报"
+    },
+    {
+      "id": "j52",
+      "title": "运筹优化算法工程师",
+      "salary": "30-50K·15薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_fengchao",
+      "bossId": "b17",
+      "city": "上海",
+      "district": "嘉定区",
+      "address": "上海嘉定区产业园",
+      "eduReq": "硕士",
+      "expReq": "3-5年",
+      "tags": [
+        "3-5年",
+        "硕士",
+        "运筹优化"
+      ],
+      "skills": [
+        "运筹优化",
+        "整数规划",
+        "Python"
+      ],
+      "desc": [
+        "负责仓网选址与路径规划优化。"
+      ],
+      "reqs": [
+        "硕士,运筹学相关专业;",
+        "熟悉求解器。"
+      ],
+      "distanceKm": 28.7,
+      "publishedDaysAgo": 3
+    },
+    {
+      "id": "j53",
+      "title": "仓储自动化电气工程师",
+      "salary": "15-25K·13薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_fengchao",
+      "bossId": "b17",
+      "city": "上海",
+      "district": "嘉定区",
+      "address": "上海嘉定区产业园",
+      "eduReq": "大专",
+      "expReq": "3-5年",
+      "tags": [
+        "3-5年",
+        "大专",
+        "PLC"
+      ],
+      "skills": [
+        "PLC",
+        "电气调试",
+        "自动化设备"
+      ],
+      "desc": [
+        "负责自动化立库设备电气调试与维护。"
+      ],
+      "reqs": [
+        "大专,3-5年电气经验。"
+      ],
+      "distanceKm": 28.7,
+      "publishedDaysAgo": 5
+    },
+    {
+      "id": "j54",
+      "title": "理货员(夜班)",
+      "salary": "6-9K",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_fengchao",
+      "bossId": "b17",
+      "city": "上海",
+      "district": "嘉定区",
+      "address": "上海嘉定区产业园",
+      "eduReq": "中专/中技",
+      "expReq": "经验不限",
+      "tags": [
+        "经验不限",
+        "中专/中技",
+        "包吃住"
+      ],
+      "skills": [
+        "理货",
+        "扫码作业"
+      ],
+      "desc": [
+        "负责夜班仓内理货与分拣。"
+      ],
+      "reqs": [
+        "中专及以上,能适应夜班。"
+      ],
+      "distanceKm": 28.7,
+      "publishedDaysAgo": 0
+    },
+    {
+      "id": "j55",
+      "title": "数字IC设计工程师",
+      "salary": "40-70K·16薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_xinhe",
+      "bossId": "b18",
+      "city": "上海",
+      "district": "浦东新区",
+      "address": "上海浦东新区产业园",
+      "eduReq": "硕士",
+      "expReq": "3-5年",
+      "tags": [
+        "3-5年",
+        "硕士",
+        "IC设计"
+      ],
+      "skills": [
+        "数字IC",
+        "Verilog",
+        "低功耗设计"
+      ],
+      "desc": [
+        "负责端侧AI芯片NPU模块设计。"
+      ],
+      "reqs": [
+        "硕士,微电子相关专业;",
+        "3-5年数字前端经验。"
+      ],
+      "distanceKm": 18.3,
+      "publishedDaysAgo": 2
+    },
+    {
+      "id": "j56",
+      "title": "芯片验证工程师(2027届)",
+      "salary": "35-60K·15薪",
+      "jobType": "fulltime",
+      "campus": true,
+      "companyId": "c_xinhe",
+      "bossId": "b18",
+      "city": "上海",
+      "district": "浦东新区",
+      "address": "上海浦东新区产业园",
+      "eduReq": "硕士",
+      "expReq": "在校/应届",
+      "tags": [
+        "在校/应届",
+        "硕士",
+        "验证"
+      ],
+      "skills": [
+        "UVM",
+        "SystemVerilog",
+        "仿真"
+      ],
+      "desc": [
+        "参与NPU子系统验证环境搭建。"
+      ],
+      "reqs": [
+        "2027届硕士,微电子/计算机相关。"
+      ],
+      "distanceKm": 18.3,
+      "publishedDaysAgo": 1,
+      "gradYear": "2027年",
+      "hotBadge": "热"
+    },
+    {
+      "id": "j57",
+      "title": "嵌入式AI软件工程师",
+      "salary": "30-50K·15薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_pengrui",
+      "bossId": "b_sz",
+      "city": "深圳",
+      "district": "南山区",
+      "address": "深圳南山区产业园",
+      "eduReq": "本科",
+      "expReq": "3-5年",
+      "tags": [
+        "3-5年",
+        "本科",
+        "端侧AI"
+      ],
+      "skills": [
+        "嵌入式",
+        "NPU工具链",
+        "C/C++"
+      ],
+      "desc": [
+        "负责芯片配套推理软件栈研发。"
+      ],
+      "reqs": [
+        "本科,3-5年嵌入式经验;",
+        "熟悉linux。"
+      ],
+      "distanceKm": 3.6,
+      "publishedDaysAgo": 4
+    },
+    {
+      "id": "j58",
+      "title": "Golang后端开发工程师",
+      "salary": "22-38K·15薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_yunqi",
+      "bossId": "b19",
+      "city": "上海",
+      "district": "静安区",
+      "address": "上海静安区产业园",
+      "eduReq": "本科",
+      "expReq": "1-3年",
+      "tags": [
+        "1-3年",
+        "本科",
+        "Golang",
+        "混合办公"
+      ],
+      "skills": [
+        "Golang",
+        "微服务",
+        "PostgreSQL"
+      ],
+      "desc": [
+        "负责SaaS核心服务研发。"
+      ],
+      "reqs": [
+        "本科,1-3年Go经验。"
+      ],
+      "distanceKm": 9.4,
+      "publishedDaysAgo": 1,
+      "highlight": "支持每周2天远程"
+    },
+    {
+      "id": "j59",
+      "title": "售前解决方案专家",
+      "salary": "25-40K·14薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_jinghua",
+      "bossId": "b_bj",
+      "city": "北京",
+      "district": "朝阳区",
+      "address": "北京朝阳区产业园",
+      "eduReq": "本科",
+      "expReq": "5-10年",
+      "tags": [
+        "5-10年",
+        "本科",
+        "解决方案"
+      ],
+      "skills": [
+        "售前",
+        "方案设计",
+        "招投标"
+      ],
+      "desc": [
+        "负责重点客户方案设计与投标。"
+      ],
+      "reqs": [
+        "本科,5年以上企业软件售前经验。"
+      ],
+      "distanceKm": 6.1,
+      "publishedDaysAgo": 6
+    },
+    {
+      "id": "j60",
+      "title": "网络安全工程师",
+      "salary": "20-35K·14薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_yunqi",
+      "bossId": "b19",
+      "city": "上海",
+      "district": "静安区",
+      "address": "上海静安区产业园",
+      "eduReq": "本科",
+      "expReq": "3-5年",
+      "tags": [
+        "3-5年",
+        "本科",
+        "安全"
+      ],
+      "skills": [
+        "渗透测试",
+        "安全合规",
+        "应急响应"
+      ],
+      "desc": [
+        "负责产品安全体系与等保合规。"
+      ],
+      "reqs": [
+        "本科,3-5年安全经验。"
+      ],
+      "distanceKm": 9.4,
+      "publishedDaysAgo": 3
+    },
+    {
+      "id": "j61",
+      "title": "自动驾驶感知算法工程师",
+      "salary": "40-70K·16薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_chixing",
+      "bossId": "b9",
+      "city": "上海",
+      "district": "浦东新区",
+      "address": "上海浦东新区产业园",
+      "eduReq": "硕士",
+      "expReq": "3-5年",
+      "tags": [
+        "3-5年",
+        "硕士",
+        "感知",
+        "BEV"
+      ],
+      "skills": [
+        "BEV感知",
+        "多传感器融合",
+        "PyTorch"
+      ],
+      "desc": [
+        "负责量产项目BEV感知模型研发。"
+      ],
+      "reqs": [
+        "硕士,3-5年感知经验。"
+      ],
+      "distanceKm": 18.9,
+      "publishedDaysAgo": 1
+    },
+    {
+      "id": "j62",
+      "title": "大模型训练框架工程师",
+      "salary": "45-80K·16薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_jinghua",
+      "bossId": "b_bj",
+      "city": "北京",
+      "district": "海淀区",
+      "address": "北京海淀区产业园",
+      "eduReq": "硕士",
+      "expReq": "3-5年",
+      "tags": [
+        "3-5年",
+        "硕士",
+        "训练框架"
+      ],
+      "skills": [
+        "Megatron",
+        "分布式训练",
+        "CUDA"
+      ],
+      "desc": [
+        "负责万卡集群训练框架优化。"
+      ],
+      "reqs": [
+        "硕士,熟悉大规模分布式训练。"
+      ],
+      "distanceKm": 3.2,
+      "publishedDaysAgo": 0,
+      "hotBadge": "爆"
+    },
+    {
+      "id": "j63",
+      "title": "Android开发工程师",
+      "salary": "20-35K·15薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_yunshan",
+      "bossId": "b2",
+      "city": "上海",
+      "district": "浦东新区",
+      "address": "上海浦东新区产业园",
+      "eduReq": "本科",
+      "expReq": "1-3年",
+      "tags": [
+        "1-3年",
+        "本科",
+        "Android"
+      ],
+      "skills": [
+        "Android",
+        "Kotlin",
+        "性能优化"
+      ],
+      "desc": [
+        "负责主端Android功能研发。"
+      ],
+      "reqs": [
+        "本科,1-3年Android经验。"
+      ],
+      "distanceKm": 12.4,
+      "publishedDaysAgo": 2
+    },
+    {
+      "id": "j64",
+      "title": "新媒体运营",
+      "salary": "10-15K·13薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_shanhai",
+      "bossId": "b8",
+      "city": "上海",
+      "district": "黄浦区",
+      "address": "上海黄浦区产业园",
+      "eduReq": "本科",
+      "expReq": "经验不限",
+      "tags": [
+        "经验不限",
+        "本科",
+        "新媒体"
+      ],
+      "skills": [
+        "内容策划",
+        "短视频",
+        "数据复盘"
+      ],
+      "desc": [
+        "负责账号矩阵内容策划与运营。"
+      ],
+      "reqs": [
+        "本科,网感好。"
+      ],
+      "distanceKm": 6.2,
+      "publishedDaysAgo": 1
+    },
+    {
+      "id": "j65",
+      "title": "风电场运维工程师",
+      "salary": "12-20K·13薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_zhujiang",
+      "bossId": "b_gz",
+      "city": "广州",
+      "district": "南沙区",
+      "address": "广州南沙区产业园",
+      "eduReq": "大专",
+      "expReq": "1-3年",
+      "tags": [
+        "1-3年",
+        "大专",
+        "风电"
+      ],
+      "skills": [
+        "风机运维",
+        "电气检修"
+      ],
+      "desc": [
+        "负责风电场设备巡检与检修。"
+      ],
+      "reqs": [
+        "大专,电气相关专业。"
+      ],
+      "distanceKm": 12.7,
+      "publishedDaysAgo": 4
+    },
+    {
+      "id": "j66",
+      "title": "电池算法工程师(BMS)",
+      "salary": "25-45K·15薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_lvchao",
+      "bossId": "b20",
+      "city": "上海",
+      "district": "浦东新区",
+      "address": "上海浦东新区临港汀澜能源基地",
+      "eduReq": "硕士",
+      "expReq": "1-3年",
+      "tags": [
+        "1-3年",
+        "硕士",
+        "BMS"
+      ],
+      "skills": [
+        "BMS",
+        "SOC估计",
+        "Simulink"
+      ],
+      "desc": [
+        "负责储能电池管理核心算法。"
+      ],
+      "reqs": [
+        "硕士,电化学或控制背景。"
+      ],
+      "distanceKm": 32.5,
+      "publishedDaysAgo": 2
+    },
+    {
+      "id": "j67",
+      "title": "数据库管理工程师(DBA)",
+      "salary": "20-32K·14薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_rongcheng2",
+      "bossId": "b_cd",
+      "city": "成都",
+      "district": "高新区",
+      "address": "成都高新区产业园",
+      "eduReq": "本科",
+      "expReq": "3-5年",
+      "tags": [
+        "3-5年",
+        "本科",
+        "DBA"
+      ],
+      "skills": [
+        "MySQL",
+        "分库分表",
+        "容灾"
+      ],
+      "desc": [
+        "负责核心库稳定性与容量规划。"
+      ],
+      "reqs": [
+        "本科,3-5年DBA经验。"
+      ],
+      "distanceKm": 5.8,
+      "publishedDaysAgo": 3
+    },
+    {
+      "id": "j68",
+      "title": "iOS开发工程师(2027届)",
+      "salary": "18-30K·15薪",
+      "jobType": "fulltime",
+      "campus": true,
+      "companyId": "c_jiangcheng",
+      "bossId": "b_wh",
+      "city": "武汉",
+      "district": "洪山区",
+      "address": "武汉洪山区产业园",
+      "eduReq": "本科",
+      "expReq": "在校/应届",
+      "tags": [
+        "在校/应届",
+        "本科",
+        "iOS"
+      ],
+      "skills": [
+        "Swift",
+        "UIKit",
+        "性能优化"
+      ],
+      "desc": [
+        "参与主端iOS功能研发。"
+      ],
+      "reqs": [
+        "2027届本科。"
+      ],
+      "distanceKm": 4.4,
+      "publishedDaysAgo": 1,
+      "gradYear": "2027年"
+    },
+    {
+      "id": "j69",
+      "title": "数据分析师",
+      "salary": "12-22K·13薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_shancheng",
+      "bossId": "b_cq",
+      "city": "重庆",
+      "district": "渝北区",
+      "address": "重庆渝北区产业园",
+      "eduReq": "本科",
+      "expReq": "1-3年",
+      "tags": [
+        "1-3年",
+        "本科",
+        "数据分析"
+      ],
+      "skills": [
+        "数据分析",
+        "Python",
+        "SQL",
+        "BI"
+      ],
+      "desc": [
+        "负责区域业务数据分析与看板搭建。"
+      ],
+      "reqs": [
+        "本科,熟悉SQL与可视化。"
+      ],
+      "distanceKm": 1000,
+      "publishedDaysAgo": 2
+    },
+    {
+      "id": "j70",
+      "title": "数据分析师(用户增长)",
+      "salary": "15-25K·14薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_quancheng",
+      "bossId": "b_jn",
+      "city": "济南",
+      "district": "历下区",
+      "address": "济南历下区产业园",
+      "eduReq": "本科",
+      "expReq": "1-3年",
+      "tags": [
+        "1-3年",
+        "本科",
+        "数据分析",
+        "增长"
+      ],
+      "skills": [
+        "数据分析",
+        "增长",
+        "AB实验",
+        "Python"
+      ],
+      "desc": [
+        "负责用户增长指标分析与实验。"
+      ],
+      "reqs": [
+        "本科,有增长分析经验。"
+      ],
+      "distanceKm": 450,
+      "publishedDaysAgo": 1
+    },
+    {
+      "id": "j71",
+      "title": "人工智能训练师",
+      "salary": "10-18K·13薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_zhongyuan",
+      "bossId": "b_zz",
+      "city": "郑州",
+      "district": "金水区",
+      "address": "郑州金水区产业园",
+      "eduReq": "大专",
+      "expReq": "经验不限",
+      "tags": [
+        "经验不限",
+        "大专",
+        "人工智能",
+        "数据标注"
+      ],
+      "skills": [
+        "数据标注",
+        "Prompt",
+        "质检"
+      ],
+      "desc": [
+        "负责大模型语料标注与质量审核。"
+      ],
+      "reqs": [
+        "大专及以上,细心负责。"
+      ],
+      "distanceKm": 620,
+      "publishedDaysAgo": 3
+    },
+    {
+      "id": "j72",
+      "title": "算法工程师(人工智能)",
+      "salary": "20-38K·15薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_yongjiang",
+      "bossId": "b_nb",
+      "city": "宁波",
+      "district": "鄞州区",
+      "address": "宁波鄞州区产业园",
+      "eduReq": "硕士",
+      "expReq": "1-3年",
+      "tags": [
+        "1-3年",
+        "硕士",
+        "人工智能",
+        "机器学习"
+      ],
+      "skills": [
+        "机器学习",
+        "人工智能",
+        "Python"
+      ],
+      "desc": [
+        "负责智能制造场景算法落地。"
+      ],
+      "reqs": [
+        "硕士,机器学习基础扎实。"
+      ],
+      "distanceKm": 210,
+      "publishedDaysAgo": 2
+    },
+    {
+      "id": "j73",
+      "title": "嵌入式工程师",
+      "salary": "13-22K·13薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_wanyi",
+      "bossId": "b_dg",
+      "city": "东莞",
+      "district": "松山湖",
+      "address": "东莞松山湖产业园",
+      "eduReq": "本科",
+      "expReq": "1-3年",
+      "tags": [
+        "1-3年",
+        "本科",
+        "嵌入式"
+      ],
+      "skills": [
+        "嵌入式",
+        "C/C++",
+        "单片机"
+      ],
+      "desc": [
+        "负责智能硬件固件开发。"
+      ],
+      "reqs": [
+        "本科,1-3年嵌入式经验。"
+      ],
+      "distanceKm": 140,
+      "publishedDaysAgo": 4
+    },
+    {
+      "id": "j74",
+      "title": "Java开发工程师",
+      "salary": "18-32K·14薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_jinling",
+      "bossId": "b_nj",
+      "city": "南京",
+      "district": "建邺区",
+      "address": "南京建邺区产业园",
+      "eduReq": "本科",
+      "expReq": "1-3年",
+      "tags": [
+        "1-3年",
+        "本科",
+        "Java"
+      ],
+      "skills": [
+        "Java",
+        "Spring",
+        "分布式"
+      ],
+      "desc": [
+        "负责企业SaaS后端研发。"
+      ],
+      "reqs": [
+        "本科,1-3年Java经验。"
+      ],
+      "distanceKm": 270,
+      "publishedDaysAgo": 1
+    },
+    {
+      "id": "j75",
+      "title": "前端开发工程师",
+      "salary": "15-26K·14薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_luzhou",
+      "bossId": "b_hf",
+      "city": "合肥",
+      "district": "蜀山区",
+      "address": "合肥蜀山区产业园",
+      "eduReq": "本科",
+      "expReq": "1-3年",
+      "tags": [
+        "1-3年",
+        "本科",
+        "前端开发"
+      ],
+      "skills": [
+        "React",
+        "Vue",
+        "TypeScript"
+      ],
+      "desc": [
+        "负责中后台前端开发。"
+      ],
+      "reqs": [
+        "本科,熟悉主流框架。"
+      ],
+      "distanceKm": 420,
+      "publishedDaysAgo": 3
+    },
+    {
+      "id": "j76",
+      "title": "算法工程师(NLP)",
+      "salary": "20-35K·15薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_changan",
+      "bossId": "b_xa",
+      "city": "西安",
+      "district": "雁塔区",
+      "address": "西安雁塔区产业园",
+      "eduReq": "硕士",
+      "expReq": "1-3年",
+      "tags": [
+        "1-3年",
+        "硕士",
+        "NLP"
+      ],
+      "skills": [
+        "自然语言处理算法",
+        "大模型算法",
+        "Python"
+      ],
+      "desc": [
+        "负责对话与信息抽取算法。"
+      ],
+      "reqs": [
+        "硕士,NLP方向。"
+      ],
+      "distanceKm": 900,
+      "publishedDaysAgo": 2
+    },
+    {
+      "id": "j77",
+      "title": "测试工程师",
+      "salary": "10-16K·13薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_rongcheng",
+      "bossId": "b_fz",
+      "city": "福州",
+      "district": "鼓楼区",
+      "address": "福州鼓楼区产业园",
+      "eduReq": "本科",
+      "expReq": "1-3年",
+      "tags": [
+        "1-3年",
+        "本科",
+        "测试"
+      ],
+      "skills": [
+        "功能测试",
+        "自动化",
+        "接口测试"
+      ],
+      "desc": [
+        "负责电商业务测试。"
+      ],
+      "reqs": [
+        "本科,1-3年测试经验。"
+      ],
+      "distanceKm": 660,
+      "publishedDaysAgo": 5
+    },
+    {
+      "id": "j78",
+      "title": "数据分析师(BI方向)",
+      "salary": "13-20K·13薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_xingcheng2",
+      "bossId": "b_cs",
+      "city": "长沙",
+      "district": "岳麓区",
+      "address": "长沙岳麓区产业园",
+      "eduReq": "本科",
+      "expReq": "经验不限",
+      "tags": [
+        "经验不限",
+        "本科",
+        "数据分析",
+        "BI"
+      ],
+      "skills": [
+        "数据分析",
+        "BI",
+        "SQL"
+      ],
+      "desc": [
+        "负责经营分析与报表。"
+      ],
+      "reqs": [
+        "本科,熟悉BI工具。"
+      ],
+      "distanceKm": 700,
+      "publishedDaysAgo": 1
+    },
+    {
+      "id": "j79",
+      "title": "数据分析师(算法策略)",
+      "salary": "20-35K·15薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_xinglian",
+      "bossId": "b1",
+      "city": "上海",
+      "district": "长宁区",
+      "address": "上海长宁区产业园",
+      "eduReq": "硕士",
+      "expReq": "1-3年",
+      "tags": [
+        "1-3年",
+        "硕士",
+        "数据分析",
+        "策略"
+      ],
+      "skills": [
+        "数据分析",
+        "策略",
+        "机器学习",
+        "Python"
+      ],
+      "desc": [
+        "负责推荐策略数据分析与实验设计。"
+      ],
+      "reqs": [
+        "硕士,有策略分析经验。"
+      ],
+      "distanceKm": 21.5,
+      "publishedDaysAgo": 0,
+      "hotBadge": "新"
+    },
+    {
+      "id": "j80",
+      "title": "人工智能产品经理",
+      "salary": "25-40K·14薪",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_manyu",
+      "bossId": "b16",
+      "city": "上海",
+      "district": "杨浦区",
+      "address": "上海杨浦区产业园",
+      "eduReq": "本科",
+      "expReq": "3-5年",
+      "tags": [
+        "3-5年",
+        "本科",
+        "人工智能",
+        "产品"
+      ],
+      "skills": [
+        "AI产品",
+        "大模型",
+        "需求分析"
+      ],
+      "desc": [
+        "负责AI应用产品规划。"
+      ],
+      "reqs": [
+        "本科,3-5年AI产品经验。"
+      ],
+      "distanceKm": 2.4,
+      "publishedDaysAgo": 2
+    },
+    {
+      "id": "j81",
+      "title": "商场门店理货员",
+      "salary": "2K",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_linli",
+      "bossId": "b14",
+      "city": "上海",
+      "district": "普陀区",
+      "address": "上海普陀区生活广场",
+      "eduReq": "初中及以下",
+      "expReq": "经验不限",
+      "tags": [
+        "经验不限",
+        "就近安排",
+        "五险"
+      ],
+      "skills": [
+        "商品陈列",
+        "库存整理"
+      ],
+      "desc": [
+        "负责门店商品补货、陈列和库存整理。"
+      ],
+      "reqs": [
+        "认真负责,可接受轮班。"
+      ],
+      "distanceKm": 4.2,
+      "publishedDaysAgo": 1
+    },
+    {
+      "id": "j82",
+      "title": "课程资料整理员",
+      "salary": "4K",
+      "jobType": "fulltime",
+      "campus": false,
+      "companyId": "c_qinghe",
+      "bossId": "b11",
+      "city": "上海",
+      "district": "杨浦区",
+      "address": "上海杨浦区创智天地",
+      "eduReq": "大专",
+      "expReq": "经验不限",
+      "tags": [
+        "经验不限",
+        "双休",
+        "资料整理"
+      ],
+      "skills": [
+        "办公软件",
+        "文档整理"
+      ],
+      "desc": [
+        "负责课程资料录入、校对与归档。"
+      ],
+      "reqs": [
+        "熟悉基础办公软件,做事细致。"
+      ],
+      "distanceKm": 2.6,
+      "publishedDaysAgo": 2
+    },
+    {
+      "id": "j83",
+      "title": "奶茶店晚班兼职",
+      "salary": "25-30元/时",
+      "jobType": "parttime",
+      "campus": false,
+      "companyId": "c_linli",
+      "bossId": "b14",
+      "city": "上海",
+      "district": "普陀区",
+      "address": "上海普陀区生活广场",
+      "eduReq": "高中",
+      "expReq": "经验不限",
+      "tags": [
+        "奶茶店兼职",
+        "晚班",
+        "长期兼职"
+      ],
+      "skills": [
+        "饮品制作",
+        "门店服务"
+      ],
+      "desc": [
+        "负责饮品制作、收银和晚间闭店整理。"
+      ],
+      "reqs": [
+        "每周至少到岗三天,有服务意识。"
+      ],
+      "distanceKm": 4.8,
+      "publishedDaysAgo": 0,
+      "duration": [
+        "3天/周",
+        "长期"
+      ],
+      "parttimeCategories": [
+        "店铺兼职",
+        "奶茶店兼职",
+        "长期兼职"
+      ]
+    },
+    {
+      "id": "j84",
+      "title": "电影院检票兼职",
+      "salary": "160元/天",
+      "jobType": "parttime",
+      "campus": false,
+      "companyId": "c_shanhai",
+      "bossId": "b8",
+      "city": "上海",
+      "district": "黄浦区",
+      "address": "上海黄浦区光影中心",
+      "eduReq": "高中",
+      "expReq": "经验不限",
+      "tags": [
+        "电影院兼职",
+        "周末兼职",
+        "可选场次"
+      ],
+      "skills": [
+        "检票",
+        "观众引导"
+      ],
+      "desc": [
+        "负责影厅检票、散场引导与基础秩序维护。"
+      ],
+      "reqs": [
+        "周末可到岗,沟通耐心。"
+      ],
+      "distanceKm": 5.5,
+      "publishedDaysAgo": 0,
+      "duration": [
+        "周末",
+        "按场次"
+      ],
+      "parttimeCategories": [
+        "周末兼职",
+        "电影院兼职"
+      ]
+    }
+  ],
+  "parttimeCategories": [
+    "店铺兼职",
+    "周末兼职",
+    "奶茶店兼职",
+    "电影院兼职",
+    "长期兼职",
+    "宅家可做"
+  ],
+  "feedPosts": [
+    {
+      "id": "p1",
+      "author": {
+        "name": "苔米(互关互赞)",
+        "avatar": "f1"
+      },
+      "text": "面试时的暗语,你听懂了吗?\n\n1.“回家等通知”;基本上没戏了。",
+      "fullText": "面试时的暗语,你听懂了吗?\n\n1.“回家等通知”;基本上没戏了。\n2.“我们会尽快联系你”;还有一半机会。\n3.“你还有什么要问的吗”;认真答就还有戏。\n4.“期望薪资多少”;进入实质环节了。",
+      "img": "p1",
+      "topics": [
+        "为什么要坚持上班?"
+      ],
+      "comments": 269,
+      "stars": 790,
+      "likes": 969
+    },
+    {
+      "id": "p2",
+      "author": {
+        "name": "一枚栗子壳",
+        "avatar": "f2"
+      },
+      "text": "上了十几天班。没有签劳动合同,啥都没有。突然让明天不用去了。然后告诉我,他不管工资,要工资找老板。老板意思下个月15号发,让人事算考勤,然…",
+      "fullText": "上了十几天班。没有签劳动合同,啥都没有。突然让明天不用去了。然后告诉我,他不管工资,要工资找老板。老板意思下个月15号发,让人事算考勤,然后就没有然后了。我保留了证据,谁通知我离职谁负责到底。首先是你们让我离职,给个说法,而不是说明天不用来了就直接没事了。",
+      "img": "p2",
+      "topics": [
+        "欠薪"
+      ],
+      "comments": 6104,
+      "stars": 8557,
+      "likes": 12000
+    },
+    {
+      "id": "p3",
+      "author": {
+        "name": "邰女士",
+        "avatar": "f3",
+        "title": "部门主管·澍禾置业"
+      },
+      "text": "面试官:如果你被录取了,多久到岗\n\n我:随时\n\n几天后…",
+      "fullText": "面试官:如果你被录取了,多久到岗\n\n我:随时\n\n几天后,对方说岗位招满了。后来才明白,“随时”显得太急,不如说“一周内可到岗”更稳妥。",
+      "qaCard": "面试官的哪些问题让求职者很头疼?",
+      "topics": [],
+      "comments": 46000,
+      "stars": 61000,
+      "likes": 93000
+    },
+    {
+      "id": "p4",
+      "author": {
+        "name": "葛叔说职场(互关互赞)",
+        "avatar": "f4",
+        "title": "选择大于努力,选对行业,成就一生!"
+      },
+      "text": "面试结果黑话:\n1.我们会尽快联系你,最晚明天就可以给你答复(基本就是你了)",
+      "fullText": "面试结果黑话:\n1.我们会尽快联系你,最晚明天就可以给你答复(基本就是你了)\n2.回去等消息吧(大概率没戏)\n3.你很优秀,但岗位匹配度…(委婉拒绝)\n4.HR当场聊薪资(稳了)",
+      "img": "p4",
+      "topics": [
+        "账号活跃度",
+        "打工人上人",
+        "热点话题"
+      ],
+      "comments": 452,
+      "stars": 635,
+      "likes": 903
+    },
+    {
+      "id": "p5",
+      "author": {
+        "name": "苔米~(互关互赞)",
+        "avatar": "f5"
+      },
+      "text": "HR 最讨厌的3句话\n\n1、虽然我没什么经验,但我可以学",
+      "fullText": "HR 最讨厌的3句话\n\n1、虽然我没什么经验,但我可以学\n\n公司招你来是让你来干活的,不是雇你来学习的,正确的回答应该是这样的“虽然我没有经验,但我已经调研了公司的产品也了解了我应聘岗位的具体工作内容,我认为我可以胜任这份工作.\n\n2.工资的话,我没什么要求\n\n这句话包含了多重风险,HR就会想你是对自己的能力没有信心吗,还是说你很不稳定随时准备离开,正确的回答“我认真了解过贵司的薪资体系,我应聘的岗位月薪在8-10千,根据我的个人经历和能力来看我希望我的薪资待遇在9K以上\n\n3.我没什么要问的了\n\n这句话会让HR直接怀疑你对公司的意向不高呀,连问题都没有,正确的回答应该是“如果有幸加入贵公司需要学习什么技能有什么技能需要提前学习的吗您认为这个岗位需要什么能力和素质,这个岗位的晋升机制是什么?",
+      "img": "p5",
+      "topics": [
+        "同事的迷惑行为大赏"
+      ],
+      "comments": 911,
+      "stars": 2109,
+      "likes": 2506
+    },
+    {
+      "id": "p6",
+      "author": {
+        "name": "葛叔说职场(互关必回)",
+        "avatar": "f6"
+      },
+      "text": "HR 告诉你: BOSS直聘为什么已读,但是回复率不高的原因\n1、纯粹是 HR 看见以为回复忘了…",
+      "fullText": "HR 告诉你: BOSS直聘为什么已读,但是回复率不高的原因\n1、纯粹是 HR 看见以为回复忘了\n2、简历还在对比中,先已读留着\n3、岗位其实已经招满,但没下架\n4、打招呼语太模板化,没有针对性",
+      "img": "p6",
+      "topics": [],
+      "comments": 2400,
+      "stars": 2335,
+      "likes": 3525
+    },
+    {
+      "id": "p7",
+      "author": {
+        "name": "阿澈",
+        "avatar": "f7"
+      },
+      "text": "第一次线上面试,我踩过的3个坑\n\n1.没提前试设备,开场找耳机找了两分钟…",
+      "fullText": "第一次线上面试,我踩过的3个坑\n\n1.没提前试设备,开场找耳机找了两分钟,印象分直接扣没\n2.背景太乱,面试官全程盯着我身后的晾衣架\n3.自我介绍背稿子,被打断一次就接不上了\n\n建议:提前15分钟进会议室,准备一页手写要点而不是逐字稿。",
+      "img": "p7",
+      "topics": [
+        "线上面试"
+      ],
+      "comments": 328,
+      "stars": 1204,
+      "likes": 1876
+    },
+    {
+      "id": "p8",
+      "author": {
+        "name": "面包超人",
+        "avatar": "f2"
+      },
+      "text": "实习三个月转正失败,但我不后悔\n\n mentor 最后跟我说的话,受用了…",
+      "fullText": "实习三个月转正失败,但我不后悔。\n\nhc冻结,组里最后一个转正名额给了比我早来半年的同学。mentor最后跟我说:你的问题不是能力,是曝光——活干了,但没让需要看见的人看见。\n\n带着这句话去了下一家,第一个月就学会了写周报同步给+1和+2。",
+      "topics": [
+        "实习那些事"
+      ],
+      "comments": 542,
+      "stars": 3011,
+      "likes": 4520
+    },
+    {
+      "id": "p9",
+      "author": {
+        "name": "Momo姐",
+        "avatar": "f8",
+        "title": "HRBP·十年招聘"
+      },
+      "text": "简历上到底要不要写期望薪资?\n\n作为看过上万份简历的HR,我的答案是…",
+      "fullText": "简历上到底要不要写期望薪资?\n\n作为看过上万份简历的HR,我的答案是:社招不写,校招随意。\n\n社招写了容易被卡筛选区间;校招大多有统一薪资带,写不写影响不大。真正该做的是面试前查清楚这家公司的薪资带,谈的时候心里有数。",
+      "qaCard": "和HR谈薪资有哪些技巧?",
+      "topics": [],
+      "comments": 1893,
+      "stars": 8734,
+      "likes": 12400
+    },
+    {
+      "id": "p10",
+      "author": {
+        "name": "老周不惑",
+        "avatar": "f4"
+      },
+      "text": "35岁转行学算法,大家觉得现实吗?\n\n做了十年传统行业项目经理,最近在自学…",
+      "fullText": "35岁转行学算法,大家觉得现实吗?\n\n做了十年传统行业项目经理,最近在自学机器学习,每天下班学两小时,坚持了四个月。不求进大厂,想找个中小公司从初级做起。\n\n评论区别劝退,想听听真转成的人怎么走的。",
+      "topics": [
+        "转行",
+        "35岁危机"
+      ],
+      "comments": 2764,
+      "stars": 5620,
+      "likes": 8903
+    },
+    {
+      "id": "p11",
+      "author": {
+        "name": "圆圆学姐",
+        "avatar": "f5"
+      },
+      "text": "2027届秋招时间线整理(附避坑提醒)\n\n6-7月:提前批陆续开(算法岗神仙打架)…",
+      "fullText": "2027届秋招时间线整理(附避坑提醒)\n\n6-7月:提前批陆续开,算法岗神仙打架,简历没亮点慎投,投了挂了有些公司秋招正式批不能再投\n8月:正式批集中开,海投黄金期\n9-10月:笔试面试高峰,注意错开时间\n11月:补录窗口,别放弃\n\n避坑:提前批≠早鸟优惠,是地狱难度;正式批才是主战场。",
+      "img": "p11",
+      "topics": [
+        "秋招日历",
+        "校招"
+      ],
+      "comments": 876,
+      "stars": 15200,
+      "likes": 9865
+    },
+    {
+      "id": "p12",
+      "author": {
+        "name": "深夜代码",
+        "avatar": "f6"
+      },
+      "text": "加班到十点,在地铁上想通了一件事\n\n工作是做不完的,但地铁是有末班车的…",
+      "fullText": "加班到十点,在地铁上想通了一件事。\n\n工作是做不完的,但地铁是有末班车的。以前总觉得多干一点就能被看见,后来发现被看见的从来不是最晚走的人,而是把事情说清楚的人。\n\n从明天起,把'汇报'当成和'写代码'同等重要的事。",
+      "img": "p12",
+      "topics": [
+        "打工人日记"
+      ],
+      "comments": 431,
+      "stars": 2287,
+      "likes": 5134
+    },
+    {
+      "id": "p13",
+      "author": {
+        "name": "阿椰",
+        "avatar": "f1"
+      },
+      "text": "裸辞gap三个月,我终于敢说不后悔了\n\n前三十天:焦虑到失眠,天天刷招聘软件…",
+      "fullText": "裸辞gap三个月,我终于敢说不后悔了。\n\n前三十天:焦虑到失眠,天天刷招聘软件又不敢投\n中间三十天:开始运动、读书、把三年没整理的项目复盘写完\n最后三十天:带着复盘去面试,聊得比在职时清楚十倍\n\ngap不可怕,可怕的是gap的时候还在原地打转。",
+      "topics": [
+        "裸辞gap"
+      ],
+      "comments": 1204,
+      "stars": 4300,
+      "likes": 7801
+    },
+    {
+      "id": "p14",
+      "author": {
+        "name": "糖糖",
+        "avatar": "f5"
+      },
+      "text": "第一份工资,我给自己买了这些\n\n1.一把好椅子(腰真的值得)…",
+      "fullText": "第一份工资,我给自己买了这些\n\n1.一把好椅子(腰真的值得)\n2.给爸妈各转了一笔,截图存着\n3.一顿和室友的火锅\n4.剩下的全存了\n\n不是消费主义,是给'我能养活自己'这件事一个仪式感。",
+      "img": "p14",
+      "topics": [
+        "第一份工资"
+      ],
+      "comments": 689,
+      "stars": 2100,
+      "likes": 9450
+    },
+    {
+      "id": "p15",
+      "author": {
+        "name": "面试官老徐",
+        "avatar": "f9",
+        "title": "技术面试官·年面300人"
+      },
+      "text": "一天面8个人,我到底在看什么\n\n说实话,简历过了初筛,技术底子都差不多…",
+      "fullText": "一天面8个人,我到底在看什么。\n\n说实话,简历过了初筛,技术底子都差不多,我真正在分辨的是:\n1.被追问到不会时,是编还是承认+给思路\n2.讲项目时说'我们'还是'我',各占多少\n3.提问环节问的是'加不加班'还是'这个岗位半年内要解决什么问题'\n\n技术可以教,思考方式很难。",
+      "qaCard": "技术面试中哪些行为是加分项?",
+      "topics": [],
+      "comments": 3210,
+      "stars": 11800,
+      "likes": 15600
+    },
+    {
+      "id": "p16",
+      "author": {
+        "name": "大力water",
+        "avatar": "f7"
+      },
+      "text": "外包offer和小公司自研offer,怎么选?\n\n外包:大厂现场办公,薪资高2K…",
+      "fullText": "外包offer和小公司自研offer,怎么选?\n\n外包:大厂现场办公,薪资高2K,但挂靠三方\n自研:20人小团队,产品刚起步,期权画饼\n\n应届第一份工作,主要考虑成长。评论区帮我分析下,在线等。",
+      "topics": [
+        "offer比较"
+      ],
+      "comments": 1567,
+      "stars": 980,
+      "likes": 2340
+    },
+    {
+      "id": "p17",
+      "author": {
+        "name": "李梅子",
+        "avatar": "f8",
+        "title": "职业规划师"
+      },
+      "text": "通勤2小时 vs 房租翻倍住公司旁,算了笔账\n\n很多人劝年轻人住公司旁边,我拿数据算了算…",
+      "fullText": "通勤2小时 vs 房租翻倍住公司旁,算了笔账。\n\n按月薪15K算:\n通勤2小时/天≈每月44小时,按时薪折算≈3800元的隐性成本,还没算精力损耗\n房租翻倍多花2500,但每天多出的2小时用来学习/健身/睡觉\n\n结论:如果多出的时间你真的会用,住近是划算的;如果只是多刷两小时手机,省钱吧。",
+      "img": "p18",
+      "topics": [
+        "通勤",
+        "租房"
+      ],
+      "comments": 2890,
+      "stars": 7600,
+      "likes": 11200
+    },
+    {
+      "id": "p18",
+      "author": {
+        "name": "卷心菜不卷",
+        "avatar": "f2"
+      },
+      "text": "入职一周,发现新公司的'扁平管理'是真的\n\n没有日报,没有周会,老板直接坐我对面…",
+      "fullText": "入职一周,发现新公司的'扁平管理'是真的。\n\n没有日报,没有周会,老板直接坐我对面,有事转头就说。20人的小团队,每个人都知道公司这个月要干什么。\n\n之前在大厂,一个需求过五层审批;现在上午提的方案下午就上线了。各有各的好,但这种'被信任'的感觉真的久违了。",
+      "topics": [
+        "小公司体验"
+      ],
+      "comments": 876,
+      "stars": 1900,
+      "likes": 5670
+    }
+  ],
+  "feedComments": [
+    {
+      "id": "c1",
+      "postId": "p5",
+      "author": "半夏微凉",
+      "hot": true,
+      "likes": 81,
+      "timeLabel": "01/23 10:20",
+      "text": "告诉大家一个方法在别人的评论区回复评论15个字以上可以活跃账号,一定要是15个字以上哦,就像我这样热爱每一段时光不管天晴或是下雨,因为你踏出的每一步都是独一无二的美景.谋生很辛苦,热爱就不一样了。愿我们每日工作,不仅为了谋生还有热爱。",
+      "replies": [
+        {
+          "author": "皮皮虾冲鸭",
+          "text": "活跃账号活跃账号活跃账号活跃账号活跃账号活跃账号活跃账号活跃账号活跃账号活跃账号活跃账号活跃账号活跃账号活跃账号活跃账号",
+          "likes": 41,
+          "timeLabel": "05/05 15:22"
+        }
+      ],
+      "moreReplies": 88
+    },
+    {
+      "id": "c2",
+      "postId": "p5",
+      "author": "佟小姐(互关互赞)",
+      "authorTag": "互关必回!快来跟我约面试吧",
+      "hot": true,
+      "likes": 55,
+      "timeLabel": "01/23 12:19",
+      "text": "最有效的BOSS养号技巧体\n1.上午上班点到十点半,聊之前聊过的人\n2.十点半到十一点半,打新招呼看简历.\n3.下午四点之前,复聊(上午招呼复聊,约面试)\n4.晚上都是牛人活跃的时间及时跟进,已读未读、养号.\n5.多刷简历,把主动查看牛人数量提上来",
+      "replies": [
+        {
+          "author": "圆圆圈圈",
+          "text": "活跃账号,活跃账号,活跃账号,活跃账号,活跃账号",
+          "likes": 24,
+          "timeLabel": "05/06 09:10"
+        }
+      ],
+      "moreReplies": 12
+    },
+    {
+      "id": "c3",
+      "postId": "p1",
+      "author": "何晓静",
+      "hot": true,
+      "likes": 156,
+      "timeLabel": "03/14 09:12",
+      "text": "第4条真实了,面试官开始聊期望薪资的时候,整个人瞬间就精神了",
+      "replies": [
+        {
+          "author": "郭一凡",
+          "text": "我上周就是这样,聊完薪资第三天就发offer了",
+          "likes": 33,
+          "timeLabel": "03/15 20:01"
+        }
+      ],
+      "moreReplies": 8
+    },
+    {
+      "id": "c4",
+      "postId": "p1",
+      "author": "小鹿乱撞",
+      "hot": false,
+      "likes": 89,
+      "timeLabel": "04/02 18:40",
+      "text": "“回家等通知”=已读不回的文明版,建议直接投下一家不要等",
+      "replies": [],
+      "moreReplies": 0
+    },
+    {
+      "id": "c5",
+      "postId": "p2",
+      "author": "澄橹",
+      "hot": true,
+      "likes": 2314,
+      "timeLabel": "05/11 10:05",
+      "text": "先劳动仲裁,证据都留好,聊天记录、考勤、转账流水一样别删,你这情况基本稳",
+      "replies": [
+        {
+          "author": "周大壮",
+          "text": "对,打卡记录也记得导出来,很关键",
+          "likes": 187,
+          "timeLabel": "05/11 11:30"
+        }
+      ],
+      "moreReplies": 45
+    },
+    {
+      "id": "c6",
+      "postId": "p2",
+      "author": "老白",
+      "hot": true,
+      "likes": 1502,
+      "timeLabel": "05/11 13:22",
+      "text": "入职超一个月没签合同可以主张二倍工资差额,别怕,法条写得明明白白",
+      "replies": [],
+      "moreReplies": 12
+    },
+    {
+      "id": "c7",
+      "postId": "p2",
+      "author": "阿棠",
+      "hot": false,
+      "likes": 764,
+      "timeLabel": "05/12 08:15",
+      "text": "同款经历+1,当时也是突然说明天不用来了,后来仲裁把工资全拿回来了",
+      "replies": [
+        {
+          "author": "一枚栗子壳",
+          "text": "谢谢,已经在准备材料了",
+          "likes": 98,
+          "timeLabel": "05/12 09:00"
+        }
+      ],
+      "moreReplies": 3
+    },
+    {
+      "id": "c8",
+      "postId": "p3",
+      "author": "刘倩倩",
+      "hot": true,
+      "likes": 421,
+      "timeLabel": "02/20 14:33",
+      "text": "说“一周内可到岗”最稳,既显诚意又不显得没人要",
+      "replies": [],
+      "moreReplies": 15
+    },
+    {
+      "id": "c9",
+      "postId": "p3",
+      "author": "大熊",
+      "hot": false,
+      "likes": 208,
+      "timeLabel": "02/21 09:47",
+      "text": "随时到岗确实容易被压价,亲测,第二次面试学乖了",
+      "replies": [],
+      "moreReplies": 0
+    },
+    {
+      "id": "c10",
+      "postId": "p4",
+      "author": "陈默",
+      "hot": false,
+      "likes": 97,
+      "timeLabel": "06/03 21:18",
+      "text": "第1条我信了三次,三次都没下文,现在听到这句话直接当没戏",
+      "replies": [],
+      "moreReplies": 0
+    },
+    {
+      "id": "c11",
+      "postId": "p4",
+      "author": "桃子",
+      "hot": true,
+      "likes": 143,
+      "timeLabel": "06/04 12:02",
+      "text": "HR当场聊薪资和到岗时间的,基本就是过了,反正我两段offer都是这样",
+      "replies": [
+        {
+          "author": "小艾",
+          "text": "对,聊薪资基本就是过了",
+          "likes": 21,
+          "timeLabel": "06/04 13:11"
+        }
+      ],
+      "moreReplies": 2
+    },
+    {
+      "id": "c12",
+      "postId": "p6",
+      "author": "木木",
+      "hot": false,
+      "likes": 66,
+      "timeLabel": "07/01 10:26",
+      "text": "原来已读不回还有这么多学问,一直以为是我简历的问题",
+      "replies": [],
+      "moreReplies": 0
+    },
+    {
+      "id": "c13",
+      "postId": "p6",
+      "author": "静静子",
+      "hot": true,
+      "likes": 188,
+      "timeLabel": "07/02 19:55",
+      "text": "打招呼语千万别用默认那句,写两句和岗位相关的,亲测回复率翻倍",
+      "replies": [
+        {
+          "author": "晚风",
+          "text": "求模板!",
+          "likes": 12,
+          "timeLabel": "07/02 20:30"
+        }
+      ],
+      "moreReplies": 6
+    },
+    {
+      "id": "c14",
+      "postId": "p5",
+      "author": "维他命",
+      "hot": false,
+      "likes": 47,
+      "timeLabel": "05/06 22:41",
+      "text": "第二条真的膝盖中箭,上次就是说了随便,结果offer压到地板价",
+      "replies": [],
+      "moreReplies": 0
+    },
+    {
+      "id": "c15",
+      "postId": "p7",
+      "author": "栗子",
+      "hot": true,
+      "likes": 264,
+      "timeLabel": "06/18 21:07",
+      "text": "补一条:一定要看镜头说话,不是看屏幕里的自己,亲测观感差很多",
+      "replies": [
+        {
+          "author": "阿澈",
+          "text": "对!这个我后来也发现了",
+          "likes": 31,
+          "timeLabel": "06/18 21:40"
+        }
+      ],
+      "moreReplies": 5
+    },
+    {
+      "id": "c16",
+      "postId": "p7",
+      "author": "波波",
+      "hot": false,
+      "likes": 88,
+      "timeLabel": "06/19 10:15",
+      "text": "晾衣架那条给我看笑了,我是猫在镜头前走了三趟",
+      "replies": [],
+      "moreReplies": 0
+    },
+    {
+      "id": "c17",
+      "postId": "p8",
+      "author": "半糖",
+      "hot": true,
+      "likes": 689,
+      "timeLabel": "05/28 12:33",
+      "text": "'没让需要看见的人看见'这句真的扎心又受用,已经开始写周报了",
+      "replies": [],
+      "moreReplies": 18
+    },
+    {
+      "id": "c18",
+      "postId": "p8",
+      "author": "Kris",
+      "hot": false,
+      "likes": 205,
+      "timeLabel": "05/29 09:02",
+      "text": "转正失败不代表什么,我前两段实习都没转正,秋招照样拿了offer",
+      "replies": [
+        {
+          "author": "面包超人",
+          "text": "谢谢,已经上岸了哈哈",
+          "likes": 56,
+          "timeLabel": "05/29 12:11"
+        }
+      ],
+      "moreReplies": 2
+    },
+    {
+      "id": "c19",
+      "postId": "p9",
+      "author": "江离",
+      "hot": true,
+      "likes": 1024,
+      "timeLabel": "04/16 14:20",
+      "text": "补充一个:如果JD上写了'薪资面议',面试时一定要主动问薪资带,不然二面三面走完才发现对不上,浪费双方时间",
+      "replies": [
+        {
+          "author": "Momo姐",
+          "text": "没错,这是对彼此负责",
+          "likes": 143,
+          "timeLabel": "04/16 15:00"
+        }
+      ],
+      "moreReplies": 31
+    },
+    {
+      "id": "c20",
+      "postId": "p9",
+      "author": "贝壳",
+      "hot": false,
+      "likes": 312,
+      "timeLabel": "04/17 08:44",
+      "text": "校招统一薪资带是真的,同一批进去的基本一个价,不用纠结",
+      "replies": [],
+      "moreReplies": 4
+    },
+    {
+      "id": "c21",
+      "postId": "p10",
+      "author": "路远",
+      "hot": true,
+      "likes": 1877,
+      "timeLabel": "07/05 19:26",
+      "text": "32岁从机械转的算法,现在做质检视觉两年了。路径:先在原行业找算法结合点,不要裸辞纯转,用领域知识+算法组合拳",
+      "replies": [
+        {
+          "author": "老周不惑",
+          "text": "这个思路好,项目管理+算法也许真能组合",
+          "likes": 230,
+          "timeLabel": "07/05 20:10"
+        },
+        {
+          "author": "小满",
+          "text": "马住,我也是传统行业的",
+          "likes": 45,
+          "timeLabel": "07/05 21:33"
+        }
+      ],
+      "moreReplies": 67
+    },
+    {
+      "id": "c22",
+      "postId": "p10",
+      "author": "清风",
+      "hot": true,
+      "likes": 940,
+      "timeLabel": "07/06 07:58",
+      "text": "劝退的话不说,但要提醒:中小公司初级算法也要跟应届生卷笔试,刷题绕不开,做好心理准备",
+      "replies": [],
+      "moreReplies": 22
+    },
+    {
+      "id": "c23",
+      "postId": "p11",
+      "author": "糯米",
+      "hot": true,
+      "likes": 533,
+      "timeLabel": "07/08 11:12",
+      "text": "'提前批≠早鸟优惠,是地狱难度'——去年血泪教训,普通背景真的建议等正式批",
+      "replies": [
+        {
+          "author": "圆圆学姐",
+          "text": "抱抱,今年正式批冲!",
+          "likes": 40,
+          "timeLabel": "07/08 12:00"
+        }
+      ],
+      "moreReplies": 9
+    },
+    {
+      "id": "c24",
+      "postId": "p11",
+      "author": "三土",
+      "hot": false,
+      "likes": 178,
+      "timeLabel": "07/09 16:37",
+      "text": "求问提前批挂了影响正式批的公司名单有汇总吗",
+      "replies": [
+        {
+          "author": "圆圆学姐",
+          "text": "各公司政策每年会变,以当年官方招聘公告为准哈",
+          "likes": 25,
+          "timeLabel": "07/09 17:02"
+        }
+      ],
+      "moreReplies": 3
+    },
+    {
+      "id": "c25",
+      "postId": "p12",
+      "author": "晚风",
+      "hot": true,
+      "likes": 722,
+      "timeLabel": "07/10 23:15",
+      "text": "'被看见的从来不是最晚走的人,而是把事情说清楚的人'——打印出来贴工位了",
+      "replies": [],
+      "moreReplies": 14
+    },
+    {
+      "id": "c26",
+      "postId": "p12",
+      "author": "一颗青梅",
+      "hot": false,
+      "likes": 156,
+      "timeLabel": "07/11 08:20",
+      "text": "末班车那句看得想哭,今晚准点下班",
+      "replies": [
+        {
+          "author": "深夜代码",
+          "text": "一起准点!",
+          "likes": 19,
+          "timeLabel": "07/11 09:01"
+        }
+      ],
+      "moreReplies": 1
+    },
+    {
+      "id": "c27",
+      "postId": "p13",
+      "author": "riverrun",
+      "hot": true,
+      "likes": 892,
+      "timeLabel": "07/03 22:10",
+      "text": "'gap的时候还在原地打转'说的就是我,刷了两个月招聘软件一份没投",
+      "replies": [
+        {
+          "author": "阿椰",
+          "text": "先停下刷,写复盘,写完自然敢投了",
+          "likes": 120,
+          "timeLabel": "07/03 23:01"
+        }
+      ],
+      "moreReplies": 24
+    },
+    {
+      "id": "c28",
+      "postId": "p13",
+      "author": "温吞水",
+      "hot": false,
+      "likes": 301,
+      "timeLabel": "07/04 09:15",
+      "text": "HR会介意gap吗?马上gap半年了有点慌",
+      "replies": [
+        {
+          "author": "李梅子",
+          "text": "能讲清楚gap期做了什么就不是减分项",
+          "likes": 88,
+          "timeLabel": "07/04 10:22"
+        }
+      ],
+      "moreReplies": 7
+    },
+    {
+      "id": "c29",
+      "postId": "p14",
+      "author": "小满",
+      "hot": true,
+      "likes": 455,
+      "timeLabel": "06/25 18:40",
+      "text": "给爸妈转账截图存着这条,看哭了,我也是这么做的",
+      "replies": [],
+      "moreReplies": 11
+    },
+    {
+      "id": "c30",
+      "postId": "p14",
+      "author": "Leo",
+      "hot": false,
+      "likes": 97,
+      "timeLabel": "06/26 12:08",
+      "text": "椅子+1,入职第一个月脊椎就给我上了一课",
+      "replies": [],
+      "moreReplies": 0
+    },
+    {
+      "id": "c31",
+      "postId": "p15",
+      "author": "willow",
+      "hot": true,
+      "likes": 1560,
+      "timeLabel": "07/07 20:33",
+      "text": "'我们'和'我'各占多少这条太真实了,面试复盘发现我全程说'我们',难怪追问细节就露馅",
+      "replies": [
+        {
+          "author": "面试官老徐",
+          "text": "对,不是不能说我们,是关键环节要说清你自己做了什么",
+          "likes": 340,
+          "timeLabel": "07/07 21:00"
+        }
+      ],
+      "moreReplies": 52
+    },
+    {
+      "id": "c32",
+      "postId": "p15",
+      "author": "陈皮",
+      "hot": false,
+      "likes": 410,
+      "timeLabel": "07/08 08:19",
+      "text": "提问环节我真的问过'加不加班'…现在知道为什么没下文了",
+      "replies": [],
+      "moreReplies": 9
+    },
+    {
+      "id": "c33",
+      "postId": "p16",
+      "author": "老K",
+      "hot": true,
+      "likes": 720,
+      "timeLabel": "07/09 13:26",
+      "text": "应届优先自研,第一份工作的成长曲线比2K重要太多;外包最大的问题是你做的东西不属于你的履历",
+      "replies": [
+        {
+          "author": "大力water",
+          "text": "有道理,自研这边我再聊一轮薪资试试",
+          "likes": 66,
+          "timeLabel": "07/09 14:00"
+        }
+      ],
+      "moreReplies": 19
+    },
+    {
+      "id": "c34",
+      "postId": "p16",
+      "author": "栗子",
+      "hot": false,
+      "likes": 233,
+      "timeLabel": "07/09 15:44",
+      "text": "也别神化自研,20人团队要看现金流,面试时大方问融资和发薪情况,正经公司不会介意",
+      "replies": [],
+      "moreReplies": 6
+    },
+    {
+      "id": "c35",
+      "postId": "p17",
+      "author": "江离",
+      "hot": true,
+      "likes": 980,
+      "timeLabel": "07/10 11:52",
+      "text": "补一个变量:通勤时间能不能利用。我地铁有座能看书,那44小时不全是损耗;挤成沙丁鱼那种才是纯亏",
+      "replies": [],
+      "moreReplies": 28
+    },
+    {
+      "id": "c36",
+      "postId": "p17",
+      "author": "贝壳",
+      "hot": false,
+      "likes": 186,
+      "timeLabel": "07/10 19:03",
+      "text": "亲测住近的第一个月就把健身卡办了,第三个月健身卡在吃灰,但睡眠是实打实多了一小时",
+      "replies": [
+        {
+          "author": "李梅子",
+          "text": "睡眠就是最好的投资",
+          "likes": 45,
+          "timeLabel": "07/10 20:15"
+        }
+      ],
+      "moreReplies": 3
+    },
+    {
+      "id": "c37",
+      "postId": "p18",
+      "author": "半糖",
+      "hot": true,
+      "likes": 534,
+      "timeLabel": "07/11 12:30",
+      "text": "羡慕,不过扁平的另一面是没有流程兜底,出了问题责任也很直接,想清楚再上车",
+      "replies": [
+        {
+          "author": "卷心菜不卷",
+          "text": "确实,权责都大,适合想快速成长的阶段",
+          "likes": 90,
+          "timeLabel": "07/11 13:11"
+        }
+      ],
+      "moreReplies": 8
+    },
+    {
+      "id": "c38",
+      "postId": "p18",
+      "author": "Momo姐",
+      "hot": false,
+      "likes": 260,
+      "timeLabel": "07/11 16:47",
+      "text": "HR视角补充:判断'扁平'真假就看一点——普通员工能不能直接跟决策人对话,面试时可以直接问",
+      "replies": [],
+      "moreReplies": 5
+    }
+  ],
+  "sessions": [
+    {
+      "id": "s1",
+      "bossId": "b1",
+      "jobId": "j1",
+      "isGreeting": false,
+      "unread": 0,
+      "lastTimeLabel": "19:11",
+      "initiatedByMe": true,
+      "replyRounds": 1,
+      "pinned": false,
+      "blocked": false,
+      "disliked": false,
+      "remark": "",
+      "phoneExchanged": false,
+      "wechatExchanged": false,
+      "resumeSent": false,
+      "messages": [
+        {
+          "id": "m1",
+          "from": "me",
+          "kind": "text",
+          "text": "您好,看到您的招聘信息,我很感兴趣,希望可以进一步沟通。",
+          "timeLabel": "19:11"
+        },
+        {
+          "id": "m2",
+          "from": "boss",
+          "kind": "text",
+          "text": "方便发一份你的简历过来吗?",
+          "timeLabel": "19:30"
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "bossId": "b2",
+      "jobId": "j5",
+      "isGreeting": true,
+      "unread": 1,
+      "lastTimeLabel": "19:01",
+      "initiatedByMe": false,
+      "replyRounds": 0,
+      "pinned": false,
+      "blocked": false,
+      "disliked": false,
+      "remark": "",
+      "phoneExchanged": false,
+      "wechatExchanged": false,
+      "resumeSent": false,
+      "messages": [
+        {
+          "id": "m3",
+          "from": "boss",
+          "kind": "text",
+          "text": "您好!岫云信息正在招聘AI算法工程师,移动产品线,智能应用部,薪酬范围25K到40K,15-18薪,AI软件方向,海量hc,方便发份详细的简历过来吗?",
+          "timeLabel": "19:01"
+        }
+      ]
+    }
+  ],
+  "systemCards": [
+    {
+      "id": "sys1",
+      "title": "芷诺医疗 发布了新职位",
+      "sub": "超过100位Boss新发布",
+      "timeLabel": "19:12",
+      "icon": "plus"
+    },
+    {
+      "id": "sys2",
+      "title": "直闪闪",
+      "sub": "求职新人礼:找岗位/改简历全搞定",
+      "timeLabel": "18:49",
+      "icon": "ai",
+      "unread": 1
+    }
+  ],
+  "quickReplies": [
+    {
+      "id": "q1",
+      "text": "我可以把我的简历发给您看看吗?"
+    },
+    {
+      "id": "q2",
+      "text": "对不起,我觉得该职位不太适合我,祝您早日找到满意的工作人选"
+    },
+    {
+      "id": "q3",
+      "text": "我可以去贵公司面试吗?"
+    }
+  ],
+  "greetSampleTabs": [
+    "硬件研发",
+    "医疗保健",
+    "生产制造",
+    "物流贸易",
+    "金融资管"
+  ],
+  "greetSamples": [
+    {
+      "id": "g1",
+      "category": "硬件研发",
+      "role": "热设计工程师",
+      "avatar": "f3",
+      "text": "Boss您好,我叫直直。本科毕业于能源与动力专业,有4年热设计工程师经验。掌握热仿真软件工具,可独立完成散热方案设计、测试、分析工作,支持结构、PCB设计。我想应聘这个职位,期待可以进一步沟通。"
+    },
+    {
+      "id": "g2",
+      "category": "硬件研发",
+      "role": "硬件工程师",
+      "avatar": "f4",
+      "text": "Boss您好,我叫直直。硕士毕业于通信工程专业,有4年硬件研发经验。主要负责传感器研发,掌握常用EDA软件工具,具备扎实的电子元器件、信号、电路等基础知识。详情可以查看我的简历,如果合适希望进一步沟通。"
+    },
+    {
+      "id": "g3",
+      "category": "医疗保健",
+      "role": "医疗器械注册",
+      "avatar": "f5",
+      "text": "Boss您好,我叫直直。有3年医疗器械注册申报经验,熟悉法规体系与临床评价流程,期待与您进一步沟通。"
+    },
+    {
+      "id": "g4",
+      "category": "生产制造",
+      "role": "工艺工程师",
+      "avatar": "f6",
+      "text": "Boss您好,我叫直直。有5年制造工艺经验,擅长产线优化与良率提升,期待与您进一步沟通。"
+    },
+    {
+      "id": "g5",
+      "category": "物流贸易",
+      "role": "供应链专员",
+      "avatar": "f1",
+      "text": "Boss您好,我叫直直。有3年供应链管理经验,熟悉仓配与关务流程,期待与您进一步沟通。"
+    },
+    {
+      "id": "g6",
+      "category": "金融资管",
+      "role": "风控分析师",
+      "avatar": "f2",
+      "text": "Boss您好,我叫直直。硕士金融工程背景,有量化风控建模经验,期待与您进一步沟通。"
+    }
+  ],
+  "autoReply": {
+    "maxRounds": 5,
+    "rules": [
+      {
+        "keywords": [
+          "简历"
+        ],
+        "replies": [
+          "好的,收到后我尽快看,今天内给你反馈~",
+          "可以的,发过来吧,我拉技术同学一起看看。"
+        ]
+      },
+      {
+        "keywords": [
+          "面试",
+          "约",
+          "到岗"
+        ],
+        "replies": [
+          "可以约面试,你本周哪天方便?线上线下都行。",
+          "我们一般一轮技术面+一轮主管面,你先发个简历,我来排期。"
+        ]
+      },
+      {
+        "keywords": [
+          "薪资",
+          "待遇",
+          "工资",
+          "薪酬"
+        ],
+        "replies": [
+          "这个岗位的带宽在职位页有写,具体以面试评估定级为准,不会让你吃亏的~",
+          "薪酬按职级定,面试通过后HR会和你详细谈,整体在市场有竞争力。"
+        ]
+      },
+      {
+        "keywords": [
+          "实习",
+          "转正"
+        ],
+        "replies": [
+          "实习表现好是有转正机会的,团队今年有留用名额。"
+        ]
+      },
+      {
+        "keywords": [
+          "地点",
+          "远程",
+          "办公",
+          "地址"
+        ],
+        "replies": [
+          "Base在职位页写的地址,支持弹性打卡,暂不支持全远程哈。"
+        ]
+      },
+      {
+        "keywords": [
+          "要求",
+          "条件",
+          "技术栈",
+          "语言"
+        ],
+        "replies": [
+          "核心是编码扎实+机器学习基础,岗位JD里的优先项满足一两条就可以聊。"
+        ]
+      }
+    ],
+    "fallback": [
+      "好的,了解~方便的话发份简历,我看看匹配度。",
+      "嗯嗯,你的背景我大概了解了,想约你聊一次,方便吗?",
+      "收到。这个方向我们确实在招人,你比较看重团队还是方向?",
+      "可以细聊,你先把简历发我,我给你走内部流程。",
+      "好~有其他问题随时问我。"
+    ]
+  },
+  "records": {
+    "viewed": [
+      {
+        "jobId": "j1",
+        "dateLabel": "07月12日",
+        "timeLabel": "19:11"
+      },
+      {
+        "jobId": "j2",
+        "dateLabel": "07月12日",
+        "timeLabel": "18:49"
+      }
+    ],
+    "chatted": [
+      {
+        "jobId": "j1",
+        "dateLabel": "07月12日",
+        "timeLabel": "19:11"
+      },
+      {
+        "jobId": "j5",
+        "dateLabel": "07月12日",
+        "timeLabel": "19:01"
+      }
+    ],
+    "exchanged": [],
+    "interviewed": []
+  },
+  "recommendedJobIds": [
+    "j8",
+    "j6",
+    "j12",
+    "j7"
+  ],
+  "faq": {
+    "quick": [
+      {
+        "id": "city",
+        "label": "修改求职城市"
+      },
+      {
+        "id": "status",
+        "label": "修改求职状态"
+      },
+      {
+        "id": "identity",
+        "label": "切换职场人"
+      },
+      {
+        "id": "greeting",
+        "label": "设置打招呼语"
+      },
+      {
+        "id": "history",
+        "label": "查看浏览记录"
+      },
+      {
+        "id": "profile",
+        "label": "修改个人资料"
+      },
+      {
+        "id": "favorites",
+        "label": "查看收藏职位"
+      },
+      {
+        "id": "beans",
+        "label": "查询直豆明细"
+      }
+    ],
+    "tabs": [
+      "猜你想问",
+      "简历相关",
+      "隐私与安全",
+      "商业相关"
+    ],
+    "items": {
+      "猜你想问": [
+        {
+          "q": "人脸识别次数超出限制",
+          "a": "人脸识别每日有次数上限,请24小时后再试;若持续失败可在设置中提交人工审核。"
+        },
+        {
+          "q": "关于未成年就业保护",
+          "a": "平台严格执行未成年人就业保护规定,16周岁以下用户无法注册求职。"
+        },
+        {
+          "q": "关于面试备注",
+          "a": "面试备注仅自己可见,可在面试日程详情中添加和修改。"
+        },
+        {
+          "q": "代招是什么意思",
+          "a": "代招指企业委托第三方机构代理招聘,职位页会标注实际用工方。"
+        },
+        {
+          "q": "请问标签功能为什么不见了?",
+          "a": "标签功能已合并进「求职意向」,可在我的-求职意向中管理。"
+        }
+      ],
+      "简历相关": [
+        {
+          "q": "如何修改在线简历?",
+          "a": "我的-在线简历,点各模块右侧编辑图标即可修改。"
+        },
+        {
+          "q": "附件简历支持什么格式?",
+          "a": "推荐PDF,也支持DOC、DOCX、JPG、PNG,大小不超过20M。"
+        }
+      ],
+      "隐私与安全": [
+        {
+          "q": "谁能看到我的简历?",
+          "a": "只有你主动沟通或投递的Boss,以及你授权的企业可以查看。"
+        },
+        {
+          "q": "如何屏蔽当前公司?",
+          "a": "我的-设置-隐私保护中可添加屏蔽公司。"
+        }
+      ],
+      "商业相关": [
+        {
+          "q": "直豆如何获取?",
+          "a": "直豆可通过充值获取,用于购买增值道具(模拟版暂未开放)。"
+        },
+        {
+          "q": "VIP会员有什么权益?",
+          "a": "含自动追聊、新岗位速递、竞争力分析不限次等10项权益,详见会员页。"
+        }
+      ]
+    }
+  },
+  "resumeSections": {
+    "advantage": "擅长领域:ai agent;nlp",
+    "work": "",
+    "project": "",
+    "education": "江东大学 2025-2027 硕士·计算机科学与技术",
+    "custom": ""
+  }
+}

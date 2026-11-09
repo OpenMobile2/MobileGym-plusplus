@@ -1,0 +1,155 @@
+{
+  "version": 1,
+  "note": "由 apps/Didi/assets/build_road_graph.mjs 生成，请勿手改",
+  "center": {
+    "lat": 39.9794688,
+    "lng": 116.3323982
+  },
+  "graphRadiusKm": 52.1,
+  "anchors": {
+    "poi_yunxi": {
+      "lat": 39.97816,
+      "lng": 116.33352,
+      "anchoredKm": 0.17,
+      "targetKm": 0.1
+    },
+    "poi_qingshiqiao": {
+      "lat": 39.97756,
+      "lng": 116.33512,
+      "anchoredKm": 0.31,
+      "targetKm": 0.34
+    },
+    "poi_yunjiang_east": {
+      "lat": 39.98072,
+      "lng": 116.33894,
+      "anchoredKm": 0.57,
+      "targetKm": 0.62
+    },
+    "poi_sunrise": {
+      "lat": 39.98666,
+      "lng": 116.34078,
+      "anchoredKm": 1.07,
+      "targetKm": 1.1
+    },
+    "poi_leyou": {
+      "lat": 39.96516,
+      "lng": 116.31544,
+      "anchoredKm": 2.15,
+      "targetKm": 2.2
+    },
+    "poi_yunbo_hotel": {
+      "lat": 39.9575,
+      "lng": 116.32194,
+      "anchoredKm": 2.6,
+      "targetKm": 2.6
+    },
+    "poi_morning_market": {
+      "lat": 39.9685,
+      "lng": 116.29938,
+      "anchoredKm": 3.07,
+      "targetKm": 3.1
+    },
+    "poi_cloud_wetland": {
+      "lat": 39.96128,
+      "lng": 116.37042,
+      "anchoredKm": 3.82,
+      "targetKm": 3.8
+    },
+    "poi_wutong": {
+      "lat": 39.98242,
+      "lng": 116.38366,
+      "anchoredKm": 4.38,
+      "targetKm": 4.4
+    },
+    "poi_first_hospital": {
+      "lat": 39.97186,
+      "lng": 116.27826,
+      "anchoredKm": 4.69,
+      "targetKm": 4.7
+    },
+    "poi_expo": {
+      "lat": 39.96808,
+      "lng": 116.39632,
+      "anchoredKm": 5.59,
+      "targetKm": 5.6
+    },
+    "poi_civic_center": {
+      "lat": 40.00696,
+      "lng": 116.3947,
+      "anchoredKm": 6.13,
+      "targetKm": 6.1
+    },
+    "poi_old_stove": {
+      "lat": 39.96884,
+      "lng": 116.40668,
+      "anchoredKm": 6.44,
+      "targetKm": 6.4
+    },
+    "poi_museum": {
+      "lat": 40.00814,
+      "lng": 116.4046,
+      "anchoredKm": 6.93,
+      "targetKm": 6.9
+    },
+    "poi_star_plaza": {
+      "lat": 40.01678,
+      "lng": 116.2712,
+      "anchoredKm": 6.66,
+      "targetKm": 7.2
+    },
+    "poi_university": {
+      "lat": 39.98908,
+      "lng": 116.43422,
+      "anchoredKm": 8.74,
+      "targetKm": 8.6
+    },
+    "poi_tech_park": {
+      "lat": 39.94136,
+      "lng": 116.46144,
+      "anchoredKm": 11.78,
+      "targetKm": 11.6
+    },
+    "poi_sports": {
+      "lat": 39.87188,
+      "lng": 116.40422,
+      "anchoredKm": 13.44,
+      "targetKm": 12.3
+    },
+    "poi_south_station": {
+      "lat": 39.84692,
+      "lng": 116.34578,
+      "anchoredKm": 14.78,
+      "targetKm": 14.8
+    },
+    "poi_airport": {
+      "lat": 40.20126,
+      "lng": 116.4955,
+      "anchoredKm": 28.31,
+      "targetKm": 28.4
+    },
+    "poi_nanyu_station": {
+      "lat": 39.79462,
+      "lng": 115.9481,
+      "anchoredKm": 38.66,
+      "targetKm": 186.4
+    },
+    "poi_linhai_airport": {
+      "lat": 40.3654,
+      "lng": 116.65698,
+      "anchoredKm": 51.05,
+      "targetKm": 268.5
+    },
+    "poi_linhai_sea": {
+      "lat": 40.36672,
+      "lng": 116.65758,
+      "anchoredKm": 51.2,
+      "targetKm": 272.1
+    },
+    "poi_linhai_resort": {
+      "lat": 40.3638,
+      "lng": 116.65516,
+      "anchoredKm": 50.82,
+      "targetKm": 276.8
+    }
+  }
+}

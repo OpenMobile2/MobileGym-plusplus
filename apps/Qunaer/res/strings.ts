@@ -1,0 +1,27 @@
+export const strings = {
+  tabHome: '首页',
+  tabTrip: '行程',
+  tabSupport: '客服',
+  tabWorld: '南京攻略',
+  tabMine: '我的',
+  search: '搜索',
+  back: '返回',
+  book: '订',
+  reserve: '预订',
+  pay: '去支付',
+  viewAll: '查看全部',
+  filters: '筛选',
+  sort: '智能排序',
+  empty: '这里还没有内容',
+  notOpen: '该功能暂未开放',
+  selected: '已选择',
+  orders: '全部订单',
+  login: '登录/注册',
+  confirm: '确认',
+  scenicTickets: '景点·门票',
+  flights: '机票',
+  hotels: '酒店',
+  trains: '火车·高铁',
+};
+
+export type StringKey = keyof typeof strings;

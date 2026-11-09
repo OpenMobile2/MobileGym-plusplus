@@ -1,0 +1,53 @@
+{
+  "_meta": {
+    "id": "kapi.reimburse_mix",
+    "description": "Two bills only: one reimbursable flag on, one off — for toggle / filter tasks.",
+    "apply": "env.set_state(patch, deep=True) after reset/open_app"
+  },
+  "apps": {
+    "kapi": {
+      "bills": [
+        {
+          "id": "b_demo_on",
+          "type": "expense",
+          "categoryId": "c_transport",
+          "categoryName": "交通",
+          "icon": "IcCatTransport",
+          "color": "#FF8A3D",
+          "amount": 48.0,
+          "note": "打车待报销",
+          "date": 1781239620000,
+          "ledgerId": "l_main",
+          "accountId": null,
+          "payee": "滴滴",
+          "tags": [],
+          "discount": null,
+          "refund": null,
+          "reimburse": true,
+          "excludeFlow": false,
+          "excludeBudget": false
+        },
+        {
+          "id": "b_demo_off",
+          "type": "expense",
+          "categoryId": "c_food",
+          "categoryName": "餐饮",
+          "icon": "IcCatFood",
+          "color": "#FFB23E",
+          "amount": 32.0,
+          "note": "午餐不报销",
+          "date": 1781175900000,
+          "ledgerId": "l_main",
+          "accountId": null,
+          "payee": "食堂",
+          "tags": [],
+          "discount": null,
+          "refund": null,
+          "reimburse": false,
+          "excludeFlow": false,
+          "excludeBudget": false
+        }
+      ]
+    }
+  }
+}

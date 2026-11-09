@@ -1,0 +1,17 @@
+{
+  "_note": "合同爬虫误报 baseline(带理由,均单点 Playwright 复现确认非 bug)。爬虫从随机态单击一次,对『点已选中项』与『toast(1.6s 自消,不改持久签名)』天然报 NO_EFFECT;runtime_walkthrough 的 before/after 断言已证明切到别的选项/别的分类时行为正确。",
+  "date": "2026-07-14",
+  "entries": [
+    { "id": "cinema.date.select.option", "verdict": "false_positive", "reason": "点当前已选『今天』tab 无变化;点『明天』场次表联动(runtime W1c 已验)" },
+    { "id": "showtimes.date.select.option", "verdict": "false_positive", "reason": "同上,点已选日期无变化;切别的日期影院列表按日重排" },
+    { "id": "showcat.tab.select.target", "verdict": "false_positive", "reason": "点已选品类tab无变化;切别的品类列表变(演唱会↔话剧)" },
+    { "id": "showcat.filter.select.option", "verdict": "false_positive", "reason": "点『价格低』首条重排生效(陈靖霎→天赐的声音),爬虫点到智能排序=默认态故无变" },
+    { "id": "showdetail.city.select.option", "verdict": "false_positive", "reason": "点已选场次城市chip无变化;切别的站点信息联动" },
+    { "id": "showticket.session.select.option", "verdict": "false_positive", "reason": "单场次演出该chip即当前场次,点选无变化(设计如此)" },
+    { "id": "fun.category.select.option", "verdict": "false_positive", "reason": "点KTV分类商户列表 12→5 过滤生效;爬虫点到与当前列表同结果的分类故无变" },
+    { "id": "fun.filter.select.option", "verdict": "false_positive", "reason": "附近/分类/排序筛选;点后重置分类,与当前态相同故爬虫无感,runtime W14 已验 fun 正常" },
+    { "id": "login.thirdparty.disabled", "verdict": "false_positive", "reason": "微信/QQ登录=wontfix,点击弹 toast『该功能暂未开放』(铁律①);toast 1.6s 自消不改签名故爬虫报 NO_EFFECT" },
+    { "id": "show.artist.disabled", "verdict": "false_positive", "reason": "演出频道艺人预约=wontfix toast;同上 toast 特性" },
+    { "id": "show.calendar.disabled", "verdict": "false_positive", "reason": "演出日历/神券/观演团=wontfix toast;同上 toast 特性" }
+  ]
+}

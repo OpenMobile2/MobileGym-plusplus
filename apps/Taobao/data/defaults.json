@@ -1,0 +1,1711 @@
+{
+  "user": {
+    "id": "u_self",
+    "nick": "tb_lakeside_99",
+    "avatar": "/@app-assets/Taobao/avatars/me.svg",
+    "level": "青铜会员",
+    "is88Vip": false,
+    "savedTotal": 1128,
+    "redPacketAmount": 314,
+    "tmallPoints": 609,
+    "rechargeBalance": 0
+  },
+  "shops": [
+    {
+      "id": "s_qfs",
+      "name": "清风山旗舰店",
+      "badge": "tmall",
+      "rating": 4.9,
+      "fans": "46.8万",
+      "positiveRate": "98%",
+      "certifiedText": "天猫官方认证的清风山旗舰店",
+      "logo": "/@app-assets/Taobao/avatars/s_qfs.svg"
+    },
+    {
+      "id": "s_lanjing",
+      "name": "蓝鲸数码旗舰店",
+      "badge": "tmall",
+      "rating": 4.8,
+      "fans": "120万",
+      "positiveRate": "97%",
+      "certifiedText": "天猫官方认证的蓝鲸数码旗舰店",
+      "logo": "/@app-assets/Taobao/avatars/s_lanjing.svg"
+    },
+    {
+      "id": "s_yunshang",
+      "name": "云裳女装",
+      "badge": "taobao",
+      "rating": 4.7,
+      "fans": "11万",
+      "positiveRate": "96%",
+      "certifiedText": "金牌卖家",
+      "logo": "/@app-assets/Taobao/avatars/s_yunshang.svg"
+    },
+    {
+      "id": "s_juzi",
+      "name": "桔子食品旗舰店",
+      "badge": "tmall",
+      "rating": 4.9,
+      "fans": "88万",
+      "positiveRate": "99%",
+      "certifiedText": "天猫官方认证的桔子食品旗舰店",
+      "logo": "/@app-assets/Taobao/avatars/s_juzi.svg"
+    },
+    {
+      "id": "s_jianmu",
+      "name": "简木家居专营店",
+      "badge": "tmall",
+      "rating": 4.8,
+      "fans": "23万",
+      "positiveRate": "97%",
+      "certifiedText": "天猫官方认证的简木家居专营店",
+      "logo": "/@app-assets/Taobao/avatars/s_jianmu.svg"
+    },
+    {
+      "id": "s_jixing",
+      "name": "极星运动专营店",
+      "badge": "tmall",
+      "rating": 4.8,
+      "fans": "65万",
+      "positiveRate": "98%",
+      "certifiedText": "天猫官方认证的极星运动专营店",
+      "logo": "/@app-assets/Taobao/avatars/s_jixing.svg"
+    }
+  ],
+  "items": [
+    {
+      "id": "i_handcream",
+      "shopId": "s_qfs",
+      "title": "清风山 山雾香氛护手霜 75mL 保湿滋润 生日礼物",
+      "image": "/@app-assets/Taobao/items/i_handcream.png",
+      "detailImages": [
+        "/@app-assets/Taobao/items/i_handcream.png",
+        "/@app-assets/Taobao/items/i_handcream_d.png"
+      ],
+      "price": 128,
+      "originPrice": 168,
+      "sold": "2000+人付款",
+      "tags": [
+        "618品类周",
+        "退货宝",
+        "48小时内发货"
+      ],
+      "specs": [
+        {
+          "name": "香味",
+          "options": [
+            "山雾",
+            "青柑",
+            "雪松",
+            "白茶",
+            "桂语",
+            "深林"
+          ]
+        },
+        {
+          "name": "规格",
+          "options": [
+            "75mL 单支",
+            "75mL×2 礼盒"
+          ]
+        }
+      ],
+      "limitPerOrder": 5,
+      "favCount": 4800,
+      "reviewCount": 2000,
+      "reviewAiTags": [
+        "包装精美",
+        "味道好闻",
+        "滋润不油"
+      ],
+      "gallery": [
+        "/@app-assets/Taobao/items/i_handcream.png",
+        "/@app-assets/Taobao/items/i_handcream_2.png"
+      ],
+      "freeShipping": true,
+      "category": "美妆"
+    },
+    {
+      "id": "i_bodywash",
+      "shopId": "s_qfs",
+      "title": "清风山 葵花沐浴露 500mL 身体乳套装 温和清洁",
+      "image": "/@app-assets/Taobao/items/i_bodywash.png",
+      "detailImages": [
+        "/@app-assets/Taobao/items/i_bodywash.png",
+        "/@app-assets/Taobao/items/i_bodywash_d.png"
+      ],
+      "price": 217,
+      "originPrice": 268,
+      "sold": "600+人付款",
+      "tags": [
+        "官方立减",
+        "天猫超市"
+      ],
+      "specs": [
+        {
+          "name": "规格",
+          "options": [
+            "500mL",
+            "500mL×2"
+          ]
+        }
+      ],
+      "limitPerOrder": null,
+      "favCount": 1200,
+      "reviewCount": 860,
+      "reviewAiTags": [
+        "质量好",
+        "物流快",
+        "性价比高"
+      ],
+      "gallery": [
+        "/@app-assets/Taobao/items/i_bodywash.png",
+        "/@app-assets/Taobao/items/i_bodywash_2.png"
+      ],
+      "freeShipping": true,
+      "category": "美妆"
+    },
+    {
+      "id": "i_serum",
+      "shopId": "s_qfs",
+      "title": "清风山 焕活精华液 30mL 紧致修护",
+      "image": "/@app-assets/Taobao/items/i_serum.png",
+      "detailImages": [
+        "/@app-assets/Taobao/items/i_serum.png",
+        "/@app-assets/Taobao/items/i_serum_d.png"
+      ],
+      "price": 345,
+      "originPrice": 420,
+      "sold": "1000+人付款",
+      "tags": [
+        "新品上市"
+      ],
+      "specs": [
+        {
+          "name": "规格",
+          "options": [
+            "30mL",
+            "50mL"
+          ]
+        }
+      ],
+      "limitPerOrder": null,
+      "favCount": 900,
+      "reviewCount": 520,
+      "reviewAiTags": [
+        "质量好",
+        "物流快",
+        "性价比高"
+      ],
+      "gallery": [
+        "/@app-assets/Taobao/items/i_serum.png",
+        "/@app-assets/Taobao/items/i_serum_2.png"
+      ],
+      "freeShipping": true,
+      "category": "美妆"
+    },
+    {
+      "id": "i_alarm",
+      "shopId": "s_lanjing",
+      "title": "蓝鲸 智能闹钟 多种内置闹铃 睡眠监测 桌面时钟",
+      "image": "/@app-assets/Taobao/items/i_alarm.png",
+      "detailImages": [
+        "/@app-assets/Taobao/items/i_alarm.png",
+        "/@app-assets/Taobao/items/i_alarm_d.png"
+      ],
+      "price": 249,
+      "originPrice": 299,
+      "sold": "300+人付款",
+      "tags": [
+        "国补15%",
+        "以旧换新"
+      ],
+      "specs": [
+        {
+          "name": "颜色",
+          "options": [
+            "曜石黑",
+            "云朵白",
+            "蜜桃粉"
+          ]
+        }
+      ],
+      "limitPerOrder": null,
+      "favCount": 300,
+      "reviewCount": 248,
+      "reviewAiTags": [
+        "闹铃丰富",
+        "做工精致",
+        "屏幕清晰"
+      ],
+      "gallery": [
+        "/@app-assets/Taobao/items/i_alarm.png",
+        "/@app-assets/Taobao/items/i_alarm_2.png"
+      ],
+      "freeShipping": true,
+      "category": "数码"
+    },
+    {
+      "id": "i_earbuds",
+      "shopId": "s_lanjing",
+      "title": "蓝鲸 真无线蓝牙耳机 主动降噪 超长续航",
+      "image": "/@app-assets/Taobao/items/i_earbuds.png",
+      "detailImages": [
+        "/@app-assets/Taobao/items/i_earbuds.png",
+        "/@app-assets/Taobao/items/i_earbuds_d.png"
+      ],
+      "price": 399,
+      "originPrice": 499,
+      "sold": "5000+人付款",
+      "tags": [
+        "百亿补贴",
+        "国补15%"
+      ],
+      "specs": [
+        {
+          "name": "颜色",
+          "options": [
+            "黑色",
+            "白色"
+          ]
+        }
+      ],
+      "limitPerOrder": null,
+      "favCount": 8000,
+      "reviewCount": 12000,
+      "reviewAiTags": [
+        "质量好",
+        "物流快",
+        "性价比高"
+      ],
+      "gallery": [
+        "/@app-assets/Taobao/items/i_earbuds.png",
+        "/@app-assets/Taobao/items/i_earbuds_2.png"
+      ],
+      "freeShipping": true,
+      "category": "数码"
+    },
+    {
+      "id": "i_cable",
+      "shopId": "s_lanjing",
+      "title": "蓝鲸 快充数据线 1.5m 双头Type-C",
+      "image": "/@app-assets/Taobao/items/i_cable.png",
+      "detailImages": [
+        "/@app-assets/Taobao/items/i_cable.png",
+        "/@app-assets/Taobao/items/i_cable_d.png"
+      ],
+      "price": 19.9,
+      "originPrice": 29.9,
+      "sold": "10万+人付款",
+      "tags": [
+        "秒杀价"
+      ],
+      "specs": [
+        {
+          "name": "长度",
+          "options": [
+            "1m",
+            "1.5m",
+            "2m"
+          ]
+        }
+      ],
+      "limitPerOrder": null,
+      "favCount": 20000,
+      "reviewCount": 50000,
+      "reviewAiTags": [
+        "质量好",
+        "物流快",
+        "性价比高"
+      ],
+      "gallery": [
+        "/@app-assets/Taobao/items/i_cable.png",
+        "/@app-assets/Taobao/items/i_cable_2.png"
+      ],
+      "freeShipping": true,
+      "category": "数码"
+    },
+    {
+      "id": "i_hoodie",
+      "shopId": "s_yunshang",
+      "title": "云裳 华夫格卫衣 白灰色 宽松显瘦 开衫外套女",
+      "image": "/@app-assets/Taobao/items/i_hoodie.png",
+      "detailImages": [
+        "/@app-assets/Taobao/items/i_hoodie.png",
+        "/@app-assets/Taobao/items/i_hoodie_d.png"
+      ],
+      "price": 96.9,
+      "originPrice": 129.9,
+      "sold": "300+人付款",
+      "tags": [
+        "618品类周",
+        "消费券",
+        "7天无理由"
+      ],
+      "specs": [
+        {
+          "name": "颜色",
+          "options": [
+            "白灰色",
+            "燕麦色",
+            "雾蓝色"
+          ]
+        },
+        {
+          "name": "尺码",
+          "options": [
+            "S",
+            "M",
+            "L",
+            "XL"
+          ]
+        }
+      ],
+      "limitPerOrder": null,
+      "favCount": 1500,
+      "reviewCount": 320,
+      "reviewAiTags": [
+        "显瘦",
+        "面料舒服",
+        "百搭"
+      ],
+      "gallery": [
+        "/@app-assets/Taobao/items/i_hoodie.png",
+        "/@app-assets/Taobao/items/i_hoodie_2.png"
+      ],
+      "freeShipping": true,
+      "category": "服饰"
+    },
+    {
+      "id": "i_jeans",
+      "shopId": "s_yunshang",
+      "title": "云裳 直筒牛仔裤 高腰垂感 阔腿裤女",
+      "image": "/@app-assets/Taobao/items/i_jeans.png",
+      "detailImages": [
+        "/@app-assets/Taobao/items/i_jeans.png",
+        "/@app-assets/Taobao/items/i_jeans_d.png"
+      ],
+      "price": 279,
+      "originPrice": 329,
+      "sold": "2000+人付款",
+      "tags": [
+        "优惠后",
+        "热销爆款"
+      ],
+      "specs": [
+        {
+          "name": "颜色",
+          "options": [
+            "黑色",
+            "浅蓝"
+          ]
+        },
+        {
+          "name": "尺码",
+          "options": [
+            "S",
+            "M",
+            "L"
+          ]
+        }
+      ],
+      "limitPerOrder": null,
+      "favCount": 3200,
+      "reviewCount": 2100,
+      "reviewAiTags": [
+        "质量好",
+        "物流快",
+        "性价比高"
+      ],
+      "gallery": [
+        "/@app-assets/Taobao/items/i_jeans.png",
+        "/@app-assets/Taobao/items/i_jeans_2.png"
+      ],
+      "freeShipping": true,
+      "category": "服饰"
+    },
+    {
+      "id": "i_tee",
+      "shopId": "s_yunshang",
+      "title": "云裳 印花短袖T恤 纯棉 情侣款",
+      "image": "/@app-assets/Taobao/items/i_tee.png",
+      "detailImages": [
+        "/@app-assets/Taobao/items/i_tee.png",
+        "/@app-assets/Taobao/items/i_tee_d.png"
+      ],
+      "price": 59,
+      "originPrice": 89,
+      "sold": "8000+人付款",
+      "tags": [
+        "天猫618",
+        "晚上架"
+      ],
+      "specs": [
+        {
+          "name": "尺码",
+          "options": [
+            "S",
+            "M",
+            "L",
+            "XL"
+          ]
+        }
+      ],
+      "limitPerOrder": null,
+      "favCount": 5000,
+      "reviewCount": 6000,
+      "reviewAiTags": [
+        "质量好",
+        "物流快",
+        "性价比高"
+      ],
+      "gallery": [
+        "/@app-assets/Taobao/items/i_tee.png",
+        "/@app-assets/Taobao/items/i_tee_2.png"
+      ],
+      "freeShipping": true,
+      "category": "服饰"
+    },
+    {
+      "id": "i_nuts",
+      "shopId": "s_juzi",
+      "title": "桔子 每日坚果礼盒 30包混合装 孕妇零食",
+      "image": "/@app-assets/Taobao/items/i_nuts.png",
+      "detailImages": [
+        "/@app-assets/Taobao/items/i_nuts.png",
+        "/@app-assets/Taobao/items/i_nuts_d.png"
+      ],
+      "price": 75.2,
+      "originPrice": 99,
+      "sold": "5万+人付款",
+      "tags": [
+        "天猫超市",
+        "聚划算"
+      ],
+      "specs": [
+        {
+          "name": "规格",
+          "options": [
+            "30包",
+            "60包"
+          ]
+        }
+      ],
+      "limitPerOrder": null,
+      "favCount": 2058,
+      "reviewCount": 9000,
+      "reviewAiTags": [
+        "新鲜",
+        "分量足",
+        "包装好"
+      ],
+      "gallery": [
+        "/@app-assets/Taobao/items/i_nuts.png",
+        "/@app-assets/Taobao/items/i_nuts_2.png"
+      ],
+      "freeShipping": true,
+      "category": "食品"
+    },
+    {
+      "id": "i_tea",
+      "shopId": "s_juzi",
+      "title": "桔子 冷泡茶组合 12种口味 水果茶包",
+      "image": "/@app-assets/Taobao/items/i_tea.png",
+      "detailImages": [
+        "/@app-assets/Taobao/items/i_tea.png",
+        "/@app-assets/Taobao/items/i_tea_d.png"
+      ],
+      "price": 39.9,
+      "originPrice": 59.9,
+      "sold": "3万+人付款",
+      "tags": [
+        "拍二件"
+      ],
+      "specs": [
+        {
+          "name": "口味",
+          "options": [
+            "混合装",
+            "白桃乌龙",
+            "青提茉莉"
+          ]
+        }
+      ],
+      "limitPerOrder": null,
+      "favCount": 1800,
+      "reviewCount": 4200,
+      "reviewAiTags": [
+        "质量好",
+        "物流快",
+        "性价比高"
+      ],
+      "gallery": [
+        "/@app-assets/Taobao/items/i_tea.png",
+        "/@app-assets/Taobao/items/i_tea_2.png"
+      ],
+      "freeShipping": true,
+      "category": "食品"
+    },
+    {
+      "id": "i_lamp",
+      "shopId": "s_jianmu",
+      "title": "简木 护眼台灯 无极调光 学习阅读床头灯",
+      "image": "/@app-assets/Taobao/items/i_lamp.png",
+      "detailImages": [
+        "/@app-assets/Taobao/items/i_lamp.png",
+        "/@app-assets/Taobao/items/i_lamp_d.png"
+      ],
+      "price": 159,
+      "originPrice": 219,
+      "sold": "1000+人付款",
+      "tags": [
+        "国补",
+        "退货宝"
+      ],
+      "specs": [
+        {
+          "name": "颜色",
+          "options": [
+            "原木色",
+            "白色"
+          ]
+        }
+      ],
+      "limitPerOrder": null,
+      "favCount": 2200,
+      "reviewCount": 1500,
+      "reviewAiTags": [
+        "质量好",
+        "物流快",
+        "性价比高"
+      ],
+      "gallery": [
+        "/@app-assets/Taobao/items/i_lamp.png",
+        "/@app-assets/Taobao/items/i_lamp_2.png"
+      ],
+      "freeShipping": true,
+      "category": "家居"
+    },
+    {
+      "id": "i_tissue",
+      "shopId": "s_jianmu",
+      "title": "简木 雪融山茶花有香手帕纸 24包",
+      "image": "/@app-assets/Taobao/items/i_tissue.png",
+      "detailImages": [
+        "/@app-assets/Taobao/items/i_tissue.png",
+        "/@app-assets/Taobao/items/i_tissue_d.png"
+      ],
+      "price": 12.9,
+      "originPrice": 19.9,
+      "sold": "10万+人付款",
+      "tags": [
+        "破损包退",
+        "极速退款"
+      ],
+      "specs": [
+        {
+          "name": "规格",
+          "options": [
+            "24包",
+            "48包"
+          ]
+        }
+      ],
+      "limitPerOrder": null,
+      "favCount": 900,
+      "reviewCount": 30000,
+      "reviewAiTags": [
+        "质量好",
+        "物流快",
+        "性价比高"
+      ],
+      "gallery": [
+        "/@app-assets/Taobao/items/i_tissue.png",
+        "/@app-assets/Taobao/items/i_tissue_2.png"
+      ],
+      "freeShipping": true,
+      "category": "家居"
+    },
+    {
+      "id": "i_bottle",
+      "shopId": "s_jianmu",
+      "title": "简木 焖烧保温杯 316不锈钢 大容量",
+      "image": "/@app-assets/Taobao/items/i_bottle.png",
+      "detailImages": [
+        "/@app-assets/Taobao/items/i_bottle.png",
+        "/@app-assets/Taobao/items/i_bottle_d.png"
+      ],
+      "price": 89,
+      "originPrice": 129,
+      "sold": "6000+人付款",
+      "tags": [
+        "顺手买"
+      ],
+      "specs": [
+        {
+          "name": "颜色",
+          "options": [
+            "奶白",
+            "雾灰",
+            "黛蓝"
+          ]
+        }
+      ],
+      "limitPerOrder": null,
+      "favCount": 3100,
+      "reviewCount": 4800,
+      "reviewAiTags": [
+        "质量好",
+        "物流快",
+        "性价比高"
+      ],
+      "gallery": [
+        "/@app-assets/Taobao/items/i_bottle.png",
+        "/@app-assets/Taobao/items/i_bottle_2.png"
+      ],
+      "freeShipping": true,
+      "category": "家居"
+    },
+    {
+      "id": "i_sneaker",
+      "shopId": "s_jixing",
+      "title": "极星 轻量跑步鞋 透气缓震 运动鞋男女同款",
+      "image": "/@app-assets/Taobao/items/i_sneaker.png",
+      "detailImages": [
+        "/@app-assets/Taobao/items/i_sneaker.png",
+        "/@app-assets/Taobao/items/i_sneaker_d.png"
+      ],
+      "price": 317,
+      "originPrice": 399,
+      "sold": "2000+人付款",
+      "tags": [
+        "618品类周",
+        "会员价"
+      ],
+      "specs": [
+        {
+          "name": "颜色",
+          "options": [
+            "黑武士",
+            "云白",
+            "荧光绿"
+          ]
+        },
+        {
+          "name": "尺码",
+          "options": [
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43"
+          ]
+        }
+      ],
+      "limitPerOrder": null,
+      "favCount": 4100,
+      "reviewCount": 3300,
+      "reviewAiTags": [
+        "质量好",
+        "物流快",
+        "性价比高"
+      ],
+      "gallery": [
+        "/@app-assets/Taobao/items/i_sneaker.png",
+        "/@app-assets/Taobao/items/i_sneaker_2.png"
+      ],
+      "freeShipping": true,
+      "category": "运动"
+    },
+    {
+      "id": "i_yogamat",
+      "shopId": "s_jixing",
+      "title": "极星 加厚瑜伽垫 防滑静音 健身垫",
+      "image": "/@app-assets/Taobao/items/i_yogamat.png",
+      "detailImages": [
+        "/@app-assets/Taobao/items/i_yogamat.png",
+        "/@app-assets/Taobao/items/i_yogamat_d.png"
+      ],
+      "price": 69,
+      "originPrice": 99,
+      "sold": "1万+人付款",
+      "tags": [
+        "拍下立减"
+      ],
+      "specs": [
+        {
+          "name": "厚度",
+          "options": [
+            "8mm",
+            "10mm",
+            "15mm"
+          ]
+        }
+      ],
+      "limitPerOrder": null,
+      "favCount": 2600,
+      "reviewCount": 7100,
+      "reviewAiTags": [
+        "质量好",
+        "物流快",
+        "性价比高"
+      ],
+      "gallery": [
+        "/@app-assets/Taobao/items/i_yogamat.png",
+        "/@app-assets/Taobao/items/i_yogamat_2.png"
+      ],
+      "freeShipping": true,
+      "category": "运动"
+    },
+    {
+      "id": "i_jacket",
+      "shopId": "s_jixing",
+      "title": "极星 防晒皮肤衣 UPF50+ 轻薄透气外套",
+      "image": "/@app-assets/Taobao/items/i_jacket.png",
+      "detailImages": [
+        "/@app-assets/Taobao/items/i_jacket.png",
+        "/@app-assets/Taobao/items/i_jacket_d.png"
+      ],
+      "price": 113,
+      "originPrice": 159,
+      "sold": "5000+人付款",
+      "tags": [
+        "入会省",
+        "热销爆款"
+      ],
+      "specs": [
+        {
+          "name": "颜色",
+          "options": [
+            "浅杏",
+            "薄雾蓝"
+          ]
+        },
+        {
+          "name": "尺码",
+          "options": [
+            "S",
+            "M",
+            "L"
+          ]
+        }
+      ],
+      "limitPerOrder": null,
+      "favCount": 6300,
+      "reviewCount": 5800,
+      "reviewAiTags": [
+        "质量好",
+        "物流快",
+        "性价比高"
+      ],
+      "gallery": [
+        "/@app-assets/Taobao/items/i_jacket.png",
+        "/@app-assets/Taobao/items/i_jacket_2.png"
+      ],
+      "freeShipping": true,
+      "category": "运动"
+    },
+    {
+      "id": "i_giftbox",
+      "shopId": "s_qfs",
+      "title": "清风山 周年礼盒 护手霜+香氛蜡烛套装",
+      "image": "/@app-assets/Taobao/items/i_giftbox.png",
+      "detailImages": [
+        "/@app-assets/Taobao/items/i_giftbox.png",
+        "/@app-assets/Taobao/items/i_giftbox_d.png"
+      ],
+      "price": 260,
+      "originPrice": 345,
+      "sold": "1000+人付款",
+      "tags": [
+        "新年礼物",
+        "爆款好物"
+      ],
+      "specs": [
+        {
+          "name": "款式",
+          "options": [
+            "经典",
+            "梦境"
+          ]
+        }
+      ],
+      "limitPerOrder": null,
+      "favCount": 1100,
+      "reviewCount": 1000,
+      "reviewAiTags": [
+        "质量好",
+        "物流快",
+        "性价比高"
+      ],
+      "gallery": [
+        "/@app-assets/Taobao/items/i_giftbox.png",
+        "/@app-assets/Taobao/items/i_giftbox_2.png"
+      ],
+      "freeShipping": true,
+      "category": "美妆"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "r_i_handcream_0",
+      "itemId": "i_handcream",
+      "userNick": "发才",
+      "userAvatar": "/@app-assets/Taobao/avatars/u0.svg",
+      "vipTag": "88VIP",
+      "skuDesc": "香味:山雾",
+      "content": "除了日期不太理想其他都好,发货快顺丰给力,次日达。辛苦你们啦,谢谢!",
+      "images": [
+        "/@app-assets/Taobao/items/i_handcream.png"
+      ],
+      "timestamp": 1780653600000
+    },
+    {
+      "id": "r_i_handcream_1",
+      "itemId": "i_handcream",
+      "userNick": "夕阳西下",
+      "userAvatar": "/@app-assets/Taobao/avatars/u1.svg",
+      "vipTag": null,
+      "skuDesc": "香味:青柑",
+      "content": "包装很严实,收到时一点没漏,很棒。",
+      "images": [],
+      "timestamp": 1780567200000
+    },
+    {
+      "id": "r_i_handcream_2",
+      "itemId": "i_handcream",
+      "userNick": "豆豆龙",
+      "userAvatar": "/@app-assets/Taobao/avatars/u2.svg",
+      "vipTag": null,
+      "skuDesc": "香味:雪松",
+      "content": "第二次购买了,品质稳定,推荐!",
+      "images": [],
+      "timestamp": 1780480800000
+    },
+    {
+      "id": "r_i_bodywash_0",
+      "itemId": "i_bodywash",
+      "userNick": "清晨小鹿",
+      "userAvatar": "/@app-assets/Taobao/avatars/u3.svg",
+      "vipTag": "88VIP",
+      "skuDesc": "规格:500mL",
+      "content": "质量不错,和描述一致,家人很喜欢。",
+      "images": [
+        "/@app-assets/Taobao/items/i_bodywash.png"
+      ],
+      "timestamp": 1780653600000
+    },
+    {
+      "id": "r_i_bodywash_1",
+      "itemId": "i_bodywash",
+      "userNick": "白桃气泡",
+      "userAvatar": "/@app-assets/Taobao/avatars/u4.svg",
+      "vipTag": null,
+      "skuDesc": "规格:500mL×2",
+      "content": "除了日期不太理想其他都好,发货快顺丰给力,次日达。辛苦你们啦,谢谢!",
+      "images": [],
+      "timestamp": 1780567200000
+    },
+    {
+      "id": "r_i_bodywash_2",
+      "itemId": "i_bodywash",
+      "userNick": "发才",
+      "userAvatar": "/@app-assets/Taobao/avatars/u0.svg",
+      "vipTag": null,
+      "skuDesc": "规格:500mL",
+      "content": "包装很严实,收到时一点没漏,很棒。",
+      "images": [],
+      "timestamp": 1780480800000
+    },
+    {
+      "id": "r_i_serum_0",
+      "itemId": "i_serum",
+      "userNick": "夕阳西下",
+      "userAvatar": "/@app-assets/Taobao/avatars/u1.svg",
+      "vipTag": "88VIP",
+      "skuDesc": "规格:30mL",
+      "content": "好用,香味很好闻,整体很好,吸收快,会回购的。",
+      "images": [
+        "/@app-assets/Taobao/items/i_serum.png"
+      ],
+      "timestamp": 1780653600000
+    },
+    {
+      "id": "r_i_serum_1",
+      "itemId": "i_serum",
+      "userNick": "豆豆龙",
+      "userAvatar": "/@app-assets/Taobao/avatars/u2.svg",
+      "vipTag": null,
+      "skuDesc": "规格:50mL",
+      "content": "质量不错,和描述一致,家人很喜欢。",
+      "images": [],
+      "timestamp": 1780567200000
+    },
+    {
+      "id": "r_i_serum_2",
+      "itemId": "i_serum",
+      "userNick": "清晨小鹿",
+      "userAvatar": "/@app-assets/Taobao/avatars/u3.svg",
+      "vipTag": null,
+      "skuDesc": "规格:30mL",
+      "content": "除了日期不太理想其他都好,发货快顺丰给力,次日达。辛苦你们啦,谢谢!",
+      "images": [],
+      "timestamp": 1780480800000
+    },
+    {
+      "id": "r_i_alarm_0",
+      "itemId": "i_alarm",
+      "userNick": "白桃气泡",
+      "userAvatar": "/@app-assets/Taobao/avatars/u4.svg",
+      "vipTag": "88VIP",
+      "skuDesc": "颜色:曜石黑",
+      "content": "第二次购买了,品质稳定,推荐!",
+      "images": [
+        "/@app-assets/Taobao/items/i_alarm.png"
+      ],
+      "timestamp": 1780653600000
+    },
+    {
+      "id": "r_i_alarm_1",
+      "itemId": "i_alarm",
+      "userNick": "发才",
+      "userAvatar": "/@app-assets/Taobao/avatars/u0.svg",
+      "vipTag": null,
+      "skuDesc": "颜色:云朵白",
+      "content": "好用,香味很好闻,整体很好,吸收快,会回购的。",
+      "images": [],
+      "timestamp": 1780567200000
+    },
+    {
+      "id": "r_i_alarm_2",
+      "itemId": "i_alarm",
+      "userNick": "夕阳西下",
+      "userAvatar": "/@app-assets/Taobao/avatars/u1.svg",
+      "vipTag": null,
+      "skuDesc": "颜色:蜜桃粉",
+      "content": "质量不错,和描述一致,家人很喜欢。",
+      "images": [],
+      "timestamp": 1780480800000
+    },
+    {
+      "id": "r_i_earbuds_0",
+      "itemId": "i_earbuds",
+      "userNick": "豆豆龙",
+      "userAvatar": "/@app-assets/Taobao/avatars/u2.svg",
+      "vipTag": "88VIP",
+      "skuDesc": "颜色:黑色",
+      "content": "包装很严实,收到时一点没漏,很棒。",
+      "images": [
+        "/@app-assets/Taobao/items/i_earbuds.png"
+      ],
+      "timestamp": 1780653600000
+    },
+    {
+      "id": "r_i_earbuds_1",
+      "itemId": "i_earbuds",
+      "userNick": "清晨小鹿",
+      "userAvatar": "/@app-assets/Taobao/avatars/u3.svg",
+      "vipTag": null,
+      "skuDesc": "颜色:白色",
+      "content": "第二次购买了,品质稳定,推荐!",
+      "images": [],
+      "timestamp": 1780567200000
+    },
+    {
+      "id": "r_i_earbuds_2",
+      "itemId": "i_earbuds",
+      "userNick": "白桃气泡",
+      "userAvatar": "/@app-assets/Taobao/avatars/u4.svg",
+      "vipTag": null,
+      "skuDesc": "颜色:黑色",
+      "content": "好用,香味很好闻,整体很好,吸收快,会回购的。",
+      "images": [],
+      "timestamp": 1780480800000
+    },
+    {
+      "id": "r_i_cable_0",
+      "itemId": "i_cable",
+      "userNick": "发才",
+      "userAvatar": "/@app-assets/Taobao/avatars/u0.svg",
+      "vipTag": "88VIP",
+      "skuDesc": "长度:1m",
+      "content": "除了日期不太理想其他都好,发货快顺丰给力,次日达。辛苦你们啦,谢谢!",
+      "images": [
+        "/@app-assets/Taobao/items/i_cable.png"
+      ],
+      "timestamp": 1780653600000
+    },
+    {
+      "id": "r_i_cable_1",
+      "itemId": "i_cable",
+      "userNick": "夕阳西下",
+      "userAvatar": "/@app-assets/Taobao/avatars/u1.svg",
+      "vipTag": null,
+      "skuDesc": "长度:1.5m",
+      "content": "包装很严实,收到时一点没漏,很棒。",
+      "images": [],
+      "timestamp": 1780567200000
+    },
+    {
+      "id": "r_i_cable_2",
+      "itemId": "i_cable",
+      "userNick": "豆豆龙",
+      "userAvatar": "/@app-assets/Taobao/avatars/u2.svg",
+      "vipTag": null,
+      "skuDesc": "长度:2m",
+      "content": "第二次购买了,品质稳定,推荐!",
+      "images": [],
+      "timestamp": 1780480800000
+    },
+    {
+      "id": "r_i_hoodie_0",
+      "itemId": "i_hoodie",
+      "userNick": "清晨小鹿",
+      "userAvatar": "/@app-assets/Taobao/avatars/u3.svg",
+      "vipTag": "88VIP",
+      "skuDesc": "颜色:白灰色",
+      "content": "质量不错,和描述一致,家人很喜欢。",
+      "images": [
+        "/@app-assets/Taobao/items/i_hoodie.png"
+      ],
+      "timestamp": 1780653600000
+    },
+    {
+      "id": "r_i_hoodie_1",
+      "itemId": "i_hoodie",
+      "userNick": "白桃气泡",
+      "userAvatar": "/@app-assets/Taobao/avatars/u4.svg",
+      "vipTag": null,
+      "skuDesc": "颜色:燕麦色",
+      "content": "除了日期不太理想其他都好,发货快顺丰给力,次日达。辛苦你们啦,谢谢!",
+      "images": [],
+      "timestamp": 1780567200000
+    },
+    {
+      "id": "r_i_hoodie_2",
+      "itemId": "i_hoodie",
+      "userNick": "发才",
+      "userAvatar": "/@app-assets/Taobao/avatars/u0.svg",
+      "vipTag": null,
+      "skuDesc": "颜色:雾蓝色",
+      "content": "包装很严实,收到时一点没漏,很棒。",
+      "images": [],
+      "timestamp": 1780480800000
+    },
+    {
+      "id": "r_i_jeans_0",
+      "itemId": "i_jeans",
+      "userNick": "夕阳西下",
+      "userAvatar": "/@app-assets/Taobao/avatars/u1.svg",
+      "vipTag": "88VIP",
+      "skuDesc": "颜色:黑色",
+      "content": "好用,香味很好闻,整体很好,吸收快,会回购的。",
+      "images": [
+        "/@app-assets/Taobao/items/i_jeans.png"
+      ],
+      "timestamp": 1780653600000
+    },
+    {
+      "id": "r_i_jeans_1",
+      "itemId": "i_jeans",
+      "userNick": "豆豆龙",
+      "userAvatar": "/@app-assets/Taobao/avatars/u2.svg",
+      "vipTag": null,
+      "skuDesc": "颜色:浅蓝",
+      "content": "质量不错,和描述一致,家人很喜欢。",
+      "images": [],
+      "timestamp": 1780567200000
+    },
+    {
+      "id": "r_i_jeans_2",
+      "itemId": "i_jeans",
+      "userNick": "清晨小鹿",
+      "userAvatar": "/@app-assets/Taobao/avatars/u3.svg",
+      "vipTag": null,
+      "skuDesc": "颜色:黑色",
+      "content": "除了日期不太理想其他都好,发货快顺丰给力,次日达。辛苦你们啦,谢谢!",
+      "images": [],
+      "timestamp": 1780480800000
+    }
+  ],
+  "cart": [
+    {
+      "id": "c1",
+      "itemId": "i_bodywash",
+      "skuDesc": "规格:500mL×2",
+      "qty": 1,
+      "price": 217,
+      "selected": false,
+      "invalid": false,
+      "addedAt": 1780822800000
+    },
+    {
+      "id": "c2",
+      "itemId": "i_earbuds",
+      "skuDesc": "颜色:白色",
+      "qty": 1,
+      "price": 399,
+      "selected": false,
+      "invalid": false,
+      "addedAt": 1780754400000
+    },
+    {
+      "id": "c3",
+      "itemId": "i_hoodie",
+      "skuDesc": "颜色:白灰色;尺码:M",
+      "qty": 1,
+      "price": 96.9,
+      "selected": false,
+      "invalid": false,
+      "addedAt": 1780776000000
+    },
+    {
+      "id": "c4",
+      "itemId": "i_nuts",
+      "skuDesc": "规格:30包",
+      "qty": 2,
+      "price": 75.2,
+      "selected": false,
+      "invalid": false,
+      "addedAt": 1780484400000
+    },
+    {
+      "id": "c5",
+      "itemId": "i_tissue",
+      "skuDesc": "规格:24包",
+      "qty": 1,
+      "price": 12.9,
+      "selected": false,
+      "invalid": true,
+      "addedAt": 1779177600000
+    }
+  ],
+  "addresses": [
+    {
+      "id": "addr1",
+      "name": "沈青",
+      "phone": "13800000152",
+      "region": "江苏省 无锡市 新吴区 梅村街道",
+      "detail": "云溪正荣玺樾16幢602",
+      "tag": null,
+      "isDefault": true
+    },
+    {
+      "id": "addr2",
+      "name": "沈青",
+      "phone": "13800000152",
+      "region": "上海市 上海市 闵行区 莘庄镇",
+      "detail": "七莘路765弄东苑新天地公寓207",
+      "tag": "家",
+      "isDefault": false
+    },
+    {
+      "id": "addr3",
+      "name": "沈青",
+      "phone": "13800000152",
+      "region": "吉林省 长春市 朝阳区 双德街道",
+      "detail": "前进大街2699号吉林大学前卫南区南苑七舍",
+      "tag": null,
+      "isDefault": false
+    },
+    {
+      "id": "addr4",
+      "name": "沈青",
+      "phone": "13800000152",
+      "region": "江苏省 无锡市 滨湖区 太湖街道",
+      "detail": "南湖家园8号1302",
+      "tag": null,
+      "isDefault": false
+    },
+    {
+      "id": "addr5",
+      "name": "顾一鸣",
+      "phone": "15800000055",
+      "region": "上海市 上海市 闵行区 江川路街道",
+      "detail": "东川路800号上海交通大学闵行校区东22宿舍",
+      "tag": "学校",
+      "isDefault": false
+    }
+  ],
+  "orders": [
+    {
+      "id": "o_pend",
+      "orderNo": "3307249273297013984",
+      "shopId": "s_qfs",
+      "shopName": "清风山旗舰店",
+      "shopBadge": "tmall",
+      "lines": [
+        {
+          "itemId": "i_handcream",
+          "title": "清风山 山雾香氛护手霜 75mL 保湿滋润 生日礼物",
+          "image": "/@app-assets/Taobao/items/i_handcream.png",
+          "skuDesc": "香味:山雾;规格:75mL 单支",
+          "price": 280,
+          "qty": 1
+        }
+      ],
+      "itemTotal": 280,
+      "shopDiscount": 0,
+      "shippingFee": 0,
+      "paidAmount": 280,
+      "status": "pendingPayment",
+      "addressSnapshot": {
+        "name": "沈青",
+        "phone": "138****0152",
+        "full": "江苏省无锡市新吴区梅村街道云溪正荣玺樾16幢602"
+      },
+      "payMethod": null,
+      "createdAt": 1781088060000,
+      "paidAt": null,
+      "shippedAt": null,
+      "completedAt": null,
+      "payDeadline": 1781095260000,
+      "autoConfirmAt": null,
+      "logistics": {
+        "noLogistics": false,
+        "company": null,
+        "trackingNo": null,
+        "nodes": []
+      },
+      "reviewed": false,
+      "gift": null
+    },
+    {
+      "id": "o_ship1",
+      "orderNo": "3306457095190013984",
+      "shopId": "s_lanjing",
+      "shopName": "蓝鲸数码旗舰店",
+      "shopBadge": "tmall",
+      "lines": [
+        {
+          "itemId": "i_alarm",
+          "title": "蓝鲸 智能闹钟 多种内置闹铃 睡眠监测 桌面时钟",
+          "image": "/@app-assets/Taobao/items/i_alarm.png",
+          "skuDesc": "颜色:曜石黑",
+          "price": 110,
+          "qty": 1
+        }
+      ],
+      "itemTotal": 110,
+      "shopDiscount": 0,
+      "shippingFee": 0,
+      "paidAmount": 110,
+      "status": "shipped",
+      "addressSnapshot": {
+        "name": "沈青",
+        "phone": "138****0152",
+        "full": "江苏省无锡市新吴区梅村街道云溪正荣玺樾16幢602"
+      },
+      "payMethod": "微信支付",
+      "createdAt": 1780922220000,
+      "paidAt": 1780922220000,
+      "shippedAt": 1780922280000,
+      "completedAt": null,
+      "payDeadline": null,
+      "autoConfirmAt": 1781613480000,
+      "logistics": {
+        "noLogistics": true,
+        "company": null,
+        "trackingNo": null,
+        "nodes": []
+      },
+      "reviewed": false,
+      "gift": null
+    },
+    {
+      "id": "o_ship2",
+      "orderNo": "3306458800210013984",
+      "shopId": "s_jianmu",
+      "shopName": "简木家居专营店",
+      "shopBadge": "tmall",
+      "lines": [
+        {
+          "itemId": "i_lamp",
+          "title": "简木 护眼台灯 无极调光 学习阅读床头灯",
+          "image": "/@app-assets/Taobao/items/i_lamp.png",
+          "skuDesc": "颜色:原木色",
+          "price": 159,
+          "qty": 1
+        }
+      ],
+      "itemTotal": 159,
+      "shopDiscount": 10,
+      "shippingFee": 0,
+      "paidAmount": 149,
+      "status": "shipped",
+      "addressSnapshot": {
+        "name": "沈青",
+        "phone": "138****0152",
+        "full": "江苏省无锡市新吴区梅村街道云溪正荣玺樾16幢602"
+      },
+      "payMethod": "支付宝",
+      "createdAt": 1780737120000,
+      "paidAt": 1780737180000,
+      "shippedAt": 1780849800000,
+      "completedAt": null,
+      "payDeadline": null,
+      "autoConfirmAt": 1781541000000,
+      "logistics": {
+        "noLogistics": false,
+        "company": "菜鸟速递",
+        "trackingNo": "CN8861736605",
+        "nodes": [
+          {
+            "status": "派送中",
+            "desc": "快件正在派送途中,请保持电话畅通",
+            "timestamp": 1780909500000
+          },
+          {
+            "status": "运输中",
+            "desc": "快件已到达【无锡新吴分拨中心】",
+            "timestamp": 1780886400000
+          },
+          {
+            "status": "已发货",
+            "desc": "快件已从【杭州转运中心】发出",
+            "timestamp": 1780855320000
+          },
+          {
+            "status": "已揽收",
+            "desc": "菜鸟速递已揽收快件",
+            "timestamp": 1780850100000
+          }
+        ]
+      },
+      "reviewed": false,
+      "gift": null
+    },
+    {
+      "id": "o_done1",
+      "orderNo": "2701804440017059993",
+      "shopId": "s_qfs",
+      "shopName": "清风山旗舰店",
+      "shopBadge": "tmall",
+      "lines": [
+        {
+          "itemId": "i_serum",
+          "title": "清风山 焕活精华液 30mL 紧致修护",
+          "image": "/@app-assets/Taobao/items/i_serum.png",
+          "skuDesc": "规格:30mL【尝鲜装】",
+          "price": 239,
+          "qty": 1
+        }
+      ],
+      "itemTotal": 282,
+      "shopDiscount": 43,
+      "shippingFee": 0,
+      "paidAmount": 239,
+      "status": "completed",
+      "addressSnapshot": {
+        "name": "沈青",
+        "phone": "138****0152",
+        "full": "江苏省无锡市新吴区梅村街道云溪正荣玺樾16幢602"
+      },
+      "payMethod": "支付宝",
+      "createdAt": 1775052120000,
+      "paidAt": 1775052180000,
+      "shippedAt": 1775120400000,
+      "completedAt": 1775388000000,
+      "payDeadline": null,
+      "autoConfirmAt": null,
+      "logistics": {
+        "noLogistics": false,
+        "company": "圆通速递",
+        "trackingNo": "YT7723910044",
+        "nodes": [
+          {
+            "status": "已签收",
+            "desc": "快件已签收,签收人:丰巢快递柜",
+            "timestamp": 1775387880000
+          }
+        ]
+      },
+      "reviewed": false,
+      "gift": "新客小样×1"
+    },
+    {
+      "id": "o_done2",
+      "orderNo": "3306455066805013984",
+      "shopId": "s_juzi",
+      "shopName": "桔子食品旗舰店",
+      "shopBadge": "tmall",
+      "lines": [
+        {
+          "itemId": "i_nuts",
+          "title": "桔子 每日坚果礼盒 30包混合装 孕妇零食",
+          "image": "/@app-assets/Taobao/items/i_nuts.png",
+          "skuDesc": "规格:30包",
+          "price": 75.2,
+          "qty": 1
+        }
+      ],
+      "itemTotal": 75.2,
+      "shopDiscount": 0,
+      "shippingFee": 0,
+      "paidAmount": 75.2,
+      "status": "completed",
+      "addressSnapshot": {
+        "name": "沈青",
+        "phone": "138****0152",
+        "full": "上海市上海市闵行区莘庄镇七莘路765弄东苑新天地公寓207"
+      },
+      "payMethod": "支付宝",
+      "createdAt": 1780135200000,
+      "paidAt": 1780135260000,
+      "shippedAt": 1780214400000,
+      "completedAt": 1780401600000,
+      "payDeadline": null,
+      "autoConfirmAt": null,
+      "logistics": {
+        "noLogistics": false,
+        "company": "中通快递",
+        "trackingNo": "ZT4456120098",
+        "nodes": [
+          {
+            "status": "已签收",
+            "desc": "已签收,感谢使用中通快递",
+            "timestamp": 1780401480000
+          }
+        ]
+      },
+      "reviewed": true,
+      "gift": null
+    }
+  ],
+  "refunds": [
+    {
+      "id": "rf1",
+      "orderId": "o_refd",
+      "line": {
+        "itemId": "i_tee",
+        "title": "云裳 印花短袖T恤 纯棉 情侣款",
+        "image": "/@app-assets/Taobao/items/i_tee.png",
+        "skuDesc": "尺码:M",
+        "price": 62.1,
+        "qty": 1
+      },
+      "shopName": "云裳女装",
+      "shopBadge": "taobao",
+      "refundType": "退货/退款",
+      "reason": "不想要了",
+      "amount": 62.1,
+      "status": "success",
+      "createdAt": 1779627600000
+    }
+  ],
+  "chats": [
+    {
+      "id": "ch_sys_logi",
+      "kind": "system",
+      "shopId": null,
+      "name": "交易物流",
+      "avatar": "/@app-assets/Taobao/avatars/sys_logi.svg",
+      "unread": 1,
+      "isSticky": false,
+      "messages": [
+        {
+          "id": "m1",
+          "sender": "peer",
+          "type": "text",
+          "content": "您的订单【简木 护眼台灯】已由菜鸟速递揽收,正在派送途中。",
+          "timestamp": 1780909560000
+        }
+      ]
+    },
+    {
+      "id": "ch_juzi",
+      "kind": "shop",
+      "shopId": "s_juzi",
+      "name": "桔子食品旗舰店",
+      "avatar": "/@app-assets/Taobao/avatars/s_juzi.svg",
+      "unread": 1,
+      "isSticky": false,
+      "messages": [
+        {
+          "id": "m1",
+          "sender": "peer",
+          "type": "addressConfirm",
+          "content": "请确认收货地址",
+          "timestamp": 1780239120000,
+          "confirmed": false
+        },
+        {
+          "id": "m2",
+          "sender": "peer",
+          "type": "text",
+          "content": "欢迎光临桔子食品旗舰店,请问有什么可以帮到宝的呢【0元入会】入会享1元无门槛券和100-10元优惠~",
+          "timestamp": 1780915200000
+        }
+      ]
+    },
+    {
+      "id": "ch_qfs",
+      "kind": "shop",
+      "shopId": "s_qfs",
+      "name": "清风山旗舰店",
+      "avatar": "/@app-assets/Taobao/avatars/s_qfs.svg",
+      "unread": 0,
+      "isSticky": false,
+      "messages": [
+        {
+          "id": "m1",
+          "sender": "me",
+          "type": "text",
+          "content": "你好,请问礼盒可以写贺卡吗?",
+          "timestamp": 1780686120000
+        },
+        {
+          "id": "m2",
+          "sender": "peer",
+          "type": "text",
+          "content": "亲亲可以的哦,下单备注贺卡内容即可~",
+          "timestamp": 1780686180000
+        }
+      ]
+    },
+    {
+      "id": "ch_ai",
+      "kind": "ai",
+      "shopId": null,
+      "name": "AI购物助手",
+      "avatar": "/@app-assets/Taobao/avatars/ai.svg",
+      "unread": 0,
+      "isSticky": false,
+      "messages": [
+        {
+          "id": "m1",
+          "sender": "peer",
+          "type": "text",
+          "content": "我是你的 AI 购物助手,可以帮你找商品、查订单、比价格,试试问我「有什么好用的护手霜」~",
+          "timestamp": 1780826400000
+        }
+      ]
+    }
+  ],
+  "coupons": [
+    {
+      "id": "cp1",
+      "title": "消费券",
+      "amount": 250,
+      "thresholdText": "满500可用",
+      "scope": "购物",
+      "validText": "6.10-6.18 可用",
+      "used": false
+    },
+    {
+      "id": "cp2",
+      "title": "门票新人券",
+      "amount": 30,
+      "thresholdText": "封顶减30元",
+      "scope": "飞猪",
+      "validText": "距失效仅剩2天13小时",
+      "used": false
+    },
+    {
+      "id": "cp3",
+      "title": "国内机票家庭礼包券",
+      "amount": 35,
+      "thresholdText": "满36元可用",
+      "scope": "飞猪",
+      "validText": "限飞猪旅行指定商品可用",
+      "used": false
+    },
+    {
+      "id": "cp4",
+      "title": "爆品通吃券",
+      "amount": 1.9,
+      "thresholdText": "券倍价",
+      "scope": "外卖",
+      "validText": "仅剩最后13:39:00",
+      "used": false
+    },
+    {
+      "id": "cp5",
+      "title": "美妆加补券",
+      "amount": 200,
+      "thresholdText": "满990可用",
+      "scope": "购物",
+      "validText": "618品类周专享",
+      "used": false
+    },
+    {
+      "id": "cp6",
+      "title": "服装加补券",
+      "amount": 12,
+      "thresholdText": "满120可用",
+      "scope": "购物",
+      "validText": "618品类周专享",
+      "used": false
+    }
+  ],
+  "favorites": [
+    "i_giftbox",
+    "i_nuts"
+  ],
+  "footprints": [
+    {
+      "itemId": "i_handcream",
+      "date": 1780876800000
+    },
+    {
+      "itemId": "i_alarm",
+      "date": 1780790400000
+    },
+    {
+      "itemId": "i_sneaker",
+      "date": 1780790400000
+    },
+    {
+      "itemId": "i_hoodie",
+      "date": 1780444800000
+    },
+    {
+      "itemId": "i_lamp",
+      "date": 1780272000000
+    }
+  ],
+  "followedShops": [
+    "s_qfs"
+  ],
+  "memberShops": [],
+  "searchHistory": [
+    "护手霜",
+    "智能闹钟",
+    "卫衣女",
+    "瑜伽垫",
+    "坚果礼盒"
+  ],
+  "searchDiscover": [
+    "清风山护手霜",
+    "智能闹钟",
+    "白灰卫衣",
+    "冷泡茶",
+    "护眼台灯",
+    "防晒衣",
+    "跑步鞋男",
+    "保温杯",
+    "每日坚果",
+    "蓝牙耳机降噪"
+  ],
+  "hotSearch": [
+    "618开门红",
+    "防晒衣UPF50",
+    "蓝牙耳机",
+    "每日坚果",
+    "护手霜礼盒",
+    "瑜伽垫加厚"
+  ],
+  "myReviews": [
+    {
+      "orderId": "o_done2",
+      "itemId": "i_nuts",
+      "content": "坚果很新鲜,分量足,回购第三次了。",
+      "timestamp": 1780479000000
+    }
+  ],
+  "priceAlerts": [],
+  "claimedCenterCoupons": [],
+  "homeCouponClaimed": false,
+  "checkout": null
+}

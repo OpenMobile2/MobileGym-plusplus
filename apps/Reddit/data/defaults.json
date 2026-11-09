@@ -1,0 +1,69 @@
+{
+  "user": {
+    "username": "Embarrassed_Fee8630",
+    "isOnline": true,
+    "postIds": ["my_post_1"],
+    "commentIds": [],
+    "savedPostIds": [],
+    "joinedCommunityIds": [],
+    "postVotes": {},
+    "commentVotes": {}
+  },
+  "posts": {
+    "my_post_1": {
+      "id": "my_post_1",
+      "subreddit": "r/self",
+      "timeAgo": "now",
+      "title": "有没有人也会半夜突然想整理房间?",
+      "content": "明明很困了,但一想到明天事情多,就忍不住开始收拾桌面、整理衣柜,结果越收拾越精神。你们会这样吗?",
+      "upvotes": "1",
+      "comments": "0",
+      "shares": 0,
+      "isAd": false,
+      "url": "",
+      "commentsData": []
+    }
+  },
+  "comments": {},
+  "chatThreads": {
+    "Objective-Skill-2591": [
+      { "id": "ct_obj_1", "from": "them", "body": "你上次推荐的那家店我去了,味道确实不错!", "created_utc": 1710000001 },
+      { "id": "ct_obj_2", "from": "me", "body": "我等下去把快递拿一下,晚点回你。", "created_utc": 1710000003 }
+    ],
+    "Intelligent_Drama_46": [
+      { "id": "ct_int_1", "from": "me", "body": "hello", "created_utc": 1710000100 },
+      { "id": "ct_int_2", "from": "me", "body": "我刚看到你发的链接了,明天再细看。", "created_utc": 1710000101 }
+    ]
+  },
+  "chatReplies": {
+    "Objective-Skill-2591:ct_obj_1": [
+      { "id": "cr_obj_1", "from": "me", "body": "确实不错,下次我再去试试别的菜。", "created_utc": 1710000004 }
+    ]
+  },
+  "settings": {
+    "showNSFW": false,
+    "blurNSFW": true,
+    "showCommunityStyles": true,
+    "theme": "auto",
+    "autoplayVideo": "wifi",
+    "quietAudio": false,
+    "inboxNotifications": true,
+    "commentReplyNotifications": true,
+    "upvoteNotifications": true,
+    "mentionNotifications": true,
+    "chatMessageNotifications": true,
+    "communityAlerts": true,
+    "trendingNotifications": true,
+    "homeFeedRecommendations": true,
+    "allowCookies": true,
+    "personalizedAds": true,
+    "showOnlineStatus": true,
+    "defaultCommentSort": "best",
+    "rememberPerPostSort": true,
+    "textSize": "default",
+    "reduceAnimations": false,
+    "openLinksInApp": true,
+    "savedImageAttribution": true,
+    "defaultMarkdown": false
+  }
+}

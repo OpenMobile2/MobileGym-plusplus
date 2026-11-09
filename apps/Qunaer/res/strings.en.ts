@@ -1,0 +1,27 @@
+import type { StringKey } from './strings';
+
+export const stringsEn: Partial<Record<StringKey, string>> = {
+  tabHome: 'Home',
+  tabTrip: 'Trips',
+  tabSupport: 'Support',
+  tabWorld: 'Explore',
+  tabMine: 'Me',
+  search: 'Search',
+  back: 'Back',
+  book: 'Book',
+  reserve: 'Reserve',
+  pay: 'Pay now',
+  viewAll: 'View all',
+  filters: 'Filters',
+  sort: 'Recommended',
+  empty: 'Nothing here yet',
+  notOpen: 'This feature is not available yet',
+  selected: 'Selected',
+  orders: 'All orders',
+  login: 'Sign in',
+  confirm: 'Confirm',
+  scenicTickets: 'Attractions',
+  flights: 'Flights',
+  hotels: 'Hotels',
+  trains: 'Trains',
+};

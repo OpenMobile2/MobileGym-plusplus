@@ -1,0 +1,67 @@
+// 中文为基准文案(as const)。英文覆盖见 strings.en.ts,经 useAppStrings 跟随 OS 语言切换。
+// 接入范围:导航/Tab/主按钮/空态(保真四要素 10.2 硬约束)。
+export const strings = {
+  // TabBar
+  tab_home: '首页',
+  tab_discover: '逛',
+  tab_message: '消息',
+  tab_cart: '购物车',
+  tab_mine: '我的',
+  // 主按钮
+  btn_search: '搜索',
+  btn_pin: '发起拼单',
+  btn_buy_single: '单独购买',
+  btn_order_now: '0元下单',
+  btn_order_now_sub: '确认收货后付款',
+  btn_pay_now: '立即支付',
+  btn_join_pin: '一键参团',
+  btn_invite: '邀请好友拼单',
+  btn_solo: '直接免拼',
+  btn_add_address: '新增收货地址',
+  btn_save: '保存',
+  btn_submit: '提交',
+  btn_confirm: '确定',
+  btn_confirm_refund: '确认退款',
+  btn_manage: '管理',
+  btn_delete: '删除',
+  btn_go_shopping: '去逛逛',
+  // 订单状态 Tab
+  order_all: '全部',
+  order_unpaid: '待付款',
+  order_undelivered: '待收货',
+  order_unused: '待使用',
+  order_done: '已完成',
+  // 页面标题
+  title_orders: '我的订单',
+  title_address: '收货地址',
+  title_edit_address: '编辑地址',
+  title_favorites: '商品收藏',
+  title_footprint: '历史浏览',
+  title_coupons: '我的优惠券',
+  title_coupon_center: '领券中心',
+  title_settings: '设置',
+  title_logistics: '物流详情',
+  title_aftersale: '退款/售后',
+  title_wallet: '多多钱包',
+  title_search: '搜索',
+  title_cs: '官方客服',
+  // 空态
+  empty_orders: '还没有相关订单',
+  empty_favorites: '还没有收藏商品',
+  empty_footprint: '还没有浏览记录',
+  empty_coupons: '暂无可用优惠券',
+  empty_chat: '暂无消息',
+  empty_search: '没有找到相关商品',
+  // 通用
+  feature_unavailable: '该功能暂未开放',
+  sort_comprehensive: '综合',
+  sort_sales: '销量',
+  sort_price: '价格',
+  filter: '筛选',
+  fufei_tag: '先用后付',
+  pin_price: '拼单价',
+  single_price: '单独购买',
+  search_placeholder: '搜索你想要的商品',
+} as const;
+
+export type StringKey = keyof typeof strings;

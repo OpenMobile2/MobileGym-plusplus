@@ -1,0 +1,86 @@
+/** 中文基准文案(导航/Tab/主按钮/空态)。英文覆盖见 strings.en.ts,经 useAppStrings 跟随 OS。 */
+export const STRINGS = {
+  'nav.todo': '待办',
+  'nav.lock': '锁机',
+  'nav.stats': '统计数据',
+  'nav.timeline': '时间轴',
+  'nav.profile': '我的',
+
+  'todo.title': '待办',
+  'todo.studyMode': '点击开启学霸模式',
+  'todo.start': '开始',
+  'todo.empty': '还没有待办,点右上角 + 添加一个吧',
+  'todo.todayFocused': '今日已专注 {{n}} 次',
+  'todo.todayDone': '今日已完成 {{n}} 次',
+
+  'add.title': '添加待办',
+  'add.namePlaceholder': '请输入待办名称',
+  'type.normal': '普通番茄钟',
+  'type.goal': '定目标',
+  'type.habit': '养习惯',
+  'timing.countdown': '倒计时',
+  'timing.countup': '正向计时',
+  'timing.none': '不计时',
+  'add.advanced': '展开更多高级设置',
+  'add.save': '保存',
+
+  'focus.doing': '进行中',
+  'focus.resting': '休息中',
+  'focus.done': '已完成',
+  'focus.fillNote': '点击此处填写心得',
+  'focus.resume': '继续专注',
+  'focus.paused': '已暂停',
+  'focus.chooseAction': '请选择您的操作',
+  'focus.abandon': '放弃当前计时',
+  'focus.finish': '结束本次计时',
+  'focus.cancel': '取消',
+
+  'lock.title': '锁机',
+  'lock.rest': '小憩',
+  'lock.restDesc': '放松身心的深呼吸,感受禅修般的宁静',
+  'lock.quickStart': '立刻开始快速锁机',
+  'lock.startNow': '立刻开始',
+  'lock.emptySchedule': '当前没有设置定时锁机',
+  'lock.breathTitle': '深度冥想,放松身心',
+  'lock.breathStart': '开始',
+  'lock.exitConfirm': '要退出本次锁机吗?',
+
+  'stats.title': '统计数据',
+  'stats.totalFocus': '累计专注',
+  'stats.todayFocus': '当日专注',
+  'stats.count': '次数',
+  'stats.duration': '时长',
+  'stats.viewRecords': '查看专注记录',
+
+  'timeline.noRecord': '没有专注记录',
+  'timeline.fillNote': '点击填写心得',
+  'timeline.done': '已完成',
+  'note.title': '心得',
+  'note.placeholder': '请输入心得',
+
+  'profile.future': '未来倒计时',
+  'profile.studyroom': '自习室 | 许愿墙',
+  'profile.settings': '专注计时核心设置',
+  'profile.logout': '退出登录',
+
+  'future.title': '未来倒计时',
+  'future.empty': '当前没有未来倒计时,点击右上角 + 号创建一个吧',
+  'future.add': '添加未来倒计时',
+
+  'checkin.sleep': '睡眠打卡',
+  'checkin.earlyrise': '起床打卡',
+  'checkin.focus': '今日专注时长打卡',
+
+  'toast.unavailable': '该功能暂未开放',
+  'toast.studyroom': '自习室功能尚未开放',
+  'toast.saved': '已保存',
+  'toast.earlyriseWindow': '现在太晚啦,请在 2 点至 14 点起床打卡',
+
+  'common.done': '完成一次',
+  'common.confirm': '确定',
+  'common.cancel': '取消',
+  'common.delete': '删除',
+  'common.edit': '编辑',
+} as const;
+
+export type StringKey = keyof typeof STRINGS;

@@ -1,0 +1,15 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "incremental": false
+  },
+  "include": [
+    "./**/*.ts",
+    "./**/*.tsx",
+    "../../os/types/globals.d.ts"
+  ],
+  "exclude": [
+    "./assets/**/*.py"
+  ],
+  "references": []
+}

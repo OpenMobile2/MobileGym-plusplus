@@ -1,0 +1,1038 @@
+{
+  "user": {
+    "name": "陈晨",
+    "email": "chenchen.demo@gmail.com",
+    "avatarColor": "#F9AB00"
+  },
+  "contacts": [
+    {
+      "id": "c1",
+      "name": "Joaquin Vanschoren",
+      "email": "joaquin@example.org",
+      "color": "#1A73E8"
+    },
+    {
+      "id": "c2",
+      "name": "Joan Giner",
+      "email": "joan.giner@example.org",
+      "color": "#1E8E3E"
+    },
+    {
+      "id": "c3",
+      "name": "Li Wei",
+      "email": "liwei@example.com",
+      "color": "#D93025"
+    },
+    {
+      "id": "c4",
+      "name": "Zhang Yun",
+      "email": "zhangyun@example.com",
+      "color": "#8E5FD9"
+    }
+  ],
+  "items": {
+    "f_colab": {
+      "id": "f_colab",
+      "name": "Colab Notebooks",
+      "kind": "folder",
+      "parentId": null,
+      "modifiedAt": 1714960800000,
+      "createdAt": 1693533600000,
+      "size": 0,
+      "uploadedByMe": false,
+      "ownerName": null,
+      "color": "#FAD165",
+      "sharedFolder": false,
+      "activity": [
+        {
+          "who": "陈晨",
+          "whatKey": "details_activity_edited",
+          "at": 1714960800000
+        },
+        {
+          "who": "陈晨",
+          "whatKey": "details_activity_created",
+          "at": 1693533600000
+        }
+      ]
+    },
+    "f_studio": {
+      "id": "f_studio",
+      "name": "Google in Studio",
+      "kind": "folder",
+      "parentId": null,
+      "modifiedAt": 1741744800000,
+      "createdAt": 1706925600000,
+      "size": 0,
+      "uploadedByMe": false,
+      "ownerName": null,
+      "color": null,
+      "sharedFolder": false,
+      "activity": [
+        {
+          "who": "陈晨",
+          "whatKey": "details_activity_edited",
+          "at": 1741744800000
+        },
+        {
+          "who": "陈晨",
+          "whatKey": "details_activity_created",
+          "at": 1706925600000
+        }
+      ]
+    },
+    "f_research": {
+      "id": "f_research",
+      "name": "Public research articles",
+      "kind": "folder",
+      "parentId": null,
+      "modifiedAt": 1762048800000,
+      "createdAt": 1717812000000,
+      "size": 0,
+      "uploadedByMe": false,
+      "ownerName": "Joaquin Vanschoren",
+      "color": null,
+      "sharedFolder": true,
+      "activity": [
+        {
+          "who": "陈晨",
+          "whatKey": "details_activity_edited",
+          "at": 1762048800000
+        },
+        {
+          "who": "陈晨",
+          "whatKey": "details_activity_created",
+          "at": 1717812000000
+        }
+      ]
+    },
+    "f_chrome": {
+      "id": "f_chrome",
+      "name": "Saved from Chrome",
+      "kind": "folder",
+      "parentId": null,
+      "modifiedAt": 1750384800000,
+      "createdAt": 1723687200000,
+      "size": 0,
+      "uploadedByMe": false,
+      "ownerName": null,
+      "color": null,
+      "sharedFolder": false,
+      "activity": [
+        {
+          "who": "陈晨",
+          "whatKey": "details_activity_edited",
+          "at": 1750384800000
+        },
+        {
+          "who": "陈晨",
+          "whatKey": "details_activity_created",
+          "at": 1723687200000
+        }
+      ]
+    },
+    "f_papers": {
+      "id": "f_papers",
+      "name": "论文",
+      "kind": "folder",
+      "parentId": null,
+      "modifiedAt": 1784080800000,
+      "createdAt": 1736474400000,
+      "size": 0,
+      "uploadedByMe": false,
+      "ownerName": null,
+      "color": null,
+      "sharedFolder": false,
+      "activity": [
+        {
+          "who": "陈晨",
+          "whatKey": "details_activity_edited",
+          "at": 1784080800000
+        },
+        {
+          "who": "陈晨",
+          "whatKey": "details_activity_created",
+          "at": 1736474400000
+        }
+      ]
+    },
+    "f_docs": {
+      "id": "f_docs",
+      "name": "文档",
+      "kind": "folder",
+      "parentId": null,
+      "modifiedAt": 1777860000000,
+      "createdAt": 1742608800000,
+      "size": 0,
+      "uploadedByMe": false,
+      "ownerName": null,
+      "color": null,
+      "sharedFolder": false,
+      "activity": [
+        {
+          "who": "陈晨",
+          "whatKey": "details_activity_edited",
+          "at": 1777860000000
+        },
+        {
+          "who": "陈晨",
+          "whatKey": "details_activity_created",
+          "at": 1742608800000
+        }
+      ]
+    },
+    "i_resume": {
+      "id": "i_resume",
+      "name": "resume_transcript.pdf",
+      "kind": "pdf",
+      "parentId": null,
+      "modifiedAt": 1784080800000,
+      "createdAt": 1784080800000,
+      "size": 2414592,
+      "uploadedByMe": true,
+      "ownerName": null,
+      "color": null,
+      "sharedFolder": false,
+      "activity": [
+        {
+          "who": "陈晨",
+          "whatKey": "details_activity_edited",
+          "at": 1784080800000
+        },
+        {
+          "who": "陈晨",
+          "whatKey": "details_activity_uploaded",
+          "at": 1784080800000
+        }
+      ],
+      "preview": {
+        "kind": "doc",
+        "title": "个人简历 · 陈晨",
+        "paragraphs": [
+          "教育背景：2021–2025 计算机科学与技术，本科。主修方向为自然语言处理与移动端系统，GPA 3.8/4.0。",
+          "研究经历：参与移动端 GUI Agent 评测基准的构建，负责任务定义与状态判定部分，累计贡献 40 余个可复现任务。",
+          "实习经历：在某研究院负责多模态模型的离线评测流水线，将单轮评测耗时从 6 小时压缩到 40 分钟。",
+          "技能：Python / TypeScript / React；熟悉 PyTorch 与分布式训练；能独立完成从数据清洗到指标汇报的全流程。",
+          "发表：一篇会议短文在投（ACL 2026），一篇工作正在整理。"
+        ]
+      }
+    },
+    "i_hash": {
+      "id": "i_hash",
+      "name": "E9ECD316D3B9AED22F93CEE097E2A1B4.png",
+      "kind": "image",
+      "parentId": null,
+      "modifiedAt": 1785480240000,
+      "createdAt": 1785480240000,
+      "size": 1171456,
+      "uploadedByMe": true,
+      "ownerName": null,
+      "color": null,
+      "sharedFolder": false,
+      "activity": [
+        {
+          "who": "陈晨",
+          "whatKey": "details_activity_edited",
+          "at": 1785480240000
+        },
+        {
+          "who": "陈晨",
+          "whatKey": "details_activity_uploaded",
+          "at": 1785480240000
+        }
+      ]
+    },
+    "i_theme": {
+      "id": "i_theme",
+      "name": "主题：test time improvement through self-consistency",
+      "kind": "sheet",
+      "parentId": null,
+      "modifiedAt": 1762048800000,
+      "createdAt": 1761616800000,
+      "size": 88064,
+      "uploadedByMe": false,
+      "ownerName": null,
+      "color": null,
+      "sharedFolder": false,
+      "activity": [
+        {
+          "who": "陈晨",
+          "whatKey": "details_activity_edited",
+          "at": 1762048800000
+        },
+        {
+          "who": "陈晨",
+          "whatKey": "details_activity_created",
+          "at": 1761616800000
+        }
+      ],
+      "preview": {
+        "kind": "sheet",
+        "title": "test time improvement through self-consistency",
+        "columns": [
+          "方法",
+          "采样数",
+          "准确率",
+          "相对提升",
+          "备注"
+        ],
+        "rows": [
+          [
+            "贪心解码",
+            "1",
+            "62.4%",
+            "—",
+            "基线"
+          ],
+          [
+            "自一致性",
+            "5",
+            "68.1%",
+            "+5.7",
+            "多数投票"
+          ],
+          [
+            "自一致性",
+            "20",
+            "71.3%",
+            "+8.9",
+            "收益开始变平"
+          ],
+          [
+            "自一致性",
+            "40",
+            "71.9%",
+            "+9.5",
+            "几乎不再提升"
+          ],
+          [
+            "自一致 + 验证器",
+            "20",
+            "74.6%",
+            "+12.2",
+            "需额外一次前向"
+          ]
+        ]
+      }
+    },
+    "i_bert": {
+      "id": "i_bert",
+      "name": "移动项目测试 bert 可行性.ipynb",
+      "kind": "other",
+      "parentId": null,
+      "modifiedAt": 1714960800000,
+      "createdAt": 1714442400000,
+      "size": 524288,
+      "uploadedByMe": false,
+      "ownerName": null,
+      "color": null,
+      "sharedFolder": false,
+      "activity": [
+        {
+          "who": "陈晨",
+          "whatKey": "details_activity_edited",
+          "at": 1714960800000
+        },
+        {
+          "who": "陈晨",
+          "whatKey": "details_activity_created",
+          "at": 1714442400000
+        }
+      ],
+      "preview": {
+        "kind": "code",
+        "title": "移动项目测试 bert 可行性.ipynb",
+        "lines": [
+          "# 移动项目：BERT 可行性验证",
+          "import torch",
+          "from transformers import AutoTokenizer, AutoModel",
+          "",
+          "tok = AutoTokenizer.from_pretrained(\"bert-base-chinese\")",
+          "model = AutoModel.from_pretrained(\"bert-base-chinese\")",
+          "",
+          "# 端上推理的显存与延迟基线",
+          "x = tok(\"移动端能否直接跑 BERT\", return_tensors=\"pt\")",
+          "with torch.no_grad():",
+          "    out = model(**x)",
+          "print(out.last_hidden_state.shape)  # torch.Size([1, 12, 768])",
+          "",
+          "# 结论：fp32 下单条约 180ms，量化到 int8 后约 70ms，可接受"
+        ]
+      }
+    },
+    "i_bert_pdf": {
+      "id": "i_bert_pdf",
+      "name": "bert_mobile_inference_evaluation_2026.pdf",
+      "kind": "pdf",
+      "parentId": null,
+      "modifiedAt": 1785722400000,
+      "createdAt": 1785117600000,
+      "size": 2387968,
+      "uploadedByMe": true,
+      "ownerName": null,
+      "color": null,
+      "sharedFolder": false,
+      "activity": [
+        {
+          "who": "我",
+          "whatKey": "details_activity_edited",
+          "at": 1785722400000
+        },
+        {
+          "who": "我",
+          "whatKey": "details_activity_uploaded",
+          "at": 1785117600000
+        }
+      ],
+      "preview": {
+        "kind": "pdf",
+        "title": "BERT 移动端推理评测 2026",
+        "paragraphs": [
+          "对 BERT-base 在移动端 CPU、GPU 与 NPU 上的延迟、内存和能耗进行对比。",
+          "报告包含 FP16、INT8 量化结果及不同 batch size 下的端到端测量。"
+        ]
+      }
+    },
+    "i_aclmur": {
+      "id": "i_aclmur",
+      "name": "_ACL_2026__MUR.pdf",
+      "kind": "pdf",
+      "parentId": null,
+      "modifiedAt": 1784512800000,
+      "createdAt": 1784512800000,
+      "size": 4292608,
+      "uploadedByMe": true,
+      "ownerName": null,
+      "color": null,
+      "sharedFolder": false,
+      "activity": [
+        {
+          "who": "陈晨",
+          "whatKey": "details_activity_edited",
+          "at": 1784512800000
+        },
+        {
+          "who": "陈晨",
+          "whatKey": "details_activity_uploaded",
+          "at": 1784512800000
+        }
+      ],
+      "preview": {
+        "kind": "doc",
+        "title": "Multi-hop Understanding and Reasoning (MUR) — ACL 2026 投稿",
+        "paragraphs": [
+          "摘要：我们提出一种面向多跳理解的评测方法，将推理链拆解为可独立判定的子步骤，从而把「答对了」与「推对了」区分开。",
+          "1 引言：现有基准大多只比对最终答案，模型即便走错推理路径也能因猜中而得分。我们在三个公开数据集上观察到这一比例高达 21%。",
+          "2 方法：先由标注者给出参考推理链，再用子步骤匹配度与最终答案共同构成复合指标。子步骤匹配采用语义等价判定而非字面比对。",
+          "3 实验：在 HotpotQA、2WikiMultihopQA 与自建集合上评测 7 个模型。复合指标下模型排序与仅看答案的排序有 3 处发生反转。",
+          "4 结论：仅用答案正确率会高估多跳推理能力。我们将标注与评测脚本一并开源。",
+          "局限：参考推理链的构造成本较高，目前每条约需标注者 4 分钟。"
+        ]
+      }
+    },
+    "i_acllogo": {
+      "id": "i_acllogo",
+      "name": "ACL2026_logo-0072bb_transparent.png",
+      "kind": "image",
+      "parentId": null,
+      "modifiedAt": 1785204000000,
+      "createdAt": 1785204000000,
+      "size": 249856,
+      "uploadedByMe": true,
+      "ownerName": null,
+      "color": null,
+      "sharedFolder": false,
+      "activity": [
+        {
+          "who": "陈晨",
+          "whatKey": "details_activity_edited",
+          "at": 1785204000000
+        },
+        {
+          "who": "陈晨",
+          "whatKey": "details_activity_uploaded",
+          "at": 1785204000000
+        }
+      ]
+    },
+    "i_neurips": {
+      "id": "i_neurips",
+      "name": "NeurIPS Evaluation — modelling RAI attributes",
+      "kind": "doc",
+      "parentId": null,
+      "modifiedAt": 1777600800000,
+      "createdAt": 1776218400000,
+      "size": 165888,
+      "uploadedByMe": false,
+      "ownerName": "Joaquin Vanschoren",
+      "color": null,
+      "sharedFolder": false,
+      "collaborators": [
+        {"contactId": "c1", "role": "editor"},
+        {"contactId": "c2", "role": "commenter"}
+      ],
+      "activity": [
+        {
+          "who": "Joaquin Vanschoren",
+          "whatKey": "details_activity_edited",
+          "at": 1777600800000
+        },
+        {
+          "who": "Joaquin Vanschoren",
+          "whatKey": "details_activity_edited",
+          "at": 1777341600000
+        },
+        {
+          "who": "Joaquin Vanschoren",
+          "whatKey": "details_activity_edited",
+          "at": 1776823200000
+        },
+        {
+          "who": "Joan Giner",
+          "whatKey": "details_activity_edited",
+          "at": 1776650400000
+        },
+        {
+          "who": "Joan Giner",
+          "whatKey": "details_activity_edited",
+          "at": 1776304800000
+        },
+        {
+          "who": "Joaquin Vanschoren",
+          "whatKey": "details_activity_created",
+          "at": 1776218400000
+        }
+      ],
+      "preview": {
+        "kind": "doc",
+        "title": "Modelling Responsible-AI Attributes in Evaluation",
+        "paragraphs": [
+          "This document summarises how RAI attributes are folded into the evaluation protocol for the upcoming benchmark round.",
+          "Scope: we cover four attributes — factual grounding, harmful-content refusal, privacy leakage, and demographic robustness. Each is scored independently rather than collapsed into a single safety number.",
+          "Protocol: every prompt is paired with a counterfactual variant. A model must behave consistently across the pair; inconsistency is reported separately from outright failure.",
+          "Open question: how to weight refusal against helpfulness. The current draft keeps them as two reported axes instead of a weighted sum, so that reviewers can see the trade-off explicitly.",
+          "Next steps: finalise the annotation guide, then run a 200-prompt pilot before scaling to the full set."
+        ]
+      }
+    },
+    "i_openings": {
+      "id": "i_openings",
+      "name": "Position Openings 24-26",
+      "kind": "sheet",
+      "parentId": null,
+      "modifiedAt": 1781143200000,
+      "createdAt": 1764813600000,
+      "size": 49152,
+      "uploadedByMe": false,
+      "ownerName": "Joan Giner",
+      "color": null,
+      "sharedFolder": false,
+      "activity": [
+        {
+          "who": "Joan Giner",
+          "whatKey": "details_activity_edited",
+          "at": 1781143200000
+        },
+        {
+          "who": "Joan Giner",
+          "whatKey": "details_activity_created",
+          "at": 1764813600000
+        }
+      ],
+      "preview": {
+        "kind": "sheet",
+        "title": "Position Openings 24-26",
+        "columns": [
+          "Group",
+          "Role",
+          "Level",
+          "Status",
+          "Owner"
+        ],
+        "rows": [
+          [
+            "NLP",
+            "Research Intern",
+            "Intern",
+            "Open",
+            "Joaquin"
+          ],
+          [
+            "NLP",
+            "Research Scientist",
+            "L4",
+            "Interviewing",
+            "Joaquin"
+          ],
+          [
+            "Systems",
+            "Infra Engineer",
+            "L5",
+            "Offer out",
+            "Joan"
+          ],
+          [
+            "Eval",
+            "Data Annotator",
+            "Contract",
+            "Closed",
+            "Joan"
+          ],
+          [
+            "Eval",
+            "Benchmark Lead",
+            "L5",
+            "Open",
+            "—"
+          ]
+        ]
+      }
+    },
+    "i_cv": {
+      "id": "i_cv",
+      "name": "CV_test2023.pdf",
+      "kind": "pdf",
+      "parentId": null,
+      "modifiedAt": 1730599200000,
+      "createdAt": 1697680800000,
+      "size": 1056768,
+      "uploadedByMe": true,
+      "ownerName": null,
+      "color": null,
+      "sharedFolder": false,
+      "activity": [
+        {
+          "who": "陈晨",
+          "whatKey": "details_activity_edited",
+          "at": 1730599200000
+        },
+        {
+          "who": "陈晨",
+          "whatKey": "details_activity_uploaded",
+          "at": 1697680800000
+        }
+      ],
+      "preview": {
+        "kind": "doc",
+        "title": "CV — 2023 版本（已归档）",
+        "paragraphs": [
+          "此版本为 2023 年秋季申请使用，保留作归档。最新版本见 resume_transcript.pdf。",
+          "当时的研究方向偏向计算机视觉，后转向移动端 Agent 评测，故此版内容已不再代表当前情况。"
+        ]
+      }
+    },
+    "i_aclmain": {
+      "id": "i_aclmain",
+      "name": "ACL 2026 Main conference_Content.docx",
+      "kind": "other",
+      "parentId": null,
+      "modifiedAt": 1782957600000,
+      "createdAt": 1782698400000,
+      "size": 327680,
+      "uploadedByMe": false,
+      "ownerName": null,
+      "color": null,
+      "sharedFolder": false,
+      "activity": [
+        {
+          "who": "陈晨",
+          "whatKey": "details_activity_edited",
+          "at": 1782957600000
+        },
+        {
+          "who": "陈晨",
+          "whatKey": "details_activity_created",
+          "at": 1782698400000
+        }
+      ],
+      "preview": {
+        "kind": "doc",
+        "title": "ACL 2026 Main Conference — Content Plan",
+        "paragraphs": [
+          "Session plan, reviewer assignment notes, and the camera-ready checklist for the main conference track.",
+          "Deadline chain: abstract 1 Feb → full paper 8 Feb → rebuttal 20–26 Mar → notification 15 Apr → camera-ready 2 May.",
+          "Note: the RAI attribute statement is now mandatory for all long papers."
+        ]
+      }
+    },
+    "i_slides": {
+      "id": "i_slides",
+      "name": "SBST 组会汇报",
+      "kind": "slide",
+      "parentId": null,
+      "modifiedAt": 1783648800000,
+      "createdAt": 1783476000000,
+      "size": 3145728,
+      "uploadedByMe": true,
+      "ownerName": null,
+      "color": null,
+      "sharedFolder": false,
+      "activity": [
+        {
+          "who": "陈晨",
+          "whatKey": "details_activity_edited",
+          "at": 1783648800000
+        },
+        {
+          "who": "陈晨",
+          "whatKey": "details_activity_uploaded",
+          "at": 1783476000000
+        }
+      ],
+      "preview": {
+        "kind": "slide",
+        "title": "SBST 组会汇报",
+        "slides": [
+          {
+            "heading": "本周进展",
+            "bullets": [
+              "完成子步骤匹配的标注规范 v2",
+              "在 2WikiMultihop 上跑通复合指标",
+              "发现 3 处模型排序反转"
+            ]
+          },
+          {
+            "heading": "遇到的问题",
+            "bullets": [
+              "标注成本偏高，单条约 4 分钟",
+              "语义等价判定对同义改写仍偏严"
+            ]
+          },
+          {
+            "heading": "下周计划",
+            "bullets": [
+              "把判定阈值做敏感性分析",
+              "补一组人工复核对照",
+              "整理投稿用的图表"
+            ]
+          }
+        ]
+      }
+    },
+    "i_nb1": {
+      "id": "i_nb1",
+      "name": "Untitled0.ipynb",
+      "kind": "other",
+      "parentId": "f_colab",
+      "modifiedAt": 1714960800000,
+      "createdAt": 1714960800000,
+      "size": 22528,
+      "uploadedByMe": true,
+      "ownerName": null,
+      "color": null,
+      "sharedFolder": false,
+      "activity": [
+        {
+          "who": "陈晨",
+          "whatKey": "details_activity_edited",
+          "at": 1714960800000
+        },
+        {
+          "who": "陈晨",
+          "whatKey": "details_activity_uploaded",
+          "at": 1714960800000
+        }
+      ],
+      "preview": {
+        "kind": "code",
+        "title": "Untitled0.ipynb",
+        "lines": [
+          "# Untitled0",
+          "print(\"hello\")"
+        ]
+      }
+    },
+    "i_nb2": {
+      "id": "i_nb2",
+      "name": "bert_finetune.ipynb",
+      "kind": "other",
+      "parentId": "f_colab",
+      "modifiedAt": 1714615200000,
+      "createdAt": 1714269600000,
+      "size": 136192,
+      "uploadedByMe": true,
+      "ownerName": null,
+      "color": null,
+      "sharedFolder": false,
+      "activity": [
+        {
+          "who": "陈晨",
+          "whatKey": "details_activity_edited",
+          "at": 1714615200000
+        },
+        {
+          "who": "陈晨",
+          "whatKey": "details_activity_uploaded",
+          "at": 1714269600000
+        }
+      ],
+      "preview": {
+        "kind": "code",
+        "title": "bert_finetune.ipynb",
+        "lines": [
+          "# bert 微调",
+          "from transformers import Trainer, TrainingArguments",
+          "",
+          "args = TrainingArguments(output_dir=\"./out\", num_train_epochs=3,",
+          "                         per_device_train_batch_size=16, learning_rate=2e-5)",
+          "trainer = Trainer(model=model, args=args, train_dataset=ds_train)",
+          "trainer.train()"
+        ]
+      }
+    },
+    "i_paper1": {
+      "id": "i_paper1",
+      "name": "Attention Is All You Need.pdf",
+      "kind": "pdf",
+      "parentId": "f_papers",
+      "modifiedAt": 1773021600000,
+      "createdAt": 1773021600000,
+      "size": 2097152,
+      "uploadedByMe": true,
+      "ownerName": null,
+      "color": null,
+      "sharedFolder": false,
+      "activity": [
+        {
+          "who": "陈晨",
+          "whatKey": "details_activity_edited",
+          "at": 1773021600000
+        },
+        {
+          "who": "陈晨",
+          "whatKey": "details_activity_uploaded",
+          "at": 1773021600000
+        }
+      ],
+      "preview": {
+        "kind": "doc",
+        "title": "Attention Is All You Need",
+        "paragraphs": [
+          "Abstract: The dominant sequence transduction models are based on complex recurrent or convolutional neural networks. We propose a new simple network architecture, the Transformer, based solely on attention mechanisms.",
+          "1 Introduction: Recurrent models preclude parallelisation within training examples, which becomes critical at longer sequence lengths.",
+          "2 Background: Self-attention relates different positions of a single sequence in order to compute a representation of that sequence.",
+          "3 Model Architecture: The Transformer follows an encoder-decoder structure using stacked self-attention and point-wise fully connected layers."
+        ]
+      }
+    },
+    "i_paper2": {
+      "id": "i_paper2",
+      "name": "综述整理.docx",
+      "kind": "other",
+      "parentId": "f_papers",
+      "modifiedAt": 1783994400000,
+      "createdAt": 1780279200000,
+      "size": 77824,
+      "uploadedByMe": true,
+      "ownerName": null,
+      "color": null,
+      "sharedFolder": false,
+      "activity": [
+        {
+          "who": "陈晨",
+          "whatKey": "details_activity_edited",
+          "at": 1783994400000
+        },
+        {
+          "who": "陈晨",
+          "whatKey": "details_activity_uploaded",
+          "at": 1780279200000
+        }
+      ],
+      "preview": {
+        "kind": "doc",
+        "title": "综述整理（工作稿）",
+        "paragraphs": [
+          "按方法族整理：检索增强、思维链、工具调用三类，各自的评测口径差别很大，直接横比会失真。",
+          "待补：把 2025 年之后的工作按「是否公开标注指南」再分一层，这条和可复现性关系最直接。",
+          "注意：表 2 的数字来自各文原始报告，未做统一重跑，引用时要标注这一点。"
+        ]
+      }
+    },
+    "f_sub2026": {
+      "id": "f_sub2026",
+      "name": "2026",
+      "kind": "folder",
+      "parentId": "f_papers",
+      "modifiedAt": 1784080800000,
+      "createdAt": 1767578400000,
+      "size": 0,
+      "uploadedByMe": false,
+      "ownerName": null,
+      "color": null,
+      "sharedFolder": false,
+      "activity": [
+        {
+          "who": "陈晨",
+          "whatKey": "details_activity_edited",
+          "at": 1784080800000
+        },
+        {
+          "who": "陈晨",
+          "whatKey": "details_activity_created",
+          "at": 1767578400000
+        }
+      ]
+    },
+    "i_art1": {
+      "id": "i_art1",
+      "name": "RAI evaluation survey.pdf",
+      "kind": "pdf",
+      "parentId": "f_research",
+      "modifiedAt": 1761962400000,
+      "createdAt": 1760925600000,
+      "size": 5242880,
+      "uploadedByMe": false,
+      "ownerName": "Joaquin Vanschoren",
+      "color": null,
+      "sharedFolder": false,
+      "activity": [
+        {
+          "who": "Joaquin Vanschoren",
+          "whatKey": "details_activity_edited",
+          "at": 1761962400000
+        },
+        {
+          "who": "Joaquin Vanschoren",
+          "whatKey": "details_activity_created",
+          "at": 1760925600000
+        }
+      ],
+      "preview": {
+        "kind": "doc",
+        "title": "A Survey of Responsible-AI Evaluation Practices",
+        "paragraphs": [
+          "We review 84 papers published between 2021 and 2025 that report responsible-AI evaluations, and categorise them by attribute, dataset provenance, and scoring method.",
+          "Finding 1: 61% rely on a single aggregate safety score, which obscures which attribute actually failed.",
+          "Finding 2: only 12% release the annotation guide alongside the dataset, making replication difficult.",
+          "We close with a checklist of six items that we argue should accompany any responsible-AI evaluation release."
+        ]
+      }
+    },
+    "i_untitled1": {
+      "id": "i_untitled1",
+      "name": "Untitled1.ipynb",
+      "kind": "other",
+      "parentId": null,
+      "modifiedAt": 1785480240000,
+      "createdAt": 1785376800000,
+      "size": 18432,
+      "uploadedByMe": true,
+      "ownerName": null,
+      "color": null,
+      "sharedFolder": false,
+      "activity": [
+        {
+          "who": "陈晨",
+          "whatKey": "details_activity_edited",
+          "at": 1785480240000
+        },
+        {
+          "who": "陈晨",
+          "whatKey": "details_activity_uploaded",
+          "at": 1785376800000
+        }
+      ],
+      "preview": {
+        "kind": "code",
+        "title": "Untitled1.ipynb",
+        "lines": [
+          "# Untitled1（草稿，已删）",
+          "import pandas as pd"
+        ]
+      }
+    },
+    "i_oldcv": {
+      "id": "i_oldcv",
+      "name": "CV_2022_draft.pdf",
+      "kind": "pdf",
+      "parentId": null,
+      "modifiedAt": 1743559200000,
+      "createdAt": 1743472800000,
+      "size": 921600,
+      "uploadedByMe": true,
+      "ownerName": null,
+      "color": null,
+      "sharedFolder": false,
+      "activity": [
+        {
+          "who": "陈晨",
+          "whatKey": "details_activity_edited",
+          "at": 1743559200000
+        },
+        {
+          "who": "陈晨",
+          "whatKey": "details_activity_uploaded",
+          "at": 1743472800000
+        }
+      ],
+      "preview": {
+        "kind": "doc",
+        "title": "CV 2022（草稿）",
+        "paragraphs": [
+          "2022 年的简历草稿，内容已过时，保留在回收站里等自动清理。"
+        ]
+      }
+    }
+  },
+  "starredIds": [
+    "i_bert",
+    "i_resume"
+  ],
+  "offlineIds": [
+    "i_bert"
+  ],
+  "trashedIds": [
+    "i_untitled1",
+    "i_oldcv"
+  ],
+  "trashedAt": {
+    "i_untitled1": 1785480240000,
+    "i_oldcv": 1784941920000
+  },
+  "recentIds": [
+    "i_hash",
+    "i_resume",
+    "i_aclmur",
+    "i_theme",
+    "i_neurips",
+    "i_acllogo"
+  ],
+  "spamIds": [],
+  "uploads": [],
+  "storage": {
+    "totalBytes": 16106127360,
+    "driveBytes": 2462056448,
+    "gmailBytes": 1199570944,
+    "photosBytes": 5028970496
+  },
+  "view": "list",
+  "sort": {
+    "field": "name",
+    "order": "asc"
+  },
+  "searchSort": {
+    "field": "relevance",
+    "order": "desc"
+  },
+  "searchQuery": "",
+  "searchFilters": {
+    "type": null,
+    "people": null,
+    "modified": null
+  },
+  "recentQueries": [
+    "acl",
+    "resume",
+    "bert"
+  ],
+  "selectedIds": [],
+  "notify": {
+    "shared": true,
+    "comments": true,
+    "requests": true,
+    "storage": false
+  },
+  "pendingUpload": null,
+  "geminiTurns": []
+}

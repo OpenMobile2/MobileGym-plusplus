@@ -1,0 +1,5898 @@
+{
+  "user": {
+    "id": "u_abcd",
+    "nickname": "abcd",
+    "avatar": "avatar_me.png",
+    "membership": "vip",
+    "vipLevel": 1,
+    "vipLevelLabel": "VIP1",
+    "vipExpire": "2026-09-26",
+    "points": 330,
+    "vPower": 400,
+    "diamonds": 0,
+    "coins": 0,
+    "following": 0,
+    "followers": 0,
+    "interactions": 0,
+    "achievements": {
+      "films": 44,
+      "days": 177,
+      "medalCount": 6
+    },
+    "profileTabs": [
+      "动态",
+      "评分",
+      "弹幕"
+    ],
+    "deviceLoginTip": "当前3台设备登录"
+  },
+  "contents": [
+    {
+      "id": "tv_qianfangjie",
+      "title": "千芳劫",
+      "category": "剧集",
+      "tags": [
+        "古装",
+        "权谋"
+      ],
+      "year": 2026,
+      "region": "内地",
+      "episodes": 40,
+      "updatedTo": 28,
+      "rating": 8.9,
+      "heat": 25452,
+      "badge": "上新",
+      "vipFrom": 21,
+      "followText": "在追破500万",
+      "discussText": "讨论破120万",
+      "danmakuText": "707万条弹幕",
+      "poster": "poster_tv_qianfangjie.png",
+      "still": "still_tv_qianfangjie.png",
+      "director": "唐见山",
+      "cast": [
+        {
+          "name": "贺兰珊",
+          "role": "姜芜"
+        },
+        {
+          "name": "岑野",
+          "role": "萧决"
+        },
+        {
+          "name": "孟晚昭",
+          "role": "云璃"
+        },
+        {
+          "name": "顾北辰",
+          "role": "谢玄"
+        }
+      ],
+      "desc": "百花宴上一场刺杀,将织造世家孤女姜芜卷入夺嫡漩涡。她以花为刃、以谋为局,与冷面权臣萧决从互相利用到并肩执棋,揭开先皇旧案背后的惊天布局。",
+      "recommend": "百花宴上的夺嫡杀局"
+    },
+    {
+      "id": "tv_zheyikexindong",
+      "title": "这一刻心动",
+      "category": "剧集",
+      "tags": [
+        "都市",
+        "爱情"
+      ],
+      "year": 2026,
+      "region": "内地",
+      "episodes": 33,
+      "updatedTo": 15,
+      "rating": 9.4,
+      "heat": 22309,
+      "badge": "VIP",
+      "vipFrom": 10,
+      "rankNote": "热播榜第2",
+      "followText": "在追破500万",
+      "discussText": "讨论千万+",
+      "danmakuText": "707万条弹幕",
+      "updateNote": "追剧日历·每周三四五20点更新2集",
+      "poster": "poster_tv_zheyikexindong.png",
+      "still": "still_tv_zheyikexindong.png",
+      "director": "乔木青",
+      "cast": [
+        {
+          "name": "温以宁",
+          "role": "夏一苇"
+        },
+        {
+          "name": "江叙白",
+          "role": "纪临川"
+        },
+        {
+          "name": "林晚星",
+          "role": "方糖糖"
+        },
+        {
+          "name": "陆嘉树",
+          "role": "周野"
+        }
+      ],
+      "desc": "急诊科医生夏一苇与消防队长纪临川因一场高层救援相识,两个把生死看得比心动重的人,在一次次并肩逆行中学会把「这一刻」留给彼此。",
+      "recommend": "医生与消防员的双向奔赴"
+    },
+    {
+      "id": "tv_hushanghuakai",
+      "title": "沪上花开·剧场版",
+      "category": "剧集",
+      "tags": [
+        "年代",
+        "商战"
+      ],
+      "year": 2026,
+      "region": "内地",
+      "episodes": 6,
+      "updatedTo": 6,
+      "rating": 9.8,
+      "outerRating": "站外8.1",
+      "heat": 4873,
+      "badge": "VIP",
+      "vipFrom": 2,
+      "discussCount": 1255,
+      "poster": "poster_tv_hushanghuakai.png",
+      "still": "still_tv_hushanghuakai.png",
+      "director": "程一鸣",
+      "cast": [
+        {
+          "name": "裴照",
+          "role": "阿宝"
+        },
+        {
+          "name": "秦朗月",
+          "role": "玲姐"
+        },
+        {
+          "name": "许望舒",
+          "role": "汪小姐"
+        }
+      ],
+      "desc": "九十年代的黄河路灯红酒绿,白手起家的阿宝在时代浪潮里起落浮沉。剧场版以六集体量重剪商战主线,还原一段沪上传奇。",
+      "recommend": "九十年代黄河路的起落"
+    },
+    {
+      "id": "tv_jifengxingdong",
+      "title": "缉风行动",
+      "category": "剧集",
+      "tags": [
+        "刑侦",
+        "缉毒"
+      ],
+      "year": 2026,
+      "region": "内地",
+      "episodes": 24,
+      "updatedTo": 24,
+      "rating": 9.2,
+      "heat": 19876,
+      "badge": "独播",
+      "vipFrom": 7,
+      "poster": "poster_tv_jifengxingdong.png",
+      "still": "still_tv_jifengxingdong.png",
+      "director": "韩思远",
+      "cast": [
+        {
+          "name": "陈广汇",
+          "role": "林振海"
+        },
+        {
+          "name": "唐见山",
+          "role": "秦昊天"
+        },
+        {
+          "name": "白露微",
+          "role": "苏棠"
+        }
+      ],
+      "desc": "边城海关缉私科长林振海追查一批失踪化学品,牵出盘踞十年的制贩网络。风暴中心,他必须分辨谁是同袍、谁是内鬼。",
+      "recommend": "雨夜码头的缉毒生死局"
+    },
+    {
+      "id": "tv_qichongjin",
+      "title": "七重锦",
+      "category": "剧集",
+      "tags": [
+        "古装",
+        "宅斗"
+      ],
+      "year": 2025,
+      "region": "内地",
+      "episodes": 40,
+      "updatedTo": 40,
+      "rating": 9.0,
+      "heat": 15320,
+      "badge": "VIP",
+      "vipFrom": 9,
+      "poster": "poster_tv_qichongjin.png",
+      "still": "still_tv_qichongjin.png",
+      "director": "姜半夏",
+      "cast": [
+        {
+          "name": "孟晚昭",
+          "role": "窦昭"
+        },
+        {
+          "name": "顾北辰",
+          "role": "宋砚堂"
+        }
+      ],
+      "desc": "重生的侯府嫡女带着前世记忆步步为营,在深宅七重锦帐之间改写自己与家族的命运。"
+    },
+    {
+      "id": "tv_zhuluan",
+      "title": "逐鸾",
+      "category": "剧集",
+      "tags": [
+        "古装",
+        "传奇"
+      ],
+      "year": 2026,
+      "region": "内地",
+      "episodes": 36,
+      "updatedTo": 4,
+      "rating": null,
+      "heat": 13208,
+      "badge": "VIP",
+      "vipFrom": 5,
+      "reserveNote": "预约已上线",
+      "poster": "poster_tv_zhuluan.png",
+      "director": "程一鸣",
+      "cast": [
+        {
+          "name": "苏念安",
+          "role": "阿鸾"
+        },
+        {
+          "name": "江叙白",
+          "role": "卫珩"
+        }
+      ],
+      "desc": "被夺玉玺的亡国公主化名鸾娘潜入珍宝阁,与神秘阁主联手追回国宝,却发现他正是当年灭国的仇人之子。",
+      "still": "still_tv_zhuluan.png"
+    },
+    {
+      "id": "tv_yueliangjishi",
+      "title": "月亮集市",
+      "category": "剧集",
+      "tags": [
+        "都市",
+        "温情"
+      ],
+      "year": 2025,
+      "region": "内地",
+      "episodes": 30,
+      "updatedTo": 30,
+      "rating": 8.6,
+      "heat": 11576,
+      "badge": "独播",
+      "vipFrom": 8,
+      "poster": "poster_tv_yueliangjishi.png",
+      "director": "乔木青",
+      "cast": [
+        {
+          "name": "白露微",
+          "role": "陈皮皮"
+        },
+        {
+          "name": "陆嘉树",
+          "role": "老詹"
+        }
+      ],
+      "desc": "深夜才开张的旧货集市里,每一件旧物都藏着一段人生。摊主陈皮皮以物易故事,治愈城市里的失眠者。",
+      "still": "still_tv_yueliangjishi.png"
+    },
+    {
+      "id": "tv_luanchichunxiao",
+      "title": "鸾池春晓",
+      "category": "剧集",
+      "tags": [
+        "古装",
+        "爱情"
+      ],
+      "year": 2026,
+      "region": "内地",
+      "episodes": 38,
+      "updatedTo": 12,
+      "rating": null,
+      "heat": 10893,
+      "badge": "4K|60帧",
+      "vipFrom": 6,
+      "poster": "poster_tv_luanchichunxiao.png",
+      "director": "姜半夏",
+      "cast": [
+        {
+          "name": "林晚星",
+          "role": "春晓"
+        },
+        {
+          "name": "岑野",
+          "role": "谢鸾池"
+        }
+      ],
+      "desc": "落魄医女误入王府鸾池,与装病七年的世子做了一笔以医换婚的交易,春水初生,棋局与真心难分。",
+      "still": "still_tv_luanchichunxiao.png"
+    },
+    {
+      "id": "tv_tiegulinfeng",
+      "title": "铁骨临风",
+      "category": "剧集",
+      "tags": [
+        "军旅",
+        "热血"
+      ],
+      "year": 2026,
+      "region": "内地",
+      "episodes": 32,
+      "updatedTo": 32,
+      "rating": 8.4,
+      "heat": 9987,
+      "badge": "结局点映",
+      "vipFrom": 11,
+      "poster": "poster_tv_tiegulinfeng.png",
+      "director": "韩思远",
+      "cast": [
+        {
+          "name": "陆嘉树",
+          "role": "风临"
+        },
+        {
+          "name": "陈广汇",
+          "role": "铁教官"
+        }
+      ],
+      "desc": "从边陲牧场走出的新兵风临,在特战选拔中一次次被打倒又站起,铁骨之下,是少年人滚烫的风。",
+      "still": "still_tv_tiegulinfeng.png"
+    },
+    {
+      "id": "tv_taiqian",
+      "title": "台前",
+      "category": "剧集",
+      "tags": [
+        "都市",
+        "行业"
+      ],
+      "year": 2025,
+      "region": "内地",
+      "episodes": 24,
+      "updatedTo": 24,
+      "rating": 9.6,
+      "heat": 8764,
+      "badge": "独播",
+      "vipFrom": 7,
+      "poster": "poster_tv_taiqian.png",
+      "director": "唐见山",
+      "cast": [
+        {
+          "name": "裴照",
+          "role": "章北海"
+        },
+        {
+          "name": "温以宁",
+          "role": "小鹿"
+        }
+      ],
+      "desc": "过气话剧演员与新人编剧联手救活一座老剧场,台前十分钟,台后一整个人生。",
+      "still": "still_tv_taiqian.png"
+    },
+    {
+      "id": "tv_hezugongyu4",
+      "title": "合租公寓4",
+      "category": "剧集",
+      "tags": [
+        "都市",
+        "喜剧"
+      ],
+      "year": 2014,
+      "region": "内地",
+      "episodes": 24,
+      "updatedTo": 24,
+      "rating": 9.7,
+      "heat": 8321,
+      "badge": "VIP",
+      "vipFrom": 1,
+      "watchingNote": "最近在看",
+      "poster": "poster_tv_hezugongyu4.png",
+      "director": "乔木青",
+      "cast": [
+        {
+          "name": "程一鸣",
+          "role": "吕子乔风"
+        },
+        {
+          "name": "白露微",
+          "role": "美嘉风"
+        }
+      ],
+      "desc": "老友记式合租日常第四季,毒舌室友们的沙雕生活继续营业,经典下饭喜剧N刷首选。",
+      "recommend": "合租男女的爆笑日常",
+      "still": "still_tv_hezugongyu4.png"
+    },
+    {
+      "id": "tv_wodehoubanchang",
+      "title": "我的后半场",
+      "category": "剧集",
+      "tags": [
+        "都市",
+        "情感"
+      ],
+      "year": 2017,
+      "region": "内地",
+      "episodes": 42,
+      "updatedTo": 42,
+      "rating": 8.7,
+      "heat": 7654,
+      "badge": "VIP",
+      "vipFrom": 12,
+      "poster": "poster_tv_wodehoubanchang.png",
+      "director": "秦朗月",
+      "cast": [
+        {
+          "name": "秦朗月",
+          "role": "罗依"
+        },
+        {
+          "name": "唐见山",
+          "role": "贺函之"
+        }
+      ],
+      "desc": "全职太太罗依在婚姻触礁后重返职场,把人生下半场打成翻身局。",
+      "still": "still_tv_wodehoubanchang.png"
+    },
+    {
+      "id": "tv_shenghuodaluandun",
+      "title": "生活大乱炖",
+      "category": "剧集",
+      "tags": [
+        "海外",
+        "喜剧"
+      ],
+      "year": 2019,
+      "region": "海外",
+      "episodes": 279,
+      "updatedTo": 279,
+      "rating": 9.5,
+      "heat": 7012,
+      "badge": "VIP",
+      "vipFrom": 1,
+      "poster": "poster_tv_shenghuodaluandun.png",
+      "director": "Cole Brand",
+      "cast": [
+        {
+          "name": "谢东尼",
+          "role": "物理学家"
+        },
+        {
+          "name": "潘小妮",
+          "role": "邻居"
+        }
+      ],
+      "desc": "四个天才科学宅与一位元气邻居的爆笑同居宇宙,十二季完整收录。",
+      "still": "still_tv_shenghuodaluandun.png"
+    },
+    {
+      "id": "tv_mingzhentanluoke",
+      "title": "名侦探洛克 第三季",
+      "category": "剧集",
+      "tags": [
+        "海外",
+        "悬疑"
+      ],
+      "year": 2014,
+      "region": "海外",
+      "episodes": 3,
+      "updatedTo": 3,
+      "rating": 9.6,
+      "heat": 6743,
+      "badge": "VIP",
+      "vipFrom": 1,
+      "poster": "poster_tv_mingzhentanluoke.png",
+      "director": "M. Gatts",
+      "cast": [
+        {
+          "name": "洛克",
+          "role": "顾问侦探"
+        },
+        {
+          "name": "华生河",
+          "role": "军医"
+        }
+      ],
+      "desc": "贝克街的顾问侦探假死归来,面对的却是最擅长操纵人心的传媒大亨。",
+      "still": "still_tv_mingzhentanluoke.png"
+    },
+    {
+      "id": "tv_wangchunnian2",
+      "title": "望春年 第二季",
+      "category": "剧集",
+      "tags": [
+        "古装",
+        "权谋"
+      ],
+      "year": 2024,
+      "region": "内地",
+      "episodes": 36,
+      "updatedTo": 36,
+      "rating": 9.3,
+      "heat": 9120,
+      "badge": "VIP",
+      "vipFrom": 6,
+      "poster": "poster_tv_wangchunnian2.png",
+      "director": "唐见山",
+      "cast": [
+        {
+          "name": "沈知玥",
+          "role": "海棠"
+        },
+        {
+          "name": "裴照",
+          "role": "范少卿"
+        }
+      ],
+      "desc": "少年郎再入京都,朝堂棋局比江湖更凶险,望春年里,人人都在等一个春天。",
+      "still": "still_tv_wangchunnian2.png"
+    },
+    {
+      "id": "mv_daomengtuan3",
+      "title": "幻影盗梦团3",
+      "category": "电影",
+      "tags": [
+        "悬疑",
+        "犯罪"
+      ],
+      "year": 2026,
+      "region": "海外",
+      "duration": "1:52:48",
+      "rating": 7.5,
+      "ratingStyle": "green",
+      "heat": 16780,
+      "badge": "VIP",
+      "audioTracks": [
+        "英语",
+        "国语"
+      ],
+      "seriesKey": "daomengtuan",
+      "poster": "poster_mv_daomengtuan3.png",
+      "still": "still_mv_daomengtuan3.png",
+      "director": "L. Rocher",
+      "cast": [
+        {
+          "name": "丹尼·亚特",
+          "role": "魔术师头目"
+        },
+        {
+          "name": "李兹拉",
+          "role": "新四骑士"
+        }
+      ],
+      "desc": "四骑士时隔十年重组,这一次他们要在全球直播中偷走一套量子加密系统,魔术与骗局的第三幕开演。",
+      "recommend": "盗梦三人组再度出手"
+    },
+    {
+      "id": "mv_daomengtuan1",
+      "title": "幻影盗梦团",
+      "category": "电影",
+      "tags": [
+        "悬疑",
+        "犯罪"
+      ],
+      "year": 2013,
+      "region": "海外",
+      "duration": "1:55:20",
+      "rating": 8.1,
+      "badge": "VIP",
+      "seriesKey": "daomengtuan",
+      "poster": "poster_mv_daomengtuan1.png",
+      "director": "L. Rocher",
+      "cast": [
+        {
+          "name": "丹尼·亚特",
+          "role": "魔术师头目"
+        }
+      ],
+      "desc": "四位街头魔术师受神秘邀请组成四骑士,在众目睽睽下上演跨国劫富魔术秀。",
+      "still": "still_mv_daomengtuan1.png"
+    },
+    {
+      "id": "mv_daomengtuan2",
+      "title": "幻影盗梦团2",
+      "category": "电影",
+      "tags": [
+        "悬疑",
+        "犯罪"
+      ],
+      "year": 2016,
+      "region": "海外",
+      "duration": "2:09:00",
+      "rating": 7.8,
+      "badge": "VIP",
+      "seriesKey": "daomengtuan",
+      "poster": "poster_mv_daomengtuan2.png",
+      "director": "J. Chou",
+      "cast": [
+        {
+          "name": "丹尼·亚特",
+          "role": "魔术师头目"
+        }
+      ],
+      "desc": "四骑士被迫为幕后黑手盗取数据芯片,澳门雨夜,一场扑克牌里的魔术攻防。",
+      "still": "still_mv_daomengtuan2.png"
+    },
+    {
+      "id": "mv_toutianjihua",
+      "title": "偷天计划",
+      "category": "电影",
+      "tags": [
+        "犯罪",
+        "喜剧"
+      ],
+      "year": 2001,
+      "region": "海外",
+      "duration": "1:56:30",
+      "rating": 8.3,
+      "badge": "VIP",
+      "seriesKey": "daomengtuan",
+      "poster": "poster_mv_toutianjihua.png",
+      "director": "S. Bergh",
+      "cast": [
+        {
+          "name": "老康",
+          "role": "组局人"
+        }
+      ],
+      "desc": "十一个各怀绝技的老千组队,目标是赌城三大金库同一晚的全部现金。",
+      "still": "still_mv_toutianjihua.png"
+    },
+    {
+      "id": "mv_zhumengmigong",
+      "title": "筑梦迷宫",
+      "category": "电影",
+      "tags": [
+        "科幻",
+        "悬疑"
+      ],
+      "year": 2010,
+      "region": "海外",
+      "duration": "2:28:00",
+      "rating": 9.0,
+      "badge": "VIP",
+      "seriesKey": "daomengtuan",
+      "poster": "poster_mv_zhumengmigong.png",
+      "director": "C. Nolands",
+      "cast": [
+        {
+          "name": "科布森",
+          "role": "盗梦师"
+        }
+      ],
+      "desc": "潜入他人梦境窃取意识的盗梦师,接下最后一单:不是偷走想法,而是种下一个。",
+      "still": "still_mv_zhumengmigong.png"
+    },
+    {
+      "id": "mv_jixianzhiwai",
+      "title": "极限之外",
+      "category": "电影",
+      "tags": [
+        "科幻"
+      ],
+      "year": 2026,
+      "region": "内地",
+      "duration": "2:06:15",
+      "rating": 9.2,
+      "badge": "独播",
+      "poster": "poster_mv_jixianzhiwai.png",
+      "still": "still_mv_jixianzhiwai.png",
+      "director": "程一鸣",
+      "cast": [
+        {
+          "name": "岑野",
+          "role": "凌越"
+        },
+        {
+          "name": "苏念安",
+          "role": "安澜"
+        }
+      ],
+      "desc": "近地轨道电梯断裂事故后,幸存工程师必须在72小时内徒手横渡三万公里缆索,人类首次在真空里跑一场马拉松。"
+    },
+    {
+      "id": "mv_anyong1995",
+      "title": "暗涌1995",
+      "category": "电影",
+      "tags": [
+        "港片",
+        "警匪"
+      ],
+      "year": 1995,
+      "region": "港台",
+      "duration": "1:41:00",
+      "rating": 9.0,
+      "badge": "4K修复",
+      "poster": "poster_mv_anyong1995.png",
+      "director": "麦浩然",
+      "cast": [
+        {
+          "name": "梁镇邦",
+          "role": "卧底阿潜"
+        },
+        {
+          "name": "郭子锋",
+          "role": "督察"
+        }
+      ],
+      "desc": "回归前夜的香江,卧底与督察在一场军火交易里互换了命运。三十年后4K修复重映。",
+      "recommend": "港片黄金年代的暗涌",
+      "still": "still_mv_anyong1995.png"
+    },
+    {
+      "id": "mv_chaonengzhe2",
+      "title": "超能者2",
+      "category": "电影",
+      "tags": [
+        "科幻",
+        "动作"
+      ],
+      "year": 2025,
+      "region": "海外",
+      "duration": "2:12:40",
+      "rating": 8.0,
+      "badge": "VIP",
+      "poster": "poster_mv_chaonengzhe2.png",
+      "director": "R. Donnell",
+      "cast": [
+        {
+          "name": "卡尔文",
+          "role": "钢铁之躯"
+        }
+      ],
+      "desc": "失去能力的超能者流落小镇,当陨石再次坠落,他必须决定要不要再穿上那件披风。",
+      "still": "still_mv_chaonengzhe2.png"
+    },
+    {
+      "id": "mv_taitaitailipu",
+      "title": "太太太离谱",
+      "category": "电影",
+      "tags": [
+        "爱情",
+        "喜剧"
+      ],
+      "year": 2023,
+      "region": "内地",
+      "duration": "1:38:00",
+      "rating": 9.6,
+      "badge": "限免",
+      "poster": "poster_mv_taitaitailipu.png",
+      "director": "白露微",
+      "cast": [
+        {
+          "name": "程一鸣",
+          "role": "倒霉新郎"
+        },
+        {
+          "name": "林晚星",
+          "role": "闪婚太太"
+        }
+      ],
+      "desc": "婚礼当天新娘跑路,顶包上场的竟是隔壁桌的陌生女孩,一场离谱婚姻从假戏开始。",
+      "still": "still_mv_taitaitailipu.png"
+    },
+    {
+      "id": "mv_xindongyugao",
+      "title": "心动预告",
+      "category": "电影",
+      "tags": [
+        "爱情",
+        "喜剧"
+      ],
+      "year": 2011,
+      "region": "港台",
+      "duration": "1:47:00",
+      "rating": 9.5,
+      "badge": "VIP",
+      "poster": "poster_mv_xindongyugao.png",
+      "director": "秦朗月",
+      "cast": [
+        {
+          "name": "刘一恒",
+          "role": "过气歌手"
+        },
+        {
+          "name": "许望舒",
+          "role": "经纪人"
+        }
+      ],
+      "desc": "过气歌手与毒舌经纪人互相嫌弃十年,一支未发布的MV预告泄露了所有心事。",
+      "still": "still_mv_xindongyugao.png"
+    },
+    {
+      "id": "mv_yizhanfanshen",
+      "title": "一战翻身",
+      "category": "电影",
+      "tags": [
+        "喜剧",
+        "励志"
+      ],
+      "year": 2024,
+      "region": "内地",
+      "duration": "1:52:00",
+      "rating": 9.1,
+      "badge": "VIP",
+      "poster": "poster_mv_yizhanfanshen.png",
+      "director": "韩思远",
+      "cast": [
+        {
+          "name": "陈广汇",
+          "role": "落魄拳手"
+        }
+      ],
+      "desc": "被打假拳毁掉的中年拳手,为女儿的学费重上擂台,最后一战只为把输掉的人生赢回来。",
+      "still": "still_mv_yizhanfanshen.png"
+    },
+    {
+      "id": "mv_xinghaifangzhou",
+      "title": "星海方舟演唱会",
+      "category": "电影",
+      "tags": [
+        "音乐",
+        "现场"
+      ],
+      "year": 2013,
+      "region": "港台",
+      "duration": "2:04:00",
+      "rating": 9.8,
+      "badge": "VIP",
+      "poster": "poster_mv_xinghaifangzhou.png",
+      "director": "现场团队",
+      "cast": [
+        {
+          "name": "五重星乐团",
+          "role": "演出"
+        }
+      ],
+      "desc": "十万人体育场的世界巡回终站实录,把演唱会拍成了一部关于青春的科幻片。",
+      "still": "still_mv_xinghaifangzhou.png"
+    },
+    {
+      "id": "vs_chongyaba10",
+      "title": "冲鸭吧10",
+      "category": "综艺",
+      "tags": [
+        "户外",
+        "竞技"
+      ],
+      "year": 2026,
+      "region": "内地",
+      "episodes": 12,
+      "updatedTo": 8,
+      "rating": 8.8,
+      "heat": 14320,
+      "badge": "VIP",
+      "updateNote": "每周五19:30更新,会员抢先看一周",
+      "seasons": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "seasonEpisodes": {
+        "9": {
+          "total": 12,
+          "updatedTo": 12,
+          "subTabs": { "正片": 12, "纯享": 7, "直播回放": 3, "特辑": 5 }
+        },
+        "10": {
+          "total": 12,
+          "updatedTo": 8,
+          "subTabs": { "正片": 8, "纯享": 6, "直播回放": 2, "特辑": 4 }
+        },
+        "11": {
+          "total": 10,
+          "updatedTo": 10,
+          "subTabs": { "正片": 10, "纯享": 8, "直播回放": 4, "特辑": 3 }
+        },
+        "12": {
+          "total": 14,
+          "updatedTo": 14,
+          "subTabs": { "正片": 14, "纯享": 9, "直播回放": 5, "特辑": 6 }
+        },
+        "13": {
+          "total": 11,
+          "updatedTo": 11,
+          "subTabs": { "正片": 11, "纯享": 7, "直播回放": 3, "特辑": 5 }
+        },
+        "14": {
+          "total": 9,
+          "updatedTo": 6,
+          "subTabs": { "正片": 6, "纯享": 4, "直播回放": 2, "特辑": 3 }
+        }
+      },
+      "subTabs": [
+        "正片",
+        "纯享",
+        "直播回放",
+        "特辑"
+      ],
+      "poster": "poster_vs_chongyaba10.png",
+      "still": "still_vs_chongyaba10.png",
+      "director": "总导演组",
+      "cast": [
+        {
+          "name": "程一鸣",
+          "role": "常驻"
+        },
+        {
+          "name": "林晚星",
+          "role": "常驻"
+        },
+        {
+          "name": "陈广汇",
+          "role": "常驻"
+        }
+      ],
+      "desc": "国民户外竞技综艺第十季,撕名牌经典回归,兄弟团新老成员泥潭大混战。",
+      "recommend": "第十季爆笑回归"
+    },
+    {
+      "id": "vs_duanzishou",
+      "title": "段子手和Ta的伙伴们",
+      "category": "综艺",
+      "tags": [
+        "脱口秀"
+      ],
+      "year": 2026,
+      "region": "内地",
+      "episodes": 10,
+      "updatedTo": 6,
+      "rating": 9.1,
+      "heat": 12876,
+      "badge": "更新",
+      "poster": "poster_vs_duanzishou.png",
+      "director": "总导演组",
+      "cast": [
+        {
+          "name": "赖大山",
+          "role": "主咖"
+        },
+        {
+          "name": "何小晏",
+          "role": "领笑员"
+        }
+      ],
+      "desc": "全新一季爆笑开聊,段子手们把生活撕开揉碎,再讲给你听。",
+      "recommend": "全新一季,爆笑开聊",
+      "still": "still_vs_duanzishou.png"
+    },
+    {
+      "id": "vs_weishuxindong5",
+      "title": "微熟心动5",
+      "category": "综艺",
+      "tags": [
+        "恋爱",
+        "观察"
+      ],
+      "year": 2026,
+      "region": "内地",
+      "episodes": 16,
+      "updatedTo": 11,
+      "rating": 8.6,
+      "heat": 11245,
+      "badge": "VIP",
+      "poster": "poster_vs_weishuxindong5.png",
+      "director": "总导演组",
+      "cast": [
+        {
+          "name": "观察团",
+          "role": "嘉宾"
+        }
+      ],
+      "desc": "六位30+都市男女入住心动公寓,微熟龄的爱情没有试错成本,每一次心动都要算清楚。",
+      "still": "still_vs_weishuxindong5.png"
+    },
+    {
+      "id": "vs_pengranpinlv8",
+      "title": "怦然频率8",
+      "category": "综艺",
+      "tags": [
+        "恋爱",
+        "推理"
+      ],
+      "year": 2026,
+      "region": "内地",
+      "episodes": 14,
+      "updatedTo": 9,
+      "rating": 8.9,
+      "heat": 10658,
+      "badge": "VIP",
+      "poster": "poster_vs_pengranpinlv8.png",
+      "director": "总导演组",
+      "cast": [
+        {
+          "name": "观察团",
+          "role": "嘉宾"
+        }
+      ],
+      "desc": "信号小屋第八季,只有短信没有姓名,凭心动频率找到彼此。",
+      "still": "still_vs_pengranpinlv8.png"
+    },
+    {
+      "id": "vs_heihei6",
+      "title": "嘿嘿嘿嘿嘿6",
+      "category": "综艺",
+      "tags": [
+        "喜剧",
+        "真人秀"
+      ],
+      "year": 2026,
+      "region": "内地",
+      "episodes": 12,
+      "updatedTo": 7,
+      "rating": 8.7,
+      "heat": 9876,
+      "badge": "独播",
+      "poster": "poster_vs_heihei6.png",
+      "director": "总导演组",
+      "cast": [
+        {
+          "name": "五个好朋友",
+          "role": "常驻"
+        }
+      ],
+      "desc": "五个中年好友的无剧本流浪旅行,没有任务,只有随地大小笑。",
+      "still": "still_vs_heihei6.png"
+    },
+    {
+      "id": "vs_shuozoujiuzou3",
+      "title": "说走就走3",
+      "category": "综艺",
+      "tags": [
+        "旅行",
+        "真人秀"
+      ],
+      "year": 2026,
+      "region": "内地",
+      "episodes": 12,
+      "updatedTo": 5,
+      "rating": 8.5,
+      "heat": 9234,
+      "badge": "VIP",
+      "poster": "poster_vs_shuozoujiuzou3.png",
+      "director": "总导演组",
+      "cast": [
+        {
+          "name": "出发团",
+          "role": "常驻"
+        }
+      ],
+      "desc": "行李箱永远在门口,导航永远指向未知,第三季说走就走开进西北无人区。",
+      "still": "still_vs_shuozoujiuzou3.png"
+    },
+    {
+      "id": "vs_diqiuzhenxinxian2",
+      "title": "地球真新鲜2",
+      "category": "综艺",
+      "tags": [
+        "自然",
+        "探索"
+      ],
+      "year": 2026,
+      "region": "内地",
+      "episodes": 10,
+      "updatedTo": 10,
+      "rating": 9.0,
+      "heat": 8865,
+      "badge": "独播",
+      "poster": "poster_vs_diqiuzhenxinxian2.png",
+      "director": "总导演组",
+      "cast": [
+        {
+          "name": "科考团",
+          "role": "常驻"
+        }
+      ],
+      "desc": "跟着科考队去地球上最新鲜的角落:火山口露营、冰川下潜水、雨林里数萤火虫。",
+      "still": "still_vs_diqiuzhenxinxian2.png"
+    },
+    {
+      "id": "vs_tianshengshengxian7",
+      "title": "天生的声线7",
+      "category": "综艺",
+      "tags": [
+        "音乐"
+      ],
+      "year": 2026,
+      "region": "内地",
+      "episodes": 13,
+      "updatedTo": 13,
+      "rating": 8.8,
+      "heat": 8321,
+      "badge": "VIP",
+      "poster": "poster_vs_tianshengshengxian7.png",
+      "director": "总导演组",
+      "cast": [
+        {
+          "name": "金曲合伙人",
+          "role": "常驻"
+        }
+      ],
+      "desc": "原创合唱竞演第七季,老牌唱将与新声代两两组队,把冷门好歌唱上热搜。",
+      "still": "still_vs_tianshengshengxian7.png"
+    },
+    {
+      "id": "vs_yiweifengshen",
+      "title": "一味封神",
+      "category": "综艺",
+      "tags": [
+        "美食",
+        "竞技"
+      ],
+      "year": 2026,
+      "region": "内地",
+      "episodes": 12,
+      "updatedTo": 0,
+      "rating": null,
+      "heat": 7684,
+      "badge": "预约",
+      "reserveNote": "7月29日上线",
+      "poster": "poster_vs_yiweifengshen.png",
+      "director": "总导演组",
+      "cast": [
+        {
+          "name": "主厨团",
+          "role": "常驻"
+        }
+      ],
+      "desc": "32位民间掌勺人闯关封神榜,一道菜定去留,烟火气里的厨神诞生记。",
+      "still": "still_vs_yiweifengshen.png"
+    },
+    {
+      "id": "vs_tuilikaishile4",
+      "title": "推理开始了4",
+      "category": "综艺",
+      "tags": [
+        "推理",
+        "剧情"
+      ],
+      "year": 2026,
+      "region": "内地",
+      "episodes": 12,
+      "updatedTo": 9,
+      "rating": 9.2,
+      "heat": 8973,
+      "badge": "加更",
+      "poster": "poster_vs_tuilikaishile4.png",
+      "director": "总导演组",
+      "cast": [
+        {
+          "name": "侦探团",
+          "role": "常驻"
+        }
+      ],
+      "desc": "大型实景剧本推理第四季,这一次凶手可能不止一个。",
+      "still": "still_vs_tuilikaishile4.png"
+    },
+    {
+      "id": "an_douxuandalu2",
+      "title": "斗玄大陆Ⅱ",
+      "category": "动漫",
+      "tags": [
+        "玄幻",
+        "国漫"
+      ],
+      "year": 2026,
+      "region": "内地",
+      "episodes": 400,
+      "updatedTo": 312,
+      "rating": 9.3,
+      "heat": 18764,
+      "badge": "VIP",
+      "vipFrom": 300,
+      "poster": "poster_an_douxuandalu2.png",
+      "still": "still_an_douxuandalu2.png",
+      "director": "玄机社",
+      "cast": [
+        {
+          "name": "唐小三",
+          "role": "主角"
+        }
+      ],
+      "desc": "重生斗玄大陆的少年魂师,双生武魂觉醒,再闯神界之门。年番周更不断。",
+      "recommend": "众人弃之?我拿来登顶逆袭"
+    },
+    {
+      "id": "an_zhanwang2",
+      "title": "斩妄2",
+      "category": "动漫",
+      "tags": [
+        "都市",
+        "热血"
+      ],
+      "year": 2026,
+      "region": "内地",
+      "episodes": 26,
+      "updatedTo": 14,
+      "rating": 9.1,
+      "heat": 15230,
+      "badge": "独播",
+      "poster": "poster_an_zhanwang2.png",
+      "director": "灵樨动画",
+      "cast": [
+        {
+          "name": "林小刀",
+          "role": "主角"
+        }
+      ],
+      "desc": "都市除妄人第二季,神明陨落之后,凡人执刀斩妄念。",
+      "still": "still_an_zhanwang2.png"
+    },
+    {
+      "id": "an_daoni",
+      "title": "道逆",
+      "category": "动漫",
+      "tags": [
+        "修仙",
+        "国漫"
+      ],
+      "year": 2026,
+      "region": "内地",
+      "episodes": 200,
+      "updatedTo": 118,
+      "rating": 9.4,
+      "heat": 14876,
+      "badge": "VIP",
+      "vipFrom": 110,
+      "poster": "poster_an_daoni.png",
+      "director": "空境动画",
+      "cast": [
+        {
+          "name": "王临",
+          "role": "主角"
+        }
+      ],
+      "desc": "平凡少年逆道而行,一步一劫,从凡尘杀到仙界尽头。",
+      "still": "still_an_daoni.png"
+    },
+    {
+      "id": "an_qianfangjiemanju",
+      "title": "千芳劫·漫剧",
+      "category": "动漫",
+      "tags": [
+        "古装",
+        "漫剧"
+      ],
+      "year": 2026,
+      "region": "内地",
+      "episodes": 60,
+      "updatedTo": 22,
+      "rating": null,
+      "heat": 9865,
+      "badge": "上新",
+      "poster": "poster_an_qianfangjiemanju.png",
+      "director": "花颜工作室",
+      "cast": [
+        {
+          "name": "姜芜",
+          "role": "主角"
+        }
+      ],
+      "desc": "热播剧《千芳劫》官方漫剧,动态漫画重现百花宴刺杀名场面。",
+      "still": "still_an_qianfangjiemanju.png"
+    },
+    {
+      "id": "an_tunxingjiyuan",
+      "title": "吞星纪元",
+      "category": "动漫",
+      "tags": [
+        "科幻",
+        "国漫"
+      ],
+      "year": 2025,
+      "region": "内地",
+      "episodes": 180,
+      "updatedTo": 156,
+      "rating": 9.2,
+      "heat": 13564,
+      "badge": "VIP",
+      "vipFrom": 150,
+      "poster": "poster_an_tunxingjiyuan.png",
+      "director": "玄机社",
+      "cast": [
+        {
+          "name": "罗宇",
+          "role": "主角"
+        }
+      ],
+      "desc": "地球进入吞星纪元,武者以肉身撼星舰,少年罗宇的宇宙征途从地下拳馆开始。",
+      "recommend": "少年逆袭,吞星而生",
+      "still": "still_an_tunxingjiyuan.png"
+    },
+    {
+      "id": "an_yinshizhixia6",
+      "title": "隐世之下6",
+      "category": "动漫",
+      "tags": [
+        "异能",
+        "国漫"
+      ],
+      "year": 2026,
+      "region": "内地",
+      "episodes": 24,
+      "updatedTo": 8,
+      "rating": 9.5,
+      "heat": 12873,
+      "badge": "VIP",
+      "vipFrom": 6,
+      "poster": "poster_an_yinshizhixia6.png",
+      "director": "米粒影业",
+      "cast": [
+        {
+          "name": "张楚风",
+          "role": "主角"
+        }
+      ],
+      "desc": "隐世宗门大会落幕,第六季少年携隐门秘术下山,直面碑中人真相。",
+      "still": "still_an_yinshizhixia6.png"
+    },
+    {
+      "id": "an_zhiyedianfeng3",
+      "title": "职业巅峰3",
+      "category": "动漫",
+      "tags": [
+        "电竞",
+        "国漫"
+      ],
+      "year": 2025,
+      "region": "内地",
+      "episodes": 24,
+      "updatedTo": 24,
+      "rating": 9.0,
+      "heat": 10986,
+      "badge": "VIP",
+      "vipFrom": 20,
+      "poster": "poster_an_zhiyedianfeng3.png",
+      "director": "彩铅动画",
+      "cast": [
+        {
+          "name": "叶秋风",
+          "role": "主角"
+        }
+      ],
+      "desc": "被俱乐部扫地出门的传奇选手,带着网吧战队重返职业之巅,第三季总决赛开打。",
+      "still": "still_an_zhiyedianfeng3.png"
+    },
+    {
+      "id": "an_hulingxiaohongxian",
+      "title": "狐灵小红线",
+      "category": "动漫",
+      "tags": [
+        "古风",
+        "恋爱"
+      ],
+      "year": 2024,
+      "region": "内地",
+      "episodes": 120,
+      "updatedTo": 120,
+      "rating": 9.1,
+      "heat": 9564,
+      "badge": "VIP",
+      "vipFrom": 110,
+      "poster": "poster_an_hulingxiaohongxian.png",
+      "director": "花颜工作室",
+      "cast": [
+        {
+          "name": "小红线",
+          "role": "主角"
+        }
+      ],
+      "desc": "牵红线的狐灵每续一段前世姻缘,就要忘记一段自己的记忆。全一百二十集完结撒花。",
+      "still": "still_an_hulingxiaohongxian.png"
+    },
+    {
+      "id": "an_kuaidaoxiaoqi",
+      "title": "快刀小七",
+      "category": "动漫",
+      "tags": [
+        "动作",
+        "搞笑"
+      ],
+      "year": 2023,
+      "region": "内地",
+      "episodes": 50,
+      "updatedTo": 50,
+      "rating": 9.4,
+      "heat": 8987,
+      "badge": "独播",
+      "poster": "poster_an_kuaidaoxiaoqi.png",
+      "director": "小疯映画",
+      "cast": [
+        {
+          "name": "小七",
+          "role": "主角"
+        }
+      ],
+      "desc": "失忆的理发师身怀天下第一快刀,一边剪头一边找回自己是谁。",
+      "recommend": "一把快刀笑闯江湖",
+      "still": "still_an_kuaidaoxiaoqi.png"
+    },
+    {
+      "id": "an_zhoulinghuilang",
+      "title": "咒灵回廊",
+      "category": "动漫",
+      "tags": [
+        "海外",
+        "热血"
+      ],
+      "year": 2024,
+      "region": "海外",
+      "episodes": 47,
+      "updatedTo": 47,
+      "rating": 9.3,
+      "heat": 10231,
+      "badge": "VIP",
+      "vipFrom": 40,
+      "poster": "poster_an_zhoulinghuilang.png",
+      "director": "MAPP社",
+      "cast": [
+        {
+          "name": "虎杖游",
+          "role": "主角"
+        }
+      ],
+      "desc": "吞下咒物手指的高中生,进入咒灵横行的回廊世界,拜入最强咒师门下。",
+      "still": "still_an_zhoulinghuilang.png"
+    },
+    {
+      "id": "kd_lemiemie",
+      "title": "乐咩咩历险记",
+      "category": "少儿",
+      "tags": [
+        "动画",
+        "冒险"
+      ],
+      "year": 2025,
+      "region": "内地",
+      "episodes": 60,
+      "updatedTo": 60,
+      "rating": 9.0,
+      "heat": 8654,
+      "badge": "免费",
+      "poster": "poster_kd_lemiemie.png",
+      "director": "青青草原社",
+      "cast": [
+        {
+          "name": "乐咩咩",
+          "role": "主角"
+        }
+      ],
+      "desc": "机智小羊乐咩咩带领羊村小伙伴智斗大灰狼,草原冒险欢乐不停。",
+      "still": "still_kd_lemiemie.png"
+    },
+    {
+      "id": "kd_xiaozhupike",
+      "title": "小猪皮可",
+      "category": "少儿",
+      "tags": [
+        "动画",
+        "启蒙"
+      ],
+      "year": 2024,
+      "region": "海外",
+      "episodes": 156,
+      "updatedTo": 156,
+      "rating": 9.2,
+      "heat": 8123,
+      "badge": "免费",
+      "poster": "poster_kd_xiaozhupike.png",
+      "director": "AB Studio",
+      "cast": [
+        {
+          "name": "皮可",
+          "role": "主角"
+        }
+      ],
+      "desc": "爱跳泥坑的小猪皮可和一家人的温馨日常,低幼启蒙第一站。",
+      "recommend": "小猪皮克的开心农场",
+      "still": "still_kd_xiaozhupike.png"
+    },
+    {
+      "id": "kd_wawabashi",
+      "title": "娃娃巴士启蒙乐园",
+      "category": "少儿",
+      "tags": [
+        "启蒙",
+        "儿歌"
+      ],
+      "year": 2025,
+      "region": "内地",
+      "episodes": 200,
+      "updatedTo": 200,
+      "rating": 8.8,
+      "heat": 7865,
+      "badge": "免费",
+      "poster": "poster_kd_wawabashi.png",
+      "director": "娃娃巴士",
+      "cast": [
+        {
+          "name": "奇奇",
+          "role": "主角"
+        }
+      ],
+      "desc": "儿歌、认知、好习惯,娃娃巴士开到哪里,启蒙课堂就开到哪里。",
+      "still": "still_kd_wawabashi.png"
+    },
+    {
+      "id": "kd_jimuhuanying",
+      "title": "积木幻影小忍者",
+      "category": "少儿",
+      "tags": [
+        "动画",
+        "动作"
+      ],
+      "year": 2024,
+      "region": "海外",
+      "episodes": 98,
+      "updatedTo": 98,
+      "rating": 8.9,
+      "heat": 7231,
+      "badge": "VIP",
+      "vipFrom": 90,
+      "poster": "poster_kd_jimuhuanying.png",
+      "director": "Brick Works",
+      "cast": [
+        {
+          "name": "劳埃德风",
+          "role": "绿忍者"
+        }
+      ],
+      "desc": "六位积木小忍者守护忍者小镇,旋风忍术合体大招帅到飞起。",
+      "still": "still_kd_jimuhuanying.png"
+    },
+    {
+      "id": "kd_lingtongnaohai",
+      "title": "灵童闹海传",
+      "category": "少儿",
+      "tags": [
+        "动画",
+        "神话"
+      ],
+      "year": 2023,
+      "region": "内地",
+      "episodes": 52,
+      "updatedTo": 52,
+      "rating": 9.1,
+      "heat": 6987,
+      "badge": "免费",
+      "poster": "poster_kd_lingtongnaohai.png",
+      "director": "上美新社",
+      "cast": [
+        {
+          "name": "小灵童",
+          "role": "主角"
+        }
+      ],
+      "desc": "脚踏风火轮的小灵童大闹东海,经典神话新编,合家欢首选。",
+      "recommend": "小灵童闹翻东海龙宫",
+      "still": "still_kd_lingtongnaohai.png"
+    },
+    {
+      "id": "kd_haidouqi",
+      "title": "嗨!豆奇",
+      "category": "少儿",
+      "tags": [
+        "动画",
+        "益智"
+      ],
+      "year": 2025,
+      "region": "海外",
+      "episodes": 104,
+      "updatedTo": 104,
+      "rating": 8.7,
+      "heat": 6543,
+      "badge": "免费",
+      "poster": "poster_kd_haidouqi.png",
+      "director": "Dodge Kids",
+      "cast": [
+        {
+          "name": "豆奇",
+          "role": "主角"
+        }
+      ],
+      "desc": "大狗豆奇和小主人的问答日常,每集解决一个小朋友的十万个为什么。",
+      "still": "still_kd_haidouqi.png"
+    },
+    {
+      "id": "kd_baoxiaodoudou",
+      "title": "爆笑豆豆虫",
+      "category": "少儿",
+      "tags": [
+        "动画",
+        "搞笑"
+      ],
+      "year": 2024,
+      "region": "海外",
+      "episodes": 130,
+      "updatedTo": 130,
+      "rating": 8.9,
+      "heat": 6234,
+      "badge": "免费",
+      "poster": "poster_kd_baoxiaodoudou.png",
+      "director": "Bean Toons",
+      "cast": [
+        {
+          "name": "红豆",
+          "role": "主角"
+        },
+        {
+          "name": "黄豆",
+          "role": "主角"
+        }
+      ],
+      "desc": "两条小虫的无厘头默剧,零台词全程爆笑,大人小孩都上头。",
+      "still": "still_kd_baoxiaodoudou.png"
+    },
+    {
+      "id": "kd_datangshaonianyou",
+      "title": "大唐少年游",
+      "category": "少儿",
+      "tags": [
+        "动画",
+        "国风"
+      ],
+      "year": 2026,
+      "region": "内地",
+      "episodes": 40,
+      "updatedTo": 16,
+      "rating": 9.0,
+      "heat": 6879,
+      "badge": "上新",
+      "poster": "poster_kd_datangshaonianyou.png",
+      "director": "长安动画",
+      "cast": [
+        {
+          "name": "李小白",
+          "role": "主角"
+        }
+      ],
+      "desc": "少年李小白仗剑游大唐,一集一首诗,边看动画边背唐诗。",
+      "still": "still_kd_datangshaonianyou.png"
+    },
+    {
+      "id": "dc_lansemijing",
+      "title": "蓝色秘境",
+      "category": "纪录片",
+      "tags": [
+        "自然",
+        "海洋"
+      ],
+      "year": 2025,
+      "region": "海外",
+      "episodes": 8,
+      "updatedTo": 8,
+      "rating": 9.5,
+      "heat": 5876,
+      "badge": "VIP",
+      "vipFrom": 5,
+      "producer": "引进",
+      "poster": "poster_dc_lansemijing.png",
+      "director": "海洋摄制组",
+      "cast": [
+        {
+          "name": "自然之声",
+          "role": "解说"
+        }
+      ],
+      "desc": "耗时五年的深海摄影计划,从极光下的冰海到万米海沟,看见地球最后的蓝色秘境。",
+      "still": "still_dc_lansemijing.png"
+    },
+    {
+      "id": "dc_fengweishanhe",
+      "title": "风味山河",
+      "category": "纪录片",
+      "tags": [
+        "美食",
+        "人文"
+      ],
+      "year": 2026,
+      "region": "内地",
+      "episodes": 10,
+      "updatedTo": 7,
+      "rating": 9.6,
+      "heat": 6234,
+      "badge": "独播",
+      "producer": "自制",
+      "poster": "poster_dc_fengweishanhe.png",
+      "director": "风味团队",
+      "cast": [
+        {
+          "name": "山河至味",
+          "role": "解说"
+        }
+      ],
+      "desc": "跟着一碗面走遍九省山河,食物是最短的乡愁,也是最长的历史。",
+      "still": "still_dc_fengweishanhe.png"
+    },
+    {
+      "id": "dc_jidishengling",
+      "title": "极地生灵",
+      "category": "纪录片",
+      "tags": [
+        "自然",
+        "动物"
+      ],
+      "year": 2024,
+      "region": "海外",
+      "episodes": 6,
+      "updatedTo": 6,
+      "rating": 9.4,
+      "heat": 5432,
+      "badge": "VIP",
+      "vipFrom": 4,
+      "producer": "引进",
+      "poster": "poster_dc_jidishengling.png",
+      "director": "极地摄制组",
+      "cast": [
+        {
+          "name": "冰原之眼",
+          "role": "解说"
+        }
+      ],
+      "desc": "零下六十度的育儿日记:帝企鹅、北极狐与冰海独角鲸的一年。",
+      "still": "still_dc_jidishengling.png"
+    },
+    {
+      "id": "dc_chengshimaidong",
+      "title": "城市脉动",
+      "category": "纪录片",
+      "tags": [
+        "社会",
+        "人文"
+      ],
+      "year": 2025,
+      "region": "内地",
+      "episodes": 6,
+      "updatedTo": 6,
+      "rating": 9.0,
+      "heat": 4987,
+      "badge": "免费",
+      "producer": "自制",
+      "poster": "poster_dc_chengshimaidong.png",
+      "director": "城记工作室",
+      "cast": [
+        {
+          "name": "城市之声",
+          "role": "解说"
+        }
+      ],
+      "desc": "凌晨四点的批发市场、末班地铁的司机、高架桥下的修表匠——城市靠他们跳动。",
+      "still": "still_dc_chengshimaidong.png"
+    },
+    {
+      "id": "dc_guyaochongguang",
+      "title": "古窑重光",
+      "category": "纪录片",
+      "tags": [
+        "历史",
+        "文博"
+      ],
+      "year": 2026,
+      "region": "内地",
+      "episodes": 5,
+      "updatedTo": 5,
+      "rating": 9.2,
+      "heat": 4567,
+      "badge": "独播",
+      "producer": "自制",
+      "poster": "poster_dc_guyaochongguang.png",
+      "director": "文博组",
+      "cast": [
+        {
+          "name": "窑火千年",
+          "role": "解说"
+        }
+      ],
+      "desc": "一座沉睡六百年的古窑重新点火,匠人们用三年复原一只失传的天青釉盏。",
+      "still": "still_dc_guyaochongguang.png"
+    },
+    {
+      "id": "dc_changchengneiwai",
+      "title": "长城内外",
+      "category": "纪录片",
+      "tags": [
+        "历史",
+        "地理"
+      ],
+      "year": 2023,
+      "region": "内地",
+      "episodes": 12,
+      "updatedTo": 12,
+      "rating": 9.3,
+      "heat": 4321,
+      "badge": "免费",
+      "producer": "自制",
+      "poster": "poster_dc_changchengneiwai.png",
+      "director": "地理组",
+      "cast": [
+        {
+          "name": "山河讲述",
+          "role": "解说"
+        }
+      ],
+      "desc": "沿两万一千公里长城走一年,看墙内墙外的四季与人间。",
+      "still": "still_dc_changchengneiwai.png"
+    },
+    {
+      "id": "sd_weiguangzhishang",
+      "title": "微光之上",
+      "category": "短剧",
+      "tags": [
+        "都市",
+        "逆袭"
+      ],
+      "year": 2026,
+      "region": "内地",
+      "episodes": 64,
+      "updatedTo": 64,
+      "rating": null,
+      "heat": 28643,
+      "badge": "免费",
+      "rankNote": "竖屏热播榜第1",
+      "orientation": "portrait",
+      "freeUpTo": 12,
+      "poster": "poster_sd_weiguangzhishang.png",
+      "still": "still_sd_weiguangzhishang.png",
+      "director": "微光工作室",
+      "cast": [
+        {
+          "name": "沈知玥",
+          "role": "林微光"
+        },
+        {
+          "name": "江叙白",
+          "role": "傅沉舟"
+        }
+      ],
+      "desc": "被家族除名的私生女白天在集团做保洁,晚上是匿名操盘手「微光」。全64集。",
+      "sideStats": {
+        "like": "1.07万",
+        "comment": 2314,
+        "share": 986
+      },
+      "recommend": "微光之上,逆风翻盘"
+    },
+    {
+      "id": "sd_tianque",
+      "title": "天阙",
+      "category": "短剧",
+      "tags": [
+        "古装",
+        "复仇"
+      ],
+      "year": 2026,
+      "region": "内地",
+      "episodes": 80,
+      "updatedTo": 80,
+      "rating": null,
+      "heat": 24310,
+      "badge": "VIP",
+      "orientation": "portrait",
+      "freeUpTo": 10,
+      "poster": "poster_sd_tianque.png",
+      "director": "天阙组",
+      "cast": [
+        {
+          "name": "孟晚昭",
+          "role": "阿阙"
+        }
+      ],
+      "desc": "冷宫弃女一夜之间成了监国长公主,天阙之上,她要把欠她的都讨回来。全80集。",
+      "still": "still_sd_tianque.png"
+    },
+    {
+      "id": "sd_huanggui",
+      "title": "凰归",
+      "category": "短剧",
+      "tags": [
+        "虐渣",
+        "复仇"
+      ],
+      "year": 2026,
+      "region": "内地",
+      "episodes": 86,
+      "updatedTo": 86,
+      "rating": null,
+      "heat": 21876,
+      "badge": "免费",
+      "orientation": "portrait",
+      "freeUpTo": 15,
+      "poster": "poster_sd_huanggui.png",
+      "director": "凰归组",
+      "cast": [
+        {
+          "name": "苏念安",
+          "role": "凤凰儿"
+        }
+      ],
+      "desc": "替嫁三年被弃如敝履,重生归来她是权倾朝野的凤家家主。虐渣爽感拉满,全86集。",
+      "still": "still_sd_huanggui.png"
+    },
+    {
+      "id": "sd_shanhuntianchong",
+      "title": "闪婚后被大佬宠上天",
+      "category": "短剧",
+      "tags": [
+        "都市",
+        "甜宠"
+      ],
+      "year": 2026,
+      "region": "内地",
+      "episodes": 92,
+      "updatedTo": 92,
+      "rating": null,
+      "heat": 19654,
+      "badge": "免费",
+      "orientation": "portrait",
+      "freeUpTo": 12,
+      "poster": "poster_sd_shanhuntianchong.png",
+      "director": "甜剧组",
+      "cast": [
+        {
+          "name": "白露微",
+          "role": "乔安安"
+        }
+      ],
+      "desc": "相亲被放鸽子,她转身跟隔壁桌陌生男人领了证,婚后才知道他是全城首富。全92集。",
+      "still": "still_sd_shanhuntianchong.png"
+    },
+    {
+      "id": "sd_majiacangbuzhu",
+      "title": "夫人的马甲藏不住",
+      "category": "短剧",
+      "tags": [
+        "都市",
+        "奇幻"
+      ],
+      "year": 2026,
+      "region": "内地",
+      "episodes": 78,
+      "updatedTo": 78,
+      "rating": null,
+      "heat": 17832,
+      "badge": "VIP",
+      "orientation": "portrait",
+      "freeUpTo": 10,
+      "poster": "poster_sd_majiacangbuzhu.png",
+      "director": "马甲组",
+      "cast": [
+        {
+          "name": "林晚星",
+          "role": "顾云开"
+        }
+      ],
+      "desc": "国际神医、金牌编曲、赛车冠军……豪门弃妇的马甲一个个掉落,打脸全场。全78集。",
+      "still": "still_sd_majiacangbuzhu.png"
+    },
+    {
+      "id": "sd_zhaixingji",
+      "title": "摘星记",
+      "category": "短剧",
+      "tags": [
+        "古装",
+        "励志"
+      ],
+      "year": 2026,
+      "region": "内地",
+      "episodes": 60,
+      "updatedTo": 60,
+      "rating": null,
+      "heat": 15420,
+      "badge": "免费",
+      "orientation": "portrait",
+      "freeUpTo": 12,
+      "poster": "poster_sd_zhaixingji.png",
+      "director": "摘星组",
+      "cast": [
+        {
+          "name": "沈知玥",
+          "role": "星织"
+        }
+      ],
+      "desc": "织坊小婢靠一双巧手织出通天路,从浣纱女到一品诰命。全60集。",
+      "still": "still_sd_zhaixingji.png"
+    },
+    {
+      "id": "sd_qianjinfanpan",
+      "title": "重生千金要翻盘",
+      "category": "短剧",
+      "tags": [
+        "都市",
+        "逆袭"
+      ],
+      "year": 2026,
+      "region": "内地",
+      "episodes": 88,
+      "updatedTo": 88,
+      "rating": null,
+      "heat": 14268,
+      "badge": "免费",
+      "orientation": "portrait",
+      "freeUpTo": 15,
+      "poster": "poster_sd_qianjinfanpan.png",
+      "director": "翻盘组",
+      "cast": [
+        {
+          "name": "温以宁",
+          "role": "宋知意"
+        }
+      ],
+      "desc": "重回认亲宴当天,真千金这次不忍了,虚伪养姐的每一步棋她都提前拆穿。全88集。",
+      "still": "still_sd_qianjinfanpan.png"
+    },
+    {
+      "id": "sa_lingkui",
+      "title": "灵傀伴我朝暮",
+      "category": "短番",
+      "tags": [
+        "漫剧",
+        "奇幻"
+      ],
+      "year": 2026,
+      "region": "内地",
+      "episodes": 300,
+      "updatedTo": 214,
+      "rating": null,
+      "heat": 16875,
+      "badge": "免费",
+      "orientation": "portrait",
+      "freeUpTo": 30,
+      "aiNote": "本内容含AI生成技术",
+      "poster": "poster_sa_lingkui.png",
+      "director": "灵傀工作室",
+      "cast": [
+        {
+          "name": "阿傀",
+          "role": "主角"
+        }
+      ],
+      "desc": "捡回家的木偶人半夜睁开了眼,从此少女身边多了一个不会说谎的灵傀。竖屏漫剧,更新至214集。",
+      "sideStats": {
+        "like": "8642",
+        "comment": 1203,
+        "share": 455
+      },
+      "still": "still_sa_lingkui.png"
+    },
+    {
+      "id": "sa_xiuluojianzun",
+      "title": "修罗剑尊",
+      "category": "短番",
+      "tags": [
+        "漫剧",
+        "玄幻"
+      ],
+      "year": 2025,
+      "region": "内地",
+      "episodes": 800,
+      "updatedTo": 638,
+      "rating": null,
+      "heat": 15987,
+      "badge": "免费",
+      "orientation": "portrait",
+      "freeUpTo": 50,
+      "followText": "18万在追",
+      "aiNote": "本内容含AI生成技术",
+      "poster": "poster_sa_xiuluojianzun.png",
+      "director": "修罗组",
+      "cast": [
+        {
+          "name": "叶修罗",
+          "role": "主角"
+        }
+      ],
+      "desc": "剑冢里爬出来的废徒,以杀证道成修罗。更新至638集,18万人在追。",
+      "still": "still_sa_xiuluojianzun.png"
+    },
+    {
+      "id": "sa_dandaozhizun",
+      "title": "丹道至尊",
+      "category": "短番",
+      "tags": [
+        "漫剧",
+        "修仙"
+      ],
+      "year": 2025,
+      "region": "内地",
+      "episodes": 600,
+      "updatedTo": 402,
+      "rating": null,
+      "heat": 13654,
+      "badge": "免费",
+      "orientation": "portrait",
+      "freeUpTo": 40,
+      "aiNote": "本内容含AI生成技术",
+      "poster": "poster_sa_dandaozhizun.png",
+      "director": "丹道组",
+      "cast": [
+        {
+          "name": "陈丹青云",
+          "role": "主角"
+        }
+      ],
+      "desc": "药堂杂役偶得上古丹经,一炉丹药搅动九州风云。更新至402集。",
+      "still": "still_sa_dandaozhizun.png"
+    },
+    {
+      "id": "sa_dushiyixian",
+      "title": "都市医仙",
+      "category": "短番",
+      "tags": [
+        "漫剧",
+        "都市"
+      ],
+      "year": 2024,
+      "region": "内地",
+      "episodes": 700,
+      "updatedTo": 520,
+      "rating": null,
+      "heat": 12432,
+      "badge": "免费",
+      "orientation": "portrait",
+      "freeUpTo": 50,
+      "aiNote": "本内容含AI生成技术",
+      "poster": "poster_sa_dushiyixian.png",
+      "director": "医仙组",
+      "cast": [
+        {
+          "name": "秦风",
+          "role": "主角"
+        }
+      ],
+      "desc": "山中学医十八年,下山第一天就用一根银针救活了首富老爷子。更新至520集。",
+      "still": "still_sa_dushiyixian.png"
+    },
+    {
+      "id": "sa_zhuixuguilai",
+      "title": "赘婿归来",
+      "category": "短番",
+      "tags": [
+        "漫剧",
+        "都市"
+      ],
+      "year": 2024,
+      "region": "内地",
+      "episodes": 500,
+      "updatedTo": 366,
+      "rating": null,
+      "heat": 11208,
+      "badge": "免费",
+      "orientation": "portrait",
+      "freeUpTo": 40,
+      "aiNote": "本内容含AI生成技术",
+      "poster": "poster_sa_zhuixuguilai.png",
+      "director": "归来组",
+      "cast": [
+        {
+          "name": "林铮",
+          "role": "主角"
+        }
+      ],
+      "desc": "入赘三年受尽白眼,一封家书唤醒他隐藏的战神身份。更新至366集。",
+      "still": "still_sa_zhuixuguilai.png"
+    },
+    {
+      "id": "sa_xingwujiyuan",
+      "title": "星武纪元",
+      "category": "短番",
+      "tags": [
+        "漫剧",
+        "科幻"
+      ],
+      "year": 2025,
+      "region": "内地",
+      "episodes": 400,
+      "updatedTo": 288,
+      "rating": null,
+      "heat": 10321,
+      "badge": "免费",
+      "orientation": "portrait",
+      "freeUpTo": 30,
+      "aiNote": "本内容含AI生成技术",
+      "poster": "poster_sa_xingwujiyuan.png",
+      "director": "星武组",
+      "cast": [
+        {
+          "name": "顾星辰",
+          "role": "主角"
+        }
+      ],
+      "desc": "星际时代人人觉醒星力,唯独他觉醒了一颗「废星」——直到废星开始吞噬万物。更新至288集。",
+      "still": "still_sa_xingwujiyuan.png"
+    }
+  ],
+  "series": {
+    "daomengtuan": {
+      "title": "系列电影",
+      "ids": [
+        "mv_daomengtuan1",
+        "mv_daomengtuan2",
+        "mv_daomengtuan3",
+        "mv_toutianjihua",
+        "mv_zhumengmigong"
+      ]
+    }
+  },
+  "channelTabs": [
+    "首页",
+    "电视剧",
+    "动漫",
+    "电影",
+    "综艺",
+    "少儿",
+    "NBA",
+    "追番",
+    "纪录片",
+    "体育",
+    "播客",
+    "游戏",
+    "短视频",
+    "好物",
+    "爱玩"
+  ],
+  "channels": {
+    "home": {
+      "searchPlaceholder": "斗玄大陆",
+      "banner": {
+        "img": "banner_home.png",
+        "title": "段子手和Ta的伙伴们",
+        "subtitle": "全新一季 爆笑开聊",
+        "contentId": "vs_duanzishou"
+      },
+      "grid": [
+        "tv_hezugongyu4",
+        "an_tunxingjiyuan",
+        "kd_lingtongnaohai",
+        "mv_anyong1995",
+        "an_kuaidaoxiaoqi",
+        "an_douxuandalu2"
+      ],
+      "feed": [
+        {
+          "contentId": "tv_zheyikexindong",
+          "note": "热播榜第2 · 在追破500万",
+          "btn": "在追"
+        },
+        {
+          "contentId": "tv_qianfangjie",
+          "note": "热播榜第1 · 讨论破120万",
+          "btn": "追"
+        },
+        {
+          "contentId": "an_douxuandalu2",
+          "note": "动漫热播榜第1",
+          "btn": "追"
+        },
+        {
+          "contentId": "vs_chongyaba10",
+          "note": "综艺飙升榜第3",
+          "btn": "追"
+        },
+        {
+          "contentId": "mv_daomengtuan3",
+          "note": "院线新片上线",
+          "btn": "想看"
+        },
+        {
+          "contentId": "sd_weiguangzhishang",
+          "note": "竖屏热播榜第1",
+          "btn": "追"
+        }
+      ]
+    },
+    "tv": {
+      "banner": {
+        "img": "banner_tv.png",
+        "title": "年度热门剧",
+        "subtitle": "2022-2026 高分回看",
+        "contentId": "tv_zheyikexindong"
+      },
+      "kingKong": [
+        "全部剧集",
+        "排行榜",
+        "免费短剧",
+        "年度必看",
+        "星剧场"
+      ],
+      "chips": [
+        "推荐",
+        "精品短剧",
+        "N刷榜",
+        "刑侦",
+        "男频",
+        "女频"
+      ],
+      "floors": [
+        {
+          "title": "推荐",
+          "ids": [
+            "tv_qianfangjie",
+            "tv_tiegulinfeng",
+            "tv_yueliangjishi",
+            "tv_luanchichunxiao"
+          ]
+        },
+        {
+          "title": "精品短剧",
+          "ids": [
+            "sd_weiguangzhishang",
+            "sd_tianque",
+            "sd_huanggui"
+          ]
+        },
+        {
+          "title": "N刷榜",
+          "ids": [
+            "tv_hezugongyu4",
+            "tv_shenghuodaluandun",
+            "tv_mingzhentanluoke",
+            "tv_wodehoubanchang",
+            "tv_taiqian",
+            "tv_wangchunnian2"
+          ]
+        }
+      ]
+    },
+    "movie": {
+      "banner": {
+        "img": "banner_movie.png",
+        "title": "双雄会",
+        "subtitle": "影帝集结 港片专场",
+        "contentId": "mv_anyong1995"
+      },
+      "kingKong": [
+        "全部电影",
+        "排行榜",
+        "好片快刷",
+        "年度动作片"
+      ],
+      "chips": [
+        "推荐",
+        "最热",
+        "高分必看",
+        "限免",
+        "动作",
+        "喜剧"
+      ],
+      "floors": [
+        {
+          "title": "推荐",
+          "ids": [
+            "mv_daomengtuan3",
+            "mv_jixianzhiwai",
+            "mv_anyong1995",
+            "mv_chaonengzhe2",
+            "mv_taitaitailipu",
+            "mv_yizhanfanshen",
+            "mv_zhumengmigong",
+            "mv_xindongyugao"
+          ]
+        }
+      ]
+    },
+    "variety": {
+      "banner": {
+        "img": "banner_variety.png",
+        "title": "冲鸭吧10",
+        "subtitle": "泥潭大战 爆笑回归",
+        "contentId": "vs_chongyaba10"
+      },
+      "kingKong": [
+        "全部综艺",
+        "排行榜",
+        "即将上线",
+        "今日更新",
+        "播客"
+      ],
+      "subBoards": [
+        {
+          "title": "情感综艺榜",
+          "ids": [
+            "vs_weishuxindong5",
+            "vs_pengranpinlv8",
+            "vs_shuozoujiuzou3"
+          ]
+        },
+        {
+          "title": "游戏综艺榜",
+          "ids": [
+            "vs_diqiuzhenxinxian2",
+            "vs_chongyaba10",
+            "vs_heihei6",
+            "vs_shuozoujiuzou3"
+          ]
+        },
+        {
+          "title": "音乐舞台榜",
+          "ids": [
+            "vs_tianshengshengxian7",
+            "mv_xinghaifangzhou",
+            "vs_duanzishou"
+          ]
+        }
+      ],
+      "floors": [
+        {
+          "title": "推荐",
+          "ids": [
+            "vs_duanzishou",
+            "vs_tuilikaishile4",
+            "vs_yiweifengshen",
+            "vs_chongyaba10"
+          ]
+        }
+      ],
+      "resumeBar": {
+        "contentId": "vs_chongyaba10",
+        "text": "继续观看 第8期 45%"
+      }
+    },
+    "anime": {
+      "banner": {
+        "img": "banner_anime.png",
+        "title": "斗玄大陆Ⅱ",
+        "subtitle": "神界篇 燃力全开",
+        "contentId": "an_douxuandalu2"
+      },
+      "kingKong": [
+        "全部动漫",
+        "排行榜",
+        "看漫剧",
+        "补番领会员",
+        "排播表"
+      ],
+      "floors": [
+        {
+          "title": "推荐",
+          "ids": [
+            "an_zhanwang2",
+            "an_daoni",
+            "an_qianfangjiemanju",
+            "an_yinshizhixia6"
+          ]
+        },
+        {
+          "title": "暑期补番",
+          "ids": [
+            "an_kuaidaoxiaoqi",
+            "an_hulingxiaohongxian",
+            "an_zhoulinghuilang",
+            "an_zhiyedianfeng3"
+          ]
+        }
+      ]
+    },
+    "kids": {
+      "banner": {
+        "img": "banner_kids.png",
+        "title": "大唐少年游",
+        "subtitle": "看动画 学唐诗",
+        "contentId": "kd_datangshaonianyou"
+      },
+      "filters": [
+        "年龄∨",
+        "推荐",
+        "热播榜",
+        "科普纪录片",
+        "动物",
+        "搞笑"
+      ],
+      "floors": [
+        {
+          "title": "热播榜",
+          "ids": [
+            "kd_lemiemie",
+            "kd_wawabashi",
+            "kd_jimuhuanying",
+            "kd_xiaozhupike",
+            "kd_baoxiaodoudou",
+            "kd_haidouqi"
+          ]
+        },
+        {
+          "title": "推荐",
+          "ids": [
+            "kd_lingtongnaohai",
+            "kd_xiaozhupike",
+            "kd_baoxiaodoudou",
+            "kd_datangshaonianyou"
+          ]
+        }
+      ],
+      "swapBtn": "换一换"
+    },
+    "doc": {
+      "chips": [
+        "推荐",
+        "自然",
+        "美食",
+        "历史",
+        "社会"
+      ],
+      "floors": [
+        {
+          "title": "推荐",
+          "ids": [
+            "dc_fengweishanhe",
+            "dc_lansemijing",
+            "dc_jidishengling",
+            "dc_guyaochongguang",
+            "dc_chengshimaidong",
+            "dc_changchengneiwai"
+          ]
+        }
+      ]
+    },
+    "bangumi": {
+      "banner": {
+        "img": "banner_anime.png",
+        "title": "隐世之下6",
+        "subtitle": "下山篇 开播",
+        "contentId": "an_yinshizhixia6"
+      },
+      "floors": [
+        {
+          "title": "推荐",
+          "ids": [
+            "an_zhiyedianfeng3",
+            "an_hulingxiaohongxian",
+            "an_zhoulinghuilang",
+            "an_kuaidaoxiaoqi",
+            "an_daoni",
+            "an_douxuandalu2"
+          ]
+        },
+        {
+          "title": "短番热追",
+          "ids": [
+            "sa_xiuluojianzun",
+            "sa_lingkui",
+            "sa_dandaozhizun",
+            "sa_dushiyixian"
+          ]
+        }
+      ],
+      "swapBtn": "换一换"
+    },
+    "nba": {
+      "banner": {
+        "title": "巅峰对决 生涯新章",
+        "subtitle": "传奇老将的下一站",
+        "img": "banner_variety.png"
+      },
+      "chips": [
+        "体育VIP",
+        "十佳球",
+        "职业女篮",
+        "新秀观察",
+        "纪录片"
+      ],
+      "schedule": [
+        {
+          "home": "东岸铁流",
+          "away": "西湾狂澜",
+          "status": "进行中·直播",
+          "score": "78:74"
+        },
+        {
+          "home": "北城极光",
+          "away": "南港飞鲨",
+          "status": "未开始",
+          "time": "明天 09:00"
+        }
+      ],
+      "topic": "专题:传奇老将的下一站"
+    },
+    "sports": {
+      "entries": [
+        "体育VIP",
+        "篮球",
+        "乒乓球",
+        "网球",
+        "F1"
+      ],
+      "schedule": [
+        {
+          "home": "江城雷霆",
+          "away": "海港海燕",
+          "league": "乒超联赛",
+          "status": "进行中·直播",
+          "score": "2:1"
+        },
+        {
+          "home": "云岭网球公开赛",
+          "away": "",
+          "league": "网球",
+          "status": "未开始",
+          "time": "周六 14:00"
+        }
+      ]
+    },
+    "podcast": {
+      "banner": {
+        "title": "子非鱼会客厅",
+        "subtitle": "深夜漫谈 第46期",
+        "img": "banner_home.png"
+      },
+      "chips": [
+        "推荐",
+        "影视娱乐",
+        "趣味闲谈",
+        "人文智识",
+        "兴趣生活"
+      ],
+      "items": [
+        {
+          "title": "子非鱼会客厅",
+          "eps": 46,
+          "followText": "3.2万人在追",
+          "cover": "poster_vs_duanzishou.png"
+        },
+        {
+          "title": "深夜电台失眠指南",
+          "eps": 128,
+          "followText": "1.8万人在追",
+          "cover": "poster_dc_chengshimaidong.png"
+        },
+        {
+          "title": "片场那些事儿",
+          "eps": 64,
+          "followText": "9600人在追",
+          "cover": "poster_tv_taiqian.png"
+        }
+      ]
+    },
+    "game": {
+      "banner": {
+        "title": "极竞联赛夏季赛",
+        "subtitle": "季后赛开战",
+        "img": "banner_variety.png"
+      },
+      "entries": [
+        "电竞频道",
+        "极竞联赛",
+        "掌上竞技联赛",
+        "秒玩小游戏"
+      ],
+      "schedule": [
+        {
+          "home": "星辰战队",
+          "away": "夜枭战队",
+          "league": "极竞联赛",
+          "status": "未开始",
+          "time": "今天 17:00"
+        },
+        {
+          "home": "苍山电竞",
+          "away": "临海电竞",
+          "league": "掌上竞技联赛",
+          "status": "未开始",
+          "time": "今天 19:30"
+        }
+      ]
+    },
+    "shortvideo": {
+      "items": [
+        {
+          "id": "sv_chaonengzhe",
+          "title": "十分钟看懂《超能者2》,今年最被低估的科幻片",
+          "author": "剪刀手老K",
+          "avatar": "avatar_u03.png",
+          "likesText": "2.72万",
+          "comments": 345,
+          "cover": "still_mv_jixianzhiwai.png",
+          "linkedFilm": "mv_chaonengzhe2",
+          "topic": "#有奖征稿"
+        },
+        {
+          "id": "sv_qianfangjie",
+          "title": "千芳劫百花宴名场面混剪,贺兰珊这段眼神杀绝了",
+          "author": "追剧不熬夜",
+          "avatar": "avatar_u05.png",
+          "likesText": "1.94万",
+          "comments": 812,
+          "cover": "still_tv_qianfangjie.png",
+          "linkedFilm": "tv_qianfangjie",
+          "topic": "#名场面"
+        },
+        {
+          "id": "sv_daomengtuan",
+          "title": "幻影盗梦团三部曲魔术彩蛋全解析",
+          "author": "影迷阿灿",
+          "avatar": "avatar_u07.png",
+          "likesText": "8654",
+          "comments": 233,
+          "cover": "still_mv_daomengtuan3.png",
+          "linkedFilm": "mv_daomengtuan3",
+          "topic": "#彩蛋解析"
+        }
+      ]
+    },
+    "goods": {
+      "banner": {
+        "img": "banner_shop.png",
+        "title": "官方周边上新",
+        "subtitle": "IP好物 独家定制"
+      },
+      "topActions": [
+        "购物车",
+        "订单",
+        "客服"
+      ],
+      "entries": [
+        "定制空间",
+        "会员积分",
+        "手办雕塑",
+        "次元购",
+        "剧中同款"
+      ],
+      "subTabs": [
+        "IP广场",
+        "精选",
+        "动漫",
+        "剧综",
+        "体育"
+      ],
+      "itemIds": [
+        "gd_cardpack",
+        "gd_blindbox",
+        "gd_figure",
+        "gd_acrylic",
+        "gd_badge",
+        "gd_plush"
+      ]
+    },
+    "aiwan": {
+      "promo": {
+        "title": "登录送史诗神兵",
+        "btn": "立即前往",
+        "img": "banner_game.png"
+      },
+      "entries": [
+        "爱玩有礼",
+        "小游戏"
+      ]
+    },
+    "haopian": {
+      "theme": "dark",
+      "banner": {
+        "img": "banner_haopian.png",
+        "contentId": "mv_jixianzhiwai",
+        "title": "极限之外",
+        "rating": 9.2,
+        "tag": "科幻"
+      },
+      "buttons": [
+        "历年好剧",
+        "电影片单",
+        "排行榜"
+      ],
+      "filterTabs": [
+        "题材",
+        "品类",
+        "演员",
+        "片单"
+      ],
+      "actorRow": [
+        "全部",
+        "岑野",
+        "贺兰珊",
+        "沈知玥",
+        "裴照",
+        "陈广汇"
+      ],
+      "toggles": {
+        "highScoreFirst": true,
+        "freeOnly": false
+      },
+      "genreSecondRow": [
+        "爱情喜剧",
+        "家庭喜剧",
+        "黑色幽默",
+        "无厘头"
+      ],
+      "results": {
+        "default": [
+          "tv_hezugongyu4",
+          "tv_taiqian"
+        ],
+        "regionTaiwan": [
+          "mv_xinghaifangzhou",
+          "mv_xindongyugao"
+        ],
+        "genreComedy": [
+          "mv_taitaitailipu",
+          "mv_xindongyugao"
+        ],
+        "actorShenzhiyue": [
+          "tv_wangchunnian2",
+          "tv_qichongjin"
+        ]
+      }
+    },
+    "shortdrama": {
+      "modes": [
+        "短剧",
+        "短番",
+        "少儿"
+      ],
+      "subTabs": [
+        "推荐",
+        "精选",
+        "看过"
+      ],
+      "switchToast": "已切换为短剧内容 返回短番",
+      "guideBubble": "点击切换更多内容",
+      "floors": [
+        {
+          "title": "精选必看",
+          "ids": [
+            "sd_weiguangzhishang",
+            "sd_tianque"
+          ]
+        },
+        {
+          "title": "虐渣爽剧",
+          "ids": [
+            "sd_huanggui",
+            "sd_qianjinfanpan"
+          ]
+        },
+        {
+          "title": "沈知玥作品",
+          "ids": [
+            "sd_weiguangzhishang",
+            "sd_zhaixingji"
+          ]
+        },
+        {
+          "title": "都市奇幻",
+          "ids": [
+            "sd_shanhuntianchong",
+            "sd_majiacangbuzhu"
+          ]
+        }
+      ],
+      "resumeBar": {
+        "contentId": "sd_tianque",
+        "text": "继续观看《天阙》第24集"
+      },
+      "filter": {
+        "sorts": [
+          "最热",
+          "最新上架",
+          "限免中"
+        ],
+        "dims": {
+          "男频女频": [
+            "男频",
+            "女频"
+          ],
+          "故事背景": [
+            "都市",
+            "古装",
+            "民国"
+          ],
+          "身份人设": [
+            "千金",
+            "赘婿",
+            "战神",
+            "马甲"
+          ],
+          "主要看点": [
+            "虐渣",
+            "甜宠",
+            "逆袭",
+            "复仇"
+          ]
+        }
+      }
+    }
+  },
+  "rankings": {
+    "tv": {
+      "hot": [
+        {
+          "id": "tv_qianfangjie",
+          "heat": 25452,
+          "note": "讨论破120万"
+        },
+        {
+          "id": "tv_zheyikexindong",
+          "heat": 22309,
+          "note": "讨论千万+"
+        },
+        {
+          "id": "tv_jifengxingdong",
+          "heat": 19876,
+          "note": "讨论破60万"
+        },
+        {
+          "id": "tv_qichongjin",
+          "heat": 15320,
+          "note": ""
+        },
+        {
+          "id": "tv_zhuluan",
+          "heat": 13208,
+          "note": "上线3日"
+        },
+        {
+          "id": "tv_yueliangjishi",
+          "heat": 11576,
+          "note": ""
+        },
+        {
+          "id": "tv_luanchichunxiao",
+          "heat": 10893,
+          "note": ""
+        }
+      ],
+      "search": [
+        "tv_zheyikexindong",
+        "tv_qianfangjie",
+        "tv_zhuluan",
+        "tv_jifengxingdong",
+        "tv_luanchichunxiao",
+        "tv_tiegulinfeng"
+      ],
+      "rising": [
+        "tv_zhuluan",
+        "tv_luanchichunxiao",
+        "tv_yueliangjishi",
+        "tv_qianfangjie",
+        "tv_taiqian",
+        "tv_tiegulinfeng"
+      ],
+      "expect": [
+        "vs_yiweifengshen",
+        "tv_zhuluan",
+        "tv_luanchichunxiao",
+        "an_yinshizhixia6",
+        "mv_jixianzhiwai",
+        "vs_chongyaba10"
+      ],
+      "nshua": [
+        "tv_hezugongyu4",
+        "tv_shenghuodaluandun",
+        "tv_mingzhentanluoke",
+        "tv_wodehoubanchang",
+        "tv_taiqian",
+        "tv_wangchunnian2"
+      ]
+    },
+    "anime": {
+      "tabOrder": [
+        "热播榜",
+        "热搜榜",
+        "N刷榜",
+        "飙升榜",
+        "期待榜"
+      ],
+      "hot": [
+        {
+          "id": "an_douxuandalu2",
+          "heat": 18764,
+          "note": ""
+        },
+        {
+          "id": "an_zhanwang2",
+          "heat": 15230,
+          "note": ""
+        },
+        {
+          "id": "an_daoni",
+          "heat": 14876,
+          "note": ""
+        },
+        {
+          "id": "an_tunxingjiyuan",
+          "heat": 13564,
+          "note": ""
+        },
+        {
+          "id": "an_yinshizhixia6",
+          "heat": 12873,
+          "note": "开播首周"
+        },
+        {
+          "id": "an_zhiyedianfeng3",
+          "heat": 10986,
+          "note": ""
+        }
+      ],
+      "search": [
+        "an_daoni",
+        "an_douxuandalu2",
+        "an_yinshizhixia6",
+        "an_zhanwang2",
+        "an_zhoulinghuilang",
+        "an_kuaidaoxiaoqi"
+      ]
+    },
+    "shortdrama": {
+      "tabOrder": [
+        "热播榜",
+        "热搜榜",
+        "竖屏热播榜",
+        "竖屏热搜榜"
+      ],
+      "verticalHot": [
+        {
+          "id": "sd_weiguangzhishang",
+          "heat": 28643
+        },
+        {
+          "id": "sd_tianque",
+          "heat": 24310
+        },
+        {
+          "id": "sd_huanggui",
+          "heat": 21876
+        },
+        {
+          "id": "sd_shanhuntianchong",
+          "heat": 19654
+        },
+        {
+          "id": "sd_majiacangbuzhu",
+          "heat": 17832
+        },
+        {
+          "id": "sd_zhaixingji",
+          "heat": 15420
+        }
+      ],
+      "verticalSearch": [
+        "sd_weiguangzhishang",
+        "sd_huanggui",
+        "sd_qianjinfanpan",
+        "sd_tianque",
+        "sd_shanhuntianchong",
+        "sd_zhaixingji"
+      ]
+    },
+    "kids": {
+      "hot": [
+        "kd_lemiemie",
+        "kd_wawabashi",
+        "kd_jimuhuanying",
+        "kd_xiaozhupike",
+        "kd_baoxiaodoudou",
+        "kd_haidouqi"
+      ]
+    }
+  },
+  "hotSearch": [
+    {
+      "rank": 1,
+      "keyword": "这一刻心动大结局",
+      "tag": "HOT"
+    },
+    {
+      "rank": 2,
+      "keyword": "千芳劫百花宴刺杀",
+      "tag": "爆"
+    },
+    {
+      "rank": 3,
+      "keyword": "逐鸾上线",
+      "tag": "新"
+    },
+    {
+      "rank": 4,
+      "keyword": "微光之上全集",
+      "tag": ""
+    },
+    {
+      "rank": 5,
+      "keyword": "斗玄大陆Ⅱ神界篇",
+      "tag": ""
+    },
+    {
+      "rank": 6,
+      "keyword": "幻影盗梦团3",
+      "tag": "新"
+    },
+    {
+      "rank": 7,
+      "keyword": "冲鸭吧10泥潭大战",
+      "tag": ""
+    },
+    {
+      "rank": 8,
+      "keyword": "沈知玥摘星记",
+      "tag": ""
+    },
+    {
+      "rank": 9,
+      "keyword": "缉风行动大结局解析",
+      "tag": ""
+    },
+    {
+      "rank": 10,
+      "keyword": "一味封神定档",
+      "tag": "新"
+    }
+  ],
+  "searchHub": {
+    "placeholder": "斗玄大陆",
+    "history": [
+      "斗玄大陆",
+      "微光之上",
+      "沈知玥"
+    ],
+    "midTabs": [
+      "榜单",
+      "找片"
+    ],
+    "boards": {
+      "tv": [
+        "tv_qianfangjie",
+        "tv_zheyikexindong",
+        "tv_jifengxingdong",
+        "tv_zhuluan",
+        "tv_qichongjin",
+        "tv_luanchichunxiao"
+      ],
+      "movie": [
+        "mv_daomengtuan3",
+        "mv_jixianzhiwai",
+        "mv_anyong1995",
+        "mv_taitaitailipu",
+        "mv_chaonengzhe2",
+        "mv_yizhanfanshen"
+      ]
+    },
+    "suggests": {
+      "douxuan": [
+        {
+          "text": "斗玄大陆Ⅱ",
+          "type": "作品"
+        },
+        {
+          "text": "斗玄大陆Ⅱ 神界篇",
+          "type": "系列"
+        },
+        {
+          "text": "斗玄大陆 小说原著改编了什么",
+          "type": "AI搜索"
+        },
+        {
+          "text": "斗玄大陆 唐小三",
+          "type": "人物"
+        }
+      ]
+    },
+    "resultTabs": [
+      "全部",
+      "影视",
+      "用户",
+      "讨论",
+      "小说",
+      "话题"
+    ],
+    "noResult": {
+      "text": "暂无相关内容,换个搜索词试试",
+      "sub": "兵无常势,水无常形。"
+    }
+  },
+  "pickFilm": {
+    "title": "以片找片",
+    "buttons": [
+      "不想看",
+      "看正片",
+      "想看"
+    ],
+    "queue": [
+      "tv_jifengxingdong",
+      "mv_jixianzhiwai",
+      "tv_qianfangjie",
+      "mv_daomengtuan3",
+      "tv_taiqian",
+      "vs_tuilikaishile4"
+    ]
+  },
+  "yearHotActivity": {
+    "theme": "dark",
+    "title": "年度热门剧",
+    "banner": "banner_tv.png",
+    "groups": [
+      {
+        "year": 2026,
+        "ids": [
+          "tv_qianfangjie",
+          "tv_zheyikexindong",
+          "tv_zhuluan"
+        ]
+      },
+      {
+        "year": 2025,
+        "ids": [
+          "tv_qichongjin",
+          "tv_taiqian",
+          "tv_yueliangjishi"
+        ]
+      },
+      {
+        "year": 2024,
+        "ids": [
+          "tv_wangchunnian2",
+          "tv_mingzhentanluoke"
+        ]
+      },
+      {
+        "year": 2023,
+        "ids": [
+          "tv_wodehoubanchang"
+        ]
+      },
+      {
+        "year": 2022,
+        "ids": [
+          "tv_hezugongyu4",
+          "tv_shenghuodaluandun"
+        ]
+      }
+    ]
+  },
+  "danmakuPool": [
+    {
+      "t": "前方高能预警!!!"
+    },
+    {
+      "t": "这段我能看一百遍"
+    },
+    {
+      "t": "编剧是懂观众的"
+    },
+    {
+      "t": "泪目了家人们"
+    },
+    {
+      "t": "这运镜太顶了"
+    },
+    {
+      "t": "考古打卡,2026年7月"
+    },
+    {
+      "t": "他来了他来了"
+    },
+    {
+      "t": "谁还没被这句台词杀到"
+    },
+    {
+      "t": "名场面预定"
+    },
+    {
+      "t": "弹幕护体求不剧透"
+    },
+    {
+      "t": "第一次看,勿剧透谢谢"
+    },
+    {
+      "t": "N刷选手报到"
+    },
+    {
+      "t": "这BGM一响我鸡皮疙瘩都起来了",
+      "c": "#FEDF8B"
+    },
+    {
+      "t": "导演拍夜戏是真的会"
+    },
+    {
+      "t": "细节控狂喜"
+    },
+    {
+      "t": "笑不活了哈哈哈哈哈"
+    },
+    {
+      "t": "这里呼应了第一集!"
+    },
+    {
+      "t": "画质开到臻彩了,太清晰了",
+      "c": "#FEDF8B"
+    },
+    {
+      "t": "已三刷,依然震撼"
+    },
+    {
+      "t": "服化道真的用心了"
+    },
+    {
+      "t": "这就是演技吗"
+    },
+    {
+      "t": "全员恶人预警"
+    },
+    {
+      "t": "妈妈问我为什么跪着看剧"
+    },
+    {
+      "t": "进度条不多了,舍不得"
+    },
+    {
+      "t": "凌晨两点,值了"
+    },
+    {
+      "t": "1.0倍速都嫌快的程度"
+    },
+    {
+      "t": "这个反转没想到"
+    },
+    {
+      "t": "官方剧透最为致命"
+    },
+    {
+      "t": "配音老师加鸡腿"
+    },
+    {
+      "t": "开分9+实至名归",
+      "c": "#06BFB8"
+    },
+    {
+      "t": "书粉表示改编还原"
+    },
+    {
+      "t": "求下一集立刻马上"
+    },
+    {
+      "t": "此处应有掌声"
+    },
+    {
+      "t": "这对CP我磕定了"
+    },
+    {
+      "t": "打工人下班第一件事就是追更"
+    },
+    {
+      "t": "镜头语言满分"
+    },
+    {
+      "t": "看完睡不着系列"
+    },
+    {
+      "t": "从开播追到现在的举手"
+    },
+    {
+      "t": "这集封神"
+    },
+    {
+      "t": "台词功底太强了"
+    },
+    {
+      "t": "预言:今晚热搜第一"
+    },
+    {
+      "t": "第15集见,不见不散"
+    },
+    {
+      "t": "会员提前看的我先哭为敬",
+      "c": "#FEDF8B"
+    },
+    {
+      "t": "全剧终的时候记得回来考古"
+    }
+  ],
+  "comments": {
+    "tv_zheyikexindong": {
+      "total": 1940,
+      "items": [
+        {
+          "id": "c_zx_1",
+          "author": "桔子汽水不加冰",
+          "avatar": "avatar_u01.png",
+          "badges": [
+            "观影200部",
+            "VIP4"
+          ],
+          "region": "广东",
+          "date": "07-22",
+          "likes": 3216,
+          "content": "第15集天台那场戏,两个人一句台词都没有,全靠眼神,这就是我要看的都市剧!",
+          "replies": [
+            {
+              "id": "c_zx_1r1",
+              "author": "晚风告白",
+              "avatar": "avatar_u02.png",
+              "badges": [
+                "VIP2"
+              ],
+              "region": "浙江",
+              "date": "07-22",
+              "likes": 421,
+              "content": "对!镜头拉远那一下我直接起鸡皮疙瘩"
+            },
+            {
+              "id": "c_zx_1r2",
+              "author": "奶油小方",
+              "avatar": "avatar_u04.png",
+              "badges": [],
+              "region": "四川",
+              "date": "07-23",
+              "likes": 89,
+              "content": "导演的留白太会了"
+            },
+            {
+              "id": "c_zx_1r3",
+              "author": "北窗听雨",
+              "avatar": "avatar_u06.png",
+              "badges": [
+                "观影300部"
+              ],
+              "region": "北京",
+              "date": "07-23",
+              "likes": 35,
+              "content": "已经三刷这一段了"
+            }
+          ],
+          "moreReplies": 12
+        },
+        {
+          "id": "c_zx_2",
+          "author": "追剧不熬夜",
+          "avatar": "avatar_u05.png",
+          "badges": [
+            "追剧达人"
+          ],
+          "region": "上海",
+          "date": "07-21",
+          "likes": 1876,
+          "content": "消防戏的专业度可以,看得出剧组请了顾问,水带铺设那段没糊弄。",
+          "replies": [
+            {
+              "id": "c_zx_2r1",
+              "author": "山海不平",
+              "avatar": "avatar_u03.png",
+              "badges": [],
+              "region": "山东",
+              "date": "07-21",
+              "likes": 66,
+              "content": "家属表示确实还原"
+            }
+          ]
+        },
+        {
+          "id": "c_zx_3",
+          "author": "一颗软糖",
+          "avatar": "avatar_u08.png",
+          "badges": [
+            "VIP1"
+          ],
+          "region": "湖南",
+          "date": "07-20",
+          "likes": 954,
+          "content": "温以宁把急诊科医生的疲惫和温柔演活了,建议二番位往前提。",
+          "replies": []
+        },
+        {
+          "id": "c_zx_4",
+          "author": "雾里看花w",
+          "avatar": "avatar_u09.png",
+          "badges": [],
+          "region": "江苏",
+          "date": "07-19",
+          "likes": 623,
+          "content": "每周三四五更两集根本不够看,建议一次放完(不建议真的采纳)",
+          "replies": [
+            {
+              "id": "c_zx_4r1",
+              "author": "今天也想躺平",
+              "avatar": "avatar_u10.png",
+              "badges": [
+                "VIP3"
+              ],
+              "region": "福建",
+              "date": "07-19",
+              "likes": 102,
+              "content": "哈哈哈哈这个建议很矛盾但很真实"
+            }
+          ]
+        },
+        {
+          "id": "c_zx_5",
+          "author": "芝士拿铁去冰",
+          "avatar": "avatar_u07.png",
+          "badges": [
+            "观影200部"
+          ],
+          "region": "重庆",
+          "date": "07-18",
+          "likes": 512,
+          "content": "OST也太好听了吧,片尾曲单曲循环一整天。",
+          "replies": []
+        },
+        {
+          "id": "c_zx_6",
+          "author": "柠檬味的风",
+          "avatar": "avatar_u11.png",
+          "badges": [],
+          "region": "安徽",
+          "date": "07-17",
+          "likes": 388,
+          "content": "从第1集追到现在,节奏没垮过,今年都市剧天花板预定。",
+          "replies": []
+        }
+      ]
+    },
+    "tv_qianfangjie": {
+      "total": 866,
+      "items": [
+        {
+          "id": "c_qf_1",
+          "author": "北窗听雨",
+          "avatar": "avatar_u06.png",
+          "badges": [
+            "观影300部",
+            "VIP4"
+          ],
+          "region": "北京",
+          "date": "07-24",
+          "likes": 2103,
+          "content": "百花宴刺杀这场群像调度,一个长镜头把七方势力全交代清楚,值回一个月会员。",
+          "replies": [
+            {
+              "id": "c_qf_1r1",
+              "author": "摸鱼冠军",
+              "avatar": "avatar_u12.png",
+              "badges": [],
+              "region": "天津",
+              "date": "07-24",
+              "likes": 76,
+              "content": "长镜头党狂喜"
+            }
+          ]
+        },
+        {
+          "id": "c_qf_2",
+          "author": "山海不平",
+          "avatar": "avatar_u03.png",
+          "badges": [
+            "热评人"
+          ],
+          "region": "山东",
+          "date": "07-23",
+          "likes": 1345,
+          "content": "贺兰珊的姜芜,前期柔弱后期杀伐,层次感绝了。",
+          "replies": []
+        },
+        {
+          "id": "c_qf_3",
+          "author": "晚风告白",
+          "avatar": "avatar_u02.png",
+          "badges": [
+            "VIP2"
+          ],
+          "region": "浙江",
+          "date": "07-23",
+          "likes": 897,
+          "content": "服化道考究,织造世家的细节看得出下了功夫,布料纹样每集都不重样。",
+          "replies": []
+        },
+        {
+          "id": "c_qf_4",
+          "author": "奶油小方",
+          "avatar": "avatar_u04.png",
+          "badges": [],
+          "region": "四川",
+          "date": "07-22",
+          "likes": 654,
+          "content": "权谋线不降智,反派也有脑子,追起来太爽了。",
+          "replies": [
+            {
+              "id": "c_qf_4r1",
+              "author": "桔子汽水不加冰",
+              "avatar": "avatar_u01.png",
+              "badges": [
+                "VIP4"
+              ],
+              "region": "广东",
+              "date": "07-22",
+              "likes": 45,
+              "content": "对,每个人的动机都立得住"
+            }
+          ]
+        },
+        {
+          "id": "c_qf_5",
+          "author": "今天也想躺平",
+          "avatar": "avatar_u10.png",
+          "badges": [
+            "VIP3"
+          ],
+          "region": "福建",
+          "date": "07-21",
+          "likes": 432,
+          "content": "更新太慢了,在追破500万不是没有道理,大家都在等萧决摊牌。",
+          "replies": []
+        },
+        {
+          "id": "c_qf_6",
+          "author": "摸鱼冠军",
+          "avatar": "avatar_u12.png",
+          "badges": [],
+          "region": "天津",
+          "date": "07-20",
+          "likes": 289,
+          "content": "第21集入VIP之后节奏更快了,这钱花得不冤。",
+          "replies": []
+        }
+      ]
+    },
+    "tv_jifengxingdong": {
+      "total": 1358,
+      "items": [
+        {
+          "id": "c_jf_1",
+          "author": "追剧不熬夜",
+          "avatar": "avatar_u05.png",
+          "badges": [
+            "追剧达人",
+            "VIP3"
+          ],
+          "region": "上海",
+          "date": "07-15",
+          "likes": 1987,
+          "content": "大结局收得太干净了,每条伏笔都回收,内鬼身份从第3集就有暗示,二刷全是细节。",
+          "replies": [
+            {
+              "id": "c_jf_1r1",
+              "author": "雾里看花w",
+              "avatar": "avatar_u09.png",
+              "badges": [],
+              "region": "江苏",
+              "date": "07-15",
+              "likes": 156,
+              "content": "第3集茶杯那个镜头对吧!我也发现了"
+            },
+            {
+              "id": "c_jf_1r2",
+              "author": "山海不平",
+              "avatar": "avatar_u03.png",
+              "badges": [
+                "热评人"
+              ],
+              "region": "山东",
+              "date": "07-16",
+              "likes": 44,
+              "content": "编剧是把观众当聪明人写的"
+            }
+          ]
+        },
+        {
+          "id": "c_jf_2",
+          "author": "柠檬味的风",
+          "avatar": "avatar_u11.png",
+          "badges": [],
+          "region": "安徽",
+          "date": "07-14",
+          "likes": 1023,
+          "content": "陈广汇这个角色太有魅力了,正到骨子里又不悬浮。",
+          "replies": []
+        },
+        {
+          "id": "c_jf_3",
+          "author": "芝士拿铁去冰",
+          "avatar": "avatar_u07.png",
+          "badges": [
+            "观影200部"
+          ],
+          "region": "重庆",
+          "date": "07-13",
+          "likes": 786,
+          "content": "缉私戏的实感拉满,码头夜战那场堪比电影。",
+          "replies": []
+        },
+        {
+          "id": "c_jf_4",
+          "author": "北窗听雨",
+          "avatar": "avatar_u06.png",
+          "badges": [
+            "观影300部"
+          ],
+          "region": "北京",
+          "date": "07-12",
+          "likes": 567,
+          "content": "9.2分实至名归,今年刑侦剧最佳,没有之一。",
+          "replies": []
+        },
+        {
+          "id": "c_jf_5",
+          "author": "一颗软糖",
+          "avatar": "avatar_u08.png",
+          "badges": [
+            "VIP1"
+          ],
+          "region": "湖南",
+          "date": "07-11",
+          "likes": 345,
+          "content": "独播真香,一口气看完24集,谁懂凌晨四点的痛。",
+          "replies": []
+        },
+        {
+          "id": "c_jf_6",
+          "author": "晚风告白",
+          "avatar": "avatar_u02.png",
+          "badges": [
+            "VIP2"
+          ],
+          "region": "浙江",
+          "date": "07-10",
+          "likes": 234,
+          "content": "苏棠这条线要是再多两集就好了,唯一意难平。",
+          "replies": []
+        }
+      ]
+    },
+    "sd_weiguangzhishang": {
+      "total": 2314,
+      "items": [
+        {
+          "id": "c_wg_1",
+          "author": "今天也想躺平",
+          "avatar": "avatar_u10.png",
+          "badges": [
+            "VIP3"
+          ],
+          "region": "福建",
+          "date": "07-23",
+          "likes": 1543,
+          "content": "短剧能拍出这个质感不容易,64集一晚上刷完,沈知玥演技没得说。",
+          "replies": [
+            {
+              "id": "c_wg_1r1",
+              "author": "奶油小方",
+              "avatar": "avatar_u04.png",
+              "badges": [],
+              "region": "四川",
+              "date": "07-23",
+              "likes": 88,
+              "content": "她长剧短剧两开花,粉了"
+            }
+          ]
+        },
+        {
+          "id": "c_wg_2",
+          "author": "摸鱼冠军",
+          "avatar": "avatar_u12.png",
+          "badges": [],
+          "region": "天津",
+          "date": "07-22",
+          "likes": 986,
+          "content": "竖屏热播榜第1名副其实,每集结尾都卡在最勾人的地方,根本停不下来。",
+          "replies": []
+        },
+        {
+          "id": "c_wg_3",
+          "author": "桔子汽水不加冰",
+          "avatar": "avatar_u01.png",
+          "badges": [
+            "观影200部",
+            "VIP4"
+          ],
+          "region": "广东",
+          "date": "07-21",
+          "likes": 754,
+          "content": "操盘手的专业名词居然没胡说,编剧做功课了。",
+          "replies": []
+        },
+        {
+          "id": "c_wg_4",
+          "author": "雾里看花w",
+          "avatar": "avatar_u09.png",
+          "badges": [],
+          "region": "江苏",
+          "date": "07-20",
+          "likes": 521,
+          "content": "第40集反转看得我直拍大腿,免费看到12集之后果断充了会员。",
+          "replies": []
+        },
+        {
+          "id": "c_wg_5",
+          "author": "山海不平",
+          "avatar": "avatar_u03.png",
+          "badges": [
+            "热评人"
+          ],
+          "region": "山东",
+          "date": "07-19",
+          "likes": 376,
+          "content": "傅沉舟这个男主设定终于不恋爱脑了,双强才好看。",
+          "replies": []
+        },
+        {
+          "id": "c_wg_6",
+          "author": "柠檬味的风",
+          "avatar": "avatar_u11.png",
+          "badges": [],
+          "region": "安徽",
+          "date": "07-18",
+          "likes": 245,
+          "content": "已安利全宿舍,人手一部《微光之上》。",
+          "replies": []
+        }
+      ]
+    },
+    "sd_tianque": {
+      "total": 1688,
+      "items": [
+        {
+          "id": "c_tq_1",
+          "author": "北窗听雨",
+          "avatar": "avatar_u06.png",
+          "badges": ["观影300部"],
+          "region": "北京",
+          "date": "07-24",
+          "likes": 864,
+          "content": "长公主监国这一段气场全开，朝堂戏虽然短但信息量很足。",
+          "replies": []
+        },
+        {
+          "id": "c_tq_2",
+          "author": "晚风告白",
+          "avatar": "avatar_u02.png",
+          "badges": ["VIP2"],
+          "region": "浙江",
+          "date": "07-23",
+          "likes": 519,
+          "content": "第28集开始节奏明显提速，复仇线没有拖泥带水。",
+          "replies": []
+        }
+      ]
+    },
+    "sd_huanggui": {
+      "total": 1427,
+      "items": [
+        {
+          "id": "c_hg_1",
+          "author": "山海不平",
+          "avatar": "avatar_u03.png",
+          "badges": ["热评人"],
+          "region": "山东",
+          "date": "07-23",
+          "likes": 731,
+          "content": "重生后第一次回凤家太爽了，前世伏笔也都接上了。",
+          "replies": []
+        },
+        {
+          "id": "c_hg_2",
+          "author": "一颗软糖",
+          "avatar": "avatar_u08.png",
+          "badges": ["VIP1"],
+          "region": "湖南",
+          "date": "07-22",
+          "likes": 408,
+          "content": "女主不是只靠金手指，布局和取舍都写得很清楚。",
+          "replies": []
+        }
+      ]
+    },
+    "sd_shanhuntianchong": {
+      "total": 1964,
+      "items": [
+        {
+          "id": "c_sh_1",
+          "author": "奶油小方",
+          "avatar": "avatar_u04.png",
+          "badges": [],
+          "region": "四川",
+          "date": "07-24",
+          "likes": 1021,
+          "content": "领证后的同居日常比误会桥段好看，轻松下饭。",
+          "replies": []
+        },
+        {
+          "id": "c_sh_2",
+          "author": "芝士拿铁去冰",
+          "avatar": "avatar_u07.png",
+          "badges": ["观影200部"],
+          "region": "重庆",
+          "date": "07-22",
+          "likes": 557,
+          "content": "男主身份揭晓没有拖到大结局，这点值得表扬。",
+          "replies": []
+        }
+      ]
+    },
+    "sd_majiacangbuzhu": {
+      "total": 1218,
+      "items": [
+        {
+          "id": "c_mj_1",
+          "author": "追剧不熬夜",
+          "avatar": "avatar_u05.png",
+          "badges": ["追剧达人"],
+          "region": "上海",
+          "date": "07-23",
+          "likes": 638,
+          "content": "马甲不是一次性全掉，每次揭晓都推动了主线。",
+          "replies": []
+        },
+        {
+          "id": "c_mj_2",
+          "author": "雾里看花w",
+          "avatar": "avatar_u09.png",
+          "badges": [],
+          "region": "江苏",
+          "date": "07-21",
+          "likes": 361,
+          "content": "赛车场那集镜头很有速度感，竖屏构图也不挤。",
+          "replies": []
+        }
+      ]
+    },
+    "sd_zhaixingji": {
+      "total": 936,
+      "items": [
+        {
+          "id": "c_zxj_1",
+          "author": "桔子汽水不加冰",
+          "avatar": "avatar_u01.png",
+          "badges": ["VIP4"],
+          "region": "广东",
+          "date": "07-22",
+          "likes": 482,
+          "content": "织坊细节做得很认真，女主成长也不是一步登天。",
+          "replies": []
+        },
+        {
+          "id": "c_zxj_2",
+          "author": "柠檬味的风",
+          "avatar": "avatar_u11.png",
+          "badges": [],
+          "region": "安徽",
+          "date": "07-20",
+          "likes": 275,
+          "content": "第16集比赛织样的过程拍得很紧张，想看完整幕后。",
+          "replies": []
+        }
+      ]
+    },
+    "sd_qianjinfanpan": {
+      "total": 1541,
+      "items": [
+        {
+          "id": "c_qj_1",
+          "author": "今天也想躺平",
+          "avatar": "avatar_u10.png",
+          "badges": ["VIP3"],
+          "region": "福建",
+          "date": "07-24",
+          "likes": 790,
+          "content": "认亲宴当场拆穿养姐的证据链很完整，不是只靠吵架。",
+          "replies": []
+        },
+        {
+          "id": "c_qj_2",
+          "author": "摸鱼冠军",
+          "avatar": "avatar_u12.png",
+          "badges": [],
+          "region": "天津",
+          "date": "07-21",
+          "likes": 426,
+          "content": "每集三分钟但转折够密，通勤路上已经追到四十集。",
+          "replies": []
+        }
+      ]
+    },
+    "vs_chongyaba10": {
+      "total": 1102,
+      "items": [
+        {
+          "id": "c_cy_1",
+          "author": "奶油小方",
+          "avatar": "avatar_u04.png",
+          "badges": [
+            "VIP2"
+          ],
+          "region": "四川",
+          "date": "07-18",
+          "likes": 1234,
+          "content": "泥潭撕名牌回归!第8期笑到邻居敲门,爷青回。",
+          "replies": [
+            {
+              "id": "c_cy_1r1",
+              "author": "追剧不熬夜",
+              "avatar": "avatar_u05.png",
+              "badges": [
+                "追剧达人"
+              ],
+              "region": "上海",
+              "date": "07-18",
+              "likes": 67,
+              "content": "老成员一回来节目效果直接起飞"
+            }
+          ]
+        },
+        {
+          "id": "c_cy_2",
+          "author": "芝士拿铁去冰",
+          "avatar": "avatar_u07.png",
+          "badges": [
+            "观影200部"
+          ],
+          "region": "重庆",
+          "date": "07-17",
+          "likes": 876,
+          "content": "会员抢先看一周太值了,每周五蹲点更新。",
+          "replies": []
+        },
+        {
+          "id": "c_cy_3",
+          "author": "一颗软糖",
+          "avatar": "avatar_u08.png",
+          "badges": [
+            "VIP1"
+          ],
+          "region": "湖南",
+          "date": "07-16",
+          "likes": 654,
+          "content": "第十季了还能玩出新花样,导演组是有点东西的。",
+          "replies": []
+        },
+        {
+          "id": "c_cy_4",
+          "author": "北窗听雨",
+          "avatar": "avatar_u06.png",
+          "badges": [
+            "观影300部"
+          ],
+          "region": "北京",
+          "date": "07-15",
+          "likes": 432,
+          "content": "从第9季开始补的,直播回放和纯享版都刷完了。",
+          "replies": []
+        },
+        {
+          "id": "c_cy_5",
+          "author": "晚风告白",
+          "avatar": "avatar_u02.png",
+          "badges": [
+            "VIP2"
+          ],
+          "region": "浙江",
+          "date": "07-14",
+          "likes": 321,
+          "content": "程一鸣的综艺感是刻在骨子里的,每期都有梗。",
+          "replies": []
+        },
+        {
+          "id": "c_cy_6",
+          "author": "摸鱼冠军",
+          "avatar": "avatar_u12.png",
+          "badges": [],
+          "region": "天津",
+          "date": "07-13",
+          "likes": 210,
+          "content": "求多来点特辑,正片根本不够看。",
+          "replies": []
+        }
+      ]
+    },
+    "tv_hushanghuakai": {
+      "total": 4,
+      "items": [
+        {
+          "id": "c_hs_1",
+          "author": "北窗听雨",
+          "avatar": "avatar_u06.png",
+          "badges": [
+            "观影300部",
+            "VIP4"
+          ],
+          "region": "北京",
+          "date": "07-24",
+          "likes": 58,
+          "content": "剧场版重剪之后商战主线更紧了,六集刚刚好。",
+          "replies": []
+        },
+        {
+          "id": "c_hs_2",
+          "author": "芝士拿铁去冰",
+          "avatar": "avatar_u07.png",
+          "badges": [
+            "观影200部"
+          ],
+          "region": "重庆",
+          "date": "07-23",
+          "likes": 32,
+          "content": "黄河路的霓虹灯一亮,一秒回到九十年代。",
+          "replies": []
+        },
+        {
+          "id": "c_hs_3",
+          "author": "山海不平",
+          "avatar": "avatar_u03.png",
+          "badges": [
+            "热评人"
+          ],
+          "region": "山东",
+          "date": "07-22",
+          "likes": 21,
+          "content": "裴照的阿宝比原版更利落,值得一看。",
+          "replies": []
+        },
+        {
+          "id": "c_hs_4",
+          "author": "一颗软糖",
+          "avatar": "avatar_u08.png",
+          "badges": [
+            "VIP1"
+          ],
+          "region": "湖南",
+          "date": "07-21",
+          "likes": 12,
+          "content": "9.8分有点高了,但确实好看,8.5的水准。",
+          "replies": []
+        }
+      ]
+    }
+  },
+  "discussions": [
+    {
+      "id": "d_1",
+      "contentId": "tv_zheyikexindong",
+      "author": "剧评人老周",
+      "avatar": "avatar_u03.png",
+      "badge": "优质讨论创作者",
+      "region": "上海",
+      "date": "07-23",
+      "title": "聊聊第15集的天台戏为什么封神",
+      "content": "从光影到走位,这场戏教科书级别。导演把两人之间的距离从7步缩到3步再拉回5步,情绪全在脚下……",
+      "reactions": {
+        "awesome": 9453,
+        "angry": 121,
+        "heartbroken": 2088,
+        "melon": 3675,
+        "worship": 5241
+      },
+      "comments": 918,
+      "shares": 466
+    },
+    {
+      "id": "d_2",
+      "contentId": "tv_zheyikexindong",
+      "author": "晚风告白",
+      "avatar": "avatar_u02.png",
+      "badge": "追剧达人",
+      "region": "浙江",
+      "date": "07-22",
+      "title": "大胆预测:纪临川的队友里有编剧埋的暗线",
+      "content": "注意看每次出警镜头里的老赵,他的台词全是双关……",
+      "reactions": {
+        "awesome": 3211,
+        "angry": 89,
+        "heartbroken": 445,
+        "melon": 6789,
+        "worship": 1023
+      },
+      "comments": 512,
+      "shares": 198
+    },
+    {
+      "id": "d_3",
+      "contentId": "tv_qianfangjie",
+      "author": "考据党阿茶",
+      "avatar": "avatar_u09.png",
+      "badge": "历史区UP",
+      "region": "江苏",
+      "date": "07-24",
+      "title": "千芳劫服饰考:织造世家的纹样到底有多讲究",
+      "content": "整理了前28集出现的43种布料纹样,和文献对照后发现剧组几乎没有偷懒……",
+      "reactions": {
+        "awesome": 7654,
+        "angry": 34,
+        "heartbroken": 210,
+        "melon": 1876,
+        "worship": 8901
+      },
+      "comments": 734,
+      "shares": 655
+    },
+    {
+      "id": "d_4",
+      "contentId": "tv_qianfangjie",
+      "author": "摸鱼冠军",
+      "avatar": "avatar_u12.png",
+      "badge": "",
+      "region": "天津",
+      "date": "07-23",
+      "title": "萧决到底什么时候摊牌?在线等,挺急的",
+      "content": "预告里那个回眸绝对有问题,懂的进来分析一下",
+      "reactions": {
+        "awesome": 2103,
+        "angry": 156,
+        "heartbroken": 987,
+        "melon": 8764,
+        "worship": 543
+      },
+      "comments": 1255,
+      "shares": 231
+    },
+    {
+      "id": "d_5",
+      "contentId": "sd_weiguangzhishang",
+      "author": "短剧鉴赏家",
+      "avatar": "avatar_u05.png",
+      "badge": "优质讨论创作者",
+      "region": "广东",
+      "date": "07-21",
+      "title": "微光之上是短剧工业化的一个拐点",
+      "content": "从剧本结构到镜头语言,这部剧证明了竖屏也能讲好复杂故事……",
+      "reactions": {
+        "awesome": 5432,
+        "angry": 67,
+        "heartbroken": 123,
+        "melon": 2345,
+        "worship": 3456
+      },
+      "comments": 623,
+      "shares": 389
+    },
+    {
+      "id": "d_6",
+      "contentId": "vs_chongyaba10",
+      "author": "综艺显微镜",
+      "avatar": "avatar_u01.png",
+      "badge": "娱评人",
+      "region": "北京",
+      "date": "07-19",
+      "title": "第8期泥潭战的规则漏洞,导演组自己发现了吗",
+      "content": "复盘了三遍,红队其实有一个必胜策略……",
+      "reactions": {
+        "awesome": 4321,
+        "angry": 234,
+        "heartbroken": 98,
+        "melon": 7890,
+        "worship": 876
+      },
+      "comments": 445,
+      "shares": 167
+    },
+    {
+      "id": "d_7",
+      "contentId": "tv_jifengxingdong",
+      "author": "山海不平",
+      "avatar": "avatar_u03.png",
+      "badge": "热评人",
+      "region": "山东",
+      "date": "07-16",
+      "title": "缉风行动伏笔全回收对照表(全24集无遗漏)",
+      "content": "肝了一个通宵整理的,从第3集茶杯到第22集车牌,共31处伏笔……",
+      "reactions": {
+        "awesome": 8765,
+        "angry": 12,
+        "heartbroken": 345,
+        "melon": 1234,
+        "worship": 6543
+      },
+      "comments": 876,
+      "shares": 789
+    },
+    {
+      "id": "d_8",
+      "contentId": "an_douxuandalu2",
+      "author": "国漫观察员",
+      "avatar": "avatar_u10.png",
+      "badge": "动漫区UP",
+      "region": "福建",
+      "date": "07-20",
+      "title": "神界篇作画经费在燃烧,这一集打斗帧数统计",
+      "content": "第312集的高潮打斗做了整整4分钟满帧……",
+      "reactions": {
+        "awesome": 6789,
+        "angry": 45,
+        "heartbroken": 67,
+        "melon": 2109,
+        "worship": 4567
+      },
+      "comments": 534,
+      "shares": 298
+    }
+  ],
+  "membership": {
+    "status": "vip",
+    "levelLabel": "VIP1",
+    "expire": "2026-09-26",
+    "upsell": "SVIP新客首月仅19元",
+    "redPacket": {
+      "amount": 33,
+      "countdown": "01:59:59",
+      "note": "限时开通立减",
+      "title": "限时红包",
+      "claim": "收下红包",
+      "usableNote": "仅限VIP连续包年套餐使用",
+      "claimedNote": "已抵扣至连续包年套餐"
+    },
+    "vipPlans": [
+      {
+        "id": "vip_month_cont",
+        "label": "连续包月",
+        "price": 19.9,
+        "origPrice": 25,
+        "note": "首月",
+        "tag": "",
+        "desc": "开通得150V力值,199积分;之后25元/月续费,续费前提醒,可关闭",
+        "countdown": ""
+      },
+      {
+        "id": "vip_quarter",
+        "label": "连续包季",
+        "price": 50,
+        "origPrice": 68,
+        "note": "16.7元/月",
+        "tag": "送10天SVIP权益体验",
+        "desc": "开通得450V力值,500积分;之后68元/季续费,续费前提醒,可关闭",
+        "countdown": ""
+      },
+      {
+        "id": "vip_year",
+        "label": "连续包年",
+        "price": 178,
+        "origPrice": 238,
+        "note": "已减60元",
+        "tag": "限时",
+        "desc": "开通得1800V力值,1998积分;之后238元/年续费,续费前提醒,可关闭",
+        "countdown": "01:59:53"
+      },
+      {
+        "id": "vip_12m",
+        "label": "12个月VIP",
+        "price": 198,
+        "origPrice": 238,
+        "note": "16.5元/月",
+        "tag": "",
+        "desc": "开通得1800V力值,1998积分;到期不自动续费",
+        "countdown": ""
+      }
+    ],
+    "svipPlans": [
+      {
+        "id": "svip_upgrade2m",
+        "label": "升级2个月SVIP",
+        "price": 24,
+        "origPrice": 40,
+        "note": "2个月¥12/月",
+        "tag": "升级特惠",
+        "desc": "开通得240V力值,240积分;到期不自动续费",
+        "countdown": ""
+      },
+      {
+        "id": "svip_month_cont",
+        "label": "连续包月",
+        "price": 19,
+        "origPrice": 35,
+        "note": "已减16元",
+        "tag": "新用户专享",
+        "desc": "开通得190V力值,199积分;之后35元/月续费,续费前提醒,可关闭",
+        "countdown": "01:59:46"
+      },
+      {
+        "id": "svip_quarter",
+        "label": "连续包季",
+        "price": 88,
+        "origPrice": 108,
+        "note": "29.3元/月",
+        "tag": "",
+        "desc": "开通得880V力值,880积分;之后108元/季续费,续费前提醒,可关闭",
+        "countdown": ""
+      }
+    ],
+    "payAgreement": "确认协议并开通",
+    "retainDialog": {
+      "title": "确定要放弃优惠吗?",
+      "note": "离开后限时优惠将失效",
+      "confirm": "确认离开",
+      "stay": "继续支付"
+    },
+    "addOn": {
+      "title": "顺手带一件",
+      "byPlan": {
+        "vip_month_cont": [
+          {
+            "id": "ao_jump",
+            "name": "升级JUMP卡",
+            "price": 5.1,
+            "origPrice": 25
+          }
+        ],
+        "vip_quarter": [
+          {
+            "id": "ao_jump",
+            "name": "升级JUMP卡",
+            "price": 5.1,
+            "origPrice": 25
+          }
+        ],
+        "vip_year": [
+          {
+            "id": "ao_content3",
+            "name": "3元付费内容券",
+            "price": 1,
+            "origPrice": 3
+          },
+          {
+            "id": "ao_movie4",
+            "name": "4张付费电影券",
+            "price": 10,
+            "origPrice": 12
+          }
+        ],
+        "vip_12m": [
+          {
+            "id": "ao_content3",
+            "name": "3元付费内容券",
+            "price": 1,
+            "origPrice": 3
+          },
+          {
+            "id": "ao_movie4",
+            "name": "4张付费电影券",
+            "price": 10,
+            "origPrice": 12
+          }
+        ],
+        "svip_upgrade2m": [
+          {
+            "id": "ao_content3",
+            "name": "3元付费内容券",
+            "price": 1,
+            "origPrice": 3
+          },
+          {
+            "id": "ao_movie5",
+            "name": "5元付费电影券",
+            "price": 3,
+            "origPrice": 5
+          }
+        ],
+        "svip_month_cont": [
+          {
+            "id": "ao_content3",
+            "name": "3元付费内容券",
+            "price": 1,
+            "origPrice": 3
+          },
+          {
+            "id": "ao_movie5",
+            "name": "5元付费电影券",
+            "price": 3,
+            "origPrice": 5
+          }
+        ],
+        "svip_quarter": [
+          {
+            "id": "ao_content3",
+            "name": "3元付费内容券",
+            "price": 1,
+            "origPrice": 3
+          },
+          {
+            "id": "ao_movie5",
+            "name": "5元付费电影券",
+            "price": 3,
+            "origPrice": 5
+          }
+        ]
+      }
+    },
+    "benefitsCompare": [
+      {
+        "item": "热播内容",
+        "vip": "提前看",
+        "svip": "额外抢先看"
+      },
+      {
+        "item": "适用设备",
+        "vip": "手机/电脑/Pad",
+        "svip": "电视/手机/电脑/Pad等"
+      },
+      {
+        "item": "同时观看",
+        "vip": "1台",
+        "svip": "3台"
+      },
+      {
+        "item": "累计登录使用",
+        "vip": "3台",
+        "svip": "8台"
+      },
+      {
+        "item": "清晰度",
+        "vip": "1080P",
+        "svip": "臻彩MAX超高清4K"
+      },
+      {
+        "item": "会员观影券",
+        "vip": "每月获赠",
+        "svip": "额外3张/月"
+      },
+      {
+        "item": "专属优惠券",
+        "vip": "—",
+        "svip": "2张/月"
+      },
+      {
+        "item": "超级剧场",
+        "vip": "—",
+        "svip": "免费看"
+      },
+      {
+        "item": "会员升级",
+        "vip": "常规V力值",
+        "svip": "V力值+10%"
+      }
+    ],
+    "compareMoreCards": [
+      "SVIP",
+      "SVIP家庭卡",
+      "JUMP卡",
+      "JUMP学生卡"
+    ],
+    "familyCard": {
+      "name": "SVIP家庭卡",
+      "note": "一人开通 全家共享",
+      "deviceNote": "8台累计登录/3台同时播放"
+    },
+    "jointCards": [
+      {
+        "id": "joint_kule",
+        "name": "视频VIP+酷乐音乐月卡",
+        "price": 28,
+        "origPrice": "25+18",
+        "btn": "立即开通"
+      },
+      {
+        "id": "joint_social",
+        "name": "视频VIP+超级社交会员",
+        "price": 29,
+        "origPrice": "25+20",
+        "btn": "立即开通"
+      },
+      {
+        "id": "joint_read",
+        "name": "视频VIP+听书阅读月卡",
+        "price": 25,
+        "origPrice": "25+12",
+        "btn": "立即开通"
+      },
+      {
+        "id": "joint_kule_half",
+        "name": "视频VIP+酷乐音乐半年卡",
+        "price": 182,
+        "origPrice": "150+88",
+        "btn": "立即开通"
+      }
+    ],
+    "vPower": {
+      "value": 400,
+      "current": "V1",
+      "next": "V2",
+      "nextNeed": 600,
+      "levels": [
+        {
+          "level": "V1",
+          "threshold": 0,
+          "perk": "生日礼包+专属客服"
+        },
+        {
+          "level": "V2",
+          "threshold": 600,
+          "perk": "观影券×1/月"
+        },
+        {
+          "level": "V3",
+          "threshold": 1200,
+          "perk": "皮肤弹幕解锁"
+        },
+        {
+          "level": "V4",
+          "threshold": 2400,
+          "perk": "线下观影抽签资格"
+        },
+        {
+          "level": "V5",
+          "threshold": 4800,
+          "perk": "周边商城95折"
+        },
+        {
+          "level": "V6",
+          "threshold": 8000,
+          "perk": "新剧提前看特权"
+        },
+        {
+          "level": "V7",
+          "threshold": 12000,
+          "perk": "年度定制礼盒"
+        },
+        {
+          "level": "V8",
+          "threshold": 20000,
+          "perk": "主创见面会邀请"
+        }
+      ]
+    },
+    "pointsMall": {
+      "points": 330,
+      "tabs": [
+        "全部",
+        "会员权益",
+        "实物周边",
+        "虚拟周边"
+      ],
+      "sorts": [
+        "综合",
+        "销量",
+        "积分"
+      ],
+      "banners": [
+        "VIP商城权益",
+        "专享折扣",
+        "全场畅兑",
+        "半价抽奖",
+        "续费得积分"
+      ],
+      "lottery": "积分抽好礼",
+      "items": [
+        {
+          "id": "pm_cover1",
+          "name": "千芳劫红包封面",
+          "points": 300,
+          "tag": "会员专享",
+          "img": "poster_tv_qianfangjie.png"
+        },
+        {
+          "id": "pm_cover2",
+          "name": "这一刻心动红包封面",
+          "points": 300,
+          "tag": "会员专享",
+          "img": "poster_tv_zheyikexindong.png"
+        },
+        {
+          "id": "pm_cover3",
+          "name": "斗玄大陆Ⅱ红包封面",
+          "points": 300,
+          "tag": "会员专享",
+          "img": "poster_an_douxuandalu2.png"
+        },
+        {
+          "id": "pm_cover4",
+          "name": "微光之上红包封面",
+          "points": 300,
+          "tag": "会员专享",
+          "img": "poster_sd_weiguangzhishang.png"
+        },
+        {
+          "id": "pm_badge",
+          "name": "IP金属徽章盲抽",
+          "points": 520,
+          "tag": "实物周边",
+          "img": "goods_badge.png"
+        },
+        {
+          "id": "pm_plush",
+          "name": "灵傀毛绒挂件",
+          "points": 980,
+          "tag": "实物周边",
+          "img": "goods_plush.png"
+        }
+      ]
+    },
+    "freeVip": {
+      "hotCards": [
+        {
+          "title": "看广告得VIP",
+          "note": "每日最多3天",
+          "btn": "去领取"
+        },
+        {
+          "title": "邀好友得月卡",
+          "note": "每邀1人得7天",
+          "btn": "去邀请"
+        },
+        {
+          "title": "签到抽年卡",
+          "note": "连签7天必中",
+          "btn": "去签到"
+        }
+      ],
+      "carriers": [
+        "移动",
+        "联通",
+        "电信"
+      ],
+      "carrierActivities": [
+        {
+          "carrier": "移动",
+          "title": "办流量卡送视频VIP年卡",
+          "note": "月租29元起"
+        },
+        {
+          "carrier": "联通",
+          "title": "冰激凌套餐送SVIP季卡",
+          "note": "限新用户"
+        },
+        {
+          "carrier": "电信",
+          "title": "宽带融合送VIP月卡×12",
+          "note": "含免流特权"
+        }
+      ]
+    },
+    "cashierTabs": [
+      {
+        "id": "vip",
+        "label": "VIP",
+        "sub": "手机/电脑/Pad"
+      },
+      {
+        "id": "svip",
+        "label": "SVIP",
+        "sub": "全平台/抢先看"
+      }
+    ],
+    "agreement": {
+      "prefix": "确认",
+      "links": [
+        "《会员服务》",
+        "《自动续费协议》",
+        "《隐私协议》"
+      ],
+      "uncheckedToast": "请先勾选并同意相关协议"
+    },
+    "paySuccess": {
+      "title": "开通成功",
+      "note": "权益已到账,可在会员专区查看",
+      "btn": "知道了"
+    },
+    "jointCardsByTab": {
+      "vip": [
+        {
+          "id": "joint_vip_kule",
+          "name": "VIP+酷乐音乐",
+          "price": 28,
+          "origPrice": "45",
+          "btn": "立即开通"
+        },
+        {
+          "id": "joint_vip_read",
+          "name": "VIP+听书阅读",
+          "price": 28,
+          "origPrice": "45",
+          "btn": "立即开通"
+        },
+        {
+          "id": "joint_vip_sports",
+          "name": "VIP+体育年卡",
+          "price": 348,
+          "origPrice": "491",
+          "btn": "立即开通"
+        }
+      ],
+      "svip": [
+        {
+          "id": "joint_svip_kule_m",
+          "name": "SVIP+酷乐音乐首月",
+          "price": 36,
+          "origPrice": "53",
+          "btn": "立即开通"
+        },
+        {
+          "id": "joint_svip_kule_y",
+          "name": "SVIP+酷乐音乐年卡",
+          "price": 390,
+          "origPrice": "728",
+          "btn": "立即开通"
+        },
+        {
+          "id": "joint_svip_read",
+          "name": "SVIP+听书阅读首月",
+          "price": 36,
+          "origPrice": "55",
+          "btn": "立即开通"
+        }
+      ]
+    },
+    "jointMore": "查看全部",
+    "compareMore": "对比更多细节",
+    "levelUpCard": {
+      "title": "升级会员享更多权益",
+      "current": {
+        "level": "V1",
+        "label": "当前V1权益",
+        "items": 19,
+        "value": 186,
+        "tagline": "内容提前看"
+      },
+      "next": {
+        "level": "V2",
+        "label": "V2更多权益",
+        "items": 21,
+        "value": 218,
+        "tagline": "吃喝玩乐"
+      },
+      "gapNote": "距离升级V2还差200V力值",
+      "btn": "一键升级"
+    },
+    "helpCenter": {
+      "title": "会员服务及帮助中心",
+      "service": "专属客服",
+      "giftCards": [
+        {
+          "title": "送VIP",
+          "note": "会员内容请TA看"
+        },
+        {
+          "title": "送SVIP",
+          "note": "大屏抢先看"
+        }
+      ],
+      "grid": [
+        "盗版举报",
+        "账号绑定",
+        "设备管理",
+        "续费管理",
+        "会员未到账",
+        "兑换码兑换",
+        "为亲友开会员",
+        "开通记录"
+      ]
+    },
+    "moreTab": {
+      "title": "任你选·JUMP卡",
+      "cards": [
+        {
+          "id": "jump_card",
+          "name": "JUMP卡",
+          "note": "看展看剧一张卡",
+          "price": 25,
+          "btn": "去了解"
+        },
+        {
+          "id": "jump_student",
+          "name": "JUMP学生卡",
+          "note": "学生认证半价",
+          "price": 12,
+          "btn": "去了解"
+        }
+      ]
+    },
+    "wall": {
+      "title": "臻彩MAX·SVIP专属权益",
+      "items": [
+        "全平台适用(含电视)",
+        "同时观看3台设备",
+        "臻彩MAX 超高清4K",
+        "额外3张观影券/月",
+        "超级剧场免费看"
+      ],
+      "btn": "开通SVIP",
+      "note": "当前为VIP1,升级SVIP即可解锁"
+    },
+    "accountBar": {
+      "pointsLabel": "积分",
+      "assetLabel": "资产",
+      "msgBadge": 10
+    }
+  },
+  "goodsShop": {
+    "items": [
+      {
+        "id": "gd_cardpack",
+        "name": "千芳劫典藏卡包",
+        "price": 6.6,
+        "tag": "IP新品",
+        "img": "goods_cardpack.png",
+        "sales": "已售2.3万"
+      },
+      {
+        "id": "gd_blindbox",
+        "name": "斗玄大陆Ⅱ惊喜魔盒",
+        "price": 29,
+        "tag": "盲盒",
+        "img": "goods_blindbox.png",
+        "sales": "已售1.1万"
+      },
+      {
+        "id": "gd_figure",
+        "name": "微光之上林微光手办",
+        "price": 199,
+        "tag": "预售",
+        "img": "goods_figure.png",
+        "sales": "已售3260"
+      },
+      {
+        "id": "gd_acrylic",
+        "name": "这一刻心动亚克力立牌",
+        "price": 39,
+        "tag": "剧综",
+        "img": "goods_acrylic.png",
+        "sales": "已售8790"
+      },
+      {
+        "id": "gd_badge",
+        "name": "IP金属徽章套装",
+        "price": 59,
+        "tag": "套装",
+        "img": "goods_badge.png",
+        "sales": "已售5643"
+      },
+      {
+        "id": "gd_plush",
+        "name": "灵傀毛绒挂件",
+        "price": 79,
+        "tag": "毛绒",
+        "img": "goods_plush.png",
+        "sales": "已售1.9万"
+      }
+    ]
+  },
+  "actor": {
+    "id": "actor_shenzhiyue.png",
+    "name": "沈知玥",
+    "avatar": "actor_shenzhiyue.png",
+    "fans": 4761,
+    "followed": false,
+    "followToast": "关注成功,可在个人中心查看",
+    "intro": "演员,代表作《望春年 第二季》《微光之上》《摘星记》。凭细腻的台词功底与角色塑造力被观众熟知。",
+    "tabs": [
+      "主页",
+      "圈儿",
+      "精选视频"
+    ],
+    "workCounts": {
+      "全部": 29,
+      "电影": 1,
+      "电视剧": 27,
+      "综艺": 1
+    },
+    "workIds": [
+      "tv_wangchunnian2",
+      "sd_weiguangzhishang",
+      "sd_zhaixingji",
+      "tv_qichongjin",
+      "mv_xindongyugao",
+      "vs_tianshengshengxian7"
+    ]
+  },
+  "watchHistory": [
+    {
+      "id": "h_svagg",
+      "type": "shortVideoAggregate",
+      "title": "看过的短视频",
+      "count": 12,
+      "group": "今天",
+      "cover": "still_mv_jixianzhiwai.png"
+    },
+    {
+      "id": "h_1",
+      "contentId": "tv_zheyikexindong",
+      "episode": "第12集",
+      "progressPct": 17,
+      "device": "手机",
+      "date": "今天",
+      "group": "今天"
+    },
+    {
+      "id": "h_2",
+      "contentId": "tv_hushanghuakai",
+      "episode": "第2集",
+      "progressPct": 64,
+      "device": "iPad",
+      "date": "07-22",
+      "group": "近一周"
+    },
+    {
+      "id": "h_3",
+      "contentId": "mv_daomengtuan3",
+      "episode": "",
+      "progressPct": 8,
+      "device": "电脑",
+      "date": "07-21",
+      "group": "近一周",
+      "rating": 7.5
+    },
+    {
+      "id": "h_4",
+      "contentId": "vs_chongyaba10",
+      "episode": "第8期",
+      "progressPct": 45,
+      "device": "手机",
+      "date": "07-20",
+      "group": "近一周"
+    },
+    {
+      "id": "h_5",
+      "contentId": "sd_weiguangzhishang",
+      "episode": "第12集",
+      "progressPct": 100,
+      "device": "手机",
+      "date": "07-19",
+      "group": "近一周"
+    },
+    {
+      "id": "h_6",
+      "contentId": "tv_mingzhentanluoke",
+      "episode": "第1集",
+      "progressPct": 76,
+      "device": "电脑",
+      "date": "07-08",
+      "group": "更早",
+      "rating": 9.6
+    },
+    {
+      "id": "h_7",
+      "contentId": "tv_shenghuodaluandun",
+      "episode": "第123集",
+      "progressPct": 88,
+      "device": "iPad",
+      "date": "07-02",
+      "group": "更早",
+      "rating": 9.5
+    },
+    {
+      "id": "h_8",
+      "contentId": "mv_anyong1995",
+      "episode": "",
+      "progressPct": 31,
+      "device": "电脑",
+      "date": "06-28",
+      "group": "更早",
+      "rating": 9.0
+    },
+    {
+      "id": "h_9",
+      "contentId": "an_douxuandalu2",
+      "episode": "第310集",
+      "progressPct": 52,
+      "device": "手机",
+      "date": "06-25",
+      "group": "更早"
+    }
+  ],
+  "historyFilters": [
+    "全部",
+    "电视剧",
+    "电影",
+    "综艺",
+    "动漫",
+    "直播",
+    "短剧"
+  ],
+  "guessYouFollow": [
+    "tv_qianfangjie",
+    "an_daoni",
+    "vs_tuilikaishile4"
+  ],
+  "favorites": [
+    {
+      "contentId": "tv_zheyikexindong",
+      "badge": "上新",
+      "progressText": "观看至第12集"
+    },
+    {
+      "contentId": "tv_zhuluan",
+      "badge": "VIP",
+      "progressText": "观看至第2集"
+    },
+    {
+      "contentId": "tv_yueliangjishi",
+      "badge": "独播",
+      "progressText": "观看至第18集"
+    }
+  ],
+  "favoriteTabs": [
+    "剧集",
+    "片单",
+    "个人专辑",
+    "短视频"
+  ],
+  "chasing": [
+    {
+      "contentId": "tv_zheyikexindong",
+      "updateBadge": "更新至15集",
+      "progressText": "看到第12集"
+    },
+    {
+      "contentId": "an_douxuandalu2",
+      "updateBadge": "更新至312集",
+      "progressText": "看到第310集"
+    }
+  ],
+  "chasingFilters": [
+    "全部",
+    "电视剧",
+    "少儿",
+    "综艺",
+    "动漫",
+    "电影"
+  ],
+  "reservations": [
+    {
+      "contentId": "vs_yiweifengshen",
+      "note": "7月29日上线",
+      "status": "waiting"
+    },
+    {
+      "contentId": "tv_zhuluan",
+      "note": "已上线",
+      "status": "online"
+    }
+  ],
+  "chaseToast": "已成功加追,可在个人中心\"预约/加追\"查看",
+  "messages": {
+    "entries": [
+      {
+        "id": "msg_reply",
+        "label": "评论回复@",
+        "unread": 0
+      },
+      {
+        "id": "msg_follow",
+        "label": "新增关注",
+        "unread": 1,
+        "messages": [
+          {
+            "id": "m_follow_1",
+            "title": "新增关注",
+            "text": "晚风告白关注了你，快去看看Ta的主页吧。",
+            "time": "今天 11:08"
+          }
+        ]
+      },
+      {
+        "id": "msg_like",
+        "label": "赞/弹幕+1",
+        "unread": 3,
+        "messages": [
+          {
+            "id": "m_like_1",
+            "title": "评论获赞",
+            "text": "桃子汽水赞了你在《这一刻心动》第12集的评论。",
+            "time": "今天 10:26",
+            "contentId": "tv_zheyikexindong",
+            "action": "查看评论"
+          },
+          {
+            "id": "m_like_2",
+            "title": "弹幕获赞",
+            "text": "你发送的弹幕「这里镜头太绝了」收到2个赞。",
+            "time": "昨天 22:14",
+            "contentId": "tv_zheyikexindong",
+            "action": "去观看"
+          },
+          {
+            "id": "m_like_3",
+            "title": "弹幕获赞",
+            "text": "江叙白赞了你在《这一刻心动》的弹幕。",
+            "time": "昨天 19:03",
+            "contentId": "tv_zheyikexindong",
+            "action": "去观看"
+          }
+        ]
+      },
+      {
+        "id": "msg_dm",
+        "label": "我的私信",
+        "unread": 0
+      },
+      {
+        "id": "msg_ai",
+        "label": "AI对话",
+        "unread": 0
+      }
+    ],
+    "conversations": [
+      {
+        "id": "conv_sys",
+        "name": "系统通知",
+        "avatar": "avatar_sys.png",
+        "lastText": "恭喜!弹幕任务达成",
+        "time": "12:20",
+        "unread": 1,
+        "messages": [
+          {
+            "id": "m_sys_1",
+            "title": "弹幕任务达成",
+            "text": "恭喜你完成「发送10条弹幕」任务,奖励50金币已到账。",
+            "time": "今天 12:20"
+          },
+          {
+            "id": "m_sys_2",
+            "title": "调研问卷",
+            "text": "邀请你参与「短剧观看体验」调研,完成可得100积分。",
+            "time": "昨天 18:05"
+          }
+        ]
+      },
+      {
+        "id": "conv_vip",
+        "name": "视频VIP会员",
+        "avatar": "avatar_vip.png",
+        "lastText": "你的VIP将于2026-09-26到期",
+        "time": "07-20",
+        "unread": 0,
+        "messages": [
+          {
+            "id": "m_vip_1",
+            "title": "会员到期提醒",
+            "text": "你的VIP将于2026-09-26到期,续费可享连续包月首月19.9元。",
+            "time": "07-20 10:00"
+          },
+          {
+            "id": "m_vip_2",
+            "title": "SVIP新客特惠",
+            "text": "SVIP新客首月仅19元,升级解锁臻彩MAX画质。",
+            "time": "07-15 09:30"
+          }
+        ]
+      },
+      {
+        "id": "conv_reserve",
+        "name": "预约提醒助手",
+        "avatar": "avatar_reserve.png",
+        "lastText": "《逐鸾》今日上线",
+        "time": "07-22",
+        "unread": 1,
+        "messages": [
+          {
+            "id": "m_rs_1",
+            "title": "《逐鸾》今日上线",
+            "text": "你预约的《逐鸾》已上线,前4集免费看。",
+            "time": "07-22 12:00",
+            "action": "立即观看",
+            "contentId": "tv_zhuluan"
+          }
+        ]
+      }
+    ],
+    "emptyText": "暂无新消息"
+  },
+  "coins": {
+    "balance": 0,
+    "cashText": "≈0元",
+    "withdrawChannels": [
+      "微信",
+      "QQ"
+    ],
+    "signDays": [
+      {
+        "day": 1,
+        "coins": 3,
+        "signed": true
+      },
+      {
+        "day": 2,
+        "coins": 3,
+        "signed": true
+      },
+      {
+        "day": 3,
+        "coins": 5,
+        "signed": false
+      },
+      {
+        "day": 4,
+        "coins": 5,
+        "signed": false
+      },
+      {
+        "day": 5,
+        "coins": 8,
+        "signed": false
+      },
+      {
+        "day": 6,
+        "coins": 8,
+        "signed": false
+      },
+      {
+        "day": 7,
+        "coins": 20,
+        "signed": false
+      }
+    ],
+    "adTask": {
+      "label": "看广告得金币",
+      "progress": "0/10",
+      "per": 30
+    },
+    "videoRedPackets": {
+      "label": "看视频得金币",
+      "count": 8,
+      "per": 50
+    },
+    "browseTask": {
+      "label": "浏览得金币",
+      "per": 20
+    },
+    "gameTask": {
+      "label": "玩游戏得金币",
+      "per": 60
+    },
+    "drawerTasks": [
+      "幸运转盘",
+      "开心盲盒",
+      "年卡抽奖"
+    ]
+  },
+  "drawer": {
+    "moreServices": [
+      "个性装扮",
+      "小说",
+      "特惠购票",
+      "抽卡抽谷",
+      "卡牌",
+      "火龙漫剧"
+    ],
+    "welfareCenter": "福利中心",
+    "freeData": "免流量看视频"
+  },
+  "profileGrid": [
+    "预约/加追",
+    "下载",
+    "收藏",
+    "我的周边"
+  ],
+  "profileTools": [
+    "情侣亲子",
+    "扫一扫",
+    "消息",
+    "设置"
+  ],
+  "profileServices": [
+    "我的金币",
+    "游戏中心",
+    "我的资产",
+    "漫剧",
+    "摸鱼小视频",
+    "帮助与客服"
+  ],
+  "vipCards": [
+    {
+      "id": "video_vip",
+      "label": "视频VIP",
+      "note": "19元开通SVIP",
+      "highlight": true
+    },
+    {
+      "id": "sports_vip",
+      "label": "体育VIP",
+      "note": "特惠开通"
+    },
+    {
+      "id": "aiwan_gift",
+      "label": "爱玩有礼",
+      "note": "领取福利"
+    }
+  ],
+  "devices": {
+    "list": [
+      {
+        "name": "iPhone 17 Pro Max",
+        "city": "上海",
+        "status": "本机",
+        "date": "2026-07-25"
+      },
+      {
+        "name": "iPhone 17 Pro Max",
+        "city": "上海",
+        "status": "在线",
+        "date": "2026-07-20"
+      },
+      {
+        "name": "iPad",
+        "city": "杭州",
+        "status": "离线",
+        "date": "2026-07-11"
+      }
+    ],
+    "accountStatus": "账号情况正常",
+    "quota": {
+      "vip": "3台累计登录/1台同时播放",
+      "svip": "8台累计登录/3台同时播放"
+    },
+    "svipBanner": "开通SVIP,8台累计登录/3台同时播放"
+  },
+  "settings": {
+    "appearance": {
+      "colorMode": "light",
+      "colorModeOptions": [
+        "跟随系统",
+        "深色",
+        "浅色"
+      ],
+      "navSkin": true,
+      "iconSkin": true
+    },
+    "privacy": {
+      "personalizedContent": true,
+      "personalizedAd": true,
+      "programRecommend": true,
+      "locationRecommend": false
+    },
+    "notifications": {
+      "pushMaster": false,
+      "interestTags": [
+        "电视剧",
+        "电影",
+        "综艺",
+        "动漫",
+        "少儿",
+        "纪录片",
+        "短剧",
+        "体育",
+        "游戏",
+        "音乐",
+        "美食",
+        "旅行",
+        "科技",
+        "宠物",
+        "搞笑",
+        "时尚",
+        "汽车",
+        "财经",
+        "健康",
+        "教育",
+        "国风",
+        "悬疑",
+        "科幻",
+        "职场",
+        "亲子"
+      ],
+      "reactionSound": true,
+      "calendarRemind": false
+    },
+    "download": {
+      "forbidAutoLock": true,
+      "quality": "720P",
+      "concurrent": 1,
+      "mobileNetworkDownload": false,
+      "mobileNetworkAutoDownload": false,
+      "carrierUpload": false
+    },
+    "play": {
+      "skipIntroOutro": true,
+      "seekPreview": true,
+      "longPressRewind": false,
+      "autoPlayNext": true,
+      "autoPlayRecommend": false,
+      "autoPlayWifiOnly": true,
+      "miniWindowOnHome": false,
+      "miniWindowOnBack": true,
+      "miniWindowOnLock": false,
+      "smoothAutoQuality": true,
+      "smoothPreload": true,
+      "smoothHardwareDecode": true
+    },
+    "storage": {
+      "cacheSize": "131M",
+      "videoDownload": "0B",
+      "novelDownload": "0B",
+      "remaining": "46.6G"
+    },
+    "teenMode": false,
+    "childGuard": false
+  },
+  "downloads": {
+    "remaining": "46.6G",
+    "speedText": "9.4MB/s",
+    "accelText": "VIP加速2.3MB/s",
+    "offlineToast": "已下载 720P,省流播放中",
+    "vipToast": "请在VIP有效期内观看付费视频哦",
+    "items": [
+      {
+        "id": "tv_zheyikexindong#12",
+        "contentId": "tv_zheyikexindong",
+        "episode": 12,
+        "label": "第12集",
+        "qualityLabel": "720P",
+        "sizeText": "186MB",
+        "progressPct": 100,
+        "status": "done"
+      },
+      {
+        "id": "tv_zheyikexindong#13",
+        "contentId": "tv_zheyikexindong",
+        "episode": 13,
+        "label": "第13集",
+        "qualityLabel": "720P",
+        "sizeText": "192MB",
+        "progressPct": 100,
+        "status": "done"
+      },
+      {
+        "id": "tv_hushanghuakai#1",
+        "contentId": "tv_hushanghuakai",
+        "episode": 1,
+        "label": "第1集",
+        "qualityLabel": "720P",
+        "sizeText": "210MB",
+        "progressPct": 100,
+        "status": "done"
+      }
+    ],
+    "novelItems": [],
+    "recommendations": [
+      "tv_qianfangjie",
+      "tv_jifengxingdong",
+      "mv_jixianzhiwai"
+    ]
+  },
+  "player": {
+    "qualities": [
+      {
+        "id": "zhencai_max",
+        "label": "臻彩MAX",
+        "tier": "svip",
+        "desc": "HDR Vivid 60帧"
+      },
+      {
+        "id": "4k_sdr",
+        "label": "4K",
+        "tier": "svip",
+        "desc": "超高清 SDR"
+      },
+      {
+        "id": "zhencai_1080",
+        "label": "臻彩1080P",
+        "tier": "vip",
+        "desc": "高清 SDR增强"
+      },
+      {
+        "id": "1080p",
+        "label": "1080P",
+        "tier": "vip",
+        "desc": "高清 SDR"
+      },
+      {
+        "id": "720p",
+        "label": "720P",
+        "tier": "free",
+        "desc": "准高清",
+        "default": true
+      },
+      {
+        "id": "480p",
+        "label": "480P",
+        "tier": "free",
+        "desc": "标清"
+      },
+      {
+        "id": "auto",
+        "label": "智能清晰度",
+        "tier": "free",
+        "desc": "自动切换画质"
+      }
+    ],
+    "audioQualities": [
+      {
+        "id": "zhenyue_max",
+        "label": "臻悦MAX·高保真",
+        "tier": "svip",
+        "desc": "还原细节 HiFi质感"
+      },
+      {
+        "id": "dolby",
+        "label": "杜比音效",
+        "tier": "vip"
+      },
+      {
+        "id": "clear_voice",
+        "label": "清澈人声",
+        "tier": "vip"
+      },
+      {
+        "id": "standard",
+        "label": "标准",
+        "tier": "free",
+        "default": true
+      }
+    ],
+    "speeds": [
+      3.0,
+      2.0,
+      1.5,
+      1.25,
+      1.0,
+      0.5
+    ],
+    "longPressSpeed": 3.0,
+    "longPressLockSpeed": true,
+    "leftLongPressRewind": false,
+    "vipWatermarkTip": "尊贵的 VIP1 用户,正在观看VIP专享内容",
+    "lockToast": "已锁屏",
+    "danmakuModeToast": "已切换弹幕精选模式",
+    "danmaku": {
+      "mode": "full",
+      "modes": [
+        "full",
+        "selected",
+        "off"
+      ],
+      "rows": "1行",
+      "opacity": 100,
+      "speed": "适中",
+      "fontSize": "适中",
+      "colorDanmaku": true,
+      "skinDanmaku": true,
+      "roleDanmaku": true,
+      "topDanmaku": true,
+      "effectDanmaku": true,
+      "keywordEgg": true,
+      "smartAntiSpoiler": false,
+      "faceProtect": false,
+      "blockWordsCount": 0,
+      "blockWordsMax": 50,
+      "placeholder": "发个友善的弹幕吧!",
+      "resetLabel": "恢复默认设置",
+      "displayTitle": "弹幕展示",
+      "modeTitle": "弹幕模式",
+      "modeLabels": {
+        "full": "完整",
+        "selected": "精选"
+      },
+      "sliders": [
+        {
+          "key": "rows",
+          "label": "行数",
+          "options": [
+            "1行",
+            "2行",
+            "3行",
+            "4行",
+            "不限"
+          ]
+        },
+        {
+          "key": "opacity",
+          "label": "不透明度",
+          "options": [
+            "20",
+            "40",
+            "60",
+            "80",
+            "100"
+          ]
+        },
+        {
+          "key": "speed",
+          "label": "速度",
+          "options": [
+            "慢",
+            "较慢",
+            "适中",
+            "快",
+            "极快"
+          ]
+        },
+        {
+          "key": "fontSize",
+          "label": "字号",
+          "options": [
+            "小",
+            "较小",
+            "适中",
+            "大",
+            "特大"
+          ]
+        }
+      ],
+      "switchGroups": [
+        {
+          "title": "弹幕类型",
+          "items": [
+            {
+              "key": "colorDanmaku",
+              "label": "彩色弹幕",
+              "icon": "palette"
+            },
+            {
+              "key": "skinDanmaku",
+              "label": "弹幕皮肤",
+              "icon": "shirt"
+            },
+            {
+              "key": "roleDanmaku",
+              "label": "弹幕角色",
+              "icon": "avatar"
+            },
+            {
+              "key": "topDanmaku",
+              "label": "顶部弹幕",
+              "icon": "top"
+            }
+          ]
+        },
+        {
+          "title": "特殊弹幕",
+          "items": [
+            {
+              "key": "effectDanmaku",
+              "label": "弹幕特效",
+              "icon": "sparkles"
+            },
+            {
+              "key": "keywordEgg",
+              "label": "关键词彩蛋",
+              "icon": "egg"
+            }
+          ]
+        },
+        {
+          "title": "通用工具",
+          "items": [
+            {
+              "key": "smartAntiSpoiler",
+              "label": "智能防剧透",
+              "sub": "AI大模型智能屏蔽剧透弹幕"
+            },
+            {
+              "key": "faceProtect",
+              "label": "人物防遮挡"
+            }
+          ]
+        }
+      ],
+      "blockWordTitle": "设置屏蔽词",
+      "blockWordPlaceholder": "输入要屏蔽的关键词",
+      "blockWordAdd": "添加",
+      "nowListRow": {
+        "label": "此刻弹幕列表",
+        "value": "去查看"
+      },
+      "interactRow": {
+        "label": "互动弹幕",
+        "value": "去设置"
+      }
+    },
+    "filters": [
+      {
+        "id": "original",
+        "label": "原片",
+        "tier": "free"
+      },
+      {
+        "id": "texture",
+        "label": "质感",
+        "tier": "svip"
+      },
+      {
+        "id": "film",
+        "label": "胶片",
+        "tier": "svip"
+      }
+    ],
+    "timerOptions": [
+      "播完本集",
+      "30分钟",
+      "60分钟",
+      "不开启"
+    ],
+    "qualityTip": {
+      "text": "臻彩、杜比优先级可在自定义里调整",
+      "button": "知道了"
+    },
+    "moreMenu": [
+      "画中画",
+      "定时关闭",
+      "下载",
+      "倍速",
+      "音频播放",
+      "设为禁看",
+      "后台播放",
+      "循环播放",
+      "侵权举报",
+      "问题反馈"
+    ],
+    "shareChannels": [
+      "保存本地",
+      "微信",
+      "朋友圈",
+      "QQ",
+      "QQ空间",
+      "微博"
+    ],
+    "screenshotActions": [
+      "点击分享",
+      "截视频",
+      "拼长图"
+    ],
+    "castPage": {
+      "modes": [
+        "普通投屏",
+        "本地加速模式"
+      ],
+      "airplayDevice": "客厅的MacBook Air",
+      "phoneSpeaker": "iPhone扬声器",
+      "remoteCast": "远程投屏·绑定设备",
+      "tvApp": "极光TV·大屏更清晰",
+      "controls": [
+        "-15s",
+        "+15s",
+        "切换投屏设备",
+        "投屏历史"
+      ]
+    }
+  },
+  "unlockPage": {
+    "title": "应片方要求需解锁观看",
+    "btn": "解锁本集"
+  },
+  "detail": {
+    "tabs": [
+      "详情",
+      "二创",
+      "讨论",
+      "买周边",
+      "云包场",
+      "去抽赏",
+      "珍宝阁"
+    ],
+    "varietyTabs": [
+      "详情",
+      "讨论"
+    ],
+    "episodeGroups": [
+      "剧集",
+      "主创直播"
+    ],
+    "calendarLabel": "追剧日历",
+    "playingLabel": "正在播放",
+    "recommendTabs": [
+      "原著解析",
+      "官方",
+      "追剧团",
+      "极致虐恋"
+    ],
+    "opBanner": {
+      "title": "追剧通礼包特惠",
+      "sub": "畅爽追剧|独家幕后|抽亲签照等",
+      "button": "抽主创签名照"
+    },
+    "opBannerVariety": {
+      "title": "SVIP新客首月仅19元",
+      "sub": "超前点播|4K蓝光|杜比全景声",
+      "button": "开通SVIP"
+    },
+    "adCard": {
+      "img": "banner_game.png",
+      "badge": "广告",
+      "title": "【代言人推荐】零氪玩家福音!不花一分钱玩遍全部内容",
+      "button": "了解详情"
+    },
+    "guide": {
+      "text": "推荐、加追、下载、投屏、一起看功能",
+      "text2": "已搬家至此处",
+      "button": "我知道了"
+    },
+    "vipFrameNote": "尊贵的VIP1用户,正在观看VIP专享内容",
+    "adOverlay": {
+      "badge": "广告",
+      "paused": "已暂停",
+      "button": "了解详情"
+    },
+    "commentEntry": "发个友善的评论吧~",
+    "commentsMore": "查看全部评论"
+  },
+  "wontfixToast": "该功能暂未开放",
+  "channelPanelExtra": [
+    "玩仙逆",
+    "宠物tv",
+    "相声小品",
+    "戏曲",
+    "广场舞",
+    "军事",
+    "科技",
+    "旅游"
+  ]
+}
