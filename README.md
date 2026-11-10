@@ -15,6 +15,7 @@
 </p>
 
 <p align="center">
+  <a href="https://awesomecua.github.io/resources/github-openmobile2-mobilegym-plusplus/"><img alt="Featured by Awesome CUA" src="https://awesomecua.github.io/badges/featured-by-awesomecua-laurel.svg" width="220"></a>
   <a href="LICENSE"><img alt="Apache 2.0" src="https://img.shields.io/badge/license-Apache%202.0-blue.svg"></a>
   <a href="bench_env/benchmark/official.json"><img alt="215 tasks" src="https://img.shields.io/badge/bench-215%20tasks-111111.svg"></a>
   <a href="#the-phone"><img alt="63 clients" src="https://img.shields.io/badge/clients-63-111111.svg"></a>
